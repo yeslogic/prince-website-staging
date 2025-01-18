@@ -1,0 +1,141 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<meta name="robots" content="noindex">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<title>Prince - Page Selectors</title>
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+<div id="header-inner">
+<div><a href="/"><img src="/images/logo2.png" alt="Prince"></a></div>
+<ul id="primary-nav">
+<li><a href="/download/">Download</a></li>
+<li><a href="/purchase/">Buy Prince</a></li>
+<li><a href="/samples/">Samples</a></li>
+<li><a href="/doc/" class="curr">Documentation</a></li>
+<li><a href="/forum/">Forum</a></li>
+</ul>
+</div>
+<div id="header-shadow"></div>
+</div>
+<div id="intro"><div id="intro-inner"><h1>Page Selectors</h1></div></div>
+
+<div class="main">
+
+
+
+<p>
+<a href="/doc/9.0/">User Guide</a> /
+<a href="/doc/9.0/#paged">Paged Media</a>
+</p>
+
+<div class="col1">
+
+<p>
+Pages can be styled using @page rules, which by default apply to every page
+in the document. It is also possible to apply style to specific pages
+using page selectors.
+</p>
+
+<h2>The <i>:first</i> page selector</h2>
+
+<p>
+The <i>:first</i> page selector can be used to style the first page 
+of the document differently from the rest of the document.
+</p> 
+<div class="example">
+<p class="label">CSS</p>
+<pre class="css">
+@page { 
+    @top { content: "Prince User Guide" }
+    @bottom-right { content: counter(page) }
+}
+@page:first { 
+    @top { content: normal }
+    @bottom-right { content: normal }
+}
+</pre>
+<p class="comment">
+The <i>@page:first</i> rule sets the content of the <i>top</i> and
+<i>bottom-right</i> margin boxes back to normal,
+so that no page header or footer will be shown on the first page.
+</p>
+</div>
+
+<h2>The <i>:left</i> and <i>:right</i> page selectors</h2>
+
+<p>
+The <i>:left</i> and <i>:right</i> page selectors can be used to style 
+left-facing and right-facing pages differently to create duplex layouts.
+</p>
+<div class="example">
+<p class="label">CSS</p>
+<pre class="css">
+@page:left { 
+    @top { content: string(book-title) }
+}
+@page:right {
+    @top { content: string(chapter-title) }
+}
+
+h1 { string-set: book-title content() }
+h2 { string-set: chapter-title content() }
+</pre>
+<p class="comment">
+These rules place the book title in the header of left-facing pages,
+while the title of the current chapter is placed in the header of
+right-facing pages. (The book title is copied from the text content of the
+<i>h1</i> element while the chapter title is copied from the text content of
+the <i>h2</i> element).
+</p>
+</div>
+
+<h2>Named pages</h2>
+<p>
+Named pages are used to control the style of the page that particular
+elements appear on. This can be used to apply different page headers and
+footers, change the style of the page numbers and introduce landscape pages
+for large figures or tables.
+</p>
+<p>
+The pages that an element appears on are named using the <i>page</i>
+property, which may be applied to any block-level element within a
+non-floating element in the normal flow.
+</p>
+<div class="example">
+<p class="label">CSS</p>
+<pre class="css">
+@page big_table { 
+    size: A4 landscape
+}
+
+table.big { page: big_table }
+</pre>
+<p class="comment">
+The rule for the <i>table</i> element (with class "big") names the
+pages that it appears on as "big_table".
+The @page rule for "big_table" pages sets the page size to landscape A4.
+</p>
+</div>
+
+</div>
+
+</div>
+</div>
+<script src="/js/warning.js"></script>
+<div id="footer"><div id="footer-inner">
+<p id="footer-copy">Copyright © 2002 – 2025 YesLogic Pty. Ltd.</p>
+<ul id="footer-nav">
+<li><a href="/">Home</a></li>
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+</div></div>
+</body>
+</html>

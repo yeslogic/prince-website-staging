@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Prince Networking · Prince Documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Prince can process local files or fetch them from remote locations. To do this, a full URL needs to be provided, including the protocol."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Prince Networking · Prince Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://www.princexml.com/"/><meta property="og:description" content="Prince can process local files or fetch them from remote locations. To do this, a full URL needs to be provided, including the protocol."/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://www.princexml.com/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="/js/warning.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/Prince-logo.png" alt="Prince Documentation"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/doc/" target="_self">Documentation</a></li><li class=""><a href="/doc/help" target="_self">Help</a></li><li class=""><a href="/doc/releases" target="_self">Release Notes</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>User Guide</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Installation Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/installing">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/doc/13/first-doc">Your First Document</a></li><li class="navListItem"><a class="navItem" href="/doc/13/help-install">Help</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">User Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/intro-userguide">Convert HTML to PDF</a></li><li class="navListItem"><a class="navItem" href="/doc/13/styling">Styling</a></li><li class="navListItem"><a class="navItem" href="/doc/13/paged">Paged Media</a></li><li class="navListItem"><a class="navItem" href="/doc/13/gen-content">Generated Content</a></li><li class="navListItem"><a class="navItem" href="/doc/13/javascript">Scripting</a></li><li class="navListItem"><a class="navItem" href="/doc/13/graphics">Graphics</a></li><li class="navListItem"><a class="navItem" href="/doc/13/cookbook">Prince Tips and Tricks</a></li><li class="navListItem"><a class="navItem" href="/doc/13/help">Help</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-input">Prince Input</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-output">Prince Output</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/doc/13/prince-networking">Prince Networking</a></li><li class="navListItem"><a class="navItem" href="/doc/13/server-integration">Server Integration</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-for-books">Prince for Books</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Reference Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/command-line">Command-line Reference</a></li><li class="navListItem"><a class="navItem" href="/doc/13/css-refs">CSS References</a></li><li class="navListItem"><a class="navItem" href="/doc/13/css-props">CSS Properties</a></li><li class="navListItem"><a class="navItem" href="/doc/13/js-support">JavaScript Support</a></li><li class="navListItem"><a class="navItem" href="/doc/13/page-size-keywords">Page Size Keywords</a></li><li class="navListItem"><a class="navItem" href="/doc/13/characters">Character Entities</a></li><li class="navListItem"><a class="navItem" href="/doc/13/acknowledgements">Acknowledgments</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Prince Networking</h1></header><article><div><span><p>Prince can process local files or fetch them from remote locations. To do this, a full URL needs to be provided, including the protocol.</p>
+<p><code>prince http://example.com/path/file.html</code> -o <code>out.pdf</code></p>
+<h2><a class="anchor" aria-hidden="true" id="authentication"></a><a href="#authentication" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Authentication</h2>
+<p>If authentication is required for the URL, the credentials can be passed by means of the <a href="/doc/13/command-line#cl-auth-user"><code>--auth-user</code></a> and <a href="/doc/13/command-line#cl-auth-password"><code>--auth-password</code></a> command-line options. A more cautious way is to add the <a href="/doc/13/command-line#cl-auth-server"><code>--auth-server</code></a> option, which sends username and password credentials to the specified server only - the default is to send them to any server which challenges for authentication. The option <a href="/doc/13/command-line#cl-auth-scheme"><code>--auth-scheme</code></a> sends username and password credentials only for requests with the given scheme, either HTTP or HTTPS, while <a href="/doc/13/command-line#cl-auth-method"><code>--auth-method</code></a> specifies a comma separated list of HTTP authentication methods to enable. Valid entries are: <code>basic</code>, <code>digest</code>, <code>ntlm</code> and <code>negotiate</code>.</p>
+<p>A shorthand command-line option for authentication is <a href="/doc/13/command-line#cl-auth"><code>--auth</code></a>, which specifies a URL with credentials for HTTP authentication: <code>[SCHEME:]//USER:PASS@HOST[:PORT]</code>. Unlike the preceding options, it may be used multiple times. The username and password must be percent-encoded.</p>
+<p>The advanced command-line option <a href="/doc/13/command-line#cl-no-auth-preemptive"><code>--no-auth-preemptive</code></a> instructs Prince not to send credentials to named servers until an authentication challenge is received. When multiple authentication methods are enabled, an initial request may be required to discover the methods supported by the remote site.</p>
+<h2><a class="anchor" aria-hidden="true" id="cookies"></a><a href="#cookies" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cookies</h2>
+<p>If cookies are required, the <a href="/doc/13/command-line#cl-cookie"><code>--cookie</code></a> command-line option can be used to set a value for the Set-Cookie HTTP header value. The option may be used multiple times. Alternatively, the option <a href="/doc/13/command-line#cl-cookiejar"><code>--cookiejar</code></a> specifies a file containing HTTP cookies.</p>
+<h2><a class="anchor" aria-hidden="true" id="ssl"></a><a href="#ssl" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SSL</h2>
+<p>The command-line option <a href="/doc/13/command-line#cl-ssl-cacert"><code>--ssl-cacert</code></a> specifies an SSL certificate file, while the option <a href="/doc/13/command-line#cl-ssl-capath"><code>--ssl-capath</code></a> is used to specify an SSL certificate directory.</p>
+<p>The command-line option <a href="/doc/13/command-line#cl-ssl-version"><code>--ssl-version</code></a> sets the minimum version of SSL to allow. It may be one of: <code>default</code>, <code>tlsv1</code>, <code>tlsv1.0</code>, <code>tlsv1.1</code>, <code>tlsv1.2</code> or <code>tlsv1.3</code>. The value <code>default</code> lets libcurl choose. The option <a href="/doc/13/command-line#cl-insecure"><code>--insecure</code></a> disables SSL verification. Please note that using this option is not recommended!</p>
+<p>Prince makes use of the libcurl library to process network locations - see <a href="/doc/13/acknowledgements">Acknowledgments</a>. Please note that command-line options are passed to curl as-is. On some systems curl might use a library other than OpenSSL to handle SSL - in those cases the SSL-related command-line options might behave in a slightly different way. In case of doubt, please check your own curl documentation.</p>
+<h3><a class="anchor" aria-hidden="true" id="client-certificates"></a><a href="#client-certificates" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Client Certificates</h3>
+<p>Client certificates are supported on Linux with several command-line options. The <a href="/doc/13/command-line#cl-ssl-cert"><code>--ssl-cert</code></a> option specifies an SSL client certificate file, while the <a href="/doc/13/command-line#cl-ssl-cert-type"><code>--ssl-cert-type</code></a> option defines the SSL client certificate file type (PEM, DER) - the default is PEM. The option <a href="/doc/13/command-line#cl-ssl-key"><code>--ssl-key</code></a> specifies an SSL private key file and <a href="/doc/13/command-line#cl-ssl-key-type"><code>--ssl-key-type</code></a> is used to define the SSL private key file type (PEM, DER) - the default is PEM. Last but not least, <a href="/doc/13/command-line#cl-ssl-key-password"><code>--ssl-key-password</code></a> indicates the passphrase for the private key.</p>
+<p>On MacOS, the command-line option <a href="/doc/13/command-line#cl-ssl-cert"><code>--ssl-cert</code></a> specifies a PKCS#12 file containing a client certificate and private key. The options <a href="/doc/13/command-line#cl-ssl-cert-type"><code>--ssl-cert-type</code></a>, <a href="/doc/13/command-line#cl-ssl-key"><code>--ssl-key</code></a> and <a href="/doc/13/command-line#cl-ssl-key-password"><code>--ssl-key-password</code></a> are not available.</p>
+<p>Client certificates are not supported on Windows.</p>
+<h2><a class="anchor" aria-hidden="true" id="miscellaneous"></a><a href="#miscellaneous" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Miscellaneous</h2>
+<p>If an HTTP proxy server is required, it can be specified with the <a href="/doc/13/command-line#cl-http-proxy"><code>--http-proxy</code></a> command-line option.</p>
+<p>Please note that since Prince uses curl for loading resources from HTTP URLs, it is possible to use curl-supported environment variables (such as e.g. <code>http_proxy</code> and <code>no_proxy</code>) to fine-tune the proxy rules.  In this case it is not necessary to specify the command-line option - the proxy rules are provided through the environment variables.  See <a href="///www.princexml.com/forum/topic/4291/proxy-by-pass-options">this forum post</a> for more details.</p>
+<p>The option <a href="/doc/13/command-line#cl-http-timeout"><code>--http-timeout</code></a> can be used to define the HTTP timeout in seconds, which can be useful for slow servers.</p>
+<p>Prince can also disable downloading multiple HTTP resources at once with the <a href="/doc/13/command-line#cl-no-parallel-downloads"><code>--no-parallel-downloads</code></a> command-line option.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/doc/13/prince-output"><span class="arrow-prev">← </span><span>Prince Output</span></a><a class="docs-next button" href="/doc/13/server-integration"><span>Server Integration</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#authentication">Authentication</a></li><li><a href="#cookies">Cookies</a></li><li><a href="#ssl">SSL</a><ul class="toc-headings"><li><a href="#client-certificates">Client Certificates</a></li></ul></li><li><a href="#miscellaneous">Miscellaneous</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="copyright"><div class="about-contact"><a href="/company/">About us</a> | <a href="/contact/">Contact</a></div><div class="copyright">Copyright © 2022 YesLogic Pty. Ltd.</div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '63dda203371e77ee63a05de413c3d741',
+                indexName: 'princexml',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["language:en"]}
+              });
+            </script></body></html>

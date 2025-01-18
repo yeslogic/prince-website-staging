@@ -1,0 +1,917 @@
+@charset "UTF-8";
+/*
+vim: et sw=4 ts=4
+*/
+.user-guide #scrollspy {
+  position: fixed;
+  top: 170px;
+  left: 20px;
+  width: 270px;
+}
+.user-guide #scrollspy:before {
+  content: "Contents";
+  display: block;
+  padding-left: 10px;
+}
+.user-guide #propnav {
+  position: fixed;
+  top: 120px;
+  left: 20px;
+  width: 270px;
+}
+
+.nav {
+  padding-left: 0px !important;
+  list-style: none;
+  font-size: small;
+}
+.nav > li > a {
+  padding: 3px;
+  color: #666;
+}
+.nav li > a {
+  padding-left: 10px;
+  border-bottom: thin dotted;
+}
+.nav .nav li > a {
+  padding-left: 30px;
+  font-size: 0.9em;
+}
+.nav .nav .nav li > a {
+  padding-left: 35px;
+  font-size: 0.8em;
+}
+.nav .nav .nav .nav li > a {
+  padding-left: 40px;
+}
+.nav .nav .nav .nav .nav li > a {
+  padding-left: 45px;
+}
+.nav li.active > a {
+  font-weight: bold;
+}
+.nav .nav {
+  display: none;
+}
+.nav > .active > .nav {
+  display: block;
+}
+
+#scrollspy {
+  counter-reset: li;
+}
+
+.hidden-print > li:before {
+  counter-increment: li;
+  width: 20px;
+  text-align: right;
+  display: inline-block;
+  content: counter(li) ".";
+}
+
+.user-guide {
+  counter-reset: h1;
+}
+.user-guide p {
+  margin: 1em 0;
+  hyphens: auto;
+  text-align: justify;
+}
+.user-guide code {
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+.user-guide div.main-frame > section > h1 {
+  font-weight: normal;
+  margin-bottom: 0;
+}
+.user-guide div.main-frame > section > h2 {
+  font-weight: normal;
+  margin-bottom: 0;
+}
+.user-guide h2, .user-guide h3, .user-guide h4, .user-guide h5, .user-guide h6 {
+  font-weight: normal;
+}
+.user-guide h3, .user-guide h4, .user-guide h5, .user-guide h6 {
+  font-weight: bold;
+}
+.user-guide div.example, .user-guide .ingredients {
+  margin-bottom: 1em;
+  border-radius: 10px;
+  padding: 10px 30px;
+  background: white;
+}
+.user-guide .ingredients {
+  padding: 20px 30px;
+}
+.user-guide div.programlisting, .user-guide div.syntaxlisting, .user-guide div.screen, .user-guide div.syntax-block {
+  white-space: initial;
+  font-family: inherit;
+  padding-right: 0px;
+  margin-right: 2em;
+  /*
+   * This should be 80 columns but I don't know why these ems don't
+   * work like I expect.
+   */
+  max-width: 52em;
+  /*
+   * This hack causes the div to wait until after any floats that it
+   * needs to clear (because of its width) before starting.
+   */
+  margin-top: 0;
+  margin-bottom: 0;
+  display: block;
+  /*
+   * Put a line to the left of the code listing
+   */
+  margin-left: -1em;
+  padding-left: calc(1em - 1px);
+  border-left: solid #e34f71 2px;
+}
+.user-guide div.programlisting pre, .user-guide div.syntaxlisting pre, .user-guide div.screen pre, .user-guide div.syntax-block pre {
+  padding: 0px;
+  border-radius: 0px;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  overflow: auto;
+  width: 100%;
+  white-space: pre-wrap;
+}
+.user-guide div.programlisting pre strong, .user-guide div.syntaxlisting pre strong, .user-guide div.screen pre strong, .user-guide div.syntax-block pre strong {
+  color: inherit;
+}
+.user-guide div.syntax-block code {
+  padding: 0px;
+  border-radius: 0px;
+  margin-top: 0px;
+  overflow: auto;
+}
+.user-guide div.syntax-block code strong {
+  color: inherit;
+}
+.user-guide p.label {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+.user-guide pre {
+  color: inherit;
+  background: inherit;
+}
+.user-guide code.code {
+  white-space: nowrap;
+}
+.user-guide .userinput {
+  font-weight: bold;
+}
+.user-guide .replaceable {
+  font-style: italic;
+}
+.user-guide var, .user-guide code {
+  font-style: normal;
+  font-family: monospace;
+}
+.user-guide p {
+  max-width: 50em;
+}
+.user-guide p.note, .user-guide p.tip, .user-guide p.warning {
+  margin-left: 3.5em;
+  max-width: 43em;
+}
+.user-guide ol, .user-guide ul {
+  padding-left: 20px;
+}
+.user-guide ol ol, .user-guide ol ul, .user-guide ul ol, .user-guide ul ul {
+  padding-left: 20px;
+}
+.user-guide ol li, .user-guide ul li {
+  max-width: 50em;
+}
+.user-guide ol li.upper-alpha, .user-guide ul li.upper-alpha {
+  list-style-type: upper-alpha;
+}
+.user-guide ol li.lower-roman, .user-guide ul li.lower-roman {
+  list-style-type: lower-roman;
+}
+.user-guide ol.position {
+  padding-left: 1cm;
+  border: solid 2px darkgreen;
+}
+.user-guide ol.position > li {
+  border: solid 1px black;
+}
+.user-guide ol.position > li.inside {
+  list-style-position: inside;
+}
+.user-guide ol.position > li.outside {
+  list-style-position: outside;
+}
+.user-guide dl.variablelist dt span.term {
+  font-weight: bold;
+}
+.user-guide dt {
+  margin-top: 1em;
+  margin-bottom: 0.7em;
+}
+.user-guide dd {
+  margin-top: 0.7em;
+  margin-bottom: 1em;
+  margin-left: 2em;
+  text-align: justify;
+}
+.user-guide dd > :first-child {
+  margin-top: 0;
+}
+.user-guide .ingredients dt {
+  margin-top: 0em;
+}
+.user-guide .ingredients dd, .user-guide .ingredients ul {
+  margin: 0px;
+  margin-left: 2em;
+}
+.user-guide .ingredients ul {
+  list-style-type: none;
+}
+.user-guide dl.faq dt p {
+  font-weight: bold;
+}
+.user-guide dl.faq dt p .self-link {
+  opacity: 0.2;
+}
+.user-guide dl.faq dt p:target {
+  padding-top: 90px;
+  margin-top: -90px;
+}
+.user-guide dl.faq dd li {
+  list-style-position: inside;
+}
+.user-guide .toggle {
+  text-align: right;
+  opacity: 0.5;
+}
+.user-guide #ext-props {
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid lightgrey;
+  padding: 0.7em;
+}
+.user-guide span.ext {
+  background-color: #eee;
+}
+.user-guide #prop-list summary, .user-guide #js-support-table summary {
+  font-weight: bold;
+  padding: 0.7em;
+  display: block;
+}
+.user-guide #prop-list summary .self-link, .user-guide #js-support-table summary .self-link {
+  opacity: 0.2;
+}
+.user-guide #prop-list summary:hover .self-link, .user-guide #js-support-table summary:hover .self-link {
+  visibility: visible;
+}
+.user-guide #prop-list details, .user-guide #js-support-table details {
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  background-color: #e5f6ee;
+  display: block;
+}
+.user-guide #prop-list summary:focus, .user-guide #js-support-table summary:focus {
+  outline: none;
+}
+.user-guide #prop-list summary + div, .user-guide #prop-list summary + div + div, .user-guide #js-support-table summary + div, .user-guide #js-support-table summary + div + div {
+  margin-top: 0em;
+  margin-left: 0em;
+  padding: 0.7em 2em;
+}
+.user-guide #prop-list summary.ext, .user-guide #prop-list summary.ext + div, .user-guide #prop-list summary.ext + div + div, .user-guide #js-support-table summary.ext, .user-guide #js-support-table summary.ext + div, .user-guide #js-support-table summary.ext + div + div {
+  background-color: #dcede6 !important;
+  border-color: #22b573;
+  border-radius: 10px;
+}
+.user-guide #prop-list details[open] summary.ext, .user-guide #js-support-table details[open] summary.ext {
+  border-radius: 10px 10px 0px 0px;
+}
+.user-guide #prop-list details[open] summary.ext + div, .user-guide #prop-list details[open] summary.ext + div + div, .user-guide #js-support-table details[open] summary.ext + div, .user-guide #js-support-table details[open] summary.ext + div + div {
+  border-radius: 0px 0px 10px 10px;
+}
+.user-guide #prop-list details, .user-guide #js-support-table details {
+  margin: 1em 0em;
+}
+.user-guide #prop-list details details, .user-guide #js-support-table details details {
+  margin: 1em;
+}
+.user-guide #prop-list details:hover, .user-guide #js-support-table details:hover {
+  border-color: grey !important;
+}
+.user-guide #js-support-table details.object {
+  background-color: #f2f2f2;
+}
+.user-guide div.itemizedlist {
+  max-width: 50em;
+}
+.user-guide div.figure div.title, .user-guide div.table div.title, .user-guide div.figure-float-right div.title, .user-guide div.figure-float-left div.title,
+.user-guide div.table-float-right div.title, .user-guide div.table-float-left div.title,
+.user-guide div.example div.title {
+  font-weight: bold;
+  margin: 0 0 0.75em 0;
+}
+.user-guide div.figure img, .user-guide div.table img, .user-guide div.figure-float-right img, .user-guide div.figure-float-left img,
+.user-guide div.table-float-right img, .user-guide div.table-float-left img,
+.user-guide div.example img {
+  border: thin solid black;
+}
+.user-guide div.figure-float-right,
+.user-guide div.figure-float-left,
+.user-guide div.table-float-right,
+.user-guide div.table-float-left {
+  clear: both;
+  margin: 20px;
+  padding: 10px;
+  background: #F2F2F2;
+}
+.user-guide div.figure-float-right, .user-guide div.table-float-right {
+  float: right;
+}
+.user-guide div.figure-float-left, .user-guide div.figure-float-left {
+  float: left;
+}
+.user-guide div.table, .user-guide div.table-float-right, .user-guide div.table-float-left {
+  max-width: intrinsic;
+  max-width: -moz-fit-content;
+  max-width: -webkit-fit-content;
+}
+.user-guide #fig-croparea, .user-guide #fig-titlepage, .user-guide #fig-textbook, .user-guide #fig-bigtable,
+.user-guide #fig-slides, .user-guide #fig-fancyheader, .user-guide #fig-boxdecorationbreak {
+  max-width: 425px;
+  width: 33%;
+}
+.user-guide #fig-croparea img, .user-guide #fig-titlepage img, .user-guide #fig-textbook img, .user-guide #fig-bigtable img,
+.user-guide #fig-slides img, .user-guide #fig-fancyheader img, .user-guide #fig-boxdecorationbreak img {
+  width: 100%;
+}
+.user-guide #fig-marginboxes {
+  max-width: 425px;
+  width: 40%;
+}
+.user-guide #fig-marginboxes img {
+  width: 100%;
+}
+.user-guide hr.footnote-hr {
+  margin: auto;
+}
+.user-guide .footer-container {
+  clear: both;
+}
+.user-guide pre.programlisting a:link {
+  color: #0071BC;
+  text-decoration: underline;
+}
+.user-guide table {
+  border-collapse: collapse;
+  margin-bottom: 1em;
+}
+.user-guide table, .user-guide th, .user-guide td {
+  border: 1px solid black;
+  text-align: justify;
+}
+.user-guide th, .user-guide td {
+  padding: 0.2em;
+}
+.user-guide th {
+  text-align: left;
+}
+.user-guide thead {
+  text-align: center;
+  font-size: 110%;
+}
+.user-guide table.separate {
+  border-collapse: separate;
+}
+.user-guide table.collapse {
+  border-collapse: collapse;
+}
+.user-guide table.property-table {
+  border: none;
+}
+.user-guide table.property-table th, .user-guide table.property-table td {
+  border: none;
+}
+.user-guide table.property-table th {
+  white-space: nowrap;
+}
+.user-guide table.property-table td {
+  padding-left: 2.5em;
+}
+.user-guide .grid .ext td {
+  background-color: #dcede6;
+}
+.user-guide .grid + .example {
+  margin-top: 1em;
+}
+.user-guide .grid td span {
+  border: solid #090 1px;
+  padding: 0 0.1em;
+}
+.user-guide .fig-marginboxes-lightgrey {
+  background-color: #ccc;
+  padding: 0px 5px;
+}
+.user-guide .fig-marginboxes-white {
+  background-color: #fff;
+  padding: 0px 5px;
+}
+.user-guide .fig-marginboxes-yellow {
+  background-color: #ff8;
+  padding: 0px 5px;
+}
+.user-guide .fig-marginboxes-red {
+  background-color: #f88;
+  padding: 0px 5px;
+}
+.user-guide .fig-marginboxes-green {
+  background-color: #8f8;
+  padding: 0px 5px;
+}
+.user-guide .fig-marginboxes-blue {
+  background-color: #88f;
+  padding: 0px 5px;
+}
+.user-guide hr {
+  margin: auto;
+  max-width: auto;
+}
+.user-guide sup {
+  line-height: 0;
+}
+.user-guide #js-support-table {
+  padding: 10px;
+  margin-bottom: 1em;
+}
+.user-guide #js-support-table .type {
+  font-style: italic;
+  display: inline;
+}
+.user-guide #js-support-table .type::after {
+  content: " – ";
+}
+.user-guide #js-support-table .returns {
+  font-style: italic;
+}
+.user-guide #js-support-table .returns::before {
+  content: "Returns: ";
+}
+.user-guide #js-support-table .desc {
+  display: inline;
+  min-width: 40%;
+}
+.user-guide #js-support-table li.argument {
+  display: block;
+}
+.user-guide #js-support-table ul, .user-guide #js-support-table li {
+  margin: 0;
+  padding: 0;
+}
+.user-guide #js-support-table .name {
+  font-weight: bold;
+  display: inline;
+}
+.user-guide #js-support-table .name.level {
+  margin-right: 0.5em;
+}
+.user-guide #js-support-table pre {
+  background-color: #fff;
+}
+.user-guide #js-support-table .example-return {
+  display: block;
+}
+.user-guide #js-support-table .example-return::before {
+  content: " // returns: ";
+}
+.user-guide #js-support-table .argslist::before {
+  content: "(";
+  font-style: normal;
+}
+.user-guide #js-support-table .argslist::after {
+  content: ")";
+  font-style: normal;
+}
+.user-guide #js-support-table div.ext .argslist::after {
+  content: ")*";
+  font-style: normal;
+}
+.user-guide #js-support-table .argslist {
+  font-style: italic;
+}
+.user-guide #js-support-table .ext {
+  background-color: #dcede6 !important;
+  border-color: #22b573;
+}
+.user-guide #js-support-table .ext .level {
+  background-color: inherit;
+}
+.user-guide #js-support-table .ext .example {
+  background-color: #f2f2f2;
+}
+.user-guide #js-support-table .ext .ext {
+  padding-top: 0px;
+  padding-right: 0px;
+}
+.user-guide #js-support-table .url-property::before {
+  content: "See the property ";
+}
+
+#doc-install h1, #doc-prince h1, #doc-refs h1 {
+  counter-reset: h2;
+}
+#doc-install h2, #doc-prince h2, #doc-refs h2 {
+  counter-reset: h3;
+}
+#doc-install h3, #doc-prince h3, #doc-refs h3 {
+  counter-reset: h4;
+}
+#doc-install h4, #doc-prince h4, #doc-refs h4 {
+  counter-reset: h5;
+}
+#doc-install h5, #doc-prince h5, #doc-refs h5 {
+  counter-reset: h6;
+}
+#doc-install h1:before, #doc-prince h1:before, #doc-refs h1:before {
+  counter-increment: h1;
+  content: counter(h1) ". ";
+}
+#doc-install h2:before, #doc-prince h2:before, #doc-refs h2:before {
+  counter-increment: h2;
+  content: counter(h1) "." counter(h2) " ";
+}
+#doc-install h3:before, #doc-prince h3:before, #doc-refs h3:before {
+  counter-increment: h3;
+  content: counter(h1) "." counter(h2) "." counter(h3) " ";
+}
+#doc-install h4:before, #doc-prince h4:before, #doc-refs h4:before {
+  counter-increment: h4;
+  content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) " ";
+}
+#doc-install h5:before, #doc-prince h5:before, #doc-refs h5:before {
+  counter-increment: h5;
+  content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) " ";
+}
+#doc-install h6:before, #doc-prince h6:before, #doc-refs h6:before {
+  counter-increment: h6;
+  content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) " ";
+}
+
+div.chapterheading {
+  display: block;
+  font-size: 3em;
+  line-height: 1em;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  text-align: center;
+  font-variant: small-caps;
+}
+
+section#toc-contents {
+  clear: both;
+}
+section#toc-contents h2 {
+  margin-top: 0;
+  padding-top: 1.5em;
+}
+section#toc-contents ul {
+  padding-left: 20px;
+  list-style-type: none;
+}
+section#toc-contents li.curr::before {
+  content: "▸";
+  float: left;
+  margin-left: -15px;
+  width: 10px;
+  text-align: right;
+}
+
+body {
+  margin: 100px auto 0px auto;
+}
+
+.content1150 {
+  max-width: 1150px;
+  width: auto;
+}
+
+.main-frame {
+  max-width: 850px;
+  margin-bottom: 40px;
+}
+
+.toc-page-frame {
+  height: 100%;
+  overflow: auto;
+}
+
+.body-container {
+  margin: 150px auto auto auto;
+}
+
+@media all and (max-width: 1736px) {
+  .content1150 {
+    margin-left: 260px;
+  }
+}
+@media (max-width: 1200px) {
+  .content1150, .header, .subheader {
+    width: auto;
+  }
+  div.example {
+    font-size: 1.32vw;
+  }
+}
+@media (max-width: 1000px) {
+  div.example {
+    font-size: 1.32vw;
+  }
+  img, table, table td {
+    max-width: 80%;
+  }
+}
+@media (max-width: 870px) {
+  div.example {
+    font-size: 1.2vw;
+  }
+}
+@media (max-width: 760px) {
+  .content1150, .header, .subheader {
+    margin-left: auto;
+  }
+  div.example {
+    font-size: 1.899vw;
+  }
+  #scrollspy, #scrollspy:before, #propnav {
+    position: static !important;
+  }
+  .nav .nav {
+    display: none !important;
+  }
+  .nav > .active > .nav {
+    display: none !important;
+  }
+  img, table, table td {
+    max-width: 80%;
+  }
+}
+@media (max-width: 570px) {
+  div.example {
+    font-size: 1.69vw;
+  }
+  table {
+    font-size: 2.8vw;
+  }
+}
+@media (max-width: 500px) {
+  table {
+    font-size: 2vw;
+  }
+}
+h1:target {
+  padding-top: 90px;
+  margin-top: calc(0.5em - 90px);
+}
+
+h2:target {
+  padding-top: 90px;
+  margin-top: calc(0.5em - 90px);
+}
+
+h3:target {
+  padding-top: 90px;
+  margin-top: calc(0.5em - 90px);
+}
+
+h4:target {
+  padding-top: 90px;
+  margin-top: calc(0.5em - 90px);
+}
+
+h5:target {
+  padding-top: 90px;
+  margin-top: calc(0.5em - 90px);
+}
+
+h6:target {
+  padding-top: 90px;
+  margin-top: calc(0.5em - 90px);
+}
+
+@media print {
+  #scrollspy, #scrollspy:before, .header-container, .footer, .footer-menu, noscript {
+    display: none;
+  }
+  .content1150 {
+    margin-left: auto;
+  }
+  html, body {
+    background-color: white;
+  }
+  .figure {
+    page-break-inside: avoid;
+  }
+  .figure img {
+    display: block;
+    max-width: 90%;
+    height: auto;
+  }
+  h1, h2 {
+    margin-top: 3em;
+    margin-bottom: 3em;
+  }
+  div.figure, div.example, .ingredients {
+    background-color: #f2f2f2;
+    padding: 2em;
+  }
+  .ingredients {
+    padding-bottom: 3em;
+  }
+  div.example, .ingredients {
+    border: lightgrey solid thin;
+    box-decoration-break: slice;
+  }
+  #js-support-table, #js-support-table .level {
+    box-decoration-break: slice;
+  }
+  h1 {
+    text-align: center;
+    font-weight: bold;
+    page-break-before: always;
+  }
+  h2 {
+    font-weight: bold;
+  }
+  tr:first-child, thead, tr:has(> th) {
+    page-break-after: avoid;
+  }
+  div.programlisting, div.syntaxlisting, div.screen, div.syntax-block {
+    border-left: none !important;
+  }
+  * {
+    orphans: 2;
+    widows: 2;
+  }
+  div.figure, div.figure-float-right, div.figure-float-left,
+  div.table-float-right, div.table-float-left {
+    page-break-inside: avoid;
+  }
+  h1 + h2 {
+    page-break-before: avoid;
+  }
+  h2 + table {
+    page-break-before: avoid;
+  }
+  div.example pre {
+    page-break-inside: auto !important;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    font-size: 75%;
+  }
+  div.example p {
+    font-size: 75%;
+  }
+  h1.title {
+    font-size: 5.5em;
+  }
+  h1.title + p {
+    page-break-after: always;
+    text-align: center;
+  }
+  #ex-restart-page-numbers > div.title, .title, .label {
+    page-break-after: avoid !important;
+  }
+  #doc-refs .footer {
+    display: block !important;
+    page-break-before: avoid;
+    float: bottom;
+    text-align: center;
+  }
+  #doc {
+    page: title-page;
+  }
+  #toc-contents p:first-of-type {
+    content: "In this PDF you can find:";
+  }
+  #toc-contents ul li:first-child {
+    display: none;
+  }
+  #toc-contents ul + p {
+    display: none;
+  }
+  #toc-contents #section-nav {
+    display: none;
+  }
+  .procedure .figure img {
+    max-width: 45%;
+    max-height: 45%;
+  }
+  div.figure-float-right, div.table-float-right, div.figure-float-left, div.figure-float-left {
+    float: none !important;
+  }
+  a:link {
+    color: inherit;
+    font-weight: bold;
+  }
+  a[href^=http]:not([href*="princexml.com"])::after {
+    content: " [" attr(href) "]";
+    word-break: break-word;
+    font-weight: normal;
+  }
+  a[href*="/doc"]:not([href*="/samples"]):not([href*="/doc-install"])::after {
+    content: " [page " target-counter(attr(href), page) "]";
+    font-weight: normal;
+  }
+  a[href*="/docs/Mozilla"]::after {
+    content: " [" attr(href) "]" !important;
+  }
+  details {
+    box-decoration-break: slice;
+  }
+  summary {
+    page-break-after: avoid;
+  }
+  summary + div > div {
+    page-break-inside: avoid;
+  }
+  .nav, .nav .nav, .nav .nav .nav, .nav .nav .nav .nav, .nav .nav .nav .nav .nav {
+    display: inline !important;
+  }
+  .nav li > a, .nav .nav li > a, .nav .nav .nav li > a, .nav .nav .nav .nav li > a, .nav .nav .nav .nav .nav li > a {
+    font-size: 16px !important;
+  }
+  #scrollspy {
+    position: static !important;
+    display: block;
+    width: 500px !important;
+    page: toc;
+  }
+  #scrollspy a {
+    border: none !important;
+    color: black;
+    font-weight: normal;
+  }
+  #scrollspy a:after {
+    content: leader(".") target-counter(attr(href), page);
+  }
+  ul.nav, ul.nav li {
+    margin: 0px !important;
+    padding: 0px !important;
+  }
+  ul.nav li li li {
+    margin-left: 20px !important;
+  }
+  ul.nav li li li li {
+    margin-left: 0px !important;
+  }
+  .hidden-print li ul {
+    counter-reset: li;
+  }
+  .hidden-print ul li:before {
+    counter-increment: li;
+    content: counters(li, ".");
+    width: 20px;
+    text-align: right;
+    display: inline-block;
+  }
+  .hidden-print ul li ul li:before {
+    content: none;
+  }
+  div.subheader-container > div > div.submenu > ul > li > a.sub-current {
+    string-set: heading content();
+    display: block !important;
+  }
+  h1 {
+    string-set: chapter content();
+  }
+  @page {
+    @top {
+      content: string(heading) " - " string(chapter);
+      display: block !important;
+      color: grey;
+      font-size: small;
+    }
+    @bottom {
+      content: counter(page);
+      color: grey;
+    }
+  }
+  @page title-page {
+    @bottom {
+      content: none;
+    }
+    @top {
+      content: none;
+    }
+  }
+  @page toc {
+    @top {
+      content: none;
+    }
+  }
+  @prince-pdf {
+    prince-pdf-page-layout: single-page;
+  }
+}

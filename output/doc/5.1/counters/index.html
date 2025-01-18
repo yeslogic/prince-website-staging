@@ -1,0 +1,198 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<meta name="robots" content="noindex">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<title>Prince - Counters</title>
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+<div id="header-inner">
+<div><a href="/"><img src="/images/logo2.png" alt="Prince"></a></div>
+<ul id="primary-nav">
+<li><a href="/download/">Download</a></li>
+<li><a href="/purchase/">Buy Prince</a></li>
+<li><a href="/samples/">Samples</a></li>
+<li><a href="/doc/" class="curr">Documentation</a></li>
+<li><a href="/forum/">Forum</a></li>
+</ul>
+</div>
+<div id="header-shadow"></div>
+</div>
+<div id="intro"><div id="intro-inner"><h1>Counters and Numbering</h1></div></div>
+
+<div class="main">
+
+
+
+<div class="col1">
+
+<p>
+Counters are the mechanism provided by CSS to perform numbering.
+They can be used to number list items, pages, footnotes, sections and
+any other document content that needs to be numbered.
+</p>
+
+<h2>Counter reset and increment</h2>
+<p>
+The <i>counter-reset</i> property
+applies to any element and initialises one or more counters to the specified
+values, or to zero if no value is specified.
+</p>
+<p>
+Unless the resetting of a counter creates a nested counter, the scope of
+the counter includes the current element and all of its following siblings.
+</p>
+<p>
+The <i>counter-increment</i> property
+applies to any element and increments one or more counters by the specified
+values, or by one if no value is specified.
+</p>
+<p>
+The <i>counter-increment</i> and <i>counter-reset</i> properties are ignored
+on elements whose <i>display</i> property is <i>none</i>.
+</p>
+
+<div class="example">
+<p class="label">CSS</p>
+<pre class="css">
+div.example1 { counter-reset: h3 h4 }
+div.example1 h3 { counter-increment: h3 }
+div.example1 h4 { counter-increment: h4 }
+div.example1 h3::before { content: counter(h3) }
+div.example1 h4::before { 
+    content: counter(h4, lower-alpha) 
+}
+</pre>
+<p class="comment">
+This creates two counters inside the scope of
+a <i>div</i> element. All <i>h3</i> and <i>h4</i> heading elements will be
+numbered starting from 1 and the counter number will be placed before the
+heading text.
+</p>
+</div>
+
+<div class="example">
+<p class="label">CSS</p>
+<pre class="css">
+div.example2 { counter-reset: h3 }
+div.example2 h3 { 
+    counter-increment: h3;
+    counter-reset: h4
+}
+div.example2 h4 { counter-increment: h4 }
+div.example2 h3::before { content: counter(h3) }
+div.example2 h4::before { 
+    counter(h4, lower-alpha) 
+}
+</pre>
+<p class="comment">
+In this example the <i>h4</i> counter will be reset at each <i>h3</i> element,
+to produce sub-section numbering that restarts at each new section.
+</p>
+
+</div> 
+
+
+<h2>Nested counters</h2>
+<p>
+If a counter is reset on an element and the same counter has also been 
+reset on an ancestor of that element, a nested counter will be created. 
+The scope of the nested counter is the current element only and its
+final value will not be carried onto its following siblings.
+</p>
+<p>
+For example, a nested XHTML list with a <i>ul</i> element inside a <i>li</i>
+inside another <i>ul</i> creates a nested <i>list-item</i> counter.
+</p>
+<div class="example">
+<p class="label">CSS</p>
+<pre class="css">
+ol { counter-reset: list-item }
+li { counter-increment: list-item }
+li::marker { 
+    content: counters(list-item, ".", decimal);
+    color: brown;
+    font-weight: bold
+}
+</pre>
+</div>
+
+<h2>Counter styles</h2>
+<p>
+Counter values are displayed as decimal numbers by default, but they may
+be displayed using other styles such as roman numerals or consecutive letters
+of the alphabet.
+</p>
+<div class="example">
+<p class="label">CSS</p>
+<pre>
+chapter { counter-increment: chapter-num }
+
+chapter::before {
+    content: "Chapter " counter(chapter-num, upper-roman)
+}
+</pre>
+<p class="comment">
+This rule will generate text such as "Chapter IV" before each chapter, with
+the appropriate chapter number displayed in uppercase roman numerals.
+</p>
+</div>
+<p>
+The following table shows examples of the various 
+counter styles (octal, binary, lower-hexadecimal and upper-hexadecimal
+counter styles are also supported).
+</p>
+<table class="grid">
+<tr>
+<td>decimal</td>
+<td>1, 2, 3, ...</td>
+</tr>
+<tr>
+<td>decimal-leading-zero</td>
+<td>01, 02, 03, ... 09, 10, 11, ...</td>
+</tr>
+<tr>
+<td>lower-alpha<br>lower-latin</td>
+
+<td>a, b, c, ... z, aa, ab, ...</td>
+</tr>
+<tr>
+<td>upper-alpha<br>upper-latin</td>
+<td>A, B, C, ... Z, AA, AB, ...</td>
+</tr>
+<tr>
+<td>lower-roman</td>
+<td>i, ii, iii, iv, v, vi, ...</td>
+</tr>
+<tr>
+
+<td>upper-roman</td>
+<td>I, II, III, IV, V, VI, ...</td>
+</tr>
+<tr>
+<td>asterisks</td>
+<td>*, **, ***, ...</td>
+</tr>
+</table>
+
+</div>
+</div>
+
+</div>
+<script src="/js/warning.js"></script>
+<div id="footer"><div id="footer-inner">
+<p id="footer-copy">Copyright © 2002 – 2025 YesLogic Pty. Ltd.</p>
+<ul id="footer-nav">
+<li><a href="/">Home</a></li>
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+</div></div>
+</body>
+</html>

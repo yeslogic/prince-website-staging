@@ -1,0 +1,124 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<meta name="robots" content="noindex">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<title>Prince - PDF Bookmarks</title>
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+<div id="header-inner">
+<div><a href="/"><img src="/images/logo2.png" alt="Prince"></a></div>
+<ul id="primary-nav">
+<li><a href="/download/">Download</a></li>
+<li><a href="/purchase/">Buy Prince</a></li>
+<li><a href="/samples/">Samples</a></li>
+<li><a href="/doc/" class="curr">Documentation</a></li>
+<li><a href="/forum/">Forum</a></li>
+</ul>
+</div>
+<div id="header-shadow"></div>
+</div>
+<div id="intro"><div id="intro-inner"><h1>PDF Bookmarks</h1></div></div>
+
+<div class="main">
+
+
+
+<p>
+<a href="/doc/9.0/">User Guide</a> /
+<a href="/doc/9.0/#pdf">PDF Output</a>
+</p>
+
+<div class="col1">
+
+<p>
+Prince can create PDF bookmarks that link to document content.
+</p>
+
+<h2>Bookmark levels</h2>
+<p>
+PDF bookmarks have numeric levels that place them in a bookmark hierarchy.
+For example, a bookmark at level 2 can contain nested bookmarks at level 3,
+or any higher level. The level of a bookmark is controlled using the
+<i>prince-bookmark-level</i> property, shown here being applied to
+the XHTML heading elements:
+</p>
+<div class="example">
+<p class="label">CSS</p>
+<pre>
+h1 { prince-bookmark-level: 1 }
+h2 { prince-bookmark-level: 2 }
+h3 { prince-bookmark-level: 3 }
+h4 { prince-bookmark-level: 4 }
+h5 { prince-bookmark-level: 5 }
+h6 { prince-bookmark-level: 6 }
+</pre>
+</div>
+<p>
+The default value for this property is "none", which inhibits the creation
+of a bookmark for the element.
+</p>
+
+<h2>Bookmark labels</h2>
+<p>
+PDF bookmarks have textual labels that by default are copied from the text
+content of the element that generated the bookmark. The text of this label
+may be controlled using the <i>prince-bookmark-label</i> property, shown here
+being applied to a chapter element that has a title attribute:
+</p>
+<div class="example">
+<p class="label">CSS</p>
+<pre>
+chapter {
+    prince-bookmark-level: 1;
+    prince-bookmark-label: attr(title)
+}
+</pre>
+</div>
+<p>
+This property can take any content value, including literal text strings and
+counters.
+</p>
+
+<h2>Bookmark targets</h2>
+<p>
+PDF bookmarks are links that display a particular part of the document when
+activated. By default, a bookmark will link to the element that generated the
+bookmark, which is sensible behaviour for bookmarks generated from headings
+or chapter elements. It is also possible to change the target of a bookmark
+using the <i>prince-bookmark-target</i> property, which takes a URL
+directly or an attribute containing a URL:
+</p>
+<div class="example">
+<p class="label">CSS</p>
+<pre>
+bookmark { prince-bookmark-target: url(#intro) }
+bookmark { prince-bookmark-target: attr(href) }
+</pre>
+</div>
+<p>
+The default value for this property is "self", referring to the element that
+generated the bookmark.
+</p>
+
+</div>
+
+</div>
+</div>
+<script src="/js/warning.js"></script>
+<div id="footer"><div id="footer-inner">
+<p id="footer-copy">Copyright © 2002 – 2025 YesLogic Pty. Ltd.</p>
+<ul id="footer-nav">
+<li><a href="/">Home</a></li>
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+</div></div>
+</body>
+</html>

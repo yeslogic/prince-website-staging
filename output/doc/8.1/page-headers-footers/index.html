@@ -1,0 +1,202 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<meta name="robots" content="noindex">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<title>Prince - Page Headers and Footers</title>
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+<div id="header-inner">
+<div><a href="/"><img src="/images/logo2.png" alt="Prince"></a></div>
+<ul id="primary-nav">
+<li><a href="/download/">Download</a></li>
+<li><a href="/purchase/">Buy Prince</a></li>
+<li><a href="/samples/">Samples</a></li>
+<li><a href="/doc/" class="curr">Documentation</a></li>
+<li><a href="/forum/">Forum</a></li>
+</ul>
+</div>
+<div id="header-shadow"></div>
+</div>
+<div id="intro"><div id="intro-inner"><h1>Page Headers and Footers</h1></div></div>
+
+<div class="main">
+
+
+
+<p>
+<a href="/doc/8.1/">User Guide</a> /
+<a href="/doc/8.1/#paged">Paged Media</a>
+</p>
+
+<div class="col1">
+
+<p>
+Page headers and footers are created by placing content in the
+margin boxes at the top or bottom of the page box.
+</p>
+<p>
+Page headers may be placed in the following margin boxes:
+</p>
+<ul>
+<li>@top-left-corner</li>
+<li>@top-left</li>
+<li>@top or @top-center</li>
+<li>@top-right</li>
+<li>@top-right-corner</li>
+</ul>
+<p>
+Page footers may be placed in the following margin boxes:
+</p>
+<ul>
+<li>@bottom-left-corner</li>
+<li>@bottom-left</li>
+<li>@bottom or @bottom-center</li>
+<li>@bottom-right</li>
+<li>@bottom-right-corner</li>
+</ul>
+<p>
+The <i>content</i> property determines the content of margin boxes.
+The default value of the <i>content</i> property is <i>normal</i>, in
+which case the margin box is empty. The content property may be used
+to place generated content or document content in the margin box.
+</p>
+
+<h2>Using generated content</h2>
+<p>
+Generated content in page margin boxes may contain text, page numbers or
+text content copied from the document.
+</p>
+
+<div class="example">
+<p class="label">CSS</p>
+<pre class="css">
+@page { 
+    @top-left {
+	content: "TOP SECRET";
+	color: red
+    }
+    @bottom-right { 
+        content: counter(page);
+	font-style: italic
+    }
+}
+</pre>
+<p class="comment">
+The @page rule specifies that the top-left margin box will contain the text
+"TOP SECRET" in red and the bottom-right margin box
+will contain the current page number in an italic font.
+</p>
+</div>
+
+<h2>Copying text content from the document</h2>
+<p>
+Generated content in page margin boxes may also contain text content copied
+from the document using the <i>string-set</i> property:
+</p>
+
+<div class="example">
+<p class="label">CSS</p>
+<pre class="css">
+@page { 
+    @top {
+	content: string(doctitle)
+    }
+}
+
+h1 { string-set: doctitle content() }
+</pre>
+<p class="comment">
+The @page rule specifies that the top-center margin box will contain the text
+content of the document title copied from the text content of the <i>h1</i>
+element in the document.
+</p>
+</div>
+
+<h2>Taking elements from the document</h2>
+<p>
+Page margin box content may be taken from the document itself.
+Any block-level element can be removed from the normal flow and placed
+in a page margin box.
+</p>
+
+<div class="example">
+<p class="label">CSS</p>
+<pre class="css">
+@page { 
+    @top { content: flow(header) }
+}
+h1 { flow: static(header) }
+</pre>
+<p class="comment">
+The @page rule specifies that the top margin box is a new static flow
+named "header".
+</p>
+<p class="comment">
+The rule for the <i>h1</i> element moves it to the "header" static flow,
+removing it from the default normal flow.
+</p>
+</div>
+
+<p>
+Please note that:
+</p>
+<ul>
+<li>
+All <i>margin</i> properties of a non-normal 
+flow element will be ignored.
+</li>
+<li>
+The first non-normal flow element that appears on a page will be used
+on the current page and carried onto following pages.
+</li>
+</ul>
+
+<h2>Margin box properties</h2>
+<p>
+Many CSS properties can be applied to margin boxes:
+</p>
+<ul>
+<li>
+<p>
+All of the <i>margin</i>, <i>padding</i>, <i>border</i> and <i>background</i> 
+properties can be used to style margin boxes.
+</p>
+</li>
+<li>
+<p>
+The <i>vertical-align</i> property can be applied to any margin box
+to vertically align its content.
+</p>
+</li>
+<li>
+<p>
+When a margin box contains generated content, many inline style properties
+such as <i>color</i> and <i>font</i> can be applied to style the generated
+content.
+</p>
+</li>
+</ul>
+
+</div>
+</div>
+
+
+</div>
+<script src="/js/warning.js"></script>
+<div id="footer"><div id="footer-inner">
+<p id="footer-copy">Copyright © 2002 – 2025 YesLogic Pty. Ltd.</p>
+<ul id="footer-nav">
+<li><a href="/">Home</a></li>
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+</div></div>
+</body>
+</html>

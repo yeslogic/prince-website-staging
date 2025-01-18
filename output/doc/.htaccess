@@ -1,0 +1,79 @@
+
+RewriteEngine on
+RewriteBase /doc/
+
+RewriteRule ^release /releases/14/ [NE,R=301,L]
+
+# Docs:
+# Prince 12 does not have a /doc/12/ index file, so we redirect:
+RewriteRule ^12/$ /doc/12/doc-prince/ [NE,R=301,L]
+RewriteRule ^12$ /doc/12/doc-prince/ [NE,R=301,L]
+
+# Prince 13 also does not have a /doc/13/ index file, so we redirect:
+RewriteRule ^13/$ /doc/13/intro-userguide/ [NE,R=301,L]
+RewriteRule ^13$ /doc/13/intro-userguide/ [NE,R=301,L]
+
+# ...neither does Prince 14:
+RewriteRule ^14/$ /doc/14/intro-userguide/ [NE,R=301,L]
+RewriteRule ^14$ /doc/14/intro-userguide/ [NE,R=301,L]
+
+# ...nor does Prince 15:
+RewriteRule ^15/$ /doc/15/intro-userguide/ [NE,R=301,L]
+RewriteRule ^15$ /doc/15/intro-userguide/ [NE,R=301,L]
+
+# ...nor does Prince 16:
+RewriteRule ^16/$ /doc/16/intro-userguide/ [NE,R=301,L]
+RewriteRule ^16$ /doc/16/intro-userguide/ [NE,R=301,L]
+
+# Take care of direct links to old one-CSS-prop-per-file:
+RewriteRule ^css-props/([a-z]+) /doc/css-props/ [NE,R=301,L]
+
+# And now let us fix all lingering, outdated docs:
+RewriteRule ^activex$ /doc/server-integration/ [NE,R=301,L]
+RewriteRule ^activex/$ /doc/server-integration/ [NE,R=301,L]
+RewriteRule ^advanced-paged /doc/paged/ [NE,R=301,L]
+RewriteRule ^apply /doc/prince-input/ [NE,R=301,L]
+RewriteRule ^asp /doc/server-integration/ [NE,R=301,L]
+RewriteRule ^at-rules /doc/css-at-rules/ [NE,R=301,L]
+RewriteRule ^cmd-control /doc/command-line/ [NE,R=301,L]
+RewriteRule ^coldfusion /doc/server-integration/ [NE,R=301,L]
+RewriteRule ^color /doc/graphics/ [NE,R=301,L]
+RewriteRule ^columns /doc/styling/ [NE,R=301,L]
+RewriteRule ^css21 /doc/css-refs/ [NE,R=301,L]
+RewriteRule ^css-box /doc/styling/ [NE,R=301,L]
+RewriteRule ^dotnet /doc/server-integration/ [NE,R=301,L]
+RewriteRule ^faq /doc/help/ [NE,R=301,L]
+RewriteRule ^filters /doc/graphics/ [NE,R=301,L]
+RewriteRule ^floats /doc/styling/ [NE,R=301,L]
+RewriteRule ^fonts /doc/styling/ [NE,R=301,L]
+RewriteRule ^footnotes /doc/styling/ [NE,R=301,L]
+RewriteRule ^functions /doc/css-functions/ [NE,R=301,L]
+RewriteRule ^guide-index /doc/ [NE,R=301,L]
+RewriteRule ^hyphenation /doc/cookbook/ [NE,R=301,L]
+RewriteRule ^imag /doc/graphics/ [NE,R=301,L]
+RewriteRule ^installation-layout /doc/installing/ [NE,R=301,L]
+RewriteRule ^java$ /doc/server-integration/ [NE,R=301,L]
+RewriteRule ^java/$ /doc/server-integration/ [NE,R=301,L]
+RewriteRule ^layout /doc/styling/ [NE,R=301,L]
+RewriteRule ^ligatures /doc/cookbook/ [NE,R=301,L]
+RewriteRule ^lists /doc/styling/ [NE,R=301,L]
+RewriteRule ^media /doc/css-media-queries/ [NE,R=301,L]
+RewriteRule ^other-versions /doc/ [NE,R=301,L]
+RewriteRule ^pdf /doc/prince-output/ [NE,R=301,L]
+RewriteRule ^perl /doc/server-integration/ [NE,R=301,L]
+RewriteRule ^php$ /doc/server-integration/ [NE,R=301,L]
+RewriteRule ^php/$ /doc/server-integration/ [NE,R=301,L]
+RewriteRule ^properties /doc/css-props/ [NE,R=301,L]
+RewriteRule ^python /doc/server-integration/ [NE,R=301,L]
+RewriteRule ^rasterization /doc/graphics/ [NE,R=301,L]
+RewriteRule ^redefining-font-families /doc/styling/ [NE,R=301,L]
+RewriteRule ^rotating /doc/cookbook/ [NE,R=301,L]
+RewriteRule ^selectors /doc/css-selectors/ [NE,R=301,L]
+RewriteRule ^svg /doc/graphics/ [NE,R=301,L]
+RewriteRule ^tables /doc/styling/ [NE,R=301,L]
+RewriteRule ^text-formatting /doc/styling/ [NE,R=301,L]
+RewriteRule ^troubleshooting /doc/help-install/ [NE,R=301,L]
+RewriteRule ^two-pass /doc/cookbook/ [NE,R=301,L]
+RewriteRule ^watermarks /doc/cookbook/ [NE,R=301,L]
+RewriteRule ^writing-mode /doc/styling/ [NE,R=301,L]
+RewriteRule ^xml /doc/prince-input/ [NE,R=301,L]

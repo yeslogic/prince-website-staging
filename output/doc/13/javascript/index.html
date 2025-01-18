@@ -1,0 +1,249 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Scripting · Prince Documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="JavaScript can be used to transform documents by generating tables of contents and indices, sorting tables, rendering charts and graphs, and other tasks that go beyond the scope of CSS."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Scripting · Prince Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://www.princexml.com/"/><meta property="og:description" content="JavaScript can be used to transform documents by generating tables of contents and indices, sorting tables, rendering charts and graphs, and other tasks that go beyond the scope of CSS."/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://www.princexml.com/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="/js/warning.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/Prince-logo.png" alt="Prince Documentation"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/doc/" target="_self">Documentation</a></li><li class=""><a href="/doc/help" target="_self">Help</a></li><li class=""><a href="/doc/releases" target="_self">Release Notes</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>User Guide</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Installation Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/installing">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/doc/13/first-doc">Your First Document</a></li><li class="navListItem"><a class="navItem" href="/doc/13/help-install">Help</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">User Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/intro-userguide">Convert HTML to PDF</a></li><li class="navListItem"><a class="navItem" href="/doc/13/styling">Styling</a></li><li class="navListItem"><a class="navItem" href="/doc/13/paged">Paged Media</a></li><li class="navListItem"><a class="navItem" href="/doc/13/gen-content">Generated Content</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/doc/13/javascript">Scripting</a></li><li class="navListItem"><a class="navItem" href="/doc/13/graphics">Graphics</a></li><li class="navListItem"><a class="navItem" href="/doc/13/cookbook">Prince Tips and Tricks</a></li><li class="navListItem"><a class="navItem" href="/doc/13/help">Help</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-input">Prince Input</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-output">Prince Output</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-networking">Prince Networking</a></li><li class="navListItem"><a class="navItem" href="/doc/13/server-integration">Server Integration</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-for-books">Prince for Books</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Reference Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/command-line">Command-line Reference</a></li><li class="navListItem"><a class="navItem" href="/doc/13/css-refs">CSS References</a></li><li class="navListItem"><a class="navItem" href="/doc/13/css-props">CSS Properties</a></li><li class="navListItem"><a class="navItem" href="/doc/13/js-support">JavaScript Support</a></li><li class="navListItem"><a class="navItem" href="/doc/13/page-size-keywords">Page Size Keywords</a></li><li class="navListItem"><a class="navItem" href="/doc/13/characters">Character Entities</a></li><li class="navListItem"><a class="navItem" href="/doc/13/acknowledgements">Acknowledgments</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Scripting</h1></header><article><div><span><p>JavaScript can be used to transform documents by generating tables of contents and indices, sorting tables, rendering charts and graphs, and other tasks that go beyond the scope of CSS.</p>
+<p>Scripts can access and modify the input document using the W3C standard DOM (Document Object Model). Prince also supports some additional properties and methods described below.</p>
+<p>Prince is not running JavaScript by default - it needs to be explicitly enabled. See <a href="/doc/13/prince-input#applying-javascript-in-prince">Applying JavaScript in Prince</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="javascript-in-printed-media"></a><a href="#javascript-in-printed-media" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JavaScript in Printed Media</h2>
+<p>Prince is a user agent producing primarily documents meant to be printed, and as such, some limitations are in place that set it apart from most other user agents that support JavaScript.</p>
+<p>The most notable difference is the fact that a printed page cannot be interactive, being static in nature: a document cannot be modified after it is deemed to be ready for print. JavaScript can be run twice only: the first time it is run before layout, where it interacts with and modifies the layout (and the DOM structure). Once layout is finished, JavaScript can be run a second time from the <code>complete</code> event handler (see <a href="/doc/13/javascript#event-handling">Event Handling</a>). However, this time it is only allowed to inspect the layout and cannot modify the DOM. See also <a href="/doc/13/cookbook#the-two-pass-solution">The &quot;Two-Pass&quot; Solution</a>.</p>
+<p>A consequence of the non-interactive nature of printed media is that any interactive events, such as e.g. <code>onClick</code>, do not make sense, and will never fire.</p>
+<h2><a class="anchor" aria-hidden="true" id="javascript-in-prince"></a><a href="#javascript-in-prince" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JavaScript in Prince</h2>
+<p>Prince supports most of ECMAScript 5th edition (ES5), but not strict mode. Later editions of ECMAScript are not supported.</p>
+<p>JavaScript is not run by default - it needs to be explicitly enabled. See <a href="/doc/13/prince-input#applying-javascript-in-prince">Applying JavaScript in Prince</a>.</p>
+<p>In addition to normal JavaScript run in the document, Prince allows also for scripts to be passed directly to the PDF, to be executed when the PDF file is opened (<code>prince-pdf-script</code>), or triggered by specific events (<code>prince-pdf-event-scripts</code>). See <a href="/doc/13/gen-content#script-functions">Script Functions</a> and <a href="/doc/13/prince-output#pdf-actions">PDF Actions</a> for more details.</p>
+<p>These PDF scripts, known as &quot;Document Action&quot; scripts, will always be run. Note, however, that these scripts are dependent on the PDF viewer, and in many cases might only work in Adobe Acrobat products.</p>
+<p>A full list of all supported JavaScript objects, methods and properties can be found in the References section, in <a href="/doc/13/js-support">JavaScript Support</a>. Here we shall just illustrate a few highlights from Prince's JavaScript support.</p>
+<h3><a class="anchor" aria-hidden="true" id="logging"></a><a href="#logging" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Logging</h3>
+<p>The Prince log can be accessed from JavaScript via the <a href="/doc/13/js-support#window.Log"><code>Log</code></a> object (also available as <a href="/doc/13/js-support#window.Prince.Log"><code>Prince.Log</code></a>), which has the following methods:</p>
+<pre><code class="hljs css language-javascript">    Log.info(<span class="hljs-string">"message"</span>)
+    Log.warning(<span class="hljs-string">"message"</span>)
+    Log.error(<span class="hljs-string">"message"</span>)
+    Log.data(<span class="hljs-string">"name"</span>, <span class="hljs-string">"value"</span>)
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="console-access"></a><a href="#console-access" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Console Access</h3>
+<p>When running Prince from the command-line, the <code>console</code> object can be used to write messages directly to the terminal:</p>
+<pre><code class="hljs css language-javascript">    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Hello, world!"</span>)
+</code></pre>
+<p>Console access is only supported when running Prince directly from the command-line, and should not be used when calling Prince through a server wrapper or graphical user interface.</p>
+<h3><a class="anchor" aria-hidden="true" id="event-handling"></a><a href="#event-handling" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Event Handling</h3>
+<p>When the document has been fully parsed and is ready for processing, Prince will fire the <code>DOMContentLoaded</code> and <code>load</code> events on the <code>window</code> object.</p>
+<p>These load events can be captured by setting the <code>onload</code> attribute on the <code>body</code> element in HTML documents, or by setting the <code>window.onload</code> property or calling <a href="/doc/13/js-support#windowaddEventListener."><code>window.addEventListener</code></a>.</p>
+<p>When document conversion has finished, Prince will fire the <code>complete</code> event on the <code>Prince</code> object. This event can be captured by calling <code>Prince.addEventListener</code>, and is useful for logging document statistics, or for using the output for <a href="/doc/13/cookbook#the-two-pass-solution">The &quot;Two-Pass&quot; Solution</a>.</p>
+<p>When multiple documents are processed into one PDF, the <code>complete</code> event will only fire once, on the first document.</p>
+<p>User interface events such as <code>onclick</code> are not supported by Prince.</p>
+<h3><a class="anchor" aria-hidden="true" id="document-statistics"></a><a href="#document-statistics" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Document Statistics</h3>
+<p>The <a href="/doc/13/js-support#window.Prince.pageCount"><code>Prince.pageCount</code></a> property can be accessed after document conversion has finished, then logged as data for the calling process to access:</p>
+<pre><code class="hljs css language-javascript">    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">logPageCount</span>(<span class="hljs-params"></span>)
+    </span>{
+        Log.data(<span class="hljs-string">"total-page-count"</span>, Prince.pageCount);
+    }
+
+    Prince.addEventListener(<span class="hljs-string">"complete"</span>, logPageCount, <span class="hljs-literal">false</span>);
+</code></pre>
+<p>See also <a href="/doc/13/cookbook#the-two-pass-solution">The &quot;Two-Pass&quot; Solution</a> for another use of accessing document properties after the document conversion has finished.</p>
+<h3><a class="anchor" aria-hidden="true" id="the-prince-object"></a><a href="#the-prince-object" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The Prince Object</h3>
+<p>The <a href="/doc/13/js-support#window.Prince"><code>Prince</code></a> object can be used to control various scripting aspects in Prince.</p>
+<pre><code class="hljs css language-javascript">    Prince.addScriptFunc(name, <span class="hljs-function"><span class="hljs-keyword">function</span>)
+    <span class="hljs-title">Prince</span>.<span class="hljs-title">trackBoxes</span> = (<span class="hljs-params">boolean</span>)
+    <span class="hljs-title">Prince</span>.<span class="hljs-title">convertToFile</span>(<span class="hljs-params">JSON, OutputFileName, ...optional extra job resources</span>)
+    <span class="hljs-title">Prince</span>.<span class="hljs-title">convertToBuffer</span>(<span class="hljs-params">JSON, ...optional extra job resources</span>)
+</span></code></pre>
+<p>The <a href="/doc/13/js-support#window.Prince.addScriptFunc"><code>Prince.addScriptFunc</code></a> method takes two arguments: the string name that will be exposed to CSS, and the function itself. See <a href="/doc/13/gen-content#scriptfunc">Script Functions</a> for an example.</p>
+<p><a href="/doc/13/js-support#window.Prince.trackBoxes"><code>Prince.trackBoxes</code></a> is a bool that will enable the box tracking API if set to true, so that it can be used later in the <code>complete</code> event. See <a href="/doc/13/javascript#the-box-tracking-api">The Box Tracking API</a>.</p>
+<p>The <a href="/doc/13/js-support#window.Prince.convertToFile"><code>Prince.convertToFile</code></a> and <a href="/doc/13/js-support#window.Prince.convertToBuffer"><code>Prince.convertToBuffer</code></a> methods allow you to start new Prince jobs:</p>
+<pre><code class="hljs css language-javascript">    convertToFile(<span class="hljs-built_in">JSON</span>, OutputFileName, ...optional extra job resources)
+</code></pre>
+<ul>
+<li>returns bool indicating success</li>
+</ul>
+<pre><code class="hljs css language-javascript">    convertToBuffer(<span class="hljs-built_in">JSON</span>, ...optional extra job resources)
+</code></pre>
+<ul>
+<li>returns ArrayBuffer if successful, null if not</li>
+</ul>
+<p>Whereby <code>JSON</code> is a job description similar to the one specified in the <a href="/doc/13/server-integration#prince-control-protocol">Prince Control Protocol</a>, while the optional extra job resource arguments are ArrayBuffers or strings that can be referenced from the JSON using the <code>job-resource:</code> URLs. See <a href="/doc/13/server-integration#prince-control-protocol">Prince Control Protocol</a>.</p>
+<p>The property <a href="/doc/13/js-support#window.Prince.failStatus"><code>Prince.failStatus</code></a> is a boolean which can be set to trigger an explicit failure status through JavaScript, based on custom criteria. See also <a href="/doc/13/server-integration#fail-safe-options">Fail-Safe Options</a>.</p>
+<p>It can be set to true by a script that runs after layout in the <code>oncomplete</code> handler (see <a href="/doc/13/javascript#event-handling">Event Handling</a>) and checks for complex conditions, like overlapping content (see <a href="/doc/13/javascript#the-box-tracking-api">The Box Tracking API</a> and the <a href="http://www.princexml.com/forum/topic/3603/detecting-overflow">Detecting Overflow</a> sample) or some other user-defined issue that you want to trigger the fail-safe.</p>
+<p>For example, perhaps there should be only one page: you check the page count (see <a href="/doc/13/javascript#document-statistics">Document Statistics</a>), and if it's greater than one, you log a warning and trigger the fail-safe to ensure that no PDF is generated.</p>
+<h3><a class="anchor" aria-hidden="true" id="the-pdf-object"></a><a href="#the-pdf-object" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The PDF Object</h3>
+<p>The <a href="/doc/13/js-support#window.PDF"><code>PDF</code> object</a> can be used to specify PDF properties and settings, including attaching extra files to the generated PDF, similar to the <a href="/doc/13/command-line#cl-attach"><code>--attach</code></a> command-line argument:</p>
+<pre><code class="hljs css language-javascript">    PDF.attachFile(url, description?)
+
+    PDF.attachFile(<span class="hljs-string">"data.xls"</span>, <span class="hljs-string">"Latest sales figures."</span>);
+</code></pre>
+<p>Other PDF properties, which are set by assignment, include:</p>
+<pre><code class="hljs css language-javascript">    PDF.embedFonts = (boolean)
+    PDF.subsetFonts = (boolean)
+    PDF.artificialFonts = (boolean)
+
+    PDF.compress = (boolean)
+
+    PDF.encrypt = (boolean)
+    PDF.userPassword, PDF.ownerPassword = (string, can be <span class="hljs-literal">null</span>)
+    PDF.allowPrint, PDF.allowModify, PDF.allowCopy, PDF.allowAnnotate = (boolean)
+    PDF.keyBits = <span class="hljs-string">"40"</span> | <span class="hljs-string">"128"</span>
+
+    PDF.script = (string, can be <span class="hljs-literal">null</span>)
+    PDF.openAction = (eg. <span class="hljs-string">"print"</span>)
+    PDF.pageLayout = <span class="hljs-string">"single-page"</span> | <span class="hljs-string">"one-column"</span> | <span class="hljs-string">"two-column[-left/right]"</span>
+    PDF.pageMode = <span class="hljs-string">"auto"</span> | <span class="hljs-string">"show-bookmarks"</span> | <span class="hljs-string">"fullscreen"</span> | <span class="hljs-string">"show-attachments"</span>
+    PDF.printScaling = <span class="hljs-string">"auto"</span> | <span class="hljs-string">"none"</span>
+    PDF.duplex = <span class="hljs-string">"auto"</span> | <span class="hljs-string">"simplex"</span> | <span class="hljs-string">"duplex-flip-short-edge"</span> | <span class="hljs-string">"duplex-flip-long-edge"</span>
+
+    PDF.profile = (string, can be <span class="hljs-literal">null</span>)
+    PDF.outputIntent = (URL string, can be <span class="hljs-literal">null</span>)
+
+    PDF.objectStreams = (boolean)
+
+    PDF.title
+    PDF.subject
+    PDF.author
+    PDF.keywords
+    PDF.creator
+
+    PDF.lang
+</code></pre>
+<p>There is one more PDF object not mentioned so far: the <a href="/doc/13/js-support#window.PDF.pages"><code>PDF.pages</code></a> object is different from all preceding PDF objects - the latter ones are set before document conversion begins, while the former becomes available only <em>after</em> the <code>complete</code> event (see <a href="/doc/13/javascript#event-handling">Event Handling</a>) and returns a list of <em>boxes</em> - see <a href="/doc/13/javascript#the-box-tracking-api">The Box Tracking API</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="the-box-tracking-api"></a><a href="#the-box-tracking-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The Box Tracking API</h3>
+<p>The box tracking API must be enabled with <a href="/doc/13/js-support#window.Prince.trackBoxes"><code>Prince.trackBoxes</code></a> before formatting starts.</p>
+<pre><code class="hljs css language-javascript">    Prince.trackBoxes = <span class="hljs-literal">true</span>;
+</code></pre>
+<p>It then becomes available in the <code>complete</code> event (see <a href="/doc/13/javascript#event-handling">Event Handling</a>), when you can call the <a href="/doc/13/js-support#window.Element.prototype.getPrinceBoxes"><code>getPrinceBoxes()</code></a> method while iterating through the required DOM elements, to return a list of <em>boxes</em>.</p>
+<pre><code class="hljs css language-javascript">    Prince.addEventListener(<span class="hljs-string">"complete"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">var</span> xs = <span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">"ins"</span>);
+      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; xs.length; ++i)
+        {
+          <span class="hljs-keyword">var</span> ins = xs[i];
+          <span class="hljs-keyword">var</span> boxes = ins.getPrinceBoxes();
+        }
+    }, <span class="hljs-literal">false</span>);
+</code></pre>
+<p>The <a href="/doc/13/js-support#window.PDF.pages"><code>PDF.pages</code></a> array mentioned earlier (see <a href="/doc/13/javascript#the-pdf-object">The PDF Object</a>) also is available only after the <code>complete</code> event and also returns a list of <em>boxes</em> (see <a href="/doc/13/paged#page-regions">Page regions</a>).</p>
+<pre><code class="hljs css language-javascript">    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">printbox</span>(<span class="hljs-params">str,box</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">""</span>);
+      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i <span class="hljs-keyword">in</span> box) {
+        <span class="hljs-built_in">console</span>.log(str+i+<span class="hljs-string">": "</span>+box[i]);
+      }
+      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>; i&lt;box.children.length; i++) {
+        printbox(str+<span class="hljs-string">"  "</span>,box.children[i]);
+      }
+    }
+
+    Prince.addEventListener(<span class="hljs-string">"complete"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">var</span> pages = PDF.pages;
+      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i&lt;pages.length; ++i)
+        {
+          <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"PAGE "</span>+(i+<span class="hljs-number">1</span>)+<span class="hljs-string">" HAS THESE BOXES"</span>);
+          printbox(<span class="hljs-string">"  "</span>,pages[i]);
+        }
+    }, <span class="hljs-literal">false</span>);
+</code></pre>
+<p><em>Boxes</em> are JavaScript objects with some or all of the following properties:</p>
+<pre><code class="hljs">type =     &quot;BODY&quot; |
+           &quot;COLUMN&quot; |
+           &quot;FLEXLINE&quot; |
+           &quot;FOOTNOTES&quot; |
+           &quot;FLOATS&quot; |
+           &quot;BOX&quot; |
+           &quot;LINE&quot; |
+           &quot;SPAN&quot; |
+           &quot;TEXT&quot; |
+           &quot;SVG&quot; |
+           &quot;IMAGE&quot;
+pageNum =  the page of the current box
+x =        x-coordinate, in pt
+y =        y-coordinate, in pt (set to zero on some boxes)
+w =        width, in pt
+h =        height, in pt (set to zero on some boxes)
+children = array of child boxes
+parent =   parent box
+element =  DOM element for box (may be null)
+pseudo =   pseudo-element name or null
+text =     string
+src =      URL string for images
+style =    CSS style object for box
+</code></pre>
+<p>The <code>x</code>, <code>y</code>, <code>w</code> and <code>h</code> measures, defining respectively the x- and y-coordinates and the width and height of the <em>box</em>, use the same coordinate system as the PDF, i.e. the box tracking units are measured in points (<code>pt</code>) and the origin is the lower left corner of the page.</p>
+<p>The box with the value <code>BODY</code> represents the <em>page area</em> returned by <a href="/doc/13/js-support#window.PDF.pages"><code>PDF.pages</code></a> (and thus is not necessarily equivalent with the <code>body</code> element); the content of the <em>page-margin boxes</em> is not included in the tree (see <a href="/doc/13/paged#page-regions">Page regions</a> for the definition of <em>page area</em> and <em>page-margin boxes</em>).</p>
+<p>The properties of a <em>box</em> can be queried with the <a href="/doc/13/js-support#window.BoxInfo"><code>BoxInfo()</code></a> method.</p>
+<p>Since the box tracking API is available only <em>after</em> the <code>complete</code> event, it cannot be used to modify the document (see <a href="/doc/13/javascript#javascript-in-printed-media">JavaScript in Printed Media</a>).</p>
+<p>However, see <a href="/doc/13/cookbook#the-two-pass-solution">The &quot;Two-Pass&quot; Solution</a> for making use of its output. Two further sample applications of the box tracking API can be seen in the <a href="//www.princexml.com/forum/topic/3516/changebars">Changebars</a> example, and in <a href="//www.princexml.com/forum/topic/3603/detecting-overflow">Detecting Overflow</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="unsupported-dom-properties"></a><a href="#unsupported-dom-properties" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Unsupported DOM Properties</h3>
+<p>The following DOM properties are not supported in Prince:</p>
+<pre><code class="hljs css language-javascript">    <span class="hljs-built_in">document</span>.write
+    <span class="hljs-built_in">window</span>.setInterval
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/doc/13/gen-content"><span class="arrow-prev">← </span><span>Generated Content</span></a><a class="docs-next button" href="/doc/13/graphics"><span>Graphics</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#javascript-in-printed-media">JavaScript in Printed Media</a></li><li><a href="#javascript-in-prince">JavaScript in Prince</a><ul class="toc-headings"><li><a href="#logging">Logging</a></li><li><a href="#console-access">Console Access</a></li><li><a href="#event-handling">Event Handling</a></li><li><a href="#document-statistics">Document Statistics</a></li><li><a href="#the-prince-object">The Prince Object</a></li><li><a href="#the-pdf-object">The PDF Object</a></li><li><a href="#the-box-tracking-api">The Box Tracking API</a></li><li><a href="#unsupported-dom-properties">Unsupported DOM Properties</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="copyright"><div class="about-contact"><a href="/company/">About us</a> | <a href="/contact/">Contact</a></div><div class="copyright">Copyright © 2022 YesLogic Pty. Ltd.</div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '63dda203371e77ee63a05de413c3d741',
+                indexName: 'princexml',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["language:en"]}
+              });
+            </script></body></html>

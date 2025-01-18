@@ -1,0 +1,4 @@
+
+RewriteEngine on
+RewriteRule ^(.*)$ /doc/7.1/$1 [R,L]
+

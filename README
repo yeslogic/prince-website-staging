@@ -1,0 +1,7 @@
+www.princexml.com
+
+style/
+ - contains original Sass files
+
+output/
+ - contains static site upload

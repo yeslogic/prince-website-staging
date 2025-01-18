@@ -1,0 +1,706 @@
+<!DOCTYPE html><html class="p10">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/common10.css">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.min.css">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.theme.min.css">
+<title>Prince - Prince for Books</title>
+<style type="text/css" media="all">
+
+#changes>h4 {
+	color: #7d146c;
+	margin: 1.5em 0 0.5em;
+}
+
+#changes>ul,
+#changes>ul>li { margin: 0.5em 0; padding: 0; }
+
+#changes>ul>li { list-style-type: none; }
+
+</style>
+</head>
+<body>
+<div class="header-container">
+<div class="mainheader-container"><div class="header">
+<div class="logo"><a href="/"><img src="/images/Prince-logo.png" alt="Prince"></a></div>
+<div class="menu"><ul>
+<li><a href="/purchase/">
+                      Buy Prince</a></li>
+<li><a href="/samples/">
+                      Samples</a></li>
+<li><a href="/doc/">
+                      Documentation</a></li>
+<li><a href="/forum/">
+                      Forum</a></li>
+<li><a href="/download/" class="current">
+                      Download</a></li>
+</ul></div>
+<div style="clear:both"></div>
+<a class="mobile-menu-trigger"><img src="/images/menu-icon2.png" alt=""></a>
+</div></div>
+<div class="subheader-container"><div class="subheader">
+<div class="submenu"><ul>
+<li><a href="/download/15/">
+                    Prince 15</a></li>
+<li><a href="/latest/">
+                    Latest builds</a></li>
+<li><a href="/books/" class="sub-current">
+                    Prince for Books</a></li>
+<li><a href="/releases/15/">
+                    Release Notes</a></li>
+<li><a href="/download/wrappers/">
+                    Wrappers</a></li>
+</ul></div>
+<div style="clear:both"></div>
+</div></div>
+</div>
+
+<div class="body-container">
+<div class="content1150">
+<h1 class="subpages-heading2">Prince for Books</h1>
+<div class="content750">
+
+<p>Prince for Books is a project that allows us to spend more time
+on features particularly sought by publishers.</p>
+
+<p>The initial focus of work is on features common to all books:
+making the page-breaking and line-breaking choices expected of books.</p>
+
+<p>Read more in the <a href="//www.princexml.com/doc/prince-for-books/">Prince for Books</a>
+documentation section of the <a href="//www.princexml.com/doc/intro-userguide/">User Guide</a>.</p>
+
+<p>N.B. In order to benefit from the improved pagination (i.e. page makeup, where page breaks fall),
+you must specify what the pagination goals are,
+and what flexibility there is for achieving them.</p>
+
+<p>As at the 20240704 release, Prince for Books offers the following
+types of flexibility for pagination:</p>
+
+<ul>
+<li>
+ <p>‘<code>-prince-change-line-breaks-for-pagination: yes</code>’.</p>
+
+ <p>This allows Prince to adapt line breaks to pagination goals,
+  either to change the number of lines occupied by a paragraph
+  (“make a line” or “save a line”, in the language of proofreaders),
+  or to avoid hyphenating a word across a page boundary.</p>
+
+ <p>This property inherits by default, so would usually be used in a rule for the root element.</p>
+</li>
+
+<li>
+ <p>‘<code>-prince-resize-options</code>: &lt;length&gt;#’,
+  e.g. ‘<samp>blockquote { -prince-resize-options: 1rlh; }</samp>’,
+  ‘<samp>h2 { -prince-resize-options: 1rlh, 2rlh; -prince-resize-adjust: padding-start; }</samp>’.</p>
+
+ <p>This property allows Prince to add (or remove) space around an element or @footnotes region.</p>
+
+ <p>The initial value of <code>-prince-resize-adjust</code> is ‘<code>margin</code>’
+  (i.e. dividing the requested adjustment equally between top &amp; bottom margin).
+  However, for @footnotes region, Prince by default sets -prince-resize-adjust to margin-top.</p>
+
+ <p>Note that each element is considered more or less independently of the others:
+  Prince does not yet allow coordinating changes within a page or spread,
+  so be careful about applying this to headings if some pages have multiple headings.</p>
+</li>
+
+<li>
+ <p><code>-prince-spread-length-options</code> (in <code>@page</code>): <code>shorten</code> | <code>lengthen</code></p>
+
+ <p>This property allows Prince to “run a spread short” (or long),
+  i.e. leave less or more space for content on a page and its facing page.</p>
+</li>
+</ul>
+
+<p>Mechanisms that are <em>not</em> yet available
+(but which we hope to provide in future)
+include
+changing line height on a page (“feathering”, “carding”);
+changing paragraph spacing throughout a page;
+and pushing a heading etc. to the next page even when there's space for it and a couple of body lines at the end of the previous page
+(a valuable technique for some types of instructional material).</p>
+
+<p id="pagination-goals">Pagination <strong>goals</strong> can be given
+by specifying where page breaks should be avoided,
+using the properties
+‘<code>widows</code>’,
+‘<code>orphans</code>’,
+‘<code>break-before</code>/<code>-after</code>/<code>-inside</code>’.</p>
+
+<p>(In the next release, there will also be <code>-prince-min-start-length</code> and <code>-prince-min-end-length</code>, which are somewhat like <code>orphans</code> and <code>widows</code> but for divs.)</p>
+
+<p>For each of these properties, the value can optionally be preceded by the keyword ‘<code>-prince-prefer</code>’,
+which turns the requirement into a mere preference,
+which means that Prince will never add
+an obvious gap at the end of a page to satisfy that request.
+So either include or leave out <code>-prince-prefer</code> according to whether
+the request is important enough to leave a gap at the end of the page if necessary to satisfy the request.</p>
+
+<p>See the <a href="/samples/wind-in-willows/wind-in-willows.css">sample stylesheet</a>
+for the <a href="/samples/#wind-in-willows">novel sample</a>
+for how one might combine these properties to style a novel.</p>
+
+<p>N.B. Starting from the 20240704 release, Prince for Books defaults to
+“galley layout” of paragraphs: it no longer avoids hyphenating across a page boundary
+(or makes any other pagination-directed change)
+unless <code>-prince-change-line-breaks-for-pagination</code> for that paragraph
+is set to <code>yes</code>.
+This property inherits by default,
+so it suffices to add
+“<samp>:root { -prince-change-line-breaks-for-pagination: yes; }</samp>”
+to the stylesheet.</p>
+
+<div class="download-box-container">
+<h2>Downloads</h2>
+
+<div class="download-box">
+<h2 id="windows">Windows</h2>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-win64.zip">
+<span class="dl-desc">Windows 64-bit ZIP</span>
+<span class="dl-file">prince-books-20240705-win64.zip</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-win32.zip">
+<span class="dl-desc">Windows 32-bit ZIP</span>
+<span class="dl-file">prince-books-20240705-win32.zip</span>
+</a>
+</div>
+</div>
+
+<div class="download-box">
+<h2 id="macos">MacOS</h2>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-macos.zip">
+<span class="dl-desc">MacOS Universal Binary</span>
+<span class="dl-file">prince-books-20240705-macos.zip</span>
+</a>
+</div>
+</div>
+
+<div class="download-box">
+<h2 id="ubuntu">Ubuntu</h2>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books_20240705-1_ubuntu24.04_amd64.deb">
+<span class="dl-desc">Ubuntu 24.04 / x86-64 deb</span>
+<span class="dl-file">prince-books_20240705-1_ubuntu24.04_amd64.deb</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-ubuntu24.04-amd64.tar.gz">
+<span class="dl-desc">Ubuntu 24.04 / x86-64 tar.gz</span>
+<span class="dl-file">prince-books-20240705-ubuntu24.04-amd64.tar.gz</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books_20240705-1_ubuntu24.04_arm64.deb">
+<span class="dl-desc">Ubuntu 24.04 / ARM64 deb</span>
+<span class="dl-file">prince-books_20240705-1_ubuntu24.04_arm64.deb</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-ubuntu24.04-arm64.tar.gz">
+<span class="dl-desc">Ubuntu 24.04 / ARM64 tar.gz</span>
+<span class="dl-file">prince-books-20240705-ubuntu24.04-arm64.tar.gz</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books_20240705-1_ubuntu22.04_amd64.deb">
+<span class="dl-desc">Ubuntu 22.04 / x86-64 deb</span>
+<span class="dl-file">prince-books_20240705-1_ubuntu22.04_amd64.deb</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-ubuntu22.04-amd64.tar.gz">
+<span class="dl-desc">Ubuntu 22.04 / x86-64 tar.gz</span>
+<span class="dl-file">prince-books-20240705-ubuntu22.04-amd64.tar.gz</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books_20240705-1_ubuntu22.04_arm64.deb">
+<span class="dl-desc">Ubuntu 22.04 / ARM64 deb</span>
+<span class="dl-file">prince-books_20240705-1_ubuntu22.04_arm64.deb</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-ubuntu22.04-arm64.tar.gz">
+<span class="dl-desc">Ubuntu 22.04 / ARM64 tar.gz</span>
+<span class="dl-file">prince-books-20240705-ubuntu22.04-arm64.tar.gz</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books_20240705-1_ubuntu20.04_amd64.deb">
+<span class="dl-desc">Ubuntu 20.04 / x86-64 deb</span>
+<span class="dl-file">prince-books_20240705-1_ubuntu20.04_amd64.deb</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-ubuntu20.04-amd64.tar.gz">
+<span class="dl-desc">Ubuntu 20.04 / x86-64 tar.gz</span>
+<span class="dl-file">prince-books-20240705-ubuntu20.04-amd64.tar.gz</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books_20240705-1_ubuntu18.04_amd64.deb">
+<span class="dl-desc">Ubuntu 18.04 / x86-64 deb</span>
+<span class="dl-file">prince-books_20240705-1_ubuntu18.04_amd64.deb</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-ubuntu18.04-amd64.tar.gz">
+<span class="dl-desc">Ubuntu 18.04 / x86-64 tar.gz</span>
+<span class="dl-file">prince-books-20240705-ubuntu18.04-amd64.tar.gz</span>
+</a>
+</div>
+</div>
+
+<div class="download-box">
+<h2 id="redhat">Red Hat Enterprise Linux</h2>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-1.almalinux9.x86_64.rpm">
+<span class="dl-desc">AlmaLinux 9 / 64-bit rpm</span>
+<span class="dl-file">prince-books-20240705-1.almalinux9.x86_64.rpm</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-almalinux9-x86_64.tar.gz">
+<span class="dl-desc">AlmaLinux 9 / 64-bit tar.gz</span>
+<span class="dl-file">prince-books-20240705-almalinux9-x86_64.tar.gz</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-1.almalinux8.x86_64.rpm">
+<span class="dl-desc">AlmaLinux 8 / 64-bit rpm</span>
+<span class="dl-file">prince-books-20240705-1.almalinux8.x86_64.rpm</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-almalinux8-x86_64.tar.gz">
+<span class="dl-desc">AlmaLinux 8 / 64-bit tar.gz</span>
+<span class="dl-file">prince-books-20240705-almalinux8-x86_64.tar.gz</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-1.centos7.x86_64.rpm">
+<span class="dl-desc">CentOS 7 / 64-bit rpm</span>
+<span class="dl-file">prince-books-20240705-1.centos7.x86_64.rpm</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-centos7-x86_64.tar.gz">
+<span class="dl-desc">CentOS 7 / 64-bit tar.gz</span>
+<span class="dl-file">prince-books-20240705-centos7-x86_64.tar.gz</span>
+</a>
+</div>
+</div>
+
+<div class="download-box">
+<h2 id="opensuse">openSUSE</h2>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-1.opensuse154.x86_64.rpm">
+<span class="dl-desc">openSUSE 15.4 / 64-bit rpm</span>
+<span class="dl-file">prince-books-20240705-1.opensuse152.x86_64.rpm</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-opensuse15.4-x86_64.tar.gz">
+<span class="dl-desc">openSUSE 15.4 / 64-bit tar.gz</span>
+<span class="dl-file">prince-books-20240705-opensuse15.2-x86_64.tar.gz</span>
+</a>
+</div>
+</div>
+
+<div class="download-box">
+<h2 id="debian">Debian GNU/Linux</h2>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books_20240705-1_debian12_amd64.deb">
+<span class="dl-desc">Debian 12 / x86-64 deb</span>
+<span class="dl-file">prince-books_20240705-1_debian12_amd64.deb</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-debian12-amd64.tar.gz">
+<span class="dl-desc">Debian 12 / x86-64 tar.gz</span>
+<span class="dl-file">prince-books-20240705-debian12-amd64.tar.gz</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books_20240705-1_debian12_arm64.deb">
+<span class="dl-desc">Debian 12 / ARM64 deb</span>
+<span class="dl-file">prince-books_20240705-1_debian12_arm64.deb</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-debian12-arm64.tar.gz">
+<span class="dl-desc">Debian 12 / ARM64 tar.gz</span>
+<span class="dl-file">prince-books-20240705-debian12-arm64.tar.gz</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books_20240705-1_debian11_amd64.deb">
+<span class="dl-desc">Debian 11 / x86-64 deb</span>
+<span class="dl-file">prince-books_20240705-1_debian11_amd64.deb</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-debian11-amd64.tar.gz">
+<span class="dl-desc">Debian 11 / x86-64 tar.gz</span>
+<span class="dl-file">prince-books-20240705-debian11-amd64.tar.gz</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books_20240705-1_debian11_arm64.deb">
+<span class="dl-desc">Debian 11 / ARM64 deb</span>
+<span class="dl-file">prince-books_20240705-1_debian11_arm64.deb</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-debian11-arm64.tar.gz">
+<span class="dl-desc">Debian 11 / ARM64 tar.gz</span>
+<span class="dl-file">prince-books-20240705-debian11-arm64.tar.gz</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books_20240705-1_debian10_amd64.deb">
+<span class="dl-desc">Debian 10 / x86-64 deb</span>
+<span class="dl-file">prince-books_20240705-1_debian10_amd64.deb</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-debian10-amd64.tar.gz">
+<span class="dl-desc">Debian 10 / x86-64 tar.gz</span>
+<span class="dl-file">prince-books-20240705-debian10-amd64.tar.gz</span>
+</a>
+</div>
+</div>
+
+<div class="download-box">
+<h2 id="alpine">Alpine Linux</h2>
+<div class="dl-item">
+<a class="dl-link" href="/download/alpine@princexml.com-6440bfca.rsa.pub">
+<span class="dl-desc">Alpine APK public key</span>
+<span class="dl-file">alpine@princexml.com-6440bfca.rsa.pub</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-r0-alpine3.20-x86_64.apk">
+<span class="dl-desc">Alpine 3.20 / x86-64 apk</span>
+<span class="dl-file">prince-books-20240705-r0-alpine3.20-x86_64.apk</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-alpine3.20-x86_64.tar.gz">
+<span class="dl-desc">Alpine 3.20 / x86-64 tar.gz</span>
+<span class="dl-file">prince-books-20240705-alpine3.20-x86_64.tar.gz</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-r0-alpine3.19-x86_64.apk">
+<span class="dl-desc">Alpine 3.19 / x86-64 apk</span>
+<span class="dl-file">prince-books-20240705-r0-alpine3.19-x86_64.apk</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-alpine3.19-x86_64.tar.gz">
+<span class="dl-desc">Alpine 3.19 / x86-64 tar.gz</span>
+<span class="dl-file">prince-books-20240705-alpine3.19-x86_64.tar.gz</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-r0-alpine3.18-x86_64.apk">
+<span class="dl-desc">Alpine 3.18 / x86-64 apk</span>
+<span class="dl-file">prince-books-20240705-r0-alpine3.18-x86_64.apk</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-alpine3.18-x86_64.tar.gz">
+<span class="dl-desc">Alpine 3.18 / x86-64 tar.gz</span>
+<span class="dl-file">prince-books-20240705-alpine3.18-x86_64.tar.gz</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-r0-alpine3.17-x86_64.apk">
+<span class="dl-desc">Alpine 3.17 / x86-64 apk</span>
+<span class="dl-file">prince-books-20240705-r0-alpine3.17-x86_64.apk</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-alpine3.17-x86_64.tar.gz">
+<span class="dl-desc">Alpine 3.17 / x86-64 tar.gz</span>
+<span class="dl-file">prince-books-20240705-alpine3.17-x86_64.tar.gz</span>
+</a>
+</div>
+</div>
+
+<div class="download-box">
+<h2 id="linux">Generic Linux</h2>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-linux-generic-x86_64.tar.gz">
+<span class="dl-desc">Linux x86 64-bit</span>
+<span class="dl-file">prince-books-20240705-linux-generic-x86_64.tar.gz</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-linux-generic-aarch64.tar.gz">
+<span class="dl-desc">Linux ARM64</span>
+<span class="dl-file">prince-books-20240705-linux-generic-aarch64.tar.gz</span>
+</a>
+</div>
+<div class="dl-item">
+<a class="dl-link" href="/download/prince-books-20240705-linux-generic-aarch64-musl.tar.gz">
+<span class="dl-desc">Linux ARM64 (musl libc)</span>
+<span class="dl-file">prince-books-20240705-linux-generic-aarch64-musl.tar.gz</span>
+</a>
+</div>
+</div>
+
+</div>
+
+<div id="changes">
+<h2>Changes</h2>
+
+<h3>2024-07</h3>
+
+<p>
+Synchronised with Prince latest build 2022-07-04.  Provided pagination optimization.  Use a small amount of letter-spacing to justify lines where there is insufficient other justification opportunity.
+</p>
+
+<h3>2022-08</h3>
+
+<p>
+Synchronised with Prince latest build 2022-07-01.
+</p>
+
+<h3>2021-04</h3>
+
+<p>
+Synchronised with Prince 14.1.
+</p>
+
+<h3>2019-11</h3>
+
+<p>
+Synchronised with Prince 13.
+</p>
+
+<h3>2018-10</h3>
+
+<h4>MacOS X</h4>
+
+<ul><li><p>Fixed bug affecting fonts on MacOS 10.14 (Mojave).</p></li></ul>
+
+<h4>Line breaking</h4>
+<ul>
+<li>
+<p>Better handling of paragraphs containing a float, including the case of a drop cap.</p>
+
+  <p>(The line breaking will still be non-optimal around where each float starts and ends,
+  where the line width changes, but most of the paragraph will now be more consistent
+  with the rest of the document.)</p>
+ </li>
+
+<li><p>Line breaking in multi-line headings now uses lookahead by default.</p></li>
+
+
+</ul>
+
+<h3>2018-09</h3>
+
+<h4>Spread balancing</h4>
+
+<ul>
+<li><p>Change the balancedness criterion to include bottom margin, allowing that
+  margin to be truncated for purposes of deciding whether the two pages can be
+  considered to have the same length.</p></li>
+
+<li>
+ <p>New <code>@page</code> property <code>prince-page-fill</code>
+ to allow suppressing spread balancing.</p>
+
+ <p>Note that in this initial release, the value to suppress spread balancing is called <code>auto</code>,
+ whereas in future releases the value will instead be called <code>prefer-fill</code>.
+ CSS error-handling rules allow giving one declaration with each value for now.</p>
+</li>
+</ul>
+
+<h4>Line breaking</h4>
+
+<ul>
+<li><p>Make spacing in justified paragraphs less dependent on
+ the width of the font's space glyph.</p></li>
+
+<li><p>Minor other line-breaking tweaks,
+ including reducing degree of insistence on
+ the last line being a fair proportion of the measure;
+ and slight increase in insistence of
+ being at least as long as the text indent.</p></li>
+</ul>
+
+<h3>2018-06</h3>
+<p>Based on Prince 12.</p>
+
+<h4>Line breaking</h4>
+<ul>
+<li>Try harder to avoid violating a requested <code>prince-hyphenate-lines</code> limit.</li>
+<li>German:
+  <ul>
+  <li>Use different line-breaking trade-offs for paragraphs marked up as being
+    in German (as judged by the same rules as for <code>:lang(de)</code>).</li>
+  <li>Hyphenation changes.</li>
+  </ul>
+</li>
+<li>Minor other line-breaking changes.</li>
+
+</ul>
+
+<h4>Ragged line breaking</h4>
+<ul>
+<li>Change canonical property name from <code>prince-text-wrap</code> to
+<code>prince-line-break-choices</code>, but retain <code>prince-text-wrap</code>
+as alias.</li>
+
+
+<li>Renamed initial value from css-text-4–style <code>wrap</code> to <code>body</code>.</li>
+
+<li>New values '<code>body-lookahead</code>', '<code>heading-lookahead</code>',
+    '<code>title-lookahead</code>',
+to enable paragraph-at-a-time line breaking for non-justified text:
+that is, to allow revisiting an earlier line to improve a later line,
+rather than deciding line ends one at a time before seeing what problems arise
+in the rest of the paragraph.
+The *-lookahead values will usually improve line-breaking choices in ragged paragraphs
+(at the cost of using more time and memory),
+and we expect them to become the default in future releases once we've had more
+experience that they don't cause significant regression; please let us know if
+you find they make anything worse.</li>
+
+<li>New value <code>fast</code>, for quick web-browser–style line breaking:
+useful for testing the effect of styling changes that don't depend on good
+line breaking.</li>
+</ul>
+
+
+<h3>2018-04</h3>
+<h4>Hyphenation</h4>
+<ul>
+<li>Reduce aversion to hyphenation at end of a page,
+especially on verso pages,
+or if the hyphenation is at a natural break in the word,
+or if the paragraph is marked as being in German.</li>
+<li>More aversion to dividing the first word in a hyphenated phrase.</li>
+<li>Fix a problem in German hyphenation inference (wrongly breaking mid-word after ‘sch’).</li>
+</ul>
+
+<h3>2018-02</h3>
+<ul>
+<li>Hyphenation updates, mainly for chemistry terms</li>
+<li>New property <code>prince-text-wrap: wrap | heading | title</code>.
+ [Renamed to <code>prince-line-break-choices</code> in 2018-04.]</li>
+<li>Penalize breaking before a dash or ellipsis</li>
+<li>Allow breaking before or after dash</li>
+<li>Penalize word division within hyphenated phrase</li>
+<li>Fix division by zero bug</li>
+</ul>
+
+<h3>2017-07</h3>
+<h4>Hyphenation</h4>
+<ul>
+<li>Better treatment of English compound words.</li>
+<li>English dictionary based hyphenation.</li>
+</ul>
+
+<h3>2017-03</h3>
+<h4>Pagination</h4>
+<ul>
+<li>Reduce number of uneven spreads.</li>
+</ul>
+<h4>Hyphenation</h4>
+<ul>
+<li>Don't hyphenate as often for ragged text.</li>
+</ul>
+
+<h3>2015-05</h3>
+<h4>Line breaking</h4>
+<ul>
+<li>New properties
+ <a href="/doc-refs/#prop-prince-wrap-inside"><code>prince-wrap-inside</code></a>
+ and
+ <a href="/doc-refs/#prop-prince-forced-breaks"><code>prince-forced-breaks</code></a>
+ for manually influencing line-breaking decisions.
+ </li>
+</ul>
+
+<h3>2015-04</h3>
+<h4>Pagination/hyphenation</h4>
+<ul>
+<li>Try harder to avoid a hyphen at the end of a page.</li>
+</ul>
+
+<h4>Line breaking</h4>
+<ul>
+<li>Try to avoid a short last line, especially if shorter than <code>text-indent</code>.</li>
+
+<li>Weakly try to avoid a hyphen at the end of the last full line.</li>
+
+<li>Be more willing to have a loose line for the first line of a paragraph.</li>
+</ul>
+
+<h4>Command-line</h4>
+<ul>
+<li>No longer need <samp>--books</samp> flag.  Add <samp>--web-layout</samp> flag.</li>
+</ul>
+
+<h4>German language</h4>
+<ul>
+<li>Significantly improve choice of where to hyphenate a word.
+(Please let us know of cases we still get wrong!)</li>
+</ul>
+</div>
+
+
+<div id="roadmap">
+<h2>Short-term Roadmap</h2>
+
+<ul>
+
+<li>Pagination: Treat pagination as an optimization problem,
+and adjust line-breaking decisions to improve pagination.
+</li>
+
+<li>Line breaking: Improve line breaking of ragged text (such as headings and table cells).</li>
+
+<li>Pagination: Some mechanism to allow a widow line if it is at least <var>k</var>% full.</li>
+
+<li>Baseline grid: Initial simple mechanisms for a baseline grid.</li>
+
+<li>Hyphenation: Improved hyphenation choices for English, especially in compound words
+(“handwritten”).</li>
+
+</ul>
+
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="content1150 footer-container"><div class="footer">
+<div class="footer-logo">
+<img src="/images/Prince-logo-footer.png" alt=""><br>
+                Copyright © 2002 – 2025 YesLogic Pty. Ltd.
+            </div>
+<ul class="footer-menu">
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+<div style="clear:both"></div>
+</div></div>
+<script src="/js/jquery-1.12.4.min.js"></script><script src="/js/jquery-ui-1.12.1.min.js"></script><script type="text/javascript" src="/js/skrollr-simplemodal-masonry.min.js"></script><script type="text/javascript" src="/js/common.js"></script>
+</body>
+</html>

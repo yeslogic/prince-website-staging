@@ -1,0 +1,3428 @@
+<!DOCTYPE html><html class="p10">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/common10.css">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.min.css">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.theme.min.css">
+<title>Prince - Prince 10 User Guide</title>
+<link rel="stylesheet" type="text/css" href="/css/doc-style.css">
+
+<style>
+.body-and-footer-container { position: fixed; margin: 50px calc(50% - 600px) 0px; }
+.body-and-footer-container {
+    max-width: 1200px;
+}
+@media all and (max-width: 1200px) {
+    .body-and-footer-container {
+        max-width: 1000px;
+        margin: 75px auto 0px;
+    }
+}
+.subheader-container {
+    display: none;
+}
+</style>
+
+</head>
+<body class="user-guide">
+
+<div class="header-container">
+    <div class="mainheader-container">
+        <div class="header">
+            <div class="logo">
+                <a href="/"><img src="/images/Prince-logo.png" alt="Prince"></a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="/purchase/">Buy Prince</a></li>
+                    <li><a href="/samples/">Samples</a></li>
+                    <li><a class="current" href="/doc/">
+                      Documentation</a></li>
+                    <li><a href="/forum/">Forum</a></li>
+                    <li><a class="menu-cta" href="/download/">
+                      Download</a></li>
+                </ul>
+            </div>
+            <div style="clear:both"></div>
+            <a class="mobile-menu-trigger"><img src="/images/menu-icon2.png" alt=""></a>
+        </div>
+    </div>
+    <div class="subheader-container">
+        <div class="subheader">
+            <div class="submenu">
+                <ul>
+                    <li><a href="/doc-install/">Installation Guide</a></li>
+                    <li><a href="/doc-prince/">User Guide</a></li>
+                    <li><a href="/doc-refs/">Reference Guide</a></li>
+                </ul>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+    </div>
+</div>
+
+<div class="content1150 body-and-footer-container">
+<div class="body-container">
+<nav class="toc-frame">
+<section><h1><a href="/doc/10/">Contents</a></h1>
+<ul id="toc-contents" class="toc">
+<li>
+<a href="/doc/10/installing/#start">1. Getting Started</a>
+<ul>
+<li>
+<a href="/doc/10/installing/#installing">Installing Prince</a>
+<ul>
+<li>
+<a href="/doc/10/installing/#windows">Installing Prince on Windows</a>
+</li>
+
+<li>
+<a href="/doc/10/installing/#macos">Installing Prince on MacOS X</a>
+</li>
+
+<li>
+<a href="/doc/10/installing/#linux">Installing Prince on Linux</a>
+<ul>
+<li>
+<a href="/doc/10/installing/#install-debina">Debian and Ubuntu</a>
+</li>
+
+<li>
+<a href="/doc/10/installing/#install-redhat">Redhat and CentOS</a>
+</li>
+
+<li>
+<a href="/doc/10/installing/#install-suse">OpenSUSE</a>
+</li>
+
+<li>
+<a href="/doc/10/installing/#install-generic">FreeBSD, Solaris and Generic Linux</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/installing/#license-install">Installing a license file</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/first-doc/#first-doc">Your First Document</a>
+<ul>
+<li>
+<a href="/doc/10/first-doc/#lab-report">The lab report</a>
+</li>
+
+<li>
+<a href="/doc/10/first-doc/#running-prince">Processing the document</a>
+</li>
+
+<li>
+<a href="/doc/10/first-doc/#styling-lab-report">Styling the document</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/troubleshooting/#troubleshooting">If Something Didn't Work</a>
+<ul>
+<li>
+<a href="/doc/10/troubleshooting/#missing-fonts">Missing fonts</a>
+</li>
+
+<li>
+<a href="/doc/10/troubleshooting/#fontconfig">Fontconfig</a>
+</li>
+
+<li>
+<a href="/doc/10/troubleshooting/#image-formats">Image formats</a>
+</li>
+
+<li>
+<a href="/doc/10/troubleshooting/#shared-libraries">Shared library trouble</a>
+</li>
+
+<li>
+<a href="/doc/10/troubleshooting/#trouble-path-issues">PATH issues</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/css-box/#formatting">2. Formatting</a>
+<ul>
+<li>
+<a href="/doc/10/css-box/#css-box">CSS Box Model</a>
+</li>
+
+<li>
+<a href="/doc/10/tables/#tables">Tables</a>
+<ul>
+<li>
+<a href="/doc/10/tables/#tables-running-headers-footers">Running table headers and footers</a>
+</li>
+
+<li>
+<a href="/doc/10/tables/#tables-numbering-rows">Numbering table rows</a>
+</li>
+
+<li>
+<a href="/doc/10/tables/#table-auto-layout">Automatic table layout</a>
+</li>
+
+<li>
+<a href="/doc/10/tables/#table-fixed-layout">Fixed table layout</a>
+</li>
+
+<li>
+<a href="/doc/10/tables/#table-borders-seperate">Separated table borders</a>
+</li>
+
+<li>
+<a href="/doc/10/tables/#table-border-colapse">Collapsing table borders</a>
+</li>
+
+<li>
+<a href="/doc/10/tables/#table-column-span">Cells that span columns</a>
+</li>
+
+<li>
+<a href="/doc/10/tables/#table-row-span">Cells that span rows</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/lists/#lists">Lists</a>
+<ul>
+<li>
+<a href="/doc/10/lists/#list-markers">List marker position</a>
+</li>
+
+<li>
+<a href="/doc/10/lists/#list-marker-type">List marker type</a>
+</li>
+
+<li>
+<a href="/doc/10/lists/#list-marker-style">List marker style</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/images/#images">Images</a>
+<ul>
+<li>
+<a href="/doc/10/images/#images-html">Images in XHTML</a>
+</li>
+
+<li>
+<a href="/doc/10/images/#images-docbook">Images in DocBook</a>
+</li>
+
+<li>
+<a href="/doc/10/images/#images-xml">Images in arbitrary XML</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/svg/#svg">Scalable Vector Graphics (SVG)</a>
+<ul>
+<li>
+<a href="/doc/10/svg/#viewbox-viewport">Viewbox and viewport</a>
+</li>
+
+<li>
+<a href="/doc/10/svg/#svg-rect">Rectangles</a>
+</li>
+
+<li>
+<a href="/doc/10/svg/#svg-circles">Circles</a>
+</li>
+
+<li>
+<a href="/doc/10/svg/#svg-elipses">Ellipses</a>
+</li>
+
+<li>
+<a href="/doc/10/svg/#svg-lines">Lines</a>
+</li>
+
+<li>
+<a href="/doc/10/svg/#svg-polylines">Polylines</a>
+</li>
+
+<li>
+<a href="/doc/10/svg/#svg-polygons">Polygons</a>
+</li>
+
+<li>
+<a href="/doc/10/svg/#svg-paths">Paths</a>
+</li>
+
+<li>
+<a href="/doc/10/svg/#svg-text">Text</a>
+</li>
+
+<li>
+<a href="/doc/10/svg/#svg-images">Images</a>
+</li>
+
+<li>
+<a href="/doc/10/svg/#svg-links">Links</a>
+</li>
+
+<li>
+<a href="/doc/10/svg/#svg-transformations">Transformations</a>
+</li>
+
+<li>
+<a href="/doc/10/svg/#svg-style">Style Properties</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/paged/#paged">3. Paged Media</a>
+<ul>
+<li>
+<a href="/doc/10/paged/#page-styles">Styling pages</a>
+<ul>
+<li>
+<a href="/doc/10/paged/#page-size">Page size</a>
+</li>
+
+<li>
+<a href="/doc/10/paged/#page-style">Page style</a>
+</li>
+
+<li>
+<a href="/doc/10/paged/#page-header-footer">Page headers and footers</a>
+</li>
+
+<li>
+<a href="/doc/10/paged/#page-gen-content">Generated content in headers and footers</a>
+</li>
+
+<li>
+<a href="/doc/10/paged/#footnotes">Footnotes</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/paged/#page-rules">Some @page selectors</a>
+<ul>
+<li>
+<a href="/doc/10/paged/#page-sel-first-nth-left-right">
+    The :first, :Nth,
+    :left and :right page selectors
+  </a>
+</li>
+
+<li>
+<a href="/doc/10/paged/#named-pages">Named pages</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/paged/#controlling-pagination">Controlling pagination</a>
+<ul>
+<li>
+<a href="/doc/10/paged/#page-breaks">Page breaks</a>
+</li>
+
+<li>
+<a href="/doc/10/paged/#widows-and-orphans">Widows and orphans</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/paged/#paged-advanced">Advanced paged media examples</a>
+<ul>
+<li>
+<a href="/doc/10/paged/#paged-blank">The :blank page selector</a>
+</li>
+
+<li>
+<a href="/doc/10/paged/#page-groups">Page groups</a>
+</li>
+
+<li>
+<a href="/doc/10/paged/#page-breaks-decoration">Page breaks and decoration</a>
+</li>
+
+<li>
+<a href="/doc/10/paged/#wide-content-sideways">Printing wide content sideways</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/apply-css/#css">4. Prince Input</a>
+<ul>
+<li>
+<a href="/doc/10/apply-css/#apply-css">Applying Style Sheets</a>
+<ul>
+<li>
+<a href="/doc/10/apply-css/#css-import">Importing Style Sheets</a>
+</li>
+
+<li>
+<a href="/doc/10/apply-css/#css-conflicting-declarations">Conflicting Declarations</a>
+</li>
+
+<li>
+<a href="/doc/10/apply-css/#css-priorities">Priority Determination</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/xml/#xml">XML Input</a>
+<ul>
+<li>
+<a href="/doc/10/xml/#xml-input">XML Input</a>
+<ul>
+<li>
+<a href="/doc/10/xml/#xml-validation">Validation</a>
+</li>
+
+<li>
+<a href="/doc/10/xml/#xml-lang">xml:lang</a>
+</li>
+
+<li>
+<a href="/doc/10/xml/#xml-id">xml:id</a>
+</li>
+
+<li>
+<a href="/doc/10/xml/#xml-base">xml:base</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/xml/#xml-style">XML Styling</a>
+</li>
+
+<li>
+<a href="/doc/10/xml/#xinclude">XML Inclusions (XInclude)</a>
+<ul>
+<li>
+<a href="/doc/10/xml/#xml-include">Including XML files</a>
+</li>
+
+<li>
+<a href="/doc/10/xml/#xml-include-text">Including text files</a>
+</li>
+
+<li>
+<a href="/doc/10/xml/#xml-fallback">Fallback</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/javascript/#javascript">Using JavaScript with Prince</a>
+<ul>
+<li>
+<a href="/doc/10/javascript/#js-logging">Logging</a>
+</li>
+
+<li>
+<a href="/doc/10/javascript/#js-console">Console access</a>
+</li>
+
+<li>
+<a href="/doc/10/javascript/#js-event">Event handling</a>
+</li>
+
+<li>
+<a href="/doc/10/javascript/#js-document-stats">Document statistics</a>
+</li>
+
+<li>
+<a href="/doc/10/javascript/#js-pdf">PDF properties</a>
+</li>
+
+<li>
+<a href="/doc/10/javascript/#js-unsupported">Unsupported DOM properties</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/pdf-output/#pdf-output">5. Prince Output</a>
+<ul>
+<li>
+<a href="/doc/10/pdf-output/#output-options">PDF Output Options</a>
+<ul>
+<li>
+<a href="/doc/10/pdf-output/#pdf-compression">PDF Compression</a>
+</li>
+
+<li>
+<a href="/doc/10/pdf-output/#pdf-font-embedding">Font Embedding</a>
+</li>
+
+<li>
+<a href="/doc/10/pdf-output/#postscript">Creating PostScript output</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/pdf-bookmarks/#pdf-bookmarks">PDF Bookmarks</a>
+<ul>
+<li>
+<a href="/doc/10/pdf-bookmarks/#bookmark-levels">Bookmark levels</a>
+</li>
+
+<li>
+<a href="/doc/10/pdf-bookmarks/#bookmark-labels">Bookmark labels</a>
+</li>
+
+<li>
+<a href="/doc/10/pdf-bookmarks/#bookmark-targets">Bookmark targets</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/pdf-metadata/#pdf-metadata">PDF Metadata</a>
+</li>
+
+<li>
+<a href="/doc/10/pdf-profiles/#pdf-profiles">PDF Profiles</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/java/#wrappers">6. Server Integration</a>
+<ul>
+<li>
+<a href="/doc/10/java/#java">Using Prince from Java</a>
+</li>
+
+<li>
+<a href="/doc/10/dotnet/#csharp">Using Prince from .NET with C#</a>
+</li>
+
+<li>
+<a href="/doc/10/dotnet/#vb.net">Using Prince from .NET with VB.NET</a>
+</li>
+
+<li>
+<a href="/doc/10/python/#python">Using Prince from Python</a>
+</li>
+
+<li>
+<a href="/doc/10/perl/#perl">Using Prince from Perl</a>
+</li>
+
+<li>
+<a href="/doc/10/php/#php">Using Prince from PHP</a>
+</li>
+
+<li>
+<a href="/doc/10/asp/#asp">Using Prince from ASP</a>
+</li>
+
+<li>
+<a href="/doc/10/coldfusion/#coldfusion">Using Prince from ColdFusion</a>
+<ul>
+<li>
+<a href="/doc/10/coldfusion/#cf-java">Using Java</a>
+</li>
+
+<li>
+<a href="/doc/10/coldfusion/#cf-activex">Using ActiveX/COM</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/activex/#activex">Using Prince from ActiveX / COM / Visual Basic</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/gen-content/#tips-and-tricks">7. Prince Tips and Tricks</a>
+<ul>
+<li>
+<a href="/doc/10/gen-content/#gen-content">Generated Content</a>
+<ul>
+<li>
+<a href="/doc/10/gen-content/#content-header-footer">Page headers and footers</a>
+</li>
+
+<li>
+<a href="/doc/10/gen-content/#content-list-markers">List markers</a>
+</li>
+
+<li>
+<a href="/doc/10/gen-content/#content-footnote-markers">Footnote markers</a>
+</li>
+
+<li>
+<a href="/doc/10/gen-content/#content-before-after">Before and After pseudo-elements</a>
+</li>
+
+<li>
+<a href="/doc/10/gen-content/#counters">Counters and Numbering</a>
+<ul>
+<li>
+<a href="/doc/10/gen-content/#counters">Counter reset and increment</a>
+</li>
+
+<li>
+<a href="/doc/10/gen-content/#counters-nested">Nested counters</a>
+</li>
+
+<li>
+<a href="/doc/10/gen-content/#counter-styles">Counter styles</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/gen-content/#crossref">Cross-references</a>
+<ul>
+<li>
+<a href="/doc/10/gen-content/#counter-target">Using target-counter</a>
+</li>
+
+<li>
+<a href="/doc/10/gen-content/#target-content">Using target-content</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/gen-content/#scriptfunc">Script Functions</a>
+<ul>
+<li>
+<a href="/doc/10/gen-content/#content-date-time">Accessing the current date and time</a>
+</li>
+
+<li>
+<a href="/doc/10/gen-content/#counter-user-styles">User-defined counter styles</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/gen-content/#content-margin-boxes">Using generated content in margin boxes</a>
+</li>
+
+<li>
+<a href="/doc/10/gen-content/#content-copying-text">Copying text content from the document</a>
+</li>
+
+<li>
+<a href="/doc/10/gen-content/#content-taking-elements">Taking elements from the document</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/imaging/#imaging">Imaging and color</a>
+<ul>
+<li>
+<a href="/doc/10/imaging/#color">Color (RGB, CMYK, spot colors)</a>
+<ul>
+<li>
+<a href="/doc/10/imaging/#color-rgb">RGB</a>
+</li>
+
+<li>
+<a href="/doc/10/imaging/#color-rgba">RGBA</a>
+</li>
+
+<li>
+<a href="/doc/10/imaging/#color-cmyk">CMYK</a>
+</li>
+
+<li>
+<a href="/doc/10/imaging/#color-spot">Spot colors</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/fonts/#fonts">8. Fonts</a>
+<ul>
+<li>
+<a href="/doc/10/fonts/#font-families">Generic font families</a>
+</li>
+
+<li>
+<a href="/doc/10/redefining-font-families/#redefining-font-families">Redefining the generic font families</a>
+</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section><h1>Reference Guide</h1>
+<ul id="toc-appendices" class="toc">
+<li>
+<a href="/doc/10/command-line/#command-line">A1. Command-line Reference</a>
+<ul>
+<li>
+<a href="/doc/10/command-line/#cmd-examples">Examples</a>
+</li>
+
+<li>
+<a href="/doc/10/command-line/#cmd-input-output">Specifying input and output</a>
+</li>
+
+<li>
+<a href="/doc/10/command-line/#cmd-options">Options</a>
+<ul>
+<li>
+<a href="/doc/10/command-line/#cmd-general">General Options</a>
+</li>
+
+<li>
+<a href="/doc/10/command-line/#cmd-logging">Logging Options</a>
+</li>
+
+<li>
+<a href="/doc/10/command-line/#cmd-input">Input Options</a>
+</li>
+
+<li>
+<a href="/doc/10/command-line/#cmd-network">Network Options</a>
+</li>
+
+<li>
+<a href="/doc/10/command-line/#cmd-js">JavaScript Options</a>
+</li>
+
+<li>
+<a href="/doc/10/command-line/#cmd-css">CSS Options</a>
+</li>
+
+<li>
+<a href="/doc/10/command-line/#cmd-pdf">PDF Output Options</a>
+</li>
+
+<li>
+<a href="/doc/10/command-line/#cmd-pdf-metadata">PDF Metadata Options</a>
+</li>
+
+<li>
+<a href="/doc/10/command-line/#cmd-pdf-crypto">PDF Encryption Options</a>
+</li>
+
+<li>
+<a href="/doc/10/command-line/#cmd-util">Utility Options</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#selectors">A2. CSS Selectors</a>
+<ul>
+<li>
+<a href="/doc/10/selectors/#sel-universal">Universal Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-type">Type Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-decendent">Descendant Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-child">Child Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-direct-sibling">Direct Sibling Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-indirect-sibling">Indirect Sibling Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-attribute">Attribute Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-class">Class Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-id">ID Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-link">Link Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-language">Language Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-contains">Contains Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-root">Root Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-empty">Empty Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-negation">Negated Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-child">Child Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-typed-child">Typed Child Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-nth-child">Nth Child Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-nth-last-child">Nth Last Child Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-nth-type">Nth of Type Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-nth-last-type">Nth Last of Type Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-pseudo">Pseudo-element Selectors</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/properties/">A3. CSS Properties</a>
+<ul>
+<li>
+<a href="/doc/10/properties/background/">background</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/background-attachment/">background-attachment</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/background-clip/">background-clip</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/background-color/">background-color</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/background-image/">background-image</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/background-origin/">background-origin</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/background-position/">background-position</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/background-repeat/">background-repeat</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/background-size/">background-size</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border/">border</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-bottom/">border-bottom</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-bottom-color/">border-bottom-color</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-bottom-left-radius/">border-bottom-left-radius</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-bottom-right-radius/">border-bottom-right-radius</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-bottom-style/">border-bottom-style</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-bottom-width/">border-bottom-width</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-clip/">border-clip</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-collapse/">border-collapse</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-color/">border-color</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-left/">border-left</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-left-color/">border-left-color</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-left-style/">border-left-style</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-left-width/">border-left-width</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-radius/">border-radius</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-right/">border-right</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-right-color/">border-right-color</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-right-style/">border-right-style</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-right-width/">border-right-width</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-spacing/">border-spacing</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-style/">border-style</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-top/">border-top</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-top-color/">border-top-color</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-top-left-radius/">border-top-left-radius</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-top-right-radius/">border-top-right-radius</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-top-style/">border-top-style</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-top-width/">border-top-width</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-width/">border-width</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/bottom/">bottom</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/box-decoration-break/">box-decoration-break</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/box-sizing/">box-sizing</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/caption-side/">caption-side</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/clear/">clear</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/clip/">clip</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/clip-path/">clip-path</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/clip-rule/">clip-rule</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/color/">color</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/column-break-after/">column-break-after</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/column-break-before/">column-break-before</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/column-count/">column-count</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/column-fill/">column-fill</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/column-gap/">column-gap</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/column-rule/">column-rule</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/column-rule-color/">column-rule-color</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/column-rule-style/">column-rule-style</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/column-rule-width/">column-rule-width</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/column-span/">column-span</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/column-width/">column-width</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/columns/">columns</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/content/">content</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/counter-increment/">counter-increment</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/counter-reset/">counter-reset</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/direction/">direction</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/display/">display</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/empty-cells/">empty-cells</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/float/">float</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/font/">font</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/font-family/">font-family</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/font-size/">font-size</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/font-stretch/">font-stretch</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/font-style/">font-style</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/font-variant/">font-variant</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/font-weight/">font-weight</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/footnote-style-position/">footnote-style-position</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/height/">height</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/hyphens/">hyphens</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/left/">left</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/letter-spacing/">letter-spacing</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/line-height/">line-height</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/line-stacking-strategy/">line-stacking-strategy</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/list-style/">list-style</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/list-style-image/">list-style-image</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/list-style-position/">list-style-position</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/list-style-type/">list-style-type</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/margin/">margin</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/margin-bottom/">margin-bottom</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/margin-inside/">margin-inside</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/margin-left/">margin-left</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/margin-outside/">margin-outside</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/margin-right/">margin-right</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/margin-top/">margin-top</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/marks/">marks</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/max-height/">max-height</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/max-width/">max-width</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/min-height/">min-height</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/min-width/">min-width</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/opacity/">opacity</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/orphans/">orphans</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/overflow/">overflow</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/overflow-wrap/">overflow-wrap</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/padding/">padding</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/padding-bottom/">padding-bottom</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/padding-left/">padding-left</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/padding-right/">padding-right</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/padding-top/">padding-top</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/page/">page</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/page-break-after/">page-break-after</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/page-break-before/">page-break-before</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/page-break-inside/">page-break-inside</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/position/">position</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-background-image-resolution/">prince-background-image-resolution</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-bleed/">prince-bleed</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-bookmark-label/">prince-bookmark-label</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-bookmark-level/">prince-bookmark-level</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-bookmark-state/">prince-bookmark-state</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-bookmark-target/">prince-bookmark-target</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-caption-page/">prince-caption-page</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-flow/">prince-flow</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-footnote-policy/">prince-footnote-policy</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-forced-breaks/">prince-forced-breaks</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-hyphenate-after/">prince-hyphenate-after</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-hyphenate-before/">prince-hyphenate-before</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-hyphenate-lines/">prince-hyphenate-lines</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-hyphenate-patterns/">prince-hyphenate-patterns</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-image-magic/">prince-image-magic</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-image-resolution/">prince-image-resolution</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-linebreak-magic/">prince-linebreak-magic</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-link/">prince-link</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-mark-length/">prince-mark-length</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-mark-offset/">prince-mark-offset</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-page-group/">prince-page-group</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-pdf-destination/">prince-pdf-destination</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-pdf-link-type/">prince-pdf-link-type</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-pdf-open-action/">prince-pdf-open-action</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-pdf-output-intent/">prince-pdf-output-intent</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-pdf-page-label/">prince-pdf-page-label</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-pdf-page-layout/">prince-pdf-page-layout</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-pdf-page-mode/">prince-pdf-page-mode</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-pdf-paper-tray/">prince-pdf-paper-tray</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-pdf-print-scaling/">prince-pdf-print-scaling</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-pdf-profile/">prince-pdf-profile</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-pdf-script/">prince-pdf-script</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-rotate-body/">prince-rotate-body</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-shrink-to-fit/">prince-shrink-to-fit</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-text-justify/">prince-text-justify</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-text-replace/">prince-text-replace</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-trim/">prince-trim</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-wrap-inside/">prince-wrap-inside</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/right/">right</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/size/">size</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/string-set/">string-set</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/table-baseline/">table-baseline</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/table-column-span/">table-column-span</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/table-layout/">table-layout</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/table-row-span/">table-row-span</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/text-align/">text-align</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/text-align-last/">text-align-last</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/text-decoration/">text-decoration</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/text-indent/">text-indent</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/text-line-through/">text-line-through</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/text-line-through-color/">text-line-through-color</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/text-line-through-style/">text-line-through-style</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/text-overflow/">text-overflow</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/text-overline/">text-overline</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/text-overline-color/">text-overline-color</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/text-overline-style/">text-overline-style</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/text-transform/">text-transform</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/text-underline/">text-underline</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/text-underline-color/">text-underline-color</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/text-underline-style/">text-underline-style</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/top/">top</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/transform/">transform</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/transform-origin/">transform-origin</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/unicode-bidi/">unicode-bidi</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/vertical-align/">vertical-align</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/visibility/">visibility</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/white-space/">white-space</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/widows/">widows</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/width/">width</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/word-break/">word-break</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/word-spacing/">word-spacing</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/writing-mode/">writing-mode</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/z-index/">z-index</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/css21/#appendix">A4. Appendix</a>
+<ul>
+<li>
+<a href="/doc/10/css21/#css21">Unsupported features in CSS 2.1</a>
+</li>
+
+<li>
+<a href="/doc/10/page-size-keywords/#page-size-keywords">Page Size Keywords</a>
+</li>
+
+<li>
+<a href="/doc/10/characters/#characters">Character Entities</a>
+<ul>
+<li>
+<a href="/doc/10/characters/#accented-letters">Accented Letters</a>
+</li>
+
+<li>
+<a href="/doc/10/characters/#symbols">Symbols</a>
+</li>
+
+<li>
+<a href="/doc/10/characters/#quotes">Quotes</a>
+</li>
+
+<li>
+<a href="/doc/10/characters/#accents">Accents</a>
+</li>
+
+<li>
+<a href="/doc/10/characters/#chars-mixc">Miscellaneous</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/acknowledgements/#acknowledgements">A5. Acknowledgements</a>
+</li>
+</ul>
+
+</section>
+</nav><div class="main-frame">
+
+<section id="paged">
+  <h1>Paged Media</h1>
+
+
+
+
+<p>
+The major difference between formatting for the web and PDF/Print is that
+PDF is paginated,
+content is placed on discrete pages.
+Prince allows you to control a number of options that affect how PDF formats
+pages, from straight-forward options such as page size,
+to decorations, headers and footers, numbering and page breaking options.
+</p>
+
+<p>
+
+CSS properties that affect pages are specified within
+page <i>at-rules</i>.
+For example we can use the size property within the <code>@page</code> rule
+to specify the page size
+(see <a href="/doc/10/paged/#page-size">Page size</a>).
+</p>
+
+<div class="programlisting">
+<code language="CSS"><pre>
+@page {
+    <a href="/doc-refs/#prop-size">size</a>: A4
+}
+</pre></code>
+</div>
+
+<p>
+In this section we will show most of the properties that can be specified
+within a page rule,
+then we will show how pagination can be controlled and how page styles can
+be applied to selected pages.
+</p>
+
+<section id="page-styles">
+  <h2>Styling pages</h2>
+
+
+<p>
+Most of the properties that can be applied to pages are straight forward and
+will be discussed now.
+Other properties require an understanding of <a href="/doc/10/paged/#page-rules">Some @page selectors</a>,
+therefore we discuss them after that section.
+These include page breaking (<a href="/doc/10/paged/#page-breaks">Page breaks</a>) and
+rotating wide content to fit on a page, and use of the <code>:blank</code>
+selector (<a href="/doc/10/paged/#paged-advanced">Advanced paged media examples</a>).
+</p>
+
+<section id="page-size"><h3>Page size</h3>
+
+
+
+
+<p>
+Page size can be specified using the
+<a href="/doc-refs/#prop-size">size</a> property in <i>length</i> units or by
+a page size keyword (see <a href="/doc/10/page-size-keywords/#page-size-keywords">Page Size Keywords</a> for a list)
+optionally combined with the <code>portrait</code> or <code>landscape</code>
+keyword.
+</p>
+
+<div class="programlisting">
+<code language="CSS"><pre>
+/* Use A4 paper */
+@page { <a href="/doc-refs/#prop-size">size</a>: A4 }
+
+/* Use A4 paper in landscape orientation */
+@page { size: A4 landscape }
+
+/* These two custom sizes are equivalent */
+@page { size: 30cm 40cm }
+@page { size: 40cm 30cm landscape }
+
+/* Use square paper, this sets width and height */
+@page { size: 30cm }
+</pre></code>
+</div>
+
+<p>
+Sometimes it can be useful to specify the page dimensions in pixels,
+for example when creating presentation slides.
+(see <a href="/doc/10/paged/#presentation-slides">Presentation slides</a>).
+</p>
+
+<div class="programlisting">
+<code language="CSS"><pre>
+@page { size: 1280px 960px }
+</pre></code>
+</div>
+
+
+</section>
+
+<section id="page-style">
+  <h3>Page style</h3>
+
+
+
+
+<p>
+Pages, like other block level elements, follow the CSS box model
+introduced in <a href="/doc/10/css-box/#css-box">CSS Box Model</a>.
+Their
+<i>
+<a href="/doc/10/properties/padding/">padding</a>
+</i>,
+<i>
+<a href="/doc/10/properties/border/">border</a>
+</i>,
+<i>
+<a href="/doc/10/properties/margin/">margins</a>
+</i> and
+<i>
+<a href="/doc/10/properties/background/">background</a>
+</i>
+can be styled within <code>@page</code> rules.
+</p>
+
+<div class="programlisting">
+<code language="CSS"><pre>
+@page {
+    <a href="/doc-refs/#prop-margin">margin</a>: 2cm;
+}
+</pre></code>
+</div>
+
+<p>
+Prince also supports the <code>margin-outside</code> and
+<code>margin-inside</code> properties.
+These allow you to specify different margins for the inside and outside
+edges of paper as it is bound into a book.
+For example it may be necessary to have a larger inside margin
+(sometimes called a <i>gutter</i>)
+so that after some of the margin is used by the binding, the remaining
+margins are even.
+</p>
+
+<div class="programlisting">
+<code language="CSS"><pre>
+@page {
+    <a href="/doc-refs/#prop-margin">margin</a>: 2cm;
+    <a href="/doc-refs/#prop-margin-inside">margin-inside</a>: 3cm;
+}
+</pre></code>
+</div>
+
+<p>
+  This is used in <a href="/doc/10/paged/#ex:fancyheader">Fancy headers</a>
+</p>
+
+<div class="figure-float-right" id="fig-croparea">
+  <div class="title">
+    Furniture catalogue example
+  </div>
+  <img src="/images/doc-10//croparea-1.colour.png" alt="Furniture catalogue with bleed and trim areas for printing and       cropping.  The background image is larger than the page (but not the       paper), by cutting where the crop marks indicate the background image       extends right to the edge of the page.">
+  <div class="caption">
+      The furniture catalogue with bleed and trim areas for printing and
+      cropping.
+      Download the <a href="/samples/doc-10/croparea.pdf">PDF</a>
+      or the <a href="/samples/doc-10/croparea.html">HTML</a>
+      and <a href="/samples/doc-10/croparea.css">CSS</a>.
+  </div>
+</div>
+
+
+
+<p>
+When typesetting a magazine or flyer it can be useful to print right to the
+edge of the paper.
+However most printers will refuse do do this.
+It is better to print on larger stock and then crop the paper to
+the correct size.
+If you use the <a href="/doc-refs/#prop-marks">marks</a> property prince will create
+<i>bleed</i> and <i>trim</i> areas around your
+content (and declared page size).
+This can be seen in our catalogue example.
+This example has been adapted from the
+<a href="https://github.com/yeslogic/prince-samples/tree/master/website_samples/catalogue">
+Catalogue sample</a> in the
+<a href="https://github.com/yeslogic/prince-samples">
+Prince samples repository</a>.
+</p>
+
+<div class="programlisting">
+<code language="CSS"><pre>
+@page{
+    <a href="/doc-refs/#prop-size">size</a>: 8.5in 10.5in;
+    <a href="/doc-refs/#prop-margin">margin</a>: 0;
+    <a href="/doc-refs/#prop-background">background</a>: url("images/CatalogueCover.jpg");
+    <a href="/doc-refs/#prop-background-position">background-position</a>: center;
+    <a href="/doc-refs/#prop-background-size">background-size</a>: 104%;
+    <a href="/doc-refs/#prop-background-repeat">background-repeat</a>: no-repeat;
+    <a href="/doc-refs/#prop-marks">marks</a>: crop cross;
+    <a href="/doc-refs/#prop-prince-bleed">prince-bleed</a>: 0.25in;
+    <a href="/doc-refs/#prop-prince-trim">prince-trim</a>: 0.25in;
+}
+</pre></code>
+</div>
+
+<p>
+This example uses some of the properties that we introduced above,
+plus three new ones:
+<a href="/doc-refs/#prop-marks">marks</a>,
+<a href="/doc-refs/#prop-prince-bleed">prince-bleed</a> and
+<a href="/doc-refs/#prop-prince-trim">prince-trim</a>.
+These options enable crop and cross marks and specify bleed and trim areas.
+Note that size of the content does not change when we add these options,
+the <i>page</i> is still 8.5in by 10.5in as specified by the
+<code>size</code> property.
+Instead 0.25in of bleed area and 0.25in of trim area has been added to each
+edge (1in total).
+Therefore we will need to print on 9.5in by 11.5in paper.
+Prince will print solid background colours and repeating pictures into the
+bleed area.
+In this example we set the background size to 104% so that it would print
+into the bleed area.
+</p>
+
+<p>
+Prince also allows the placement and length of the crop marks to be
+specified with the
+<a href="/doc-refs/#prop-prince-mark-offset">prince-mark-offset</a> and
+<a href="/doc-refs/#prop-prince-mark-length">prince-mark-length</a> properties.
+</p>
+
+
+</section>
+
+<section id="page-header-footer">
+  <h3>Page headers and footers</h3>
+
+
+
+
+<div class="figure-float-right" id="fig-marginboxes">
+  <div class="title">
+    Margin boxes
+  </div>
+  <img src="/images/doc-10//marginboxes-1.colour.png" alt="A page with content in some of its margin boxes.">
+  <div class="caption">
+    A page with content in some of its margin boxes.
+  </div>
+</div>
+
+<p>
+Most content appears inside the <i>page box</i> of one or more
+pages.
+Surrounding the page box, within the margin area, are the
+<i>margin boxes</i>.
+Figure <a href="/doc/10/paged/#fig-marginboxes">
+    Margin boxes
+  </a> shows the positions of some
+margin boxes.
+In this figure the <code>@page</code> background is a
+<span class="fig-marginboxes-lightgrey">grey</span>
+and <var>body</var>'s background is
+<span class="fig-marginboxes-white">white</span>.
+The first four margin boxes:
+<code>@top</code>,
+<code>@bottom</code>,
+<code>@left</code> and
+<code>@right</code> are easy to understand and are shown in
+<span class="fig-marginboxes-yellow">yellow</span>
+and <span class="fig-marginboxes-red">red</span>.
+Each of these margin boxes has a synonym ending in <code>-center</code>,
+for instance <code>@top-center</code> is the same as <code>@top</code>.
+You can place content in a margin box with the <a href="/doc-refs/#prop-content">content</a>
+property.
+For example you can print the current page number at the bottom of each
+page (see <a href="/doc/10/gen-content/#gen-content">Generated Content</a>):
+</p>
+
+<div class="programlisting">
+<code language="CSS"><pre>
+@page {
+    @bottom {
+        <a href="/doc-refs/#prop-content">content</a>: counter(page)
+    }
+}
+</pre></code>
+</div>
+
+<p>
+<a href="/doc/10/paged/#fig-titlepage">Novel title page example</a> and <a href="/doc/10/paged/#fig-textbook">Textbook page numbers example</a>
+show examples of headers and footers.
+</p>
+
+<div id="tab-marginboxes" class="table-float-right">
+<div class="title">Margin boxes</div>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th colspan="2">Default alignment</th>
+<th>In figure</th>
+</tr>
+<tr>
+<th></th>
+<th><a href="/doc-refs/#prop-text-align">text-align</a></th>
+<th><a href="/doc-refs/#prop-vertical-align">vertical-align</a></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>@top</code></td>
+<td>center</td>
+<td>middle</td>
+<td class="fig-marginboxes-yellow">yellow</td>
+</tr>
+<tr>
+<td><code>@bottom</code></td>
+<td>center</td>
+<td>middle</td>
+<td class="fig-marginboxes-yellow">yellow</td>
+</tr>
+<tr>
+<td><code>@left</code></td>
+<td>center</td>
+<td>middle</td>
+<td class="fig-marginboxes-red">red</td>
+</tr>
+<tr>
+<td><code>@right</code></td>
+<td>center</td>
+<td>middle</td>
+<td class="fig-marginboxes-red">red</td>
+</tr>
+<tr>
+<td><code>@top-left</code></td>
+<td>left</td>
+<td>middle</td>
+<td class="fig-marginboxes-green">green</td>
+</tr>
+<tr>
+<td><code>@top-right</code></td>
+<td>right</td>
+<td>middle</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@bottom-left</code></td>
+<td>left</td>
+<td>middle</td>
+<td>not shown,</td>
+</tr>
+<tr>
+<td><code>@bottom-right</code></td>
+<td>right</td>
+<td>middle</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@left-top</code></td>
+<td>center</td>
+<td>top</td>
+<td class="fig-marginboxes-green">green</td>
+</tr>
+<tr>
+<td><code>@left-bottom</code></td>
+<td>center</td>
+<td>bottom</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@right-top</code></td>
+<td>center</td>
+<td>top</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@right-bottom</code></td>
+<td>center</td>
+<td>bottom</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@top-left-corner</code></td>
+<td>right</td>
+<td>middle</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@top-right-corner</code></td>
+<td>left</td>
+<td>middle</td>
+<td class="fig-marginboxes-blue">blue</td>
+</tr>
+<tr>
+<td><code>@bottom-left-corner</code></td>
+<td>right</td>
+<td>middle</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@bottom-right-corner</code></td>
+<td>left</td>
+<td>middle</td>
+<td>not shown</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>
+Several other margin boxes can also be used.
+All the margin boxes are shown in <a href="/doc/10/paged/#tab-marginboxes">Margin boxes</a>.
+Prince will try to create margin boxes of the correct sizes,
+If you need to create boxes of specific sizes you may need to use only a
+single box (eg: <code>@top</code>) and use the <a href="/doc-refs/#prop-content">content</a>
+property to place elements with specific sizes in it
+(<a href="//">Broken link</a>).
+Note that in <a href="/doc/10/paged/#fig-marginboxes">
+    Margin boxes
+  </a> that prince leaves space for
+<code>@top-right</code> and <code>@left-bottom</code> boxes because their
+counterparts (<code>@top-left</code> and <code>@left-top</code> respectively)
+have been defined.
+This keeps the <code>@top</code> and <code>@left</code> centered along the
+top and side of the page respectively.
+</p>
+
+<p>
+Many CSS properties can be applied to margin boxes:
+</p>
+<ul>
+<li>
+<p>
+All of the
+<a href="/doc-refs/#prop-margin">margin</a>,
+<a href="/doc-refs/#prop-padding">padding</a>,
+<a href="/doc-refs/#prop-border">border</a> and
+<a href="/doc-refs/#prop-background">background</a>
+properties can be used to style margin boxes.
+</p>
+</li>
+<li>
+<p>
+The <a href="/doc-refs/#prop-vertical-align">vertical-align</a> property can be applied to any
+margin box to vertically align its content.
+</p>
+</li>
+<li>
+<p>
+When a margin box contains generated content, many inline style properties
+such as <a href="/doc-refs/#prop-color">color</a> and <a href="/doc-refs/#prop-font">font</a> can be
+applied to style the generated content.
+</p>
+</li>
+</ul>
+
+
+</section>
+
+<section id="page-gen-content">
+  <h3>Generated content in headers and footers</h3>
+
+
+
+
+<p>
+We have already shown an example of using the <code>page</code> counter to
+print the page number at the bottom of each page,
+this is one example of generated content.
+The <code>page</code> counter is predefined and starts at 1;
+it increments automatically for each new page.
+(Note that the page counter cannot be incremented manually using the
+<a href="/doc-refs/#prop-counter-increment">counter-increment</a> property.
+</p>
+<p>
+The <code>page</code> counter can be reset using the
+<a href="/doc-refs/#prop-counter-reset">counter-reset</a> property at any block-level element within
+a non-floating element in the normal flow.
+This is useful for restarting page numbering at a new section of the
+document.
+</p>
+
+<div id="ex-restart-page-numbers" class="example">
+  <div class="title">Restarting page numbering</div>
+<div class="programlisting">
+<code language="HTML"><pre>
+&lt;body&gt;
+    &lt;div class="front"&gt; cover page, etc, ... &lt;/div&gt;
+    &lt;div class="contents"&gt;
+        table of contents, ...
+    &lt;/div&gt;
+    &lt;div class="body"&gt;
+    &lt;div class="chapter"&gt; chapter 1...&lt;/div&gt;
+    &lt;div class="chapter"&gt; chapter 2...&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=appendix"&gt; appendix1 &lt;/div&gt;
+    &lt;div class=appendix"&gt; appendix2, ... &lt;/div&gt;
+&lt;/body&gt;
+</pre></code>
+</div>
+
+<div class="programlisting">
+<code language="CSS"><pre>
+.contents {
+    <a href="/doc-refs/#prop-display">display</a>: block;
+    <a href="/doc-refs/#prop-page">page</a>: table-of-contents;
+    <a href="/doc-refs/#prop-counter-reset">counter-reset</a>: page 1
+}
+@page table-of-contents {
+    @top { <a href="/doc-refs/#prop-content">content</a>: "Table of Contents" }
+    @bottom {
+        content: counter(page, lower-alpha)
+    }
+}
+
+.body {
+    display: block;
+    page: main;
+    counter-reset: page 1
+}
+@page main {
+    @top { content: string(chapter-title) }
+    @bottom {
+        content: counter(page)
+    }
+}
+
+.chapter h1 { <a href="/doc-refs/#prop-string-set">string-set</a>: chapter-title content() }
+</pre></code>
+</div>
+</div>
+
+<p>
+<a href="/doc/10/paged/#ex-restart-page-numbers">Restarting page numbering</a> also uses
+<a href="/doc/10/paged/#named-pages">Named pages</a> which we will explain in more detail below.
+We create three types of pages:
+<var>table-of-contents</var> pages, <var>main</var> pages,
+and pages without a name.
+</p>
+
+<p>
+The <var>.contents</var> rule names the pages that it
+appears on as <var>table-of-contents</var> and resets the page counter to
+1 at the start of the contents div.
+Then the <code>@page</code> rule for those pages generates a page footer
+that contains the current page number in <code>lower-alpha</code> style.
+This rule also sets the page header to the string "Table of Contents".
+</p>
+
+<p>
+The <code>.body</code> rule names the pages that it appears on as
+<var>main</var> and resets the page counter to 1 at the start of main div.
+Then the <code>@page</code> rule for the <var>main</var> pages generates a
+page footer that contains the current page number in the default decimal
+style.
+This rule, together with the <var>.chapter h1</var> rule,
+sets the page header to the title of the chapter
+(see <a href="/doc/10/gen-content/#gen-content">Generated Content</a>).
+</p>
+
+<p>
+Pages that don't match either of these names have the default style,
+which does not include a page number in the footer.
+</p>
+
+<p>
+In some documents,
+particularly those that are unbound such as office documents,
+it can be useful to show the total number of pages on each page.
+The total number of pages can be accessed using the <code>pages</code>
+counter.
+This is a pre-defined counter that is fixed to the total number of pages in
+the document.
+</p>
+
+<div class="programlisting">
+<code language="CSS"><pre>
+@page {
+    @bottom {
+        content: "Page " counter(page) " of " counter(pages)
+    }
+}
+</pre></code>
+</div>
+
+<p>
+This rule will generate page footers such as "Page 1 of 89".
+</p>
+
+
+
+<div class="figure-float-right" id="fig-fancyheader">
+  <div class="title">
+    Fancy header example
+  </div>
+  <img src="/images/doc-10//fancyheader-2.bw.png" alt="Image of a page of a textbook or thesis with a header.">
+  <span class="caption">
+    This example shows a header as might be found in a textbook.
+    The
+    <a href="/samples/doc-10/fancyheader.html">HTML</a> and
+    <a href="/samples/doc-10/fancyheader.pdf">PDF</a>
+    are both available.
+    This is a small part of a larger example in our
+    <a href="https://github.com/yeslogic/prince-samples/tree/master/thesis">Prince samples repository</a>.
+  </span>
+</div>
+
+<div class="example" id="ex:fancyheader">
+  <div class="title">Fancy headers</div>
+<p>
+  This example demonstrates a more complete headers style.
+  It uses generated content to print page numbers, the chapter number and
+  title and the section number and title using different styles for left and
+  right pages.
+  It also prints an underline under the header,
+  See <a href="/doc/10/paged/#fig-fancyheader">
+    Fancy header example
+  </a>.
+</p>
+
+<div class="programlisting">
+<code language="CSS"><pre>
+@page {
+    <a href="/doc-refs/#prop-font-family">font-family</a>: Times, Serif;
+    <a href="/doc-refs/#prop-font-size">font-size</a>: 11pt;
+    <a href="/doc-refs/#prop-text-align">text-align</a>: justify;
+    <a href="/doc-refs/#prop-margin-top">margin-top</a>: 2cm;
+    <a href="/doc-refs/#prop-margin-bottom">margin-bottom</a>: 2cm;
+    <a href="/doc-refs/#prop-margin-inside">margin-inside</a>: 3.5cm;
+    <a href="/doc-refs/#prop-margin-outside">margin-outside</a>: 2.5cm;
+}
+
+@page body:left {
+    @top-left {
+        <a href="/doc-refs/#prop-content">content</a>: counter(page);
+        <a href="/doc-refs/#prop-vertical-align">vertical-align</a>: bottom;
+    }
+    @top-right {
+        content: "Chapter " counter(chapter) ": " string(chapter);
+        vertical-align: bottom;
+    }
+}
+@page body:right {
+    @top-right {
+        content: counter(page);
+        vertical-align: bottom;
+    }
+    @top-left {
+        content: counter(chapter) "." counter(section) " "
+            string(section);
+        vertical-align: bottom;
+    }
+}
+@page body {
+    border-top: thin black solid;
+}
+@page body:first {
+    margin-top: 25%;
+    @top-left { content: normal; }
+    @top-right { content: normal; }
+    border: none;
+}
+@page body:blank {
+    @top-left { content: normal; }
+    @top-right { content: normal; }
+    border: none;
+}
+body {
+    font-family: Times, Serif;
+    font-size: 11pt;
+    text-align: justify;
+    <a href="/doc-refs/#prop-padding">padding</a>: 0.5cm 0cm;
+}
+
+div.body {
+    page: body;
+}
+
+div.body h1 {
+    page-break-before: right;
+    <a href="/doc-refs/#prop-prince-page-group">prince-page-group</a>: start;
+    string-set: chapter content();
+    counter-increment: chapter;
+    counter-reset: section;
+}
+div.body h1::before {
+    content: "Chapter " counter(chapter) ": ";
+}
+
+div.body h2 {
+    string-set: section content();
+    counter-increment: section;
+}
+div.body h2::before {
+    content: counter(chapter) "." counter(section) " ";
+}
+</pre></code>
+</div>
+
+<p>
+  The main content area is 2.5cm from the page's edge on all sides.
+  On the left and right this is a margin of 2.5cm and on the top and bottom
+  it's 2cm of margin and 0.5cm of padding.
+  This places the bottom border of the
+  <code>@top</code> margin box 0.5cm from the main content area, enough to
+  avoid making it look crouded.
+  The header text has the <var>vertical-align: bottom</var> property to
+  ensure that it appears immediately above the border — the border
+  is made to look like an underline.
+  This example uses many properties and page selectors discussed later in
+  this section.
+  This is a small part of a larger example in our
+  <a href="https://github.com/yeslogic/prince-samples/tree/master/thesis">
+    Prince samples repository</a>.
+</p>
+
+
+
+</div>
+
+
+</section>
+
+<section id="footnotes">
+  <h3>Footnotes</h3>
+
+
+<div class="figure-float-right" id="fig-footnotes">
+  <div class="title">
+    Footnotes example
+  </div>
+  <img src="/images/doc-10//footnotes.png" width="428" height="157" alt="Footnotes example">
+  <div class="caption">
+    Footnotes example
+  </div>
+</div>
+
+<p>
+Prince supports footnotes using the <a href="/doc-refs/#prop-float">float</a> property.
+If an element has the property <var>float: footnote</var> then it will be
+floated into the footnote area of the page and a reference will be placed in
+the text.
+</p>
+<p>
+This example shows some simple footnotes, the <var>fn</var>
+class is used to create footnotes:
+</p>
+
+<div class="programlisting">
+<code language="HTML"><pre>
+&lt;style&gt;
+.fn {
+    <a href="/doc-refs/#prop-float">float</a>: footnote
+}
+&lt;/style&gt;
+
+...
+
+&lt;p&gt;
+Footnotes&lt;span class="fn"&gt;A footnote is a note placed at
+the bottom of a page of a book or manuscript that comments on or
+cites a reference for a designated part of the text.&lt;/span&gt;
+are essential in printed documents and Prince knows how to generate
+them. Most readers will read the footnotes before they read the text
+from where the footnotes are anchored&lt;span class="fn"&gt;Often,
+the most interesting information is found in the footnotes.&lt;/span&gt;.
+&lt;/p&gt;
+</pre></code>
+</div>
+
+
+
+<p>
+Each footnote implicitly increments the <i>footnote</i> counter
+which is used to number the footnotes.
+The footnote counter can be reset at each new page, section or chapter
+as necessary.
+This example resets the counter on each new page.
+</p>
+
+<div class="programlisting">
+<code language="CSS"><pre>
+@page {
+    <a href="/doc-refs/#prop-counter-reset">counter-reset</a>: footnote
+}
+</pre></code>
+</div>
+
+<p>
+Footnote calls are the numeric anchors in the text that refer to the
+footnotes.
+Prince will generate footnote calls using the <code>::footnote-call</code>
+pseudo-element.
+This is the default style for footnote calls:
+</p>
+
+<div class="programlisting">
+<code language="CSS"><pre>
+*::footnote-call {
+    <a href="/doc-refs/#prop-content">content</a>: counter(footnote);
+    <a href="/doc-refs/#prop-font-size">font-size</a>: 83%;
+    <a href="/doc-refs/#prop-vertical-align">vertical-align</a>: super;
+    <a href="/doc-refs/#prop-line-height">line-height</a>: none
+}
+</pre></code>
+</div>
+
+<p>
+This will display the current value of the
+footnote counter in a superscript position in a slightly smaller font than
+the main text.
+The <a href="/doc-refs/#prop-line-height">line-height</a> declaration ensures that the superscript
+position of the footnote does not affect the line height of the main text.
+</p>
+
+<p>
+The footnote call style can be customised to use different fonts or colors.
+It can even be customised to include different content, such
+as placing the footnote counter in brackets rather than making it superscript.
+</p>
+
+<div class="programlisting">
+<code language="CSS"><pre>
+*::footnote-call {
+    <a href="/doc-refs/#prop-content">content</a>: "[" counter(footnote) "]"
+    <a href="/doc-refs/#prop-font-size">font-size</a>: inherit:
+    <a href="/doc-refs/#prop-vertical-align">vertical-align</a>: inherit;
+}
+</pre></code>
+</div>
+
+<p>
+This rule will generate footnote calls with the number of the footnote in
+brackets, like this: [1], [2], [3].
+</p>
+
+<p>
+Prince automatically generates footnote markers, the numeric markers placed
+in front of the footnote text.
+Footnote markers are similar to the markers added to
+list items (see <a href="/doc/10/lists/#lists">Lists</a>)
+in most respects, and can be styled in a similar fashion
+using the <code>::footnote-marker</code> pseudo-element:
+</p>
+
+<div class="programlisting">
+<code language="CSS"><pre>
+*::footnote-marker {
+    <a href="/doc-refs/#prop-font-weight">font-weight</a>: bold
+}
+</pre></code>
+</div>
+
+<p>
+This rule will generate footnote markers with a bold font.
+</p>
+
+<p>
+Footnote markers are rendered outside the footnote in the left
+margin area by default.
+If the CSS property <i>footnote-style-position</i> has value
+<i>inside</i>,
+the marker is rendered as the first inline box inside the footnote.
+(This property is similar to the
+<a href="/doc-refs/#prop-list-style-position">list-style-position</a>
+property that applies to list markers (see <a href="/doc/10/lists/#lists">Lists</a>).
+</p>
+
+<p>
+Footnotes are placed within the <code>@footnotes</code> area of the
+page, which can be styled within @page rules.
+Note that if there are no footnotes on a page then the footnotes area
+will not be displayed on that page at all.
+</p>
+
+<div class="programlisting">
+<code language="CSS"><pre>
+@page {
+    @footnotes {
+        <a href="/doc-refs/#prop-border-top">border-top</a>: solid black thin;
+        <a href="/doc-refs/#prop-padding-top">padding-top</a>: 8pt
+    }
+}
+</pre></code>
+</div>
+
+<p>
+This rule adds a border and some padding to the top of the footnotes area.
+</p>
+
+
+</section>
+
+
+</section>
+
+<section id="page-rules">
+  <h2>Some <code>@page</code> selectors</h2>
+
+
+<p>
+It is often necessary to apply styles to some pages, but not others.  Either
+applying them to only some pages,
+or on every page <i>except</i> selected pages.
+CSS and Prince provide a number of <i>page selectors</i>
+for choosing which pages a rule applies to.
+</p>
+
+<section id="page-sel-first-nth-left-right">
+  <h3>
+    The <code>:first</code>, <code>:<span class="replaceable">N</span>th</code>,
+    <code>:left</code> and <code>:right</code> page selectors
+  </h3>
+
+
+<p role="note">
+We discuss the <code>:blank</code> page selector in
+<a href="/doc/10/paged/#paged-blank">The :blank page selector</a> below.
+</p>
+
+<div class="figure-float-right" id="fig-titlepage">
+  <div class="title">Novel title page example</div>
+  <img src="/images/doc-10//titlepage-1.bw.png" alt="Novel title page example image.">
+  <div class="caption">
+    A title page example showing use of <code>@page:first</code>.
+    Download the <a href="/samples/doc-10/titlepage.pdf">PDF</a>
+    or the <a href="/samples/doc-10/titlepage.html">HTML</a>.
+  </div>
+</div>
+
+<p>
+In a novel it is useful to print a page number at the bottom of every page,
+<i>except</i> for some pages such as the title page.
+In this example the <code>@page</code> rule is applied to all pages.
+Then the <code>@page:first</code> rule,
+which is more specific,
+removes the footer from the first page.
+See <a href="/doc/10/paged/#page-header-footer">Page headers and footers</a> and <a href="/doc/10/gen-content/#gen-content">Generated Content</a>.
+</p>
+
+<div class="programlisting">
+<code language="HTML">
+  <pre>&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+@page {
+    @bottom {
+        content: counter(page)
+    }
+}
+@page:first {
+    margin-top: 10cm;
+    @bottom {
+        content: normal
+    }
+}
+h1, h2.subtitle {
+    text-align: center
+}
+h2.chaptertitle {
+    page-break-before: always
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1&gt;The Magnificent Octopus&lt;/h1&gt;
+&lt;h2 class="subtitle"&gt;S. Baldrick&lt;/h2&gt;
+
+&lt;h2 class="chaptertitle"&gt;Chapter 1&lt;/h2&gt;
+&lt;p&gt;Once upon a time there lived a little saussage.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</code>
+</div>
+
+<p>
+In this example the <code>@page</code> rule specifies styles that apply to
+all pages:
+Then the <code>@page:first</code> rule overrides this for the first page
+only.
+It resets the <a href="/doc-refs/#prop-content">content</a> property for the footer and
+increases the top margin,
+printing the title of the novel in a reasonable place on the page
+(see <a href="/doc/10/paged/#page-style">Page style</a>).
+This example also uses the
+<a href="/doc-refs/#prop-page-break-before">page-break-before</a> property to force a page break
+(see <a href="/doc/10/paged/#page-breaks">Page breaks</a>).
+</p>
+
+<div class="figure-float-right" id="fig-textbook">
+  <div class="title">Textbook page numbers example</div>
+  <img src="/images/doc-10//textbook-1.bw.png" alt="Textbook page numbers example image.">
+  <div class="caption">
+    A text book example showing use of <code>@page:left</code> and
+    <code>@page:right</code>.
+    Download the <a href="/samples/doc-10/textbook.pdf">PDF</a>
+    or the <a href="/samples/doc-10/textbook.html">HTML</a>.
+  </div>
+</div>
+
+<p role="note">
+  When using the <code>:first</code> page selector to choose the first page
+  in each chapter (such as in <a href="/doc/10/paged/#ex:fancyheader">Fancy headers</a>) it may be
+  necessary to add
+  <code><a href="/doc-refs/#prop-prince-page-group">prince-page-group</a>: start</code>
+  to the first element in each chapter (such as <code>h1</code>).
+  See <a href="/doc/10/paged/#page-groups">Page groups</a>.
+</p>
+
+<p>
+The <code>:left</code> and <code>:right</code> page
+selectors can be used to style left and right pages in a bound book
+differently.
+This is often used in text books to place the page number on the outside
+top corners of pages.
+</p>
+
+<div class="programlisting">
+<code language="CSS"><pre>
+@page:left {
+    @top-left { content: counter(page) }
+    @top-right { content: string(book-title) }
+    margin-left: 2cm;
+    margin-right: 3cm;
+}
+@page:right {
+    @top-left { content: string(chapter-title) }
+    @top-right { content: counter(page) }
+    margin-left: 3cm;
+    margin-right: 2cm;
+}
+
+h1 { string-set: book-title content() }
+h2 { string-set: chapter-title content() }
+</pre></code>
+</div>
+
+<p>
+These rules also place the book title in the header of left pages,
+and the current chapter's title in the header of right-facing pages.
+The book title is copied from the text content of the
+<code>h1</code> element while the chapter title is copied from the
+text content of the <code>h2</code> elements
+(see <a href="/doc/10/gen-content/#gen-content">Generated Content</a>).
+They also specify wider margins in the <i>gutter</i> of the
+page spread;
+binders may need this extra width for a book's binding.
+</p>
+
+<p>
+The first page in a document using the default left-to-right reading order
+is a right page.
+Imagine the cover or a title page of a book which appear on a right page.
+The first page of a right-to-left document is a left page.
+</p>
+
+<p role="note">
+
+Prince does not currently allow you to change this behaviour.
+This will be added in Prince 11.
+</p>
+
+<p>
+Sometimes it can be useful to select the <i>N</i>th page in a
+document.
+The <code>:nth(<replaceable>N</replaceable>)</code> page selector can be
+used to do this:
+</p>
+
+<div class="programlisting">
+<code language="CSS"><pre>
+@page:nth(42) {
+    ...
+}
+</pre></code>
+</div>
+
+
+</section>
+
+<section id="named-pages">
+  <h3>Named pages</h3>
+
+
+
+
+<p>
+Sometimes it is necessary to style pages depending on their content;
+named pages allow us to select pages that contain particular elements.
+We used this in <a href="/doc/10/paged/#ex-restart-page-numbers">Restarting page numbering</a>,
+to apply a style to the table of contents pages to print their page
+numbers using roman numerals.
+</p>
+
+<p>
+The element containing the table of contents has a
+<a href="/doc-refs/#prop-page">page</a> property applied, specifying that this element's
+pages are <var>table-of-contents</var> pages.
+The <a href="/doc-refs/#prop-page">page</a> property may be applied to any block-level element
+within a non-floating environment in the normal flow.
+</p>
+
+<div class="programlisting">
+<code language="CSS"><pre>
+.contents {
+    <a href="/doc-refs/#prop-display">display</a>: block;
+    <a href="/doc-refs/#prop-page">page</a>: table-of-contents;
+}
+</pre></code>
+</div>
+
+<p>
+Then using this page name to apply a different <code>@page</code> rule to
+the table-of-contents pages:
+</p>
+
+<div class="programlisting">
+<code language="CSS"><pre>
+@page table-of-contents {
+    @top { <a href="/doc-refs/#prop-content">content</a>: "Table of Contents" }
+    @bottom {
+        content: counter(page, lower-alpha)
+    }
+}
+</pre></code>
+</div>
+
+<p>
+More than one element can <i>belong</i> to the same name,
+in other words, page names behave like CSS classes.
+</p>
+
+<p>
+Prince will create a page break between elements belonging to different
+named pages,
+including elements without a named page.
+So in <a href="/doc/10/paged/#ex-restart-page-numbers">Restarting page numbering</a>,
+a page break will be inserted after the the table of contents,
+because the next element has the page name <var>main</var> rather than
+<var>table-of-contents</var>.
+</p>
+
+<p>
+Selectors such as <code>:first</code>,
+<code>:<replaceable>N</replaceable>th</code>, <code>:left</code> and
+<code>:right</code> also work with named pages.  For example:
+</p>
+
+<div class="programlisting">
+<code language="CSS"><pre>
+@page preface {
+    @bottom {
+        content: counter(page, lower-alpha)
+    }
+}
+@page preface:first {
+    @bottom {
+        content: normal;
+    }
+}
+</pre></code>
+</div>
+
+
+<p>
+This example only works when a page name is used only once within a
+document, such as for the preface of a document
+(documents only have one preface).
+If you wish to apply a style to the first page of every chapter then you
+must use the <a href="/doc-refs/#prop-prince-page-group">prince-page-group</a> property to create
+<i>page groups</i>:
+</p>
+
+<div class="programlisting">
+<code language="CSS"><pre>
+div.chapter {
+    <a href="/doc-refs/#prop-page">page</a>: chapter;
+    <a href="/doc-refs/#prop-page-break-before">page-break-before</a>: right;
+    <a href="/doc-refs/#prop-prince-page-group">prince-page-group</a>: start;
+}
+@page chapter {
+    @bottom {
+        <a href="/doc-refs/#prop-content">content</a>: counter(page);
+    }
+}
+@page chapter:first {
+    @bottom {
+        <a href="/doc-refs/#prop-content">content</a>: normal;
+    }
+}
+</pre></code>
+</div>
+
+<p>
+<code><a href="/doc-refs/#prop-prince-page-group">prince-page-group</a>: start</code> instructs Prince to
+start a new page group.
+This is necessary for the <code>div.chapter:first</code> selector to match
+the first page of each chapter, instead of only the first page in the first
+chapter.
+See <a href="/doc/10/paged/#page-groups">Page groups</a>.
+</p>
+
+
+</section>
+
+
+</section>
+
+<section id="controlling-pagination">
+  <h2>Controlling pagination</h2>
+
+
+<p>
+Prince will create page breaks automatically when new content will not fit
+on a page.
+Sometimes it is useful or necessary to control where page breaks should and
+should not be used.
+There are two ways to do this, and both are useful in different
+circumstances:
+page breaks can be added or prohibited with the
+<a href="/doc/10/paged/#page-breaks">Page breaks</a> properties,
+and the how to control where within a paragraph a page break may occur with
+<a href="/doc/10/paged/#widows-and-orphans">Widows and orphans</a> properties.
+</p>
+
+<section id="page-breaks">
+  <h3>Page breaks</h3>
+
+
+<p>
+The simplest case is when you want to explicitly create a page break.
+This is typically used at the beginning of a chapter, to start the new chapter
+on a new page.
+</p>
+
+<div class="programlisting">
+<code language="CSS"><pre>
+h1 {
+    <a href="/doc-refs/#prop-page-break-before">page-break-before</a>: always
+}
+</pre></code>
+</div>
+
+<p>
+<a href="/doc-refs/#prop-page-break-before">page-break-before</a>
+is used to force a page break immediately before an
+<code class="tag">h1</code> element,
+New chapters are often started on the <i>recto</i>
+
+pages in text books, this is usually the right page:
+</p>
+
+<div class="programlisting">
+<code language="CSS"><pre>
+h1 {
+    <a href="/doc-refs/#prop-page-break-before">page-break-before</a>: right
+}
+</pre></code>
+</div>
+
+<p>
+Other values are
+<code>auto</code>,
+<code>avoid</code>
+and <code>left</code>.
+</p>
+
+<p>
+The property <a href="/doc-refs/#prop-page-break-after">page-break-after</a> may also be used to force a
+page break after an element,
+</p>
+
+<div class="figure-float-right" id="fig-slides">
+  <div class="title">
+    Presentation slides example
+  </div>
+  <img src="/images/doc-10//slide-1.colour.png" alt="A title page slide for a presentation, with a title and          subtitle.">
+  <img src="/images/doc-10//slide-2.colour.png" alt="An example of an overhead slide for a presentation.             It has a title and a single paragraph.">
+  <div class="caption">
+    Two overhead slides for a presentation.
+    The slides use white on black for better contrast on most
+    projectors, and a 4x3 aspect ratio.
+    Download the <a href="/samples/doc-10/slide.pdf">PDF</a>
+    or the <a href="/samples/doc-10/slide.html">HTML</a>
+    and <a href="/samples/doc-10/slide.css">CSS</a>.
+  </div>
+</div>
+
+<div class="example" id="presentation-slides">
+  <div class="title">Presentation slides</div>
+<p>
+It is necessary to force a page break when creating overhead slides.
+This can be done by placing the content for each slide in a
+<code>&lt;div class="slide"&gt;</code> and using
+<code><a href="/doc-refs/#prop-page-break-before">page-break-before</a>: always</code> as shown below.
+This example shows other styling that may be required to create presentation
+slides.
+</p>
+
+<div class="programlisting">
+<code language="CSS"><pre>
+@page {
+    <a href="/doc-refs/#prop-size">size</a>: 1280px 960px;
+    @bottom-left {
+        <a href="/doc-refs/#prop-content">content</a>: "Presentation Title";
+    }
+    @bottom-right {
+        content: counter(page);
+    }
+    <a href="/doc-refs/#prop-background">background</a>: black;
+    <a href="/doc-refs/#prop-color">color</a>: white;
+    <a href="/doc-refs/#prop-font-family">font-family</a>: DejaVu Sans, sans-serif;
+    <a href="/doc-refs/#prop-font-size">font-size</a>: 16pt;
+    <a href="/doc-refs/#prop-margin">margin</a>: 96px;
+}
+
+@page:first {
+    @bottom-left { content: normal }
+    @bottom-right { content: normal }
+}
+
+div.centerpage {
+    /*
+     * Cause the content on these pages to begin part-way through
+     * the page. This is useful for a title page.
+     */
+    <a href="/doc-refs/#prop-margin-top">margin-top</a>: 33%;
+}
+
+body {
+    font-size: 28pt;
+    font-family: DejaVu Sans, sans-serif;
+    color: white;
+}
+
+div.slide {
+    <a href="/doc-refs/#prop-page-break-before">page-break-before</a>: always;
+}
+</pre></code>
+</div>
+
+<div class="programlisting">
+<code language="HTML"><pre>
+&lt;div class="slide"&gt;
+  &lt;h2&gt;Slide Title&lt;/h2&gt;
+
+  &lt;p&gt;
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+    aliquip ex ea commodo consequat. Duis aute irure dolor in
+    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+    culpa qui officia deserunt mollit anim id est laborum.
+  &lt;/p&gt;
+&lt;/div&gt;
+</pre></code>
+</div>
+
+<p role="note">
+The <code>font-family</code> and <code>color</code> properties are
+specified both in the <code>@page</code> and <code>body</code> rules, even
+though they're the same.
+This is required because the margin boxes are outside of the
+<code>body</code> and must be styled separately, likewise the content within
+<code>body</code> cannot be styled by the <code>@page</code> rule.
+</p>
+
+<p>
+A rendered slide for this example is shown in <a href="/doc/10/paged/#fig-slides">
+    Presentation slides example
+  </a>.
+The example has been adapted from
+<a href="https://github.com/yeslogic/prince-samples/tree/master/mfug_talk">slides (HTML+CSS)</a>
+for a presentation about the
+<a href="http://mercurylang.org">Mercury programming language</a>.
+This is part of our
+<a href="https://github.com/yeslogic/prince-samples">samples repository</a>.
+You are encouraged to use samples from the repository and contribute your
+own.
+</p>
+
+</div>
+
+<p>
+So far we have discussed forcing a page break,
+however suppressing page breaks is also important.
+For example,
+it is poor style to have a page break between a header and the first
+paragraph of a section.
+Therefore, the default Prince stylesheet will use the
+<a href="/doc-refs/#prop-page-break-after">page-break-after</a> property to suppress page breaks
+immediately after headers:
+</p>
+
+<div class="programlisting">
+<code language="CSS"><pre>
+h1, h2, h3, h4, h5, h6 {
+    <a href="/doc-refs/#prop-page-break-after">page-break-after</a>: avoid
+}
+</pre></code>
+</div>
+
+<p>
+If a heading occurs at the bottom of a page, it may be moved to the next
+page to keep it with the content that follows it, usually a paragraph.
+</p>
+
+<p>
+Avoiding page breaks within an element is also important.
+For example, it is best to avoid breaks within a figure or table.
+This can be done with the
+<a href="/doc-refs/#prop-page-break-inside">page-break-inside</a> property:
+</p>
+
+<div class="programlisting">
+<code language="CSS"><pre>
+.figure, table {
+    <a href="/doc-refs/#prop-page-break-inside">page-break-inside</a>: avoid
+}
+</pre></code>
+</div>
+
+<p>
+If the figure or table would have been split across two pages, it may be
+moved to the next page to keep it in one piece.
+An element longer than one page will still need to be split across multiple
+pages.
+</p>
+
+<p role="note">
+Note that the <a href="/doc-refs/#prop-page-break-inside">page-break-inside</a> property cannot be used
+to create page breaks;
+its only valid values are <code>auto</code> and <code>avoid</code>.
+</p>
+
+<p>
+These three properties can be applied to block-level elements, table rows and
+table row groups that occur within an in-flow element (ie. inside the normal
+flow of the document, not inside a float or an absolutely positioned block).
+Therefore the figure and table example only make sense when the figure or table
+is not floated.
+</p>
+
+<p>
+Page breaks have similarities with column breaks, see <a href="//">Broken link</a>.
+</p>
+
+
+</section>
+
+<section id="widows-and-orphans">
+  <h3>Widows and orphans</h3>
+  
+
+  
+  <p>
+    Just as breaking a page between a heading and the first paragraph below
+    the heading can look bad, breaking the page after only one or two lines
+    of a paragraph also looks bad.  These stray lines are called
+    <i>orphans</i>.
+    The minimum number of orphans to allow can be specified with the
+    <a href="/doc-refs/#prop-orphans">orphans</a> property (the default is 2).
+  </p>
+
+  <div class="programlisting">
+<code language="CSS"><pre>
+p {
+    <a href="/doc-refs/#prop-orphans">orphans</a>: 3
+}
+</pre></code>
+  </div>
+
+  <p>
+    Likewise the minimum number of lines to move to a new page
+    (<i>widows</i>)
+    can be specified with the <a href="/doc-refs/#prop-widows">widows</a> property
+    (the default is 2).
+  </p>
+  <div class="programlisting">
+<code language="CSS"><pre>
+p {
+    <a href="/doc-refs/#prop-widows">widows</a>: 3
+}
+</pre></code>
+  </div>
+
+  <p role="tip">
+    It can be easy to confuse widows and orphans.  However a mnemonic device
+    can help: "An orphan is alone from the beginning [of the paragraph];
+    a widow is alone at the end [of the paragraph]".
+    (Source <a href="https://en.wikipedia.org/wiki/Widows_and_orphans">Widows
+    and orphans — Wikipedia</a>).
+  </p>
+
+  
+</section>
+
+
+</section>
+
+<section id="paged-advanced">
+  <h2>Advanced paged media examples</h2>
+
+
+<section id="paged-blank">
+  <h3>The <code>:blank</code> page selector</h3>
+
+
+<p>
+  As we discussed in the previous section
+  <code><a href="/doc-refs/#prop-page-break-before">page-break-before</a>: right</code>
+  can be used to place the first page of a chapter on the right page in a
+  spread.
+  If the previous page is a right page then two page breaks are inserted,
+  leaving a blank left page.
+  However, this page will have normal <code>@page</code> styles applied to it,
+  which is usually not what people want.
+  The <code>:blank</code> page selector can be used to change the style of
+  blank pages, pages skipped such as a left page before a
+  <code>page-break-before: right</code>,
+  including removing any content.
+</p>
+
+<div class="programlisting">
+<code language="CSS"><pre>
+@page:left {
+    @top-left {
+        <a href="/doc-refs/#prop-content">content</a>: counter(page);
+    }
+}
+@page:right {
+    @top-right {
+        content: counter(page);
+    }
+}
+
+@page:blank {
+    @top-left {
+        content: normal;
+    }
+    @top-right {
+        content: normal;
+    }
+}
+
+h1 {
+    <a href="/doc-refs/#prop-page-break-before">page-break-before</a>: right;
+}
+</pre></code>
+</div>
+
+<p>
+This example clears the generated content used on these pages.
+This works because <code>:blank</code> is more specific than either
+<code>:left</code> or <code>:right</code>.
+The <code>:blank</code> page selector can also be used with named pages.
+</p>
+
+<div class="programlisting">
+<code language="CSS"><pre>
+@page frontmatter {
+    @bottom { content: counter(page, lower-roman); }
+}
+
+@page frontmatter:blank {
+    @bottom { content: normal; }
+}
+</pre></code>
+</div>
+
+<p>
+Note that when used with named pages,
+the blank page has the same name as the page following it.
+For example when typesetting a book with <code>frontmatter</code> named
+pages for the title page, table of contents etc,
+and <code>main</code> named pages for the main content.
+Will need the blank page (if one is produced) between the table of contents
+and the first chapter to be typeset with <code>@page main:blank</code> page
+selector.
+If chapter 1 also resets page numbering, then the page numbers will be reset on the first <i>content page</i> (a non-blank page).
+</p>
+
+<p>
+It is not always best to have no content on blank pages.
+Sometimes otherwise blank pages are required have some content,
+such as a notice saying "This page sententially left blank".
+For example in legal documents this prevents people from mistaking a
+dangerous printing error for an intentionally blank page.
+</p>
+
+
+</section>
+
+<section id="page-groups">
+  <h3>Page groups</h3>
+
+<p>
+  When consecutive elements belong to the same named page
+  but logically separate structures (such as individual chapters)
+  Prince combines them into one <i>page group</i>.
+  This causes it to apply the <code>:first</code> page selector
+  to the first page of the whole page group only (the first page of chapter 1).
+  Instead we usually want <code>:first</code> applied to the first page of
+  each chapter.
+</p>
+<p>
+  This can happen either:
+</p>
+<ul>
+  <li>
+    when chapters are separated by an element,
+    such as <code>h1</code> which may have
+    <code><a href="/doc-refs/#prop-page-break-before">page-break-before</a>: right</code> applied
+    (this can be seen in <a href="/doc/10/paged/#ex:fancyheader">Fancy headers</a>);
+  </li>
+  <li>
+    or when each chapter is a block element such as a <code>div</code>.
+  </li>
+</ul>
+<p>
+  Prince provides the <a href="/doc-refs/#prop-prince-page-group">prince-page-group</a> property that can
+  be used to start a new page group.
+  It can be seen in <a href="/doc/10/paged/#ex:fancyheader">Fancy headers</a> applied to h1 elements
+  in the body of the document.
+</p>
+
+<div class="programlisting">
+<code language="CSS"><pre>
+div.body h1 {
+    <a href="/doc-refs/#prop-page-break-before">page-break-before</a>: right;
+    <a href="/doc-refs/#prop-prince-page-group">prince-page-group</a>: start;
+    ...
+}
+</pre></code>
+</div>
+
+<p>
+<a href="/doc-refs/#prop-prince-page-group">prince-page-group</a> also forces a page break,
+overriding any properties that attempt to avoid page breaks.
+The more specific <code>left</code> and <code>right</code> page take
+precedence over <code>prince-page-group</code>.
+</p>
+
+</section>
+
+<section id="page-breaks-decoration">
+  <h3>Page breaks and decoration</h3>
+
+
+<div class="figure-float-right" id="fig-boxdecorationbreak">
+  <div class="title">Box decoration break sample</div>
+  <img src="/images/doc-10//box-decoration-break-1.bw.png" alt="The box on the left is completely enclosed by its border       (clone);       while the box on the right has no border at the bottom where it       wraps onto the next page (slice).">
+  <div class="caption">
+    This figure shows the result of using the
+    <a href="/doc-refs/#prop-box-decoration-break">box-decoration-break</a> property.
+    On the left the <code>clone</code> value is used while on the right
+    <code>slice</code> is used.
+    The
+    <a href="/samples/doc-10/box-decoration-break.pdf">PDF</a>
+    and
+    <a href="/samples/doc-10/box-decoration-break.html">HTML</a>
+    are available for download.
+  </div>
+</div>
+
+<p>
+When a page (or column) break occurs within a box (such as a div) its bottom
+and top borders are <i>cloned</i> so that they also appear at the bottom of the first section and the top of the second section of the box.
+This is shown in the left of <a href="/doc/10/paged/#fig-boxdecorationbreak">Box decoration break sample</a>.
+This is the default but may be set with the
+<a href="/doc-refs/#prop-box-decoration-break">box-decoration-break</a> property, setting its value to
+<code>clone</code>.
+</p>
+
+<div class="programlisting">
+<code language="CSS"><pre>
+div.box1 {
+    <a href="/doc-refs/#prop-box-decoration-break">box-decoration-break</a>: clone
+}
+</pre></code>
+</div>
+
+<p>
+If instead you wish the borders to remain open, as if the box were simply
+<i>sliced</i> in half, 
+as in the right of <a href="/doc/10/paged/#fig-boxdecorationbreak">Box decoration break sample</a>,
+then you can set this property to <code>slice</code>.
+</p>
+
+<div class="programlisting">
+<code language="CSS"><pre>
+div.box2 {
+    <a href="/doc-refs/#prop-box-decoration-break">box-decoration-break</a>: slice
+}
+</pre></code>
+</div>
+
+
+</section>
+
+<section id="wide-content-sideways">
+  <h3>Printing wide content sideways</h3>
+
+
+<div class="figure-float-right" id="fig-bigtable">
+  <div class="title">Printing a big table sideways</div>
+  <img src="/images/doc-10//rotate-body-2.bw.png" alt="Image of a large table printed sideways so that its width fits            along the page's length.">
+  <div class="caption">
+    This table is too wide to fit on the paper, so we use
+    <a href="/doc-refs/#prop-prince-rotate-body">prince-rotate-body</a> in a <i>named page</i>
+    to print it sideways.
+    Download the <a href="/samples/doc-10/rotate-body.pdf">PDF</a>
+    or the <a href="/samples/doc-10/rotate-body.html">HTML</a>.
+  </div>
+</div>
+
+<p>
+Sometimes it is necessary to rotate a block element so that it fits on the
+page.  This is common with tables.
+Figure <a href="/doc/10/paged/#fig-bigtable">Printing a big table sideways</a> shows a table, rotated so that its
+width fits within the page's length.
+This can be acheived with the following rules:
+</p>
+
+<div class="programlisting">
+<code language="CSS"><pre>
+@page big_table {
+    <a href="/doc-refs/#prop-prince-rotate-body">prince-rotate-body</a>: landscape
+    <a href="/doc-refs/#prop-prince-shrink-to-fit">prince-shrink-to-fit</a>: auto;
+}
+
+table.big {
+    <a href="/doc-refs/#prop-page">page</a>: big_table
+}
+</pre></code>
+</div>
+
+<p>
+The <a href="/doc-refs/#prop-prince-rotate-body">prince-rotate-body</a> property works within
+<code>@page</code> rules only,
+so this example uses a named page to place the table on a page of its own.
+Then the <code>@page</code> rule for <code>big_table</code> pages
+uses the <a href="/doc-refs/#prop-prince-rotate-body">prince-rotate-body</a> property to tell prince that
+the body of the page, but not the headers and footers, should be rotated.
+The table in this example is still too wide so we also use the
+<a href="/doc-refs/#prop-prince-shrink-to-fit">prince-shrink-to-fit</a> property to make it a little
+smaller.
+</p>
+
+<p>
+If you download the full example
+(<a href="/samples/doc-10/rotate-body.html">HTML</a>
+or <a href="/samples/doc-10/rotate-body.pdf">PDF</a>)
+you will see that the paragraphs before and after the table are not placed
+on the same page.
+This is because they do not belong to the same named page
+(see <a href="/doc/10/paged/#named-pages">Named pages</a>).
+However on page four there are two tables, both tables belong to the same
+named page and therefore Prince will try to place them together on the same
+page.
+</p>
+
+
+</section>
+
+
+</section>
+
+
+</section>
+</div>
+</div>
+
+<script src="/js/jquery-1.12.4.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script type="text/javascript" src="/js/skrollr-simplemodal-masonry.min.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+<script src="/js/jquery.a11yTree.min.js"></script>
+<script>
+    $('ul.toc').a11yTree({
+    });
+    // Expand the level 1 items in the TOC.
+    $("#toc-contents > li[aria-level='1']").attr('aria-expanded', 'true');
+</script>
+
+    <div class="footer">
+        <div class="footer-copyright">
+            Copyright © 2002 – 2019 YesLogic Pty. Ltd.
+        </div>
+        <ul class="footer-menu">
+            <li><a href="/company/">About Us</a></li>
+            <li><a href="/privacy/">Privacy Policy</a></li>
+            <li><a href="/contact/">Contact Us</a></li>
+        </ul>
+        <div style="clear:both"></div>
+    </div>
+</div>
+
+<script src="/js/warning.js"></script>
+</body>
+</html>

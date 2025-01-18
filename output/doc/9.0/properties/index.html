@@ -1,0 +1,1289 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<meta name="robots" content="noindex">
+<title>Prince - CSS Properties</title>
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<style type="text/css">
+table.grid { margin-bottom: 1.5em }
+.prop { font-weight: bold; white-space: nowrap }
+</style>
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+<div id="header-inner">
+<div><a href="/"><img src="/images/logo2.png" alt="Prince"></a></div>
+<ul id="primary-nav">
+<li><a href="/download/">Download</a></li>
+<li><a href="/purchase/">Buy Prince</a></li>
+<li><a href="/samples/">Samples</a></li>
+<li><a href="/doc/" class="curr">Documentation</a></li>
+<li><a href="/forum/">Forum</a></li>
+</ul>
+</div>
+<div id="header-shadow"></div>
+</div>
+<div id="intro"><div id="intro-inner"><h1>CSS Properties</h1></div></div>
+<div class="main">
+<p><a href="/doc/9.0/">User Guide</a> /
+<a href="/doc/9.0/#cssref">CSS Reference</a></p>
+<div class="col1">
+<p>
+Below are all of the CSS properties supported by Prince 9.0.
+For their precise definitions please refer to the CSS specifications.
+</p>
+<p id="ext">
+* properties marked with an asterisk are
+Prince extensions.
+</p>
+<table class="grid">
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/background/">background</a></td>
+<td>
+	<i>background-image</i> || <i>background-position</i> || [ 
+		 / 
+		<i>background-size</i>
+	     ]? || <i>background-repeat</i> || <i>background-attachment</i> || <i>background-origin</i> || <i>background-clip</i> || <i>background-color</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/background-attachment/">background-attachment</a></td>
+<td>
+	scroll | fixed
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/background-color/">background-color</a></td>
+<td><i>color</i></td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/background-clip/">background-clip</a></td>
+<td>
+	content-box | padding-box | border-box
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/background-image/">background-image</a></td>
+<td>
+	none | url(filename) | linear-gradient(...) | radial-gradient(...) | repeating-linear-gradient(...) | repeating-radial-gradient(...)
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-background-image-resolution/">background-image-resolution</a>*</td>
+<td>
+	<i>dpi</i> | normal | 
+		auto
+		[ 
+		    ,
+		    normal | <i>dpi</i>
+		 ]?
+	    
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/background-origin/">background-origin</a></td>
+<td>
+	content-box | padding-box | border-box
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/background-position/">background-position</a></td>
+<td>
+	left || right || top || bottom || center || <i>length</i> || <i>percent</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/background-repeat/">background-repeat</a></td>
+<td>
+	repeat | repeat-x | repeat-y | no-repeat | round | space
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/background-size/">background-size</a></td>
+<td>
+	contain | cover | [ auto || <i>length</i> || <i>percent</i> ]
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-bleed/">bleed</a>*</td>
+<td>
+	auto | [ 
+		<i>length</i>
+	     ] {1..4}
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-bookmark-label/">bookmark-label</a>*</td>
+<td>
+	none | <i>content</i>
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-bookmark-level/">bookmark-level</a>*</td>
+<td>
+	none | <i>integer</i>
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-bookmark-state/">bookmark-state</a>*</td>
+<td>
+	open | closed
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-bookmark-target/">bookmark-target</a>*</td>
+<td>
+	self | url(target-url) | attr(target-attr)
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/border/">border</a></td>
+<td>
+	<i>color</i> || <i>border-style</i> || <i>border-width</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/border-bottom/">border-bottom</a></td>
+<td>
+	<i>color</i> || <i>border-style</i> || <i>border-width</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/border-bottom-color/">border-bottom-color</a></td>
+<td><i>color</i></td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/border-bottom-style/">border-bottom-style</a></td>
+<td>
+	none | hidden | solid | dashed | dotted | double | groove | ridge | inset | outset
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/border-bottom-width/">border-bottom-width</a></td>
+<td>
+	thin | medium | thick | <i>length</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/box-decoration-break/">box-decoration-break</a></td>
+<td>
+	slice | clone
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/border-clip/">border-clip</a></td>
+<td>
+	normal | <i>length</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/border-collapse/">border-collapse</a></td>
+<td>
+	separate | collapse
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/border-color/">border-color</a></td>
+<td>
+	<i>color</i> {1..4}
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/border-left/">border-left</a></td>
+<td>
+	<i>color</i> || <i>border-style</i> || <i>border-width</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/border-left-color/">border-left-color</a></td>
+<td><i>color</i></td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/border-left-style/">border-left-style</a></td>
+<td>
+	none | hidden | solid | dashed | dotted | double | groove | ridge | inset | outset
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/border-left-width/">border-left-width</a></td>
+<td>
+	thin | medium | thick | <i>length</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/border-radius/">border-radius</a></td>
+<td>
+	<i>length</i> {1..2}
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/border-bottom-left-radius/">border-bottom-left-radius</a></td>
+<td>
+	<i>length</i> {1..2}
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/border-bottom-right-radius/">border-bottom-right-radius</a></td>
+<td>
+	<i>length</i> {1..2}
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/border-top-left-radius/">border-top-left-radius</a></td>
+<td>
+	<i>length</i> {1..2}
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/border-top-right-radius/">border-top-right-radius</a></td>
+<td>
+	<i>length</i> {1..2}
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/border-right/">border-right</a></td>
+<td>
+	<i>color</i> || <i>border-style</i> || <i>border-width</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/border-right-color/">border-right-color</a></td>
+<td><i>color</i></td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/border-right-style/">border-right-style</a></td>
+<td>
+	none | hidden | solid | dashed | dotted | double | groove | ridge | inset | outset
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/border-right-width/">border-right-width</a></td>
+<td>
+	thin | medium | thick | <i>length</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/border-spacing/">border-spacing</a></td>
+<td>
+	<i>length</i> {1..2}
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/border-style/">border-style</a></td>
+<td>
+	<i>border-style</i> {1..4}
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/border-top/">border-top</a></td>
+<td>
+	<i>color</i> || <i>border-style</i> || <i>border-width</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/border-top-color/">border-top-color</a></td>
+<td><i>color</i></td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/border-top-style/">border-top-style</a></td>
+<td>
+	none | hidden | solid | dashed | dotted | double | groove | ridge | inset | outset
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/border-top-width/">border-top-width</a></td>
+<td>
+	thin | medium | thick | <i>length</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/border-width/">border-width</a></td>
+<td>
+	<i>border-width</i> {1..4}
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/bottom/">bottom</a></td>
+<td>
+	auto | <i>length</i> | <i>percent</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/box-sizing/">box-sizing</a></td>
+<td>
+	content-box | padding-box | border-box
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-caption-page/">caption-page</a>*</td>
+<td>
+	first | following | all
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/caption-side/">caption-side</a></td>
+<td>
+	top | bottom
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/clear/">clear</a></td>
+<td>
+	none | left | right | inside | outside | both
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/clip/">clip</a></td>
+<td>
+	auto | rect(<i>offset</i>, <i>offset</i>, <i>offset</i>, <i>offset</i>)
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/clip-path/">clip-path</a></td>
+<td>
+	none | url(path)
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/clip-rule/">clip-rule</a></td>
+<td>
+	nonzero | evenodd
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/color/">color</a></td>
+<td><i>color</i></td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/column-break-after/">column-break-after</a></td>
+<td>
+	auto | always
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/column-break-before/">column-break-before</a></td>
+<td>
+	auto | always
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/column-count/">column-count</a></td>
+<td><i>number</i></td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/column-fill/">column-fill</a></td>
+<td>
+	auto | balance
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/column-gap/">column-gap</a></td>
+<td><i>length</i></td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/column-rule/">column-rule</a></td>
+<td>
+	<i>column-rule-color</i> || <i>column-rule-style</i> || <i>column-rule-width</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/column-rule-color/">column-rule-color</a></td>
+<td><i>color</i></td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/column-rule-style/">column-rule-style</a></td>
+<td>
+	none | solid | dashed | dotted | double | groove | ridge | inset | outset
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/column-rule-width/">column-rule-width</a></td>
+<td>
+	thin | medium | thick | <i>length</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/column-span/">column-span</a></td>
+<td>
+	<i>number</i> | all
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/column-width/">column-width</a></td>
+<td>
+	auto | <i>width</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/columns/">columns</a></td>
+<td>
+	<i>column-count</i> | <i>column-width</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/content/">content</a></td>
+<td>
+	normal | flow(<i>name</i>, <i>page-policy</i>?) | [ 
+		"string" | url(filename) | counter(<i>name</i>, <i>counter-style</i>?, <i>page-policy</i>?) | counters(<i>name</i>, "separator", <i>counter-style</i>?, <i>page-policy</i>?) | target-counter(<i>url</i>, <i>counter</i>, <i>counter-style</i>?) | target-counters(<i>url</i>, <i>counter</i>, "separator", <i>counter-style</i>?) | target-content(<i>url</i>) | leader("...") | string(<i>ident</i>, <i>page-policy</i>?) | content() | prince-base-url() | prince-script(<i>ident</i>, <i>content</i>*) | element(<i>name</i>)
+	     ]+
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/counter-increment/">counter-increment</a></td>
+<td>
+	none | [ 
+		<i>name</i>
+		<i>number</i>?
+	     ]+
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/counter-reset/">counter-reset</a></td>
+<td>
+	none | [ 
+		<i>name</i>
+		<i>number</i>?
+	     ]+
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/direction/">direction</a></td>
+<td>
+	ltr | rtl
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/display/">display</a></td>
+<td>
+	inline | block | none | list-item | run-in | table | table-header-group | table-footer-group | table-row-group | table-row | table-cell | table-caption | table-column | table-column-group | inline-block | inline-table
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/empty-cells/">empty-cells</a></td>
+<td>
+	show | hide
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/float/">float</a></td>
+<td>
+	none | left | right | inside | outside | footnote | inline-footnote | prince-column-footnote | prince-column-inline-footnote | prince-snap | [ top | bottom | column-top | column-bottom | column-top-corner | column-bottom-corner || next? || unless-fit? ]
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-flow/">flow</a>*</td>
+<td>
+	normal | static(<i>name</i>, [ 
+		    start | current
+		 ]?)
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/font/">font</a></td>
+<td>
+	<i>font-style</i>?
+	<i>font-variant</i>?
+	<i>font-weight</i>?
+	<i>font-size</i>
+	[ 
+	     / 
+	    <i>line-height</i>
+	 ]?
+	<i>font-family</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/font-family/">font-family</a></td>
+<td>
+	[ 
+	    serif | sans-serif | monospace | <i>name</i> | "name"
+	 ]+
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/font-size/">font-size</a></td>
+<td>
+	<i>length</i> | smaller | larger | xx-small | x-small | small | medium | large | x-large | xx-large
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/font-stretch/">font-stretch</a></td>
+<td>
+	ultra-condensed | extra-condensed | condensed | semi-condensed | normal | semi-expanded | expanded | extra-expanded | ultra-expanded | wider | narrower
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/font-style/">font-style</a></td>
+<td>
+	normal | italic
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/font-variant/">font-variant</a></td>
+<td>
+	normal | small-caps | prince-no-kerning | prince-opentype([ 
+		    <i>feature</i>
+		 ]+)
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/font-weight/">font-weight</a></td>
+<td>
+	normal | bold | bolder | lighter | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/footnote-style-position/">footnote-style-position</a></td>
+<td>
+	outside | inside
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/height/">height</a></td>
+<td>
+	auto | <i>length</i> | <i>percent</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/hyphens/">hyphens</a></td>
+<td>
+	none | manual | auto
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-hyphenate-patterns/">hyphenate-patterns</a>*</td>
+<td>
+	none | url(patterns-url)
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-hyphenate-after/">hyphenate-after</a>*</td>
+<td>
+	<i>integer</i>
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-hyphenate-before/">hyphenate-before</a>*</td>
+<td>
+	<i>integer</i>
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-hyphenate-lines/">hyphenate-lines</a>*</td>
+<td>
+	no-limit | <i>integer</i>
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-image-resolution/">image-resolution</a>*</td>
+<td>
+	<i>dpi</i> | normal | 
+		auto
+		[ 
+		    ,
+		    normal | <i>dpi</i>
+		 ]?
+	    
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/left/">left</a></td>
+<td>
+	auto | <i>length</i> | <i>percent</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/letter-spacing/">letter-spacing</a></td>
+<td>
+	normal | <i>length</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/line-stacking-strategy/">line-stacking-strategy</a></td>
+<td>
+	inline-line-height | block-line-height | max-height | grid-height
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/line-height/">line-height</a></td>
+<td>
+	normal | none | <i>number</i> | <i>length</i>
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-link/">link</a>*</td>
+<td>
+	none | url(target-url) | attr(target-attr)
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/list-style/">list-style</a></td>
+<td>
+	<i>list-style-image</i> || <i>list-style-position</i> || <i>list-style-type</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/list-style-image/">list-style-image</a></td>
+<td>
+	none | url(image-url)
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/list-style-position/">list-style-position</a></td>
+<td>
+	outside | inside
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/list-style-type/">list-style-type</a></td>
+<td>
+	box | check | circle | diamond | disc | hyphen | square | decimal | decimal-leading-zero | lower-roman | upper-roman | lower-alpha | upper-alpha | lower-hexadecimal | upper-hexadecimal | binary | octal | asterisks | arabic-indic | lower-greek | upper-greek | lower-norwegian | upper-norwegian | lower-russian | upper-russian | lower-ukrainian | upper-ukrainian | lower-belarusian | upper-belarusian | lower-bulgarian | upper-bulgarian | lower-serbian | upper-serbian | persian | urdu | japanese-informal | japanese-formal | simp-chinese-informal | simp-chinese-formal | trad-chinese-informal | trad-chinese-formal
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/margin/">margin</a></td>
+<td>
+	[ 
+	    auto | <i>length</i> | <i>percent</i>
+	 ] {1..4}
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/margin-bottom/">margin-bottom</a></td>
+<td>
+	auto | <i>length</i> | <i>percent</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/margin-inside/">margin-inside</a></td>
+<td>
+	auto | <i>length</i> | <i>percent</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/margin-left/">margin-left</a></td>
+<td>
+	auto | <i>length</i> | <i>percent</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/margin-outside/">margin-outside</a></td>
+<td>
+	auto | <i>length</i> | <i>percent</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/margin-right/">margin-right</a></td>
+<td>
+	auto | <i>length</i> | <i>percent</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/margin-top/">margin-top</a></td>
+<td>
+	auto | <i>length</i> | <i>percent</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/marks/">marks</a></td>
+<td>
+	none || crop || cross
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/max-height/">max-height</a></td>
+<td>
+	none | <i>length</i> | <i>percent</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/max-width/">max-width</a></td>
+<td>
+	none | <i>length</i> | <i>percent</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/min-height/">min-height</a></td>
+<td>
+	<i>length</i> | <i>percent</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/min-width/">min-width</a></td>
+<td>
+	<i>length</i> | <i>percent</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/opacity/">opacity</a></td>
+<td>
+	<i>number</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/orphans/">orphans</a></td>
+<td>
+	<i>integer</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/overflow/">overflow</a></td>
+<td>
+	visible | hidden
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/padding/">padding</a></td>
+<td>
+	[ 
+	    <i>length</i> | <i>percent</i>
+	 ] {1..4}
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/padding-bottom/">padding-bottom</a></td>
+<td>
+	<i>length</i> | <i>percent</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/padding-left/">padding-left</a></td>
+<td>
+	<i>length</i> | <i>percent</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/padding-right/">padding-right</a></td>
+<td>
+	<i>length</i> | <i>percent</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/padding-top/">padding-top</a></td>
+<td>
+	<i>length</i> | <i>percent</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/page/">page</a></td>
+<td>
+	auto | <i>name</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/page-break-after/">page-break-after</a></td>
+<td>
+	auto | always | avoid | left | right
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/page-break-before/">page-break-before</a></td>
+<td>
+	auto | always | avoid | left | right
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/page-break-inside/">page-break-inside</a></td>
+<td>
+	auto | avoid
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/position/">position</a></td>
+<td>
+	static | relative | absolute | fixed | running(<i>name</i>)
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-background-image-resolution/">prince-background-image-resolution</a>*</td>
+<td>
+	<i>dpi</i> | normal | 
+		auto
+		[ 
+		    ,
+		    normal | <i>dpi</i>
+		 ]?
+	    
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-bleed/">prince-bleed</a>*</td>
+<td>
+	auto | [ 
+		<i>length</i>
+	     ] {1..4}
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-bookmark-label/">prince-bookmark-label</a>*</td>
+<td>
+	none | <i>content</i>
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-bookmark-level/">prince-bookmark-level</a>*</td>
+<td>
+	none | <i>integer</i>
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-bookmark-state/">prince-bookmark-state</a>*</td>
+<td>
+	open | closed
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-bookmark-target/">prince-bookmark-target</a>*</td>
+<td>
+	self | url(target-url) | attr(target-attr)
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-caption-page/">prince-caption-page</a>*</td>
+<td>
+	first | following | all
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-flow/">prince-flow</a>*</td>
+<td>
+	normal | static(<i>name</i>, [ 
+		    start | current
+		 ]?)
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-footnote-policy/">prince-footnote-policy</a>*</td>
+<td>
+	auto | keep-with-line | keep-with-block
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/prince-hyphenate-patterns/">prince-hyphenate-patterns</a></td>
+<td>
+	none | url(patterns-url)
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/prince-hyphenate-after/">prince-hyphenate-after</a></td>
+<td>
+	<i>integer</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/prince-hyphenate-before/">prince-hyphenate-before</a></td>
+<td>
+	<i>integer</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/prince-hyphenate-lines/">prince-hyphenate-lines</a></td>
+<td>
+	no-limit | <i>integer</i>
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-image-resolution/">prince-image-resolution</a>*</td>
+<td>
+	<i>dpi</i> | normal | 
+		auto
+		[ 
+		    ,
+		    normal | <i>dpi</i>
+		 ]?
+	    
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/prince-image-magic/">prince-image-magic</a></td>
+<td>
+	none | jpeg-quality(<i>percent</i>) | snap-to-integer-coords
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-linebreak-magic/">prince-linebreak-magic</a>*</td>
+<td>
+	none | auto
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-link/">prince-link</a>*</td>
+<td>
+	none | url(target-url) | attr(target-attr)
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-mark-length/">prince-mark-length</a>*</td>
+<td>
+	<i>length</i>
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-mark-offset/">prince-mark-offset</a>*</td>
+<td>
+	auto | [ 
+		<i>length</i>
+	     ] {1..4}
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-page-group/">prince-page-group</a>*</td>
+<td>
+	start | auto
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-pdf-destination/">prince-pdf-destination</a>*</td>
+<td>
+	none | "name" | attr(attr)
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-pdf-link-type/">prince-pdf-link-type</a>*</td>
+<td>
+	auto | web | file
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-pdf-open-action/">prince-pdf-open-action</a>*</td>
+<td>
+	none | print | command(<i>ident</i>)
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-pdf-page-label/">prince-pdf-page-label</a>*</td>
+<td>
+	auto | <i>content</i>
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-pdf-page-layout/">prince-pdf-page-layout</a>*</td>
+<td>
+	single-page | one-column | two-column | two-column-left | two-column-right
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-pdf-page-mode/">prince-pdf-page-mode</a>*</td>
+<td>
+	auto | show-attachments | show-bookmarks | fullscreen
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-pdf-paper-tray/">prince-pdf-paper-tray</a>*</td>
+<td>
+	auto | pick-tray-by-pdf-size
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-pdf-print-scaling/">prince-pdf-print-scaling</a>*</td>
+<td>
+	auto | none
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-pdf-script/">prince-pdf-script</a>*</td>
+<td>
+	"JavaScript"
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-shrink-to-fit/">prince-shrink-to-fit</a>*</td>
+<td>
+	none | auto
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-text-justify/">prince-text-justify</a>*</td>
+<td>
+	auto | prince-cjk
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-text-replace/">prince-text-replace</a>*</td>
+<td>
+	none | [ 
+		"search"
+		"replace"
+	     ]+
+    </td>
+</tr>
+<tr>
+<td class="prop">
+<a href="/doc/9.0/properties/prince-trim/">prince-trim</a>*</td>
+<td>
+	auto | [ 
+		<i>length</i>
+	     ] {1..4}
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/right/">right</a></td>
+<td>
+	auto | <i>length</i> | <i>percent</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/size/">size</a></td>
+<td>
+	<i>paper-size</i> | 
+		<i>length</i>
+		<i>length</i>
+	    
+	[ 
+	    landscape | portrait
+	 ]?
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/string-set/">string-set</a></td>
+<td>
+	none | [ 
+		<i>ident</i>
+		<i>content</i>
+	     ]+
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/table-baseline/">table-baseline</a></td>
+<td>
+	<i>number</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/table-column-span/">table-column-span</a></td>
+<td>
+	<i>number</i> | attr(colspan)
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/table-layout/">table-layout</a></td>
+<td>
+	auto | fixed
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/table-row-span/">table-row-span</a></td>
+<td>
+	<i>number</i> | attr(rowspan)
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/text-align/">text-align</a></td>
+<td>
+	left | right | inside | outside | center | justify
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/text-align-last/">text-align-last</a></td>
+<td>
+	left | right | inside | outside | center | justify
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/text-decoration/">text-decoration</a></td>
+<td>
+	none || underline || overline || line-through
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/text-indent/">text-indent</a></td>
+<td>
+	<i>length</i>
+	hanging?
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/text-line-through/">text-line-through</a></td>
+<td>
+	<i>color</i> || <i>text-line-through-style</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><nobr><a href="/doc/9.0/properties/text-line-through-color/">text-line-through-color</a></nobr></td>
+<td><i>color</i></td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/text-line-through-style/">text-line-through-style</a></td>
+<td>
+	none | solid | dashed | dotted
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/text-overflow/">text-overflow</a></td>
+<td>
+	clip | ellipsis
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/text-overline/">text-overline</a></td>
+<td>
+	<i>color</i> || <i>text-overline-style</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/text-overline-color/">text-overline-color</a></td>
+<td><i>color</i></td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/text-overline-style/">text-overline-style</a></td>
+<td>
+	none | solid | dashed | dotted
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/text-transform/">text-transform</a></td>
+<td>
+	none | lowercase | uppercase | capitalize
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/text-underline/">text-underline</a></td>
+<td>
+	<i>color</i> || <i>text-underline-style</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/text-underline-color/">text-underline-color</a></td>
+<td><i>color</i></td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/text-underline-style/">text-underline-style</a></td>
+<td>
+	none | solid | dashed | dotted
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/top/">top</a></td>
+<td>
+	auto | <i>length</i> | <i>percent</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/transform/">transform</a></td>
+<td>
+	none | [ 
+		rotate(<i>angle</i>) | translate(<i>offset</i>, <i>offset</i>?) | translatex(<i>offset</i>) | translatey(<i>offset</i>) | scale(<i>number</i>, <i>number</i>?) | scalex(<i>number</i>) | scaley(<i>number</i>) | skewx(<i>angle</i>) | skewy(<i>angle</i>)
+	     ]+
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/transform-origin/">transform-origin</a></td>
+<td>
+	<i>percent</i> || <i>length</i> || left || center || right || top || bottom
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/unicode-bidi/">unicode-bidi</a></td>
+<td>
+	normal | embed | bidi-override
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/vertical-align/">vertical-align</a></td>
+<td>
+	baseline | sub | super | top | text-top | middle | bottom | text-bottom | <i>length</i> | <i>percent</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/visibility/">visibility</a></td>
+<td>
+	visible | hidden
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/white-space/">white-space</a></td>
+<td>
+	normal | pre | pre-wrap | pre-line | nowrap
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/widows/">widows</a></td>
+<td>
+	<i>integer</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/width/">width</a></td>
+<td>
+	auto | <i>length</i> | <i>percent</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/word-spacing/">word-spacing</a></td>
+<td>
+	normal | <i>length</i>
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/writing-mode/">writing-mode</a></td>
+<td>
+	horizontal-tb | vertical-rl
+    </td>
+</tr>
+<tr>
+<td class="prop"><a href="/doc/9.0/properties/z-index/">z-index</a></td>
+<td>
+	auto | <i>number</i>
+    </td>
+</tr>
+</table>
+</div>
+</div>
+<script src="/js/warning.js"></script>
+</div>
+<div id="footer"><div id="footer-inner">
+<p id="footer-copy">Copyright © 2002 – 2025 YesLogic Pty. Ltd.</p>
+<ul id="footer-nav">
+<li><a href="/">Home</a></li>
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+</div></div>
+</body>
+</html>

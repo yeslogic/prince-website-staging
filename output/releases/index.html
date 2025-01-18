@@ -1,0 +1,2725 @@
+<!DOCTYPE html><html class="p10" id="releases">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/common10.css">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.min.css">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.theme.min.css">
+<title>Prince - Release History</title>
+</head>
+<body>
+<div class="header-container">
+<div class="mainheader-container"><div class="header">
+<div class="logo"><a href="/"><img src="/images/Prince-logo.png" alt="Prince"></a></div>
+<div class="menu"><ul>
+<li><a href="/purchase/">
+                      Buy Prince</a></li>
+<li><a href="/samples/">
+                      Samples</a></li>
+<li><a href="/doc/">
+                      Documentation</a></li>
+<li><a href="/forum/">
+                      Forum</a></li>
+<li><a href="/download/" class="current">
+                      Download</a></li>
+</ul></div>
+<div style="clear:both"></div>
+<a class="mobile-menu-trigger"><img src="/images/menu-icon2.png" alt=""></a>
+</div></div>
+<div class="subheader-container"><div class="subheader">
+<div class="submenu"><ul>
+<li><a href="/download/15/">
+                    Prince 15</a></li>
+<li><a href="/latest/">
+                    Latest builds</a></li>
+<li><a href="/books/">
+                    Prince for Books</a></li>
+<li><a href="/releases/15/">
+                    Release Notes</a></li>
+<li><a href="/download/wrappers/">
+                    Wrappers</a></li>
+</ul></div>
+<div style="clear:both"></div>
+</div></div>
+</div>
+
+<div class="body-container">
+<div class="content1150">
+<h1 class="subpages-heading2">Release History</h1>
+<div class="content750">
+
+<h2 id="p16">
+    Prince 16
+</h2>
+<p class="date">January 2025</p>
+
+<p>
+<a href="/releases/16/">Release notes for Prince 16</a>
+</p>
+
+<h2 id="p15">
+    Prince 15
+</h2>
+<p class="date">November 2022</p>
+
+<p>
+<a href="/releases/15/">Release notes for Prince 15</a>
+</p>
+
+<h2 id="p14">
+    Prince 14
+</h2>
+<p class="date">February 2021</p>
+
+<p>
+<a href="/releases/14/">Release notes for Prince 14</a>
+</p>
+
+<h2 id="p13">
+    Prince 13
+</h2>
+<p class="date">November 2019</p>
+
+<p>
+<a href="/releases/13/">Release notes for Prince 13</a>
+</p>
+
+<h2 id="p12">
+    Prince 12
+</h2>
+<p class="date">June 2018</p>
+
+<p>
+<a href="/releases/12/">Release notes for Prince 12</a>
+</p>
+
+<h2 id="p11">
+    Prince 11
+</h2>
+<p class="date">November 2016</p>
+
+<p>
+<a href="/releases/11/">Release notes for Prince 11</a>
+</p>
+
+<h2 id="p100">
+    Prince 10
+</h2>
+<p class="date">April 2015</p>
+
+<p>
+<a href="/releases/10/">Release notes for Prince 10</a>
+</p>
+
+<h2 id="p90">
+    Prince 9.0
+</h2>
+<p class="date">June 2013</p>
+
+<p>
+<a href="/releases/9.0/">Release notes for Prince 9.0</a>
+</p>
+
+<h2 id="p81">
+    Prince 8.1
+</h2>
+<p class="date">June 2012</p>
+
+<h3>Highlights</h3>
+<ul>
+<li><p>CSS3 Transforms.</p></li>
+<li><p>JavaScript DOM improvements.</p></li>
+<li><p>Experimental support for HTML5.</p></li>
+</ul>
+
+<h3>CSS Support</h3>
+
+<p>
+Support for CSS3 Transforms.
+</p>
+
+<p>
+Support for "column-span: all".
+</p>
+
+<p>
+Support for the <code>::first-line</code> pseudo-element.
+</p>
+
+<p>
+Support for named spot colors (separation colors) with new @prince-color CSS rule.
+</p>
+
+<p>
+Support for inter-character justification in CJK text with new
+prince-text-justify property.
+</p>
+
+<p>
+Support for overflow content to continue across multiple pages.
+</p>
+
+<p>
+Changed "page-break-after: left | right" to leave a blank page if necessary at
+the end of the document, to guarantee an even page count.
+</p>
+
+<p>
+Extended prince-linebreak-magic property to apply to \ characters.
+</p>
+
+<p>
+Renamed prince-jpeg-quality property to prince-image-magic and added
+snap-to-integer-coords value.
+</p>
+
+<p>
+Fixed bug where background images were not appearing on tables.
+</p>
+
+<p>
+Fixed bug affecting page breaking of table rows with specified height.
+</p>
+
+<p>
+Fixed bug affecting table cells that span multiple columns.
+</p>
+
+<p>
+Fixed bug affecting ::first-letter pseudo-element and nested spans.
+</p>
+
+<p>
+Fixed bug affecting prince-column-footnote outside of multi-column layouts.
+</p>
+
+<p>
+Fixed bug affecting the hyphenation of capitalised and uppercase words.
+</p>
+
+<p>
+Fixed bug affecting inline-blocks longer than a page preceded by a float.
+</p>
+
+<p>
+Fixed bug affecting floats and hanging text indents.
+</p>
+
+<p>
+Fixed bug where the background image for the footnotes area would be swapped
+with the background image for the page float bottom area.
+</p>
+
+<h3>JavaScript Support</h3>
+
+<p>
+Support for more DOM properties:
+</p>
+<pre>
+- style
+- innerHTML
+- textContent
+- a.href
+- a.name
+- img.src
+- input.value
+- window.location.hash
+</pre>
+
+<p>
+Support for getElementsByClassName DOM method.
+</p>
+
+<p>
+Support for URI encode/decode functions.
+</p>
+
+<p>
+Added a new API for setting PDF output options.
+</p>
+
+<p>
+Support for NUL characters in strings.
+</p>
+
+<p>
+Added Math.seedRandom function for seeding the random number generator.
+</p>
+
+<p>
+Exposed DOM prototype objects, eg. Node, Element, Attribute, etc.
+</p>
+
+<p>
+Changed getElementsByTagName to return a live NodeList object.
+</p>
+
+<p>
+Support for line-breaking in prince-script() generated content.
+</p>
+
+<p>
+Support for evaluating <code>script</code> elements when they are added to the DOM.
+</p>
+
+<p>
+Support for deprecated octal character escape codes.
+</p>
+
+<p>
+Bogus &lt;!-- comments are ignored.
+</p>
+
+<p>
+Changed Number.toString method to comply with spec.
+</p>
+
+<p>
+Support for { as a literal pattern character in regular expressions if it does
+not form the beginning of a quantifier.
+</p>
+
+<p>
+Changed the location.href property to use absolute paths for file:// URLs.
+</p>
+
+<p>
+Fixed bug where mod operator returned undefined for non-integer
+values.
+</p>
+
+<p>
+Fixed bug causing abort due to big integer values.
+</p>
+
+<p>
+Fixed bug where "typeof foo" could return undefined instead of "undefined".
+</p>
+
+<h3>HTML Support</h3>
+
+<p>
+Experimental support for HTML5 with "-i html5" on command-line.
+</p>
+
+<h3>SVG Support</h3>
+
+<p>
+Support for the SVG clipPath element and clip-path / clip-rule CSS properties.
+</p>
+
+<p>
+Support for "display: none" and "visibility: hidden" on SVG elements.
+</p>
+
+<p>
+Improved scaling of SVG when the viewport height is a percentage.
+</p>
+
+<h3>Fonts and Unicode Support</h3>
+
+<p>
+Support for zero-width joiner character in Arabic text.
+</p>
+
+<p>
+Support for OpenType fonts with PostScript outlines (OTF/CFF fonts) installed
+as system fonts on Windows.
+</p>
+
+<p>
+Checks the Panose proportion value in the OS/2 table when computing
+font-stretch for TrueType/OpenType fonts.
+</p>
+
+<p>
+Avoids using CID font encoding in PDF files unless absolutely necessary, to
+workaround bugs in MacOS X Preview.
+</p>
+
+<h3>HTTP Support</h3>
+
+<p>
+Updated SSL certificate authority file.
+</p>
+
+<p>
+Support for MIME type parameter values in quotes, eg. charset="UTF-8".
+</p>
+
+<p>
+Fixed referer issue causing transient 400 errors for some HTTP requests.
+</p>
+
+<h3>Platform Support</h3>
+
+<p>
+Added Prince packages for Ubuntu 12.04.
+</p>
+
+<p>
+Added Prince packages for FreeBSD 8.2.
+</p>
+
+<p>
+Added Prince packages for CentOS / Red Hat Enterprise Linux 6.
+</p>
+
+<h3>Miscellaneous Improvements</h3>
+
+<p>
+New command-line argument -l / --input-list for specifying multiple
+input files in another file instead of directly on the command-line.
+</p>
+
+<p>
+Fixed bug where # characters in filenames on the command-line were treated as
+fragment identifiers.
+</p>
+
+<p>
+Fixed bug affecting Unicode filenames and command-line arguments on Windows.
+</p>
+
+<h2 id="p80">
+    Prince 8.0
+</h2>
+<p class="date">September 2011</p>
+
+<h3>JavaScript Support</h3>
+
+<p>
+Added <code>--javascript</code> option for running HTML and SVG script elements.
+</p>
+
+<p>
+Added <code>--script=FILE</code> option for running external JavaScript files.
+</p>
+
+<p>
+Added <code>prince-script()</code> value for running JavaScript from CSS
+generated content.
+</p>
+
+<p>
+Replaced the <code>--log-stats</code> option with a JavaScript API.
+</p>
+
+<h3>SVG Support</h3>
+
+<p>
+Added support for the SVG <code>&lt;style&gt;</code> element.
+</p>
+
+<p>
+Added support for the SVG <code>&lt;switch&gt;</code> element.
+</p>
+
+<p>
+Added support for scientific/exponential notation in SVG coordinates.
+</p>
+
+<p>
+Fixed bug affecting non-break space characters in SVG.
+</p>
+
+<h3>Internationalization</h3>
+
+<p>
+Improved line-breaking for Chinese text.
+</p>
+
+<p>
+Added support for Chinese, Japanese, and Persian counter styles for list numbering.
+</p>
+
+<h3>Font Support</h3>
+
+<p>
+Improved performance for fonts with many OpenType glyph substitution rules.
+</p>
+
+<p>
+Fixed bug causing warnings and unnecessary kerning with some OpenType fonts.
+</p>
+
+<p>
+Fixed bug affecting OpenType positioning in some OpenType fonts.
+</p>
+
+<p>
+Added support for Unicode characters beyond U+30000.
+</p>
+
+<h3>HTML Support</h3>
+
+<p>
+Added support for style and link elements that occur in the document body.
+</p>
+
+<p>
+Added support for the xml:base attribute on style and link elements.
+</p>
+
+<p>
+Added support for hidden input elements.
+</p>
+
+<p>
+Removed "max-width: 100%" from img elements, for browser compatibility.
+</p>
+
+<p>
+Removed "line-height: none" from sub/sup elements, for browser compatibility.
+</p>
+
+<p>
+Fixed bug where the <code>type</code> attribute was setting the list-style-type
+for non-HTML elements.
+</p>
+
+<h3>HTTP Support</h3>
+
+<p>
+Added support for images downloaded over HTTP with incorrect MIME types.
+</p>
+
+<p>
+Added --http-timeout option to avoid waiting indefinitely for slow servers.
+</p>
+
+<h3>PDF Support</h3>
+
+<p>
+Added support for PDF attachments with <code>--attach=FILE</code> option
+and "show-attachments" value for the prince-pdf-page-mode property.
+</p>
+
+<p>
+Added support for PDF bookmarks on pseudo-elements.
+</p>
+
+<p>
+Added prince-pdf-page-layout property to control page layout in PDF
+viewer.
+</p>
+
+<p>
+Added prince-pdf-page-label property for specifying PDF page labels.
+</p>
+
+<p>
+Fixed bug affecting PDF bookmarks on repeating table headers and footers.
+</p>
+
+<h3>CSS Support</h3>
+
+<p>
+Added :nth() page selector.
+</p>
+
+<p>
+Added support for the prince-link property on pseudo-elements.
+</p>
+
+<p>
+Changed default value of prince-image-resolution property to "normal".
+</p>
+
+<p>
+Changed page vertical margins to be resolve percentages relative to height, not width.
+</p>
+
+<p>
+Added device-cmyk() as an alias for the cmyk() color function.
+</p>
+
+<p>
+Fixed bug where counter scopes were incorrectly extended outside of parent elements.
+</p>
+
+<p>
+Fixed bug where the width property had no effect on page margin boxes.
+</p>
+
+<p>
+Fixed bug affecting positioned blocks inside justified paragraphs.
+</p>
+
+<p>
+Fixed bug where text decoration did not work properly with text-indent.
+</p>
+
+<p>
+Fixed bug where forced page breaks in list items would cause the marker to be
+repeated.
+</p>
+
+<p>
+Fixed bug affecting table cells that span rows and break across multiple pages.
+</p>
+
+<p>
+Fixed bug affecting empty inline tables and HTML <code>&lt;select&gt;</code> elements.
+</p>
+
+<p>
+Fixed bug where cmyk() and rgba() background colors were not being applied to
+table rows and row groups.
+</p>
+
+<p>
+Fixed bug where space before commas in CSS selectors resulted in rules being
+ignored.
+</p>
+
+<p>
+Fixed bug where @charset rules would block @import rules.
+</p>
+
+<p>
+Changed leaders to expand before performing text alignment.
+</p>
+
+<p>
+Fixed bug affecting empty leaders.
+</p>
+
+<h3>Columns Support</h3>
+
+<p>
+Added support for the column properties on table cells and list items.
+</p>
+
+<p>
+Added support for inset/outset/ridge/groove/double column rule styles.
+</p>
+
+<p>
+Fixed bug where the column-break-before and column-break-after properties only
+worked on direct children of an element with multi-column layout.
+</p>
+
+<p>
+Fixed bug where column floats in nested multi-column layouts went to the outer
+column, not the inner column.
+</p>
+
+<p>
+Fixed bug affecting "float: prince-column-top-if-necessary" on elements
+not inside columns.
+</p>
+
+<p>
+Fixed bug affecting column floats and footnotes inside other floats, inline and
+absolutely positioned blocks, and table cells.
+</p>
+
+<h3>Miscellaneous Improvements</h3>
+
+<p>
+Improved speed and reduced memory usage for large documents.
+</p>
+
+<p>
+Updated the default hyphenation dictionaries.
+</p>
+
+<p>
+Added support for baseline alignment of MathML content.
+</p>
+
+<h2 id="p71">
+    Prince 7.1
+</h2>
+<p class="date">May 2010</p>
+
+<h3>Fonts and Unicode Support</h3>
+
+<p>
+Added support for the <a href="http://hacks.mozilla.org/2009/10/woff/">WOFF</a> font
+file format.
+</p>
+
+<p>
+Added support for OpenType extension lookups needed for kerning with the Arno Pro font.
+</p>
+
+<p>
+Added support for the OpenType GDEF table, needed by some Arabic and Indic fonts.
+</p>
+
+<p>
+Added support for OpenType positioning rules with vertical placement.
+</p>
+
+<p>
+Added new command-line option --no-artificial-fonts to disable
+synthesised bold and italic fonts.
+</p>
+
+<p>
+Improved handling of symbolic fonts with no Unicode charmap, such as Wingdings
+and barcode fonts.
+</p>
+
+<p>
+Added support for Unicode characters up to U+30000.
+</p>
+
+<p>
+Right-to-left and left-to-right bidi marks are now treated as non-printing
+characters.
+</p>
+
+<p>
+Fixed bug where hyphenation could prevent ligature formation.
+</p>
+
+<p>
+Fixed bug where punctuation could interfere with kerning and other OpenType
+features.
+</p>
+
+<p>
+Fixed bug affecting some OpenType chaining contextual substitutions.
+</p>
+
+<p>
+Fixed bug where non-embedded fonts could still be subset.
+</p>
+
+<p>
+Fixed bug affecting unquoted font-family names that include numbers.
+</p>
+
+<p>
+Fixed bug affecting Fontconfig on Red Hat Enterprise Linux 4.
+</p>
+
+<h3>SVG Support</h3>
+
+<p>
+Added support for bidirectional text layout in SVG.
+</p>
+
+<p>
+Added support for multiple x/y/dx/dy and rotate values on text elements in SVG.
+</p>
+
+<p>
+Added support for the letter-spacing and word-spacing properties in SVG.
+</p>
+
+<h3>CSS Properties</h3>
+
+<p>
+Added the table-baseline property, needed for
+<a href="http://www.w3.org/TR/mathml-for-css/">MathML for CSS</a>.
+</p>
+
+<p>
+Added the border-break property.
+</p>
+
+<p>
+Added the prince-border-clip property, used for specifying the length of the border
+on the @footnotes area.
+</p>
+
+<p>
+Added the prince-pdf-open-action property to specify actions such as printing that
+should take place automatically when the PDF file is opened.
+</p>
+
+<h3>Miscellaneous Improvements</h3>
+
+<p>
+Added support for internal links in documents with multiple base URLs.
+</p>
+
+<p>
+Added support for commonly used HTML5 elements, such as section.
+</p>
+
+<p>
+Added prince-base-url() value to content property for accessing document
+URL.
+</p>
+
+<p>
+Changed prince-pdf-link-type property to apply to bookmark links as well as normal
+links.
+</p>
+
+<p>
+Added an experimental --fileroot option for specifying the root directory used to resolve
+absolute filenames.
+</p>
+
+<p>
+Grayscale TIFF and PNG images are no longer expanded to RGB.
+</p>
+
+<p>
+Invalid intrinsic resolutions in JPEG images are now ignored.
+</p>
+
+<p>
+Fixed bug affecting collapsing borders for footers on tables that span page
+breaks.
+</p>
+
+<p>
+Fixed bug affecting line-breaking of string-set values used in flowed blocks.
+</p>
+
+<p>
+Fixed bug where margins could collapse through blocks with "overflow:
+hidden".
+</p>
+
+<p>
+Fixed bug where words containing apostrophes would not be hyphenated.
+</p>
+
+<p>
+Fixed bug affecting preformatted whitespace between spans in HTML documents.
+</p>
+
+<p>
+Fixed bug affecting style sheets beginning with a UTF-8 BOM immediately followed
+by an identifier.
+</p>
+
+<h2 id="p70">
+    Prince 7.0
+</h2>
+<p class="date">October 2009</p>
+
+<h3>Hyphenation and Justification</h3>
+
+<p>
+New TeX-style algorithm for high-quality line-breaking and justification.
+</p>
+
+<p>
+Added hyphenation dictionaries for more European languages.
+</p>
+
+<p>
+The last word in a column or page can now be hyphenated.
+</p>
+
+<h3>Internationalization</h3>
+
+<p>
+Support for Arabic and Hebrew with OpenType fonts.
+</p>
+
+<p>
+Support for Indic scripts with OpenType fonts.
+(Devanagari/Hindi, Bengali, Gurmukhi/Punjabi, Gujarati,
+Oriya, Tamil, Telugu, Kannada, and Malayalam)
+</p>
+
+<p>
+Support for bidirectional text and layout, needed for right-to-left scripts.
+This includes support for the Unicode bidirectional layout algorithm, the CSS
+direction and unicode-bidi properties, and the HTML dir attribute and bdo
+element.
+</p>
+
+<p>
+The text-transform property now supports Greek, Cyrillic, and other scripts,
+in addition to Latin.
+</p>
+
+<p>
+Support for the arabic-indic style for counters and lists.
+</p>
+
+<h3>Font Support</h3>
+
+<p>
+Support for OpenType CFF fonts (.otf files).
+</p>
+
+<p>
+Support for ligatures, kerning, and small-caps with OpenType fonts.
+</p>
+
+<p>
+Support for automatic mark positioning with OpenType fonts.
+</p>
+
+<p>
+Support for nine levels of boldness using the font-weight property.
+</p>
+
+<p>
+Support for synthesized bold and italic fonts when a true
+bold or italic font is not available.
+</p>
+
+<p>
+Improved system font scanning on Linux, MacOS X, and Windows.
+</p>
+
+<p>
+Fixed bug affecting TrueType Collection fonts on Windows.
+</p>
+
+<p>
+Fixed bug affecting the merging of related font subsets.
+</p>
+
+<p>
+Changed the way @font-face rules are processed to follow the latest draft of the
+CSS3 Fonts module.
+</p>
+
+<p>
+Support for the unicode-range descriptor on @font-face rules.
+</p>
+
+<p>
+Added an experimental prince-opentype() value to the font-variant property for
+accessing extra features found in OpenType fonts, such as decorative swashes
+and old-style numerals.
+</p>
+
+<h3>CSS Properties</h3>
+
+<p>
+Support for the CSS3 box-sizing property.
+</p>
+
+<p>
+Added a new property, prince-pdf-destination, to create named destinations in
+generated PDF files.
+</p>
+
+<p>
+Added a new property, prince-pdf-link-type, to control whether web or file links
+are created in generated PDF files.
+</p>
+
+<h3>SVG Support</h3>
+
+<p>
+Support for the shorthand "font" property in SVG, and the font-variant and
+font-stretch properties.
+</p>
+
+<p>
+Support for fallback colors used in SVG paint specifications, eg. for the fill
+property.
+</p>
+
+<p>
+Fixed bug where the SVG fill-opacity property was not inherited.
+</p>
+
+<h3>Miscellaneous Improvements</h3>
+
+<p>
+Added Prince package for 64-bit Linux.
+</p>
+
+<p>
+Added --log-stats command-line option for printing document statistics such
+as the total page count.
+</p>
+
+<p>
+Added --insecure command-line option to disable checking SSL certificates.
+</p>
+
+<p>
+Added --ssl-capath and --ssl-cacert options for compatibility with curl.
+</p>
+
+<p>
+Support for creating footnotes with the float property.
+</p>
+
+<p>
+Support for multiple page selectors on the same @page rule.
+</p>
+
+<p>
+The page and pages counters can now be incremented and reset on block elements.
+</p>
+
+<p>
+Support for four values on the prince-trim and prince-bleed properties, similar
+to margins and padding.
+</p>
+
+<p>
+Fixed bug where the "inherit" keyword was not correctly applied to page margin
+boxes.
+</p>
+
+<p>
+Added support for times to Date metadata values in XHTML.
+</p>
+
+<p>
+Absolutely positioned blocks can now extend beyond the page border.
+</p>
+
+<p>
+Unbalanced columns will now break to fit in blocks with specified height.
+</p>
+
+<p>
+Fixed bug where blocks with specified height could break across pages.
+</p>
+
+<p>
+Fixed bug where margin box backgrounds did not extend into the page bleed area.
+</p>
+
+<p>
+Fixed bug where page background was rendered incorrectly on landscape pages.
+</p>
+
+<p>
+Fixed bug affecting the height of blocks with "overflow: hidden" containing
+floats.
+</p>
+
+<p>
+Fixed performance regression affecting multi-column layouts inside positioned
+blocks and inline blocks.
+</p>
+
+<p>
+Fixed bug affecting text-align on narrow lines.
+</p>
+
+<p>
+Fixed bug affecting the width of shrink-to-fit boxes (eg. inline blocks,
+table cells and floats) containing multiple columns.
+</p>
+
+<p>
+Fixed bug where the HTML align attribute on &lt;tr&gt; elements did not affect
+&lt;th&gt; elements.
+</p>
+
+<p>
+Fixed bug where internal links to documents with /../ or /./ in the path name
+were not resolved correctly.
+</p>
+
+<h2 id="p60r8">
+    Prince 6.0 rev 8
+</h2>
+<p class="date">February 2009</p>
+
+<ul>
+<li>
+<p>
+Support for the image/jpg MIME type as an alias for image/jpeg.
+</p>
+</li>
+<li>
+<p>
+Improved support for repeating background images using PDF patterns to reduce file size.
+</p>
+</li>
+<li>
+<p>
+Fixed bug where progress counter was reset by page breaks in the document.
+</p>
+</li>
+<li>
+<p>
+Fixed bug where no Accept-Encoding HTTP header was being sent and responses
+using gzip transfer encoding were not processed correctly.
+</p>
+</li>
+<li>
+<p>
+Fixed bug where only a limited number of documents could be added to the GUI in
+one operation.
+</p>
+</li>
+</ul>
+
+<h3>Layout</h3>
+
+<ul>
+<li>
+<p>
+Page borders now extend into the bleed area as well as page backgrounds.
+</p>
+</li>
+<li>
+<p>
+Fixed bugs affecting line height when small-caps or vertical alignment are
+enabled.
+</p>
+</li>
+<li>
+<p>
+Removed support for the text-height property, which has been dropped from CSS
+3.
+</p>
+</li>
+<li>
+<p>
+Fixed bug where the column-break-before and column-break-after properties were
+ignored.
+</p>
+</li>
+<li>
+<p>
+Fixed bug affecting the hyphenation of words with leading punctuation, such as
+quotes.
+</p>
+</li>
+<li>
+<p>
+Fixed bug affecting the width calculation of cells in fixed-width tables.
+</p>
+</li>
+<li>
+<p>
+Fixed bug where text-decoration did not apply to page margin boxes.
+</p>
+</li>
+<li>
+<p>
+Fixed bug where text-decoration did not apply to a span containing only nbsp
+characters.
+</p>
+</li>
+</ul>
+
+<h3>SVG support</h3>
+<ul>
+<li>
+<p>
+Added support for tiling patterns in SVG.
+</p>
+</li>
+<li>
+<p>
+Fixed performance issue where SVG images would be reloaded every time they
+were used.
+</p>
+</li>
+</ul>
+
+<h3>HTML support</h3>
+<ul>
+<li>
+<p>
+Added support for "date" as a meta tag in HTML and XHTML documents.
+</p>
+</li>
+<li>
+<p>
+Fixed bugs affecting HTML files saved as UTF-8.
+</p>
+</li>
+<li>
+<p>
+Fixed bugs affecting HTML files containing control characters.
+</p>
+</li>
+</ul>
+
+<h2 id="p60r7">
+    Prince 6.0 rev 7
+</h2>
+<p class="date">September 2008</p>
+
+<ul>
+<li>
+<p>
+Added support for CMYK TIFF and JPEG images.
+</p>
+</li>
+<li>
+<p>
+Fixed bug affecting the resolution of TIFF images.
+</p>
+</li>
+<li>
+<p>
+Update string-set values on each page for content that has been 
+flowed into the page margin boxes.
+</p>
+</li>
+<li>
+<p>
+Fixed bug affecting the layout of inline elements with horizontal 
+borders that span multiple lines.
+</p>
+</li>
+</ul>
+
+<h3>Hyphenation</h3>
+<ul>
+<li>
+<p>
+Fixed bug affecting hyphenated words breaking across pages. 
+</p>
+</li>
+<li>
+<p>
+Fixed bug affecting the hyphenate-before and hyphenate-after 
+properties when using non-ASCII hyphenation patterns, such as Russian. 
+</p>
+</li>
+</ul>
+
+<h3>Tables</h3>
+<ul>
+<li>
+<p>
+Block-level tables may now be pushed aside by floats.
+</p>
+</li>
+<li>
+<p>
+Fixed bug where the text-decoration properties were ignored on table cells and
+rows.
+</p>
+</li>
+<li>
+<p>
+Fixed bug where the min-width and max-width properties were ignored on table
+cells.
+</p>
+</li>
+<li>
+<p>
+Fixed bug where the overflow property was ignored on table cells.
+</p>
+</li>
+<li>
+<p>
+Fixed bug where the page break properties did not apply inside table 
+cells.
+</p>
+</li>
+<li>
+<p>
+Fixed bug affecting the width of tables with collapsed borders. 
+</p>
+</li>
+</ul>
+<h3>HTML support</h3>
+<ul>
+<li>
+<p>
+Changed default styling on the pre element to add top and bottom 
+margin for compatibility with browsers.
+</p>
+</li>
+<li>
+<p>
+Changed default styling on the br element for compatibility with 
+browsers.
+</p>
+</li>
+</ul>
+
+<h3>Performance improvements</h3>
+<ul>
+<li>
+<p>
+Improved performance for documents containing many id attributes.
+</p>
+</li>
+<li>
+<p>
+Reduced memory usage for documents containing many elements and CSS 
+rules, such as documents with thousands of table cells.
+</p>
+</li>
+</ul>
+
+<h3>Platform support</h3>
+<ul>
+<li>
+<p>
+Support for the image/x-png MIME type used by Internet Explorer.
+</p>
+</li>
+<li>
+<p>
+Fixed bug creating zombie processes when running Prince from CGI 
+scripts on Windows.
+</p>
+</li>
+<li>
+<p>
+Fixed bug where some font family names were hidden on Linux, FreeBSD and 
+Solaris.
+</p>
+</li>
+</ul>
+
+<h2 id="p60r6">
+    Prince 6.0 rev 6
+</h2>
+<p class="date">May 2008</p>
+
+<ul>
+<li>
+<p>
+Changed cross-reference links and bookmarks to link to the location of the
+target content on the page, not just the top of the page on which the content
+appears.
+</p>
+</li>
+<li>
+<p>
+Added support for links to local PDF files that include PDF open parameters,
+such as the target page number.
+</p>
+</li>
+<li>
+<p>
+Added support for new prince-page-group property to control when a named page
+group starts or restarts.
+</p>
+</li>
+<li>
+<p>
+Added support for new prince-trim property to specify the size of the paper
+trim box when crop marks are enabled.
+</p>
+</li>
+</ul>
+
+<h3>Hyphenation</h3>
+<ul>
+<li>
+<p>Improved performance when hyphenation is enabled.</p>
+</li>
+<li>
+<p>Improved treatment of manually hyphenated words.</p>
+</li>
+<li>
+<p>Fixed bug in which "hyphens: manual" was not enabling processing of
+soft-hyphen characters.</p>
+</li>
+<li>
+<p>Fixed bugs affecting the width of floats and table cells containing
+hyphenated words.</p>
+</li>
+<li>
+<p>
+Added new property value "hyphens: prince-expand-all" for debugging
+hyphenation patterns.
+</p>
+</li>
+</ul>
+
+<h3>Lists</h3>
+<ul>
+<li>
+<p>Added support for the "type" attribute on HTML lists.</p>
+</li>
+<li>
+<p>Added support for alternating list marker styles on nested HTML lists.</p>
+</li>
+</ul>
+
+<h3>Tables</h3>
+<ul>
+<li>
+<p>Added support for rowspan=0 from HTML 4.</p>
+</li>
+<li>
+<p>Fixed layout bug affecting some tables with cells that span multiple
+columns.</p>
+</li>
+<li>
+<p>Fixed layout bug affecting some tables with cells that span rows and break
+across multiple pages.</p>
+</li>
+<li>
+<p>Fixed bug in which page-break-after: avoid could cause unwanted page breaks
+when applied to the last row in a table.</p>
+</li>
+<li>
+<p>Fixed bug in default style sheets affecting HTML valign attribute on table
+cells.</p>
+</li>
+</ul>
+
+<h3>HTTP support</h3>
+<ul>
+<li>
+<p>Added support for external "cookie jar" files for specifying authentication cookies.</p>
+</li>
+<li>
+<p>
+Fixed bug in which a HTTP proxy server could be used localhost URLs.
+</p>
+</li>
+</ul>
+
+<h3>Platform support</h3>
+
+<ul>
+<li>
+<p>Added Prince package for Solaris 10 (Sparc).</p>
+</li>
+<li>
+<p>Added Prince package for FreeBSD 6.3.</p>
+</li>
+<li>
+<p>Added support for TrueType Collections on Linux, FreeBSD and Solaris.</p>
+</li>
+<li>
+<p>Fixed "bad argument" warning affecting some fonts on MacOS X Leopard.</p>
+</li>
+<li>
+<p>Fixed bug in which RPM upgrade could overwrite existing license file.</p>
+</li>
+<li>
+<p>Fixed bug in which blocked SIGPIPE signal could lead to zombie processes
+when running under PHP.</p>
+</li>
+</ul>
+
+<h3>Other bug fixes and improvements</h3>
+<ul>
+<li>
+<p>Fixed bug affecting floats with negative margins that are wider than the
+page.</p>
+</li>
+<li>
+<p>Fixed bugs affecting columns, column floats, page floats and footnotes.</p>
+</li>
+<li>
+<p>Fixed bug leaving unnecessary page break after page floats within named
+pages.</p>
+</li>
+<li>
+<p>Fixed bug affecting the style attribute in SVG.</p>
+</li>
+<li>
+<p>Fixed bug affecting style sheets that begin with a UTF-8 byte order mark.</p>
+</li>
+<li>
+<p>Fixed bug affecting borders and margins applied to images.</p>
+</li>
+<li>
+<p>Fixed bug affecting width calculation for inline blocks.</p>
+</li>
+<li>
+<p>Fixed bug where multiple redundant error messages were produced if an image
+could not be loaded.</p>
+</li>
+<li>
+<p>Fixed bug in which "." was loaded if an HTML img element has no src
+attribute.</p>
+</li>
+<li>
+<p>Fixed bug in which sibling selectors were not always correctly applied.</p>
+</li>
+<li>
+<p>Added support for prince-flow() as well as flow() on the content
+property.</p>
+</li>
+<li>
+<p>Fixed bug affecting mailto: URLs.</p>
+</li>
+<li>
+<p>
+Improved treatment of landscape pages.
+</p>
+</li>
+</ul>
+
+<h2 id="p60r5">
+    Prince 6.0 rev 5
+</h2>
+<p class="date">January 2008</p>
+
+<h3>HTML support</h3>
+
+<ul>
+<li>
+<p>
+Added support for presentational attributes on the &lt;hr&gt; element.
+</p>
+</li>
+
+<li>
+<p>Added support for the &lt;s&gt; and &lt;strike&gt; elements.</p>
+</li>
+
+<li>
+<p>Added support for the nowrap attribute on table cells.</p>
+</li>
+
+<li>
+<p>Added support for the "Generator" meta tag.</p>
+</li>
+
+<li>
+<p>Fixed bug in which Flash content was being downloaded for object
+elements.</p>
+</li>
+
+<li>
+<p>
+Fixed bug in which img elements with no src attribute were not displaying
+their alt attribute text.
+</p>
+</li>
+</ul>
+
+<h3>HTTP support</h3>
+
+<ul>
+<li>
+<p>
+Added new --http-proxy command-line argument for specifying a proxy server.
+</p>
+</li>
+
+<li>
+<p>Added support for remembering cookies for subsequent HTTP requests. </p>
+</li>
+
+<li>
+<p>Updated Prince PHP interface to support basic HTTP authentication.</p>
+</li>
+
+<li>
+<p>Fixed bug in which failed HTTP requests could be retried repeatedly.</p>
+</li>
+
+<li>
+<p>
+Fixed bug in which no-cache headers were added to each HTTP request, which
+could degrade performance.
+</p>
+</li>
+</ul>
+
+<h3>Page breaking and layout</h3>
+
+<ul>
+<li>
+Added a new caption-page property for controlling whether table captions should
+be repeated when a table is broken over multiple pages.
+</li>
+
+<li>
+<p>
+Improved margin collapsing behaviour for blocks that clear floats.
+</p>
+</li>
+
+<li>
+<p>
+Improved column balancing and the treatment of page floats and footnotes on
+pages with columns.
+</p>
+</li>
+
+<li>
+<p>Improved page breaking of blocks with page-break-before/after: avoid.</p>
+</li>
+
+<li>
+<p>
+Added support for the page-break-inside property on table rows as well as cells.
+</p>
+</li>
+
+<li>
+<p>
+Fixed bug in which page-break-after: always was not correctly applying to
+table rows.
+</p>
+</li>
+
+<li>
+<p>
+Fixed bug in which some blank pages were not matched by the
+:blank page class.
+</p>
+</li>
+
+<li>
+<p>
+Fixed bug in which properties applied to page margin boxes were not taking the
+specificity of the page selector into account when cascading.
+</p>
+</li>
+
+<li>
+<p>
+Fixed bug in which page-break-after: avoid could actually cause unwanted page
+breaks when applied to the last element in a block.
+</p>
+</li>
+
+<li>
+<p>
+Fixed bug affecting page breaking when a float was immediately followed by a
+page break.
+</p>
+</li>
+
+<li>
+<p>
+Fixed bug in which the center margin box did not always take the full width of
+the page header if an empty element was flowed to it and no left or right
+margin box had been specified.
+</p>
+</li>
+</ul>
+
+<h3>PDF properties</h3>
+
+<ul>
+<li>
+<p>
+Added a new @prince-pdf CSS rule that can be used to apply the following
+PDF properties:
+</p>
+<blockquote>
+<pre>
+@prince-pdf {
+    prince-pdf-script: "...JavaScript...";
+    prince-pdf-page-mode: auto | show-bookmarks | fullscreen;
+    prince-pdf-print-scaling: auto | none
+}
+</pre>
+</blockquote>
+</li>
+</ul>
+
+<h3>Platform support</h3>
+
+<ul>
+<li>
+<p>Added Prince packages for SUSE 10 and Solaris 10 (Intel).</p>
+</li>
+</ul>
+
+<h3>Other bug fixes and improvements</h3>
+
+<ul>
+<li>
+<p>Added support for the image/pjpeg MIME type.</p>
+</li>
+
+<li>
+<p>
+Fixed bug in which the table border-spacing property was not inherited.
+</p>
+</li>
+
+<li>
+<p>
+Fixed bug affecting string-set with "first" page-policy when multiple documents
+are in use.
+</p>
+</li>
+
+<li>
+<p>
+Fixed bug affecting interaction between named pages and left/right page breaks.
+</p>
+</li>
+
+<li>
+<p>
+Fixed internal error caused by replaced elements with zero width.
+</p>
+</li>
+
+<li>
+<p>
+Fixed shrink-wrap issue affecting floats containing tables with specified width.
+</p>
+</li>
+
+<li>
+<p>
+Fixed bug affecting the currentColor keyword in SVG.
+</p>
+</li>
+
+<li>
+<p>
+Fixed bug affecting footnotes and page floats in content flowed into page
+margin boxes.
+</p>
+</li>
+
+<li>
+<p>Fixed bug affecting internal links on Windows.</p>
+</li>
+
+<li>
+<p>Fixed bug affecting automatic layout for tables with a specified width.</p>
+</li>
+</ul>
+
+<h2 id="p60r4">
+    Prince 6.0 rev 4
+</h2>
+<p class="date">October 2007</p>
+
+<ul>
+<li>
+<p>
+Added support for TrueType font subsetting to reduce PDF file size.
+</p>
+</li>
+<li>
+<p>
+Added support for line-breaking between Chinese, Japanese and Korean
+characters.
+</p>
+</li>
+<li>
+<p>
+Improved performance of text hyphenation in multi-column layouts.
+</p>
+</li>
+<li>
+<p>
+Added support for multiple pseduo-elements in CSS selectors so that generated
+footnotes and list item markers can be styled. (For example,
+<code>::after::marker</code>).
+</p>
+</li>
+<li>
+<p>
+Fixed bugs affecting page background image properties.
+</p>
+</li>
+<li>
+<p>
+Fixed bug affecting links without fragment identifiers when processing
+multiple input documents.
+</p>
+</li>
+<li>
+<p>
+Fixed bug affecting page headers and footers flowed to the start of the
+document when processing multiple input documents.
+</p>
+</li>
+<li>
+<p>
+Fixed bug affecting page breaking tables with cells that span many rows or
+table-row-groups with page-break-inside set to avoid.
+</p>
+</li>
+<li>
+<p>
+Fixed bug affecting tables with baseline aligned cells that could overlap the
+page boundaries in some situations.
+</p>
+</li>
+<li>
+<p>
+Fixed bug in which complex tables could cause an internal error.
+</p>
+</li>
+</ul>
+
+<h2 id="p60r3">
+    Prince 6.0 rev 3
+</h2>
+<p class="date">August 2007</p>
+
+<h3>HTML support</h3>
+<ul>
+<li>
+<p>
+Added support for HTML anchors that use the name attribute instead of the id
+attribute.
+</p>
+</li>
+<li>
+<p>
+Added support for the HTML iframe element.
+</p>
+</li>
+<li>
+<p>
+Added support for the clear attribute on the HTML br element.
+</p>
+</li>
+<li>
+<p>
+Added support for the alt attribute on the HTML img element.
+</p>
+</li>
+</ul>
+
+<h3>SVG support</h3>
+<ul>
+<li>
+<p>
+Added support for SVG background images.
+</p>
+</li>
+<li>
+<p>
+Added support for the old SVG MIME type, "image/svg-xml".
+</p>
+</li>
+</ul>
+
+<h3>Printing improvements</h3>
+<ul>
+<li>
+<p>
+Added support for printing in the bleed area of the page when crop marks are
+enabled.
+</p>
+</li>
+<li>
+<p>
+Added support for a new prince-bleed property to control the size of the bleed
+area when crop marks are enabled.
+</p>
+</li>
+<li>
+<p>
+Added support for a new prince-background-image-resolution property, for
+specifying the resolution of background images.
+</p>
+</li>
+<li>
+<p>
+Added support for absolute and relative positioning of elements taken out of
+the normal flow and placed in a page margin box.
+</p>
+</li>
+</ul>
+
+<h3>HTTP support</h3>
+<ul>
+<li>
+<p>
+Added support for basic HTTP authentication with two new command-line
+arguments, --http-user and --http-password.
+</p>
+</li>
+<li>
+<p>
+Added support for HTTPS URLs.
+</p>
+</li>
+</ul>
+
+<h3>Platform support</h3>
+<ul>
+<li>
+<p>
+Added support for Intel MacOS X machines by providing a universal binary.
+</p>
+</li>
+<li>
+<p>
+Added support for FreeBSD 4.8.
+</p>
+</li>
+</ul>
+
+<h3>Other bug fixes and improvements</h3>
+<ul>
+<li>
+<p>
+Fixed bug affecting the vertical alignment of inline blocks with content
+longer than their specified height.
+</p>
+</li>
+<li>
+<p>
+Added support for line breaking between adjacent images.
+</p>
+</li>
+<li>
+<p>
+Improved shrink-to-fit support for pages to detect overlapping content.
+</p>
+</li>
+<li>
+<p>
+Fixed bug in which absolutely positioned content was duplicated in some
+situations.
+</p>
+</li>
+<li>
+<p>
+Fixed bug in which blocks in the normal flow with overflow set to hidden were
+not expanding in height to fit descendant floats.
+</p>
+</li>
+<li>
+<p>
+Fixed bug in which images occupying no space resulted in PDF files that could
+not be opened by Acrobat.
+</p>
+</li>
+<li>
+<p>
+Fixed bug in which the page-break-inside property was being ignored on
+table row groups.
+</p>
+</li>
+<li>
+<p>
+Fixed bug in which images within hyperlinks were not clickable if they
+overlapped the bounding box of the containing link element.
+</p>
+</li>
+<li>
+<p>
+Added support for links and cross-references into and out of footnotes.
+</p>
+</li>
+<li>
+<p>
+Improved performance for formatting long documents with lots of text.
+</p>
+</li>
+<li>
+<p>
+Added support for hyphenation regardless of the text alignment.
+</p>
+</li>
+<li>
+<p>
+Fixed bug affecting large images loaded from data URLs on MacOS X.
+</p>
+</li>
+</ul>
+
+<h2 id="p60r2">
+    Prince 6.0 rev 2
+</h2>
+<p class="date">June 2007</p>
+
+<ul>
+<li>
+<p>
+Fixed bug in which Prince was ignoring fonts on MacOS X if the font name contains
+the modifier "Book" instead of "Regular" or "Roman".
+</p>
+</li>
+<li>
+<p>
+Fixed bug in which Windows-style CR/LF newlines in &lt;pre&gt; elements in HTML
+documents (not XHTML documents) incorrectly caused double line breaks.
+</p>
+</li>
+<li>
+<p>
+Added further support for the HTML textarea element. Supported the rows
+attribute, changed white-space to pre-wrap and clipped text that overflows.
+</p>
+</li>
+<li>
+<p>
+Fixed bug affecting the prince-jpeg-quality property when applied to
+grayscale JPEG images.
+</p>
+</li>
+<li>
+<p>
+Supported the value attribute on the HTML li element, for explicitly
+specifying the list item number.
+</p>
+</li>
+<li>
+<p>
+Changed @page background to cover entire page box, not just page padding
+area, for consistency with the CSS3 Paged Media specification.
+</p>
+</li>
+<li>
+<p>
+Fixed bug in which elements containing only floated or positioned content
+still had a non-zero height, as if the content was still in the normal flow.
+</p>
+</li>
+<li>
+<p>
+Fixed performance regression in CSS parser.
+</p>
+</li>
+<li>
+<p>
+Added --media command-line argument to select available style sheets based
+on their media type, eg. "print" or "screen"; default is "print".
+</p>
+</li>
+<li>
+<p>
+Added a new property to @page rules to shrink wide web pages down to fit the
+paper width: prince-shrink-to-fit: none | auto.
+</p>
+</li>
+<li>
+<p>
+Changed margin collapsing at the top of first pages for consistency with
+browsers and the CSS3 Paged Media spec.
+</p>
+</li>
+<li>
+<p>
+Support for @font-face rules that specify format("truetype") after the URL in
+the src property.
+</p>
+</li>
+<li>
+<p>
+Fixed bug in which the aspect ratio of images with an explicitly specified
+width and height was not preserved if the image width is reduced by the
+max-width property.
+</p>
+</li>
+<li>
+<p>
+Fixed bug in which tables ignored percentage height values.
+</p>
+</li>
+<li>
+<p>
+Fixed bug in which user induced column breaks incorrectly caused a page
+break when there was content preceding the columns.
+</p>
+</li>
+<li>
+<p>
+Fixed Linux and MacOS X install script so that it can be run from any
+directory, not just the current directory.
+</p>
+</li>
+</ul>
+
+<h2 id="p60r1">
+    Prince 6.0 rev 1
+</h2>
+<p class="date">May 2007</p>
+
+<h3>Hyphenation</h3>
+<p>
+Support for English hyphenation using the following new CSS properties:
+</p>
+<pre>
+hyphens: manual | auto
+prince-hyphenate-patterns: none | url(...)
+prince-hyphenate-before: &lt;int&gt;
+prince-hyphenate-after: &lt;int&gt;
+prince-hyphenate-lines: no-limit | &lt;int&gt;
+</pre>
+<p>
+Please note that hyphenation will only be enabled for paragraphs on which
+text-align has been set to "justify".
+</p>
+<h3>HTTP</h3>
+<p>
+Support for loading all resources from HTTP URLs, including documents, style
+sheets, images and even fonts.
+</p>
+<h3>Rounded borders</h3>
+<p>
+Support for rounded borders using the following CSS 3 properties:
+</p>
+<pre>
+border-top-left-radius: &lt;length&gt; [ &lt;length&gt; ]
+border-top-right-radius: &lt;length&gt; [ &lt;length&gt; ]
+border-bottom-left-radius: &lt;length&gt; [ &lt;length&gt; ]
+border-bottom-right-radius: &lt;length&gt; [ &lt;length&gt; ]
+</pre>
+<p>
+(Similar properties are available in the Mozilla Firefox browser, where they
+are prefixed with "-moz-").
+</p>
+<h3>MathML</h3>
+<p>
+Initial support for MathML presentation and content markup. This is the first
+prototype of MathML support in Prince, so feedback from MathML users would be
+greatly appreciated.
+</p>
+<h3>SVG</h3>
+<ul>
+<li>Support for the &lt;use&gt;, &lt;symbol&gt; and &lt;defs&gt;
+elements.</li>
+<li>Support for marker symbols on paths.</li>
+<li>Support for the fill-opacity and stroke-opacity properties.</li>
+<li>Initial support for linear and radial gradients.</li>
+</ul>
+<h3>Multiple Documents</h3>
+<p>
+Support for converting multiple input documents into a single output PDF file.
+Currently this functionality can only be accessed from the command-line.
+Useful for converting a collection of linked documents or an entire website into
+a single PDF file.
+</p>
+<h3>Columns</h3>
+<ul>
+<li>
+<p>
+Support for unbalanced columns as well as balanced columns. 
+The column type is controlled using the new <code>column-fill</code>
+property:
+</p>
+<pre>
+column-fill: auto | balance
+</pre>
+<p>
+In balanced columns, content is distributed among the columns such that they
+all have similar length. In automatic columns, the content simply fills each
+column one at a time, with the last columns shorter or entirely empty. This
+layout is commonly seen in articles produced using LaTeX.
+</p>
+</li>
+<li>
+<p>
+Columns can be specified by width using the new <code>column-width</code>
+property or by number using the existing <code>column-count</code> property:
+</p>
+<pre>
+column-count: &lt;number&gt;
+column-width: &lt;length&gt;
+</pre>
+</li>
+<li>
+<p>
+A new <code>columns</code> shorthand property accepts either a number of
+columns or a column width:
+</p>
+<pre>
+columns: &lt;number&gt; | &lt;length&gt;
+</pre>
+</li>
+<li>
+<p>
+Two new properties are available for inducing column breaks in content within
+columns:
+</p>
+<pre>
+column-break-after: auto | always
+column-break-before: auto | always
+</pre>
+</li>
+<li>
+<p>
+The properties for controlling page breaking now apply to content within
+columns. This includes <code>page-break-after</code>,
+<code>page-break-before</code> and <code>page-break-inside</code>.
+Specifically, a value of <code>avoid</code> will inhibit page breaking
+<em>and</em> column breaking.
+</p>
+<pre>
+page-break-after: avoid	    /* also inhibits column breaks */
+page-break-before: avoid    /* also inhibits column breaks */
+page-break-inside: avoid    /* also inhibits column breaks */
+</pre>
+</li>
+<li>
+<p>
+The <code>widows</code> and <code>orphans</code> properties now apply to
+content within columns.
+</p>
+</li>
+</ul>
+<h3>Footnotes</h3>
+<ul>
+<li>
+<p>
+Footnotes can now occur within page floats and within other footnotes.
+</p>
+</li>
+<li>
+<p>
+The <code>footnote</code> counter is now incremented automatically at each
+footnote and does not need to be manually incremented.
+</p>
+</li>
+<li>
+<p>
+A new symbolic counter style allows footnotes to use common footnote symbols
+such as asterisks and daggers instead of just numbers:
+</p>
+<pre>
+::footnote-call {
+    content: counter(footnote, symbols('*', '+', '!'))
+}
+</pre>
+</li>
+</ul>
+<h3>Floats</h3>
+<ul>
+<li>
+<p>
+Support for column floats, which are similar to page floats but restricted to
+a single column instead of the whole page:
+</p>
+<pre>
+float: prince-column-top | prince-column-bottom
+</pre>
+</li>
+<li>
+<p>
+Support for optional floats, in which content is floated to the top/bottom of
+the next page/column only if it will not fit in the current location:
+</p>
+<pre>
+float: prince-top-if-necessary | prince-bottom-if-necessary
+float: prince-column-top-if-necessary | prince-column-bottom-if-necessary
+</pre>
+<p>
+This feature provides a flexible alternative to regular page/column floats,
+which always move the content to the top/bottom of the page/column. 
+
+Regular page/column floats always move the content to the top/bottom of the
+page/column. Optional floats are more flexible: they only float the content if
+it doesn't fit on the page.
+</p>
+<p>
+Both of these methods are good ways of including large images in a document
+without causing gaps to appear at the bottom of the page preceding the image.
+</p>
+</li>
+</ul>
+<h3>Miscellaneous</h3>
+<ul>
+<li>
+<p>
+A new property for replacing text:
+</p>
+<pre>
+prince-text-replace: none | [ &lt;string&gt; &lt;string&gt; ]+
+</pre>
+<p>
+For example, this can be used to replace straight single apostrophes with
+right single quotes without modifying the source document.
+</p>
+</li>
+<li>
+<p>
+Support for the <code>xml:base</code> attribute and the XHTML
+<code>&lt;base&gt;</code> element.
+</p>
+</li>
+<li>
+<p>
+Support for CMYK colors using the <code>cmyk()</code> function:
+</p>
+<pre>
+color: cmyk(0.8, 0.5, 0.0, 0.3)
+</pre>
+</li>
+<li>
+<p>
+Support for RGBA colors using the <code>rgba()</code> function:
+</p>
+<pre>
+color: rgba(100%, 100%, 0%, 0.5)
+</pre>
+</li>
+<li>
+<p>
+Support for capitalization:
+</p>
+<pre>
+text-transform: capitalize
+</pre>
+<p>
+The <code>text-transform</code> property now also applies to accented Latin
+characters.
+</p>
+</li>
+<li>
+<p>
+The <code>flow</code> property now takes an optional second parameter allowing
+content to be flowed into headers/footers that are earlier in the document:
+</p>
+<pre>
+flow: static(&lt;ident&gt;, start | current)
+</pre>
+<p>
+This is convenient when content at the end of the document needs to be placed
+in a header/footer at the beginning.
+</p>
+</li>
+<li>
+<p>
+Support for the <code>font-stretch</code> property on Linux and MacOS X, not
+yet on Windows. This property is used to select a particular font based on its
+width if multiple widths are available for a given font family:
+</p>
+<pre>
+font-stretch: condensed
+</pre>
+</li>
+<li>
+<p>
+Improved CSS parsing and error reporting for invalid style sheets.
+</p>
+</li>
+</ul>
+
+<h2 id="p51r15">
+    Prince 5.1 rev 15
+</h2>
+<p class="date">March 2007</p>
+<ul>
+<li>Fixed bug affecting filenames containing percent characters.</li>
+</ul>
+
+<h2 id="p51r14">
+    Prince 5.1 rev 14
+</h2>
+<p class="date">February 2007</p>
+<ul>
+<li>Fixed bug causing deadlock in some circumstances when Prince was called
+from Java.</li>
+<li>Improved document type autodetection.</li>
+</ul>
+
+<h2 id="p51r13">
+    Prince 5.1 rev 13
+</h2>
+<p class="date">December 2006</p>
+<ul>
+<li>Support translate(x) and rotate(r, cx, cy) in SVG.</li>
+<li>Fixed bug affecting text rotation in SVG.</li>
+<li>Fixed bug affecting text-anchor SVG property.</li>
+<li>Fixed bug affecting XLinks on SVG images.</li>
+<li>Fixed bug affecting data URLs containing whitespace.</li>
+</ul>
+
+<h2 id="p51r12">
+    Prince 5.1 rev 12
+</h2>
+<p class="date">December 2006</p>
+<ul>
+<li>Support for external SVG images and data URLs.</li>
+<li>Support for the &lt;svg:image&gt; element.</li>
+<li>Fixed bug affecting unknown elements in SVG.</li>
+<li>Fixed bug affecting large images in data URLs.</li>
+</ul>
+
+<h2 id="p51r11">
+    Prince 5.1 rev 11
+</h2>
+<p class="date">October 2006</p>
+<ul>
+<li>Improved automatic table layout for tables with cells that span columns.</li>
+</ul>
+
+<h2 id="p51r10">
+    Prince 5.1 rev 10
+</h2>
+<p class="date">September 2006</p>
+<ul>
+<li>Fixed bug affecting empty tables with specified width.</li>
+<li>Fixed bug affecting parsing of some HTML documents.</li>
+</ul>
+
+<h2 id="p51r9">
+    Prince 5.1 rev 9
+</h2>
+<p class="date">July 2006</p>
+<ul>
+<li>Workaround bug in Acrobat 7 affecting RTF export.</li>
+</ul>
+
+<h2 id="p51r8">
+    Prince 5.1 rev 8
+</h2>
+<p class="date">July 2006</p>
+<ul>
+<li>Added --baseurl option to specify the base URL of input documents.</li>
+<li>JPEG images are embedded as-is to reduce PDF file size.</li>
+<li>Support for the string-set property on pseudo-elements.</li>
+<li>Support for the background-image property on pseudo-elements.</li>
+<li>Fixed bug affecting string-set page policy.</li>
+<li>Fixed bug affecting table boxes (eg. captions).</li>
+<li>Fixed bug affecting GIF images in encrypted PDF files.</li>
+<li>Fixed bug affecting replaced pseudo-elements.</li>
+<li>Fixed bug affecting background-image URL resolution.</li>
+<li>Fixed bug affecting some SVG arcs.</li>
+</ul>
+
+<h2 id="p51r7">
+    Prince 5.1 rev 7
+</h2>
+<p class="date">May 2006</p>
+<ul>
+<li>CSS selectors are not case-sensitive when applied to HTML documents.</li>
+<li>MIME types are not case-sensitive.</li>
+<li>Support for the SVG text-anchor property.</li>
+<li>Support for decimal values in the SVG stroke-dasharray and
+stroke-dashoffset properties.</li>
+<li>Fixed bug affecting some SVG arcs.</li>
+<li>Fixed bug in which background-image did not apply to before/after
+pseudo-elements.</li>
+<li>Fixed bug in which exit status was not set in the event of an error.</li>
+</ul>
+
+<h2 id="p51r6">
+    Prince 5.1 rev 6
+</h2>
+<p class="date">April 2006</p>
+<ul>
+<li>Fixed bug that occasionally affected HTTP image downloads.</li>
+</ul>
+
+<h2 id="p51r5">
+    Prince 5.1 rev 5
+</h2>
+<p class="date">April 2006</p>
+<ul>
+<li>Support for the XHTML width and height attributes.</li>
+<li>Support for the XHTML &lt;q&gt;...&lt;/q&gt; element for quotes.</li>
+<li>Added --log command-line option to log to a file.</li>
+<li>Support for escaped characters in URLs (eg. "test%20image.jpg").</li>
+<li>Fixed incorrect definition of height property on table cells.</li>
+<li>Fixed bug preventing some GIF images from being loaded.</li>
+<li>Fixed bug affecting formatting of very long documents.</li>
+</ul>
+
+<h2 id="p51r4">
+    Prince 5.1 rev 4
+</h2>
+<p class="date">February 2006</p>
+<ul>
+<li>Support for "none" as a counter style.</li>
+<li>Support for comma-separated string-set values.</li>
+<li>Fixed bug affecting colspan/rowspan in separated border model tables.</li>
+<li>Fixed bug affecting page-break-inside on tables with captions.</li>
+<li>Fixed bug affecting table cells with height property.</li>
+<li>Fixed bug affecting empty spans creating blank lines.</li>
+<li>Fixed bug affecting the scope of counters.</li>
+<li>Fixed bug affecting the parsing of invalid CSS syntax.</li>
+</ul>
+
+<h2 id="p51r3">
+    Prince 5.1 rev 3
+</h2>
+<p class="date">January 2006</p>
+<ul>
+<li>Support for loading images from HTTP URLs.</li>
+<li>Support for UNICODE characters in CSS strings.</li>
+<li>Fixed bug affecting tables with inconsistent cells and columns.</li>
+<li>Fixed bug affecting text-align on images in page margin boxes.</li>
+<li>Fixed bug affecting images disappearing in page margin boxes.</li>
+</ul>
+
+<h2 id="p51r2">
+    Prince 5.1 rev 2
+</h2>
+<p class="date">December 2005</p>
+<ul>
+<li>Further improvements to collapsing table border rendering.</li>
+<li>Fixed bug affecting table column widths with colspan cells.</li>
+<li>Fixed bug affecting vertical alignment on table cells.</li>
+</ul>
+
+<h2 id="p51">
+    Prince 5.1
+</h2>
+<p class="date">December 2005</p>
+<ul>
+<li>Prince now passes the <a href="/samples/acid2/">Acid2 test</a>.</li>
+<li>Support for loading HTML input (as well as XML/XHTML).</li>
+<li>Support for transparency in GIF and PNG images.</li>
+<li>Support for the XHTML &lt;object&gt; tag with fallback if an image cannot
+be loaded.</li>
+<li>Support for loading images and style sheets from data URLs.</li>
+</ul>
+
+<h2 id="p50r5">
+    Prince 5.0 rev 5
+</h2>
+<p class="date">December 2005</p>
+<ul>
+<li>Improved table border collapsing conformance to CSS 2.1
+specification.</li>
+<li>Fixed bug affecting collapsing table borders on table cells spanning
+multiple columns.</li>
+</ul>
+
+<h2 id="p50r4">
+    Prince 5.0 rev 4
+</h2>
+<p class="date">November 2005</p>
+<ul>
+<li>Support for "content: none".</li>
+<li>Fixed bug affecting page counter reset on elements spanning multiple
+pages.</li>
+<li>Fixed bug affecting collapsing table borders on table cells spanning
+multiple columns.</li>
+</ul>
+
+<h2 id="p50r3">
+    Prince 5.0 rev 3
+</h2>
+<p class="date">November 2005</p>
+<ul>
+<li>Improved support for media queries.</li>
+<li>Support for applying transparent color to text.</li>
+<li>Fixed bug affecting long tables with collapsed borders.</li>
+<li>Fixed bug affecting page-break-before property on tables.</li>
+<li>Fixed bug affecting shrink to fit widths in some cases.</li>
+<li>Fixed bug affecting background property parsing.</li>
+</ul>
+
+<h2 id="p50r2">
+    Prince 5.0 rev 2
+</h2>
+<p class="date">October 2005</p>
+<ul>
+<li>Reduced memory usage when processing documents with many images.</li>
+<li>Increased speed when processing documents with many style attributes.</li>
+<li>Fixed bug affecting style attributes with leading space.</li>
+<li>Fixed bug affecting PNG images without a ".png" file extension.</li>
+<li>Fixed bug affecting drawing order of backgrounds and collapsed borders in
+tables.</li>
+<li>Fixed bug affecting the prince-flow property.</li>
+</ul>
+
+<h2 id="p50">
+    Prince 5.0
+</h2>
+<p class="date">October 2005</p>
+<ul>
+<li>Support for background-attachment property.</li>
+<li>Support for z-index property.</li>
+<li>Support for CSS2 system color keywords.</li>
+<li>Support for more border styles (groove, ridge, inset, outset, double).</li>
+<li>Improved rendering of backgrounds and borders.</li>
+<li>Improved conformance of CSS parser.</li>
+<li>Fixed bug affecting vertical alignment of nested inline elements.</li>
+<li>Fixed bug affecting the height of boxes containing floats.</li>
+<li>Fixed bug affecting empty table rendering.</li>
+<li>Fixed bug affecting very tall inline blocks.</li>
+</ul>
+
+<h2 id="p50b4">
+    Prince 5.0 beta 4
+</h2>
+<p class="date">August 2005</p>
+<ul>
+<li>Support for XML Inclusions (XInclude).</li>
+<li>Support for specifying page size in pixels.</li>
+<li>Support for specifying root element height as a percentage.</li>
+<li>Improvements to margin collapsing.</li>
+<li>Improvements to stacking order.</li>
+<li>Improvements to float positioning.</li>
+<li>Improvements to absolute positioning.</li>
+<li>Fixed bug affecting font scanning on MacOS X.</li>
+<li>Fixed bug affecting relative positioning and nested spans.</li>
+<li>Fixed bug affecting vertical margins on page floats.</li>
+<li>Fixed bug affecting min-height and max-height properties.</li>
+<li>Fixed bug affecting vertical-align on inline blocks.</li>
+</ul>
+
+<h2 id="p50b3">
+    Prince 5.0 beta 3
+</h2>
+<p class="date">July 2005</p>
+<ul>
+<li>Support for word-spacing property.</li>
+<li>Support for visibility property.</li>
+<li>Support for empty-cells property.</li>
+<li>Support for clip property.</li>
+<li>Support for table captions, table columns and column groups.</li>
+<li>Table cells/rows longer than one page will now be split.</li>
+<li>Improvements to background-repeat property.</li>
+<li>Improvements to vertical alignment for inline tables and inline blocks.</li>
+<li>Improvements to handling of blocks inside inline boxes.</li>
+<li>Windows GUI now remembers last path used to open files.</li>
+</ul>
+
+<h2 id="p50b2">
+    Prince 5.0 beta 2
+</h2>
+<p class="date">June 2005</p>
+<ul>
+<li>Added bookmark-target property to control PDF bookmark links.</li>
+<li>Support for xml:id attribute for cross-references and links.</li>
+<li>Support for :first page class on named page groups.</li>
+<li>Support for alternate and media attributes on xml-stylesheet instructions.</li>
+<li>Added --verbose option to list all loaded style sheets, fonts and images.</li>
+<li>Fixed bug with URL resolution in CSS style sheets.</li>
+<li>Fixed bug affecting colors in some GIF images.</li>
+<li>Fixed bug affecting incorrect empty namespace declarations.</li>
+<li>Fixed bug with embedding images inside display: none elements.</li>
+</ul>
+
+<h2 id="p50b1">
+    Prince 5.0 beta 1
+</h2>
+<p class="date">May 2005</p>
+<ul>
+<li>New Windows GUI with preview</li>
+<li>MacOS X command-line support</li>
+<li>Automatic font detection on all platforms</li>
+<li>Support for a wide range of UNICODE characters</li>
+<li>Optional PDF encryption with choice of 40 or 128-bit key size</li>
+<li>PDF links, bookmarks and metadata</li>
+<li>Support for GIF images and grayscale JPEG and PNG images</li>
+<li>Page headers/footers can use document content via string-set property</li>
+<li>Improvements to paged media duplex printing support</li>
+<li>Support for page floats</li>
+<li>Support for footnotes</li>
+<li>Support for cross-references</li>
+<li>Support for CSS positioning (relative/absolute/fixed)</li>
+<li>Support for letter-spacing property</li>
+<li>Support for min-width, max-width, min-height, max-height properties</li>
+<li>Support for overflow property</li>
+<li>Extended support for white-space property</li>
+<li>Extended support for line-height property</li>
+</ul>
+
+<h2 id="p40">
+    Prince 4.0
+</h2>
+<p class="date">October 2004</p>
+<ul>
+<li>Automatic table layout and shrink-to-fit float layout.</li>
+<li>Applies CSS specified in XHTML <i>style</i> attribute.</li>
+<li>Applies CSS specified in XHTML &lt;style&gt; element.</li>
+<li>Applies CSS referenced by XHTML &lt;link&gt; element.</li>
+<li>Compresses PDF files to save space and time.</li>
+<li>Embeds TrueType fonts in PDF files for accurate printing.</li>
+<li>Supports separated and collapsed table border models.</li>
+<li>Supports row-span and column-span properties on table cells.</li>
+<li>Supports auto margins for block alignment.</li>
+<li>Supports negative margins for flexible block positioning.</li>
+<li>Supports scaling images and SVG using width and height properties.</li>
+<li>Supports text-transform property for lowercase/uppercase transforms.</li>
+<li>Supports page-break-inside property for avoiding page breaks inside a
+block.</li>
+<li>Supports new display type for run-in headings.</li>
+<li>Supports the soft-hyphen character for controlling word hyphenation.</li>
+<li>Updated counter scope conforms to revised CSS specification.</li>
+<li>Fixes list item marker layout to conform to CSS specification.</li>
+</ul>
+
+<h2 id="p31">
+    Prince 3.1
+</h2>
+<p class="date">May 2004</p>
+<ul>
+<li>Improved support for SVG shapes and text.</li>
+<li>Supports vertical alignment including subscript and superscript.</li>
+<li>Supports backgrounds on pages.</li>
+<li>Supports advanced line height properties.</li>
+<li>Strips leading newlines from preformatted text.</li>
+<li>Fixes incorrect display of some PNG images.</li>
+<li>Fixes incorrect application of attribute selectors.</li>
+<li>Fixes incorrect calculation of percentage line heights.</li>
+<li>Fixes incorrect colors in SVG.</li>
+<li>Fixes incorrect order of text-decoration drawing.</li>
+<li>Fixes incorrect display of unknown counters.</li>
+</ul>
+
+<h2 id="p30">
+    Prince 3.0
+</h2>
+<p class="date">December 2003</p>
+<ul>
+<li>Supports images in JPEG, PNG and TIFF format.</li>
+<li>Supports new CSS3 Paged Media properties.</li>
+<li>Preserves white space in preformatted text.</li>
+<li>Handles relative font sizes, indents, margins, padding and borders.</li>
+<li>Renders inline blocks and inline tables.</li>
+<li>Loads entities from an external DTD catalog.</li>
+<li>Improved style sheets for XHTML and DocBook.</li>
+</ul>
+
+<h2 id="p21p1">
+    Prince 2.1.p1
+</h2>
+<p class="date">June 2003</p>
+<ul>
+<li>Fixes errors experienced on Windows NT, 2000 and XP</li>
+</ul>
+
+<h2 id="p21">
+    Prince 2.1
+</h2>
+<p class="date">June 2003</p>
+<ul>
+<li>Applies suitable default style sheets automatically</li>
+<li>Convenient interface for applying user style sheets</li>
+<li>Correct priorities for default, user and author style sheets</li>
+<li>DocBook style sheet supports <code>itemizedlist</code> and
+<code>variablelist</code>
+</li>
+<li>Now also runs on Red Hat Linux 7.3</li>
+<li>
+<code>@import</code> correctly handles relative file paths</li>
+<li>
+<code>xml-stylesheet</code> correctly handles absolute file paths</li>
+<li>Fixes incorrect default style sheet handling on Windows</li>
+<li>Fixes incorrect treatment of <code>line-break-before</code> property</li>
+<li>Fixes incorrect margin collapsing with floating blocks</li>
+</ul>
+
+<h2 id="p20">
+    Prince 2.0
+</h2>
+<p class="date">May 2003</p>
+<ul>
+<li>Graphical User Interface for Microsoft Windows™</li>
+<li>Multi-Column Layout and Floating Blocks</li>
+<li>Lists, Counters and Generated Content</li>
+<li>Page Headers / Footers and Duplex Printing</li>
+<li>Many additional CSS properties and selectors</li>
+<li>Support for the xml-stylesheet processing instruction</li>
+</ul>
+
+<h2 id="p10">
+    Prince 1.0
+</h2>
+<p class="date">April 2003</p>
+<ul>
+<li>First public release of Prince!</li>
+</ul>
+
+</div>
+
+</div>
+</div>
+
+<div class="content1150 footer-container"><div class="footer">
+<div class="footer-logo">
+<img src="/images/Prince-logo-footer.png" alt=""><br>
+                Copyright © 2002 – 2025 YesLogic Pty. Ltd.
+            </div>
+<ul class="footer-menu">
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+<div style="clear:both"></div>
+</div></div>
+<script src="/js/jquery-1.12.4.min.js"></script><script src="/js/jquery-ui-1.12.1.min.js"></script><script type="text/javascript" src="/js/skrollr-simplemodal-masonry.min.js"></script><script type="text/javascript" src="/js/common.js"></script>
+</body>
+</html>

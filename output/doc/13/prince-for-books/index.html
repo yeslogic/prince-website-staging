@@ -1,0 +1,178 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Prince for Books · Prince Documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Prince for Books is a new venture that allows us to spend more time on features particularly sought by publishers."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Prince for Books · Prince Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://www.princexml.com/"/><meta property="og:description" content="Prince for Books is a new venture that allows us to spend more time on features particularly sought by publishers."/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://www.princexml.com/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="/js/warning.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/Prince-logo.png" alt="Prince Documentation"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/doc/" target="_self">Documentation</a></li><li class=""><a href="/doc/help" target="_self">Help</a></li><li class=""><a href="/doc/releases" target="_self">Release Notes</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>User Guide</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Installation Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/installing">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/doc/13/first-doc">Your First Document</a></li><li class="navListItem"><a class="navItem" href="/doc/13/help-install">Help</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">User Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/intro-userguide">Convert HTML to PDF</a></li><li class="navListItem"><a class="navItem" href="/doc/13/styling">Styling</a></li><li class="navListItem"><a class="navItem" href="/doc/13/paged">Paged Media</a></li><li class="navListItem"><a class="navItem" href="/doc/13/gen-content">Generated Content</a></li><li class="navListItem"><a class="navItem" href="/doc/13/javascript">Scripting</a></li><li class="navListItem"><a class="navItem" href="/doc/13/graphics">Graphics</a></li><li class="navListItem"><a class="navItem" href="/doc/13/cookbook">Prince Tips and Tricks</a></li><li class="navListItem"><a class="navItem" href="/doc/13/help">Help</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-input">Prince Input</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-output">Prince Output</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-networking">Prince Networking</a></li><li class="navListItem"><a class="navItem" href="/doc/13/server-integration">Server Integration</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/doc/13/prince-for-books">Prince for Books</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Reference Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/command-line">Command-line Reference</a></li><li class="navListItem"><a class="navItem" href="/doc/13/css-refs">CSS References</a></li><li class="navListItem"><a class="navItem" href="/doc/13/css-props">CSS Properties</a></li><li class="navListItem"><a class="navItem" href="/doc/13/js-support">JavaScript Support</a></li><li class="navListItem"><a class="navItem" href="/doc/13/page-size-keywords">Page Size Keywords</a></li><li class="navListItem"><a class="navItem" href="/doc/13/characters">Character Entities</a></li><li class="navListItem"><a class="navItem" href="/doc/13/acknowledgements">Acknowledgments</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Prince for Books</h1></header><article><div><span><p>Prince for Books is a new venture that allows us to spend more time on features particularly sought by publishers.</p>
+<p>The initial focus of work is on the features common to all books: making the pagination and line-breaking choices expected of books, by featuring a few extensions to CSS and fine-tuned algorithms.</p>
+<p>For the time being, Prince for Books is only available as a a command-line application named <code>prince-books</code>. It is used like the standard Prince - see <a href="/doc/13/command-line">Command-line Reference</a> for available options.</p>
+<pre><code class="hljs"><span class="hljs-selector-tag">prince-books</span> <span class="hljs-selector-tag">OPTIONS</span> <span class="hljs-selector-tag">FILES</span> <span class="hljs-selector-attr">[-o PDF]</span>
+</code></pre>
+<p>To download it, head over to the <a href="/books/">Prince for Books download page</a>. It is available in package bundles only - to install it, the files need to be copied into place (Windows), or an installation script needs to be run (on Linux and MacOS X). It can be installed without problem alongside a normal Prince installation - the executable to run is called <code>prince-books</code>.</p>
+<h2><a class="anchor" aria-hidden="true" id="line-breaking"></a><a href="#line-breaking" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Line breaking</h2>
+<p>Prince for Books introduces a few new CSS properties to try handling line breaks in a more granular way, and additionally, it tries harder to avoid a hyphen at the end of a page and at the end of the last full line, as well as for ragged text (i.e. for left-aligned or centered text). It also tries to avoid a short last line, especially if it is shorter than the value of <code>text-indent</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="the-property-prince-wrap-inside"></a><a href="#the-property-prince-wrap-inside" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The property <code>prince-wrap-inside</code></h3>
+<p>The property <a href="/doc/13/css-props#prop-prince-wrap-inside"><code>prince-wrap-inside</code></a> offers a way to instruct Prince how to break text: the keyword <code>phrase</code> is for marking up a phrase that one would weakly prefer to keep on a single line. It adds to Prince's perceived cost of breaking within that phrase, but only a small cost, comparable to the cost of hyphenating a compound adjective such as ‘midyear’.</p>
+<p>The keyword <code>avoid</code> is a stronger directive: it avoids breaking the text to which the property is applied even if it causes the affected text to be unusually tight, or the previous line to be unusually loose; but not if either line would become truly exceptionally tightly or loosely spaced.</p>
+<p>This property would most commonly be used in headings, or perhaps in important passages of body text such as in instructions or for the name of a product in advertising. For example, if one opens a book that was printed before the widespread use of computers in publishing, then one would likely see that any headings that don't fit in one line won't simply put as much on the first line as fits, but will instead break somewhat according to natural phrasing.</p>
+<p>To make it more likely for Prince for Books to produce this effect, one might put <code>span</code> elements around phrases, styling each of these spans with <code>prince-wrap-inside:phrase</code>.</p>
+<p>HTML</p>
+<pre><code class="hljs css language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>The <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>fulfilment <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>of the law<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>and <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>of the prophets<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+</code></pre>
+<p>CSS</p>
+<pre><code class="hljs css language-css">    <span class="hljs-selector-tag">span</span> {
+      <span class="hljs-attribute">prince-wrap-inside</span>: phrase;
+    }
+</code></pre>
+<p>The example would produce a title line like this:</p>
+<p style="text-align: center">The fulfilment of the law<br/>
+and of the prophets</p>
+<p>If however the final available space were narrower than the required space, Prince might instead format as:</p>
+<p style="text-align: center">The fulfilment<br/>
+of the law and<br/>
+of the prophets</p>
+<h3><a class="anchor" aria-hidden="true" id="the-property-prince-line-break-choices"></a><a href="#the-property-prince-line-break-choices" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The property <code>prince-line-break-choices</code></h3>
+<p>Another property for fine-tuning the line breaking behaviour is <a href="/doc/13/css-props#prop-prince-line-break-choices"><code>prince-line-break-choices</code></a>.</p>
+<p>The keyword <code>title</code> is intended for title pages of books or chapters, where phrasing considerations are of prime consideration even at the cost of extremely unbalanced lines.</p>
+<p>The keyword <code>heading</code>, on the other hand, is closer to <code>body</code>, differing mainly in that it's less likely to hyphenate, and is more willing to make the first line(s) a little shorter if doing so avoids a short last line.</p>
+<p>The <code>*-lookahead</code> keywords enable paragraph-at-a-time line-breaking for the paragraph in a non-justified paragraph: choosing where to end the line not just based on what seems best for the current line (as one might decide if using a pen or typewriter), but also considering the effect on future lines.</p>
+<p>Enabling lookahead for a paragraph makes Prince take longer, though the results are typically slightly better: still ragged, but fewer lines that are much shorter than nearby lines.</p>
+<p>A disadvantage of lookahead is that any &quot;mistakes&quot; (that is, differences from what a human would choose) risk appearing inexplicable to a reader, unlike with the non-lookahead versions where the only reason that a line would be noticeably short is where the following line starts with a long word.</p>
+<p>This means that the non-lookahead versions might be a better choice in jobs where Prince's line breaks will be accepted without human oversight; whereas if a typesetter will look for and correct any problems in the rag of the paragraph, then the lookahead versions will typically give a better starting point.</p>
+<p>A typesetter's intervention currently involves modifying the HTML: it is not requireed to assign an <code>id</code> to each paragraph, but it is nevertheless common practice to do so for making other changes, such as changing the number of lines in a paragraph for pagination purposes (whether using <code>prince-n-lines</code> or <code>word-spacing</code> or <code>letter-spacing</code>), or assigning a unique value to each chapter in order to change how many lines are on the last page of the chapter (say, by adding <code>1pt</code> to the inside margin). See also <a href="/doc/13/prince-for-books#pfb-spreadbalancing">Spread Balancing</a>.</p>
+<p>To illustrate the difference, one could also say that non-lookahead versions give paragraph shapes reminiscent of those given by word processors and web browsers, while the lookahead versions come slightly closer to what one might find in books.</p>
+<p>The keyword <code>fast</code> can be used for quick web-browers–style line breaking, useful for testing the effect of styling changes that don't depend on good line breaking.</p>
+<p>The base stylesheet that Prince for Books applies to all HTML documents (i.e. the &quot;user-agent style sheet&quot;, in CSS terminology) includes the ruleset</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">h1</span>, <span class="hljs-selector-tag">h2</span>, <span class="hljs-selector-tag">h3</span>, <span class="hljs-selector-tag">h4</span>, <span class="hljs-selector-tag">h5</span>, <span class="hljs-selector-tag">h6</span> {
+        <span class="hljs-attribute">prince-line-break-choices</span>: heading;
+    }
+</code></pre>
+<p>but HTML semantics alone do not distinguish content where the more extreme <code>prince-line-break-choices: title</code> could be appropriate. Doing so requires additional conventions, such as those given in the <a href="https://oreillymedia.github.io/HTMLBook/">HTMLBook</a> specification.</p>
+<p>The below example applies <code>title-lookahead</code> line-breaking to the book title, chapter titles and part titles, while applying <code>heading-lookahead</code> line-breaking to subtitles.</p>
+<p>CSS</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">body</span><span class="hljs-selector-attr">[data-type=<span class="hljs-string">"book"</span>]</span> &gt; <span class="hljs-selector-tag">h1</span>,
+    <span class="hljs-selector-tag">body</span><span class="hljs-selector-attr">[data-type=<span class="hljs-string">"book"</span>]</span> &gt; <span class="hljs-selector-tag">heading</span> &gt; <span class="hljs-selector-tag">h1</span>,
+    <span class="hljs-selector-tag">section</span><span class="hljs-selector-attr">[data-type=<span class="hljs-string">"chapter"</span>]</span> &gt; <span class="hljs-selector-tag">h1</span>,
+    <span class="hljs-selector-tag">section</span><span class="hljs-selector-attr">[data-type=<span class="hljs-string">"chapter"</span>]</span> &gt; <span class="hljs-selector-tag">heading</span> &gt; <span class="hljs-selector-tag">h1</span>,
+    <span class="hljs-selector-tag">div</span><span class="hljs-selector-attr">[data-type=<span class="hljs-string">"part"</span>]</span> &gt; <span class="hljs-selector-tag">h1</span>,
+    <span class="hljs-selector-tag">div</span><span class="hljs-selector-attr">[data-type=<span class="hljs-string">"part"</span>]</span> &gt; <span class="hljs-selector-tag">heading</span> &gt; <span class="hljs-selector-tag">h1</span> {
+        <span class="hljs-attribute">prince-line-break-choices</span>: title-lookahead;
+    }
+
+    <span class="hljs-selector-tag">heading</span> &gt; * {
+        <span class="hljs-attribute">prince-line-break-choices</span>: heading-lookahead;
+    }
+</code></pre>
+<p>HTMLBook uses a slightly non-standard representation of subtitles: not using <code>hgroup</code>, and using <code>p</code> elements rather than the heading elements <code>h1</code> to <code>h6</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="the-property-prince-forced-breaks"></a><a href="#the-property-prince-forced-breaks" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The property <code>prince-forced-breaks</code></h3>
+<p>The property <a href="/doc/13/css-props#prop-prince-forced-breaks"><code>prince-forced-breaks</code></a> controls whether a line ended by a &quot;preserved newline&quot; (such as introduced by <code>&lt;br&gt;</code>) should preferably appear to be a normal full line (as if ended only by normal line wrapping), or whether being shorter than a normal full line is actually preferable, for example to mark a deliberate break.</p>
+<p>The <code>br</code> element would usually create a visually forced break, treating that line much as if it were the last line of a paragraph. For example, it would continue to do so in any UA not supporting the property <a href="/doc/13/css-props#prop-prince-forced-breaks"><code>prince-forced-breaks</code></a> (thus getting in the way of reading the content in some other UA, or using the same source document for web/epub deployment), or if the stylesheet doesn't load. Tweaking line breaks using <code>prince-forced-breaks: full</code> is not intended to be consciously noticeable by readers, so <code>br</code> would not be the best approximation in HTML.</p>
+<p>CSS</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">lb</span> { <span class="hljs-attribute">white-space</span>: pre; }
+    <span class="hljs-selector-tag">lb</span><span class="hljs-selector-pseudo">::before</span> { <span class="hljs-attribute">content</span>: <span class="hljs-string">"\A"</span>; <span class="hljs-attribute">prince-forced-breaks</span>: full; }
+</code></pre>
+<p>This example shows the styling for an <code>&lt;lb /&gt;</code> element, which can be added to force breaks. Of course we first need to instruct Prince to respect &quot;preserved newlines&quot; - we do this with the <a href="/doc/13/css-props#prop-white-space"><code>white-space</code></a> property.</p>
+<p>Literally using the element name <code>lb</code> in the html namespace would make the document not valid HTML. The element could be either in a non-HTML namespace, or one could use a custom element to be inserted with JavaScript.</p>
+<p>If multiple editions are to produced from a single source document, then a variation would be</p>
+<p>CSS</p>
+<pre><code class="hljs">    lb[ed ~= "a"]::before { ... }
+</code></pre>
+<p>in the stylesheet for edition A (and similarly for the stylesheets of other editions), and</p>
+<p>HTML</p>
+<pre><code class="hljs css language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">lb</span> <span class="hljs-attr">ed</span>=<span class="hljs-string">"a c"</span> /&gt;</span>
+</code></pre>
+<p>in the document where a line break should be forced only in editions A and C.</p>
+<p>The difference is particularly marked in justified text, where lines ended by <code>prince-forced-breaks: full</code> are subject to justification like most other lines.</p>
+<h2><a class="anchor" aria-hidden="true" id="spread-balancing"></a><a href="#spread-balancing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Spread Balancing</h2>
+<p>A prominent new feature is the concept of &quot;spread balancing&quot;: Prince for Books can try to ensure that the content on two-page spreads is the same height. Due to the <code>widows</code> and <code>orphans</code> properties (see <a href="/doc/13/paged#widows-and-orphans">Widows and orphans</a>) it is possible for one page to have fewer lines than the other, and this unevenness looks upsetting.</p>
+<p>Prince for Books also tries to reduce the number of uneven spreads.</p>
+<h3><a class="anchor" aria-hidden="true" id="the-property-prince-page-fill"></a><a href="#the-property-prince-page-fill" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The property <code>prince-page-fill</code></h3>
+<p>The property <a href="/doc/13/css-props#prop-prince-page-fill"><code>prince-page-fill</code></a> is used to turn on the page balancing mechanism. Prince for Books will check how much space is left at the bottom of each page of a two-page spread and compares it with the line-height to determine whether the pages end with different numbers of lines. If one page is longer than the other, Prince will attempt to repack that page one line shorter, so that they match in height. If it is still unbalanced, which might happen due to triggering another widows/orphans constraint, it will revert to the original layout.</p>
+<p>Prince also includes the bottom margin in the evaluation for balancing, allowing said margin to be truncated for purposes of deciding whether the two pages can be considered to have the same length.</p>
+<h3><a class="anchor" aria-hidden="true" id="the-property-prince-n-lines"></a><a href="#the-property-prince-n-lines" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The property <code>prince-n-lines</code></h3>
+<p>Another way to address page balancing is by using the property <a href="/doc/13/css-props#prop-prince-n-lines"><code>prince-n-lines</code></a>. It is for use in the pagination phase of typesetting, for ensuring that page ends are even while avoiding widows and other awkward breaks.</p>
+<p>Typically, the best paragraph to apply this property to will be either already long and/or currently has either a very short or almost full last line, so that the paragraph doesn't need to change much in length compared to its existing &quot;length&quot; (as reckoned by its height). That is, the typesetter can choose a good candidate by looking at how much the last line would need to shrink or grow (including a word or two for the next line if growing), and how many times that length would fit in the height of the paragraph, with more being better.</p>
+<p>As noted <a href="#note-typesetter">before</a>, a typesetter's intervention currently involves modifying the HTML.</p>
+<p>Values other than the initial value of <code>auto</code> request that the paragraph occupy the given number of lines; where values other than a simple integer are relative to the number of lines that the paragraph would have occupied if this property still had its initial value (<code>auto</code>).</p>
+<p>The value <code>change</code> means to make the paragraph either a line longer or shorter, whichever will be deemed to look better. This value is provided for the common case that a page break opportunity exists both at a line earlier and at a line later than where the page end would naturally fall, as would typically be the case if the only relevant restriction arises from <code>widows:2</code> or <code>orphans:2</code> or a minor heading that occupies two body lines worth of height. Thus, this tends to be the most commonly used value for this property, other than leaving at its initial value.</p>
+<p>A simple integer value is the least convenient value to use (since choosing the desired number requires counting the existing number of lines, and since this property is most commonly used on long paragraphs). Its value lies in the fact that the result is not subject to variation in &quot;the number of lines that the paragraph would otherwise have had&quot;, as can occur if this paragraph spans a page end, and a subsequent styling change causes some earlier content to changes in size, affecting what is the last line before the break, and if this in turn affects line-breaking decisions made to avoid having a hyphenation at the end of a page.</p>
+<p>Alternatives to adjusting a paragraph length include adding extra space around a heading, an image or at the start of a chapter.</p>
+<h3><a class="anchor" aria-hidden="true" id="fractional-widows"></a><a href="#fractional-widows" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Fractional Widows</h3>
+<p>Another feature in Prince for Books are the &quot;fractional widows&quot;: the <a href="/doc/13/css-props#prop-widows"><code>widows</code></a> property is allowed a value expressed as percentage.</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">p</span> {
+      <span class="hljs-attribute">widows</span>: <span class="hljs-number">50%</span>;
+    }
+</code></pre>
+<p>This indicates indicates that one widow line is accepted, as long as the line width is at least the given percentage value of the available page width, to avoid the worst case of having a widow line that is only one or two words long.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/doc/13/server-integration"><span class="arrow-prev">← </span><span>Server Integration</span></a><a class="docs-next button" href="/doc/13/command-line"><span>Command-line Reference</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#line-breaking">Line breaking</a><ul class="toc-headings"><li><a href="#the-property-prince-wrap-inside">The property <code>prince-wrap-inside</code></a></li><li><a href="#the-property-prince-line-break-choices">The property <code>prince-line-break-choices</code></a></li><li><a href="#the-property-prince-forced-breaks">The property <code>prince-forced-breaks</code></a></li></ul></li><li><a href="#spread-balancing">Spread Balancing</a><ul class="toc-headings"><li><a href="#the-property-prince-page-fill">The property <code>prince-page-fill</code></a></li><li><a href="#the-property-prince-n-lines">The property <code>prince-n-lines</code></a></li><li><a href="#fractional-widows">Fractional Widows</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="copyright"><div class="about-contact"><a href="/company/">About us</a> | <a href="/contact/">Contact</a></div><div class="copyright">Copyright © 2022 YesLogic Pty. Ltd.</div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '63dda203371e77ee63a05de413c3d741',
+                indexName: 'princexml',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["language:en"]}
+              });
+            </script></body></html>

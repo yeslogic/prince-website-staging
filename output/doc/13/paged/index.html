@@ -1,0 +1,888 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Paged Media · Prince Documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Prince produces PDFs - which are a prominent example of paged media. There are a few differences that are crucial to keep in mind when preparing a document for paged media intended for print:"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Paged Media · Prince Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://www.princexml.com/"/><meta property="og:description" content="Prince produces PDFs - which are a prominent example of paged media. There are a few differences that are crucial to keep in mind when preparing a document for paged media intended for print:"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://www.princexml.com/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="/js/warning.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/Prince-logo.png" alt="Prince Documentation"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/doc/" target="_self">Documentation</a></li><li class=""><a href="/doc/help" target="_self">Help</a></li><li class=""><a href="/doc/releases" target="_self">Release Notes</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>User Guide</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Installation Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/installing">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/doc/13/first-doc">Your First Document</a></li><li class="navListItem"><a class="navItem" href="/doc/13/help-install">Help</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">User Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/intro-userguide">Convert HTML to PDF</a></li><li class="navListItem"><a class="navItem" href="/doc/13/styling">Styling</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/doc/13/paged">Paged Media</a></li><li class="navListItem"><a class="navItem" href="/doc/13/gen-content">Generated Content</a></li><li class="navListItem"><a class="navItem" href="/doc/13/javascript">Scripting</a></li><li class="navListItem"><a class="navItem" href="/doc/13/graphics">Graphics</a></li><li class="navListItem"><a class="navItem" href="/doc/13/cookbook">Prince Tips and Tricks</a></li><li class="navListItem"><a class="navItem" href="/doc/13/help">Help</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-input">Prince Input</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-output">Prince Output</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-networking">Prince Networking</a></li><li class="navListItem"><a class="navItem" href="/doc/13/server-integration">Server Integration</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-for-books">Prince for Books</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Reference Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/command-line">Command-line Reference</a></li><li class="navListItem"><a class="navItem" href="/doc/13/css-refs">CSS References</a></li><li class="navListItem"><a class="navItem" href="/doc/13/css-props">CSS Properties</a></li><li class="navListItem"><a class="navItem" href="/doc/13/js-support">JavaScript Support</a></li><li class="navListItem"><a class="navItem" href="/doc/13/page-size-keywords">Page Size Keywords</a></li><li class="navListItem"><a class="navItem" href="/doc/13/characters">Character Entities</a></li><li class="navListItem"><a class="navItem" href="/doc/13/acknowledgements">Acknowledgments</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Paged Media</h1></header><article><div><span><p>Prince produces PDFs - which are a prominent example of paged media. There are a few differences that are crucial to keep in mind when preparing a document for paged media intended for print:</p>
+<dl>
+  <dt>Pagination</dt>
+  <dd><p>The major difference between formatting for the web and for PDF/Print is that
+  PDF is paginated, i.e. the content is placed on discrete pages.  Pages have a defined
+  <a href="/doc/paged#page-size">size</a> and content can be laid out in a specific
+  pattern making use of predefined <a href="/doc/paged#page-regions">page regions</a>.
+  Elements can not only be floated right and left, but they can also be floated to
+  the top and bottom of the page, or of a column, or the float even can be
+  deferred to the next page (see <a href="/doc/styling#prince-extensions-to-floats">Prince extensions to floats</a>).
+  Pages can be <a href="/doc/paged#selecting-pages">selected</a> and
+  <a href="/doc/paged#named-pages">named</a>, which allows for specific treatment of
+  certain pages.  Also, it is important to have an understanding of
+  <a href="/doc/paged#controlling-pagination">pagination</a>: content might not fit
+  on a page and might spill over into the next page, or it might be necessary
+  to move it to the next page in order to avoid creating gaps (see
+  also <a href="/doc/styling#conditional-modifiers">Conditional modifiers</a>).</p></dd>
+  <dt>Page spreads</dt>
+  <dd><p>A basic unit for paged media in print is the page spread: the left page, called
+  <i>verso</i> in a left-to-right script (see <a href="/doc/styling#writing-mode">Writing Mode</a>), and
+  the right page, called <i>recto</i>, are of the same size and typically are
+  symmetrical to each other and are centered on the gutter.  Selected and named
+  pages can be placed <i>recto</i> or <i>verso</i>, and Prince expands several
+  properties and the <a href="/doc/css-refs#at-page"><code>@page</code></a>
+  at-rule pseudo-classes with the values <code>verso</code> and <code>recto</code>, or
+  <code>inside</code> and <code>outside</code>, referring to the layout on each
+  page of the spread.</p></dd>
+  <dt>Non-interactive</dt>
+  <dd><p>Last but not least, paged media intended for print is non-interactive by nature.
+  All CSS properties referring to user interaction make no sense, scripting cannot
+  be interactive and scripts need to run before layout is finished.  But for these
+  details and scripting after layout please check the section on <a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a>.</p></dd>
+</dl>
+<p>Prince allows you to control a number of options that affect how to format pages, from straight-forward options such as <a href="#page-size">page size</a>, to <a href="#page-style">page style</a>, <a href="#page-regions">page regions</a> like headers and footers, <a href="#controlling-pagination">pagination control</a> and <a href="/doc/13/gen-content#counters">page numbering</a>.</p>
+<p>CSS properties that affect pages are specified within page <em>at-rules</em> (see <a href="/doc/13/css-refs#css-atrules">CSS At-rules</a>). For example, we can use the <a href="/doc/13/css-props#prop-size"><code>size</code></a> property within the <a href="/doc/13/css-refs#at-page"><code>@page</code></a> rule to specify the page size (see <a href="#page-size">Page size</a>).</p>
+<pre><code class="hljs">    <span class="hljs-keyword">@page</span> {
+        <span class="hljs-attribute">size</span>: A4
+    }
+</code></pre>
+<p>In this section we will show most of the properties that can be specified within a page rule, then we will show how pagination can be controlled and how page styles can be applied to selected pages.</p>
+<p>The initial values for CSS properties are defined internally - these are the initial <code>@page</code> styles:</p>
+<pre><code class="hljs">    <span class="hljs-keyword">@page</span> {
+        <span class="hljs-attribute">margin</span>: <span class="hljs-number">54pt</span>;
+        <span class="hljs-attribute">prince-bleed</span>: auto <span class="hljs-comment">/* '6pt' if marks present */</span> ;
+        <span class="hljs-attribute">prince-trim</span>: auto <span class="hljs-comment">/* '57pt 48pt' if marks present */</span> ;
+        <span class="hljs-attribute">marks</span>: none;
+        <span class="hljs-attribute">mark-length</span>: <span class="hljs-number">24pt</span>;
+        <span class="hljs-attribute">mark-width</span>: <span class="hljs-number">0.1pt</span>;
+        <span class="hljs-attribute">mark-offset</span>: auto <span class="hljs-comment">/* equal to prince-bleed */</span> ;
+        <span class="hljs-attribute">size</span>: Letter;
+        <span class="hljs-attribute">prince-pdf-page-colorspace</span>: auto;
+        <span class="hljs-attribute">prince-pdf-page-label</span>: auto;
+        <span class="hljs-attribute">prince-rotate-body</span>: <span class="hljs-number">0deg</span>;
+        <span class="hljs-attribute">prince-shrink-to-fit</span>: none;
+    }
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="page-size"></a><a href="#page-size" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Page size</h2>
+<p>Page size can be specified using the <a href="/doc/13/css-props#prop-size"><code>size</code></a> property in <em>length</em> units or by a page size keyword (see <a href="/doc/13/page-size-keywords#page-size-keywords">Page Size Keywords</a> for a list), optionally combined with the <code>portrait</code> or <code>landscape</code> keyword.</p>
+<pre><code class="hljs">    <span class="hljs-comment">/* Use A4 paper */</span>
+    <span class="hljs-keyword">@page</span> { <span class="hljs-attribute">size</span>: A4 }
+
+    <span class="hljs-comment">/* Use A4 paper in landscape orientation */</span>
+    <span class="hljs-keyword">@page</span> { <span class="hljs-attribute">size</span>: A4 landscape }
+
+    <span class="hljs-comment">/* These two custom sizes are equivalent */</span>
+    <span class="hljs-keyword">@page</span> { <span class="hljs-attribute">size</span>: <span class="hljs-number">30cm</span> <span class="hljs-number">40cm</span> }
+    <span class="hljs-keyword">@page</span> { <span class="hljs-attribute">size</span>: <span class="hljs-number">40cm</span> <span class="hljs-number">30cm</span> landscape }
+
+    <span class="hljs-comment">/* Use square paper, this sets width and height */</span>
+    <span class="hljs-keyword">@page</span> { <span class="hljs-attribute">size</span>: <span class="hljs-number">30cm</span> }
+</code></pre>
+<p>Sometimes it can be useful to specify the page dimensions in pixels, for example when creating presentation slides (see <a href="#presentation-slides">Presentation slides</a>).</p>
+<pre><code class="hljs">    <span class="hljs-keyword">@page</span> {
+        <span class="hljs-attribute">size</span>: <span class="hljs-number">1280px</span> <span class="hljs-number">960px</span>;
+    }
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="page-style"></a><a href="#page-style" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Page style</h2>
+<p>Pages, like other block level elements, follow the CSS box model introduced in <a href="/doc/13/styling#css-box">Box Model</a>. Their <code>margin</code>, <code>border</code>, <code>padding</code> and <code>background</code> can be styled within <a href="/doc/13/css-refs#at-page"><code>@page</code></a> rules.</p>
+<p>The <a href="/doc/13/css-refs#at-page"><code>@page</code></a> rules can only style the page and its margin boxes - it cannot contain style rules to target specific elements, but it can contain at-rules to target the page regions (for a complete list of possible at-rules, see <a href="#page-regions">Page regions</a>).</p>
+<pre><code class="hljs">    <span class="hljs-keyword">@page</span> {
+        <span class="hljs-attribute">margin</span>: <span class="hljs-number">2cm</span>;
+    }
+</code></pre>
+<p>Prince also supports the <code>margin-outside</code> and <code>margin-inside</code> properties. These allow you to specify different margins for the inside and outside edges of paper as it is bound into a book. For example it may be necessary to have a larger inside margin (called a <em>gutter</em>) so that after some of the margin is used by the binding, the remaining margins are even.</p>
+<pre><code class="hljs">    <span class="hljs-keyword">@page</span> {
+        <span class="hljs-attribute">margin</span>: <span class="hljs-number">2cm</span>;
+        <span class="hljs-attribute">margin-inside</span>: <span class="hljs-number">3cm</span>;
+    }
+</code></pre>
+<p>This is used in <a href="#fig-fancyheader">Fancy headers</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="page-regions"></a><a href="#page-regions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Page regions</h2>
+<p><img src="/doc/13/assets/samples/marginboxes-1.colour.png" alt="A page with content in some of its page regions."></p>
+<p>Most content appears inside the <em>page area</em> of one or more pages. Surrounding the page area, but within the margin area, are the <em>page-margin boxes</em>. Other special areas are overlaying the whole page or are placed at the bottom of the <em>page area</em>. Collectively, they are known as the <em>page regions</em>.</p>
+<p>This figure shows the positions of some page regions placed in the page margin, called the <em>page-margin boxes</em>. Some of them can be used for creating running page headers and footers.</p>
+<p>The <a href="/doc/13/css-refs#at-page"><code>@page</code></a> background is <span class="fig-marginboxes-lightgrey">grey</span> and the body's, i.e. the page area's background is <span class="fig-marginboxes-white">white</span>.</p>
+<p>The first four page-margin boxes, namely</p>
+<ul>
+<li><code>@top</code>,</li>
+<li><code>@bottom</code>,</li>
+<li><code>@left</code> and</li>
+<li><code>@right</code></li>
+</ul>
+<p>are easy to understand and are shown in <span class="fig-marginboxes-yellow">yellow</span> and <span class="fig-marginboxes-red">red</span>.</p>
+<p>Each of these page-margin boxes has a synonym ending in <code>-center</code> or <code>-middle</code> - for instance <code>@top-center</code> is the same as <code>@top</code>, while <code>@left-middle</code> is the same as <code>@left</code>.</p>
+<p>You can place content in a page-margin box with the <a href="/doc/13/css-props#prop-content"><code>content</code></a> property.</p>
+<p>For example, you can print the current page number at the bottom of each page (see <a href="/doc/13/gen-content">Generated Content</a>):</p>
+<pre><code class="hljs">    @page {
+        @bottom {
+            content: counter(page)
+        }
+    }
+</code></pre>
+<p>Two examples in <a href="#selecting-pages">the next chapter</a> show examples of page headers and footers:</p>
+<ul>
+<li>the <a href="#fig-titlepage">Novel title page example</a> creates a footer to display the page number, but suppresses it for the title page; and</li>
+<li>the <a href="#fig-textbook">Textbook page numbers example</a> displays a more complex use of headers by placing the book title in the header of left pages, and the current chapter's title in the header of right-facing pages, in addition to the page number.</li>
+</ul>
+<p>Several other page regions can also be used. The full list of page regions is shown in the <a href="#tab-marginboxes">Page regions</a> table.</p>
+<p id="tab-marginboxes">Page regions</p>
+<table class="grid">
+<thead>
+<tr>
+<th>Name</th>
+<th colspan="2">Default alignment</th>
+<th>In figure</th>
+</tr>
+<tr>
+<th/>
+<th><code><a href="/doc/css-props#prop-text-align">text-align</a></code></th>
+<th><code><a href="/doc/css-props#prop-vertical-align">vertical-align</a></code></th>
+<th/>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>@top</code></td>
+<td>center</td>
+<td>middle</td>
+<td style="background-color: #ff8">yellow</td>
+</tr>
+<tr>
+<td><code>@bottom</code></td>
+<td>center</td>
+<td>middle</td>
+<td style="background-color: #ff8">yellow</td>
+</tr>
+<tr>
+<td><code>@left</code></td>
+<td>center</td>
+<td>middle</td>
+<td style="background-color: #f88">red</td>
+</tr>
+<tr>
+<td><code>@right</code></td>
+<td>center</td>
+<td>middle</td>
+<td style="background-color: #f88">red</td>
+</tr>
+<tr>
+<td><code>@top-left</code></td>
+<td>left</td>
+<td>middle</td>
+<td style="background-color: #8f8">green</td>
+</tr>
+<tr>
+<td><code>@top-center</code></td>
+<td>center</td>
+<td>middle</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@top-right</code></td>
+<td>right</td>
+<td>middle</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@bottom-left</code></td>
+<td>left</td>
+<td>middle</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@bottom-center</code></td>
+<td>center</td>
+<td>middle</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@bottom-right</code></td>
+<td>right</td>
+<td>middle</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@left-top</code></td>
+<td>center</td>
+<td>top</td>
+<td style="background-color: #8f8">green</td>
+</tr>
+<tr>
+<td><code>@left-middle</code></td>
+<td>center</td>
+<td>middle</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@left-bottom</code></td>
+<td>center</td>
+<td>bottom</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@right-top</code></td>
+<td>center</td>
+<td>top</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@right-middle</code></td>
+<td>center</td>
+<td>middle</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@right-bottom</code></td>
+<td>center</td>
+<td>bottom</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@top-left-corner</code></td>
+<td>right</td>
+<td>middle</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@top-right-corner</code></td>
+<td>left</td>
+<td>middle</td>
+<td style="background-color: #88f">blue</td>
+</tr>
+<tr>
+<td><code>@bottom-left-corner</code></td>
+<td>right</td>
+<td>middle</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@bottom-right-corner</code></td>
+<td>left</td>
+<td>middle</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@page-float-top</code></td>
+<td>center</td>
+<td>top</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@page-float-bottom</code></td>
+<td>center</td>
+<td>bottom</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@prince-overlay</code></td>
+<td>center</td>
+<td>middle</td>
+<td>not shown</td>
+</tr>
+<tr>
+<td><code>@footnote</code></td>
+<td>left</td>
+<td>middle</td>
+<td>not shown</td>
+</tr>
+</tbody>
+</table>
+<p>Prince will try to create page regions of the correct sizes. If you need to create boxes of specific sizes you may need to use only a single box (eg: <code>@top</code>) and use the <a href="/doc/13/css-props#prop-content"><code>content</code></a> property to place elements with specific sizes in it.</p>
+<p>Note that in the above <a href="#fig-marginboxes">Page regions</a> figure, Prince leaves space for <code>@top-right</code> and <code>@left-bottom</code> boxes because their counterparts (<code>@top-left</code> and <code>@left-top</code> respectively) have been defined. This keeps the <code>@top</code> and <code>@left</code> centered along the top and side of the page respectively.</p>
+<p>The page-margin boxes <code>@top</code>, <code>@top-left</code> or <code>@top-right</code> can be used to create running page headers, and the page-margin boxes <code>@bottom</code>, <code>@bottom-left</code> or <code>@bottom-right</code> are useful for page footers (see <a href="/doc/13/cookbook#page-headers-and-footers">Page Headers and Footers</a>).</p>
+<p>The page region <code>@prince-overlay</code> is a special region, overlaying all of the page area. A typical use is for creating watermarks on all pages of the document (see <a href="/doc/13/cookbook#watermarks">Watermarks</a>).</p>
+<p>The page region <code>@footnote</code> is placed by default at the foot of the page area and contains the footnotes (see <a href="/doc/13/styling#footnotes">Footnotes</a>). Note that if there are no footnotes on a page, the footnote area will not be displayed on that page at all.</p>
+<p>Many CSS properties can be applied to page regions:</p>
+<ul>
+<li><p>All of the <a href="/doc/13/css-props#prop-margin"><code>margin</code></a>, <a href="/doc/13/css-props#prop-border"><code>border</code></a>, <a href="/doc/13/css-props#prop-padding"><code>padding</code></a> and <a href="/doc/13/css-props#prop-background"><code>background</code></a> properties can be used to style page regions.</p></li>
+<li><p>The <a href="/doc/13/css-props#prop-vertical-align"><code>vertical-align</code></a> property can be applied to any page region to vertically align its content.</p></li>
+<li><p>When a page region contains generated content, many inline style properties such as <a href="/doc/13/css-props#prop-color"><code>color</code></a> and <a href="/doc/13/css-props#prop-font"><code>font</code></a> can be applied to style the generated content.</p></li>
+</ul>
+<p>The <code>@footnote</code> area can be positioned other than its default position (see <a href="/doc/13/styling#styling-and-behavior-of-footnotes">Styling and behavior of footnotes</a> and <a href="/doc/13/cookbook#sidenotes">Sidenotes</a>). All other page regions cannot be moved - their position is defined by the page margins.</p>
+<h3><a class="anchor" aria-hidden="true" id="generated-content-in-page-regions"></a><a href="#generated-content-in-page-regions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Generated content in page regions</h3>
+<p>We have already shown an example of using the <code>page</code> counter to print the page number at the bottom of each page, this is one example of generated content. The <code>page</code> counter is predefined and starts at 1; it increments automatically for each new page. (Note that the page counter cannot be incremented manually using the <a href="/doc/13/css-props#prop-counter-increment"><code>counter-increment</code></a> property.)</p>
+<p>The <code>page</code> counter can be reset using the <a href="/doc/13/css-props#prop-counter-reset"><code>counter-reset</code></a> property at any block-level element within a non-floating element in the normal flow. This is useful for restarting page numbering at a new section of the document.</p>
+<p id="fig-restart-page-numbers">Restarting page numbering</p>
+<p>HTML</p>
+<pre><code class="hljs css language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"front"</span>&gt;</span> cover page, etc, ... <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"contents"</span>&gt;</span>
+            table of contents, ...
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"body"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"chapter"</span>&gt;</span> chapter 1...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"chapter"</span>&gt;</span> chapter 2...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">appendix</span>"&gt;</span> appendix1 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">appendix</span>"&gt;</span> appendix2, ... <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+</code></pre>
+<p>CSS</p>
+<pre><code class="hljs css language-css">    .contents {
+        display: block;
+        page: table-of-contents;
+        counter-reset: page 1
+    }
+    @page table-of-contents {
+        @top {
+            content: "Table of Contents"
+        }
+        @bottom {
+            content: counter(page, lower-alpha)
+        }
+    }
+    .body {
+        display: block;
+        page: main;
+        counter-reset: page 1
+    }
+    @page main {
+        @top {
+            content: string(chapter-title)
+        }
+        @bottom {
+            content: counter(page)
+        }
+    }
+    .chapter h1 {
+        string-set: chapter-title content()
+    }
+</code></pre>
+<p>This example also uses <a href="#named-pages">Named pages</a> which we will explain in more detail below. We create three types of pages: table-of-contents pages, main pages, and pages without a name.</p>
+<p>The .contents rule names the pages that it appears on as table-of-contents and resets the page counter to 1 at the start of the contents div. Then the <a href="/doc/13/css-refs#at-page"><code>@page</code></a> rule for those pages generates a page footer that contains the current page number in <code>lower-alpha</code> style. This rule also sets the page header to the string &quot;Table of Contents&quot;.</p>
+<p>The <code>.body</code> rule names the pages that it appears on as main and resets the page counter to 1 at the start of main div. Then the <a href="/doc/13/css-refs#at-page"><code>@page</code></a> rule for the main pages generates a page footer that contains the current page number in the default decimal style. This rule, together with the .chapter h1 rule, sets the page header to the title of the chapter.</p>
+<p>Pages that don't match either of these names have the default style, which does not include a page number in the footer.</p>
+<p>In some documents, particularly those that are unbound such as office documents, it can be useful to show the total number of pages on each page. The total number of pages can be accessed using the <code>pages</code> counter. This is a pre-defined counter that is fixed to the total number of pages in the document.</p>
+<pre><code class="hljs">    @page {
+        @bottom {
+            content: "Page " counter(page) " of " counter(pages)
+        }
+    }
+</code></pre>
+<p>This rule will generate page footers such as &quot;Page 1 of 89&quot;.</p>
+<p id="fig-fancyheader">Fancy header example</p>
+<p><img src="/doc/13/assets/samples/fancyheader-2.bw.png" alt="Image of a page of a textbook or thesis with a header.">
+This example shows a header as might be found in a textbook. The <a href="/doc/13/assets/samples/fancyheader.html">HTML</a> and <a href="/doc/13/assets/samples/fancyheader.pdf">PDF</a> are both available. This is a small part of a <a href="https://github.com/yeslogic/prince-samples/tree/master/thesis">larger example</a> in our <a href="https://github.com/yeslogic/prince-samples">Prince samples repository</a>.</p>
+<p>Fancy headers</p>
+<p>This example demonstrates a more complete headers style. It uses generated content to print page numbers, the chapter number and title and the section number and title using different styles for left and right pages. It also prints an underline under the header.</p>
+<pre><code class="hljs">    @page {
+        font-family: Times, Serif;
+        font-size: 11pt;
+        text-align: justify;
+        margin-top: 2cm;
+        margin-bottom: 2cm;
+        margin-inside: 3.5cm;
+        margin-outside: 2.5cm;
+    }
+
+    @page body:left {
+        @top-left {
+            content: counter(page);
+            vertical-align: bottom;
+        }
+        @top-right {
+            content: "Chapter " counter(chapter) ": " string(chapter);
+            vertical-align: bottom;
+        }
+    }
+    @page body:right {
+        @top-right {
+            content: counter(page);
+            vertical-align: bottom;
+        }
+        @top-left {
+            content: counter(chapter) "." counter(section) " "
+                string(section);
+            vertical-align: bottom;
+        }
+    }
+    @page body {
+        border-top: thin black solid;
+    }
+    @page body:first {
+        margin-top: 25%;
+        @top-left { content: normal; }
+        @top-right { content: normal; }
+        border: none;
+    }
+    @page body:blank {
+        @top-left { content: normal; }
+        @top-right { content: normal; }
+        border: none;
+    }
+    body {
+        font-family: Times, Serif;
+        font-size: 11pt;
+        text-align: justify;
+        padding: 0.5cm 0cm;
+    }
+
+    div.body {
+        page: body;
+    }
+
+    div.body h1 {
+        break-before: right;
+        prince-page-group: start;
+        string-set: chapter content();
+        counter-increment: chapter;
+        counter-reset: section;
+    }
+    div.body h1::before {
+        content: "Chapter " counter(chapter) ": ";
+    }
+
+    div.body h2 {
+        string-set: section content();
+        counter-increment: section;
+    }
+    div.body h2::before {
+        content: counter(chapter) "." counter(section) " ";
+    }
+</code></pre>
+<p>The main content area is 2.5cm from the page's edge on all sides. On the left and right this is a margin of 2.5cm and on the top and bottom it's 2cm of margin and 0.5cm of padding. This places the bottom border of the <code>@top</code> page region 0.5cm from the main content area, enough to avoid making it look crowded. The header text has the <code>vertical-align: bottom</code> property to ensure that it appears immediately above the border — the border is made to look like an underline. This example uses many properties and page selectors discussed later in this section. This is a small part of a <a href="https://github.com/yeslogic/prince-samples/tree/master/thesis">larger example</a> in our <a href="https://github.com/yeslogic/prince-samples">Prince samples repository</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="copying-content-from-the-document"></a><a href="#copying-content-from-the-document" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Copying content from the document</h3>
+<p>Generated content in page regions may contain text content copied from the document using the <a href="/doc/13/css-props#prop-string-set"><code>string-set</code></a> property:</p>
+<p>CSS</p>
+<pre><code class="hljs">    @page {
+        @top {
+            content: string(doctitle)
+        }
+    }
+
+    h1 { string-set: doctitle content() }
+</code></pre>
+<p>The <code>@page</code> rule specifies that the top-center page region will contain the text content of the document title copied from the text content of the <code>h1</code> element in the document.</p>
+<p>The second argument to the <code>string()</code> function is a <code>page-policy</code> (see <a href="/doc/13/gen-content#the-optional-page-policy-value">The optional <code>page-policy</code> value</a>).</p>
+<p>For a dictionary, you might want to have a page header that says &quot;a-af&quot;, where &quot;a&quot; is the first definition on the page and &quot;af&quot; is the last, so you apply <code>string-set</code> for each definition, and then you can select the <code>first</code> and <code>last</code> one with a page policy in the page header.</p>
+<pre><code class="hljs">    @page {
+      @top-left { content: string(term, first);}
+      @top-right { content: string(term, last);}
+    }
+</code></pre>
+<p>The page policy value <code>first-except</code> is equivalent to <code>start</code>, <em>unless</em> the <code>string-set</code> is applied on the current page, in which case it will return <em>no</em> value.</p>
+<p>This can be very useful as a means to repeating the title of a chapter as a page heading in the <code>@top-center</code> page region, without duplicating the information on the page where the heading appears in the running text of the page.</p>
+<pre><code class="hljs">    @page {
+      @top-center { content: string(letter, first-except);}
+    }
+</code></pre>
+<p>You can see these examples in full action in the <a href="/samples/#dictionary">Dictionary</a> sample (<a href="http://css4.pub/2015/icelandic/dictionary.html">HTML</a> - <a href="http://css4.pub/2015/icelandic/dictionary.pdf">PDF</a>).</p>
+<h3><a class="anchor" aria-hidden="true" id="taking-elements-from-the-document"></a><a href="#taking-elements-from-the-document" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Taking elements from the document</h3>
+<p>Page region content may also be taken from the document itself. Any block-level element can be removed from the normal flow and placed in a page region. It will normally inherit from its original position in the document, but does not display there. Please also note the following:</p>
+<ul>
+<li>All <code>margin</code> properties of an element not in the natural document flow will be ignored.</li>
+<li>The first running element that appears on a page will be used on the current page and carried onto following pages, until a new running element is encountered.</li>
+</ul>
+<p>To move the content into a page region, the element needs to be removed from the normal document flow position with the <code>running()</code> function of the <a href="/doc/13/css-props#prop-position"><code>position</code></a> property, and inserted into the specified region with the <code>element()</code> function of the <a href="/doc/13/css-props#prop-content"><code>content</code></a> property.</p>
+<p>CSS</p>
+<pre><code class="hljs">    @page {
+        @top { content: element(header) }
+    }
+    h1 { position: running(header) }
+</code></pre>
+<p>The <code>@page</code> rule specifies that the top page region is a new running header named &quot;header&quot;.</p>
+<p>The rule for the <code>h1</code> element moves it to the &quot;header&quot; running element, removing it from the default normal flow.</p>
+<p>Prince also provides another interface for creating running headers: the content can be removed from the normal flow with <code>prince-flow: static()</code>, to be placed in a page region with <code>content: flow()</code>.</p>
+<p>CSS</p>
+<pre><code class="hljs">    @page {
+        @bottom { content: flow(footer) }
+    }
+    footer { prince-flow: static(footer, start) }
+</code></pre>
+<p>In addition to the standard mechanism, the Prince specific one offers an extra feature that might be useful in certain scenarios: the <code>static()</code> function accepts an optional <code>start</code> argument, which makes the fetched content available, as if it were fetched from the start of the document. An example to clarify:</p>
+<p>Many HTML documents designed for browsers have the following structure:</p>
+<pre><code class="hljs css language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
+    main content
+    <span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
+</code></pre>
+<p>Unfortunately, if you want to place the footer element in the page footer, it will only appear on the last page - because it is at the end of the document! To solve this, the document must be modified to look like this:</p>
+<pre><code class="hljs css language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
+    main content
+</code></pre>
+<p>It can be achieved by using JavaScript to move the element, but the simple <code>start</code> keyword on the <a href="/doc/13/css-props#prop-prince-flow"><code>prince-flow</code></a> property instructs Prince to pretend that the element was seen at the beginning of the document.</p>
+<p>The <code>element()</code> and <code>flow()</code> functions replace the entire margin box, and cannot be combined with other content. If you just want to capture some text from the document, use named strings instead (see <a href="#copying-content-from-the-document">Copying content from the document</a>) - they can be combined with other content.</p>
+<h2><a class="anchor" aria-hidden="true" id="selecting-pages"></a><a href="#selecting-pages" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Selecting pages</h2>
+<p>It is often necessary to apply styles to some pages, but not others. Either applying them to only some pages, or on every page <em>except</em> selected pages. CSS and Prince provide a number of <em>page selectors</em> for choosing which pages a rule applies to.</p>
+<p>In a novel it is useful to print a page number at the bottom of every page, <em>except</em> for some pages such as the title page. In this example the <a href="/doc/13/css-refs#at-page"><code>@page</code></a> rule is applied to all pages. Then the <code>@page:first</code> rule, which is more specific, removes the footer from the first page. See <a href="#page-regions">Page regions</a> and <a href="/doc/13/gen-content">Generated Content</a>.</p>
+<p id="fig-titlepage">Novel title page example</p>
+<p><img src="/doc/13/assets/samples/titlepage-1.bw.png" alt="Novel title page example image.">
+A title page example showing use of <code>@page:first</code>. Download the <a href="/doc/13/assets/samples/titlepage.pdf">PDF</a> or the <a href="/doc/13/assets/samples/titlepage.html">HTML</a>.</p>
+<pre><code class="hljs css language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span>
+    @page {
+        @bottom {
+            content: counter(page)
+        }
+    }
+    @page:first {
+        margin-top: 10cm;
+        @bottom {
+            content: normal
+        }
+    }
+    h1, h2.subtitle {
+        text-align: center
+    }
+    h2.chaptertitle {
+        break-before: page
+    }
+    <span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>The Magnificent Octopus<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"subtitle"</span>&gt;</span>S. Baldrick<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"chaptertitle"</span>&gt;</span>Chapter 1<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Once upon a time there lived a little saussage.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p>In this example the <a href="/doc/13/css-refs#at-page"><code>@page</code></a> rule specifies styles that apply to all pages: Then the <code>@page:first</code> rule overrides this for the first page only. It resets the <a href="/doc/13/css-props#prop-content"><code>content</code></a> property for the footer and increases the top margin, printing the title of the novel in a reasonable place on the page (see <a href="#page-style">Page style</a>). This example also uses the <a href="/doc/13/css-props#prop-break-before"><code>break-before</code></a> property to force a page break (see <a href="#page-breaks">Page breaks</a>).</p>
+<p>When using the <code>:first</code> page selector to choose the first page in each chapter (such as in <a href="#fig-fancyheader">Fancy headers</a>) it may be necessary to add <code>prince-page-group: start</code> to the first element in each chapter (such as <code>h1</code>). See <a href="#page-groups">Page groups</a>.</p>
+<p>The <code>:left</code> and <code>:right</code> page selectors can be used to style left and right pages in a bound book differently. This is often used in text books to place the page number on the outside top corners of pages.</p>
+<p>Alternatively, the <code>:recto</code> and <code>:verso</code> selectors can be used, with the advantage of being independent of directionality of the script: in a left-to-right script, <code>:recto</code> is the right-hand side of a spread, and <code>:verso</code> is the left-hand side, while in a right-to-left script these values are inverted: <code>:recto</code> defines the left-hand side of a spread, and <code>:verso</code> defines the right-hand side. See also <a href="/doc/13/styling#writing-mode">Writing Mode</a>.</p>
+<p id="fig-textbook">Textbook page numbers example</p>
+<p><img src="/doc/13/assets/samples/textbook-1.bw.png" alt="Textbook page numbers example image.">
+A text book example showing use of <code>@page:left</code> and <code>@page:right</code>. Download the <a href="/doc/13/assets/samples/textbook.pdf">PDF</a> or the <a href="/doc/13/assets/samples/textbook.html">HTML</a>.</p>
+<pre><code class="hljs css language-css">    @page:left {
+        @top-left { content: counter(page) }
+        @top-right { content: string(book-title) }
+        margin-left: 2cm;
+        margin-right: 3cm;
+    }
+    @page:right {
+        @top-left { content: string(chapter-title) }
+        @top-right { content: counter(page) }
+        margin-left: 3cm;
+        margin-right: 2cm;
+    }
+
+    h1 { string-set: book-title content() }
+    h2 { string-set: chapter-title content() }
+</code></pre>
+<p>These rules also place the book title in the header of left pages, and the current chapter's title in the header of right-facing pages. The book title is copied from the text content of the <code>h1</code> element while the chapter title is copied from the text content of the <code>h2</code> elements (see <a href="/doc/13/gen-content">Generated Content</a>). They also specify wider margins in the <em>gutter</em> of the page spread; binders may need this extra width for a book's binding.</p>
+<p>The first page in a document using the default left-to-right reading order is a right page. Imagine the cover or a title page of a book which appear on a right page. The first page of a right-to-left document is a left page.</p>
+<p>By putting <code>break-before: left</code> or <code>right</code> at the very beginning of the document, it will not leave a blank page, but instead will change whether the document begins on a left or right facing page.</p>
+<p>Sometimes it can be useful to select the <em>N</em>th page in a document. The <code>:nth(N)</code> page selector can be used to do this:</p>
+<pre><code class="hljs css language-css">    @page:nth(42) {
+        ...
+    }
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="named-pages"></a><a href="#named-pages" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Named pages</h3>
+<p>Sometimes it is necessary to style pages depending on their content; named pages allow us to select pages that contain particular elements. We used this in <a href="#fig-restart-page-numbers">Restarting page numbering</a>, to apply a style to the table of contents pages to print their page numbers using roman numerals.</p>
+<p>The element containing the table of contents has a <a href="/doc/13/css-props#prop-page"><code>page</code></a> property applied, specifying that this element's pages are table-of-contents pages. The <a href="/doc/13/css-props#prop-page"><code>page</code></a> property may be applied to any block-level element within a non-floating environment in the normal flow.</p>
+<pre><code class="hljs css language-css">    <span class="hljs-selector-class">.contents</span> {
+        <span class="hljs-attribute">display</span>: block;
+        <span class="hljs-attribute">page</span>: table-of-contents;
+    }
+</code></pre>
+<p>Then using this page name to apply a different <a href="/doc/13/css-refs#at-page"><code>@page</code></a> rule to the table-of-contents pages:</p>
+<pre><code class="hljs css language-css">    @page table-of-contents {
+        @top { content: "Table of Contents" }
+        @bottom {
+            content: counter(page, lower-alpha)
+        }
+    }
+</code></pre>
+<p>More than one element can <em>belong</em> to the same name, in other words, page names behave like CSS classes.</p>
+<p>Prince will create a page break between elements belonging to different named pages, including elements without a named page. So in <a href="#fig-restart-page-numbers">Restarting page numbering</a>, a page break will be inserted after the the table of contents, because the next element has the page name main rather than table-of-contents.</p>
+<p>Selectors such as <code>:first</code>, <code>:Nth</code>, <code>:left</code> and <code>:right</code> also work with named pages. For example:</p>
+<pre><code class="hljs css language-css">    @page preface {
+        @bottom {
+            content: counter(page, lower-alpha)
+        }
+    }
+    @page preface:first {
+        @bottom {
+            content: normal;
+        }
+    }
+</code></pre>
+<p>This example only works when a page name is used only once within a document, such as for the preface of a document (documents only have one preface). If you wish to apply a style to the first page of every chapter then you must use the <a href="/doc/13/css-props#prop-prince-page-group"><code>prince-page-group</code></a> property to create <em>page groups</em>:</p>
+<pre><code class="hljs">    div.chapter {
+        page: chapter;
+        break-before: right;
+        prince-page-group: start;
+    }
+    @page chapter {
+        @bottom {
+            content: counter(page);
+        }
+    }
+    @page chapter:first {
+        @bottom {
+            content: normal;
+        }
+    }
+</code></pre>
+<p>The property <code>prince-page-group: start</code> instructs Prince to start a new page group. This is necessary for the <code>div.chapter:first</code> selector to match the first page of each chapter, instead of only the first page in the first chapter. See <a href="#page-groups">Page groups</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="blank-pages"></a><a href="#blank-pages" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Blank pages</h3>
+<p>A special case are blank pages.</p>
+<p>As we discussed in the previous section, <code>break-before: right</code> can be used to place the first page of a chapter on the right page in a spread. If the previous page is a right page, two page breaks are inserted, leaving a blank left page. However, this page will have normal <a href="/doc/13/css-refs#at-page"><code>@page</code></a> styles applied to it, which is usually not what people want. The <code>:blank</code> page selector can be used to change the style of blank pages, pages skipped such as a left page before a <code>break-before: right</code>, including removing any content.</p>
+<pre><code class="hljs css language-css">    @page:left {
+        @top-left {
+            content: counter(page);
+        }
+    }
+    @page:right {
+        @top-right {
+            content: counter(page);
+        }
+    }
+
+    @page:blank {
+        @top-left {
+            content: normal;
+        }
+        @top-right {
+            content: normal;
+        }
+    }
+
+    h1 {
+        break-before: right;
+    }
+</code></pre>
+<p>This example clears the generated content used on these pages. This works because <code>:blank</code> is more specific than either <code>:left</code> or <code>:right</code>. The <code>:blank</code> page selector can also be used with named pages.</p>
+<pre><code class="hljs css language-css">    @page frontmatter {
+        @bottom { content: counter(page, lower-roman); }
+    }
+
+    @page frontmatter:blank {
+        @bottom { content: normal; }
+    }
+</code></pre>
+<p>If chapter 1 also resets page numbering, then the page numbers will be reset on the first <em>content page</em>, i.e. a non-blank page.</p>
+<p>It is not always desirable to have no content on blank pages. Sometimes otherwise blank pages are required have some content, such as a notice saying &quot;This page intentionally left blank&quot;. For example, in legal documents, this prevents people from mistaking a dangerous printing error for an intentionally blank page.</p>
+<h3><a class="anchor" aria-hidden="true" id="page-groups"></a><a href="#page-groups" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Page groups</h3>
+<p>When consecutive elements belong to the same named page but logically separate structures (such as individual chapters) Prince combines them into one <em>page group</em>. This causes it to apply the <code>:first</code> page selector to the first page of the whole page group only (the first page of chapter 1). Instead we usually want <code>:first</code> applied to the first page of each chapter.</p>
+<p>This can happen either:</p>
+<ul>
+<li>when chapters are separated by an element, such as <code>h1</code> which may have <code>break-before: right</code> applied (this can be seen in <a href="#fig-fancyheader">Fancy headers</a>);</li>
+<li>or when each chapter is a block element such as a <code>div</code>.</li>
+</ul>
+<p>Prince provides the <a href="/doc/13/css-props#prop-prince-page-group"><code>prince-page-group</code></a> property that can be used to start a new page group. It can be seen in <a href="#fig-fancyheader">Fancy headers</a> applied to h1 elements in the body of the document.</p>
+<pre><code class="hljs">    div.body h1 {
+        break-before: right;
+        prince-page-group: start;
+        ...
+    }
+</code></pre>
+<p><code>prince-page-group</code> also forces a page break, overriding any properties that attempt to avoid page breaks. The more specific <code>left</code> and <code>right</code> page take precedence over <code>prince-page-group</code>.</p>
+<h2><a class="anchor" aria-hidden="true" id="controlling-pagination"></a><a href="#controlling-pagination" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Controlling pagination</h2>
+<p>Prince will create page breaks automatically when new content will not fit on a page. Sometimes it is useful or necessary to control where page breaks should and should not be used. There are two ways to do this, and both are useful in different circumstances: page breaks can be added or prohibited with the <a href="#page-breaks">Page breaks</a> properties, and you can control where, within a paragraph, a page break may occur with the <a href="#widows-and-orphans">Widows and orphans</a> properties.</p>
+<h3><a class="anchor" aria-hidden="true" id="page-breaks"></a><a href="#page-breaks" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Page breaks</h3>
+<p>The simplest case is when you want to explicitly create a page break. This is typically used at the beginning of a chapter, to start the new chapter on a new page.</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">h1</span> {
+        <span class="hljs-attribute">break-before</span>: page;
+    }
+</code></pre>
+<p>The property <a href="/doc/13/css-props#prop-break-before"><code>break-before</code></a> is used to force a page break immediately before an <code>h1</code> element. New chapters are often started on the <em>recto</em> pages in text books, this is usually the right page:</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">h1</span> {
+        <span class="hljs-attribute">break-before</span>: right
+    }
+</code></pre>
+<p>Other values are <code>auto</code>, <code>avoid</code>, <code>avoid-page</code>, <code>avoid-column</code>, <code>left</code>, as well as <code>recto</code>, <code>verso</code> and <code>column</code>.</p>
+<p>The previous example could therefore also have been written in the following, more semantic (and possibly more flexible) way:</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">h1</span> {
+        <span class="hljs-attribute">break-before</span>: recto
+    }
+</code></pre>
+<p>The property <a href="/doc/13/css-props#prop-break-after"><code>break-after</code></a> may also be used to force a page break after an element.</p>
+<p id="fig-slides">Presentation slides example</p>
+<p><img src="/doc/13/assets/samples/slide-1.colour.png" alt="A title page slide for a presentation, with a title and subtitle."> <img src="/doc/13/assets/samples/slide-2.colour.png" alt="An example of an overhead slide for a presentation. It has a title and a single paragraph.">
+Two overhead slides for a presentation. The slides use white on black for better contrast on most projectors, and a 4x3 aspect ratio. Download the <a href="/doc/13/assets/samples/slide.pdf">PDF</a> or the <a href="/doc/13/assets/samples/slide.html">HTML</a> and <a href="/doc/13/assets/samples/slide.css">CSS</a>.</p>
+<p>It is necessary to force a page break when creating overhead slides. This can be done by placing the content for each slide in a <code>&lt;div class=&quot;slide&quot;&gt;</code> and using <code>break-before: page</code> as shown below. This example shows other styling that may be required to create presentation slides.</p>
+<p>CSS</p>
+<pre><code class="hljs css language-css">    @page {
+        size: 1280px 960px;
+        @bottom-left {
+            content: "Presentation Title";
+        }
+        @bottom-right {
+            content: counter(page);
+        }
+        background: black;
+        color: white;
+        font-family: DejaVu Sans, sans-serif;
+        font-size: 16pt;
+        margin: 96px;
+    }
+
+    @page:first {
+        @bottom-left { content: normal }
+        @bottom-right { content: normal }
+    }
+
+    div.centerpage {
+        /*
+         * Cause the content on these pages to begin part-way through
+         * the page. This is useful for a title page.
+         */
+        margin-top: 33%;
+    }
+
+    body {
+        font-size: 28pt;
+        font-family: DejaVu Sans, sans-serif;
+        color: white;
+    }
+
+    div.slide {
+        break-before: page;
+    }
+</code></pre>
+<p>HTML</p>
+<pre><code class="hljs css language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"slide"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Slide Title<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+
+      <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat. Duis aute irure dolor in
+        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+        culpa qui officia deserunt mollit anim id est laborum.
+      <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>The <code>font-family</code> and <code>color</code> properties are specified both in the <code>@page</code> and <code>body</code> rules, even though they're the same. This is required because the page regions are outside of the <code>body</code> and must be styled separately, likewise the content within <code>body</code> cannot be styled by the <code>@page</code> rule.</p>
+<p>A rendered slide for this example is shown in <a href="#fig-slides">Presentation slides example</a>. The example has been adapted from <a href="https://github.com/yeslogic/prince-samples/tree/master/mfug_talk">slides (HTML+CSS)</a> for a presentation about the <a href="http://mercurylang.org">Mercury programming language</a>. This is part of our <a href="https://github.com/yeslogic/prince-samples">samples repository</a>. You are encouraged to use samples from the repository and contribute your own.</p>
+<p>So far we have discussed forcing a page break, however suppressing page breaks is also important. For example, it is poor style to have a page break between a header and the first paragraph of a section. Therefore, the default Prince stylesheet will use the <a href="/doc/13/css-props#prop-break-after"><code>break-after</code></a> property to suppress page breaks immediately after headers:</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">h1</span>, <span class="hljs-selector-tag">h2</span>, <span class="hljs-selector-tag">h3</span>, <span class="hljs-selector-tag">h4</span>, <span class="hljs-selector-tag">h5</span>, <span class="hljs-selector-tag">h6</span> {
+        <span class="hljs-attribute">break-after</span>: avoid
+    }
+</code></pre>
+<p>If a heading occurs at the bottom of a page, it may be moved to the next page to keep it with the content that follows it, usually a paragraph.</p>
+<p>Avoiding page breaks within an element is also important. For example, it is best to avoid breaks within a figure or table. This can be done with the <a href="/doc/13/css-props#prop-break-inside"><code>break-inside</code></a> property:</p>
+<pre><code class="hljs">    <span class="hljs-selector-class">.figure</span>, <span class="hljs-selector-tag">table</span> {
+        <span class="hljs-attribute">break-inside</span>: avoid
+    }
+</code></pre>
+<p>If the figure or table would have been split across two pages, it may be moved to the next page to keep it in one piece. An element longer than one page will still need to be split across multiple pages.</p>
+<p>The <a href="/doc/13/css-props#prop-break-inside"><code>break-inside</code></a> property cannot be used to create forced page breaks; its only valid values are <code>auto</code> and <code>avoid</code>.</p>
+<p>These three properties can be applied to block-level elements, table rows and table row groups that occur within an in-flow element (ie. inside the normal flow of the document, not inside a float or an absolutely positioned block). Therefore the figure and table example only make sense when the figure or table is not floated.</p>
+<p>Prince also supports the properties <a href="/doc/13/css-props#prop-page-break-before"><code>page-break-before</code></a>, <a href="/doc/13/css-props#prop-page-break-after"><code>page-break-after</code></a> and <a href="/doc/13/css-props#prop-page-break-inside"><code>page-break-inside</code></a> from the CSS 2.1 specification. However, you are encouraged to use the newer properties <a href="/doc/13/css-props#prop-break-before"><code>break-before</code></a>, <a href="/doc/13/css-props#prop-break-after"><code>break-after</code></a> and <a href="/doc/13/css-props#prop-break-inside"><code>break-inside</code></a> from the CSS Fragmentation Module Level 3.</p>
+<p>Page breaks have similarities with column breaks, see <a href="/doc/13/styling#columns">Columns</a>.</p>
+<h4><a class="anchor" aria-hidden="true" id="page-breaks-and-decoration"></a><a href="#page-breaks-and-decoration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Page breaks and decoration</h4>
+<p>When a page (or column) break occurs within a box (such as a div) its bottom and top borders are <em>cloned</em> so that they also appear at the bottom of the first section and the top of the second section of the box. This is shown in the left of <a href="#fig-boxdecorationbreak">Box decoration break sample</a>. This is the default but may be set with the <a href="/doc/13/css-props#prop-box-decoration-break"><code>box-decoration-break</code></a> property, setting its value to <code>clone</code>.</p>
+<p id="fig-boxdecorationbreak">Box decoration break sample</p>
+<p><img src="/doc/13/assets/samples/box-decoration-break-1.bw.png" alt="The box on the left is completely enclosed by its border (clone); while the box on the right has no border at the bottom where it wraps onto the next page (slice).">
+This figure shows the result of using the <a href="/doc/13/css-props#prop-box-decoration-break"><code>box-decoration-break</code></a> property. On the left the <code>clone</code> value is used while on the right <code>slice</code> is used. The <a href="/doc/13/assets/samples/box-decoration-break.pdf">PDF</a> and <a href="/doc/13/assets/samples/box-decoration-break.html">HTML</a> are available for download.</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">div</span><span class="hljs-selector-class">.box1</span> {
+        <span class="hljs-attribute">box-decoration-break</span>: clone
+    }
+</code></pre>
+<p>If instead you wish the borders to remain open, as if the box were simply <em>sliced</em> in half, as in the right of <a href="#fig-boxdecorationbreak">Box decoration break sample</a>, then you can set this property to <code>slice</code>.</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">div</span><span class="hljs-selector-class">.box2</span> {
+        <span class="hljs-attribute">box-decoration-break</span>: slice
+    }
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="widows-and-orphans"></a><a href="#widows-and-orphans" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Widows and orphans</h3>
+<p>Just as breaking a page between a heading and the first paragraph below the heading can look bad, breaking the page after only one or two lines of a paragraph also looks bad. These stray lines are called <em>orphans</em>. The minimum number of orphans to allow can be specified with the <a href="/doc/13/css-props#prop-orphans"><code>orphans</code></a> property (the default is 1).</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">p</span> {
+        <span class="hljs-attribute">orphans</span>: <span class="hljs-number">2</span>
+    }
+</code></pre>
+<p>Likewise the minimum number of lines to move to a new page (<em>widows</em>) can be specified with the <a href="/doc/13/css-props#prop-widows"><code>widows</code></a> property (the default is 1).</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">p</span> {
+        <span class="hljs-attribute">widows</span>: <span class="hljs-number">2</span>
+    }
+</code></pre>
+<p>It can be easy to confuse widows and orphans. However a mnemonic device can help: &quot;An orphan is alone from the beginning [of the paragraph]; a widow is alone at the end [of the paragraph]&quot;. (Source <a href="https://en.wikipedia.org/wiki/Widows_and_orphans">Widows and orphans — Wikipedia</a>).</p>
+<h2><a class="anchor" aria-hidden="true" id="trimming-marks"></a><a href="#trimming-marks" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Trimming marks</h2>
+<p>When typesetting a magazine or flier it can be useful to print right to the edge of the paper. However most printers will refuse do do this. It is better to print on larger stock and then crop the paper to the correct size. If you use the <a href="/doc/13/css-props#prop-marks"><code>marks</code></a> property, Prince will create <em>bleed</em> and <em>trim</em> areas around your content (and the declared page size). This can be seen in the catalog example, adapted from the <a href="https://github.com/yeslogic/prince-samples/tree/master/website_samples/catalogue">Catalog sample</a> in the <a href="https://github.com/yeslogic/prince-samples">Prince samples repository</a>.</p>
+<p>Furniture catalogue example</p>
+<p><img src="/doc/13/assets/samples/croparea-1.colour.png" alt="Furniture catalogue with bleed and trim areas for printing and cropping. The background image is larger than the page (but not the paper), by cutting where the crop marks indicate the background image extends right to the edge of the page.">
+The furniture catalogue with bleed and trim areas for printing and cropping. Download the <a href="/doc/13/assets/samples/croparea.pdf">PDF</a> or the <a href="/doc/13/assets/samples/croparea.html">HTML</a> and <a href="/doc/13/assets/samples/croparea.css">CSS</a>.</p>
+<pre><code class="hljs">    <span class="hljs-keyword">@page</span>{
+        <span class="hljs-attribute">size</span>: <span class="hljs-number">8.5in</span> <span class="hljs-number">10.5in</span>;
+        <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+        <span class="hljs-attribute">background</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">"images/CatalogueCover.jpg"</span>);
+        <span class="hljs-attribute">background-position</span>: center;
+        <span class="hljs-attribute">background-size</span>: <span class="hljs-number">104%</span>;
+        <span class="hljs-attribute">background-repeat</span>: no-repeat;
+        <span class="hljs-attribute">marks</span>: crop cross;
+        <span class="hljs-attribute">bleed</span>: <span class="hljs-number">0.25in</span>;
+        <span class="hljs-attribute">prince-trim</span>: <span class="hljs-number">0.25in</span>;
+    }
+</code></pre>
+<p>This example uses some of the properties that we introduced above, plus three new ones: <a href="/doc/13/css-props#prop-marks"><code>marks</code></a>, <a href="/doc/13/css-props#prop-bleed"><code>bleed</code></a> and <a href="/doc/13/css-props#prop-prince-trim"><code>prince-trim</code></a>. These options enable crop and cross marks and specify bleed and trim areas. Note that size of the content does not change when we add these options, the <em>page</em> is still 8.5in by 10.5in as specified by the <a href="/doc/13/css-props#prop-size"><code>size</code></a> property. Instead 0.25in of bleed area and 0.25in of trim area has been added to each edge (1in total). Therefore we will need to print on 9.5in by 11.5in paper. Prince will print solid background colors and repeating pictures into the bleed area - we set the background size to 104% so that it would print into the bleed area.</p>
+<p>Prince also allows the placement, length and width of the crop marks to be specified respectively with the <a href="/doc/13/css-props#prop-prince-mark-offset"><code>prince-mark-offset</code></a>, <a href="/doc/13/css-props#prop-prince-mark-length"><code>prince-mark-length</code></a> and <a href="/doc/13/css-props#prop-prince-mark-width"><code>prince-mark-width</code></a> properties.</p>
+<script>
+function shiftWindow() { if ((location.hash.indexOf('fig-') == 1) || (location.hash.indexOf('tab-') == 1)) if (window.innerWidth < "1024") {scrollBy(0, -158)} else {scrollBy(0, -60)};};
+window.addEventListener("load",  function() { shiftWindow(); });
+window.addEventListener("hashchange", function() { shiftWindow(); });
+</script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/doc/13/styling"><span class="arrow-prev">← </span><span>Styling</span></a><a class="docs-next button" href="/doc/13/gen-content"><span>Generated Content</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#page-size">Page size</a></li><li><a href="#page-style">Page style</a></li><li><a href="#page-regions">Page regions</a><ul class="toc-headings"><li><a href="#generated-content-in-page-regions">Generated content in page regions</a></li><li><a href="#copying-content-from-the-document">Copying content from the document</a></li><li><a href="#taking-elements-from-the-document">Taking elements from the document</a></li></ul></li><li><a href="#selecting-pages">Selecting pages</a><ul class="toc-headings"><li><a href="#named-pages">Named pages</a></li><li><a href="#blank-pages">Blank pages</a></li><li><a href="#page-groups">Page groups</a></li></ul></li><li><a href="#controlling-pagination">Controlling pagination</a><ul class="toc-headings"><li><a href="#page-breaks">Page breaks</a></li><li><a href="#widows-and-orphans">Widows and orphans</a></li></ul></li><li><a href="#trimming-marks">Trimming marks</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="copyright"><div class="about-contact"><a href="/company/">About us</a> | <a href="/contact/">Contact</a></div><div class="copyright">Copyright © 2022 YesLogic Pty. Ltd.</div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '63dda203371e77ee63a05de413c3d741',
+                indexName: 'princexml',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["language:en"]}
+              });
+            </script></body></html>

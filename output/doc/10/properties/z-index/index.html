@@ -1,0 +1,1668 @@
+<!DOCTYPE html><html class="p10">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/common10.css">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.min.css">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.theme.min.css">
+<title>Prince - Prince 10 User Guide</title>
+<link rel="stylesheet" type="text/css" href="/css/doc-style.css">
+
+<style>
+.body-and-footer-container { position: fixed; margin: 50px calc(50% - 600px) 0px; }
+.body-and-footer-container {
+    max-width: 1200px;
+}
+@media all and (max-width: 1200px) {
+    .body-and-footer-container {
+        max-width: 1000px;
+        margin: 75px auto 0px;
+    }
+}
+.subheader-container {
+    display: none;
+}
+</style>
+
+</head>
+<body class="user-guide">
+
+<div class="header-container">
+    <div class="mainheader-container">
+        <div class="header">
+            <div class="logo">
+                <a href="/"><img src="/images/Prince-logo.png" alt="Prince"></a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="/purchase/">Buy Prince</a></li>
+                    <li><a href="/samples/">Samples</a></li>
+                    <li><a class="current" href="/doc/">
+                      Documentation</a></li>
+                    <li><a href="/forum/">Forum</a></li>
+                    <li><a class="menu-cta" href="/download/">
+                      Download</a></li>
+                </ul>
+            </div>
+            <div style="clear:both"></div>
+            <a class="mobile-menu-trigger"><img src="/images/menu-icon2.png" alt=""></a>
+        </div>
+    </div>
+    <div class="subheader-container">
+        <div class="subheader">
+            <div class="submenu">
+                <ul>
+                    <li><a href="/doc-install/">Installation Guide</a></li>
+                    <li><a href="/doc-prince/">User Guide</a></li>
+                    <li><a href="/doc-refs/">Reference Guide</a></li>
+                </ul>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+    </div>
+</div>
+
+<div class="content1150 body-and-footer-container">
+<div class="body-container">
+<nav class="toc-frame">
+<section><h1><a href="/doc/10/">Contents</a></h1>
+<ul id="toc-contents" class="toc">
+<li>
+<a href="/doc/10/installing/#start">1. Getting Started</a>
+<ul>
+<li>
+<a href="/doc/10/installing/#installing">Installing Prince</a>
+<ul>
+<li>
+<a href="/doc/10/installing/#windows">Installing Prince on Windows</a>
+</li>
+
+<li>
+<a href="/doc/10/installing/#macos">Installing Prince on MacOS X</a>
+</li>
+
+<li>
+<a href="/doc/10/installing/#linux">Installing Prince on Linux</a>
+<ul>
+<li>
+<a href="/doc/10/installing/#install-debina">Debian and Ubuntu</a>
+</li>
+
+<li>
+<a href="/doc/10/installing/#install-redhat">Redhat and CentOS</a>
+</li>
+
+<li>
+<a href="/doc/10/installing/#install-suse">OpenSUSE</a>
+</li>
+
+<li>
+<a href="/doc/10/installing/#install-generic">FreeBSD, Solaris and Generic Linux</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/installing/#license-install">Installing a license file</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/first-doc/#first-doc">Your First Document</a>
+<ul>
+<li>
+<a href="/doc/10/first-doc/#lab-report">The lab report</a>
+</li>
+
+<li>
+<a href="/doc/10/first-doc/#running-prince">Processing the document</a>
+</li>
+
+<li>
+<a href="/doc/10/first-doc/#styling-lab-report">Styling the document</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/troubleshooting/#troubleshooting">If Something Didn't Work</a>
+<ul>
+<li>
+<a href="/doc/10/troubleshooting/#missing-fonts">Missing fonts</a>
+</li>
+
+<li>
+<a href="/doc/10/troubleshooting/#fontconfig">Fontconfig</a>
+</li>
+
+<li>
+<a href="/doc/10/troubleshooting/#image-formats">Image formats</a>
+</li>
+
+<li>
+<a href="/doc/10/troubleshooting/#shared-libraries">Shared library trouble</a>
+</li>
+
+<li>
+<a href="/doc/10/troubleshooting/#trouble-path-issues">PATH issues</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/css-box/#formatting">2. Formatting</a>
+<ul>
+<li>
+<a href="/doc/10/css-box/#css-box">CSS Box Model</a>
+</li>
+
+<li>
+<a href="/doc/10/tables/#tables">Tables</a>
+<ul>
+<li>
+<a href="/doc/10/tables/#tables-running-headers-footers">Running table headers and footers</a>
+</li>
+
+<li>
+<a href="/doc/10/tables/#tables-numbering-rows">Numbering table rows</a>
+</li>
+
+<li>
+<a href="/doc/10/tables/#table-auto-layout">Automatic table layout</a>
+</li>
+
+<li>
+<a href="/doc/10/tables/#table-fixed-layout">Fixed table layout</a>
+</li>
+
+<li>
+<a href="/doc/10/tables/#table-borders-seperate">Separated table borders</a>
+</li>
+
+<li>
+<a href="/doc/10/tables/#table-border-colapse">Collapsing table borders</a>
+</li>
+
+<li>
+<a href="/doc/10/tables/#table-column-span">Cells that span columns</a>
+</li>
+
+<li>
+<a href="/doc/10/tables/#table-row-span">Cells that span rows</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/lists/#lists">Lists</a>
+<ul>
+<li>
+<a href="/doc/10/lists/#list-markers">List marker position</a>
+</li>
+
+<li>
+<a href="/doc/10/lists/#list-marker-type">List marker type</a>
+</li>
+
+<li>
+<a href="/doc/10/lists/#list-marker-style">List marker style</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/images/#images">Images</a>
+<ul>
+<li>
+<a href="/doc/10/images/#images-html">Images in XHTML</a>
+</li>
+
+<li>
+<a href="/doc/10/images/#images-docbook">Images in DocBook</a>
+</li>
+
+<li>
+<a href="/doc/10/images/#images-xml">Images in arbitrary XML</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/svg/#svg">Scalable Vector Graphics (SVG)</a>
+<ul>
+<li>
+<a href="/doc/10/svg/#viewbox-viewport">Viewbox and viewport</a>
+</li>
+
+<li>
+<a href="/doc/10/svg/#svg-rect">Rectangles</a>
+</li>
+
+<li>
+<a href="/doc/10/svg/#svg-circles">Circles</a>
+</li>
+
+<li>
+<a href="/doc/10/svg/#svg-elipses">Ellipses</a>
+</li>
+
+<li>
+<a href="/doc/10/svg/#svg-lines">Lines</a>
+</li>
+
+<li>
+<a href="/doc/10/svg/#svg-polylines">Polylines</a>
+</li>
+
+<li>
+<a href="/doc/10/svg/#svg-polygons">Polygons</a>
+</li>
+
+<li>
+<a href="/doc/10/svg/#svg-paths">Paths</a>
+</li>
+
+<li>
+<a href="/doc/10/svg/#svg-text">Text</a>
+</li>
+
+<li>
+<a href="/doc/10/svg/#svg-images">Images</a>
+</li>
+
+<li>
+<a href="/doc/10/svg/#svg-links">Links</a>
+</li>
+
+<li>
+<a href="/doc/10/svg/#svg-transformations">Transformations</a>
+</li>
+
+<li>
+<a href="/doc/10/svg/#svg-style">Style Properties</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/paged/#paged">3. Paged Media</a>
+<ul>
+<li>
+<a href="/doc/10/paged/#page-styles">Styling pages</a>
+<ul>
+<li>
+<a href="/doc/10/paged/#page-size">Page size</a>
+</li>
+
+<li>
+<a href="/doc/10/paged/#page-style">Page style</a>
+</li>
+
+<li>
+<a href="/doc/10/paged/#page-header-footer">Page headers and footers</a>
+</li>
+
+<li>
+<a href="/doc/10/paged/#page-gen-content">Generated content in headers and footers</a>
+</li>
+
+<li>
+<a href="/doc/10/paged/#footnotes">Footnotes</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/paged/#page-rules">Some @page selectors</a>
+<ul>
+<li>
+<a href="/doc/10/paged/#page-sel-first-nth-left-right">
+    The :first, :Nth,
+    :left and :right page selectors
+  </a>
+</li>
+
+<li>
+<a href="/doc/10/paged/#named-pages">Named pages</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/paged/#controlling-pagination">Controlling pagination</a>
+<ul>
+<li>
+<a href="/doc/10/paged/#page-breaks">Page breaks</a>
+</li>
+
+<li>
+<a href="/doc/10/paged/#widows-and-orphans">Widows and orphans</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/paged/#paged-advanced">Advanced paged media examples</a>
+<ul>
+<li>
+<a href="/doc/10/paged/#paged-blank">The :blank page selector</a>
+</li>
+
+<li>
+<a href="/doc/10/paged/#page-groups">Page groups</a>
+</li>
+
+<li>
+<a href="/doc/10/paged/#page-breaks-decoration">Page breaks and decoration</a>
+</li>
+
+<li>
+<a href="/doc/10/paged/#wide-content-sideways">Printing wide content sideways</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/apply-css/#css">4. Prince Input</a>
+<ul>
+<li>
+<a href="/doc/10/apply-css/#apply-css">Applying Style Sheets</a>
+<ul>
+<li>
+<a href="/doc/10/apply-css/#css-import">Importing Style Sheets</a>
+</li>
+
+<li>
+<a href="/doc/10/apply-css/#css-conflicting-declarations">Conflicting Declarations</a>
+</li>
+
+<li>
+<a href="/doc/10/apply-css/#css-priorities">Priority Determination</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/xml/#xml">XML Input</a>
+<ul>
+<li>
+<a href="/doc/10/xml/#xml-input">XML Input</a>
+<ul>
+<li>
+<a href="/doc/10/xml/#xml-validation">Validation</a>
+</li>
+
+<li>
+<a href="/doc/10/xml/#xml-lang">xml:lang</a>
+</li>
+
+<li>
+<a href="/doc/10/xml/#xml-id">xml:id</a>
+</li>
+
+<li>
+<a href="/doc/10/xml/#xml-base">xml:base</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/xml/#xml-style">XML Styling</a>
+</li>
+
+<li>
+<a href="/doc/10/xml/#xinclude">XML Inclusions (XInclude)</a>
+<ul>
+<li>
+<a href="/doc/10/xml/#xml-include">Including XML files</a>
+</li>
+
+<li>
+<a href="/doc/10/xml/#xml-include-text">Including text files</a>
+</li>
+
+<li>
+<a href="/doc/10/xml/#xml-fallback">Fallback</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/javascript/#javascript">Using JavaScript with Prince</a>
+<ul>
+<li>
+<a href="/doc/10/javascript/#js-logging">Logging</a>
+</li>
+
+<li>
+<a href="/doc/10/javascript/#js-console">Console access</a>
+</li>
+
+<li>
+<a href="/doc/10/javascript/#js-event">Event handling</a>
+</li>
+
+<li>
+<a href="/doc/10/javascript/#js-document-stats">Document statistics</a>
+</li>
+
+<li>
+<a href="/doc/10/javascript/#js-pdf">PDF properties</a>
+</li>
+
+<li>
+<a href="/doc/10/javascript/#js-unsupported">Unsupported DOM properties</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/pdf-output/#pdf-output">5. Prince Output</a>
+<ul>
+<li>
+<a href="/doc/10/pdf-output/#output-options">PDF Output Options</a>
+<ul>
+<li>
+<a href="/doc/10/pdf-output/#pdf-compression">PDF Compression</a>
+</li>
+
+<li>
+<a href="/doc/10/pdf-output/#pdf-font-embedding">Font Embedding</a>
+</li>
+
+<li>
+<a href="/doc/10/pdf-output/#postscript">Creating PostScript output</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/pdf-bookmarks/#pdf-bookmarks">PDF Bookmarks</a>
+<ul>
+<li>
+<a href="/doc/10/pdf-bookmarks/#bookmark-levels">Bookmark levels</a>
+</li>
+
+<li>
+<a href="/doc/10/pdf-bookmarks/#bookmark-labels">Bookmark labels</a>
+</li>
+
+<li>
+<a href="/doc/10/pdf-bookmarks/#bookmark-targets">Bookmark targets</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/pdf-metadata/#pdf-metadata">PDF Metadata</a>
+</li>
+
+<li>
+<a href="/doc/10/pdf-profiles/#pdf-profiles">PDF Profiles</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/java/#wrappers">6. Server Integration</a>
+<ul>
+<li>
+<a href="/doc/10/java/#java">Using Prince from Java</a>
+</li>
+
+<li>
+<a href="/doc/10/dotnet/#csharp">Using Prince from .NET with C#</a>
+</li>
+
+<li>
+<a href="/doc/10/dotnet/#vb.net">Using Prince from .NET with VB.NET</a>
+</li>
+
+<li>
+<a href="/doc/10/python/#python">Using Prince from Python</a>
+</li>
+
+<li>
+<a href="/doc/10/perl/#perl">Using Prince from Perl</a>
+</li>
+
+<li>
+<a href="/doc/10/php/#php">Using Prince from PHP</a>
+</li>
+
+<li>
+<a href="/doc/10/asp/#asp">Using Prince from ASP</a>
+</li>
+
+<li>
+<a href="/doc/10/coldfusion/#coldfusion">Using Prince from ColdFusion</a>
+<ul>
+<li>
+<a href="/doc/10/coldfusion/#cf-java">Using Java</a>
+</li>
+
+<li>
+<a href="/doc/10/coldfusion/#cf-activex">Using ActiveX/COM</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/activex/#activex">Using Prince from ActiveX / COM / Visual Basic</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/gen-content/#tips-and-tricks">7. Prince Tips and Tricks</a>
+<ul>
+<li>
+<a href="/doc/10/gen-content/#gen-content">Generated Content</a>
+<ul>
+<li>
+<a href="/doc/10/gen-content/#content-header-footer">Page headers and footers</a>
+</li>
+
+<li>
+<a href="/doc/10/gen-content/#content-list-markers">List markers</a>
+</li>
+
+<li>
+<a href="/doc/10/gen-content/#content-footnote-markers">Footnote markers</a>
+</li>
+
+<li>
+<a href="/doc/10/gen-content/#content-before-after">Before and After pseudo-elements</a>
+</li>
+
+<li>
+<a href="/doc/10/gen-content/#counters">Counters and Numbering</a>
+<ul>
+<li>
+<a href="/doc/10/gen-content/#counters">Counter reset and increment</a>
+</li>
+
+<li>
+<a href="/doc/10/gen-content/#counters-nested">Nested counters</a>
+</li>
+
+<li>
+<a href="/doc/10/gen-content/#counter-styles">Counter styles</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/gen-content/#crossref">Cross-references</a>
+<ul>
+<li>
+<a href="/doc/10/gen-content/#counter-target">Using target-counter</a>
+</li>
+
+<li>
+<a href="/doc/10/gen-content/#target-content">Using target-content</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/gen-content/#scriptfunc">Script Functions</a>
+<ul>
+<li>
+<a href="/doc/10/gen-content/#content-date-time">Accessing the current date and time</a>
+</li>
+
+<li>
+<a href="/doc/10/gen-content/#counter-user-styles">User-defined counter styles</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/gen-content/#content-margin-boxes">Using generated content in margin boxes</a>
+</li>
+
+<li>
+<a href="/doc/10/gen-content/#content-copying-text">Copying text content from the document</a>
+</li>
+
+<li>
+<a href="/doc/10/gen-content/#content-taking-elements">Taking elements from the document</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/imaging/#imaging">Imaging and color</a>
+<ul>
+<li>
+<a href="/doc/10/imaging/#color">Color (RGB, CMYK, spot colors)</a>
+<ul>
+<li>
+<a href="/doc/10/imaging/#color-rgb">RGB</a>
+</li>
+
+<li>
+<a href="/doc/10/imaging/#color-rgba">RGBA</a>
+</li>
+
+<li>
+<a href="/doc/10/imaging/#color-cmyk">CMYK</a>
+</li>
+
+<li>
+<a href="/doc/10/imaging/#color-spot">Spot colors</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/fonts/#fonts">8. Fonts</a>
+<ul>
+<li>
+<a href="/doc/10/fonts/#font-families">Generic font families</a>
+</li>
+
+<li>
+<a href="/doc/10/redefining-font-families/#redefining-font-families">Redefining the generic font families</a>
+</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section><h1>Reference Guide</h1>
+<ul id="toc-appendices" class="toc">
+<li>
+<a href="/doc/10/command-line/#command-line">A1. Command-line Reference</a>
+<ul>
+<li>
+<a href="/doc/10/command-line/#cmd-examples">Examples</a>
+</li>
+
+<li>
+<a href="/doc/10/command-line/#cmd-input-output">Specifying input and output</a>
+</li>
+
+<li>
+<a href="/doc/10/command-line/#cmd-options">Options</a>
+<ul>
+<li>
+<a href="/doc/10/command-line/#cmd-general">General Options</a>
+</li>
+
+<li>
+<a href="/doc/10/command-line/#cmd-logging">Logging Options</a>
+</li>
+
+<li>
+<a href="/doc/10/command-line/#cmd-input">Input Options</a>
+</li>
+
+<li>
+<a href="/doc/10/command-line/#cmd-network">Network Options</a>
+</li>
+
+<li>
+<a href="/doc/10/command-line/#cmd-js">JavaScript Options</a>
+</li>
+
+<li>
+<a href="/doc/10/command-line/#cmd-css">CSS Options</a>
+</li>
+
+<li>
+<a href="/doc/10/command-line/#cmd-pdf">PDF Output Options</a>
+</li>
+
+<li>
+<a href="/doc/10/command-line/#cmd-pdf-metadata">PDF Metadata Options</a>
+</li>
+
+<li>
+<a href="/doc/10/command-line/#cmd-pdf-crypto">PDF Encryption Options</a>
+</li>
+
+<li>
+<a href="/doc/10/command-line/#cmd-util">Utility Options</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#selectors">A2. CSS Selectors</a>
+<ul>
+<li>
+<a href="/doc/10/selectors/#sel-universal">Universal Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-type">Type Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-decendent">Descendant Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-child">Child Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-direct-sibling">Direct Sibling Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-indirect-sibling">Indirect Sibling Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-attribute">Attribute Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-class">Class Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-id">ID Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-link">Link Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-language">Language Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-contains">Contains Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-root">Root Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-empty">Empty Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-negation">Negated Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-child">Child Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-typed-child">Typed Child Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-nth-child">Nth Child Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-nth-last-child">Nth Last Child Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-nth-type">Nth of Type Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-nth-last-type">Nth Last of Type Selectors</a>
+</li>
+
+<li>
+<a href="/doc/10/selectors/#sel-pseudo">Pseudo-element Selectors</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/properties/">A3. CSS Properties</a>
+<ul>
+<li>
+<a href="/doc/10/properties/background/">background</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/background-attachment/">background-attachment</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/background-clip/">background-clip</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/background-color/">background-color</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/background-image/">background-image</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/background-origin/">background-origin</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/background-position/">background-position</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/background-repeat/">background-repeat</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/background-size/">background-size</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border/">border</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-bottom/">border-bottom</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-bottom-color/">border-bottom-color</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-bottom-left-radius/">border-bottom-left-radius</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-bottom-right-radius/">border-bottom-right-radius</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-bottom-style/">border-bottom-style</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-bottom-width/">border-bottom-width</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-clip/">border-clip</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-collapse/">border-collapse</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-color/">border-color</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-left/">border-left</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-left-color/">border-left-color</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-left-style/">border-left-style</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-left-width/">border-left-width</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-radius/">border-radius</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-right/">border-right</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-right-color/">border-right-color</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-right-style/">border-right-style</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-right-width/">border-right-width</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-spacing/">border-spacing</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-style/">border-style</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-top/">border-top</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-top-color/">border-top-color</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-top-left-radius/">border-top-left-radius</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-top-right-radius/">border-top-right-radius</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-top-style/">border-top-style</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-top-width/">border-top-width</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/border-width/">border-width</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/bottom/">bottom</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/box-decoration-break/">box-decoration-break</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/box-sizing/">box-sizing</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/caption-side/">caption-side</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/clear/">clear</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/clip/">clip</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/clip-path/">clip-path</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/clip-rule/">clip-rule</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/color/">color</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/column-break-after/">column-break-after</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/column-break-before/">column-break-before</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/column-count/">column-count</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/column-fill/">column-fill</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/column-gap/">column-gap</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/column-rule/">column-rule</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/column-rule-color/">column-rule-color</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/column-rule-style/">column-rule-style</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/column-rule-width/">column-rule-width</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/column-span/">column-span</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/column-width/">column-width</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/columns/">columns</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/content/">content</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/counter-increment/">counter-increment</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/counter-reset/">counter-reset</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/direction/">direction</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/display/">display</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/empty-cells/">empty-cells</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/float/">float</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/font/">font</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/font-family/">font-family</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/font-size/">font-size</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/font-stretch/">font-stretch</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/font-style/">font-style</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/font-variant/">font-variant</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/font-weight/">font-weight</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/footnote-style-position/">footnote-style-position</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/height/">height</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/hyphens/">hyphens</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/left/">left</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/letter-spacing/">letter-spacing</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/line-height/">line-height</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/line-stacking-strategy/">line-stacking-strategy</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/list-style/">list-style</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/list-style-image/">list-style-image</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/list-style-position/">list-style-position</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/list-style-type/">list-style-type</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/margin/">margin</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/margin-bottom/">margin-bottom</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/margin-inside/">margin-inside</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/margin-left/">margin-left</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/margin-outside/">margin-outside</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/margin-right/">margin-right</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/margin-top/">margin-top</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/marks/">marks</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/max-height/">max-height</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/max-width/">max-width</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/min-height/">min-height</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/min-width/">min-width</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/opacity/">opacity</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/orphans/">orphans</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/overflow/">overflow</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/overflow-wrap/">overflow-wrap</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/padding/">padding</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/padding-bottom/">padding-bottom</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/padding-left/">padding-left</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/padding-right/">padding-right</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/padding-top/">padding-top</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/page/">page</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/page-break-after/">page-break-after</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/page-break-before/">page-break-before</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/page-break-inside/">page-break-inside</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/position/">position</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-background-image-resolution/">prince-background-image-resolution</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-bleed/">prince-bleed</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-bookmark-label/">prince-bookmark-label</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-bookmark-level/">prince-bookmark-level</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-bookmark-state/">prince-bookmark-state</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-bookmark-target/">prince-bookmark-target</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-caption-page/">prince-caption-page</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-flow/">prince-flow</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-footnote-policy/">prince-footnote-policy</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-forced-breaks/">prince-forced-breaks</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-hyphenate-after/">prince-hyphenate-after</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-hyphenate-before/">prince-hyphenate-before</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-hyphenate-lines/">prince-hyphenate-lines</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-hyphenate-patterns/">prince-hyphenate-patterns</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-image-magic/">prince-image-magic</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-image-resolution/">prince-image-resolution</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-linebreak-magic/">prince-linebreak-magic</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-link/">prince-link</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-mark-length/">prince-mark-length</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-mark-offset/">prince-mark-offset</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-page-group/">prince-page-group</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-pdf-destination/">prince-pdf-destination</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-pdf-link-type/">prince-pdf-link-type</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-pdf-open-action/">prince-pdf-open-action</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-pdf-output-intent/">prince-pdf-output-intent</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-pdf-page-label/">prince-pdf-page-label</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-pdf-page-layout/">prince-pdf-page-layout</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-pdf-page-mode/">prince-pdf-page-mode</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-pdf-paper-tray/">prince-pdf-paper-tray</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-pdf-print-scaling/">prince-pdf-print-scaling</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-pdf-profile/">prince-pdf-profile</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-pdf-script/">prince-pdf-script</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-rotate-body/">prince-rotate-body</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-shrink-to-fit/">prince-shrink-to-fit</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-text-justify/">prince-text-justify</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-text-replace/">prince-text-replace</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-trim/">prince-trim</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/prince-wrap-inside/">prince-wrap-inside</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/right/">right</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/size/">size</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/string-set/">string-set</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/table-baseline/">table-baseline</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/table-column-span/">table-column-span</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/table-layout/">table-layout</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/table-row-span/">table-row-span</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/text-align/">text-align</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/text-align-last/">text-align-last</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/text-decoration/">text-decoration</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/text-indent/">text-indent</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/text-line-through/">text-line-through</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/text-line-through-color/">text-line-through-color</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/text-line-through-style/">text-line-through-style</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/text-overflow/">text-overflow</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/text-overline/">text-overline</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/text-overline-color/">text-overline-color</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/text-overline-style/">text-overline-style</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/text-transform/">text-transform</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/text-underline/">text-underline</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/text-underline-color/">text-underline-color</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/text-underline-style/">text-underline-style</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/top/">top</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/transform/">transform</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/transform-origin/">transform-origin</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/unicode-bidi/">unicode-bidi</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/vertical-align/">vertical-align</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/visibility/">visibility</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/white-space/">white-space</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/widows/">widows</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/width/">width</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/word-break/">word-break</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/word-spacing/">word-spacing</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/writing-mode/">writing-mode</a>
+</li>
+
+<li>
+<a href="/doc/10/properties/z-index/">z-index</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/css21/#appendix">A4. Appendix</a>
+<ul>
+<li>
+<a href="/doc/10/css21/#css21">Unsupported features in CSS 2.1</a>
+</li>
+
+<li>
+<a href="/doc/10/page-size-keywords/#page-size-keywords">Page Size Keywords</a>
+</li>
+
+<li>
+<a href="/doc/10/characters/#characters">Character Entities</a>
+<ul>
+<li>
+<a href="/doc/10/characters/#accented-letters">Accented Letters</a>
+</li>
+
+<li>
+<a href="/doc/10/characters/#symbols">Symbols</a>
+</li>
+
+<li>
+<a href="/doc/10/characters/#quotes">Quotes</a>
+</li>
+
+<li>
+<a href="/doc/10/characters/#accents">Accents</a>
+</li>
+
+<li>
+<a href="/doc/10/characters/#chars-mixc">Miscellaneous</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/10/acknowledgements/#acknowledgements">A5. Acknowledgements</a>
+</li>
+</ul>
+
+</section>
+</nav><div class="main-frame">
+<section>
+  <h2>z-index</h2>
+  <div class="col1">
+    <h3>Syntax</h3>
+    <div class="syntax-block">
+      <code>z-index: auto | <i>number</i></code>
+    </div>
+    <h3>Default</h3>
+    <div class="syntax-block">
+      <code>auto</code>
+    </div>
+    <h3>Inherited</h3>
+    <p>No</p>
+  </div>
+</section>
+</div>
+</div>
+
+<script src="/js/jquery-1.12.4.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script type="text/javascript" src="/js/skrollr-simplemodal-masonry.min.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+<script src="/js/jquery.a11yTree.min.js"></script>
+<script>
+    $('ul.toc').a11yTree({
+    });
+    // Expand the level 1 items in the TOC.
+    $("#toc-contents > li[aria-level='1']").attr('aria-expanded', 'true');
+</script>
+
+    <div class="footer">
+        <div class="footer-copyright">
+            Copyright © 2002 – 2019 YesLogic Pty. Ltd.
+        </div>
+        <ul class="footer-menu">
+            <li><a href="/company/">About Us</a></li>
+            <li><a href="/privacy/">Privacy Policy</a></li>
+            <li><a href="/contact/">Contact Us</a></li>
+        </ul>
+        <div style="clear:both"></div>
+    </div>
+</div>
+
+<script src="/js/warning.js"></script>
+</body>
+</html>

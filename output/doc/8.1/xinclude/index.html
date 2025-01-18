@@ -1,0 +1,135 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<meta name="robots" content="noindex">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<title>Prince - XML Inclusions (XInclude)</title>
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+<div id="header-inner">
+<div><a href="/"><img src="/images/logo2.png" alt="Prince"></a></div>
+<ul id="primary-nav">
+<li><a href="/download/">Download</a></li>
+<li><a href="/purchase/">Buy Prince</a></li>
+<li><a href="/samples/">Samples</a></li>
+<li><a href="/doc/" class="curr">Documentation</a></li>
+<li><a href="/forum/">Forum</a></li>
+</ul>
+</div>
+<div id="header-shadow"></div>
+</div>
+<div id="intro"><div id="intro-inner"><h1>XML Inclusions (XInclude)</h1></div></div>
+
+<div class="main">
+
+
+
+<p>
+<a href="/doc/8.1/">User Guide</a> /
+<a href="/doc/8.1/#xml">XML Input</a>
+</p>
+
+<div class="col1">
+
+<p>
+XML Inclusions (XInclude) provides a method of including content from other
+files into an XML document. When Prince processes the XML document, the
+inclusions are resolved and the included content is treated as if
+it had been in the original document all along.
+</p>
+
+<p>
+The core of XInclude is a single element, <code>&lt;include href="..."/&gt;</code>, which
+specifies the inclusion of the file referenced by the <code>href</code>
+attribute. The element is in the XInclude namespace,
+<code>http://www.w3.org/2001/XInclude</code>, which must be declared either
+on the element itself or one of its ancestor elements.
+</p>
+
+<h2>Including XML files</h2>
+<p>
+Here is an example of a book written in XHTML in which each chapter has been
+placed in a separate XML document for convenient editing and then included in
+the main document using XInclude:
+</p>
+
+<div class="example">
+<pre>
+&lt;html xmlns:xi="http://www.w3.org/2001/XInclude"&gt;
+&lt;head&gt;
+&lt;title&gt;Book Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;xi:include href="chap1.xml"/&gt;
+&lt;xi:include href="chap2.xml"/&gt;
+&lt;xi:include href="chap3.xml"/&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+
+<p>
+(Note that the XInclude namespace was defined on the root element and bound
+to the <code>xi</code> prefix to save space by avoiding the need to declare the
+namespace on every inclusion).
+</p>
+
+<h2>Including text files</h2>
+<p>
+XInclude can also be used to include text files into XML documents:
+</p>
+<div class="example">
+<pre>
+&lt;xi:include href="file.txt" parse="text"/&gt;
+</pre>
+</div>
+<p>
+This is a convenient way of including files containing arbitrary non-XML
+text, such as emails, database reports or program source code. It also
+allows the inclusion of external XML content as "unparsed text", as if all
+the markup had been explicitly escaped with character entities or placed
+in a CDATA section.
+</p>
+
+<h2>Fallback</h2>
+<p>
+It is possible to specify fallback content that should be used if an included
+file cannot be loaded.
+The fallback content can be arbitrary XML and may even contain additional
+inclusions.
+</p>
+<div class="example">
+<pre>
+&lt;xi:include href="report.html"&gt;
+    &lt;xi:fallback&gt;
+	&lt;p&gt;No report is available&lt;/p&gt;
+    &lt;/xi:fallback&gt;
+&lt;/xi:include&gt;
+</pre>
+<p class="comment">
+If the <code>report.html</code> file cannot be loaded then the paragraph
+saying "No report is available" will be included in the document instead.
+</p>
+</div>
+
+</div>
+
+</div>
+</div>
+<script src="/js/warning.js"></script>
+<div id="footer"><div id="footer-inner">
+<p id="footer-copy">Copyright © 2002 – 2025 YesLogic Pty. Ltd.</p>
+<ul id="footer-nav">
+<li><a href="/">Home</a></li>
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+</div></div>
+</body>
+</html>

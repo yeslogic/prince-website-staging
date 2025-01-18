@@ -1,0 +1,249 @@
+<!DOCTYPE html><html class="p10" id="releases">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/common10.css">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.min.css">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.theme.min.css">
+<title>Prince - Release Notes for Prince 16</title>
+</head>
+<body>
+<div class="header-container">
+<div class="mainheader-container"><div class="header">
+<div class="logo"><a href="/"><img src="/images/Prince-logo.png" alt="Prince"></a></div>
+<div class="menu"><ul>
+<li><a href="/purchase/">
+                      Buy Prince</a></li>
+<li><a href="/samples/">
+                      Samples</a></li>
+<li><a href="/doc/">
+                      Documentation</a></li>
+<li><a href="/forum/">
+                      Forum</a></li>
+<li><a href="/download/" class="current">
+                      Download</a></li>
+</ul></div>
+<div style="clear:both"></div>
+<a class="mobile-menu-trigger"><img src="/images/menu-icon2.png" alt=""></a>
+</div></div>
+<div class="subheader-container"><div class="subheader">
+<div class="submenu"><ul>
+<li><a href="/download/15/">
+                    Prince 15</a></li>
+<li><a href="/latest/">
+                    Latest builds</a></li>
+<li><a href="/books/">
+                    Prince for Books</a></li>
+<li><a href="/releases/15/">
+                    Release Notes</a></li>
+<li><a href="/download/wrappers/">
+                    Wrappers</a></li>
+</ul></div>
+<div style="clear:both"></div>
+</div></div>
+</div>
+
+<div class="body-container">
+<div class="content1150">
+<h1 class="subpages-heading2">Release Notes for Prince 16</h1>
+<div class="content750">
+
+
+<h2 id="p16">Prince 16</h2>
+<p class="date">January 2025</p>
+
+<h3>Highlights</h3>
+
+<ul>
+<li>Support for CSS grid layout</li>
+<li>Support for OpenType variable fonts</li>
+<li>Javascript ES6 improvements</li>
+<li>Support for Myanmar (Burmese) script</li>
+<li>Prince jobs can now be specified in JSON format</li>
+<li>PDF Attachments can now specify the AFRelationship key of the attachment.</li>
+</ul>
+
+<p>
+This build comes with three important breaking changes:
+</p>
+
+<ol>
+    <li>
+        <p>The default value of <code>box-decoration-break</code> has changed from <code>clone</code> to <code>slice</code> to match the CSS specifications, and web browsers.</p>
+        <p>The Prince box-breaking behavior predates the introduction of the <code>box-decoration-break</code> CSS property, defaulting to repeating borders when breaking a box, so that each fragment had a top and bottom border. When the property was introduced, Prince kept the default value as <code>clone</code>. Starting with Prince 16, the default value is changing to <code>slice</code> to reflect browser behavior and CSS specifications. To retain the old behavior, it must now be explicitly declared.</p>
+    </li>
+    <li>
+        <p>Prince, up to version 15, indented lists by setting a non-zero <em>margin</em> on <code>ol</code> and <code>ul</code> elements. However, browsers indent lists by setting a non-zero <em>padding</em>.  Starting with version 16, Prince follows browser behavior for consistency. This may affect documents previously designed for Prince with this inconsistency in mind.</p>
+    </li>
+    <li>
+        <p>Up to Prince version 15, the <code>@page:first</code> and <code>@page:nth()</code> selectors, when used together with the CSS property <code>-prince-page-group: start</code> in a page group, would select the first, or the nth page <em>of the page group</em>, respectively. Starting with Prince 16, these selectors <em>always</em> select the first and nth page <em>of the whole document</em>. To select the first or nth page of a page group, use the selectors <code>@page:first-of-group</code> and <code>@page:nth-of-group()</code>.</p>
+    </li>
+</ol>
+
+<p>Any breaking changes should ideally be avoided - but if we can't avoid them forever, then we'd rather make them sooner rather than later to reduce the overall impact. Apologies for any inconvenience this may cause.</p>
+
+<h3>CSS Support</h3>
+
+<p>Support for CSS grid layout (with some limitations at first).</p>
+<p>Switch grid layout back to block layout if it cannot fit on one page.</p>
+
+<p>Support for <code>unicode-bidi: isolate | isolate-override | plaintext</code>.</p>
+<p>Support for <code>prince-pdf-tag-title: none | &lt;string&gt; | attr()</code>.</p>
+<p>Support for the CSS <code>:is() selector, formerly called :matches()</code>.</p>
+<p>Support for the CSS <code>:where()</code> selector.</p>
+<p>Support for the CSS <code>:any-link</code> selector.</p>
+<p>Added a new @page <code>:first-of-group</code> and <code>:nth-of-group()</code> selectors and change <code>:first</code> and <code>:nth()</code> to always be based on the absolute page number, not the page group.</p>
+
+<p>Support for css-color-4 syntax for rgb()/rgba() and hsl()/hsla(), except for 'none' components.</p>
+<p>Support for css-color-4 hwb() color function, except for 'none' components.</p>
+<p>Support for css-color-4 style syntax for device-cmyk() and cmyk().</p>
+
+<p>Support for the row-gap and column-gap properties on flex containers.</p>
+
+<p>Support for the gap shorthand property on flex containers.</p>
+
+<p>Support for more values for the align-content, justify-content, align-items, and align-self flex properties and support the place-content shorthand property.</p>
+<p>Support for the accent-color property on PDF radio and checkbox form controls.</p>
+
+<p>Added a new CSS property <code>-prince-pdf-form-field-font-size: normal | auto</code> (defaulting to normal) that allows text inputs in PDF forms to automatically size the text to fit the available space.</p>
+<p>Support for the "inset" CSS shorthand property.</p>
+<p>Support for text-underline-offset and text-decoration-thickness properties, and the "from-font" value for the text-underline-position property.</p>
+<p>Added a new CSS property prince-pdf-role-map that can be used in the @prince-pdf rule to support custom PDF tags such as "H7" by mapping them standard tags like Div and P.</p>
+
+<p>Support for the new CSS syntax for alternate text on the content property.</p>
+<p>Support for the CSS counter-set property.</p>
+<p>Support for the CSS "outline" properties.</p>
+<p>Support for the CSS "round" function.</p>
+<p>Support for the CSS "mod" and "rem" functions.</p>
+<p>Support for the CSS "min", "max", and "clamp" functions.</p>
+
+<p>Added a new @prince-pdf property "prince-pdf-tagged: auto | enable".</p>
+<p>Changed the default HTML style sheet to apply padding instead of margin to list elements, to match browser behaviour.</p>
+<p>Added support for mixing percent and dimensions within calc() functions for some popular CSS properties (width, height, etc.).</p>
+<p>Changed the default value for the "box-decoration-break" property to "slice" to match web browsers and the CSS specification.</p>
+
+
+<h3>JavaScript Support</h3>
+
+<p>Support for the JavaScript DOM element <code>closest</code> method.</p>
+<p>Support for more JavaScript DOM child node methods: <code>before</code>, <code>after</code>, <code>append</code>, <code>remove</code>, <code>replaceWith</code>.</p>
+<p>Support for default function parameters in JavaScript.</p>
+<p>Support for shorthand and computed property names in JavaScript object initialisers.</p>
+<p>Support for the <code>__proto__</code> property for setting the prototype in JavaScript object initialisers.</p>
+<p>Support for JavaScript accessor property syntax for getter/setter functions (needed for plotly.js).</p>
+<p>Support for ES6 rest parameters in JavaScript.</p>
+<p>Support for JavaScript object destructuring syntax.</p>
+<p>Support for the JavaScript String methods <code>startsWith</code>, <code>endsWith</code>, <code>includes</code>, and <code>repeat</code>.</p>
+<p>Support for JavaScript template literals and <code>String.raw</code>.</p>
+<p>Support for JavaScript array destructuring syntax.</p>
+<p>Support for JavaScript spread syntax.</p>
+<p>Support for the JavaScript DOM <code>parentElement</code> property.</p>
+<p>Support for the JavaScript DOM <code>readyState</code> property and <code>readystatechange</code> event.</p>
+<p>Added the <code>window.frames</code> DOM property as some scripts rely on it.</p>
+<p>Implemented the JavaScript <code>Object.isExtensible</code>, <code>isFrozen</code>, <code>isSealed</code>, <code>freeze</code>, <code>preventExtensions</code>, and <code>seal</code> methods.</p>
+<p>Support for the <code>stack</code> property on JavaScript Error objects that are thrown as exceptions.</p>
+<p>Support for the JavaScript <code>Object.assign</code> and <code>Object.is</code> methods.</p>
+<p>Support for generator functions in JavaScript.</p>
+
+
+<h3>Fonts</h3>
+
+<p>Support for OpenType variable fonts.</p>
+<p>Support for OpenType fonts with CFF2 outlines, such as the Adobe Source fonts.</p>
+<p>Support for the Myanmar (Burmese) script.</p>
+<p>Support for the TrueType "kern" table for kerning when the OpenType GPOS table is not present.</p>
+<p>Support for ligature substitutions in OpenType fonts that use the Apple "morx" table.</p>
+<p>Improved subsetting of OTF fonts (OpenType with CFF outlines).</p>
+<p>Support for text-transform case conversion correctly for Turkish language.</p>
+<p>Support for bracket pairing from the revised Unicode bidi algorithm.</p>
+<p>Support for explicit directional formatting characters from the revised Unicode bidi algorithm.</p>
+<p>Support for special casing for Greek letter final sigma.</p>
+<p>De-duplicate font files embedded multiple times from the same URL.</p>
+
+
+<h3>Command-line</h3>
+
+<p>Added new <code>--job</code> command-line option for specifying jobs in JSON format.</p>
+<p>Added new <code>--http-header</code> option for specifying custom HTTP headers.</p>
+<p>Allowed the <code>--pdf-script</code> option to be specified multiple times and the pdf-script JSON job description field to take an array of multiple values.</p>
+<p>Added new option <code>--no-rename-duplicate-fonts</code> which disables renaming fonts with the same name (normally done to avoid a warning from Adobe Preflight).</p>
+<p>Added a new <code>--font-specimen</code> option for creating a sample PDF for the specified font.</p>
+
+
+
+<h3>HTML Support</h3>
+
+<p>Support for the HTML &lt;bdi&gt; element, the "auto" value for the dir attribute, and the CSS :dir() pseudo-class.</p>
+<p>Support for &lt;input type="prince-pdf-signature"&gt; to create signature fields in PDF forms.</p>
+
+
+<h3>PDF Features</h3>
+<p>Added new command-line options to specify the attachment file relationship type.</p>
+<p>Added new "mime-type" field to the job JSON for describing attachments and autodetect attachment MIME type based on file extension as defined in mime-types.txt mapping file.</p>
+<p>Useed the attachment filename in the PDF name tree for compatibility with Factur-X and other PDF generators.</p>
+<p>Adjusted embedded file attachments to pass Factur-X validator.</p>
+
+
+<h3>Bug Fixes &amp; Improvements</h3>
+
+<h4>CSS</h4>
+<p>Fixed bug affecting the flex row-gap property.</p>
+<p>Fixed issue affecting @font-face rules that do not include the full range of values for a variable font axis.</p>
+<p>Allowed prince-pdf-tag-type to specify L for lists, Lbl for list item markers, and LBody for list item bodies (OL/UL are kept as aliases for L but deprecated).</p>
+<p>Implemented special behaviour for the list-item counter to mimic the expected behaviour of ordered lists in HTML: when an element creates a list-item counter with "counter-reset: list-item", the scope of the new counter only extends to the element and its descendants, and does not include its following siblings.</p>
+<p>Added support for new "cmyk-grayscale" value on prince-pdf-color-conversion property and @prince-pdf descriptor.</p>
+<p>Fixed incorrect sizing of blocks containing a sequence of floats.</p>
+<p>Fixed issue where the position of the content top for block containers doesn't take borders and padding into account.</p>
+<p>Fixed an issue affecting layout of tables with a specified height.</p>
+
+<h4>JavaScript</h4>
+<p>Fixed issues with automatic semicolon insertion in JavaScript.</p>
+<p>Sped up the JavaScript DOM getComputedStyle() property when the document has not changed since the last call.</p>
+
+<h4>Stability</h4>
+<p>Fixed issue where long sidenotes can cause Prince to hang.</p>
+<p>Fixed issue where large Roman numerals can use all available memory.</p>
+
+<h4>Miscellaneous</h4>
+<p>Reported page numbers containing potentially incorrect cross-references and add a new fail-safe option --fail-incorrect-references.</p>
+<p>Fixed issue affecting zero values specified for variable font axes.</p>
+<p>Fixed issue where lowercase conversion for the text-transform property does not handle the Turkish dotless i and apply similar casing rules for Lithuanian and Azeri.</p>
+<p>Allowed fallback to color emoji when no text presentation emoji glyph is available.</p>
+<p>Fixed inconsistency in emoji rendering between PDF and image output.</p>
+<p>Improved the creation of link structure elements.</p>
+<p>Avoided negative stroke dash-phase values as Chrome PDF viewer does not like them.</p>
+<p>Added support for links to table row group elements such as HTML tbody.</p>
+<p>Fixed issues affecting signature fields in PDF forms.</p>
+<p>Use a different User-Agent header for requests to Google Fonts.</p>
+
+
+<br>
+
+<p>
+See the <a href="/releases/">release history</a> for earlier versions of
+Prince.
+</p>
+
+
+</div>
+</div>
+
+</div>
+<div class="content1150 footer-container"><div class="footer">
+<div class="footer-logo">
+<img src="/images/Prince-logo-footer.png" alt=""><br>
+                Copyright © 2002 – 2025 YesLogic Pty. Ltd.
+            </div>
+<ul class="footer-menu">
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+<div style="clear:both"></div>
+</div></div>
+<script src="/js/jquery-1.12.4.min.js"></script><script src="/js/jquery-ui-1.12.1.min.js"></script><script type="text/javascript" src="/js/skrollr-simplemodal-masonry.min.js"></script><script type="text/javascript" src="/js/common.js"></script>
+</body>
+</html>

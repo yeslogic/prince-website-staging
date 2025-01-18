@@ -1,0 +1,618 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<meta name="robots" content="noindex">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<title>Prince - Scalable Vector Graphics (SVG)</title>
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<style type="text/css">
+.svg .doc i { 
+    font-size: 83%;
+    color: red 
+}
+
+.svg .output { 
+    background-color: transparent
+}
+</style>
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+<div id="header-inner">
+<div><a href="/"><img src="/images/logo2.png" alt="Prince"></a></div>
+<ul id="primary-nav">
+<li><a href="/download/">Download</a></li>
+<li><a href="/purchase/">Buy Prince</a></li>
+<li><a href="/samples/">Samples</a></li>
+<li><a href="/doc/" class="curr">Documentation</a></li>
+<li><a href="/forum/">Forum</a></li>
+</ul>
+</div>
+<div id="header-shadow"></div>
+</div>
+<div id="intro"><div id="intro-inner"><h1>Scalable Vector Graphics (SVG)</h1></div></div>
+
+<div class="main">
+
+
+
+<div class="col1">
+
+<p>
+SVG can be included in any XML document simply by adding a 
+<i>svg</i> element.
+</p>
+<p>
+The <i>display</i>, <i>float</i> and <i>flow</i> properties
+and all <i>margin</i>, <i>padding</i>, <i>border</i> and <i>background</i>
+properties can be applied to the top-level <i>svg</i> element but not to
+child elements within it.
+</p>
+<p>
+The following elements are supported
+inside the <i>svg</i> element:
+</p>
+<div class="svg">
+<table class="grid">
+<tr>
+<th>Element</th>
+<th>Usage</th>
+</tr>
+<tr>
+<td>g</td>
+<td>for grouping related graphics elements</td>
+</tr>
+<tr>
+<td>rect</td>
+<td>for defining rectangles</td>
+</tr>
+<tr>
+<td>circle</td>
+<td>for defining circles</td>
+</tr>
+<tr>
+<td>ellipse</td>
+<td>for defining ellipses</td>
+</tr>
+<tr>
+<td>line</td>
+<td>for defining lines</td>
+</tr>
+<tr>
+<td>polyline</td>
+<td>for defining polylines</td>
+</tr>
+<tr>
+<td>polygon</td>
+<td>for defining polygons</td>
+</tr>
+<tr>
+<td>path</td>
+<td>for defining arbitrary paths</td>
+</tr>
+<tr>
+<td>text</td>
+<td>for defining text</td>
+</tr>
+<tr>
+<td>tspan</td>
+<td>
+for adjusting text and font properties and the current text position
+inside the <i>text</i> element
+</td>
+</tr>
+</table>
+
+<h2>View box and view port</h2>
+<p>
+The <i>svg</i> element should include view box and view port information
+so that the SVG content can be correctly mapped to the containing box.
+</p>
+<div class="example">
+<p class="label">XML</p>
+<pre class="doc">
+&lt;svg width="3cm" height="2cm" viewBox="0 0 300 200"&gt;
+    <span class="comment">&lt;!-- the SVG content --&gt;</span>
+&lt;/svg&gt;
+</pre>
+</div>
+<table class="grid">
+<tr>
+<th>Attribute</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>width</td>
+<td>the width of the viewport<br>
+    (100% of the container width, if omitted)
+</td>
+</tr>
+<tr>
+<td>height</td>
+<td>the height of the viewport<br>
+    (100% of the container width, if omitted)
+</td>
+</tr>
+<tr>
+<td>viewBox<br>(<i>x y width height</i>)</td>
+<td>the x, y coordinate of the top left corner of the view box 
+    and the width and height of the viewbox
+</td>
+</tr>
+</table>
+
+<h2>Rectangles</h2>
+<p>
+Rectangles are created using the <i>rect</i> element.
+</p>
+<table class="grid">
+<tr>
+<th>Attribute</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>x, y</td>
+    <td>the x, y coordinate of the top left corner of the rectangle</td>
+</tr>
+<tr>
+<td>width</td>
+<td>the width of the rectangle</td>
+</tr>
+<tr>
+<td>height</td>
+<td>the height of the rectangle</td>
+</tr>
+<tr>
+<td>rx, ry</td>
+<td>the radii for rounded corners</td>
+</tr>
+</table>
+<div class="example">
+<p class="label">XML</p>
+<pre class="doc">
+&lt;svg viewBox="0 0 500 300" 
+        width="10cm" height="6cm"&gt;
+ &lt;g fill="none" stroke="gray" stroke-width="20"&gt;
+  &lt;rect x="50" y="50" width="400" height="200" 
+        rx="80" ry="50"/&gt;
+ &lt;/g&gt;
+&lt;/svg&gt;
+</pre>
+<p class="label">Output</p>
+<div class="output">
+
+<div class="web">
+<img src="/images/doc-6.0/rect.png" alt="Rect example">
+</div>
+</div>	
+</div> 
+
+<h2>Circles</h2>
+<p>
+Circles are created using the <i>circle</i> element.
+</p>
+<table class="grid">
+<tr>
+<th>Attribute</th>
+<th>Meaning</th>
+</tr>
+<tr>
+    <td>cx, cy</td>  <td>the centre of the circle</td>
+</tr>
+<tr>
+    <td>r</td>	<td>the radius of the circle</td>
+</tr>
+</table>
+<div class="example">
+<p class="label">XML</p>
+<pre class="doc">
+&lt;svg viewBox="0 0 200 200" 
+        width="5cm" height="5cm"&gt;
+ &lt;g fill="none" stroke="gray" stroke-width="20"&gt;
+   &lt;circle cx="100" cy="100" r="100"/&gt;
+ &lt;/g&gt;
+&lt;/svg&gt;
+</pre>
+<p class="label">Output</p>
+<div class="output">
+
+<div class="web">
+<img src="/images/doc-6.0/circle.png" alt="Circle example">
+</div>
+</div>	
+</div> 
+
+<h2>Ellipses</h2>
+<p>
+Ellipses are created using the <i>ellipse</i> element.
+</p>
+<table class="grid">
+<tr>
+<th>Attribute</th>
+<th>Meaning</th>
+</tr>
+<tr>
+    <td>cx, cy</td>  <td>the centre of the ellipse</td>
+</tr>
+<tr>
+    <td>rx, ry</td> <td>the radii of the ellipse</td>
+</tr>
+</table>
+<div class="example">
+<p class="label">XML</p>
+<pre class="doc">
+&lt;svg viewBox="-10 0 220 200" 
+        width="6cm" height="6cm"&gt;
+ &lt;g fill="none" stroke="gray" stroke-width="20"&gt;
+  &lt;ellipse cx="100" cy="100" rx="100" ry="60" /&gt;
+ &lt;/g&gt;
+&lt;/svg&gt;
+</pre>
+<p class="label">Output</p>
+<div class="output">
+
+<div class="web">
+<img src="/images/doc-6.0/ellipse.png" alt="Ellipse example">
+</div>
+</div>	
+</div> 
+
+
+<h2>Lines</h2>
+<p>
+Lines are created using the <i>line</i> element.
+</p>
+<table class="grid">
+<tr>
+<th>Attribute</th>
+<th>Meaning</th>
+</tr>
+<tr>
+    <td>x1, y1</td>  <td>the start point of the line</td>
+</tr>
+<tr>
+    <td>x2, y2</td>	<td>the end point of the line</td>
+</tr>
+</table>
+<div class="example">
+<p class="label">XML</p>
+<pre class="doc">
+&lt;svg viewBox="0 0 100 50" 
+        width="6cm" height="3cm"&gt;
+ &lt;g stroke="gray" stroke-width="2"&gt;
+    &lt;line x1="10" y1="25" x2="90" y2="25"/&gt;
+ &lt;/g&gt;
+&lt;/svg&gt;
+</pre>
+<p class="label">Output</p>
+<div class="output">
+
+<div class="web">
+<img src="/images/doc-6.0/line.png" alt="Line example">
+</div>
+</div>	
+</div> 
+
+<h2>Polylines</h2>
+<p>
+Polylines are created using the <i>polyline</i> element.
+</p>
+<table class="grid">
+<tr>
+<th>Attribute</th>
+<th>Meaning</th>
+</tr>
+<tr>
+    <td>points</td>  
+    <td>
+	list of points that defines the line. Points are separated by space;
+	each point is a pair of x, y coordinates separated by comma.
+    </td>
+</tr>
+</table>
+<div class="example">
+<p class="label">XML</p>
+<pre class="doc">
+&lt;svg viewBox="0 0 600 400" 
+        width="6cm" height="4cm"&gt;
+ &lt;g stroke="gray" stroke-width="10"&gt;
+  &lt;polyline points="50,300 200,300 200,100 
+               400,100 400,300 550,300" /&gt;
+ &lt;/g&gt;
+&lt;/svg&gt;
+</pre>
+<p class="label">Output</p>
+<div class="output">
+
+<div class="web">
+<img src="/images/doc-6.0/polyline.png" alt="Polyline example">
+</div>
+</div>	
+</div> 
+
+
+<h2>Polygons</h2>
+<p>
+Polygons are created using the <i>polygon</i> element.
+</p>
+<table class="grid">
+<tr>
+<th>Attribute</th>
+<th>Meaning</th>
+</tr>
+<tr>
+    <td>points</td>  
+    <td>
+	list of points that defines the line. Points are separated by space;
+	each point is a pair of x, y coordinates separated by comma.
+    </td>
+</tr>
+</table>
+<div class="example">
+<p class="label">XML</p>
+<pre class="doc">
+&lt;svg viewBox="600 0 600 400" 
+        width="6cm" height="4cm"&gt;
+ &lt;g fill="none" stroke="gray" stroke-width="10"&gt;
+    &lt;polygon points="850,75  958,137.5 958,262.5
+                    850,325 742,262.6 742,137.5" /&gt;
+ &lt;/g&gt;
+&lt;/svg&gt;
+</pre>
+<p class="label">Output</p>
+<div class="output">
+
+<div class="web">
+<img src="/images/doc-6.0/polygon.png" alt="Polygon example">
+</div>
+</div>	
+</div> 
+
+<h2>Paths</h2>
+<p>
+The <i>path</i> element is for defining arbitrary paths. 
+The <i>d</i> attribute inside the element <i>path</i> takes 
+a list of path commands. 
+Parameters of a command can be separated either by a space or a comma.
+</p>
+<table class="grid">
+<tr>
+<th>Command</th>
+<th>Parameters</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>M (absolute)<br>m (relative)</td>
+<td>(x y)+</td>
+<td>moves to the given (x, y) coordinates to start a new subpath</td>
+</tr>
+<tr>
+<td>Z or z</td>
+<td>none</td>
+<td>closes the current subpath</td>
+</tr>
+<tr>
+<td>L (absolute)<br>l (relative)</td>
+<td>(x y)+</td>
+<td>draws a line to the given (x, y) coordinates</td>
+</tr>
+<tr>
+<td>H (absolute)<br>h (relative)</td>
+<td>x+</td>
+<td>draws a horizontal line to the given x coordinates</td>
+</tr>
+<tr>
+<td>V (absolute)<br>v (relative)</td>
+<td>y+</td>
+<td>draws a vertical line to the given y coordinates</td>
+</tr>
+<tr>
+<td>C (absolute)<br>c (relative)</td>
+<td>(x1 y1 x2 y2 x y)+</td>
+<td>draws a cubic Bézier curve to the given (x,y) coordinates,
+    uses the given (x1,y1) coordinates as the first control point,
+    the (x2,y2) coordinates as the second control point
+</td>
+</tr>
+<tr>
+<td>S (absolute)<br>s (relative)</td>
+<td>(x2 y2 x y)+</td>
+<td>short hand of the C/c command: the reflection relative to the current
+point of the second control point of the previous command 
+is used as the first control point.
+</td>
+</tr>
+<tr>
+<td>Q (absolute)<br>q (relative)</td>
+<td>(x1 y1 x y)+</td>
+<td>draws a quadratic cubic Bézier curve to the given (x,y) coordinates,
+    uses the given (x1,y1) coordinates as the control point.
+</td>
+</tr>
+<tr>
+<td>T (absolute)<br>t (relative)</td>
+<td>(x y)+</td>
+<td>short hand of the Q/q command: the reflection relative to the current
+point of the control point of the previous command is used as the control point.
+</td>
+</tr>
+<tr>
+<td>A (absolute)<br>a (relative)</td>
+<td>(rx ry x-axis-rotation large-arc-flag sweep-flag x y)+</td>
+<td>draws an elliptical arc to (x, y): the size and rotation of the ellipse are 
+defined by two radii (rx, ry) and the x-axis-rotation; the center (cx, cy) 
+of the ellipse is also determined by the large-arc-flag and sweep-flag 
+constraint.
+</td>
+</tr>
+</table>
+<div class="example">
+<p class="label">XML</p>
+<pre class="doc">
+&lt;svg viewBox="0 0 600 400" 
+        width="12cm" height="8cm"&gt;
+ &lt;g fill="none" stroke="red" stroke-width="10"&gt;
+    &lt;path d="M100,200 C100,100 250,100 
+		    250,200 S400,300 400,200" /&gt;
+ &lt;/g&gt;
+&lt;/svg&gt;
+</pre>
+<p class="label">Output</p>
+<div class="output">
+
+<div class="web">
+<img src="/images/doc-6.0/path.png" alt="Path example">
+</div>
+</div>	
+</div> 
+
+<h2>Text</h2>
+<p>
+The <i>text</i> element is supported inside the <i>svg</i> element; 
+the <i>tspan</i> element is supported inside the <i>text</i> element.
+</p>
+<table class="grid">
+<tr>
+<th>Attribute</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>x, y</td>
+<td>the absolute position of the text</td>
+</tr>
+<tr>
+<td>dx, dy</td>
+<td>the relative offset of the current text position (optional)</td>
+</tr>
+</table>
+<div class="example">
+<p class="label">XML</p>
+<pre class="doc">
+&lt;svg viewBox="0 0 1000 300" 
+        width="10cm" height="3cm"&gt;
+    &lt;text x="200" y="150" fill="blue" font-size="70"&gt;
+      That
+        &lt;tspan dx="2em" dy="-50" font-weight="bold" fill="red" &gt;
+          is
+        &lt;/tspan&gt;
+        &lt;tspan dy="100"&gt;
+           a peach!
+        &lt;/tspan&gt;
+    &lt;/text&gt;
+&lt;/svg&gt;
+</pre>
+<p class="label">Output</p>
+<div class="output">
+
+<div class="web">
+<img src="/images/doc-6.0/text.png" alt="Text example">
+</div>
+</div>	
+</div> 
+
+<h2>Transformations</h2>
+<p>
+The <i>transform</i> attribute can be used on <i>g</i>, <i>path</i>
+and all of the basic shape elements.
+It accepts any sequence of the following transformations separated by
+spaces.
+</p>
+<ul>
+    <li> translate(tx ty)</li>
+    <li> scale(sx [sy])</li>
+    <li> rotate(angle)</li>
+    <li> skewX(angle)</li>
+    <li> skewY(angle)</li>
+    <li> matrix(a b c d e f)</li>
+</ul>
+<div class="example">
+<p class="label">XML</p>
+<pre class="doc">
+&lt;svg viewBox="-150 -200 1400 700" width="12cm" height="6cm"&gt;
+  &lt;g fill="none" stroke-width="30"&gt;
+    &lt;rect width="400" height="200" stroke="lightgray"/&gt;
+    &lt;rect width="400" height="200" stroke="darkgreen" transform="rotate(-30)"/&gt;
+    &lt;g transform="translate(700 100) rotate(-30)"&gt;
+      &lt;rect width="400" height="200" stroke="blue"/&gt;
+    &lt;/g&gt;
+  &lt;/g&gt;
+&lt;/svg&gt;
+</pre>
+<p class="label">Output</p>
+<div class="output">
+
+<div class="web">
+<img src="/images/doc-6.0/transform.png" alt="Transform example">
+</div>
+</div>	
+</div> 
+
+
+<h2>Style Properties</h2>
+<p>
+The following style properties are supported and can be applied to 
+SVG elements:
+</p>
+<ul>
+    <li>font-family</li>
+    <li>font-size</li>
+    <li>font-style</li>
+    <li>font-weight</li>
+    <li>fill</li>
+    <li>fill-rule</li>
+    <li>stroke</li>
+    <li>stroke-linecap</li>
+    <li>stroke-linejoin</li>
+    <li>stroke-dasharray</li>
+    <li>stroke-dashoffset</li>
+    <li>stroke-width</li>
+    <li>text-anchor</li>
+</ul>
+
+<p>
+There are two ways to apply style properties:
+</p>
+<ul>
+<li>
+Using presentation attributes:
+<div class="example">
+<pre class="doc">
+&lt;rect <i>fill</i>="yellow" <i>stroke</i>="blue" <i>stroke-width</i>="20"
+        width="200" height="100"/&gt;
+</pre>
+</div>
+</li>
+<li>
+Using the <i>style</i> attribute:
+<div class="example">
+<pre class="doc">
+&lt;rect 
+  style="<i>fill</i>:yellow; <i>stroke</i>:blue; <i>stroke-width</i>:20"
+  width="200" height="100"/&gt;
+</pre>
+</div>
+the value of the <i>style</i> attribute is a list of style properties separated
+by semi-colons; each property is a name-value pair separated by a colon.
+</li>
+</ul>
+</div>
+
+</div>
+
+</div>
+</div>
+<script src="/js/warning.js"></script>
+<div id="footer"><div id="footer-inner">
+<p id="footer-copy">Copyright © 2002 – 2025 YesLogic Pty. Ltd.</p>
+<ul id="footer-nav">
+<li><a href="/">Home</a></li>
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+</div></div>
+</body>
+</html>

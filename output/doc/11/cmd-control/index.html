@@ -1,0 +1,2362 @@
+<!DOCTYPE html><html class="p10">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/common10.css">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.min.css">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.theme.min.css">
+<title>Prince - Prince 11 User Guide</title>
+<link rel="stylesheet" type="text/css" href="/css/doc-style.css">
+
+<style>
+.body-and-footer-container { position: fixed; margin: 50px calc(50% - 600px) 0px; }
+.body-and-footer-container {
+    max-width: 1200px;
+}
+@media all and (max-width: 1200px) {
+    .body-and-footer-container {
+        max-width: 1000px;
+        margin: 75px auto 0px;
+    }
+}
+.subheader-container {
+    display: none;
+}
+</style>
+
+</head>
+<body class="user-guide">
+
+<div class="header-container">
+    <div class="mainheader-container">
+        <div class="header">
+            <div class="logo">
+                <a href="/"><img src="/images/Prince-logo.png" alt="Prince"></a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="/purchase/">Buy Prince</a></li>
+                    <li><a href="/samples/">Samples</a></li>
+                    <li><a class="current" href="/doc/">
+                      Documentation</a></li>
+                    <li><a href="/forum/">Forum</a></li>
+                    <li><a class="menu-cta" href="/download/">
+                      Download</a></li>
+                </ul>
+            </div>
+            <div style="clear:both"></div>
+            <a class="mobile-menu-trigger"><img src="/images/menu-icon2.png" alt=""></a>
+        </div>
+    </div>
+    <div class="subheader-container">
+        <div class="subheader">
+            <div class="submenu">
+                <ul>
+                    <li><a href="/doc-install/">Installation Guide</a></li>
+                    <li><a href="/doc-prince/">User Guide</a></li>
+                    <li><a href="/doc-refs/">Reference Guide</a></li>
+                </ul>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+    </div>
+</div>
+
+<div class="content1150 body-and-footer-container">
+<div class="body-container">
+<nav class="toc-frame">
+<section><h1><a href="/doc/11/">Contents</a></h1>
+<ul id="toc-contents" class="toc">
+<li>
+<a href="/doc/11/installing/#start">1. Getting Started</a>
+<ul>
+<li>
+<a href="/doc/11/installing/#installing">Installing Prince</a>
+<ul>
+<li>
+<a href="/doc/11/installing/#windows">Installing Prince on Windows</a>
+</li>
+
+<li>
+<a href="/doc/11/installing/#macos">Installing Prince on MacOS X</a>
+</li>
+
+<li>
+<a href="/doc/11/installing/#linux">Installing Prince on Linux</a>
+<ul>
+<li>
+<a href="/doc/11/installing/#install-debian">Debian and Ubuntu</a>
+</li>
+
+<li>
+<a href="/doc/11/installing/#install-redhat">Redhat and CentOS</a>
+</li>
+
+<li>
+<a href="/doc/11/installing/#install-suse">OpenSUSE</a>
+</li>
+
+<li>
+<a href="/doc/11/installing/#install-generic">FreeBSD, Solaris and Generic Linux</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/installing/#license-install">Installing a license file</a>
+</li>
+
+<li>
+<a href="/doc/11/installation-layout/#installation-layout">Installation Layout</a>
+<ul>
+<li>
+<a href="/doc/11/installation-layout/#windows-layout">Windows installation layout</a>
+</li>
+
+<li>
+<a href="/doc/11/installation-layout/#macosx-layout">MacOS X installation layout</a>
+</li>
+
+<li>
+<a href="/doc/11/installation-layout/#linux-layout">Linux installation layout</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/first-doc/#first-doc">Your First Document</a>
+<ul>
+<li>
+<a href="/doc/11/first-doc/#lab-report">The lab report</a>
+</li>
+
+<li>
+<a href="/doc/11/first-doc/#running-prince">Processing the document</a>
+</li>
+
+<li>
+<a href="/doc/11/first-doc/#styling-lab-report">Styling the document</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/styling/#styling">2. Styling</a>
+<ul>
+<li>
+<a href="/doc/11/fonts/#fonts">Fonts</a>
+<ul>
+<li>
+<a href="/doc/11/fonts/#font-family">Defining a font family</a>
+</li>
+
+<li>
+<a href="/doc/11/fonts/#font-families">Generic font families</a>
+</li>
+
+<li>
+<a href="/doc/11/fonts/#opentype-features">OpenType Features in Prince</a>
+</li>
+
+<li>
+<a href="/doc/11/redefining-font-families/#redefining-font-families">Redefining the generic font families</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/layout/#layout">Layout</a>
+<ul>
+<li>
+<a href="/doc/11/text-formatting/#text-formatting">Text formatting</a>
+</li>
+
+<li>
+<a href="/doc/11/text-formatting/#paragraph-formatting">Paragraph formatting</a>
+</li>
+
+<li>
+<a href="/doc/11/writing-mode/#writing-mode">Writing Mode</a>
+</li>
+
+<li>
+<a href="/doc/11/css-box/#css-box">CSS Box Model</a>
+<ul>
+<li>
+<a href="/doc/11/css-box/#margin">Margin</a>
+</li>
+
+<li>
+<a href="/doc/11/css-box/#padding">Padding</a>
+</li>
+
+<li>
+<a href="/doc/11/css-box/#border">Border</a>
+</li>
+
+<li>
+<a href="/doc/11/css-box/#background">Background</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/tables/#tables">Tables</a>
+<ul>
+<li>
+<a href="/doc/11/tables/#table-auto-layout">Automatic table layout</a>
+</li>
+
+<li>
+<a href="/doc/11/tables/#table-fixed-layout">Fixed table layout</a>
+</li>
+
+<li>
+<a href="/doc/11/tables/#table-borders-seperate">Separated table borders</a>
+</li>
+
+<li>
+<a href="/doc/11/tables/#table-border-collapse">Collapsing table borders</a>
+</li>
+
+<li>
+<a href="/doc/11/tables/#table-column-span">Cells that span columns</a>
+</li>
+
+<li>
+<a href="/doc/11/tables/#table-row-span">Cells that span rows</a>
+</li>
+
+<li>
+<a href="/doc/11/tables/#tables-numbering-rows">Numbering table rows</a>
+</li>
+
+<li>
+<a href="/doc/11/tables/#tables-running-headers-footers">Running table headers and footers</a>
+</li>
+
+<li>
+<a href="/doc/11/tables/#tables-caption">Table captions</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/lists/#lists">Lists</a>
+<ul>
+<li>
+<a href="/doc/11/lists/#list-markers">List marker position</a>
+</li>
+
+<li>
+<a href="/doc/11/lists/#list-marker-type">List marker type</a>
+</li>
+
+<li>
+<a href="/doc/11/lists/#list-marker-style">List marker style</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/columns/#columns">Columns</a>
+</li>
+
+<li>
+<a href="/doc/11/floats/#floats">Floats</a>
+<ul>
+<li>
+<a href="/doc/11/floats/#float-extensions">Prince extensions to floats</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/footnotes/#footnotes">Footnotes</a>
+<ul>
+<li>
+<a href="/doc/11/footnotes/#footnote-calls">Footnote calls</a>
+</li>
+
+<li>
+<a href="/doc/11/footnotes/#footnote-markers">Footnote markers</a>
+</li>
+
+<li>
+<a href="/doc/11/footnotes/#footnotes-styling">Styling footnotes</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/paged/#paged">Paged Media</a>
+<ul>
+<li>
+<a href="/doc/11/paged/#page-size">Page size</a>
+</li>
+
+<li>
+<a href="/doc/11/paged/#page-style">Page style</a>
+</li>
+
+<li>
+<a href="/doc/11/paged/#page-marks">Trimming marks</a>
+</li>
+
+<li>
+<a href="/doc/11/paged/#page-regions">Page regions</a>
+<ul>
+<li>
+<a href="/doc/11/paged/#page-gen-content">Generated content in page regions</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/paged/#page-rules">Selecting pages</a>
+<ul>
+<li>
+<a href="/doc/11/paged/#paged-blank">Blank pages</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/paged/#controlling-pagination">Controlling pagination</a>
+<ul>
+<li>
+<a href="/doc/11/paged/#page-breaks">Page breaks</a>
+</li>
+
+<li>
+<a href="/doc/11/paged/#widows-and-orphans">Widows and orphans</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/javascript/#javascript">3. Scripting</a>
+<ul>
+<li>
+<a href="/doc/11/javascript/#js-print">JavaScript in Printed Media</a>
+</li>
+
+<li>
+<a href="/doc/11/javascript/#js-logging">Logging</a>
+</li>
+
+<li>
+<a href="/doc/11/javascript/#js-console">Console access</a>
+</li>
+
+<li>
+<a href="/doc/11/javascript/#js-event">Event handling</a>
+</li>
+
+<li>
+<a href="/doc/11/javascript/#js-document-stats">Document statistics</a>
+</li>
+
+<li>
+<a href="/doc/11/javascript/#js-pdf">PDF properties</a>
+</li>
+
+<li>
+<a href="/doc/11/javascript/#js-unsupported">Unsupported DOM properties</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/graphics/#graphics">4. Graphics</a>
+<ul>
+<li>
+<a href="/doc/11/color/#color">Color</a>
+<ul>
+<li>
+<a href="/doc/11/color/#color-rgb">RGB</a>
+</li>
+
+<li>
+<a href="/doc/11/color/#color-rgba">RGBA</a>
+</li>
+
+<li>
+<a href="/doc/11/color/#color-cmyk">CMYK</a>
+</li>
+
+<li>
+<a href="/doc/11/color/#color-spot">Spot colors</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/color-management/#color-management">Color Management</a>
+<ul>
+<li>
+<a href="/doc/11/color-management/#colman-intro">Introduction</a>
+</li>
+
+<li>
+<a href="/doc/11/color-management/#pdf-colman">Color Management and PDF Profiles</a>
+</li>
+
+<li>
+<a href="/doc/11/color-management/#prince-colman">Color Management in Prince</a>
+</li>
+
+<li>
+<a href="/doc/11/color-management/#color-conversion">Color conversion</a>
+</li>
+
+<li>
+<a href="/doc/11/color-management/#rich-true-black">Rich black and true black</a>
+</li>
+
+<li>
+<a href="/doc/11/color-management/#page-color-space">Page color space</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/filters/#filters">Filters</a>
+</li>
+
+<li>
+<a href="/doc/11/images/#images">Images</a>
+<ul>
+<li>
+<a href="/doc/11/images/#images-html">Images in XHTML</a>
+</li>
+
+<li>
+<a href="/doc/11/images/#images-docbook">Images in DocBook</a>
+</li>
+
+<li>
+<a href="/doc/11/images/#images-xml">Images in Arbitrary XML</a>
+</li>
+
+<li>
+<a href="/doc/11/images/#images-css">CSS and Images</a>
+<ul>
+<li>
+<a href="/doc/11/images/#images-size">Image Size in Print</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/svg/#svg">Scalable Vector Graphics (SVG)</a>
+<ul>
+<li>
+<a href="/doc/11/svg/#viewbox-viewport">Viewbox and viewport</a>
+</li>
+
+<li>
+<a href="/doc/11/svg/#svg-rect">Rectangles</a>
+</li>
+
+<li>
+<a href="/doc/11/svg/#svg-circles">Circles</a>
+</li>
+
+<li>
+<a href="/doc/11/svg/#svg-elipses">Ellipses</a>
+</li>
+
+<li>
+<a href="/doc/11/svg/#svg-lines">Lines</a>
+</li>
+
+<li>
+<a href="/doc/11/svg/#svg-masks">Masks</a>
+</li>
+
+<li>
+<a href="/doc/11/svg/#svg-polylines">Polylines</a>
+</li>
+
+<li>
+<a href="/doc/11/svg/#svg-polygons">Polygons</a>
+</li>
+
+<li>
+<a href="/doc/11/svg/#svg-paths">Paths</a>
+</li>
+
+<li>
+<a href="/doc/11/svg/#svg-text">Text</a>
+</li>
+
+<li>
+<a href="/doc/11/svg/#svg-images">Images</a>
+</li>
+
+<li>
+<a href="/doc/11/svg/#svg-links">Links</a>
+</li>
+
+<li>
+<a href="/doc/11/svg/#svg-transformations">Transformations</a>
+</li>
+
+<li>
+<a href="/doc/11/svg/#svg-style">Style Properties</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/rasterization/#rasterization">Rasterization</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/gen-content/#tips-and-tricks">5. Prince Tips and Tricks</a>
+<ul>
+<li>
+<a href="/doc/11/gen-content/#gen-content">Generated Content</a>
+<ul>
+<li>
+<a href="/doc/11/gen-content/#content-header-footer">Page headers and footers</a>
+</li>
+
+<li>
+<a href="/doc/11/gen-content/#content-list-markers">List markers</a>
+</li>
+
+<li>
+<a href="/doc/11/gen-content/#content-footnote-markers">Footnote markers</a>
+</li>
+
+<li>
+<a href="/doc/11/gen-content/#content-before-after">Before and After pseudo-elements</a>
+</li>
+
+<li>
+<a href="/doc/11/gen-content/#counters">Counters and Numbering</a>
+<ul>
+<li>
+<a href="/doc/11/gen-content/#counters-reset-increment">Counter reset and increment</a>
+</li>
+
+<li>
+<a href="/doc/11/gen-content/#counters-nested">Nested counters</a>
+</li>
+
+<li>
+<a href="/doc/11/gen-content/#counter-styles">Counter styles</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/gen-content/#crossref">Cross-references</a>
+<ul>
+<li>
+<a href="/doc/11/gen-content/#counter-target">Using target-counter</a>
+</li>
+
+<li>
+<a href="/doc/11/gen-content/#target-content">Using target-content</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/gen-content/#scriptfunc">Script Functions</a>
+<ul>
+<li>
+<a href="/doc/11/gen-content/#content-date-time">Accessing the current date and time</a>
+</li>
+
+<li>
+<a href="/doc/11/gen-content/#counter-user-styles">User-defined counter styles</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/gen-content/#content-page-regions">Using generated content in page regions</a>
+</li>
+
+<li>
+<a href="/doc/11/gen-content/#content-copying-text">Copying text content from the document</a>
+</li>
+
+<li>
+<a href="/doc/11/gen-content/#content-taking-elements">Taking elements from the document</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/advanced-paged/#paged-advanced">Advanced paged media examples</a>
+<ul>
+<li>
+<a href="/doc/11/advanced-paged/#named-pages">Named pages</a>
+</li>
+
+<li>
+<a href="/doc/11/advanced-paged/#page-groups">Page groups</a>
+</li>
+
+<li>
+<a href="/doc/11/advanced-paged/#page-breaks-decoration">Page breaks and decoration</a>
+</li>
+
+<li>
+<a href="/doc/11/advanced-paged/#wide-content-sideways">Printing wide content sideways</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/hyphenation/#hyphenation">Hyphenation</a>
+</li>
+
+<li>
+<a href="/doc/11/ligatures/#ligatures">Typographic Ligatures</a>
+</li>
+
+<li>
+<a href="/doc/11/watermarks/#watermarks">Watermarks</a>
+</li>
+
+<li>
+<a href="/doc/11/rotating/#rotating">Rotating content in table cells</a>
+</li>
+
+<li>
+<a href="/doc/11/two-pass/#two-pass">The "Two-Pass" Solution</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/help/#help">6. Help</a>
+<ul>
+<li>
+<a href="/doc/11/troubleshooting/#troubleshooting">Troubleshooting</a>
+<ul>
+<li>
+<a href="/doc/11/troubleshooting/#missing-fonts">Missing glyphs or fonts</a>
+</li>
+
+<li>
+<a href="/doc/11/troubleshooting/#fontconfig">Fontconfig</a>
+</li>
+
+<li>
+<a href="/doc/11/troubleshooting/#image-formats">Image formats</a>
+</li>
+
+<li>
+<a href="/doc/11/troubleshooting/#shared-libraries">Shared library trouble</a>
+</li>
+
+<li>
+<a href="/doc/11/troubleshooting/#trouble-path-issues">PATH issues</a>
+</li>
+
+<li>
+<a href="/doc/11/troubleshooting/#capturereplay">The capture/replay system</a>
+</li>
+
+<li>
+<a href="/doc/11/troubleshooting/#princedebug">Running the debug script</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/faq/#faq">Frequently Asked Questions</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/prince-input/#prince-input">7. Prince Input</a>
+<ul>
+<li>
+<a href="/doc/11/apply-css/#apply-css">Applying Style Sheets in Prince</a>
+<ul>
+<li>
+<a href="/doc/11/apply-css/#css-import">Importing Style Sheets</a>
+</li>
+
+<li>
+<a href="/doc/11/apply-css/#css-conflicting-declarations">Conflicting Declarations</a>
+</li>
+
+<li>
+<a href="/doc/11/apply-css/#css-priorities">Priority Determination</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/apply-javascript/#applying-javascript">Applying JavaScript in Prince</a>
+</li>
+
+<li>
+<a href="/doc/11/xml/#xml">XML Input</a>
+<ul>
+<li>
+<a href="/doc/11/xml/#xml-input">XML Input</a>
+<ul>
+<li>
+<a href="/doc/11/xml/#xml-validation">Validation</a>
+</li>
+
+<li>
+<a href="/doc/11/xml/#xml-lang">xml:lang</a>
+</li>
+
+<li>
+<a href="/doc/11/xml/#xml-id">xml:id</a>
+</li>
+
+<li>
+<a href="/doc/11/xml/#xml-base">xml:base</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/xml/#xml-style">XML Styling</a>
+</li>
+
+<li>
+<a href="/doc/11/xml/#xinclude">XML Inclusions (XInclude)</a>
+<ul>
+<li>
+<a href="/doc/11/xml/#xml-include">Including XML files</a>
+</li>
+
+<li>
+<a href="/doc/11/xml/#xml-include-text">Including text files</a>
+</li>
+
+<li>
+<a href="/doc/11/xml/#xml-fallback">Fallback</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/prince-output/#pdf-output">8. Prince Output</a>
+<ul>
+<li>
+<a href="/doc/11/pdf-profiles/#pdf-profiles">PDF Profiles</a>
+<ul>
+<li>
+<a href="/doc/11/pdf-profiles/#pdfa">PDF/A</a>
+</li>
+
+<li>
+<a href="/doc/11/pdf-profiles/#pdfx">PDF/X</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/pdf-output/#output-options">PDF Output Options</a>
+<ul>
+<li>
+<a href="/doc/11/pdf-output/#pdf-links">PDF Links</a>
+</li>
+
+<li>
+<a href="/doc/11/pdf-output/#pdf-actions">PDF Actions</a>
+</li>
+
+<li>
+<a href="/doc/11/pdf-output/#pdf-pages">PDF Pages</a>
+</li>
+
+<li>
+<a href="/doc/11/pdf-output/#pdf-printing">PDF Printing</a>
+</li>
+
+<li>
+<a href="/doc/11/pdf-output/#pdf-compression">PDF Compression</a>
+</li>
+
+<li>
+<a href="/doc/11/pdf-output/#pdf-font-embedding">Font Embedding</a>
+</li>
+
+<li>
+<a href="/doc/11/pdf-output/#postscript">Creating PostScript output</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/pdf-bookmarks/#pdf-bookmarks">PDF Bookmarks</a>
+<ul>
+<li>
+<a href="/doc/11/pdf-bookmarks/#bookmark-levels">Bookmark levels</a>
+</li>
+
+<li>
+<a href="/doc/11/pdf-bookmarks/#bookmark-labels">Bookmark labels</a>
+</li>
+
+<li>
+<a href="/doc/11/pdf-bookmarks/#bookmark-targets">Bookmark targets</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/pdf-metadata/#pdf-metadata">PDF Metadata</a>
+<ul>
+<li>
+<a href="/doc/11/pdf-metadata/#pdf-xmp-metadata">XMP Metadata</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/server-integration/#server-integration">9. Server Integration</a>
+<ul>
+<li>
+<a href="/doc/11/server-integration/#security">Security and performance</a>
+</li>
+
+<li>
+<a href="/doc/11/server-integration/#wrappers">Prince Wrappers</a>
+<ul>
+<li>
+<a href="/doc/11/server-integration/#third-party-wrappers">Third-Party Wrappers</a>
+</li>
+
+<li>
+<a href="/doc/11/java/#java">Using Prince from Java</a>
+</li>
+
+<li>
+<a href="/doc/11/dotnet/#csharp">Using Prince from .NET with C#</a>
+</li>
+
+<li>
+<a href="/doc/11/dotnet/#vb.net">Using Prince from .NET with VB.NET</a>
+</li>
+
+<li>
+<a href="/doc/11/python/#python">Using Prince from Python</a>
+</li>
+
+<li>
+<a href="/doc/11/perl/#perl">Using Prince from Perl</a>
+</li>
+
+<li>
+<a href="/doc/11/php/#php">Using Prince from PHP</a>
+</li>
+
+<li>
+<a href="/doc/11/asp/#asp">Using Prince from ASP</a>
+</li>
+
+<li>
+<a href="/doc/11/coldfusion/#coldfusion">Using Prince from ColdFusion</a>
+</li>
+
+<li>
+<a href="/doc/11/coldfusion/#cf-java">Using Java</a>
+</li>
+
+<li>
+<a href="/doc/11/coldfusion/#cf-activex">Using ActiveX/COM</a>
+</li>
+
+<li>
+<a href="/doc/11/activex/#activex">Using Prince from ActiveX / COM / Visual Basic</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/cmd-control/#advanced-cmd">Advanced Command Line Options</a>
+<ul>
+<li>
+<a href="/doc/11/cmd-control/#cmd-control">Prince Control Protocol</a>
+</li>
+
+<li>
+<a href="/doc/11/cmd-control/#structured-log">Structured Log</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<section><h1>Reference Guide</h1>
+<ul id="toc-appendices" class="toc">
+<li>
+<a href="/doc/11/command-line/#command-line">A1. Command-line Reference</a>
+<ul>
+<li>
+<a href="/doc/11/command-line/#cmd-examples">Examples</a>
+</li>
+
+<li>
+<a href="/doc/11/command-line/#cmd-input-output">Specifying input and output</a>
+</li>
+
+<li>
+<a href="/doc/11/command-line/#cmd-options">Options</a>
+<ul>
+<li>
+<a href="/doc/11/command-line/#cmd-general">General Options</a>
+</li>
+
+<li>
+<a href="/doc/11/command-line/#cmd-logging">Logging Options</a>
+</li>
+
+<li>
+<a href="/doc/11/command-line/#cmd-input">Input Options</a>
+</li>
+
+<li>
+<a href="/doc/11/command-line/#cmd-network">Network Options</a>
+</li>
+
+<li>
+<a href="/doc/11/command-line/#cmd-js">JavaScript Options</a>
+</li>
+
+<li>
+<a href="/doc/11/command-line/#cmd-css">CSS Options</a>
+</li>
+
+<li>
+<a href="/doc/11/command-line/#cmd-pdf">PDF Output Options</a>
+</li>
+
+<li>
+<a href="/doc/11/command-line/#cmd-pdf-metadata">PDF Metadata Options</a>
+</li>
+
+<li>
+<a href="/doc/11/command-line/#cmd-pdf-crypto">PDF Encryption Options</a>
+</li>
+
+<li>
+<a href="/doc/11/command-line/#cmd-raster">Raster Output Options</a>
+</li>
+
+<li>
+<a href="/doc/11/command-line/#cmd-util">Utility Options</a>
+</li>
+
+<li>
+<a href="/doc/11/command-line/#cmd-ctrl">Advanced Control and Log Options</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/css-refs/#css-refs">A2. CSS References</a>
+<ul>
+<li>
+<a href="/doc/11/css-refs/#css-features">CSS Features</a>
+</li>
+
+<li>
+<a href="/doc/11/css-refs/#length-units">Length Units</a>
+<ul>
+<li>
+<a href="/doc/11/css-refs/#absolute-length-units">Absolute Length Units</a>
+</li>
+
+<li>
+<a href="/doc/11/css-refs/#font-length-units">Font Length Units</a>
+</li>
+
+<li>
+<a href="/doc/11/css-refs/#pixel-unit">Pixel Unit</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/properties/">A3. CSS Properties</a>
+<ul>
+<li>
+<a href="/doc/11/properties/alternate-color/">alternate-color</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/background/">background</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/background-attachment/">background-attachment</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/background-clip/">background-clip</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/background-color/">background-color</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/background-image/">background-image</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/background-origin/">background-origin</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/background-position/">background-position</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/background-repeat/">background-repeat</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/background-size/">background-size</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/baseline-shift/">baseline-shift</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/border/">border</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/border-bottom/">border-bottom</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/border-bottom-color/">border-bottom-color</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/border-bottom-left-radius/">border-bottom-left-radius</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/border-bottom-right-radius/">border-bottom-right-radius</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/border-bottom-style/">border-bottom-style</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/border-bottom-width/">border-bottom-width</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/border-clip/">border-clip</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/border-collapse/">border-collapse</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/border-color/">border-color</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/border-left/">border-left</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/border-left-color/">border-left-color</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/border-left-style/">border-left-style</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/border-left-width/">border-left-width</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/border-radius/">border-radius</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/border-right/">border-right</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/border-right-color/">border-right-color</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/border-right-style/">border-right-style</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/border-right-width/">border-right-width</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/border-spacing/">border-spacing</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/border-style/">border-style</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/border-top/">border-top</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/border-top-color/">border-top-color</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/border-top-left-radius/">border-top-left-radius</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/border-top-right-radius/">border-top-right-radius</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/border-top-style/">border-top-style</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/border-top-width/">border-top-width</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/border-width/">border-width</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/bottom/">bottom</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/box-decoration-break/">box-decoration-break</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/box-sizing/">box-sizing</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/caption-side/">caption-side</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/clear/">clear</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/clip/">clip</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/clip-path/">clip-path</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/clip-rule/">clip-rule</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/color/">color</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/column-break-after/">column-break-after</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/column-break-before/">column-break-before</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/column-count/">column-count</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/column-fill/">column-fill</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/column-gap/">column-gap</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/column-rule/">column-rule</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/column-rule-color/">column-rule-color</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/column-rule-style/">column-rule-style</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/column-rule-width/">column-rule-width</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/column-span/">column-span</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/column-width/">column-width</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/columns/">columns</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/content/">content</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/counter-increment/">counter-increment</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/counter-reset/">counter-reset</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/direction/">direction</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/display/">display</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/dominant-baseline/">dominant-baseline</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/empty-cells/">empty-cells</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/fill/">fill</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/fill-opacity/">fill-opacity</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/fill-rule/">fill-rule</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/filter/">filter</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/float/">float</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/font/">font</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/font-family/">font-family</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/font-size/">font-size</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/font-stretch/">font-stretch</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/font-style/">font-style</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/font-variant/">font-variant</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/font-weight/">font-weight</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/footnote-display/">footnote-display</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/footnote-style-position/">footnote-style-position</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/height/">height</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/hyphens/">hyphens</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/left/">left</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/letter-spacing/">letter-spacing</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/line-height/">line-height</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/line-stacking-strategy/">line-stacking-strategy</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/list-style/">list-style</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/list-style-image/">list-style-image</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/list-style-position/">list-style-position</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/list-style-type/">list-style-type</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/margin/">margin</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/margin-bottom/">margin-bottom</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/margin-inside/">margin-inside</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/margin-left/">margin-left</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/margin-outside/">margin-outside</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/margin-right/">margin-right</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/margin-top/">margin-top</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/marker-end/">marker-end</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/marker-mid/">marker-mid</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/marker-start/">marker-start</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/marks/">marks</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/mask/">mask</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/max-height/">max-height</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/max-width/">max-width</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/min-height/">min-height</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/min-width/">min-width</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/opacity/">opacity</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/orphans/">orphans</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/overflow/">overflow</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/overflow-wrap/">overflow-wrap</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/padding/">padding</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/padding-bottom/">padding-bottom</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/padding-left/">padding-left</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/padding-right/">padding-right</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/padding-top/">padding-top</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/page/">page</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/page-break-after/">page-break-after</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/page-break-before/">page-break-before</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/page-break-inside/">page-break-inside</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/position/">position</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-background-image-resolution/">prince-background-image-resolution</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-bleed/">prince-bleed</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-bookmark-label/">prince-bookmark-label</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-bookmark-level/">prince-bookmark-level</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-bookmark-state/">prince-bookmark-state</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-bookmark-target/">prince-bookmark-target</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-caption-page/">prince-caption-page</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-fallback-cmyk-profile/">prince-fallback-cmyk-profile</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-filter-resolution/">prince-filter-resolution</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-flow/">prince-flow</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-footnote-policy/">prince-footnote-policy</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-forced-breaks/">prince-forced-breaks</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-hyphenate-after/">prince-hyphenate-after</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-hyphenate-before/">prince-hyphenate-before</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-hyphenate-character/">prince-hyphenate-character</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-hyphenate-lines/">prince-hyphenate-lines</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-hyphenate-patterns/">prince-hyphenate-patterns</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-image-magic/">prince-image-magic</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-image-resolution/">prince-image-resolution</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-linebreak-magic/">prince-linebreak-magic</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-link/">prince-link</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-mark-length/">prince-mark-length</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-mark-offset/">prince-mark-offset</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-mark-width/">prince-mark-width</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-page-group/">prince-page-group</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-pdf-color-conversion/">prince-pdf-color-conversion</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-pdf-color-options/">prince-pdf-color-options</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-pdf-destination/">prince-pdf-destination</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-pdf-duplex/">prince-pdf-duplex</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-pdf-link-type/">prince-pdf-link-type</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-pdf-open-action/">prince-pdf-open-action</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-pdf-output-intent/">prince-pdf-output-intent</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-pdf-page-colorspace/">prince-pdf-page-colorspace</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-pdf-page-label/">prince-pdf-page-label</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-pdf-page-layout/">prince-pdf-page-layout</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-pdf-page-mode/">prince-pdf-page-mode</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-pdf-paper-tray/">prince-pdf-paper-tray</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-pdf-print-scaling/">prince-pdf-print-scaling</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-pdf-profile/">prince-pdf-profile</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-pdf-script/">prince-pdf-script</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-pdf-xmp/">prince-pdf-xmp</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-rotate-body/">prince-rotate-body</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-shrink-to-fit/">prince-shrink-to-fit</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-text-justify/">prince-text-justify</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-text-replace/">prince-text-replace</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-tooltip/">prince-tooltip</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-trim/">prince-trim</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/prince-wrap-inside/">prince-wrap-inside</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/right/">right</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/size/">size</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/src/">src</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/stop-color/">stop-color</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/stop-opacity/">stop-opacity</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/string-set/">string-set</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/stroke/">stroke</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/stroke-dasharray/">stroke-dasharray</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/stroke-dashoffset/">stroke-dashoffset</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/stroke-linecap/">stroke-linecap</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/stroke-linejoin/">stroke-linejoin</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/stroke-miterlimit/">stroke-miterlimit</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/stroke-opacity/">stroke-opacity</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/stroke-width/">stroke-width</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/table-baseline/">table-baseline</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/table-column-span/">table-column-span</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/table-layout/">table-layout</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/table-row-span/">table-row-span</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/text-align/">text-align</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/text-align-last/">text-align-last</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/text-anchor/">text-anchor</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/text-decoration/">text-decoration</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/text-indent/">text-indent</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/text-line-through/">text-line-through</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/text-line-through-color/">text-line-through-color</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/text-line-through-style/">text-line-through-style</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/text-overflow/">text-overflow</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/text-overline/">text-overline</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/text-overline-color/">text-overline-color</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/text-overline-style/">text-overline-style</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/text-transform/">text-transform</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/text-underline/">text-underline</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/text-underline-color/">text-underline-color</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/text-underline-style/">text-underline-style</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/top/">top</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/transform/">transform</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/transform-origin/">transform-origin</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/unicode-bidi/">unicode-bidi</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/unicode-range/">unicode-range</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/vertical-align/">vertical-align</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/visibility/">visibility</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/white-space/">white-space</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/widows/">widows</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/width/">width</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/word-break/">word-break</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/word-spacing/">word-spacing</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/writing-mode/">writing-mode</a>
+</li>
+
+<li>
+<a href="/doc/11/properties/z-index/">z-index</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/selectors/#selectors">A4. CSS Selectors</a>
+<ul>
+<li>
+<a href="/doc/11/selectors/#terminology">Terminology and Definitions</a>
+</li>
+
+<li>
+<a href="/doc/11/selectors/#sel-logical">Logical Combinations</a>
+</li>
+
+<li>
+<a href="/doc/11/selectors/#sel-elemental">Elemental Selectors</a>
+</li>
+
+<li>
+<a href="/doc/11/selectors/#sel-attribute">Attribute Selectors</a>
+</li>
+
+<li>
+<a href="/doc/11/selectors/#sel-linguistic"> Linguistic Pseudo-classes</a>
+</li>
+
+<li>
+<a href="/doc/11/selectors/#sel-location">Location Pseudo-classes</a>
+</li>
+
+<li>
+<a href="/doc/11/selectors/#sel-structural">Tree-Structural pseudo-classes</a>
+</li>
+
+<li>
+<a href="/doc/11/selectors/#sel-combinators">Combinators</a>
+</li>
+
+<li>
+<a href="/doc/11/selectors/#sel-treepseudo">Tree-Abiding Pseudo-element Selectors</a>
+</li>
+
+<li>
+<a href="/doc/11/selectors/#sel-typographic">Typographic Pseudo-element Selectors</a>
+</li>
+
+<li>
+<a href="/doc/11/selectors/#sel-footnotes">Footnote Pseudo-element Selectors</a>
+</li>
+
+<li>
+<a href="/doc/11/selectors/#sel-pages">Page Selectors</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/media-queries/#media-queries">A5. CSS Media Queries</a>
+<ul>
+<li>
+<a href="/doc/11/media-queries/#mq-mediaqueries">Media Queries</a>
+</li>
+
+<li>
+<a href="/doc/11/media-queries/#mq-prefix">Media Query Modifiers</a>
+</li>
+
+<li>
+<a href="/doc/11/media-queries/#mq-types">Media Types</a>
+</li>
+
+<li>
+<a href="/doc/11/media-queries/#mq-features">Media Features</a>
+</li>
+
+<li>
+<a href="/doc/11/media-queries/#mq-dimension">Dimension Media Features</a>
+</li>
+
+<li>
+<a href="/doc/11/media-queries/#mq-display">Display Quality Media Features</a>
+</li>
+
+<li>
+<a href="/doc/11/media-queries/#mq-color">Color Media Features</a>
+</li>
+
+<li>
+<a href="/doc/11/media-queries/#mq-interaction">Interaction Media Features</a>
+</li>
+
+<li>
+<a href="/doc/11/media-queries/#mq-scripting">Scripting Media Features</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/functions/#css-functions">A6. CSS Functional Expressions</a>
+<ul>
+<li>
+<a href="/doc/11/functions/#css-spec-functions">CSS Functions</a>
+</li>
+
+<li>
+<a href="/doc/11/functions/#css-prince-functions">Prince Specific Functions</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/at-rules/#css-atrules">A7. CSS At-rules</a>
+<ul>
+<li>
+<a href="/doc/11/at-rules/#atrules-initial">Initial At-Rules</a>
+</li>
+
+<li>
+<a href="/doc/11/at-rules/#atrules-nested">Nested At-Rules</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/page-size-keywords/#page-size-keywords">A8. Page Size Keywords</a>
+</li>
+
+<li>
+<a href="/doc/11/characters/#characters">A9. Character Entities</a>
+<ul>
+<li>
+<a href="/doc/11/characters/#accented-letters">Accented Letters</a>
+</li>
+
+<li>
+<a href="/doc/11/characters/#symbols">Symbols</a>
+</li>
+
+<li>
+<a href="/doc/11/characters/#quotes">Quotes</a>
+</li>
+
+<li>
+<a href="/doc/11/characters/#accents">Accents</a>
+</li>
+
+<li>
+<a href="/doc/11/characters/#chars-mixc">Miscellaneous</a>
+</li>
+</ul>
+</li>
+
+<li>
+<a href="/doc/11/acknowledgements/#acknowledgements">A10. Acknowledgements</a>
+</li>
+</ul>
+
+</section>
+</nav><div class="main-frame">
+
+
+<section id="advanced-cmd">
+<h2>Advanced Command Line Options</h2>
+    
+
+<p>
+Prince offers two command line options useful for integrating Prince with other software:
+the <a href="/doc/11/cmd-control/#cmd-control">Prince Control Protocol</a> and the <a href="/doc/11/cmd-control/#structured-log">Structured Log</a>.  See the
+<a href="/doc/11/server-integration/#server-integration">Server Integration</a> section for some examples of Prince wrappers.
+</p>
+
+<section id="cmd-control">
+<h3>Prince Control Protocol</h3>
+
+<dl>
+  <dt><code>prince --control</code></dt>
+  <dd>
+    <p>The Prince Control Protocol, accessible through the command-line option <code>--control</code>,
+    is a synchronous bidirectional protocol that consists of a sequence of "chunks"
+    sent via the standard input and output streams.</p>
+	<p>Each chunk contains a sequence of bytes with a length and a three letter tag.
+    Here is an example "version" chunk to demonstrate the syntax:</p>
+	<div class="example">
+    <div class="programlisting">
+		<code><pre>ver 15
+Prince 20161219
+</pre></code>
+    </div>
+    </div>
+	<p>This chunk has a tag <code>ver</code> (all tags are three ASCII characters)
+    followed by a space, then the length of the data expressed as a decimal number,
+    then a newline character, then the data itself (15 bytes), then another newline
+    (not part of the data).</p>
+	<p>This "version" chunk is emitted by Prince when the control protocol begins
+    and can be used to check the Prince version and confirm that communication is
+    functioning as expected. Prince will then wait for jobs to be submitted.</p>
+	<p>If a chunk contains no data then the length is zero and the chunk ends with
+    the newline immediately following the length. In fact the length itself may be
+    omitted, making this a perfectly valid chunk:</p>
+	<div class="example">
+    <div class="programlisting">
+		<code><pre>end
+</pre></code>
+	</div>
+    </div>
+	<p>This <code>end</code> chunk consists of three letters and a newline character
+    and can be used to terminate the Prince process when there are no further jobs
+    to process.</p>
+	<p>Currently the control protocol includes the following chunk types sent by Prince:</p>
+	<ul>
+		<li>
+<code>ver</code>, sent at startup</li>
+		<li>
+<code>pdf</code>, a generated PDF file</li>
+		<li>
+<code>log</code>, the complete output log for the job including all errors
+        and warnings</li>
+		<li>
+<code>err</code>, errors relating to the control protocol itself</li>
+	</ul>
+	<p>And these chunks sent by the caller:</p>
+	<ul>
+		<li>
+<code>job</code>, the description of a requested conversion job, expressed
+        in JSON</li>
+		<li>
+<code>dat</code>, a file resource needed by the job</li>
+		<li>
+<code>end</code>, to terminate the control connection</li>
+	</ul>
+	<p>A typical interaction looks like this:</p>
+	<div class="example">
+    <div class="programlisting">
+		<code><pre>Prince: ver
+Caller: job
+Caller: dat
+Caller: dat
+Prince: pdf
+Prince: log
+Caller: end
+</pre></code>
+	</div>
+    </div>
+	<p>Instead of sending the final <code>end</code> chunk the caller may choose to
+    submit another <code>job</code> chunk and continue converting documents. The protocol
+    is synchronous so replies simply match requests in order.</p>
+	<p>The <code>job</code> chunk contains a description of the conversion job represented
+    in JSON format, which can be followed by an optional sequence of <code>dat</code>
+    chunks containing file data which is needed by the job, eg. HTML documents, style
+    sheets, PDF attachments, or whatever.</p>
+	<p>The number of <code>dat</code> chunks is specified by the <code>job-resource-count</code>
+    field in the job description, and these files can be accessed via a special job-resource
+    URL scheme, eg. <code>job-resource:0</code> will access the content of the first
+    <code>dat</code> chunk, then <code>job-resource:1</code>, <code>job-resource:2</code>,
+    etc. This allows any number of resources to be provided inline with the request
+    and removes the need to create actual temporary files.</p>
+	<p>The JSON job description has several nested objects with fields corresponding
+    to Prince options:</p>
+	<div class="example">
+    <div class="programlisting">
+		<code><pre>{
+    "input": { &lt;input options&gt; },
+    "pdf": { &lt;pdf options&gt; },
+    "metadata": { &lt;metadata options&gt; },
+    "raster": { &lt;raster options&gt; },
+    "job-resource-count": &lt;int&gt;
+}</pre></code>
+	</div>
+    </div>
+	<p>The <code>input options</code> and <code>job-resource-count</code> are mandatory,
+    the rest are optional and will default to the normal values.</p>
+	<p>The <code>input options</code> object includes these fields:</p>
+	<div class="example">
+    <div class="programlisting">
+		<code><pre>{
+    "src": &lt;single URL or list of URLs&gt;,
+    "type": &lt;string&gt;,
+    "base": &lt;string&gt;,
+    "media": &lt;string&gt;,
+    "styles": [ &lt;list of URLs&gt; ],
+    "scripts": [ &lt;list of URLs&gt; ],
+    "default-style": &lt;bool&gt;,
+    "author-style": &lt;bool&gt;,
+    "javascript": &lt;bool&gt;,
+    "xinclude": &lt;bool&gt;,
+    "xml-external-entities": &lt;bool&gt;
+}</pre></code>
+	</div>
+    </div>
+	<p>Only the <code>src</code> field is required, the rest can be left as defaults.</p>
+	<p>Now we can make some simple job descriptions, eg. to convert a single HTML
+    file:</p>
+	<div class="example">
+    <div class="programlisting">
+		<code><pre>{
+    "input": {
+        "src": "/path/to/input.html"
+    },
+    "job-resource-count": 0
+}</pre></code>
+	</div>
+    </div>
+	<p>This can be sent as a single <code>job</code> chunk and Prince will respond
+    with a <code>pdf</code> chunk if the conversion succeeded and a <code>log</code>
+    chunk.</p>
+	<p>Or you can convert a HTML document without saving it to a temporary file:</p>
+	<div class="example">
+    <div class="programlisting">
+		<code><pre>{
+    "input": {
+        "src": "job-resource:0"
+    },
+    "job-resource-count": 1
+}</pre></code>
+	</div>
+    </div>
+	<p>This requires the <code>job</code> chunk to be followed by a <code>dat</code>
+    chunk that contains the HTML and then Prince will respond as before.</p>
+	<p>The <code>pdf options</code> object includes these fields:</p>
+    <div class="example">
+    <div class="programlisting">
+		<code><pre>{
+    "color-options": "auto" | "use-true-black" | "use-rich-black",
+    "embed-fonts": &lt;bool&gt;,
+    "subset-fonts": &lt;bool&gt;,
+    "artificial-fonts": &lt;bool&gt;,
+    "force-identity-encoding": &lt;bool&gt;,
+    "compress": &lt;bool&gt;,
+    "encrypt": {
+        "key-bits": 40 | 128,
+        "user-password": &lt;string&gt;,
+        "owner-password": &lt;string&gt;,
+        "disallow-print": &lt;bool&gt;,
+        "disallow-modify": &lt;bool&gt;,
+        "disallow-copy": &lt;bool&gt;,
+        "disallow-annotate": &lt;bool&gt;
+    },
+    "attach": [ &lt;list of URLs&gt; ],
+    "pdf-profile": &lt;string&gt;,
+    "pdf-output-intent": &lt;URL&gt;,
+    "fallback-cmyk-profile": &lt;URL&gt;,
+    "color-conversion": "none" | "full"
+}</pre></code>
+	</div>
+    </div>
+    <p>The <code>metadata options</code> object includes these fields:</p>
+    <div class="example">
+    <div class="programlisting">
+		<code><pre>{
+    "title": &lt;string&gt;,
+    "subject": &lt;string&gt;,
+    "author": &lt;string&gt;,
+    "keywords": &lt;string&gt;,
+    "creator": &lt;string&gt;
+}</pre></code>
+	</div>
+    </div>
+    <p>The <code>raster options</code> object includes these fields:</p>
+    <div class="example">
+    <div class="programlisting">
+		<code><pre>{
+    "dpi": &lt;integer&gt;
+}</pre></code>
+	</div>
+    </div>
+  </dd>
+</dl>
+    
+</section>
+
+<section id="structured-log">
+<h3>Structured Log</h3>
+
+<dl>
+  <dt><code>--structured-log=<span class="replaceable">LEVEL</span></code></dt>
+  <dd>
+    <p>This option is designed to make it easier to integrate other software with
+    Prince. It takes these values:</p>
+    <ul>
+      <li><code>--no-structured-log</code></li>
+      <li><code>--structured-log=normal</code></li>
+      <li><code>--structured-log=quiet</code></li>
+      <li><code>--structured-log=progress</code></li>
+      <li><code>--structured-log=buffered</code></li>
+    </ul>
+    <p>The default is <code>--no-structured-log</code>, in which case error and warning
+    messages will be written to the terminal (stderr stream) as they occur in a human
+    readable format, eg.</p>
+    <div class="example">
+    <div class="programlisting">
+		<code><pre>prince: foo.html: error: can't open input file: No such file or directory
+prince: foo.html: error: could not load input file
+prince: error: failed to load all input documents</pre></code>
+	</div>
+    </div>
+    <p>Specifying <code>--structured-log=normal</code> writes the log messages in
+    an alternate format with fields separated by <code>|</code> characters, in order
+    to make it easier to parse by other software:</p>
+    <div class="example">
+    <div class="programlisting">
+		<code><pre>msg|err|foo.html|can't open input file: No such file or directory
+msg|err|foo.html|could not load input file
+msg|err||failed to load all input documents
+fin|failure</pre></code>
+	</div>
+    </div>
+    <p>Specifying <code>--structured-log=quiet</code> suppresses <em>all</em> log
+    messages, except for the final <code>fin</code> message, indicating success or
+    failure:</p>
+    <div class="example">
+    <div class="programlisting">
+		<code><pre>fin|failure</pre></code>
+	</div>
+    </div>
+    <p>This allows other software to read the stdout stream from Prince containing
+    the PDF file in its entirety, then read the final status from the stderr stream,
+    without worrying about blocking due to deadlocks.</p>
+    <p>Specifying <code>--structured-log=progress</code> prints percentage log messages
+    for use in GUI applications:</p>
+    <div class="example">
+    <div class="programlisting">
+		<code><pre>prg|94
+prg|96
+prg|99
+prg|100
+fin|success</pre></code>
+	</div>
+    </div>
+    <p>Specifying <code>--structured-log=buffered</code> is the same as <code>normal</code>,
+    but all log messages will be delayed until after the full PDF has been written
+    to the stdout stream, again so that other software can read from stdout and then
+    read the log from stderr without deadlocking.</p>
+    <p>The deadlock problem happens when Prince writes log messages to stderr and
+    blocks, waiting for the other software to read them, but the other software is
+    blocked waiting for Prince to write the PDF to stdout, leading to a deadlock
+    where both processes hang indefinitely.</p>
+    <p>By omitting log messages, or by delaying them until after the PDF is written,
+    this deadlock can be avoided.  Another option is to use the <a href="/doc/11/cmd-control/#cmd-control">Prince Control Protocol</a>,
+    which also avoids this problem.</p>
+  </dd>
+</dl>
+</section>
+
+</section>
+</div>
+</div>
+
+<script src="/js/jquery-1.12.4.min.js"></script>
+<script src="/js/jquery-ui-1.12.1.min.js"></script>
+<script type="text/javascript" src="/js/skrollr-simplemodal-masonry.min.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+<script src="/js/jquery.a11yTree.min.js"></script>
+<script>
+    $('ul.toc').a11yTree({
+    });
+    // Expand the level 1 items in the TOC.
+    $("#toc-contents > li[aria-level='1']").attr('aria-expanded', 'true');
+</script>
+
+    <div class="footer">
+        <div class="footer-copyright">
+            Copyright © 2002 – 2019 YesLogic Pty. Ltd.
+        </div>
+        <ul class="footer-menu">
+            <li><a href="/company/">About Us</a></li>
+            <li><a href="/privacy/">Privacy Policy</a></li>
+            <li><a href="/contact/">Contact Us</a></li>
+        </ul>
+        <div style="clear:both"></div>
+    </div>
+</div>
+
+<script src="/js/warning.js"></script>
+</body>
+</html>

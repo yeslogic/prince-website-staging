@@ -1,0 +1,270 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Character Entities · Prince Documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Character entities are a method of including arbitrary characters in XML documents by referencing their UNICODE number rather than writing them directly. CSS has a similar mechanism to include special characters."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Character Entities · Prince Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://www.princexml.com/"/><meta property="og:description" content="Character entities are a method of including arbitrary characters in XML documents by referencing their UNICODE number rather than writing them directly. CSS has a similar mechanism to include special characters."/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://www.princexml.com/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="/js/warning.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/Prince-logo.png" alt="Prince Documentation"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/doc/" target="_self">Documentation</a></li><li class=""><a href="/doc/help" target="_self">Help</a></li><li class=""><a href="/doc/releases" target="_self">Release Notes</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Reference Guide</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Installation Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/installing">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/doc/13/first-doc">Your First Document</a></li><li class="navListItem"><a class="navItem" href="/doc/13/help-install">Help</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">User Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/intro-userguide">Convert HTML to PDF</a></li><li class="navListItem"><a class="navItem" href="/doc/13/styling">Styling</a></li><li class="navListItem"><a class="navItem" href="/doc/13/paged">Paged Media</a></li><li class="navListItem"><a class="navItem" href="/doc/13/gen-content">Generated Content</a></li><li class="navListItem"><a class="navItem" href="/doc/13/javascript">Scripting</a></li><li class="navListItem"><a class="navItem" href="/doc/13/graphics">Graphics</a></li><li class="navListItem"><a class="navItem" href="/doc/13/cookbook">Prince Tips and Tricks</a></li><li class="navListItem"><a class="navItem" href="/doc/13/help">Help</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-input">Prince Input</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-output">Prince Output</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-networking">Prince Networking</a></li><li class="navListItem"><a class="navItem" href="/doc/13/server-integration">Server Integration</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-for-books">Prince for Books</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Reference Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/command-line">Command-line Reference</a></li><li class="navListItem"><a class="navItem" href="/doc/13/css-refs">CSS References</a></li><li class="navListItem"><a class="navItem" href="/doc/13/css-props">CSS Properties</a></li><li class="navListItem"><a class="navItem" href="/doc/13/js-support">JavaScript Support</a></li><li class="navListItem"><a class="navItem" href="/doc/13/page-size-keywords">Page Size Keywords</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/doc/13/characters">Character Entities</a></li><li class="navListItem"><a class="navItem" href="/doc/13/acknowledgements">Acknowledgments</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Character Entities</h1></header><article><div><span><p>Character entities are a method of including arbitrary characters in XML documents by referencing their UNICODE number rather than writing them directly. CSS has a similar mechanism to include special characters.</p>
+<p>This can be convenient when you wish to include characters such as smart quotes, symbols or mathematical operators that do not exist in the character encoding that you are using for your XML documents (such as ASCII or ISO-8859-1 &quot;Latin-1&quot;), or when you want to insert some of these characters into the final layout by means of CSS.</p>
+<p>Here is an example of including smart quotes in an XML document using character entities:</p>
+<p>XML</p>
+<pre><code class="hljs css language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+    These are <span class="hljs-symbol">&amp;#x201C;</span>smart quotes<span class="hljs-symbol">&amp;#x201D;</span> to be precise.
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+<p>Output</p>
+<pre><code class="hljs">These are “smart quotes” to be precise.
+</code></pre>
+<p>A typical usecase for character entities in CSS is the <a href="/doc/13/css-props#prop-prince-text-replace"><code>prince-text-replace</code></a> property, which replaces a certain character string with another one. In the sample <a href="sample-docs.html#essay">&quot;Reconstructed Essay&quot;</a> (<a href="http://www.princexml.com/howcome/2016/samples/malthus/essay.html">HTML</a> - <a href="http://www.princexml.com/howcome/2016/samples//malthus/essay.pdf">PDF</a>), the property is used to replace occurrences of &quot;s&quot; with the &quot;long s&quot; to recreate the original printed book.</p>
+<p>CSS</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">body</span> {
+      <span class="hljs-attribute">prince-text-replace</span>: <span class="hljs-string">"s"</span> <span class="hljs-string">"\017F"</span>;
+    }
+</code></pre>
+<p>The tables below are a quick reference for some commonly requested UNICODE characters, expressed in XML and CSS notation; for everything else please consult the <a href="http://www.unicode.org/charts/">UNICODE code charts</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="accented-letters"></a><a href="#accented-letters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Accented Letters</h2>
+<table>
+<thead>
+<tr><th>XML</th><th>CSS</th><th>Character</th><th>Name</th></tr>
+</thead>
+<tbody>
+<tr><td>&amp;#xC0;</td><td>\C0</td><td>À</td><td>A grave</td></tr>
+<tr><td>&amp;#xC1;</td><td>\C1</td><td>Á</td><td>A acute</td></tr>
+<tr><td>&amp;#xC2;</td><td>\C2</td><td>Â</td><td>A circumflex</td></tr>
+<tr><td>&amp;#xC3;</td><td>\C3</td><td>Ã</td><td>A tilde</td></tr>
+<tr><td>&amp;#xC4;</td><td>\C4</td><td>Ä</td><td>A dieresis</td></tr>
+<tr><td>&amp;#xC5;</td><td>\C5</td><td>Å</td><td>A ring</td></tr>
+<tr><td>&amp;#xC7;</td><td>\C7</td><td>Ç</td><td>C cedilla</td></tr>
+<tr><td>&amp;#xC8;</td><td>\C8</td><td>È</td><td>E grave</td></tr>
+<tr><td>&amp;#xC9;</td><td>\C9</td><td>É</td><td>E acute</td></tr>
+<tr><td>&amp;#xCA;</td><td>\CA</td><td>Ê</td><td>E circumflex</td></tr>
+<tr><td>&amp;#xCB;</td><td>\CB</td><td>Ë</td><td>E dieresis</td></tr>
+<tr><td>&amp;#xCC;</td><td>\CC</td><td>Ì</td><td>I grave</td></tr>
+<tr><td>&amp;#xCD;</td><td>\CD</td><td>Í</td><td>I acute</td></tr>
+<tr><td>&amp;#xCE;</td><td>\CE</td><td>Î</td><td>I circumflex</td></tr>
+<tr><td>&amp;#xCF;</td><td>\CF</td><td>Ï</td><td>I dieresis</td></tr>
+<tr><td>&amp;#xD1;</td><td>\D1</td><td>Ñ</td><td>N tilde</td></tr>
+<tr><td>&amp;#xD2;</td><td>\D2</td><td>Ò</td><td>O grave</td></tr>
+<tr><td>&amp;#xD3;</td><td>\D3</td><td>Ó</td><td>O acute</td></tr>
+<tr><td>&amp;#xD4;</td><td>\D4</td><td>Ô</td><td>O circumflex</td></tr>
+<tr><td>&amp;#xD5;</td><td>\D5</td><td>Õ</td><td>O tilde</td></tr>
+<tr><td>&amp;#xD6;</td><td>\D6</td><td>Ö</td><td>O dieresis</td></tr>
+<tr><td>&amp;#xD8;</td><td>\D8</td><td>Ø</td><td>O slash</td></tr>
+<tr><td>&amp;#xD9;</td><td>\D9</td><td>Ù</td><td>U grave</td></tr>
+<tr><td>&amp;#xDA;</td><td>\DA</td><td>Ú</td><td>U acute</td></tr>
+<tr><td>&amp;#xDB;</td><td>\DB</td><td>Û</td><td>U circumflex</td></tr>
+<tr><td>&amp;#xDC;</td><td>\DC</td><td>Ü</td><td>U dieresis</td></tr>
+<tr><td>&amp;#x0178;</td><td>\0178</td><td>Ÿ</td><td>Y dieresis</td></tr>
+<tr><td>&amp;#xE0;</td><td>\E0</td><td>à</td><td>a grave</td></tr>
+<tr><td>&amp;#xE1;</td><td>\E1</td><td>á</td><td>a acute</td></tr>
+<tr><td>&amp;#xE2;</td><td>\E2</td><td>â</td><td>a circumflex</td></tr>
+<tr><td>&amp;#xE3;</td><td>\E3</td><td>ã</td><td>a tilde</td></tr>
+<tr><td>&amp;#xE4;</td><td>\E4</td><td>ä</td><td>a dieresis</td></tr>
+<tr><td>&amp;#xE5;</td><td>\E5</td><td>å</td><td>a ring</td></tr>
+<tr><td>&amp;#xE7;</td><td>\E7</td><td>ç</td><td>c cedilla</td></tr>
+<tr><td>&amp;#xE8;</td><td>\E8</td><td>è</td><td>e grave</td></tr>
+<tr><td>&amp;#xE9;</td><td>\E9</td><td>é</td><td>e acute</td></tr>
+<tr><td>&amp;#xEA;</td><td>\EA</td><td>ê</td><td>e circumflex</td></tr>
+<tr><td>&amp;#xEB;</td><td>\EB</td><td>ë</td><td>e dieresis</td></tr>
+<tr><td>&amp;#xEC;</td><td>\EC</td><td>ì</td><td>i grave</td></tr>
+<tr><td>&amp;#xED;</td><td>\ED</td><td>í</td><td>i acute</td></tr>
+<tr><td>&amp;#xEE;</td><td>\EE</td><td>î</td><td>i circumflex</td></tr>
+<tr><td>&amp;#xEF;</td><td>\EF</td><td>ï</td><td>i dieresis</td></tr>
+<tr><td>&amp;#x0131;</td><td>\0131</td><td>ı</td><td>dotless i</td></tr>
+<tr><td>&amp;#xF1;</td><td>\F1</td><td>ñ</td><td>n tilde</td></tr>
+<tr><td>&amp;#xF2;</td><td>\F2</td><td>ò</td><td>o grave</td></tr>
+<tr><td>&amp;#xF3;</td><td>\F3</td><td>ó</td><td>o acute</td></tr>
+<tr><td>&amp;#xF4;</td><td>\F4</td><td>ô</td><td>o circumflex</td></tr>
+<tr><td>&amp;#xF5;</td><td>\F5</td><td>õ</td><td>o tilde</td></tr>
+<tr><td>&amp;#xF6;</td><td>\F6</td><td>ö</td><td>o dieresis</td></tr>
+<tr><td>&amp;#xF8;</td><td>\F8</td><td>ø</td><td>o slash</td></tr>
+<tr><td>&amp;#xF9;</td><td>\F9</td><td>ù</td><td>u grave</td></tr>
+<tr><td>&amp;#xFA;</td><td>\FA</td><td>ú</td><td>u acute</td></tr>
+<tr><td>&amp;#xFB;</td><td>\FB</td><td>û</td><td>u circumflex</td></tr>
+<tr><td>&amp;#xFC;</td><td>\FC</td><td>ü</td><td>u dieresis</td></tr>
+<tr><td>&amp;#xFF;</td><td>\FF</td><td>ÿ</td><td>y dieresis</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="symbols"></a><a href="#symbols" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Symbols</h2>
+<table>
+<thead>
+<tr><th>XML</th><th>CSS</th><th>Character</th><th>Name</th></tr>
+</thead>
+<tbody>
+<tr><td>&amp;#x2022;</td><td>\2022</td><td>•</td><td>bullet</td></tr>
+<tr><td>&amp;#xA2;</td><td>\A2</td><td>¢</td><td>cent</td></tr>
+<tr><td>&amp;#xA9;</td><td>\A9</td><td>©</td><td>copyright</td></tr>
+<tr><td>&amp;#xA4;</td><td>\A4</td><td>¤</td><td>currency</td></tr>
+<tr><td>&amp;#x2020;</td><td>\2020</td><td>†</td><td>dagger</td></tr>
+<tr><td>&amp;#xB0;</td><td>\B0</td><td>°</td><td>degree</td></tr>
+<tr><td>&amp;#xF7;</td><td>\F7</td><td>÷</td><td>divide</td></tr>
+<tr><td>&amp;#x2021;</td><td>\2021</td><td>‡</td><td>double dagger</td></tr>
+<tr><td>&amp;#x0192;</td><td>\0192</td><td>ƒ</td><td>florin</td></tr>
+<tr><td>&amp;#x2044;</td><td>\2044</td><td>⁄</td><td>fraction</td></tr>
+<tr><td>&amp;#xA1;</td><td>\A1</td><td>¡</td><td>inverted exclamation</td></tr>
+<tr><td>&amp;#xBF;</td><td>\BF</td><td>¿</td><td>inverted question</td></tr>
+<tr><td>&amp;#xB5;</td><td>\B5</td><td>µ</td><td>micro</td></tr>
+<tr><td>&amp;#xB7;</td><td>\B7</td><td>·</td><td>middle dot</td></tr>
+<tr><td>&amp;#xAC;</td><td>\AC</td><td>¬</td><td>not</td></tr>
+<tr><td>&amp;#xAA;</td><td>\AA</td><td>ª</td><td>ordfeminine</td></tr>
+<tr><td>&amp;#xBA;</td><td>\BA</td><td>º</td><td>ordmasculine</td></tr>
+<tr><td>&amp;#xB6;</td><td>\B6</td><td>¶</td><td>paragraph</td></tr>
+<tr><td>&amp;#x2030;</td><td>\2030</td><td>‰</td><td>perthousand</td></tr>
+<tr><td>&amp;#xB1;</td><td>\B1</td><td>±</td><td>plusminus</td></tr>
+<tr><td>&amp;#xAE;</td><td>\AE</td><td>®</td><td>registered</td></tr>
+<tr><td>&amp;#xA7;</td><td>\A7</td><td>§</td><td>section</td></tr>
+<tr><td>&amp;#xA3;</td><td>\A3</td><td>£</td><td>sterling</td></tr>
+<tr><td>&amp;#x2122;</td><td>\2122</td><td>™</td><td>trademark</td></tr>
+<tr><td>&amp;#xA5;</td><td>\A5</td><td>¥</td><td>yen</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="quotes"></a><a href="#quotes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Quotes</h2>
+<table>
+<thead>
+<tr><th>XML</th><th>CSS</th><th>Character</th><th>Name</th></tr>
+</thead>
+<tbody>
+<tr><td>&amp;#x2018;</td><td>\2018</td><td>‘</td><td>left single quote</td></tr>
+<tr><td>&amp;#x2019;</td><td>\2019</td><td>’</td><td>right single quote</td></tr>
+<tr><td>&amp;#x201C;</td><td>\201C</td><td>“</td><td>left double quote</td></tr>
+<tr><td>&amp;#x201D;</td><td>\201D</td><td>”</td><td>right double quote</td></tr>
+<tr><td>&amp;#x2039;</td><td>\2039</td><td>‹</td><td>left single guillemet</td></tr>
+<tr><td>&amp;#x203A;</td><td>\203A</td><td>›</td><td>right single guillemet</td></tr>
+<tr><td>&amp;#xAB;</td><td>\AB</td><td>«</td><td>left double guillemet</td></tr>
+<tr><td>&amp;#xBB;</td><td>\BB</td><td>»</td><td>right double guillemet</td></tr>
+<tr><td>&amp;#x201A;</td><td>\201A</td><td>‚</td><td>base single quote</td></tr>
+<tr><td>&amp;#x201E;</td><td>\201E</td><td>„</td><td>base double quote</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="accents"></a><a href="#accents" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Accents</h2>
+<table>
+<thead>
+<tr><th>XML</th><th>CSS</th><th>Character</th><th>Name</th></tr>
+</thead>
+<tbody>
+<tr><td>&amp;#x60;</td><td>\x60</td><td>`</td><td>grave</td></tr>
+<tr><td>&amp;#xB4;</td><td>\xB4</td><td>´</td><td>acute</td></tr>
+<tr><td>&amp;#x02D8;</td><td>\x02D8</td><td>˘</td><td>breve</td></tr>
+<tr><td>&amp;#x02C7;</td><td>\x02C7</td><td>ˇ</td><td>caron</td></tr>
+<tr><td>&amp;#xB8;</td><td>\xB8</td><td>¸</td><td>cedilla</td></tr>
+<tr><td>&amp;#x5E;</td><td>\x5E</td><td>^</td><td>circumflex</td></tr>
+<tr><td>&amp;#xA8;</td><td>\xA8</td><td>¨</td><td>dieresis</td></tr>
+<tr><td>&amp;#x02D9;</td><td>\x02D9</td><td>˙</td><td>dot accent</td></tr>
+<tr><td>&amp;#x02DD;</td><td>\x02DD</td><td>˝</td><td>double acute</td></tr>
+<tr><td>&amp;#xAF;</td><td>\xAF</td><td>¯</td><td>macron</td></tr>
+<tr><td>&amp;#x02DB;</td><td>\x02DB</td><td>˛</td><td>ogonek</td></tr>
+<tr><td>&amp;#x02DA;</td><td>\x02DA</td><td>˚</td><td>ring</td></tr>
+<tr><td>&amp;#x02DC;</td><td>\x02DC</td><td>˜</td><td>tilde</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="special-space-characters"></a><a href="#special-space-characters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Special Space Characters</h2>
+<table>
+<thead>
+<tr><th>XML</th><th>CSS</th><th>Character</th><th>Name</th></tr>
+</thead>
+<tbody>
+<tr><td>&amp;#x20;</td><td>\x20</td><td><span>foo</span> <span>bar</span></td><td>space</td></tr>
+<tr><td>&amp;#xa0;</td><td>\xa0</td><td><span>foo</span> <span>bar</span></td><td>no-break space</td></tr>
+<tr><td>&amp;#x2008;</td><td>\x2008</td><td><span>foo</span> <span>bar</span></td><td>punctuation space</td></tr>
+<tr><td>&amp;#x2009;</td><td>\x2009</td><td><span>foo</span> <span>bar</span></td><td>thin space</td></tr>
+<tr><td>&amp;#x200a;</td><td>\x200a</td><td><span>foo</span> <span>bar</span></td><td>hair space</td></tr>
+<tr><td>&amp;#x200b;</td><td>\x200b</td><td><span>foo</span>​<span>bar</span></td><td>zero width space</td></tr>
+<tr><td>&amp;#x202f;</td><td>\x202f</td><td><span>foo</span> <span>bar</span></td><td>narrow no-break space</td></tr>
+<tr><td>&amp;#x205f;</td><td>\x205f</td><td><span>foo</span> <span>bar</span></td><td>medium mathematical space</td></tr>
+<tr><td>&amp;#xfeff;</td><td>\xfeff</td><td><span>foo</span>﻿<span>bar</span></td><td>zero width no-break space</td></tr>
+<tr><td>&amp;#x1680;</td><td>\x1680</td><td><span>foo</span> <span>bar</span></td><td>ogham space mark</td></tr>
+<tr><td>&amp;#x2000;</td><td>\x2000</td><td><span>foo</span> <span>bar</span></td><td>en quad</td></tr>
+<tr><td>&amp;#x2001;</td><td>\x2001</td><td><span>foo</span> <span>bar</span></td><td>em quad</td></tr>
+<tr><td>&amp;#x2002;</td><td>\x2002</td><td><span>foo</span> <span>bar</span></td><td>en space</td></tr>
+<tr><td>&amp;#x2003;</td><td>\x2003</td><td><span>foo</span> <span>bar</span></td><td>em space</td></tr>
+<tr><td>&amp;#x3000;</td><td>\x3000</td><td><span>foo</span>　<span>bar</span></td><td>ideographic space</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="miscellaneous"></a><a href="#miscellaneous" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Miscellaneous</h2>
+<table>
+<thead>
+<tr><th>XML</th><th>CSS</th><th>Character</th><th>Name</th></tr>
+</thead>
+<tbody>
+<tr><td>&amp;#x2026;</td><td>\x2026</td><td>…</td><td>ellipsis</td></tr>
+<tr><td>&amp;#x2014;</td><td>\x2014</td><td>—</td><td>em dash</td></tr>
+<tr><td>&amp;#x2013;</td><td>\x2013</td><td>–</td><td>en dash</td></tr>
+<tr><td>&amp;#xFB01;</td><td>\xFB01</td><td>ﬁ</td><td>fi ligature</td></tr>
+<tr><td>&amp;#xFB02;</td><td>\xFB02</td><td>ﬂ</td><td>fl ligature</td></tr>
+<tr><td>&amp;#xC6;</td><td>\xC6</td><td>Æ</td><td>AE</td></tr>
+<tr><td>&amp;#xE6;</td><td>\xE6</td><td>æ</td><td>ae</td></tr>
+<tr><td>&amp;#x0152;</td><td>\x0152</td><td>Œ</td><td>OE</td></tr>
+<tr><td>&amp;#x0153;</td><td>\x0153</td><td>œ</td><td>oe</td></tr>
+<tr><td>&amp;#xDF;</td><td>\xDF</td><td>ß</td><td>sharp s</td></tr>
+</tbody>
+</table>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/doc/13/page-size-keywords"><span class="arrow-prev">← </span><span>Page Size Keywords</span></a><a class="docs-next button" href="/doc/13/acknowledgements"><span>Acknowledgments</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#accented-letters">Accented Letters</a></li><li><a href="#symbols">Symbols</a></li><li><a href="#quotes">Quotes</a></li><li><a href="#accents">Accents</a></li><li><a href="#special-space-characters">Special Space Characters</a></li><li><a href="#miscellaneous">Miscellaneous</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="copyright"><div class="about-contact"><a href="/company/">About us</a> | <a href="/contact/">Contact</a></div><div class="copyright">Copyright © 2022 YesLogic Pty. Ltd.</div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '63dda203371e77ee63a05de413c3d741',
+                indexName: 'princexml',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["language:en"]}
+              });
+            </script></body></html>

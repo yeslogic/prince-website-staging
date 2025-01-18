@@ -1,0 +1,184 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<meta name="robots" content="noindex">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<title>Prince - Using JavaScript</title>
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+<div id="header-inner">
+<div><a href="/"><img src="/images/logo2.png" alt="Prince"></a></div>
+<ul id="primary-nav">
+<li><a href="/download/">Download</a></li>
+<li><a href="/purchase/">Buy Prince</a></li>
+<li><a href="/samples/">Samples</a></li>
+<li><a href="/doc/" class="curr">Documentation</a></li>
+<li><a href="/forum/">Forum</a></li>
+</ul>
+</div>
+<div id="header-shadow"></div>
+</div>
+<div id="intro"><div id="intro-inner"><h1>Using JavaScript</h1></div></div>
+
+<div class="main">
+
+
+
+<p>
+<a href="/doc/8.1/">User Guide</a> /
+<a href="/doc/8.1/#javascript">JavaScript Reference</a>
+</p>
+
+<div class="col1">
+
+<p>
+JavaScript can be used to transform documents by generating tables of contents
+and indices, sorting tables, rendering charts and graphs, and other tasks that
+go beyond the scope of CSS.
+</p>
+<p>
+Scripts can access and modify the input document using the W3C standard DOM
+(Document Object Model). Prince also supports some additional properties and
+methods described below.
+</p>
+<p>
+Document scripts can be run by specifying the <code>--javascript</code> option
+on the command-line. Prince will then execute all JavaScript found in the HTML
+<code>script</code> elements in the input document.
+</p>
+<p>
+External scripts can be run by specifying <code>--script=FILE</code> options
+on the command-line. These scripts will always be executed, regardless of
+whether document scripts have been enabled or not.
+</p>
+<p>
+JavaScript functions can also be called from CSS generated content, by using the
+<code>prince-script()</code> syntax for referencing
+<a href="/doc/8.1/script-func/">Script Functions</a>.
+</p>
+
+<h2>Logging</h2>
+<p>
+The Prince log can be accessed from JavaScript via the <code>Log</code> object
+(also available as <code>Prince.Log</code>), which has the following methods:
+</p>
+<pre>
+Log.info("message")
+Log.warning("message")
+Log.error("message")
+Log.data("name", "value")
+</pre>
+
+<h2>Console access</h2>
+<p>
+When running Prince from the command-line, the  <code>console</code> object
+can be used to write messages directly to the terminal:
+</p>
+<pre>
+console.log("Hello, world!")
+</pre>
+<p>
+Note: console access is only supported when running Prince directly from the
+command-line, and should not be used when calling Prince through a server
+wrapper or graphical user interface.
+</p>
+
+<h2>Event handling</h2>
+<p>
+When the document has been fully parsed and is ready for processing, Prince
+will fire the <code>DOMContentLoaded</code> and <code>load</code> events on
+the <code>window</code> object.
+</p>
+<p>
+These load events can be captured by setting the <code>onload</code> attribute on
+the <code>body</code> element in HTML documents, or by setting the
+<code>window.onload</code> property or calling <code>window.addEventListener</code>.
+</p>
+<p>
+When document conversion has finished, Prince will fire the
+<code>complete</code> event on the <code>Prince</code> object. This event can
+be captured by calling <code>Prince.addEventListener</code>, and is useful for
+logging document statistics.
+</p>
+<p>
+User interface events such as <code>onclick</code> are not supported by Prince.
+</p>
+
+<h2>Document statistics</h2>
+<p>
+The <code>Prince.pageCount</code> property can be accessed after document
+conversion has finished, then logged as data for the calling process to access:
+</p>
+<pre>
+function logPageCount()
+{
+    Log.data("total-page-count", Prince.pageCount);
+}
+
+Prince.addEventListener("complete", logPageCount, false);
+</pre>
+
+<h2>PDF properties</h2>
+<p>
+The <code>PDF</code> object can be used to specify PDF properties and
+settings, including attaching extra files to the generated PDF,
+similar to the <code>--attach</code> command-line argument:
+</p>
+<pre>
+PDF.attachFile(URL, [Description])
+
+PDF.attachFile("data.xls", "Latest sales figures.");
+</pre>
+<p>
+Other PDF properties include:
+</p>
+<pre>
+PDF.embedFonts (boolean)
+PDF.subsetFonts (boolean)
+PDF.artificialFonts (boolean)
+PDF.compress (boolean)
+PDF.encrypt (boolean)
+PDF.userPassword, ownerPassword (string, can be null)
+PDF.allowPrint, allowModify, allowCopy, allowAnnotate (boolean)
+PDF.keyBits (40 | 128)
+PDF.script (string, can be null)
+PDF.openAction (eg. "print")
+PDF.pageLayout (single-page | one-column | two-column[-left/right)
+PDF.pageMode (auto | show-bookmarks | fullscreen | show-attachments)
+PDF.printScaling (auto | none)
+</pre>
+
+<h2>Unsupported DOM properties</h2>
+
+<p>
+The following DOM properties are not supported in Prince 8.1:
+</p>
+<pre>
+document.write
+
+window.setTimeout
+window.clearTimeout
+window.setInterval
+</pre>
+
+</div>
+
+</div>
+</div>
+<script src="/js/warning.js"></script>
+<div id="footer"><div id="footer-inner">
+<p id="footer-copy">Copyright © 2002 – 2025 YesLogic Pty. Ltd.</p>
+<ul id="footer-nav">
+<li><a href="/">Home</a></li>
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+</div></div>
+</body>
+</html>

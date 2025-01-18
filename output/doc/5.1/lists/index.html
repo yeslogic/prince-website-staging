@@ -1,0 +1,213 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<meta name="robots" content="noindex">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<title>Prince - Lists</title>
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<style type="text/css">
+ol.position {
+    padding-right: 15px;
+}
+
+ol.position li {
+    border: solid 1px #4d4d4d;
+    padding: 2px 5px
+}
+
+ol.position li.inside {
+    margin-bottom: 15px
+}
+
+li.inside { list-style-position: inside }
+li.upper_alpha { list-style-type: upper-alpha }
+li.lower_roman { list-style-type: lower-roman }
+
+</style>
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+<div id="header-inner">
+<div><a href="/"><img src="/images/logo2.png" alt="Prince"></a></div>
+<ul id="primary-nav">
+<li><a href="/download/">Download</a></li>
+<li><a href="/purchase/">Buy Prince</a></li>
+<li><a href="/samples/">Samples</a></li>
+<li><a href="/doc/" class="curr">Documentation</a></li>
+<li><a href="/forum/">Forum</a></li>
+</ul>
+</div>
+<div id="header-shadow"></div>
+</div>
+<div id="intro"><div id="intro-inner"><h1>Lists</h1></div></div>
+
+<div class="main">
+
+
+
+<div class="col1">
+
+<p>
+A list item has two parts: <i>marker</i> and <i>content</i>.
+</p>
+<p>
+The <i>content</i> part is rendered inside the list item's border box,
+and is styled the same way as a normal block, 
+such as <i>div</i> or <i>p</i> element.
+</p>
+<p>
+The <i>marker</i> positioning is determined by the <i>list-style-position</i> 
+property and is styled using the <i>::marker</i> pseudo-element.
+</p>
+
+<h2>List marker position</h2>
+<p>
+List markers are rendered outside the list item in the left
+margin area by default.
+If the CSS property <i>list-style-position</i> has value <i>inside</i>,
+the marker is rendered as the first inline box inside the list item.
+</p>
+
+<div class="example">
+<p class="label">CSS</p>
+<pre class="css">
+ol { 
+    padding-left: 1cm;
+    border: solid 2px darkgreen
+}
+li { border: solid 1px black } 
+li.inside { list-style-position: inside }
+li.outside { list-style-position: outside } 
+</pre>
+<p class="label">Output</p>
+<div class="output">
+<ol class="position">
+<li class="inside">
+    This list item sets the <i>list-style-position</i> to <i>inside</i>,
+    so the list marker is rendered inside the principal box of <i>li</i>.
+</li>
+<li class="outside">
+    This list item sets the <i>list-style-position</i> to <i>outside</i>,
+    so the list marker is rendered outside the principal box of <i>li</i>.
+</li>
+</ol>
+</div>
+<p class="comment">
+When the marker position is <i>outside</i>, it is rendered outside
+the <i>li</i> principal box. 
+If you want the marker to appear inside the principal box of <i>ol</i>,
+make sure to give <i>ol</i> enough left padding
+or <i>li</i> enough left margin.
+</p>
+</div>
+
+
+<h2>List marker type</h2>
+<p>
+Different list marker types can be chosen by setting the 
+CSS property <i>list-style-type</i> to different values:
+disc | hyphen | decimal | lower-alpha | ...
+</p>
+<p>
+<i>list-style-type</i>
+applies to list items and determines the type of marker that 
+they receive. The following table shows examples of the various 
+list style types (also supported are octal, binary, 
+lower-hexadecimal and upper-hexadecimal).
+</p>
+<table class="grid">
+<tr>
+<td>decimal</td>
+<td>1, 2, 3, ...</td>
+</tr>
+<tr>
+<td>decimal-leading-zero</td>
+<td>01, 02, 03, ... 09, 10, 11, ...</td>
+</tr>
+<tr>
+<td>lower-alpha<br>lower-latin</td>
+
+<td>a, b, c, ... z, aa, ab, ...</td>
+</tr>
+<tr>
+<td>upper-alpha<br>upper-latin</td>
+<td>A, B, C, ... Z, AA, AB, ...</td>
+</tr>
+<tr>
+<td>lower-roman</td>
+<td>i, ii, iii, iv, v, vi, ...</td>
+</tr>
+<tr>
+
+<td>upper-roman</td>
+<td>I, II, III, IV, V, VI, ...</td>
+</tr>
+<tr>
+<td>asterisks</td>
+<td>*, **, ***, ...</td>
+</tr>
+</table>
+
+<div class="example">
+<p class="label">CSS</p>
+<pre class="css">
+li.upper_alpha { list-style-type: upper-alpha }
+li.lower_roman { list-style-type: lower-roman }
+</pre>
+<p class="label">Output</p>
+<div class="output">
+<ol>
+<li class="upper_alpha">
+    The marker type of this list item is upper-alpha.
+</li>
+<li class="lower_roman">
+    The marker type of this list item is lower-roman.
+</li>
+</ol>
+</div>
+</div>
+ 
+
+<h2>List marker style</h2>
+<p>
+The <i>::marker</i> pseudo-element can be used to style the list item marker,
+giving control over its content, width, alignment and so on.
+</p>
+
+<div class="example">
+<p class="label">CSS</p>
+<pre class="css">
+li::marker { width: 2.4cm }
+li.left::marker { text-align: left }
+li.center::marker { text-align: center }
+li.right::marker { text-align: right }
+li.text_marker::marker { 
+    content: "Number " counter(list-item) 
+} 
+li.image_marker::marker { 
+    content: url("../../image/prince.jpg") 
+} 
+</pre>
+<p class="label">Output</p>
+<img src="/images/doc-5.1/marker.png" alt="Marker example">
+</div> 
+
+</div>
+
+</div>
+</div>
+<script src="/js/warning.js"></script>
+<div id="footer"><div id="footer-inner">
+<p id="footer-copy">Copyright © 2002 – 2025 YesLogic Pty. Ltd.</p>
+<ul id="footer-nav">
+<li><a href="/">Home</a></li>
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+</div></div>
+</body>
+</html>

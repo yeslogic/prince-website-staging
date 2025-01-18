@@ -1,0 +1,1667 @@
+<!DOCTYPE html><html class="p10" id="doc-12">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/common10.css">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.min.css">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.theme.min.css">
+<title>Prince - Installation Guide</title>
+<link rel="stylesheet" type="text/css" href="/css/doc-style2.css">
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="/js/dynamicscrollspy.js"></script>
+<script type="text/javascript" src="/js/skrollr-simplemodal-masonry.min.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
+<script>
+
+    $(function() {
+      $('#scrollspy').DynamicScrollspy({
+        affix: false, //affix by default
+        tH: 1, //lowest-level header to be included (H2)
+        bH: 6, //highest-level header to be included (H6)
+        genIDs: false, //generate random IDs for headers?
+        offset: 300, //offset from viewport top for scrollspy
+        testing: false //if testing, append heading tagName and ID to each heading
+      });
+    })
+
+function shiftWindow() { if ((location.hash.indexOf('window.') == 1) || (location.hash.indexOf('prop-') == 1) || (location.hash.indexOf('cl-') == 1) || (location.hash.indexOf('fig.') == 1) || (location.hash.indexOf('at-') == 1) || (location.hash.indexOf('note-') == 1)) { scrollBy(0, -100);
+}};
+
+function toggleDetails() { if ((location.hash.indexOf('window.') == 1) || (location.hash.indexOf('prop-') == 1)) {
+var prop = document.getElementById(location.hash.substr(1));
+var att = document.createAttribute('open');
+var parentDetails = $(prop).parents('details');
+for (i = 0; i < parentDetails.length; i++) {
+  parentDetails[i].setAttribute('open','')
+}
+prop.scrollIntoView();
+}};
+
+function toggleAllDetails(t) {
+if (t == 'js') { var type = 'js-support-table' } else if (t == 'css') { var type = 'prop-list' };
+var g = document.getElementById(type);
+var d = g.getElementsByTagName('details');
+var id = 'toggle-' + t;
+var a = document.getElementById(id);
+if ( a.hasAttribute('open') == false ) {
+for (i=0; i < d.length; i++) {
+  d[i].setAttribute('open','');
+  a.setAttribute('open','');
+}}
+else if ( a.hasAttribute('open') == true ) {
+for (i=0; i < d.length; i++) {
+  d[i].removeAttribute('open');
+  a.removeAttribute('open');
+}}
+if ( t == 'js' ) { document.getElementById('.window').parentElement.setAttribute('open','') }
+}
+
+window.addEventListener("load",  function() { toggleDetails(); shiftWindow(); });
+window.addEventListener("hashchange", function() { toggleDetails(); shiftWindow(); });
+
+</script>
+
+</head>
+<body class="user-guide" id="doc-install">
+
+<div class="header-container">
+    <div class="mainheader-container">
+        <div class="header">
+            <div class="logo">
+                <a href="/"><img src="/images/Prince-logo.png" alt="Prince"></a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="/purchase/">Buy Prince</a></li>
+                    <li><a href="/samples/">Samples</a></li>
+                    <li><a class="current" href="/doc/">
+                      Documentation</a></li>
+                    <li><a href="/forum/">Forum</a></li>
+                    <li><a class="menu-cta" href="/download/">
+                      Download</a></li>
+                </ul>
+            </div>
+            <div style="clear:both"></div>
+            <a class="mobile-menu-trigger"><img src="/images/menu-icon2.png" alt=""></a>
+        </div>
+    </div>
+    <div class="subheader-container">
+        <div class="subheader">
+            <div class="submenu">
+                <ul>
+                    <li><a href="/doc/12/doc-install/" class="sub-current">Installation Guide</a></li>
+                    <li><a href="/doc/12/doc-prince/">User Guide</a></li>
+                    <li><a href="/doc/12/doc-refs/">Reference Guide</a></li>
+                </ul>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+    </div>
+</div>
+
+<div class="content1150 body-and-footer-container">
+<div class="body-container">
+
+<div id="scrollspy"></div>
+<div class="main-frame">
+
+
+<h1 id="start">Getting Started  <a href="#start" class="self-link"></a><a href="#start" class="self-link"></a>
+</h1>
+
+<p>
+Let's get started with Prince.
+We will download and install the software and use it to generate a PDF from
+a very simple document with a very basic stylesheet.
+This chapter will get you up and running with Prince as quickly as possible.
+</p>
+
+<p>
+Readers should already be familiar with HTML and CSS - many good tutorials
+are available on the topic.  Familiarity with your computer's command line
+interface is desirable but not essential.
+Because the chapter is aimed at getting started as quickly as possible we
+may skip some explanations,
+don't worry as these will be covered later in the manual.
+</p>
+
+<p>
+If Prince is already installed, you can directly skip to the
+<a href="/doc/12/doc-prince/">User Guide</a>.
+</p>
+
+<h2 id="installing">Installing Prince  <a href="#installing" class="self-link"></a><a href="#installing" class="self-link"></a>
+</h2>
+
+<p>
+Prince is available for Windows, MacOS X, Linux (multiple distributions) and
+FreeBSD.  You can download the relevant file from our
+<a href="/download/">downloads page</a>.
+For Linux and FreeBSD you may need to choose based on your
+distribution type, version and processor type (32/64 bits).
+</p>
+
+<p>
+Prince is provided under the terms of the
+<a href="/license/">Prince End-User License Agreement</a>.
+</p>
+
+<h3 id="windows">Installing Prince on Windows  <a href="#windows" class="self-link"></a><a href="#windows" class="self-link"></a>
+</h3>
+
+<ol class="procedure">
+<li>
+Downlad your installation package from the <a href="/download/">Download Page</a>.
+</li>
+<li>
+<p>
+After downloading and attempting to run the installer you might see a
+confirmation screen like this.  Click "run".
+Note that the filename for the installer may be different than the one shown
+in the picture.
+</p>
+
+<div class="figure">
+  <div class="title">Run installer confirmation</div>
+  <img src="/images/doc-latest/install_01.png" alt="Confirmation dialog box asking if the user wishes to run the installer.">
+</div>
+</li>
+
+<li>
+<p>
+The installer will display a welcome screen like the one below.  Click next.
+</p>
+
+<div class="figure">
+  <div class="title">Installer welcome screen</div>
+  <img src="/images/doc-latest/install_02.png" alt="The installer welcome screen">
+</div>
+</li>
+
+<li>
+<p>
+Next you will need to accept the license agreement.
+The text of the license agreement is also available
+<a href="/license/">here</a>.
+Accept the agreement and click Next.
+</p>
+
+<div class="figure">
+  <div class="title">Installer license agreement screen</div>
+  <img src="/images/doc-latest/install_03.png" alt="The installer license agreement screen">
+</div>
+</li>
+
+<li>
+<p>
+Choose the installation directory for Prince.
+The default is recommended unless you have a specific reason to install
+Prince elsewhere.
+When using Prince from the command line we will use the executable in the
+<code class="filename">Engine\bin\</code> subdirectory.
+The installation requires only 16MB of disk space.
+</p>
+
+<div class="figure">
+  <div class="title">Installation location screen</div>
+  <img src="/images/doc-latest/install_04.png" alt="The installer's installation location screen">
+</div>
+</li>
+
+<li>
+<p>
+The installation will confirm the installation details with you before
+performing the installation.
+Click Next to continue.
+
+</p>
+</li>
+
+<li>
+<p>
+After the installation has completed you have the option to launch the
+Prince graphical user interface (GUI).
+The Prince graphical user interface is only available for Microsoft Windows.
+<a href="/doc/12/doc-install/#first-doc">Your First Document</a> provides more information about how to use both
+the GUI and the command line interfaces.
+Click Finish to close the installer.
+</p>
+
+<div class="figure">
+  <div class="title">Installation complete</div>
+  <img src="/images/doc-latest/install_05.png" alt="The installer's completion screen">
+</div>
+</li>
+</ol>
+
+<p>
+To run Prince on Windows, you typically double-click on the Prince icon
+created during installation.  You can also run only the binary, without the
+GUI, like on all other systems - for details please see the
+<a href="/doc/12/doc-refs/#command-line">Command-line Reference</a>.
+</p>
+
+<p>
+For the layout of a Prince installation on Windows, see the
+<a href="/doc/12/doc-install/#windows-layout">Windows installation layout</a> section.
+</p>
+
+<p>
+For information about using Prince from
+PHP, Java, .NET, and other server frameworks you will need to install one or
+more <a href="/download/wrappers/">Prince wrappers</a>.
+See <a href="/doc/12/doc-prince/#server-integration">Server Integration</a> for installation and usage information.
+</p>
+
+
+
+  <h3 id="macos">Installing Prince on MacOS X  <a href="#macos" class="self-link"></a><a href="#macos" class="self-link"></a>
+</h3>
+
+
+<p>
+To install Prince on MacOS X, please run the <code>install.sh</code> shell
+script contained in the package downloaded to your computer from the
+<a href="/download/">download page</a>.  This will involve the following
+procedure:
+</p>
+
+<ol class="procedure">
+<li>
+Open the Terminal application.
+</li>
+<li>
+Change to the download directory and unpack the downloaded file.
+<div class="example">
+<div class="programlisting"><code><pre>$ <span class="userinput">cd <span class="replaceable">download_directory</span></span>
+$ <span class="userinput">tar xvf <span class="replaceable">prince-package-macosx.tar.gz</span></span></pre></code></div>
+</div>
+</li>
+<li>
+Change to the extracted directory.
+<div class="example">
+<div class="programlisting"><code><pre>$ <span class="userinput">cd <span class="replaceable">prince-package-macosx</span></span></pre></code></div>
+</div>
+</li>
+<li>
+Run the installation shell script.
+<div class="example">
+<div class="programlisting"><code><pre>$ <span class="userinput">./install.sh</span></pre></code></div>
+</div>
+</li>
+<li>
+Follow the prompts to install Prince. Please note that you will need to be
+logged in as root if you wish to install Prince into a system directory such
+as <code>/usr/local</code>, which is the default value.  This can be
+accomplished by running the installation script using <code>sudo</code>,
+which will prompt you for your password:
+<div class="example">
+<div class="programlisting"><code><pre>$ <span class="userinput">sudo ./install.sh</span>
+Password: .....</pre></code></div>
+</div>
+</li>
+</ol>
+
+<p>
+If you chose a non-standard location you may need to add the
+<code class="filename">bin/</code> subdirectory to your <code>PATH</code>
+environment variable.
+There are many different types of command interpreters (also called shells),
+we cannot possibly document all of them.
+However for Bourne-style shells (the most common type)
+the command might look like this:
+</p>
+
+
+<div class="example">
+<div class="programlisting"><code><pre>$ <span class="userinput">export PATH=<span class="replaceable">/usr/local/prince12</span>/bin:$PATH</span></pre></code></div>
+</div>
+
+<p>
+You will need to add the appropriate command to your shell's configuration or
+startup file.
+See your distribution or shell's documentation for how to do this.
+</p>
+
+<p>
+Prince is now ready to use - to run Prince on MacOS X, enter the <code>prince</code>
+command on the command line - for details please see the <a href="/doc/12/doc-refs/#command-line">Command-line Reference</a>.
+<a href="/doc/12/doc-install/#first-doc">Your First Document</a> will walk you through generating your first PDF
+document.
+</p>
+
+<p>
+For the layout of a Prince installation on MacOS X, see the
+<a href="/doc/12/doc-install/#macosx-layout">MacOS X installation layout</a> section.
+</p>
+
+<p>
+For information about using Prince from
+PHP, Java, .NET, and other server frameworks you will need to install one or
+more <a href="/download/wrappers/">Prince wrappers</a>.
+See <a href="/doc/12/doc-prince/#server-integration">Server Integration</a> for installation and usage information.
+</p>
+
+
+
+
+  <h3 id="linux">Installing Prince on Linux/FreeBSD  <a href="#linux" class="self-link"></a><a href="#linux" class="self-link"></a>
+</h3>
+
+<p>
+Prince is installed using the terminal.  The installation package can be
+downloaded from the <a href="/download/">Download Page</a>.
+Then open a terminal window and change to the directory that you downloaded or
+copied the installation package to.
+The <code>$</code> symbol represents the command prompt and the text that
+follows is the command,
+you should not type in the <code>$</code> symbol.
+</p>
+
+<div class="example">
+<div class="programlisting"><code><pre>$ <span class="userinput">cd <span class="replaceable">download_directory</span></span></pre></code></div>
+</div>
+
+<p>
+Depending on your distribution and the package that you downloaded you may
+be able to install Price using the tools provided by your distribution.
+</p>
+
+
+  <h4 id="install-debian">Debian and Ubuntu  <a href="#install-debian" class="self-link"></a><a href="#install-debian" class="self-link"></a>
+</h4>
+
+<p>
+On Debian and Ubuntu Linux you can use <code>gdebi</code>
+to install Prince and its dependencies.
+<code>gdebi</code> will automatically download and install any package
+dependencies,
+therefore it is often easier to use <code>gdebi</code> than
+<code>dpkg</code> which will not automatically install dependencies.
+If you're not logged in as root (and you shouldn't be), then you can use
+<code>sudo</code> to run the <code>gdebi</code> command as root.
+</p>
+
+<div class="example">
+<div class="screen"><code><pre>$ <span class="userinput">sudo gdebi <span class="replaceable">prince_package_debian_amd64.deb</span></span>
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+Building data structures... Done
+Building data structures... Done
+
+formatter for converting XML and HTML into PDF
+ This program converts XML and HTML into PDF.
+Do you want to install the software package? [y/N]:<span class="userinput">y</span>
+Selecting previously unselected package prince.
+(Reading database ... 319168 files and directories currently installed.)
+Preparing to unpack <span class="replaceable">prince_package_debian_amd64.deb</span> ...
+Unpacking prince ...
+Setting up prince ...
+Processing triggers for man-db ...</pre></code></div>
+</div>
+
+<p>
+If <code>gdebi</code> is not already installed then you can install it using
+<code>aptitude</code> as follows.
+<code>aptitude</code> cannot be used to install Prince itself as Prince is
+not available in a Debian repository.
+</p>
+
+<div class="example">
+<div class="programlisting"><code><pre>
+$ <span class="userinput">sudo aptitude install gdebi</span>
+</pre></code></div>
+</div>
+
+
+
+
+  <h4 id="install-centos">CentOS and Redhat  <a href="#install-centos" class="self-link"></a><a href="#install-centos" class="self-link"></a>
+</h4>
+
+<p>
+On RPM based systems, such as CentOS or Redhat Enterprise Linux,
+you should use the <code>yum</code> tool to install Prince.
+If you're not logged in as root (and you shouldn't be), then you can use
+<code>sudo</code> to run the <code>yum</code> command as root.
+</p>
+
+<div class="example">
+<div class="programlisting"><code><pre>$ <span class="userinput">sudo yum install <span class="replaceable">prince-package.centos.x86_64.rpm</span></span></pre></code></div>
+</div>
+
+<p>
+We have not shown all of <code>yum</code>'s output here as there is a lot of
+it.
+The process should prompt you before installation, which will look
+similar to:
+</p>
+
+<div class="example">
+<div class="screen"><code><pre>================================================================================
+ Package        Arch    Version            Repository                      Size
+================================================================================
+Installing:
+ prince         x86_64  version            /prince-package.centos.x86_64   13 M
+Installing for dependencies:
+ fontconfig     x86_64  2.8.0-5.el6        base                           186 k
+ giflib         x86_64  4.1.6-3.1.el6      base                            37 k
+ libSM          x86_64  1.2.1-2.el6        base                            37 k
+ libX11         x86_64  1.6.0-2.2.el6      base                           586 k
+ libX11-common  noarch  1.6.0-2.2.el6      base                           192 k
+ libjpeg-turbo  x86_64  1.2.1-3.el6_5      base                           174 k
+ libtiff        x86_64  3.9.4-10.el6_5     base                           343 k
+
+Transaction Summary
+================================================================================
+Install       8 Package(s)
+
+Total size: 15 M
+Total download size: 1.5 M
+Installed size: 18 M
+Is this ok [y/N]: <span class="userinput">y</span>
+Downloading Packages:</pre></code></div>
+</div>
+
+<p>
+The process will then end with messages similar to:
+</p>
+
+<div class="example">
+<div class="screen"><code><pre>Installed:
+  prince.x86_64 0:version
+
+Dependency Installed:
+  fontconfig.x86_64 0:2.8.0-5.el6        giflib.x86_64 0:4.1.6-3.1.el6
+  libSM.x86_64 0:1.2.1-2.el6             libX11.x86_64 0:1.6.0-2.2.el6
+  libX11-common.noarch 0:1.6.0-2.2.el6   libjpeg-turbo.x86_64 0:1.2.1-3.el6_5
+  libtiff.x86_64 0:3.9.4-10.el6_5
+
+Complete!</pre></code></div>
+</div>
+
+<p>
+Prince is now ready to use.
+<a href="/doc/12/doc-install/#first-doc">Your First Document</a> will walk you through generating your first PDF
+document.
+</p>
+
+<p>
+For information about using Prince from
+PHP, Java, .NET, and other server frameworks you will need to install one or
+more <a href="/download/wrappers/">Prince wrappers</a>.
+See <a href="/doc/12/doc-prince/#server-integration">Server Integration</a> for installation and usage information.
+</p>
+
+
+
+
+
+
+
+
+<h4 id="install-generic">Tarballs - Alpine Linux, FreeBSD and Generic Linux  <a href="#install-generic" class="self-link"></a><a href="#install-generic" class="self-link"></a>
+</h4>
+
+<p>
+Prince can be installed on Alpine Linux and FreeBSD from a <i>tarball</i> (a
+<code class="filename">.tar.gz</code> file).  The tarball packages can also
+be used on Linux when there is no <code class="filename">.deb</code> or
+<code class="filename">.rpm</code> package for your system or the package for
+your system didn't work for some reason.  In these cases this section
+contains the relevant installation instructions.
+</p>
+
+<p>
+Start by choosing the tarball that is the closest match for your system,
+take care to match operating system (Linux vs FreeBSD) and processor type
+(32 vs 64bit - please note that Prince supports only x86 and x86_64
+processors).
+</p>
+
+<p class="note">
+The Generic Linux package should be able to run on a wider range of Linux
+versions than other packages.
+</p>
+
+<p>
+These packages rely on some shared libraries installed on your system.
+Prince is just using the system shared object loader for most libraries, so
+the <code>LD_LIBRARY_PATH</code> environment variable might need to be
+edited, if you have installed these libraries in different locations.
+</p>
+
+<p>
+The <code>bin/prince</code> script in the installation directory (see
+<a href="/doc/12/doc-install/#linux-layout">Linux and FreeBSD installation layout</a>) is a wrapper script that calls the executable,
+and should be a suitable place to set or modify the <code>LD_LIBRARY_PATH</code>
+variable in order to configure where the loader should look for shared
+libraries.
+</p>
+
+<p>
+To install Prince from a tarball enter these commands.
+</p>
+
+<div class="example">
+<div class="screen"><code><pre>$ <span class="userinput">tar xzf <span class="replaceable">prince-package-freebsd-amd64.tar.gz</span></span> <co id="co.fbsd.unpack"></co>
+$ <span class="userinput">cd <span class="replaceable">prince-package-freebsd-amd64</span></span> <co id="co.fbsd.cd"></co>
+$ <span class="userinput">sudo ./install.sh</span> <co id="co.fbsd.install"></co>
+Prince
+
+Install directory
+    This is the directory in which Prince will be installed.
+    Press Enter to accept the default directory or enter an alternative.
+    [/usr/local]: <co id="co.fbsd.path"></co>
+
+Installing Prince...
+Creating directories...
+Installing files...
+
+Installation complete.
+    Thank you for choosing Prince, we hope you find it useful.
+    Please visit http://www.princexml.com for updates and development news.</pre></code></div>
+<ol class="calloutlist">
+  <li class="callout" arearefs="co.fbsd.unpack">
+    <p>
+      Start by unpacking the package.
+      Note that the package name may be different than the example shown
+      here.
+      This will create a new directory containing the Prince files.
+    </p>
+  </li>
+  <li class="callout" arearefs="co.fbsd.cd">
+    <p>
+      Change into the new directory unpacked by the package.
+      As before, the directory name may be different from the one in this
+      example.
+    </p>
+  </li>
+  <li class="callout" arearefs="co.fbsd.install">
+    <p>
+      Run the <code class="filename">install.sh</code> script.
+      If you want to install Prince for multiple users you may need to
+      execute this command with <code>sudo</code> as shown here.
+      <code>sudo</code> will execute the given command with `root'
+      (administrator) privileges.
+      It may prompt you for your password (your user account's password)
+      before executing the command.
+      If you're installing Prince for only one user you can omit
+      <code>sudo</code> from this command.
+    </p>
+  </li>
+  <li class="callout" arearefs="co.fbsd.path">
+    <p>
+      The script will prompt you for the installation directory.
+      You can press enter to accept the default
+      (<code class="filename">/usr/local</code>)
+      or type in your preferred directory.
+      In this example the user has accepted the default by pressing
+      <code class="keycap">ENTER</code> without entering anything.
+      If you're installing Prince for only one user (and not using
+      <code>sudo</code> you will need to choose a directory that you have
+      write access to.
+    </p>
+  </li>
+</ol>
+</div>
+
+<p>
+If you chose a non-standard location you may need to add the
+<code class="filename">bin/</code> subdirectory to your <code>PATH</code>
+environment variable.
+There are many different types of command interpreters (also called shells),
+we cannot possibly document all of them.
+However for borne-style shells (the most common type)
+the command might look like this:
+</p>
+
+<div class="example">
+<div class="programlisting"><code><pre>
+export PATH=<span class="replaceable">/usr/local/prince10</span>/bin:$PATH
+</pre></code></div>
+</div>
+
+<p>
+You will need to add the appropriate command to your shell's configuration or
+startup file.
+See your operating system's or shell's documentation for how to do this.
+</p>
+
+<p>
+Prince is now ready to use.
+<a href="/doc/12/doc-install/#first-doc">Your First Document</a> will walk you through generating your first PDF
+document.
+</p>
+
+<p>
+For information about using Prince from
+PHP, Java, .NET, and other server frameworks you will need to install one or
+more <a href="/download/wrappers/">Prince wrappers</a>.
+See <a href="/doc/12/doc-prince/#server-integration">Server Integration</a> for installation and usage information.
+</p>
+
+
+
+
+
+  <h2 id="license-install">Installing a license file  <a href="#license-install" class="self-link"></a><a href="#license-install" class="self-link"></a>
+</h2>
+
+
+
+
+
+<p>
+If you've purchased Prince you can install your license file
+(which you will receive via e-mail)
+to remove the watermark on generated documents.
+This section will explain how to install the license file.
+If instead you're using the free version of Prince then you don't need to
+install a license file.
+</p>
+
+<h3 id="license-install-windows">Installing a license file on Windows  <a href="#license-install-windows" class="self-link"></a><a href="#license-install-windows" class="self-link"></a>
+</h3>
+
+<p>
+On Windows you can install a license by following these steps:
+</p>
+
+<ol class="procedure">
+<li>
+<p>
+Open the license window by clicking the License icon in the main window.
+</p>
+<div class="figure" id="fig.license1">
+  <div class="title">Click the license button</div>
+  <img src="/images/doc-latest/gui_03.png" width="616" alt="Image showing the license button in the main Prince GUI.">
+</div>
+</li>
+<li>
+<p>
+Click the open button and choose your license file.
+</p>
+<div class="figure" id="fig.license2">
+  <div class="title">License window</div>
+  <img src="/images/doc-latest/gui_04.png" width="330" alt="Image showing the license window with the open button">
+</div>
+</li>
+<li>
+<p>
+The license should be displayed in the lower part of the window, click the
+accept button to install it then click Ok.
+</p>
+<div class="figure" id="fig.license3">
+  <div class="title">License window with license</div>
+  <img src="/images/doc-latest/gui_05.png" width="331" alt="Image showing the license window with a license selected but not yet installed">
+</div>
+</li>
+</ol>
+
+<h3 id="license-install-other">Installing a license file on other systems  <a href="#license-install-other" class="self-link"></a><a href="#license-install-other" class="self-link"></a>
+</h3>
+
+<p>
+On other systems copy the <code class="filename">license.dat</code> file
+into the <code class="filename">lib/prince/license</code>
+directory of the Prince installation (see <a href="/doc/12/doc-install/#installation-layout">Installation Layout</a>).
+For example, if Prince was installed into the default
+<code class="filename">/usr/local</code> directory,
+the license file should be copied to
+<code class="filename">/usr/local/lib/prince/license/license.dat</code>
+</p>
+
+<div class="example">
+<div class="screen"><code><pre>$ <span class="userinput">cp <code class="filename">license.dat</code> <code class="filename">/usr/local/lib/prince/license/license.dat</code></span>
+$ <span class="userinput">prince --version</span>
+Prince 10 rev 3
+Copyright 2002-2015 YesLogic Pty. Ltd.
+Test License</pre></code></div>
+</div>
+
+<p>
+Remember to backup your license file in case you want to reinstall Prince in
+the future.
+</p>
+
+
+
+
+
+<h2 id="installation-layout">Installation Layout  <a href="#installation-layout" class="self-link"></a><a href="#installation-layout" class="self-link"></a>
+</h2>
+
+<p>
+This section details where Prince installs its files in the various supported operating
+systems.
+</p>
+
+
+<h3 id="windows-layout">Windows installation layout  <a href="#windows-layout" class="self-link"></a><a href="#windows-layout" class="self-link"></a>
+</h3>
+
+<p>
+Prince installs its files to <code>%ProgramFiles%</code> on 32-bit Windows, and to
+<code>%ProgramFiles(x86)%</code> on 64-bit Windows.
+</p>
+
+<ul>
+  <li>
+<code>prince-gui.exe</code> is the Prince GUI</li>
+  <li>the subdirectory <code>engine</code> contains all resource files</li>
+</ul>
+
+<p class="note">
+On 64-bit Windows, the Prince GUI is a 32-bit program, but the formatting engine
+is 64-bit.
+</p>
+
+<p>
+In the subfolder <code>engine</code> are all resource files:
+</p>
+
+<table class="grid">
+    <thead>
+    <tr>
+        <th>Folder</th>
+        <th>Function</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><code>bin</code></td>
+        <td>The Prince core (<code>prince.exe</code>)</td>
+    </tr>
+    <tr>
+        <td><code>contrib</code></td>
+        <td>Licenses for open source libraries used by Prince</td>
+    </tr>
+    <tr>
+        <td><code>dict</code></td>
+        <td>LibThai dictionary, used by Prince to handle word breaking in the Thai language</td>
+    </tr>
+    <tr>
+        <td><code>dtd</code></td>
+        <td>Document Type Definitions (DTDs) for XML languages understood by Prince</td>
+    </tr>
+    <tr>
+        <td><code>etc</code></td>
+        <td>The CA certificate bundle used for retrieving documents over HTTPS</td>
+    </tr>
+    <tr>
+        <td><code>hyph</code></td>
+        <td>The hyphenation dictionaries for common languages</td>
+    </tr>
+    <tr>
+        <td><code>icc</code></td>
+        <td>ICC color profiles</td>
+    </tr>
+    <tr>
+        <td><code>lib</code></td>
+        <td>Shared libraries required by Prince</td>
+    </tr>
+    <tr>
+        <td><code>license</code></td>
+        <td>The Prince license file</td>
+    </tr>
+    <tr>
+        <td><code>math</code></td>
+        <td>MathML resource files</td>
+    </tr>
+    <tr>
+        <td><code>style</code></td>
+        <td>The default CSS style sheets</td>
+    </tr>
+    </tbody>
+</table>
+
+
+
+
+<h3 id="macosx-layout">MacOS X installation layout  <a href="#macosx-layout" class="self-link"></a><a href="#macosx-layout" class="self-link"></a>
+</h3>
+
+<p>
+Prince installs its files by default to <code>/usr/local</code> on MacOS X:
+</p>
+
+<ul>
+  <li>
+<code>/usr/local/bin/prince</code> is the shell script</li>
+  <li>
+<code>/usr/local/lib/prince/</code> contains all resource files</li>
+</ul>
+
+<p>
+In the resource directory are all resource files:
+</p>
+
+<table class="grid">
+    <thead>
+    <tr>
+        <th>Folder</th>
+        <th>Function</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><code>bin</code></td>
+        <td>The Prince core (the <code>prince</code> binary executable) and
+        (as of Prince 11.3) the <code>princedebug</code> script</td>
+    </tr>
+    <tr>
+        <td><code>dict</code></td>
+        <td>LibThai dictionary, used by Prince to handle word breaking in the Thai language</td>
+    </tr>
+    <tr>
+        <td><code>dtd</code></td>
+        <td>Document Type Definitions (DTDs) for XML languages understood by Prince</td>
+    </tr>
+    <tr>
+        <td><code>etc</code></td>
+        <td>The CA certificate bundle used for retrieving documents over HTTPS</td>
+    </tr>
+    <tr>
+        <td><code>hyph</code></td>
+        <td>The hyphenation dictionaries for common languages</td>
+    </tr>
+    <tr>
+        <td><code>icc</code></td>
+        <td>ICC color profiles</td>
+    </tr>
+    <tr>
+        <td><code>lib</code></td>
+        <td>Shared libraries required by Prince</td>
+    </tr>
+    <tr>
+        <td><code>license</code></td>
+        <td>The Prince license file</td>
+    </tr>
+    <tr>
+        <td><code>math</code></td>
+        <td>MathML resource files</td>
+    </tr>
+    <tr>
+        <td><code>style</code></td>
+        <td>The default CSS style sheets</td>
+    </tr>
+    </tbody>
+</table>
+
+
+
+
+<h3 id="linux-layout">Linux and FreeBSD installation layout  <a href="#linux-layout" class="self-link"></a><a href="#linux-layout" class="self-link"></a>
+</h3>
+
+<p>
+Prince installs its files by default to <code>/usr</code> on Linux and FreeBSD:
+</p>
+
+<ul>
+  <li>
+<code>/usr/bin/prince</code> is the shell script</li>
+  <li>
+<code>/usr/lib/prince/</code> contains all resource files</li>
+</ul>
+
+<p>
+In the resource directory are all resource files:
+</p>
+
+<table class="grid">
+    <thead>
+    <tr>
+        <th>Folder</th>
+        <th>Function</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><code>bin</code></td>
+        <td>The Prince core (the <code>prince</code> binary executable) and
+        (as of Prince 11.3) the <code>princedebug</code> script</td>
+    </tr>
+    <tr>
+        <td><code>dict</code></td>
+        <td>LibThai dictionary, used by Prince to handle word breaking in the Thai language</td>
+    </tr>
+    <tr>
+        <td><code>dtd</code></td>
+        <td>Document Type Definitions (DTDs) for XML languages understood by Prince</td>
+    </tr>
+    <tr>
+        <td><code>etc</code></td>
+        <td>The CA certificate bundle used for retrieving documents over HTTPS</td>
+    </tr>
+    <tr>
+        <td><code>hyph</code></td>
+        <td>The hyphenation dictionaries for common languages</td>
+    </tr>
+    <tr>
+        <td><code>icc</code></td>
+        <td>ICC color profiles</td>
+    </tr>
+    <tr>
+        <td><code>lib</code></td>
+        <td>Shared libraries required by Prince</td>
+    </tr>
+    <tr>
+        <td><code>license</code></td>
+        <td>The Prince license file</td>
+    </tr>
+    <tr>
+        <td><code>math</code></td>
+        <td>MathML resource files</td>
+    </tr>
+    <tr>
+        <td><code>style</code></td>
+        <td>The default CSS style sheets</td>
+    </tr>
+    </tbody>
+</table>
+
+
+
+
+
+
+  <h1 id="first-doc">Your First Document  <a href="#first-doc" class="self-link"></a><a href="#first-doc" class="self-link"></a>
+</h1>
+
+<p>
+In this section we will process a very simple document.
+We've chosen a document that fits HTML's heading and
+paragraph structure naturally: a lab report.
+The lab report will have a title, an author and date, several headings
+(Aim, Hypothesis, Method, Results and Conclusion).
+It does not include a table of results, graphics or diagrams:
+it is a very simple lab report.
+</p>
+
+
+  <h2 id="lab-report">The lab report  <a href="#lab-report" class="self-link"></a><a href="#lab-report" class="self-link"></a>
+</h2>
+
+<p>
+The report itself is very basic, the HTML source is shown below.
+You can save the HTML to a file named <filename>lab_report.html</filename> or
+download it <a href="/samples/doc-latest/lab_report.html">here</a>.
+</p>
+
+<div class="example">
+<div class="programlisting"><code language="HTML"><pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;title&gt;Lab Report&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1&gt;Lab Report&lt;/h1&gt;
+&lt;h2 class="subtitle"&gt;John Doe&lt;/h2&gt;
+
+&lt;h2&gt;Aim&lt;/h2&gt;
+
+&lt;p&gt;
+This simple document aims to show just how easy it is to generate PDFs from
+HTML+CSS using Prince.  The document mostly uses Prince's built in styles
+for HTML, but it also applies some custom styles.  The custom styles: center
+the title and subtitle, choose fonts and specify the style for the hello
+world exclamation below.
+&lt;/p&gt;
+
+&lt;h2&gt;Hypothesis&lt;/h2&gt;
+
+&lt;p&gt;
+Our hypothesis is that generating PDFs using Prince is easy.
+By using a simple document containing only
+&lt;code&gt;h1&lt;/code&gt;,
+&lt;code&gt;h2&lt;/code&gt;,
+&lt;code&gt;h3&lt;/code&gt;,
+&lt;code&gt;p&lt;/code&gt;,
+&lt;code&gt;code&lt;/code&gt;,
+&lt;code&gt;pre&lt;/code&gt;,
+&lt;code&gt;ul&lt;/code&gt; and
+&lt;code&gt;li&lt;/code&gt;
+tags and a simple stylesheet we will generate a PDF that looks good.
+&lt;/p&gt;
+
+&lt;h2&gt;Method&lt;/h2&gt;
+&lt;h3&gt;Apparatus&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Prince&lt;/li&gt;
+  &lt;li&gt;This document&lt;/li&gt;
+  &lt;li&gt;A stylesheet&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Steps&lt;/h3&gt;
+
+Execute this on your computer's command line:
+
+&lt;code&gt;&lt;pre&gt;
+$ prince style.css lab_report.html
+&lt;/pre&gt;&lt;/code&gt;
+
+&lt;h2&gt;Results&lt;/h2&gt;
+
+&lt;p id="hello"&gt;Hello World!&lt;/p&gt;
+
+&lt;h2&gt;Conclusions&lt;/h2&gt;
+
+&lt;p&gt;
+If you're currently looking at a PDF file then this works.
+&lt;/p&gt;
+
+&lt;p&gt;
+The resulting file includes a title and subtitle (centered), a list of the
+apparatus needed.  The resulting file uses a sensible-looking a sans-serif
+font except for the code tags which use a monospace font and the Hello World
+exclamation which has serifs.
+&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre></code></div>
+</div>
+
+<p>
+The report is written using very familiar HTML5 tags.
+Headings (<code class="tag">h1</code>, <code class="tag">h2</code> and
+<code class="tag">h3</code>), paragraphs (<code class="tag">p</code>) and
+lists (<code class="tag">ul</code>, <code class="tag">li</code>) are used for
+the report's structure,
+the <code class="tag">code</code> tag is used to identify code and
+<code class="tag">pre</code> is used to identify pre-formatted text.
+</p>
+
+<p>
+All user agents, including Prince, associate default styles with all of
+these tags.
+Without any explicit styles Prince will format this document in a reasonable
+and familiar way, similar to most web browsers.
+The major difference between Prince and a web browser is that Prince needs
+to create discrete pages,
+a web browser will format the document as a continuous flow.
+See <a href="/doc/12/doc-prince/#paged">Paged Media</a> for more information.
+</p>
+
+
+
+  <h2 id="running-prince">Processing the document  <a href="#running-prince" class="self-link"></a><a href="#running-prince" class="self-link"></a>
+</h2>
+
+<p>
+Process the document using the command line
+<code class="command">prince</code> command:
+</p>
+
+<div class="example">
+<div class="figure-float-right" id="fig.lab-report.unstyled">
+  <div class="title">Unstyled lab report</div>
+  <img src="/images/doc-latest/lab_report-1.bw.png" alt="The unstyled lab report">
+  <div class="caption">
+    The unstyled lab report.  Download the PDF
+    <a href="/samples/doc-latest/lab_report.pdf">here</a>.
+  </div>
+</div>
+
+<div class="screen"><code><pre>$ <span class="userinput">prince <code class="filename">lab_report.html</code></span></pre></code></div>
+</div>
+
+<p>
+This will create a <code class="filename">lab_report.pdf</code>
+file in the current directory.
+If it did not, the <a href="/doc/12/doc-prince/#troubleshooting">Troubleshooting</a> section may be useful.
+When you open the document in a PDF viewer you should see something like
+<a href="/doc/12/doc-install/#fig.lab-report.unstyled">Unstyled lab report</a>.
+Prince has applied a default stylesheet to the document.
+A different default stylesheet is used depending upon the document's type
+(HTML or Docbook XML) see <a href="/doc/12/doc-prince/#xml-input">XML Input</a>.
+The default stylesheet may be overridden by other stylesheets, more on that
+in <a href="/doc/12/doc-prince/#apply-css">Applying Style Sheets in Prince</a>.
+</p>
+
+<div class="figure" id="fig.gui01">
+  <div class="title">Prince GUI</div>
+  <img src="/images/doc-latest/gui_02.png" width="50%" alt="The Prince GUI">
+  <div class="caption">
+    The Prince GUI.  Note that in this image both a HTML and a CSS file
+    had been selected.
+  </div>
+</div>
+
+<p>
+Prince's command line interface supports many options
+(see <a href="/doc/12/doc-refs/#command-line">Command-line Reference</a>) and can be called from scripts and other
+software.
+However some users may not be comfortable with the command line interface.
+On Windows,
+Prince provides a more familiar GUI interface, which can be started by
+choosing Prince from the start menu.
+<a href="/doc/12/doc-install/#fig.gui01">Prince GUI</a> shows the Prince GUI,
+click "Add File(s)" to choose your HTML file
+(<code class="filename">lab_report.html</code>)
+then click the large "Convert" button to convert it.
+Prince will generate a PDF file and place it in the directory with your HTML
+file.
+</p>
+
+
+
+  <h2 id="styling-lab-report">Styling the document  <a href="#styling-lab-report" class="self-link"></a><a href="#styling-lab-report" class="self-link"></a>
+</h2>
+
+<p>
+We can now make the report look better by adding our own styles.
+It is good practice to keep style information separate from the document
+itself.
+This makes it easy to modify or replace the styles later.
+The style information is kept in one or more
+Cascading Style Sheets (CSS) files.
+</p>
+
+<p>
+Let's start by creating and opening a new file named
+<code class="filename">lab_report.css</code>,
+First we can specify a sans-serif font for the document:
+</p>
+
+<div class="example">
+<div class="programlisting">
+<code language="CSS"><pre>body {
+    <a href="/doc/12/doc-refs/#prop-font-family">font-family</a>: sans-serif;
+}</pre></code>
+</div>
+</div>
+
+<p>
+The default is a font with serifs, a sans-serif font is easier to read on a
+computer screen while a serif font is easier to read when printed out.
+See <a href="/doc/12/doc-prince/#text-formatting">Text formatting</a> and the <code><a href="/doc/12/doc-refs/#prop-font-family">font-family</a></code>
+property.
+</p>
+
+<p>
+Next, let's center the title and subtitle and decrease the font size
+of the subtitle:
+</p>
+
+<div class="example">
+<div class="figure-float-right" id="fig.lab-report-styled">
+  <div class="title">Styled lab report</div>
+  <img src="/images/doc-latest/lab_report-styled-1.colour.png" alt="The styled lab report">
+  <div class="caption">
+    The styled lab report, download the
+    <a href="/samples/doc-latest/lab_report-styled.pdf">here</a>.
+  </div>
+</div>
+
+<div class="programlisting">
+<code language="CSS"><pre>h1, h2.subtitle {
+    <a href="/doc/12/doc-refs/#prop-text-align">text-align</a>: center;
+}
+
+h2.subtitle {
+    <a href="/doc/12/doc-refs/#prop-font-size">font-size</a>: 14pt;
+}</pre></code>
+</div>
+</div>
+
+<p>
+Note that we use the <code>.<span class="replaceable">class</span></code>
+syntax to style only the subtitle,
+which is a <code class="tag">h2</code> with the <samp>subtitle</samp> class,
+without affecting the other <code class="tag">h2</code> elements in the
+document.  See the section on <a href="/doc/12/doc-refs/#selectors">CSS Selectors</a> for more
+information.
+Information about alignment (such as centered text) can be found in the
+<a href="/doc/12/doc-prince/#paragraph-formatting">Paragraph formatting</a> section.
+</p>
+
+<p>
+Finally we will make the "Hello World!" paragraph stand out.
+This paragraph is identified by an <code>id</code> attribute so we can use
+the <code>#<span class="replaceable">id</span></code> syntax in the CSS
+selector.
+</p>
+
+<div class="example">
+<div class="programlisting">
+<code language="CSS"><pre>#hello {
+    <a href="/doc/12/doc-refs/#prop-color">color</a>: red;
+    <a href="/doc/12/doc-refs/#prop-text-align">text-align</a>: center;
+    <a href="/doc/12/doc-refs/#prop-font-size">font-size</a>: large;
+    <a href="/doc/12/doc-refs/#prop-font-style">font-style</a>: italic;
+    <a href="/doc/12/doc-refs/#prop-font-family">font-family</a>: serif;
+}</pre></code>
+</div>
+</div>
+
+<p>
+Okay, that's getting unnecessary,
+however we can see just how easy it is to apply styles to our document.
+You can download the complete CSS file here:
+<a href="/samples/doc-latest/lab_report.css">
+  <code class="filename">lab_report.css</code></a>.
+</p>
+
+<p>
+There are many ways to apply a stylesheet to a document,
+for this tutorial we will show only three.
+For information about the ways that styles can be applied and
+style precedence see <a href="/doc/12/doc-prince/#apply-css">Applying Style Sheets in Prince</a>.
+</p>
+
+<dl>
+  <dt>Using the <code>-s</code> command line option:</dt>
+  <dd>
+    <div class="example">
+    <div class="screen">
+      <code><pre>$ <span class="userinput">prince -s <code class="filename">lab_report.css</code> <code class="filename">lab_report.html</code></span></pre></code>
+    </div>
+    </div>
+  </dd>
+  <dt>Using the GUI</dt>
+  <dd>
+    <p>
+      Press the "Add CSS" button on the right of the Prince GUI and choose
+      your CSS file (<a href="/doc/12/doc-install/#fig.gui01">Prince GUI</a>).
+      You will need to click "Convert" again for these changes to take effect.
+    </p>
+  </dd>
+  <dt>By creating a link from the HTML <code class="tag">link</code> tag.</dt>
+  <dd>
+    <p>
+      Place the tag within the <code class="tag">head</code> tag of the
+      document.  For example:
+    </p>
+
+    <div class="example">
+    <div class="programlisting">
+    <code language="HTML"><pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Lab Report&lt;/title&gt;
+&lt;link rel="stylesheet" href="lab_report.css" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+...</pre></code>
+    </div>
+    </div>
+
+    <p>
+    You will need to re-run Prince for these changes to take effect.
+    </p>
+
+  </dd>
+</dl>
+
+<p>
+After applying the style as above, Prince should generate something similar
+to <a href="/doc/12/doc-install/#fig.lab-report-styled">Styled lab report</a>.
+You can download the generated PDF file here:
+<a href="/samples/doc-latest/lab_report-styled.pdf">
+  <code class="filename">lab_report-styled.pdf</code></a>.
+</p>
+
+<p>
+This sample document and many others are available in our
+<a href="https://github.com/yeslogic/prince-samples">samples repository</a>.
+You are encouraged to use samples from the repository and contribute your
+own.
+</p>
+
+<p>
+You are now ready to proceed to the <a href="/doc/12/doc-prince/">User Guide</a>
+to learn about all the features - and to make the best out of Prince!
+</p>
+
+
+<h1 id="help-install">Help  <a href="#help-install" class="self-link"></a><a href="#help-install" class="self-link"></a>
+</h1>
+
+<p>
+The Prince Installation Guide tries to be exhaustive in explaining how to
+install the application.  However, there might always be something not
+answered in the documentation, or something not working as expected.  There
+are a couple of ways to get help to solve the problems:
+</p>
+
+<ul>
+  <li>The <a href="/doc/12/doc-install/#troubleshooting-install">Troubleshooting</a> section addresses possible common
+  issues after installing and starting to use Prince;</li>
+  <li>The <a href="/doc/12/doc-install/#faq-install">Frequently Asked Questions</a> section provides answers to the most frequently
+  asked questions about installation;</li>
+  <li>The <a href="//www.princexml.com/forum/">forum</a> is an excellent place
+  where to find an answer to an issue, or where to ask for help;</li>
+  <li>You can <a href="//www.princexml.com/contact/">contact us</a> for support.</li>
+</ul>
+
+
+
+<h2 id="troubleshooting-install">Troubleshooting  <a href="#troubleshooting-install" class="self-link"></a><a href="#troubleshooting-install" class="self-link"></a>
+</h2>
+
+<p>
+We work hard to make Prince work on multiple platforms (Windows, Linux, etc) and
+with multiple configurations.  However things don't always work correctly the first
+time.  You're very welcome to <a href="/contact/">contact us</a> for support or
+visit our <a href="/forum/">forum</a>.  However if you are facing a common
+problem, you may be able to find an explanation and solution below.
+</p>
+
+
+  <h3 id="missing-fonts">Missing glyphs or fonts  <a href="#missing-fonts" class="self-link"></a><a href="#missing-fonts" class="self-link"></a>
+</h3>
+
+<dl>
+  <dt>Symptom</dt>
+  <dd>
+    <div class="example">
+    <div class="screen">
+<code><pre>prince: page <span class="replaceable">1</span>: warning: no font for
+      <span class="replaceable">Aegean Numbers</span> character U+<span class="replaceable">10123</span>,
+      fallback to '<span class="replaceable">?</span>'</pre></code>
+    </div>
+    </div>
+  </dd>
+  <dt>Explanation</dt>
+  <dd>
+    <p>
+      Prince tries to tell you which page the missing glyph appeared on, what type
+      of character it was (eg. "Latin", "Greek", etc.) and what character it used
+      as a fallback (usually '?').
+    </p>
+  </dd>
+  <dt>Symptom</dt>
+  <dd>
+    <div class="example">
+    <div class="screen">
+<code><pre>prince: internal error: no available fonts</pre></code>
+    </div>
+    </div>
+  </dd>
+  <dt>Explanation</dt>
+  <dd>
+    <p>
+      However, if there are no available fonts on the system at all then it won't
+      even be able to find the question mark glyph, and you get an internal error
+      message.
+    </p>
+  </dd>
+  <dt>Solution 1</dt>
+  <dd>
+    <p>
+      Install the
+      <a href="http://corefonts.sourceforge.net">msttcorefonts</a>
+      package (see your operating system's documentation).
+    </p>
+  </dd>
+  <dt>Solution 2</dt>
+  <dd>
+    <p>
+      Redefine the CSS generic font families to use different TrueType
+      fonts by editing the
+      <code class="filename">fonts.css</code> file in the Prince
+      installation - see <a href="/doc/12/doc-install/#installation-layout">Installation Layout</a>,
+      <a href="/doc/12/doc-prince/#fonts">Fonts</a> and <a href="/doc/12/doc-prince/#redefining-font-families">Redefining the generic font families</a>.
+    </p>
+  </dd>
+  <dt>Explanation</dt>
+  <dd>
+    <p>
+      This problem may be a symptom of the <a href="/doc/12/doc-install/#fontconfig">Fontconfig</a>.
+    </p>
+  </dd>
+</dl>
+
+
+
+
+  <h3 id="fontconfig">Fontconfig  <a href="#fontconfig" class="self-link"></a><a href="#fontconfig" class="self-link"></a>
+</h3>
+
+<dl>
+  <dt>Symptom</dt>
+  <dd>
+    <div class="example">
+    <div class="screen"><code><pre>Fontconfig error: Cannot load default config file</pre></code></div>
+    </div>
+  </dd>
+  <dt>Explanation</dt>
+  <dd>
+    <p>
+      Prince uses the <a href="http://www.fontconfig.org">Fontconfig</a>
+      library on Linux systems to search for fonts.
+      Fontconfig is installed as a standard component on most desktop Linux
+      distributions such as Ubuntu and recent versions of Red Hat Linux.
+    </p>
+    <p>
+      Some older Linux distributions do not come with fontconfig and this may
+      cause the above error.
+      This error will usually be followed by errors relating to
+      <a href="/doc/12/doc-install/#missing-fonts">Missing glyphs or fonts</a>
+      that cannot be found due to the absence of Fontconfig.
+    </p>
+  </dd>
+  <dt>Solution 1</dt>
+  <dd>
+    <p>
+      install Fontconfig
+      (see your operating system's documentation).
+    </p>
+  </dd>
+  <dt>Solution 2</dt>
+  <dd>
+    <p>
+      Redefine the CSS generic font families to use TrueType fonts that are
+      specified directly by their filenames, avoiding the need to use
+      Fontconfig at all.  In extreme cases it might be advisable to disable
+      system fonts completely with the
+      <a href="/doc/12/doc-refs/#cl-no-system-fonts"><code>--no-system-fonts</code></a>
+      command-line option.
+      See <a href="/doc/12/doc-prince/#fonts">Fonts</a> and <a href="/doc/12/doc-prince/#redefining-font-families">Redefining the generic font families</a>.
+    </p>
+  </dd>
+</dl>
+
+
+
+
+  <h3 id="shared-libraries">Shared library trouble  <a href="#shared-libraries" class="self-link"></a><a href="#shared-libraries" class="self-link"></a>
+</h3>
+
+<dl>
+  <dt>Symptom (Linux)</dt>
+  <dd>
+    <div class="example">
+    <div class="screen"><code><pre>/usr/local/stow/prince-9/lib/prince/bin/prince: error while loading shared
+libraries: libtiff.so.4: cannot open shared object file: No such file or
+directory</pre></code></div>
+    </div>
+  </dd>
+  <dt>Symptom (FreeBSD)</dt>
+  <dd>
+    <div class="example">
+    <div class="screen"><code><pre>Shared object "libxml2.so.2" not found, required by "prince"</pre></code></div>
+    </div>
+  </dd>
+  <dt>Explanation</dt>
+  <dd>
+    <p>
+      Prince uses some third-party shared libraries,
+      these are used for things such as decoding TIFF, PNG or JPEG files and
+      finding and loading fonts.
+      If one or more of these shared libraries cannot be found on your system
+      then Prince will not run.
+      This can occur if Prince was installed from a tarball
+      (see <a href="/doc/12/doc-install/#install-generic">Tarballs - Alpine Linux, FreeBSD and Generic Linux</a>).
+    </p>
+  </dd>
+  <dt>Solution 1</dt>
+  <dd>
+    <p>
+      Install the missing library software.
+      <a href="/doc/12/doc-refs/#acknowledgments">Acknowledgments</a> provides a list of the libraries
+      that Prince uses.
+      It is recommended to install them through your operating system's
+      package management tool,
+      see your operating system's documentation for more information.
+    </p>
+  </dd>
+  <dt>Solution 2</dt>
+  <dd>
+    <p>
+      Prince is just using the system shared object loader for most
+      libraries, so the <code>LD_LIBRARY_PATH</code> environment variable might
+      need to be edited, if you have installed these libraries in non-standard
+      or different locations.
+    </p>
+  </dd>
+</dl>
+
+
+
+
+  <h3 id="trouble-path-issues">
+<code>PATH</code> issues<a href="#trouble-path-issues" class="self-link"></a><a href="#trouble-path-issues" class="self-link"></a>
+</h3>
+
+<dl>
+  <dt>Symptom</dt>
+  <dd>
+    <div class="example">
+    <div class="screen">
+      <code><pre>-bash: prince: command not found</pre></code>
+</div>
+    </div>
+  </dd>
+  <dt>Explanation</dt>
+  <dd>
+    <p>
+      The command interpreter (<code class="command">bash</code>) does not
+      know how to find the <code class="command">prince</code> executable.
+      It was not found in any of the locations specified by the
+      <code>PATH</code> environment variable.
+    </p>
+  </dd>
+  <dt>Solution</dt>
+  <dd>
+    <p>
+      Add Prince's <code class="filename">bin/</code> subdirectory to your
+      <code>PATH</code> and ensure that these changes are saved for future
+      shell sessions.
+      If Prince is installed in <code class="filename">/opt/prince10</code>,
+      then add <code class="filename">/opt/prince10/bin</code> to
+      <code>PATH</code>.
+      There are many different types of command interpreters (also called
+      shells) and we cannot possibly document all of them.
+      The appropriate command for borne-style shells (the most common type)
+      is usually:
+    </p>
+
+    <div class="example">
+    <div class="programlisting"><code><pre>export PATH=<replaceable>/opt/prince10</replaceable>/bin:$PATH</pre></code></div>
+    </div>
+
+    <p>
+      This should be added to your command interpreter's configuration.
+      For more information see your operating system's documentation.
+    </p>
+
+  </dd>
+</dl>
+
+
+<h2 id="faq-install">Frequently Asked Questions  <a href="#faq-install" class="self-link"></a><a href="#faq-install" class="self-link"></a>
+</h2>
+
+<dl class="faq">
+  <dt><p id="faq-install-dir">Why does Prince on 64-bit Windows install into the
+  32-bit compatibility directory <code>%ProgramFiles(x86)%</code>?
+  <a class="self-link" href="#faq-install-dir"></a></p></dt>
+  <dd>
+<p>The Prince GUI is still a 32-bit program, but the formatting engine is 64-bit.</p>
+  </dd>
+  <dt><p id="faq-no-ui">How can I run Prince on Windows without showing the UI?
+  <a class="self-link" href="#faq-no-ui"></a></p></dt>
+  <dd>
+<p>On Linux, you typically run Prince with the following command:</p>
+  <div class="example">
+    <div class="programlisting">
+    <code><pre>prince file.xml -o file.pdf</pre></code>
+    </div>
+    </div>
+  <p>On Windows, you replace the name of the executable with
+  <code>Prince\engine\bin\prince.exe</code> in the installation directory
+  (see <a href="/doc/12/doc-install/#windows-layout">Windows installation layout</a>), which is the command-line program.
+  See also <a href="/doc/12/doc-refs/#command-line">Command-line Reference</a>.
+  </p>
+  <div class="example">
+    <div class="programlisting">
+    <code><pre>"C:\Program Files (x86)\Prince\engine\bin\prince.exe" file.xml -o file.pdf</pre></code>
+    </div>
+    </div>
+  </dd>
+  <dt><p id="faq-install-cloud">Can I install Prince on cloud services or
+  containers (Azure, AWS, Docker)?
+  <a class="self-link" href="#faq-install-cloud"></a></p></dt>
+  <dd>
+<p>Prince can be installed on the
+  <a href="/doc/12/doc-install/#installing">supported operating systems</a> - also when
+  they are running in cloud or container services.  On Linux, some
+  environments might not provide for all dependencies - you can address
+  this by either trying to install the Generic Linux Prince package (see
+  <a href="/doc/12/doc-install/#install-generic">Tarballs - Alpine Linux, FreeBSD and Generic Linux</a>), or by trying to install the missing
+  dependencies.</p>
+  <p>See <a href="https://www.princexml.com/forum/topic/2094/silent-installation-on-windows#20332">this
+  forum post</a> for a description of an installation on Azure.</p>
+  </dd>
+  <dt><p id="faq-install-books">How do I install Prince for Books?
+  <a class="self-link" href="#faq-install-books"></a></p></dt>
+  <dd>
+<p><a href="/doc/12/doc-prince/#pfb">Prince for Books</a> is available in package bundles only - to install
+  it, the files need to be copied into place (Windows), or an installation
+  script needs to be run (on Linux and MacOS X).  It can be installed without
+  problem alongside a normal Prince installation - the executable to run is
+  called <code>prince-books</code>.</p>
+  </dd>
+  <dt><p id="faq-install-wrappers">How do I install the Prince wrappers?
+  <a class="self-link" href="#faq-install-wrappers"></a></p></dt>
+  <dd>
+<p>The <a href="/doc/12/doc-prince/#wrappers">Prince Wrappers</a> come in different languages, and each
+  one has a different installation procedure.  Mostly they are explained in the
+  documentation for each of the <a href="/doc/12/doc-prince/#wrappers">Prince Wrappers</a>.  The short principle
+  is that the wrapper files need to be placed in a location from which they can
+  run - this may slightly vary depending on the hosting Operating System.</p>
+  </dd>
+
+</dl>
+
+</div>
+</div>
+
+    <div class="footer">
+        <div class="footer-copyright">
+            Copyright © 2002 – 2019 YesLogic Pty. Ltd.
+        </div>
+        <ul class="footer-menu">
+            <li><a href="/company/">About Us</a></li>
+            <li><a href="/privacy/">Privacy Policy</a></li>
+            <li><a href="/contact/">Contact Us</a></li>
+        </ul>
+        <div style="clear:both"></div>
+    </div>
+</div>
+
+<script src="/js/warning.js"></script>
+</body>
+</html>

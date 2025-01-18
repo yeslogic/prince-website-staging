@@ -1,0 +1,111 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<meta name="robots" content="noindex">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<title>Prince - Page Style</title>
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+<div id="header-inner">
+<div><a href="/"><img src="/images/logo2.png" alt="Prince"></a></div>
+<ul id="primary-nav">
+<li><a href="/download/">Download</a></li>
+<li><a href="/purchase/">Buy Prince</a></li>
+<li><a href="/samples/">Samples</a></li>
+<li><a href="/doc/" class="curr">Documentation</a></li>
+<li><a href="/forum/">Forum</a></li>
+</ul>
+</div>
+<div id="header-shadow"></div>
+</div>
+<div id="intro"><div id="intro-inner"><h1>Page Style</h1></div></div>
+
+<div class="main">
+
+
+
+<p>
+<a href="/doc/9.0/">User Guide</a> /
+<a href="/doc/9.0/#paged">Paged Media</a>
+</p>
+
+<div class="col1">
+
+<p>
+Pages can be styled using the <i>margin</i>, <i>border</i>,
+<i>padding</i> and <i>background</i> properties within @page rules.
+</p>
+<p>
+The page box contains margins, an optional border and padding.
+Within the border the page may have a painted background.
+The remaining space within the padding is used to render document content.
+</p>
+
+<div class="example">
+<p class="label">CSS</p>
+<pre class="css">
+@page { margin: 40pt 30pt 40pt 30pt }
+</pre>
+<p class="comment">
+This sets the top, right, bottom and left page margins to
+40pt, 30pt, 40pt and 30pt, respectively.
+</p>
+</div>
+
+<div class="example">
+<p class="label">CSS</p>
+<pre class="css">
+@page { border: solid 1pt red }
+</pre>
+<p class="comment">
+This sets the page border style to solid, 
+page border width to 1pt and page border color to red.
+</p>
+</div>
+
+<div class="example">
+<p class="label">CSS</p>
+<pre class="css">
+@page { padding: 10pt 5pt }
+</pre>
+<p class="comment">
+This sets the top and bottom page padding to 10pt; 
+right and left page padding to 5pt.
+</p>
+</div>
+
+<div class="example">
+<p class="label">CSS</p>
+<pre class="css">
+@page { 
+    background: gray url(<i>filename</i>) center no-repeat 
+}
+</pre>
+<p class="comment">
+This sets the page background color to gray, 
+loads an image from <i>filename</i> and centers it on the page
+background without repeating.
+</p>
+</div>
+
+</div>
+
+</div>
+</div>
+<script src="/js/warning.js"></script>
+<div id="footer"><div id="footer-inner">
+<p id="footer-copy">Copyright © 2002 – 2025 YesLogic Pty. Ltd.</p>
+<ul id="footer-nav">
+<li><a href="/">Home</a></li>
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+</div></div>
+</body>
+</html>

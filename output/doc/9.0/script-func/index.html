@@ -1,0 +1,127 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<meta name="robots" content="noindex">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<title>Prince - Script Functions</title>
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+<div id="header-inner">
+<div><a href="/"><img src="/images/logo2.png" alt="Prince"></a></div>
+<ul id="primary-nav">
+<li><a href="/download/">Download</a></li>
+<li><a href="/purchase/">Buy Prince</a></li>
+<li><a href="/samples/">Samples</a></li>
+<li><a href="/doc/" class="curr">Documentation</a></li>
+<li><a href="/forum/">Forum</a></li>
+</ul>
+</div>
+<div id="header-shadow"></div>
+</div>
+<div id="intro"><div id="intro-inner"><h1>Script Functions</h1></div></div>
+
+<div class="main">
+
+
+
+<p>
+<a href="/doc/9.0/">User Guide</a> /
+<a href="/doc/9.0/#gen-content">Generated Content</a>
+</p>
+
+<div class="col1">
+
+<p>
+Prince supports arbitrary JavaScript functions to be called from CSS generated
+content using the <code>prince-script()</code> function.
+</p>
+
+<div class="example">
+<p class="label">CSS</p>
+<pre class="css">
+p::after {
+    content: prince-script(myfunc)
+}
+</pre>
+<p class="label">JavaScript</p>
+<pre class="js">
+function myfunc()
+{
+    return "Some generated context text!";
+}
+
+Prince.addScriptFunc("myfunc", myfunc);
+</pre>
+</div>
+
+<h2>Accessing the current date and time</h2>
+
+<p>
+JavaScript functions have access to the current date and time, which can be
+added to the document using <code>prince-script()</code> in generated content.
+</p>
+
+<div class="example">
+<p class="label">CSS</p>
+<pre class="css">
+@page {
+    @top {
+	content: prince-script(datestamp)
+    }
+}
+</pre>
+<p class="label">JavaScript</p>
+<pre class="js">
+Prince.addScriptFunc("datestamp", function() {
+    return (new Date()).toString();
+});
+</pre>
+</div>
+
+<h2>User-defined counter styles</h2>
+
+<p>
+The JavaScript functions used with <code>prince-script()</code> can take
+arguments that are themselves generated content. This allows functions to
+operate on counter values and implement new counter styles.
+</p>
+
+<div class="example">
+<p class="label">CSS</p>
+<pre class="css">
+li::marker {
+    content: prince-script(mycounterstyle, counter(list-item))
+}
+</pre>
+<p class="label">JavaScript</p>
+<pre class="js">
+Prince.addScriptFunc("mycounterstyle", function(n) {
+    if (n == 1) return "one";
+    else if (n == 2) return "two";
+    else if (n == 3) return "three";
+    else return n;
+});
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+<script src="/js/warning.js"></script>
+<div id="footer"><div id="footer-inner">
+<p id="footer-copy">Copyright © 2002 – 2025 YesLogic Pty. Ltd.</p>
+<ul id="footer-nav">
+<li><a href="/">Home</a></li>
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+</div></div>
+</body>
+</html>

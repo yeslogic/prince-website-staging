@@ -1,0 +1,91 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<meta name="robots" content="noindex">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<title>Prince - XML Input</title>
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+<div id="header-inner">
+<div><a href="/"><img src="/images/logo2.png" alt="Prince"></a></div>
+<ul id="primary-nav">
+<li><a href="/download/">Download</a></li>
+<li><a href="/purchase/">Buy Prince</a></li>
+<li><a href="/samples/">Samples</a></li>
+<li><a href="/doc/" class="curr">Documentation</a></li>
+<li><a href="/forum/">Forum</a></li>
+</ul>
+</div>
+<div id="header-shadow"></div>
+</div>
+<div id="intro"><div id="intro-inner"><h1>XML Input</h1></div></div>
+
+<div class="main">
+
+
+
+<div class="col1">
+
+<p>
+Prince processes well-formed XML 1.0 documents with full support for
+namespaces, internal and external entities, DTDs, character references and
+CDATA sections. Comments and processing instructions are ignored and do not
+affect the output.
+</p>
+
+<h2>Validation</h2>
+<p>
+Prince loads DTD files in order to resolve entity definitions and
+default attribute values. However, Prince does not perform validation upon
+input documents. If validation is a processing requirement, the use of an
+external validator is recommended.
+</p>
+
+<h2><code>xml:lang</code></h2>
+<p>
+Prince supports the <code>xml:lang</code> attribute, which is used to
+indicate the language of the document text. Elements can be selected by
+language using the CSS <code>:lang()</code> selector.
+</p>
+
+<h2><code>xml:id</code></h2>
+<p>
+Prince supports the <code>xml:id</code> attribute, which is used to give
+elements a unique identifier. This identifier can be used when creating
+links and cross-references; it also allows elements to be selected
+using the CSS ID selector.
+</p>
+
+<h2><code>xml:base</code></h2>
+<p>
+Prince does not support the <code>xml:base</code> attribute, therefore
+hyperlinks must be absolute URLs or relative to the document path.
+</p>
+
+<h2><code>XLink</code></h2>
+<p>
+Prince supports simple XLinks and will treat any element containing a
+<code>href</code> attribute in the XLink namespace as a link.
+</p>
+
+</div>
+
+</div>
+</div>
+<script src="/js/warning.js"></script>
+<div id="footer"><div id="footer-inner">
+<p id="footer-copy">Copyright © 2002 – 2025 YesLogic Pty. Ltd.</p>
+<ul id="footer-nav">
+<li><a href="/">Home</a></li>
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+</div></div>
+</body>
+</html>

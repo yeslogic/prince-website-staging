@@ -1,0 +1,406 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Generated Content · Prince Documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Generated content is text and other content that is not found in the original input document, but is added to the output from a style sheet using the CSS [`content`](/doc/13/css-props#prop-content) property. Useful applications of this property include [Page regions](/doc/13/paged#page-regions), [List markers](styling#list-markers) or [Footnotes](styling#footnotes)."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Generated Content · Prince Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://www.princexml.com/"/><meta property="og:description" content="Generated content is text and other content that is not found in the original input document, but is added to the output from a style sheet using the CSS [`content`](/doc/13/css-props#prop-content) property. Useful applications of this property include [Page regions](/doc/13/paged#page-regions), [List markers](styling#list-markers) or [Footnotes](styling#footnotes)."/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://www.princexml.com/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="/js/warning.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/Prince-logo.png" alt="Prince Documentation"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/doc/" target="_self">Documentation</a></li><li class=""><a href="/doc/help" target="_self">Help</a></li><li class=""><a href="/doc/releases" target="_self">Release Notes</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>User Guide</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Installation Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/installing">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/doc/13/first-doc">Your First Document</a></li><li class="navListItem"><a class="navItem" href="/doc/13/help-install">Help</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">User Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/intro-userguide">Convert HTML to PDF</a></li><li class="navListItem"><a class="navItem" href="/doc/13/styling">Styling</a></li><li class="navListItem"><a class="navItem" href="/doc/13/paged">Paged Media</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/doc/13/gen-content">Generated Content</a></li><li class="navListItem"><a class="navItem" href="/doc/13/javascript">Scripting</a></li><li class="navListItem"><a class="navItem" href="/doc/13/graphics">Graphics</a></li><li class="navListItem"><a class="navItem" href="/doc/13/cookbook">Prince Tips and Tricks</a></li><li class="navListItem"><a class="navItem" href="/doc/13/help">Help</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-input">Prince Input</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-output">Prince Output</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-networking">Prince Networking</a></li><li class="navListItem"><a class="navItem" href="/doc/13/server-integration">Server Integration</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-for-books">Prince for Books</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Reference Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/command-line">Command-line Reference</a></li><li class="navListItem"><a class="navItem" href="/doc/13/css-refs">CSS References</a></li><li class="navListItem"><a class="navItem" href="/doc/13/css-props">CSS Properties</a></li><li class="navListItem"><a class="navItem" href="/doc/13/js-support">JavaScript Support</a></li><li class="navListItem"><a class="navItem" href="/doc/13/page-size-keywords">Page Size Keywords</a></li><li class="navListItem"><a class="navItem" href="/doc/13/characters">Character Entities</a></li><li class="navListItem"><a class="navItem" href="/doc/13/acknowledgements">Acknowledgments</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Generated Content</h1></header><article><div><span><p>Generated content is text and other content that is not found in the original input document, but is added to the output from a style sheet using the CSS <a href="/doc/13/css-props#prop-content"><code>content</code></a> property. Useful applications of this property include <a href="/doc/13/paged#page-regions">Page regions</a>, <a href="styling#list-markers">List markers</a> or <a href="styling#footnotes">Footnotes</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="generated-content-functions"></a><a href="#generated-content-functions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Generated Content Functions</h2>
+<p>Generated content is inserted by means of several functions that typically are used within the <a href="/doc/13/css-props#prop-content"><code>content</code></a> property. However, please note that these functions are not unique to the <a href="/doc/13/css-props#prop-content"><code>content</code></a> property, but can be used for the same purpose in several other ones, namely:</p>
+<ul>
+<li><code>content</code></li>
+<li><code>prince-bookmark-label</code></li>
+<li><code>prince-pdf-page-label</code></li>
+<li><code>prince-tooltip</code></li>
+<li><code>string-set</code></li>
+</ul>
+<p>See also the section on <a href="css-refs#css-functional-expressions">CSS Functional Expressions</a> for additional details on these functions.</p>
+<p>The most simple use of generating content in these properties is to insert a literal string. A literal string can also be passed as an argument to the <code>leader()</code> function, which expands to fill the available space on the line like justified text, by repeating the string as many times as necessary. An optional second argument can be used to specify a minimum width.</p>
+<p>The properties can also insert external content fetched from another resource. This can be done with the following functions:</p>
+<ul>
+<li>the <code>url(url)</code> function, returning the text content at the given URL,</li>
+<li>the <code>target-content(url)</code> function, referencing the text content of the linked element (see <a href="#using-target-content">Using target-content()</a>), or</li>
+<li>the <code>prince-base-url()</code> function, returning the base URL of the current document.</li>
+</ul>
+<p>It can also be done with the <code>prince-fallback(url)</code> function, which works just like the <code>url()</code> function, but also has the possibility of specifying a fallback <code>content</code>, in case the loading of the URL should fail.</p>
+<p>The content to be inserted can also be fetched from the attributes of other elements with the <code>attr(attribute-name)</code> function, or from other elements with the following mechanisms:</p>
+<ul>
+<li>Any block-level element can be removed from the normal document flow, to be inserted in a page region: it is best removed with the <a href="/doc/13/css-props#prop-position"><code>position</code></a> property and its <code>running(name)</code> function, and inserted with the <code>element(name)</code> function. Alternatively, it can be removed with the <a href="/doc/13/css-props#prop-prince-flow"><code>prince-flow</code></a> property, to be inserted with the <code>flow(name)</code> function. See the documentation for <a href="/doc/13/paged#taking-elements-from-the-document">Taking elements from the document</a> for more details.</li>
+<li>An element can be referenced with the <code>string(ident)</code> function after having been defined in the <a href="/doc/13/css-props#prop-string-set"><code>string-set</code></a> property with the <code>content()</code> function. This does not remove the element from the natural document flow, but instead copies it into the page region. See <a href="/doc/13/paged#copying-content-from-the-document">Copying content from the document</a>.</li>
+</ul>
+<p>The following functions can also be used for different forms of counters:</p>
+<ul>
+<li>the <code>counter(name)</code> function generates a value for the innermost counter,</li>
+<li>the <code>counters(name, &quot;separator&quot;)</code> function concatenates counters on all levels;</li>
+<li>the <code>target-counter(url, counter)</code> function retrieves the value of the innermost counter with a given name at the given URL, and</li>
+<li>the <code>target-counters(url, counter, &quot;separator&quot;)</code> function retrieves the value of all counters of a given name from the end of the given URL.</li>
+</ul>
+<p>All counter functions can take an optional argument to define the counter style (see <a href="#counter-styles">Counter styles</a>). Prince also offers two mechanisms to create user-defined counter styles: either by means of the <code>prince-script()</code> function (see below, and <a href="#user-defined-counter-styles">User-defined counter styles</a>), or by means of the generated content functions <code>repeat(string+)</code>, defining a sequentially repeated pattern for numbering the items, or <code>symbols(string+)</code>, defining the symbols used for numbering the items.</p>
+<p>Last but not least, Prince supports arbitrary JavaScript functions to be called from CSS generated content using the <code>prince-script()</code> function (see <a href="#script-functions">Script Functions</a>).</p>
+<p>A special function is <code>prince-glyph-index(int)</code>, which allows to choose a glyph from a font by the index of that glyph in the font. Note that this is very non-portable, as glyph indices are specific to individual font versions. But it is a possible escape hatch for people who need a specific glyph and don't have any other way of accessing it (by Unicode character or OpenType substitution).</p>
+<h3><a class="anchor" aria-hidden="true" id="the-optional-page-policy-value"></a><a href="#the-optional-page-policy-value" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The optional <code>page-policy</code> value</h3>
+<p>The generated content functions <code>element()</code>, <code>counter()</code>, <code>counters()</code>, <code>string()</code> and <code>flow()</code>, have a second, optional argument, namely <code>page-policy</code>, which can be one of the following:</p>
+<p><code>start</code>  <br>
+defining the value the counter had at the start of the page (eg. the last value it was set to on the previous page);</p>
+<p><code>first</code>  <br>
+defining the first value the counter was set to on this page, or the same as <code>start</code> if the counter was not set on this page;</p>
+<p><code>first-except</code>  <br>
+defining the first value the counter was set to on this page, or no value at all if it was set on this page;</p>
+<p><code>last</code>  <br>
+defining the last value the counter was set to on this page, or the same as <code>start</code> if the counter was not set on this page.</p>
+<p>The page policy values of the <code>string()</code> function are only meaningful for <code>string()</code> used in page region content.</p>
+<p>For a good example of its use, please see <a href="/doc/13/paged#copying-content-from-the-document">Copying content from the document</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="before-and-after-pseudo-elements"></a><a href="#before-and-after-pseudo-elements" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Before and After pseudo-elements</h2>
+<p>The <a href="/doc/13/css-props#prop-content"><code>content</code></a> property can be applied to the <code>::before</code> and <code>::after</code> pseudo-elements to add generated content before or after an element. For example, adding section numbers in front of headings or including quotation marks around a block of text.</p>
+<p>CSS</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">h1</span><span class="hljs-selector-pseudo">::before</span>, <span class="hljs-selector-tag">h1</span><span class="hljs-selector-pseudo">::after</span> { <span class="hljs-attribute">content</span>: <span class="hljs-string">"***"</span> }
+</code></pre>
+<p>This will place three asterisks before and after <code>h1</code> elements.</p>
+<h2><a class="anchor" aria-hidden="true" id="counters-and-numbering"></a><a href="#counters-and-numbering" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Counters and Numbering</h2>
+<p>Counters are the mechanism provided by CSS to perform numbering. They can be used to number list items, pages, footnotes, sections and any other document content that needs to be numbered.</p>
+<h3><a class="anchor" aria-hidden="true" id="initializing-and-incrementing-counters"></a><a href="#initializing-and-incrementing-counters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Initializing and incrementing counters</h3>
+<p>To use a counter, it first needs to be initialized with the <a href="/doc/13/css-props#prop-counter-reset"><code>counter-reset</code></a> property, which can be applied to any element and initializes one or more counters to the specified values, or to zero if no value is specified. The property can be used to reset a counter by re-initializing it.</p>
+<p>Unless the resetting of a counter creates a nested counter, the scope of the counter includes the current element and all of its following siblings.</p>
+<p>The <a href="/doc/13/css-props#prop-counter-increment"><code>counter-increment</code></a> property applies to any element and increments or decrements one or more counters by the specified values, or by one if no value is specified.</p>
+<p>The <a href="/doc/13/css-props#prop-counter-increment"><code>counter-increment</code></a> and <a href="/doc/13/css-props#prop-counter-reset"><code>counter-reset</code></a> properties are ignored on elements whose <a href="/doc/13/css-props#prop-display"><code>display</code></a> property has the value <code>none</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="displaying-counters"></a><a href="#displaying-counters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Displaying counters</h3>
+<p>Once initialized, a counter can be displayed with either the <code>counter()</code> or <code>counters()</code> function in a <a href="/doc/13/css-props#prop-content"><code>content</code></a> property.</p>
+<p>The <code>counter()</code> function generates a value for the innermost counter, formatted in the optional counter style (decimal by default - see <a href="#counter-styles">Counter styles</a>).</p>
+<p>The <code>counters()</code> function concatenates counters on different levels, separated with the separator string and formatted in the optional counter style (decimal by default - see <a href="#counter-styles">Counter styles</a>).</p>
+<p>CSS</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">div</span><span class="hljs-selector-class">.example1</span> { <span class="hljs-attribute">counter-reset</span>: h3 h4 }
+    <span class="hljs-selector-tag">div</span><span class="hljs-selector-class">.example1</span> <span class="hljs-selector-tag">h3</span> { <span class="hljs-attribute">counter-increment</span>: h3 }
+    <span class="hljs-selector-tag">div</span><span class="hljs-selector-class">.example1</span> <span class="hljs-selector-tag">h4</span> { <span class="hljs-attribute">counter-increment</span>: h4 }
+    <span class="hljs-selector-tag">div</span><span class="hljs-selector-class">.example1</span> <span class="hljs-selector-tag">h3</span><span class="hljs-selector-pseudo">::before</span> { <span class="hljs-attribute">content</span>: <span class="hljs-built_in">counter</span>(h3) }
+    <span class="hljs-selector-tag">div</span><span class="hljs-selector-class">.example1</span> <span class="hljs-selector-tag">h4</span><span class="hljs-selector-pseudo">::before</span> {
+        <span class="hljs-attribute">content</span>: <span class="hljs-built_in">counter</span>(h4, lower-alpha)
+    }
+</code></pre>
+<p>This creates two counters inside the scope of a <code>div</code> element. All <code>h3</code> and <code>h4</code> heading elements will be numbered starting from 1 and the counter number will be placed before the heading text.</p>
+<p>CSS</p>
+<pre><code class="hljs">    div.example2 { counter-reset: h3 }
+    div.example2 h3 {
+        counter-increment: h3;
+        counter-reset: h4
+    }
+    div.example2 h4 { counter-increment: h4 }
+    div.example2 h3::before { content: counter(h3) }
+    div.example2 h4::before {
+        counter(h4, lower-alpha)
+    }
+</code></pre>
+<p>In this example the <code>h4</code> counter will be reset at each <code>h3</code> element, to produce sub-section numbering that restarts at each new section.</p>
+<h3><a class="anchor" aria-hidden="true" id="nested-counters"></a><a href="#nested-counters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Nested counters</h3>
+<p>If a counter is reset on an element and the same counter has also been reset on an ancestor of that element, a nested counter will be created. The scope of the nested counter is the current element only and its final value will not be carried onto its following siblings.</p>
+<p>For example, a nested XHTML list with a <code>ul</code> element inside a <code>li</code> inside another <code>ul</code> creates a nested <code>list-item</code> counter.</p>
+<p>CSS</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">ol</span> { <span class="hljs-attribute">counter-reset</span>: list-item }
+    <span class="hljs-selector-tag">li</span> { <span class="hljs-attribute">counter-increment</span>: list-item }
+    <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">::marker</span> {
+        <span class="hljs-attribute">content</span>: <span class="hljs-built_in">counters</span>(list-item, <span class="hljs-string">"."</span>, decimal);
+        <span class="hljs-attribute">color</span>: brown;
+        <span class="hljs-attribute">font-weight</span>: bold
+    }
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="counter-styles"></a><a href="#counter-styles" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Counter styles</h3>
+<p>Counter values are displayed as decimal numbers by default, but they may be displayed using other styles such as roman numerals or consecutive letters of the alphabet.</p>
+<p>CSS</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">chapter</span> { <span class="hljs-attribute">counter-increment</span>: chapter-num }
+
+    <span class="hljs-selector-tag">chapter</span><span class="hljs-selector-pseudo">::before</span> {
+        <span class="hljs-attribute">content</span>: <span class="hljs-string">"Chapter "</span> <span class="hljs-built_in">counter</span>(chapter-num, upper-roman)
+    }
+</code></pre>
+<p>This rule will generate text such as &quot;Chapter IV&quot; before each chapter, with the appropriate chapter number displayed in uppercase roman numerals.</p>
+<p>The following table shows examples of the various counter styles:</p>
+<table class="grid">
+<tr>
+<td>decimal</td>
+<td>1, 2, 3, &#x2026; 9, 10, 11, &#x2026;</td>
+</tr>
+<tr>
+<td>decimal-leading-zero</td>
+<td>01, 02, 03, &#x2026; 09, 10, 11, &#x2026;</td>
+</tr>
+<tr>
+<td>lower-roman</td>
+<td>i, ii, iii, iv, v, vi, &#x2026;</td>
+</tr>
+<tr>
+<td>upper-roman</td>
+<td>I, II, III, IV, V, VI, &#x2026;</td>
+</tr>
+<tr>
+<td>lower-alpha, lower-latin</td>
+<td>a, b, c, &#x2026; z, aa, ab, &#x2026;</td>
+</tr>
+<tr>
+<td>upper-alpha, upper-latin</td>
+<td>A, B, C, &#x2026; Z, AA, AB, &#x2026;</td>
+</tr>
+<tr>
+<td>asterisks</td>
+<td>*, **, ***, ****, &#x2026;</td>
+</tr>
+<tr>
+<td>lower-hexadecimal</td>
+<td>1, 2, 3, &#x2026; 9, a, b, c, &#x2026;</td>
+</tr>
+<tr>
+<td>upper-hexadecimal</td>
+<td>1, 2, 3, &#x2026; 9, A, B, C, &#x2026;</td>
+</tr>
+<tr>
+<td>octal</td>
+<td>1, 2, 3, 4, 5, 6, 7, 10, 11, 12, &#x2026;</td>
+</tr>
+<tr>
+<td>binary</td>
+<td>1, 10, 11, 100, 101, 110, 111, &#x2026;</td>
+</tr>
+<tr>
+<td>arabic-indic</td>
+<td>&#x661;, &#x662;, &#x663;, &#x664;, &#x665;, &#x666;, &#x2026;</td>
+</tr>
+<tr>
+<td>lower-greek</td>
+<td>&#945;, &#946;, &#947;, &#x2026;, &#953;, &#954;, &#955;, &#x2026;</td>
+</tr>
+<tr>
+<td>upper-greek</td>
+<td>&#913;, &#914;, &#915;, &#x2026;, &#921;, &#922;, &#923;, &#x2026;</td>
+</tr>
+<tr>
+<td>persian / urdu</td>
+<td>&#x6F1;, &#x6F2;, &#x6F3;, &#x6F4;, &#x6F5;, &#x6F6;, &#x2026;</td>
+</tr>
+<tr>
+<td>cjk-decimal</td>
+<td>&#x4E00;, &#x4E8C;, &#x4E09;, &#x56DB;, &#x4E94;, &#x516D;, &#x2026;</td>
+</tr>
+<tr>
+<td>japanese-informal</td>
+<td>&#x4E00;, &#x4E8C;, &#x4E09;, &#x56DB;, &#x4E94;, &#x516D;, &#x2026;</td>
+</tr>
+<tr>
+<td>simp-chinese-informal</td>
+<td>&#x4E00;, &#x4E8C;, &#x4E09;, &#x56DB;, &#x4E94;, &#x516D;, &#x2026;</td>
+</tr>
+<tr>
+<td>trad-chinese-informal</td>
+<td>&#x4E00;, &#x4E8C;, &#x4E09;, &#x56DB;, &#x4E94;, &#x516D;, &#x2026;</td>
+</tr>
+<tr>
+<td>japanese-formal</td>
+<td>&#x58F1;, &#x5F10;, &#x53C2;, &#x56DB;, &#x4E94;, &#x516D;, &#x2026;</td>
+</tr>
+<tr>
+<td>simp-chinese-formal</td>
+<td>&#x58F9;, &#x8D30;, &#x53C1;, &#x8086;, &#x4F0D;, &#x9646;, &#x2026;</td>
+</tr>
+<tr>
+<td>trad-chinese-formal</td>
+<td>&#x58F9;, &#x8CB3;, &#x53C3;, &#x8086;, &#x4F0D;, &#x9678;, &#x2026;</td>
+</tr>
+<tr>
+<td>lower-norwegian</td>
+<td>a, b, c, &#x2026; z, &#xE6;, &#xF8;, &#xE5;, aa, ab, &#x2026;</td>
+</tr>
+<tr>
+<td>upper-norwegian</td>
+<td>A, B, C, &#x2026; Z, &#xC6;, &#xD8;, &#xC5;, AA, AB, &#x2026;</td>
+</tr>
+<tr>
+<td>lower-russian</td>
+<td>&#x430;, &#x431;, &#x432;, &#x433;, &#x434;, &#x435;, &#x436;, &#x2026;</td>
+</tr>
+<tr>
+<td>upper-russian</td>
+<td>&#x410;, &#x411;, &#x412;, &#x413;, &#x414;, &#x415;, &#x416;, &#x2026;</td>
+</tr>
+<tr>
+<td>lower-ukranian</td>
+<td>&#x430;, &#x431;, &#x432;, &#x433;, &#x434;, &#x435;, &#x454;, &#x2026;</td>
+</tr>
+<tr>
+<td>upper-ukranian</td>
+<td>&#x410;, &#x411;, &#x412;, &#x413;, &#x414;, &#x415;, &#x404;, &#x2026;</td>
+</tr>
+<tr>
+<td>lower-belarusian</td>
+<td>&#x430;, &#x431;, &#x432;, &#x433;, &#x434;, &#x435;, &#x436;, &#x2026;</td>
+</tr>
+<tr>
+<td>upper-belarusian</td>
+<td>&#x410;, &#x411;, &#x412;, &#x413;, &#x414;, &#x415;, &#x416;, &#x2026;</td>
+</tr>
+<tr>
+<td>lower-bulgarian</td>
+<td>&#x430;, &#x431;, &#x432;, &#x433;, &#x434;, &#x435;, &#x436;, &#x2026;</td>
+</tr>
+<tr>
+<td>upper-bulgarian</td>
+<td>&#x410;, &#x411;, &#x412;, &#x413;, &#x414;, &#x415;, &#x416;, &#x2026;</td>
+</tr>
+<tr>
+<td>lower-serbian</td>
+<td>&#x430;, &#x431;, &#x432;, &#x433;, &#x434;, &#x452;, &#x435;, &#x2026;</td>
+</tr>
+<tr>
+<td>upper-serbian</td>
+<td>&#x410;, &#x411;, &#x412;, &#x413;, &#x414;, &#x402;, &#x415;, &#x2026;</td>
+</tr>
+<tr>
+<td>repeat(x, y, z)</td>
+<td>x, y, z, xx, yy, zz, xxx, yyy, &#x2026;</td>
+</tr>
+<tr>
+<td>symbols(x, y, z)</td>
+<td>x, y, z, 4, 5, 6, &#x2026;</td>
+</tr>
+</table>
+<p>See also <a href="#user-defined-counter-styles">User-defined counter styles</a> for custom counters.</p>
+<h2><a class="anchor" aria-hidden="true" id="cross-references"></a><a href="#cross-references" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cross-references</h2>
+<p>Prince supports cross-references using generated content with two special functions: <code>target-counter()</code> and <code>target-content()</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="using-target-counter"></a><a href="#using-target-counter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using target-counter()</h3>
+<p>The <code>target-counter()</code> function can be used with the <a href="/doc/13/css-props#prop-content"><code>content</code></a> property to reference the value of a counter at a linked element.</p>
+<p>CSS</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[href]</span><span class="hljs-selector-pseudo">::after</span> {
+        <span class="hljs-attribute">content</span>: <span class="hljs-string">" [See page "</span> <span class="hljs-built_in">target-counter</span>(attr(href), page) <span class="hljs-string">"]"</span>
+    }
+</code></pre>
+<p>This will add a cross-reference after every link with the correct page number determined automatically. For example: [See page 17].</p>
+<p>The <code>target-counter()</code> function can specify any counter, allowing cross-references to refer to list items, chapters or sections as well as pages or footnotes.</p>
+<p>The <code>target-counter()</code> function can also take an optional counter style, similar to the normal counter function.</p>
+<p>CSS</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[href]</span><span class="hljs-selector-pseudo">::after</span> {
+        <span class="hljs-attribute">content</span>: <span class="hljs-string">" [See chapter "</span>
+             <span class="hljs-built_in">target-counter</span>(attr(href), chapter, upper-roman)
+             <span class="hljs-string">"]"</span>
+    }
+</code></pre>
+<p>This will add a cross-reference after every link with the correct chapter number determined automatically and displayed using roman numerals. For example: [See chapter IV].</p>
+<h3><a class="anchor" aria-hidden="true" id="using-target-content"></a><a href="#using-target-content" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using target-content()</h3>
+<p>The <code>target-content()</code> function can be used with the <a href="/doc/13/css-props#prop-content"><code>content</code></a> property to reference the text content of a linked element.</p>
+<p>CSS</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[href]</span><span class="hljs-selector-pseudo">::after</span> {
+        <span class="hljs-attribute">content</span>: <span class="hljs-string">" [See '"</span> <span class="hljs-built_in">target-content</span>(attr(href)) <span class="hljs-string">"']"</span>
+    }
+</code></pre>
+<p>This will add a cross-reference after every link that includes the text of the element being linked to, such as a chapter title. For example: [See 'Introduction'].</p>
+<h2><a class="anchor" aria-hidden="true" id="script-functions"></a><a href="#script-functions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Script Functions</h2>
+<p>Prince supports arbitrary JavaScript functions to be called from CSS generated content using the <code>prince-script()</code> function (see the <a href="/doc/13/css-props#prop-content"><code>content</code></a> property). To make the functions available to CSS, the <code>Prince.addScriptFunc</code> method is used (see <a href="/doc/13/javascript#the-prince-object">The Prince Object</a>).</p>
+<p>Please note that Prince is not running JavaScript by default - it needs to be explicitly enabled. See <a href="/doc/13/prince-input#applying-javascript-in-prince">Applying JavaScript in Prince</a>.</p>
+<p>CSS</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">p</span><span class="hljs-selector-pseudo">::after</span> {
+        <span class="hljs-attribute">content</span>: <span class="hljs-built_in">prince-script</span>(myfunc)
+    }
+</code></pre>
+<p>JavaScript</p>
+<pre><code class="hljs css language-javascript">    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myfunc</span>(<span class="hljs-params"></span>)
+    </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"Some generated content text!"</span>;
+    }
+
+    Prince.addScriptFunc(<span class="hljs-string">"myfunc"</span>, myfunc);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="accessing-the-current-date-and-time"></a><a href="#accessing-the-current-date-and-time" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Accessing the current date and time</h3>
+<p>JavaScript functions have access to the current date and time, which can be added to the document using <code>prince-script()</code> in generated content.</p>
+<p>CSS</p>
+<pre><code class="hljs">    @page {
+        @top {
+        content: prince-script(datestamp)
+        }
+    }
+</code></pre>
+<p>JavaScript</p>
+<pre><code class="hljs css language-javascript">    Prince.addScriptFunc(<span class="hljs-string">"datestamp"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">return</span> (<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>()).toString();
+    });
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="user-defined-counter-styles"></a><a href="#user-defined-counter-styles" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>User-defined counter styles</h3>
+<p>The JavaScript functions used with <code>prince-script()</code> can take arguments that are themselves generated content. This allows functions to operate on counter values and implement new counter styles.</p>
+<p>CSS</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">::marker</span> {
+        <span class="hljs-attribute">content</span>: <span class="hljs-built_in">prince-script</span>(mycounterstyle, counter(list-item))
+    }
+</code></pre>
+<p>JavaScript</p>
+<pre><code class="hljs css language-javascript">    Prince.addScriptFunc(<span class="hljs-string">"mycounterstyle"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">n</span>) </span>{
+        <span class="hljs-keyword">if</span> (n == <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-string">"one"</span>;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (n == <span class="hljs-number">2</span>) <span class="hljs-keyword">return</span> <span class="hljs-string">"two"</span>;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (n == <span class="hljs-number">3</span>) <span class="hljs-keyword">return</span> <span class="hljs-string">"three"</span>;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> n;
+    });
+</code></pre>
+<p>For another way of creating user-defined counter styles, see <a href="#generated-content-functions">Generated Content Functions</a>.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/doc/13/paged"><span class="arrow-prev">← </span><span>Paged Media</span></a><a class="docs-next button" href="/doc/13/javascript"><span>Scripting</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#generated-content-functions">Generated Content Functions</a><ul class="toc-headings"><li><a href="#the-optional-page-policy-value">The optional <code>page-policy</code> value</a></li></ul></li><li><a href="#before-and-after-pseudo-elements">Before and After pseudo-elements</a></li><li><a href="#counters-and-numbering">Counters and Numbering</a><ul class="toc-headings"><li><a href="#initializing-and-incrementing-counters">Initializing and incrementing counters</a></li><li><a href="#displaying-counters">Displaying counters</a></li><li><a href="#nested-counters">Nested counters</a></li><li><a href="#counter-styles">Counter styles</a></li></ul></li><li><a href="#cross-references">Cross-references</a><ul class="toc-headings"><li><a href="#using-target-counter">Using target-counter()</a></li><li><a href="#using-target-content">Using target-content()</a></li></ul></li><li><a href="#script-functions">Script Functions</a><ul class="toc-headings"><li><a href="#accessing-the-current-date-and-time">Accessing the current date and time</a></li><li><a href="#user-defined-counter-styles">User-defined counter styles</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="copyright"><div class="about-contact"><a href="/company/">About us</a> | <a href="/contact/">Contact</a></div><div class="copyright">Copyright © 2022 YesLogic Pty. Ltd.</div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '63dda203371e77ee63a05de413c3d741',
+                indexName: 'princexml',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["language:en"]}
+              });
+            </script></body></html>

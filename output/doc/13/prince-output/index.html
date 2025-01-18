@@ -1,0 +1,406 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Prince Output · Prince Documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Prince produces PDF files that are compatible with Adobe Acrobat and other PDF viewers. The output can be controlled in several different ways, addressing different aspects of the resulting files."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Prince Output · Prince Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://www.princexml.com/"/><meta property="og:description" content="Prince produces PDF files that are compatible with Adobe Acrobat and other PDF viewers. The output can be controlled in several different ways, addressing different aspects of the resulting files."/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://www.princexml.com/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="/js/warning.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/Prince-logo.png" alt="Prince Documentation"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/doc/" target="_self">Documentation</a></li><li class=""><a href="/doc/help" target="_self">Help</a></li><li class=""><a href="/doc/releases" target="_self">Release Notes</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>User Guide</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Installation Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/installing">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/doc/13/first-doc">Your First Document</a></li><li class="navListItem"><a class="navItem" href="/doc/13/help-install">Help</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">User Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/intro-userguide">Convert HTML to PDF</a></li><li class="navListItem"><a class="navItem" href="/doc/13/styling">Styling</a></li><li class="navListItem"><a class="navItem" href="/doc/13/paged">Paged Media</a></li><li class="navListItem"><a class="navItem" href="/doc/13/gen-content">Generated Content</a></li><li class="navListItem"><a class="navItem" href="/doc/13/javascript">Scripting</a></li><li class="navListItem"><a class="navItem" href="/doc/13/graphics">Graphics</a></li><li class="navListItem"><a class="navItem" href="/doc/13/cookbook">Prince Tips and Tricks</a></li><li class="navListItem"><a class="navItem" href="/doc/13/help">Help</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-input">Prince Input</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/doc/13/prince-output">Prince Output</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-networking">Prince Networking</a></li><li class="navListItem"><a class="navItem" href="/doc/13/server-integration">Server Integration</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-for-books">Prince for Books</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Reference Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/command-line">Command-line Reference</a></li><li class="navListItem"><a class="navItem" href="/doc/13/css-refs">CSS References</a></li><li class="navListItem"><a class="navItem" href="/doc/13/css-props">CSS Properties</a></li><li class="navListItem"><a class="navItem" href="/doc/13/js-support">JavaScript Support</a></li><li class="navListItem"><a class="navItem" href="/doc/13/page-size-keywords">Page Size Keywords</a></li><li class="navListItem"><a class="navItem" href="/doc/13/characters">Character Entities</a></li><li class="navListItem"><a class="navItem" href="/doc/13/acknowledgements">Acknowledgments</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Prince Output</h1></header><article><div><span><p>Prince produces PDF files that are compatible with Adobe Acrobat and other PDF viewers. The output can be controlled in several different ways, addressing different aspects of the resulting files.</p>
+<p>For the error and warning output log, please see <a href="/doc/13/help#output-log">Output log</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="pdf-versions-and-profiles"></a><a href="#pdf-versions-and-profiles" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PDF Versions and Profiles</h2>
+<p>The PDF files produced by Prince conform to several different PDF versions, up to PDF 1.7, depending on the chosen PDF Profile and the enabled PDF features.</p>
+<p>Prince supports tagged PDF files and optional PDF profiles, which can be selected using the <a href="/doc/13/command-line#cl-pdf-profile"><code>--pdf-profile</code></a> option on the <a href="/doc/13/command-line">command-line interface</a>, or the <code>setProfile</code> method if using a <a href="/doc/13/server-integration#wrappers">server wrapper</a>, or the <a href="/doc/13/js-support#window.PDF.profile"><code>PDF.profile</code></a> function in JavaScript.</p>
+<p>The available profiles, and the PDF version they are based on, are:</p>
+<table>
+<thead>
+<tr><th>PDF Profile</th><th>PDF version</th></tr>
+</thead>
+<tbody>
+<tr><td>PDF/A-1a</td><td>PDF 1.4</td></tr>
+<tr><td>PDF/A-1b</td><td>PDF 1.4</td></tr>
+<tr><td>PDF/A-3a</td><td>PDF 1.7</td></tr>
+<tr><td>PDF/A-3b</td><td>PDF 1.7</td></tr>
+<tr><td>PDF/UA-1</td><td>PDF 1.7</td></tr>
+<tr><td>PDF/X-1a:2001</td><td>PDF 1.3</td></tr>
+<tr><td>PDF/X-1a:2003</td><td>PDF 1.4</td></tr>
+<tr><td>PDF/X-3:2002</td><td>PDF 1.3</td></tr>
+<tr><td>PDF/X-3:2003</td><td>PDF 1.4</td></tr>
+<tr><td>PDF/X-4</td><td>PDF 1.6</td></tr>
+</tbody>
+</table>
+<p>Prince supports files with the combined PDF/A-1a+PDF/UA-1 and PDF/A-3a+PDF/UA-1 profiles.</p>
+<p>Prince also uses:</p>
+<p>PDF 1.5</p>
+<ul>
+<li>if object streams are enabled, or</li>
+<li>if tagged PDF is enabled, or</li>
+<li>if 16-bit images are included in the PDF;</li>
+</ul>
+<p>PDF 1.6</p>
+<ul>
+<li>if the <a href="/doc/13/css-props#prop-prince-pdf-print-scaling"><code>prince-pdf-print-scaling</code></a> property is set, or</li>
+<li>if the <a href="/doc/13/css-props#prop-prince-pdf-page-mode"><code>prince-pdf-page-mode</code></a> property has the value <code>show-attachments</code>;</li>
+</ul>
+<p>PDF 1.7</p>
+<ul>
+<li>if the <a href="/doc/13/css-props#prop-prince-pdf-paper-tray"><code>prince-pdf-paper-tray</code></a> property is set, or</li>
+<li>if the <a href="/doc/13/css-props#prop-prince-pdf-duplex"><code>prince-pdf-duplex</code></a> property is set.</li>
+</ul>
+<p>To enable tagged PDF without using one of the profiles that already imply it, the command-line option <a href="/doc/13/command-line#cl-tagged-pdf"><code>--tagged-pdf</code></a> can be used.</p>
+<p>Prince supports PDF object streams to reduce the size of tagged PDFs. This can be disabled by the command-line argument <a href="/doc/13/command-line#cl-no-object-streams"><code>--no-object-streams</code></a> or from JavaScript via the <a href="/doc/13/js-support#window.PDF.objectStreams"><code>PDF.objectStreams</code></a> boolean property.</p>
+<p>Object streams are enabled by default, therefore Prince produces files with PDF version 1.5 - unless a profile that requires older PDF versions will automatically disable object streams.</p>
+<p>Choosing one profile over another can help producing a PDF file which has the right properties for its intended destination. Each PDF profile places restrictions on the features allowed in a PDF file in order to achieve its aims. Please also see the <a href="/doc/13/graphics#color-management">Color Management</a> section for the impact the PDF profiles have on color management. Prince produces error messages when the restrictions are not respected.</p>
+<pre><code class="hljs css language-bash">    $ prince foo.md --encrypt --no-embed-fonts --pdf-profile=<span class="hljs-string">"PDF/A-1b"</span>
+    prince: error: PDF/A-1b does not support encryption
+    prince: error: PDF/A-1b requires fonts to be embedded
+</code></pre>
+<p>Generally speaking, PDF/A profiles were created with the goal of long-term preservation of the documents (<strong>PDF</strong> for <strong>A</strong>rchiving), while PDF/X profiles were created to address publisher's needs in the graphic arts industry (<strong>PDF</strong> for e<strong>X</strong>change). The PDF/UA profile is a standard for producing accessible electronic documents (<strong>PDF</strong> for <strong>U</strong>niversal <strong>A</strong>ccessibility).</p>
+<h3><a class="anchor" aria-hidden="true" id="pdfa"></a><a href="#pdfa" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PDF/A</h3>
+<ul>
+<li>PDF/A tries to maximize device independence</li>
+<li>Audio and video content is forbidden</li>
+<li>All fonts are embedded</li>
+<li>Colorspaces should be specified in a device-independent manner: all color data must be Grayscale, CMYK or named Spot Colors and there must be an output intent. Transparency is not allowed. See also <a href="/doc/13/graphics#color-management-and-pdf-profiles">Color Management and PDF Profiles</a></li>
+<li>Encryption is forbidden</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="pdfua"></a><a href="#pdfua" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PDF/UA</h3>
+<ul>
+<li>Content must be tagged in a logical order</li>
+<li>Tags must correctly represent the semantic structure (headings, lists, etc.)</li>
+<li>Content not accessible to assistive technology must be avoided</li>
+<li>Meaningful images and graphics must contain alternative text descriptions</li>
+<li>Security settings must allow assistive technologies to access the content</li>
+<li>All fonts must be embedded</li>
+<li>Text must be mapped to Unicode</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="pdfx"></a><a href="#pdfx" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PDF/X</h3>
+<ul>
+<li>PDF/X is intended to support &quot;blind exchange&quot;, i.e. no exchange of technical information is needed to render the printed page as intended</li>
+<li>Audio and video content is forbidden</li>
+<li>All fonts are embedded</li>
+<li>Colorspaces must be specified in a device-independent manner - an output intent is required (see the <a href="/doc/13/command-line#cl-pdf-output-intent"><code>--pdf-output-intent</code></a> command-line option in the <a href="/doc/13/command-line#cmd-pdf">PDF Output Options</a> section)</li>
+<li>See the <a href="/doc/13/graphics#color-management-and-pdf-profiles">Color Management and PDF Profiles</a> section for the color profiles available in each PDF/X version. Transparency is not allowed, with the exception of PDF/X-4</li>
+<li>Encryption is forbidden</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="pdf-accessibility"></a><a href="#pdf-accessibility" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PDF Accessibility</h2>
+<p>Producing accessible documents is very important when documents are to be shared with a wider audience. There are several criteria that need to be addressed, summed up in the <a href="https://www.w3.org/WAI/standards-guidelines/wcag/">Web Content Accessibility Guidelines</a>, often abbreviated to WCAG, a set of guidelines for improving web accessibility.</p>
+<p>The relevant criteria for producing accessible PDF can also be found in a separate document, the <a href="https://www.w3.org/TR/WCAG20-TECHS/pdf.html">PDF Techniques for WCAG 2.0</a>.</p>
+<p>A first step would be to produce files with one of the PDF profiles addressing accessibility, namely the PDF/UA-1 profile or the combined PDF/A-1a+PDF/UA-1 or PDF/A-3a+PDF/UA-1 profiles, by specifying the <a href="doc-refs.html#cl-pdf-profile"><code>--pdf-profile</code></a> command line option. See <a href="#pdf-versions-and-profiles">PDF Versions and Profiles</a> for details.</p>
+<p>The next step would be to specifically check compliance of the document's content with the requirements. A number of resoures or tools can be helpful in this step:</p>
+<ul>
+<li><a href="https://www.access-for-all.ch/en/pdf-lab/pdf-accessibility-checker-pac.html">Free PDF Accessibility Checker</a></li>
+<li><a href="https://www.access-for-all.ch/en/pdf-lab/500-vip-pdf-reader-e.html">VIP-PDF-Reader</a></li>
+<li><a href="http://checkers.eiii.eu/en/pdfcheck/">PDF Checker of the European Internet Inclusion Initiative</a></li>
+</ul>
+<p>Prince helps in creating accessible documents. Note, however, that Prince does not create WCAG-compliant documents by itself - care has to be taken, and the HTML source has to be coded in specific ways to address all requirements in order to create WCAG-compliant PDF documents.</p>
+<p>Bruce Lawson has written an interesting introduction on how to make <a href="https://medium.com/@bruce_39084/making-accessible-tagged-pdfs-with-prince-ad7fd7a48711">accessible tagged PDFs with Prince</a> - all you need to know about PDF tags and Prince! Last but not least, there is a nice <a href="https://taggedpdf.com/resources/">Resources</a> page on tagged and accessible PDFs.</p>
+<h2><a class="anchor" aria-hidden="true" id="pdf-features"></a><a href="#pdf-features" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PDF Features</h2>
+<p>Prince supports a wide range of PDF features, including the following:</p>
+<h3><a class="anchor" aria-hidden="true" id="pdf-links"></a><a href="#pdf-links" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PDF Links</h3>
+<p>Prince supports PDF-internal and -external links. HTML hyperlinks are automatically converted. To make an element in XML, or any arbitrary element, a clickable link, the <a href="/doc/13/css-props#prop-prince-link"><code>prince-link</code></a> CSS property is required.</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">xref</span> {
+        <span class="hljs-attribute">prince-link</span>: <span class="hljs-built_in">attr</span>( linkend )
+    }
+</code></pre>
+<p>The property <a href="/doc/13/css-props#prop-prince-pdf-link-type"><code>prince-pdf-link-type</code></a> may be used to control the link type and target, i.e. whether relative links should be embedded in the PDF as web (URL) links or file links (by default they will be resolved against the base URL of the input document) and whether to open the links in the same or a new window. Note however that the optional link target keywords <code>same-window</code> and <code>new-window</code> only affect links to local PDF files.</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[href]</span> {
+        <span class="hljs-attribute">prince-pdf-link-type</span>: new-window;
+    }
+</code></pre>
+<p>This example is equivalent to <code>prince-pdf-link-type: auto new-window</code> and has only effect for links to local files.</p>
+<p>Prince also supports the following PDF-specific fragment identifiers, supported by web browsers, and will use them when generating links to local PDF files.</p>
+<pre><code class="hljs css language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"test.pdf#page=2"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"test.pdf#nameddest=section1"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+</code></pre>
+<p>Named destinations (<code>nameddest</code>) in PDF files have a similar function to HTML IDs: they can be the target anchors for links from other documents. The property <a href="/doc/13/css-props#prop-prince-pdf-destination"><code>prince-pdf-destination</code></a> is used for creating them.</p>
+<p>HTML</p>
+<pre><code class="hljs css language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"section"</span> <span class="hljs-attr">data-sectionid</span>=<span class="hljs-string">"section1"</span>&gt;</span>
+</code></pre>
+<p>CSS</p>
+<pre><code class="hljs css language-css">    <span class="hljs-selector-tag">div</span><span class="hljs-selector-class">.section</span> {
+        <span class="hljs-attribute">prince-pdf-destination</span>: <span class="hljs-built_in">attr</span>( data-sectionid )
+    }
+</code></pre>
+<p>In order to link to this section, the following syntax is used:</p>
+<p>HTML</p>
+<pre><code class="hljs css language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"test.pdf#nameddest=section1"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="pdf-actions"></a><a href="#pdf-actions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PDF Actions</h3>
+<p>Prince supports the <code>pdf-action:</code> URL scheme for PDF actions. Typical values are <code>Print</code>, <code>GoBack</code>, <code>GoForward</code>, <code>NextPage</code>, <code>PrevPage</code>, <code>FirstPage</code>, <code>LastPage</code>.</p>
+<pre><code class="hljs css language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"pdf-action:Print"</span>&gt;</span>Print Document<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+</code></pre>
+<p>However, Prince passes the provided values verbatim to the PDF viewer, so the user can supply values that Prince doesn't know about, but the viewer does. Also, these scripts will always be run, unlike JavaScript (see <a href="/doc/13/prince-input#applying-javascript-in-prince">Applying JavaScript in Prince</a>).</p>
+<p>Please be advised that this and the following actions and scripts are dependent on the PDF viewer, and in many cases might only work in Adobe Acrobat products.</p>
+<p>The property <a href="/doc/13/css-props#prop-prince-pdf-open-action"><code>prince-pdf-open-action</code></a> may be used to specify a space-separated list of actions to perform when the PDF file is opened, like eg. popping up the print dialog box automatically, or setting the default zoom level for PDF documents. Any arbitrary identifier can be specified, although these may be PDF viewer specific; Acrobat can take just about any menu item.</p>
+<pre><code class="hljs css language-css">    <span class="hljs-keyword">@prince-pdf</span> {
+        <span class="hljs-selector-tag">prince-pdf-open-action</span>: <span class="hljs-selector-tag">zoom</span>(<span class="hljs-selector-tag">fit-page</span>) <span class="hljs-selector-tag">print</span>;
+    }
+</code></pre>
+<p>In a similar fashion, scripts that will be executed when the PDF file is opened may be included with the <a href="/doc/13/css-props#prop-prince-pdf-script"><code>prince-pdf-script</code></a> property. A common use case is to activate the &quot;Print&quot; dialog automatically. To achieve the equivalent of the previous example, the following code could be used:</p>
+<pre><code class="hljs css language-css">    @prince-pdf {
+        prince-pdf-script: "this.zoomType = zoomtype.fitP; this.print();"
+    }
+</code></pre>
+<p>The property can also take the <code>url()</code> function to reference an external JavaScript file.</p>
+<pre><code class="hljs css language-css">    <span class="hljs-keyword">@prince-pdf</span> {
+        <span class="hljs-selector-tag">prince-pdf-script</span>: <span class="hljs-selector-tag">url</span>("<span class="hljs-selector-tag">myscript</span><span class="hljs-selector-class">.js</span>")
+    }
+</code></pre>
+<p>Prince offers yet another way to include scripts in a document through a stylesheet: the <a href="/doc/13/css-props#prop-prince-pdf-event-scripts"><code>prince-pdf-event-scripts</code></a> property can be used to include JavaScript code that will be executed in the PDF when printing, saving, and closing the PDF, known as &quot;Document Action&quot; scripts. Just as with the previous property, scripts can either be given inline, or be included from an external file.</p>
+<pre><code class="hljs css language-css">    <span class="hljs-keyword">@prince-pdf</span> {
+        <span class="hljs-selector-tag">prince-pdf-event-scripts</span>: <span class="hljs-selector-tag">will-close</span> <span class="hljs-selector-tag">url</span>("<span class="hljs-selector-tag">onclose</span><span class="hljs-selector-class">.js</span>"), <span class="hljs-selector-tag">will-print</span> <span class="hljs-selector-tag">url</span>("<span class="hljs-selector-tag">onprint</span><span class="hljs-selector-class">.js</span>");
+    }
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="pdf-pages"></a><a href="#pdf-pages" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PDF Pages</h3>
+<p>Prince allows for some degree of control on the pages and the page layout in a PDF file. The CSS property <a href="/doc/13/css-props#prop-prince-pdf-page-label"><code>prince-pdf-page-label</code></a> can be used to set the page label that will be displayed in the PDF viewer. It can be used to instruct the PDF viewer to display the page label in the ToC in a particular way.</p>
+<pre><code class="hljs css language-css">    <span class="hljs-keyword">@page</span> {
+        <span class="hljs-attribute">prince-pdf-page-label</span>: <span class="hljs-built_in">counter</span>(page, lower-roman);
+    }
+</code></pre>
+<p>The property <a href="/doc/13/css-props#prop-prince-pdf-page-mode"><code>prince-pdf-page-mode</code></a> can be used to set the default page mode for the PDF file when it is opened. For example, whether the bookmarks panel should be displayed, and whether the viewer should be fullscreen.</p>
+<pre><code class="hljs css language-css">    <span class="hljs-keyword">@prince-pdf</span> {
+        <span class="hljs-selector-tag">prince-pdf-page-mode</span>: <span class="hljs-selector-tag">fullscreen</span>;
+    }
+</code></pre>
+<p>Also the default page layout for the PDF file when it is opened can be determined with the <a href="/doc/13/css-props#prop-prince-pdf-page-layout"><code>prince-pdf-page-layout</code></a> property.</p>
+<pre><code class="hljs css language-css">    <span class="hljs-keyword">@prince-pdf</span> {
+        <span class="hljs-selector-tag">prince-pdf-page-layout</span>: <span class="hljs-selector-tag">two-column-right</span>;
+    }
+</code></pre>
+<p>The values of this property are mapped to PDF page layout options:</p>
+<table class="grid">
+<thead>
+  <tr>
+    <th>CSS Keyword</th>
+    <th>PDF Page Layout</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><code>single-page</code></td>
+    <td>Single Page View</td>
+    <td>Displays one page at the time</td>
+  </tr>
+  <tr>
+    <td><code>one-column</code></td>
+    <td>Enable Scrolling</td>
+    <td>Displays pages in one continuous vertical column</td>
+  </tr>
+  <tr>
+    <td><code>two-column</code> | <code>two-column-left</code></td>
+    <td>Two Page Scrolling</td>
+    <td>Displays facing pages side by side in a continuous vertical column - the
+    first (i.e. cover) page is on the left.</td>
+  </tr>
+  <tr>
+    <td><code>two-column-right</code></td>
+    <td>Two Page Scrolling &amp; Show Cover Page</td>
+    <td>Displays facing pages side by side in a continuous vertical column - the
+    first (i.e. cover) page is displayed alone on the right.</td>
+  </tr>
+  <tr>
+    <td><code>two-page</code> | <code>two-page-left</code></td>
+    <td>Two Page View</td>
+    <td>Displays a two-page spread at the time - the first (i.e. the cover) page
+    is on the left.</td>
+  </tr>
+  <tr>
+    <td><code>two-page-right</code></td>
+    <td>Two Page View &amp; Show Cover Page</td>
+    <td>Displays a two-page spread at the time - the first (i.e. the cover) page
+    is displayed alone on the right.</td>
+  </tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="pdf-printing"></a><a href="#pdf-printing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PDF Printing</h3>
+<p>Prince also provides two properties to fine-tune the printing of the PDF. The property <a href="/doc/13/css-props#prop-prince-pdf-print-scaling"><code>prince-pdf-print-scaling</code></a> can be used to disable print scaling for the PDF file when it is printed and the property <code>prince-pdf-paper-tray</code> controls the PickTrayByPDFSize flag in generated PDF files, which specifies whether the PDF page size is used to select the input paper tray.</p>
+<p>Duplex printing is supported with the CSS property <a href="/doc/13/css-props#prop-prince-pdf-duplex"><code>prince-pdf-duplex</code></a>. This property may be used inside the <a href="css-refs.mn#at-prince-pdf"><code>@prince-pdf</code></a> at-rule to set the <code>Duplex</code> property in the <code>PDFViewerPreferences</code> dictionary. The values <code>duplex-flip-short-edge</code> and <code>duplex-flip-long-edge</code> tell about how to flip the paper, while the value <code>simplex</code> suppresses duplex printing.</p>
+<pre><code class="hljs css language-css">    <span class="hljs-keyword">@prince-pdf</span> {
+        <span class="hljs-selector-tag">prince-pdf-duplex</span>: <span class="hljs-selector-tag">duplex-flip-long-edge</span>;
+    }
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="pdf-compression"></a><a href="#pdf-compression" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PDF Compression</h3>
+<p>Prince compresses its PDF output to reduce the size of the documents that it produces, but does not create linearized PDF files, as this would increase formatting time and memory requirements. An external program such as Adobe Acrobat or Ghostscript may be used for this purpose if necessary.</p>
+<p>Compression may be disabled with the command-line option <a href="/doc/13/command-line#cl-no-compress"><code>--no-compress</code></a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="pdf-encryption-and-document-security"></a><a href="#pdf-encryption-and-document-security" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PDF Encryption and Document Security</h3>
+<p>Prince can encrypt the produced PDF files with the <a href="/doc/13/command-line#cl-encrypt"><code>--encrypt</code></a> command-line option. The default key size is 128 bits. With the option <a href="/doc/13/command-line#cl-key-bits"><code>--key-bits</code></a> a different key size can be chosen. Also the JavaScript methods <a href="/doc/13/js-support#window.PDF.encrypt"><code>PDF.encrypt</code></a> and <a href="/doc/13/js-support#window.PDF.keyBits"><code>PDF.keyBits</code></a> can be used for the same purpose.</p>
+<p>The command-line options <a href="/doc/13/command-line#cl-user-password"><code>--user-password</code></a> and <a href="/doc/13/command-line#cl-owner-password"><code>--owner-password</code></a> set respectively the PDF user password and the PDF owner password.</p>
+<p>Prince also offers a range of command-line options to disallow printing, copying, annotating and modifying the PDF output: <a href="/doc/13/command-line#cl-disallow-print"><code>--disallow-print</code></a>, <a href="/doc/13/command-line#cl-disallow-copy"><code>--disallow-copy</code></a>, <a href="/doc/13/command-line#cl-disallow-annotate"><code>--disallow-annotate</code></a> and <a href="/doc/13/command-line#cl-disallow-modify"><code>--disallow-modify</code></a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="pdf-font-embedding-and-subsetting"></a><a href="#pdf-font-embedding-and-subsetting" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PDF Font Embedding and Subsetting</h3>
+<p>Prince embeds fonts in its PDF output to ensure accurate viewing and printing on any system. Typically, only the necessary parts of a font will be embedded - font subsetting is enabled by default.</p>
+<p>Font subsetting can be disabled with the command-line option <a href="/doc/13/command-line#cl-no-subset-fonts"><code>--no-subset-fonts</code></a> or with the JavaScript function <a href="/doc/13/js-support#window.PDF.subsetFonts"><code>PDF.subsetFonts</code></a>: in that case, Prince will embed the entire font in the PDF file, which is convenient if people are planning on editing the PDF file later, and may need to add glyphs that were not present in the original PDF.</p>
+<p>Font subsetting is disabled automatically for individual fonts that do not grant permission to subset, or if Prince cannot subset them for some other reason.</p>
+<p>Font embedding can be disabled if necessary, for example if Prince is being used to create PDF files in a controlled environment with known fonts where space is at a premium. The command-line option <a href="/doc/13/command-line#cl-no-embed-fonts"><code>--no-embed-fonts</code></a> is used for this purpose.</p>
+<h3><a class="anchor" aria-hidden="true" id="pdf-attachments"></a><a href="#pdf-attachments" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PDF Attachments</h3>
+<p>Prince supports adding files to PDF documents as attachments. The main mechanisms for doing so are the JavaScript function <a href="/doc/13/js-support#window.PDF.attachFile"><code>PDF.attachFile</code></a> and the command-line option <a href="/doc/13/command-line#cl-attach"><code>--attach</code></a>. Additionally, the job description JSON format, used by the <a href="/doc/13/server-integration#prince-control-protocol">Prince Control Protocol</a>, can be used to provid an attachment &quot;inline&quot; through the Java/C# APIs (see <a href="/doc/13/server-integration#wrappers">Prince Wrappers</a>) instead of as a separate file on the filesystem. See <a href="/doc/13/server-integration#prince-control-protocol">Prince Control Protocol</a> for details on the job description JSON format.</p>
+<h3><a class="anchor" aria-hidden="true" id="pdf-bookmarks"></a><a href="#pdf-bookmarks" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PDF Bookmarks</h3>
+<p>Prince can create PDF bookmarks that link to document content.</p>
+<h4><a class="anchor" aria-hidden="true" id="bookmark-levels"></a><a href="#bookmark-levels" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bookmark levels</h4>
+<p>PDF bookmarks have numeric levels that place them in a bookmark hierarchy. For example, a bookmark at level 2 can contain nested bookmarks at level 3, or any higher level. The level of a bookmark is controlled using the <a href="/doc/13/css-props#prop-prince-bookmark-level"><code>prince-bookmark-level</code></a> property, shown here being applied to the XHTML heading elements:</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">h1</span> { <span class="hljs-attribute">prince-bookmark-level</span>: <span class="hljs-number">1</span> }
+    <span class="hljs-selector-tag">h2</span> { <span class="hljs-attribute">prince-bookmark-level</span>: <span class="hljs-number">2</span> }
+    <span class="hljs-selector-tag">h3</span> { <span class="hljs-attribute">prince-bookmark-level</span>: <span class="hljs-number">3</span> }
+    <span class="hljs-selector-tag">h4</span> { <span class="hljs-attribute">prince-bookmark-level</span>: <span class="hljs-number">4</span> }
+    <span class="hljs-selector-tag">h5</span> { <span class="hljs-attribute">prince-bookmark-level</span>: <span class="hljs-number">5</span> }
+    <span class="hljs-selector-tag">h6</span> { <span class="hljs-attribute">prince-bookmark-level</span>: <span class="hljs-number">6</span> }
+</code></pre>
+<p>The default value for this property is <code>none</code>, which inhibits the creation of a bookmark for the element.</p>
+<p>It is possible to control the state of the bookmark, i.e. whether the bookmark is in an <code>open</code> or <code>closed</code> state, with the <a href="/doc/13/css-props#prop-prince-bookmark-state"><code>prince-bookmark-state</code></a> property. In this way you can close each chapter and hide the subsections for documents that are very long, or you can choose to have a deep bookmark tree.</p>
+<h4><a class="anchor" aria-hidden="true" id="bookmark-labels"></a><a href="#bookmark-labels" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bookmark labels</h4>
+<p>PDF bookmarks have textual labels that by default are copied from the text content of the element that generated the bookmark. The text of this label may be controlled using the <a href="/doc/13/css-props#prop-prince-bookmark-label"><code>prince-bookmark-label</code></a> property, shown here being applied to a chapter element that has a title attribute:</p>
+<p>CSS</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">chapter</span> {
+        <span class="hljs-attribute">prince-bookmark-level</span>: <span class="hljs-number">1</span>;
+        <span class="hljs-attribute">prince-bookmark-label</span>: <span class="hljs-built_in">attr</span>(title)
+    }
+</code></pre>
+<p>This property can take any content value, including literal text strings and counters. See <a href="/doc/13/gen-content#generated-content-functions">Generated Content Functions</a>.</p>
+<h4><a class="anchor" aria-hidden="true" id="bookmark-targets"></a><a href="#bookmark-targets" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bookmark targets</h4>
+<p>PDF bookmarks are links that display a particular part of the document when activated. By default, a bookmark will link to the element that generated the bookmark, which is sensible behavior for bookmarks generated from headings or chapter elements. It is also possible to change the target of a bookmark using the <a href="/doc/13/css-props#prop-prince-bookmark-target"><code>prince-bookmark-target</code></a> property, which takes a URL directly or an attribute containing a URL:</p>
+<p>CSS</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">bookmark</span> { <span class="hljs-attribute">prince-bookmark-target</span>: <span class="hljs-built_in">url</span>(#intro) }
+    <span class="hljs-selector-tag">bookmark</span> { <span class="hljs-attribute">prince-bookmark-target</span>: <span class="hljs-built_in">attr</span>(href) }
+</code></pre>
+<p>The default value for this property is <code>self</code>, referring to the element that generated the bookmark.</p>
+<h3><a class="anchor" aria-hidden="true" id="pdf-tags"></a><a href="#pdf-tags" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PDF Tags</h3>
+<p>Tagged PDF files have special handling mechanisms for specific tag types. When enabling tagged PDF files with the command line option <a href="/doc/13/command-line#cl-tagged-pdf"><code>--tagged-pdf</code></a> Prince automatically assigns default values to certain HTML elements, which can be seen in the default <code>html.css</code> style sheet (see <a href="/doc/13/installing#installation-layout">Installation Layout</a>).</p>
+<p>However, in specific cases it is advisable to fine-tune the PDF tags with the <a href="/doc/13/css-props#prop-prince-pdf-tag-type"><code>prince-pdf-tag-type</code></a> property. In Prince, it is possible to assign PDF tag types to elements in the document through the <a href="/doc/13/css-props#prop-prince-pdf-tag-type"><code>prince-pdf-tag-type</code></a> property, in order to create XML vocabularies in the PDF.</p>
+<p>CSS</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">ul</span><span class="hljs-selector-class">.toc</span> {
+      <span class="hljs-attribute">prince-pdf-tag-type</span>: TOC;
+    }
+    <span class="hljs-selector-class">.toc</span> <span class="hljs-selector-tag">li</span> {
+      <span class="hljs-attribute">prince-pdf-tag-type</span>: TOCI;
+    }
+</code></pre>
+<p>HTML</p>
+<pre><code class="hljs css language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"toc"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>First Chapter<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>Second Chapter<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+</code></pre>
+<p>The possible values are the following PDF tag types:</p>
+<ul>
+<li>Part</li>
+<li>Art</li>
+<li>Sect</li>
+<li>Div</li>
+<li>Index</li>
+<li>BlockQuote</li>
+<li>Caption</li>
+<li>TOC</li>
+<li>TOCI</li>
+<li>P</li>
+<li>H1</li>
+<li>H2</li>
+<li>H3</li>
+<li>H4</li>
+<li>H5</li>
+<li>H6</li>
+<li>OL</li>
+<li>UL</li>
+<li>LI</li>
+<li>Lbl</li>
+<li>DL</li>
+<li>DL-Div</li>
+<li>DT</li>
+<li>DD</li>
+<li>Span</li>
+<li>Quote</li>
+<li>Table</li>
+<li>BibEntry</li>
+<li>Code</li>
+<li>Figure</li>
+<li>Formula</li>
+<li>Artifact</li>
+</ul>
+<p>The default value <code>auto</code> leaves the tag assignment to Prince.</p>
+<p>Bruce Lawson has written an interesting introduction on how to make <a href="https://medium.com/@bruce_39084/making-accessible-tagged-pdfs-with-prince-ad7fd7a48711">accessible tagged PDFs with Prince</a> - all you need to know about PDF tags and Prince!</p>
+<h3><a class="anchor" aria-hidden="true" id="pdf-metadata"></a><a href="#pdf-metadata" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>PDF Metadata</h3>
+<p>Prince creates PDF metadata from the content of the XHTML metadata elements. The content of the <code>&lt;title&gt;</code> element is used for the document title, while the <code>&lt;meta&gt;</code> element can be used to specify the document author, subject, keywords, date, and generator application:</p>
+<p>XML</p>
+<pre><code class="hljs css language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Cooking with Cabbage<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"author"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"John Smith"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"subject"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"An interesting book about food"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"keywords"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"cabbage, cooking, eating"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"date"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"2009-04-01"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"generator"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"MyReportingApp"</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="xmp-metadata"></a><a href="#xmp-metadata" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>XMP Metadata</h4>
+<p>Additionally, XMP metadata can be added to a PDF file from an XMP file. This file needs to be passed to Prince either via the <a href="/doc/13/command-line#cl-pdf-xmp"><code>--pdf-xmp</code></a> command-line option, the <a href="/doc/13/css-props#prop-prince-pdf-xmp">prince-pdf-xmp</a> CSS property, or it can be specified in JavaScript with the <a href="/doc/13/js-support#window.PDF.xmp"><code>PDF.xmp()</code></a> function.</p>
+<p>The <a href="/doc/13/js-support#window.PDF.xmp"><code>PDF.xmp()</code></a> JavaScript function, the <a href="/doc/13/css-props#prop-prince-pdf-xmp">prince-pdf-xmp</a> CSS property and the <a href="/doc/13/command-line#cl-pdf-xmp"><code>--pdf-xmp</code></a> command-line option require either a URL pointing to an XMP file, or an encoded <code>data:</code> URL.</p>
+<p>Prince includes data from the <code>&lt;x:xmpmeta&gt;</code> element and its contents. The <code>xpacket</code> processing instructions are ignored, as Prince generates those itself when it produces the PDF file.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/doc/13/prince-input"><span class="arrow-prev">← </span><span>Prince Input</span></a><a class="docs-next button" href="/doc/13/prince-networking"><span>Prince Networking</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#pdf-versions-and-profiles">PDF Versions and Profiles</a><ul class="toc-headings"><li><a href="#pdfa">PDF/A</a></li><li><a href="#pdfua">PDF/UA</a></li><li><a href="#pdfx">PDF/X</a></li></ul></li><li><a href="#pdf-accessibility">PDF Accessibility</a></li><li><a href="#pdf-features">PDF Features</a><ul class="toc-headings"><li><a href="#pdf-links">PDF Links</a></li><li><a href="#pdf-actions">PDF Actions</a></li><li><a href="#pdf-pages">PDF Pages</a></li><li><a href="#pdf-printing">PDF Printing</a></li><li><a href="#pdf-compression">PDF Compression</a></li><li><a href="#pdf-encryption-and-document-security">PDF Encryption and Document Security</a></li><li><a href="#pdf-font-embedding-and-subsetting">PDF Font Embedding and Subsetting</a></li><li><a href="#pdf-attachments">PDF Attachments</a></li><li><a href="#pdf-bookmarks">PDF Bookmarks</a></li><li><a href="#pdf-tags">PDF Tags</a></li><li><a href="#pdf-metadata">PDF Metadata</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="copyright"><div class="about-contact"><a href="/company/">About us</a> | <a href="/contact/">Contact</a></div><div class="copyright">Copyright © 2022 YesLogic Pty. Ltd.</div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '63dda203371e77ee63a05de413c3d741',
+                indexName: 'princexml',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["language:en"]}
+              });
+            </script></body></html>

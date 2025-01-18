@@ -1,0 +1,8 @@
+AddType font/ttf ttf
+AddType font/ttf TTF
+AddType font/otf otf
+AddType font/otf OTF
+
+<FilesMatch "\.(ttf|TTF|otf|OTF)$">
+Header set Access-Control-Allow-Origin "*"
+</FilesMatch>

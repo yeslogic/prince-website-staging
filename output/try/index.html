@@ -1,0 +1,143 @@
+<!DOCTYPE html><html class="p10">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/common10.css">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.min.css">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.theme.min.css">
+<title>Prince - Try Prince</title>
+<style>
+</style>
+</head>
+<body id="try">
+<div class="header-container">
+<div class="mainheader-container"><div class="header">
+<div class="logo"><a href="/"><img src="/images/Prince-logo.png" alt="Prince"></a></div>
+<div class="menu"><ul>
+<li><a href="/purchase/">
+                      Buy Prince</a></li>
+<li><a href="/samples/" class="current">
+                      Samples</a></li>
+<li><a href="/doc/">
+                      Documentation</a></li>
+<li><a href="/forum/">
+                      Forum</a></li>
+<li><a href="/download/" class="menu-cta">
+                      Download</a></li>
+</ul></div>
+<div style="clear:both"></div>
+<a class="mobile-menu-trigger"><img src="/images/menu-icon2.png" alt=""></a>
+</div></div>
+<div class="subheader-container"><div class="subheader">
+<div class="submenu"><ul>
+<li><a href="/samples/">
+                        Documents</a></li>
+<li><a href="/try/" class="sub-current">
+                        Try Prince</a></li>
+<li><a href="/samples/apps/">
+                        Applications</a></li>
+<li><a href="/samples/acid2/">
+                        Acid2</a></li>
+</ul></div>
+<div style="clear:both"></div>
+</div></div>
+</div>
+
+<div class="body-container">
+    <div class="content1150">
+      <h1 class="subpages-heading2">Try Prince</h1>
+      <div class="content750">
+      <p>
+        Follow the steps below to create your own PDF right here in the browser
+        (or skip to Step 4 to generate the provided example).
+      </p>
+      </div>
+
+      <div id="try-html-file" class="white-box">
+        <h2>Step 1: Add HTML</h2>
+        <p>
+          Upload your own HTML file, or use the editor below to modify the
+          example HTML file: 
+        </p>
+        <input type="file" name="html_file_input">
+        <a href="#" name="html_file_link" class="blue-button">Show editor</a>
+        <textarea name="html_file_textarea" style="display: none">
+        </textarea>
+      </div>
+
+      <div id="try-css-file" class="white-box">
+        <h2>Step 2: Add CSS</h2>
+        <p>
+          Upload your own CSS file, or use the editor below to modify the
+          example CSS file:
+        </p>
+        <input type="file" name="css_file_input">
+        <a href="#" name="css_file_link" class="blue-button">Show editor</a>
+        <textarea name="css_file_textarea" style="display: none">
+h1 {
+  font-style: italic;
+  font-size: 1.8em;
+}
+
+p {
+  font-size: 1em;
+}
+
+span {
+  font-size: 1.4em;
+  text-decoration: underline;
+}
+</textarea>
+      </div>
+
+      <div id="try-other-file" class="white-box">
+        <h2>Step 3: Add other files (optional)</h2>
+        <p>
+          If there are other resources referenced from your HTML or CSS files
+          (e.g. fonts, images, Javascript), upload them here:
+        </p>
+        <div>
+          <a href="#" style="display: none">x</a>
+          <input type="file" name="other_file_input">
+        </div>
+      </div>
+
+      <div id="try-generate" class="white-box">
+        <h2>Step 4: Generate the PDF</h2>
+        <a href="#" class="blue-button">Click to Generate</a>
+      </div>
+
+      <div id="try-prince-output" class="white-box" style="display: none">
+        <img src="/try/waiting.gif" alt="Waiting for PDF to generate">
+
+        <h2>Prince PDF Output</h2>
+        <div>
+        </div>
+
+        <h2>Prince Log Messages</h2>
+        <p style="display: none">
+          Below shows any warnings or error messages that occurred while
+          generating your PDF:
+        </p>
+        <textarea disabled></textarea>
+      </div>
+    </div>
+</div>
+<div class="content1150 footer-container"><div class="footer">
+<div class="footer-logo">
+<img src="/images/Prince-logo-footer.png" alt=""><br>
+                Copyright © 2002 – 2025 YesLogic Pty. Ltd.
+            </div>
+<ul class="footer-menu">
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+<div style="clear:both"></div>
+</div></div>
+<script src="/js/jquery-1.12.4.min.js"></script><script src="/js/jquery-ui-1.12.1.min.js"></script><script type="text/javascript" src="/js/skrollr-simplemodal-masonry.min.js"></script><script type="text/javascript" src="/js/common.js"></script><script type="text/javascript" src="/try/try.js"></script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<meta name="robots" content="noindex">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<title>Prince - Footnotes</title>
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+<div id="header-inner">
+<div><a href="/"><img src="/images/logo2.png" alt="Prince"></a></div>
+<ul id="primary-nav">
+<li><a href="/download/">Download</a></li>
+<li><a href="/purchase/">Buy Prince</a></li>
+<li><a href="/samples/">Samples</a></li>
+<li><a href="/doc/" class="curr">Documentation</a></li>
+<li><a href="/forum/">Forum</a></li>
+</ul>
+</div>
+<div id="header-shadow"></div>
+</div>
+<div id="intro"><div id="intro-inner"><h1>Footnotes</h1></div></div>
+
+<div class="main">
+
+
+
+<p>
+<a href="/doc/9.0/">User Guide</a> /
+<a href="/doc/9.0/#paged">Paged Media</a>
+</p>
+
+<div class="col1">
+
+<p>
+Prince supports	footnotes using the <i>float</i> property.
+</p>
+<p>
+Here is an example of some simple footnotes, using XHTML markup with a class
+of "fn" to denote footnotes:
+</p>
+
+<div class="example">
+<p class="label">CSS</p>
+<pre>
+.fn {
+    float: footnote
+}
+</pre>
+<p class="label">XML</p>
+<pre>
+&lt;p&gt;
+Footnotes&lt;span class="fn"&gt;A footnote is a note placed at
+the bottom of a page of a book or manuscript that comments on or
+cites a reference for a designated part of the text.&lt;/span&gt; are
+essential in printed documents and Prince knows how to generate
+them. Most readers will read the footnotes before they read the text
+from where the footnotes are anchored&lt;span class="fn"&gt;Often,
+the most interesting information is found in the footnotes.&lt;/span&gt;.
+&lt;/p&gt;
+</pre>
+<p class="label">Output</p>
+<img src="/images/doc-9.0/footnotes.png" alt="Footnotes example" width="428" height="157">
+</div>
+
+<h2>Numbering footnotes</h2>
+
+<p>
+Each footnote should increment the <i>footnote</i> counter used to
+number the footnotes.
+The footnote counter can be reset at each new chapter or section
+if necessary.
+</p>
+<div class="example">
+<p class="label">CSS</p>
+<pre>
+.fn { counter-increment: footnote }
+
+.chapter { counter-reset: footnote }
+</pre>
+<p class="comment">
+These rules will number footnotes starting from 1 at each new chapter.
+</p>
+</div>
+
+<h2>Styling footnote calls</h2>
+<p>
+Prince automatically generates footnote calls, the numeric anchors in the
+main text that refer to the footnotes. The generated footnote calls can be
+styled using the <i>::footnote-call</i> pseudo-element.
+This is the default style for footnote calls:
+</p>
+
+<div class="example">
+<p class="label">CSS</p>
+<pre>
+.fn::footnote-call {
+    content: counter(footnote);
+    font-size: 83%;
+    vertical-align: super;
+    line-height: none
+}
+</pre>
+<p class="comment">
+The default style for footnote calls is to display the current value of the
+footnote counter in a superscript position in a slightly smaller font than
+the main text. The <i>line-height</i> declaration ensures that the superscript
+position of the footnote does not affect the line height of the main text.
+</p>
+</div>
+
+<p>
+The footnote call style can be customised to use different fonts or colors.
+It can even be customised to include different content, such
+as placing the footnote counter in brackets rather than making it superscript.
+</p>
+
+<div class="example">
+<p class="label">CSS</p>
+<pre>
+.fn::footnote-call {
+    content: "[" counter(footnote) "]"
+}
+</pre>
+<p class="comment">
+This rule will generate footnote calls with the number of the footnote in
+brackets, like this: [1], [2], [3].
+</p>
+</div>
+
+<h2>Styling footnote markers</h2>
+<p>
+Prince automatically generates footnote markers, the numeric markers placed
+in front of the footnote text.
+Footnote markers are similar to the markers added to
+<a href="/doc/9.0/lists/">list items</a>
+in most respects, and can be styled in a similar fashion
+using the <i>::footnote-marker</i> pseudo-element:
+</p>
+
+<div class="example">
+<p class="label">CSS</p>
+<pre>
+.fn::footnote-marker {
+    font-weight: bold
+}
+</pre>
+<p class="comment">
+This rule will generate footnote markers with a bold font.
+</p>
+</div>
+
+<h2>Footnote marker position</h2>
+<p>
+Footnote markers are rendered outside the footnote in the left
+margin area by default.
+If the CSS property <i>footnote-style-position</i> has value <i>inside</i>,
+the marker is rendered as the first inline box inside the footnote.
+(This property is similar to the
+<a href="/doc/9.0/lists/"><i>list-style-position</i></a> property that
+applies to list markers).
+</p>
+
+<h2>The footnotes area</h2>
+<p>
+Footnotes are placed within the <i>@footnotes</i> area of the page, which
+can be styled within @page rules.
+Note that if there are no footnotes on a page then the footnotes area
+will not be displayed on that page at all.
+</p>
+
+<div class="example">
+<p class="label">CSS</p>
+<pre>
+@page {
+    @footnotes {
+	border-top: solid black thin;
+	padding-top: 8pt
+    }
+}
+</pre>
+<p class="comment">
+This rule adds a border and some padding to the top of the footnotes area.
+</p>
+</div>
+
+</div>
+
+</div>
+</div>
+<script src="/js/warning.js"></script>
+<div id="footer"><div id="footer-inner">
+<p id="footer-copy">Copyright © 2002 – 2025 YesLogic Pty. Ltd.</p>
+<ul id="footer-nav">
+<li><a href="/">Home</a></li>
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+</div></div>
+</body>
+</html>

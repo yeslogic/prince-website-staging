@@ -1,0 +1,283 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<meta name="robots" content="noindex">
+<title>Prince - Command-line Interface</title>
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+<div id="header-inner">
+<div><a href="/"><img src="/images/logo2.png" alt="Prince"></a></div>
+<ul id="primary-nav">
+<li><a href="/download/">Download</a></li>
+<li><a href="/purchase/">Buy Prince</a></li>
+<li><a href="/samples/">Samples</a></li>
+<li><a href="/doc/" class="curr">Documentation</a></li>
+<li><a href="/forum/">Forum</a></li>
+</ul>
+</div>
+<div id="header-shadow"></div>
+</div>
+<div id="intro"><div id="intro-inner"><h1>Command-line Interface</h1></div></div>
+
+<div class="main">
+
+
+
+<div class="col1">
+
+<p>
+Prince may be called from the command-line with the following arguments:
+</p>
+
+<p><b>prince</b> 
+    <span>[</span><var>OPTIONS</var><span>]</span> 
+        <span class="infile">FILES...</span> 
+	    <span>[ -o </span><span class="outfile">PDF</span><span> ]</span>
+	    </p>
+
+<p>
+Please note that on Windows, Prince can be called from the command-line by
+running the <i>prince.exe</i> file found in the <i>Prince\Engine\bin</i> folder of
+the Prince installation.
+</p>
+
+<h2>Examples</h2>
+<dl>
+<dt>
+<b>prince</b> <span class="infile">file.xml</span>
+</dt>
+
+<dd>
+Convert file.xml to file.pdf.
+</dd>
+<dt>
+<b>prince</b> <span class="infile">doc.html</span>
+-o <span class="outfile">out.pdf</span>
+</dt>
+
+<dd>
+Convert doc.html to out.pdf.
+</dd>
+<dt>
+<b>prince</b> -s style1.css -s style2.css
+<span class="infile">input.xml</span>
+-o <span class="outfile">output.pdf</span>
+</dt>
+<dd>
+Convert input.xml to output.pdf,
+applying two user style sheets.
+</dd>
+
+<dt>
+<b>prince</b> doc1.html doc2.html -o out.pdf</dt>
+<dd>
+Combine doc1.html and doc2.html into a single PDF file, out.pdf.
+</dd>
+</dl>
+
+<h2>Specifying input and output</h2>
+<p>
+The command line must contain the name of the input file to
+process. An input filename consisting of a single hyphen "-"
+will cause Prince to read from the standard input stream.
+</p>
+<p>
+The output file name can be specified on the command line using the
+<code>-o</code> command line option.
+An output filename consisting of a single
+hyphen "-" will cause Prince to write to the standard output stream.
+</p>
+<p>
+If the output file name is omitted, the output will be placed in a
+file with the same name as the input, but with a PDF file extension.
+</p>
+
+<h2>Options</h2>
+<p>
+The command line may include the options described below:
+</p>
+
+<h3>General options</h3>
+
+<dl>
+<dt>
+<b>-h</b>, <b>--help</b>
+</dt>
+<dd>
+Display usage and options.
+</dd>
+<dt><b>--version</b></dt>
+<dd>
+Display version information.
+</dd>
+<dt>
+<b>-v</b>, <b>--verbose</b>
+</dt>
+<dd>
+Log informative messages.
+</dd>
+<dt>
+<b>--log</b>=<i>FILE</i>
+</dt>
+<dd>
+Log error messages to a file.
+</dd>
+</dl>
+
+<h3>Input options</h3>
+
+<dl>
+<dt>
+<b>-i</b>, <b>--input</b>=<i>FORMAT</i>
+</dt>
+<dd>
+Set input format [xml | html | auto].
+</dd>
+<dt>
+<b>--baseurl</b>=<i>URL</i>
+</dt>
+<dd>
+Specify the base URL of the input document.
+</dd>
+<dt><b>--no-xinclude</b></dt>
+<dd>
+Disable XInclude processing.
+</dd>
+<dt><b>--no-network</b></dt>
+<dd>
+Disable network access (prevents HTTP downloads).
+</dd>
+<dt>
+<b>--http-user</b>=<i>USER</i>
+</dt>
+<dd>
+Specify the username for HTTP authentication.
+</dd>
+<dt>
+<b>--http-password</b>=<i>PASS</i>
+</dt>
+<dd>
+Specify the password for HTTP authentication.
+</dd>
+<dt>
+<b>--http-proxy</b>=<i>PROXY</i>
+</dt>
+<dd>
+Specify the HTTP proxy server.
+</dd>
+<dt>
+<b>--cookiejar</b>=<i>FILE</i>
+</dt>
+<dd>
+Specify a file containing HTTP cookies.
+</dd>
+</dl>
+
+<h3>CSS options</h3>
+
+<dl>
+<dt>
+<b>-s</b>, <b>--style</b>=<i>FILE</i>
+</dt>
+<dd>
+Apply a CSS file.
+</dd>
+<dt><b>--no-author-style</b></dt>
+<dd>
+Ignore author style sheets.
+</dd>
+<dt><b>--no-default-style</b></dt>
+<dd>
+Ignore default style sheets.
+</dd>
+</dl>
+
+<h3>PDF output options</h3>
+
+<dl>
+<dt>
+<b>-o</b>, <b>--output</b>=<i>FILE.PDF</i>
+</dt>
+<dd>
+Specify the output PDF file.
+</dd>
+<dt><b>--no-embed-fonts</b></dt>
+<dd>
+Disable font embedding in PDF output.
+</dd>
+<dt><b>--no-subset-fonts</b></dt>
+<dd>
+Disable font subsetting in PDF output.
+</dd>
+<dt><b>--no-compress</b></dt>
+<dd>
+Disable compression of PDF output.
+</dd>
+</dl>
+
+<h3>PDF encryption options</h3>
+
+<dl>
+<dt><b>--encrypt</b></dt>
+<dd>
+Encrypt PDF output.
+</dd>
+<dt>
+<b>--key-bits</b>=<i>NUM</i>
+</dt>
+<dd>
+Set encryption key size [40 | 128].
+</dd>
+<dt>
+<b>--user-password</b>=<i>PASS</i>
+</dt>
+<dd>
+Set PDF user password.
+</dd>
+<dt>
+<b>--owner-password</b>=<i>PASS</i>
+</dt>
+<dd>
+Set PDF owner password.
+</dd>
+<dt><b>--disallow-print</b></dt>
+<dd>
+Disallow printing of PDF output.
+</dd>
+<dt><b>--disallow-copy</b></dt>
+<dd>
+Disallow copying from PDF output.
+</dd>
+<dt><b>--disallow-annotate</b></dt>
+<dd>
+Disallow annotation of PDF output.
+</dd>
+<dt><b>--disallow-modify</b></dt>
+<dd>
+Disallow modification of PDF output.
+</dd>
+</dl>
+
+</div>	
+
+</div>	
+
+</div>
+<script src="/js/warning.js"></script>
+<div id="footer"><div id="footer-inner">
+<p id="footer-copy">Copyright © 2002 – 2025 YesLogic Pty. Ltd.</p>
+<ul id="footer-nav">
+<li><a href="/">Home</a></li>
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+</div></div>
+</body>
+</html>

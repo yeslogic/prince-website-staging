@@ -1,0 +1,376 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Graphics · Prince Documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Prince supports a wide range of graphic features, treated in more detail in the following sections. RGB, RGBA, HSL, HSLA, CMYK, and named spot colors are supported, and so is color management. Bitmap images and SVG are supported."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Graphics · Prince Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://www.princexml.com/"/><meta property="og:description" content="Prince supports a wide range of graphic features, treated in more detail in the following sections. RGB, RGBA, HSL, HSLA, CMYK, and named spot colors are supported, and so is color management. Bitmap images and SVG are supported."/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://www.princexml.com/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="/js/warning.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/Prince-logo.png" alt="Prince Documentation"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/doc/" target="_self">Documentation</a></li><li class=""><a href="/doc/help" target="_self">Help</a></li><li class=""><a href="/doc/releases" target="_self">Release Notes</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>User Guide</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Installation Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/installing">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/doc/13/first-doc">Your First Document</a></li><li class="navListItem"><a class="navItem" href="/doc/13/help-install">Help</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">User Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/intro-userguide">Convert HTML to PDF</a></li><li class="navListItem"><a class="navItem" href="/doc/13/styling">Styling</a></li><li class="navListItem"><a class="navItem" href="/doc/13/paged">Paged Media</a></li><li class="navListItem"><a class="navItem" href="/doc/13/gen-content">Generated Content</a></li><li class="navListItem"><a class="navItem" href="/doc/13/javascript">Scripting</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/doc/13/graphics">Graphics</a></li><li class="navListItem"><a class="navItem" href="/doc/13/cookbook">Prince Tips and Tricks</a></li><li class="navListItem"><a class="navItem" href="/doc/13/help">Help</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-input">Prince Input</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-output">Prince Output</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-networking">Prince Networking</a></li><li class="navListItem"><a class="navItem" href="/doc/13/server-integration">Server Integration</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-for-books">Prince for Books</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Reference Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/command-line">Command-line Reference</a></li><li class="navListItem"><a class="navItem" href="/doc/13/css-refs">CSS References</a></li><li class="navListItem"><a class="navItem" href="/doc/13/css-props">CSS Properties</a></li><li class="navListItem"><a class="navItem" href="/doc/13/js-support">JavaScript Support</a></li><li class="navListItem"><a class="navItem" href="/doc/13/page-size-keywords">Page Size Keywords</a></li><li class="navListItem"><a class="navItem" href="/doc/13/characters">Character Entities</a></li><li class="navListItem"><a class="navItem" href="/doc/13/acknowledgements">Acknowledgments</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Graphics</h1></header><article><div><span><p>Prince supports a wide range of graphic features, treated in more detail in the following sections. RGB, RGBA, HSL, HSLA, CMYK, and named spot colors are supported, and so is color management. Bitmap images and SVG are supported.</p>
+<h2><a class="anchor" aria-hidden="true" id="color"></a><a href="#color" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Color</h2>
+<p>Prince supports RGB, RGBA, CMYK, HSL, HSLA and named spot colors. For Prince's color management, please see the <a href="#color-management">Color Management</a> section.</p>
+<p>Prince understands CSS basic color names as well as the list of extended color keywords from the <a href="https://www.w3.org/TR/css-color-4/#named-colors">CSS Color Module Level 4</a>. It also supports the keywords <code>transparent</code> and <code>currentColor</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="rgba"></a><a href="#rgba" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>RGB(A)</h3>
+<p>To use an RGB color in CSS, it can be expressed either as a value in hexadecimal notation, as an <code>rgb()</code> function or as a named color. For example, red can be specified in three ways:</p>
+<pre><code class="hljs css language-css">    <span class="hljs-selector-tag">color</span>: <span class="hljs-selector-id">#ff0000</span>
+    <span class="hljs-selector-tag">color</span>: <span class="hljs-selector-tag">rgb</span>(255, 0, 0)
+    <span class="hljs-selector-tag">color</span>: <span class="hljs-selector-tag">red</span>
+</code></pre>
+<p>RGBA colors are equivalent to RGB plus an opacity (or alpha) value between 0 and 1. When the opacity is 0 the color is transparent, and when the opacity is 1 the color is identical to the RGB color. RGBA colors are expressed as an <code>rgba()</code> function.</p>
+<pre><code class="hljs css language-css">    color: rgba(255, 0, 0, 1)    // red
+    color: rgba(255, 0, 0, 0.5)  // translucent red
+    color: rgba(255, 0, 0, 0)    // fully transparent
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="cmyk"></a><a href="#cmyk" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CMYK</h3>
+<p>CMYK colors can be specified using the <code>cmyk()</code> or, alternatively, the equivalent <code>device-cmyk()</code> function syntax. An optional fifth value is for the alpha channel, i.e. for opacity.</p>
+<pre><code class="hljs">    color: cmyk(1, 0, 0, 0)       // cyan
+    color: cmyk(0, 1, 1, 0)       // red
+    color: cmyk(0, 0, 0, 1)       // black
+    color: cmyk(0, 1, 1, 0, 0.1)  // translucent red
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="hsla"></a><a href="#hsla" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HSL(A)</h3>
+<p>HSL(A) colors are supported as of Prince 12.1 .</p>
+<p>HSL (Hue-Saturation-Lightness) color values can be specified with the <code>hsl()</code> function. HSL takes three values:</p>
+<ul>
+<li>Hue is a degree on the color wheel (<code>0</code> or <code>360</code> is red, <code>120</code> is green, <code>240</code> is blue);</li>
+<li>Saturation is a percentage value, and</li>
+<li>Lightness is also a percentage.</li>
+</ul>
+<p>Just as with RGB values expressed with the <code>rgb()</code> function an alpha channel for opacity can be added with the <code>rgba()</code> function, so also for HSL color values an alpha channel can be expressed with the <code>hsla()</code> function, which adds a fourth value for alpha - when the opacity is 0 the color is transparent, and when the opacity is 1 the color is identical to the HSL color.</p>
+<p>The advantage of HSL over RGB is that it is much more intuitive to use and easier to create sets of matching colors (by keeping the same hue and varying the lightness and saturation values).</p>
+<h3><a class="anchor" aria-hidden="true" id="spot-colors"></a><a href="#spot-colors" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Spot colors</h3>
+<p>Prince also supports named spot colors that can be defined with the <a href="/doc/13/css-refs#at-prince-color"><code>@prince-color</code></a> rule. An alternate color must also be specified with the <a href="/doc/13/css-props#prop-alternate-color"><code>alternate-color</code></a> descriptor, using any of the valid notations for RGB, HSL or CMYK colors. This will be used in situations where the named color is not available, such as when viewing the generated PDF file on a display. Please note that <a href="/doc/13/css-props#prop-alternate-color"><code>alternate-color</code></a> cannot be RGBA, HSLA or CMYKA.</p>
+<pre><code class="hljs css language-css">    <span class="hljs-keyword">@prince-color</span> MyColor {
+        <span class="hljs-selector-tag">alternate-color</span>: <span class="hljs-selector-tag">rgb</span>(255,0,0)
+    }
+</code></pre>
+<p>Spot colors can be used with the <code>prince-color()</code> function with a specified tint value between 0 and 1, which defaults to 1, or alternatively expressed in percentage. They can also enable overprint:</p>
+<pre><code class="hljs">    color: prince-color(MyColor)                  // tint 1.0
+    color: prince-color(MyColor, 0.5)             // tint 0.5
+    color: prince-color(MyColor, overprint)       // tint 1.0, overprint
+    color: prince-color(MyColor, 50%, overprint)  // tint 50%, overprint
+</code></pre>
+<p>Another way to enable overprint is by using the <code>prince-overprint()</code> function, which allows to specify a non-transparent color value.</p>
+<pre><code class="hljs css language-css">    <span class="hljs-selector-tag">color</span>: <span class="hljs-selector-tag">prince-overprint</span>(<span class="hljs-selector-tag">red</span>);
+    <span class="hljs-selector-tag">color</span>: <span class="hljs-selector-tag">prince-overprint</span>(<span class="hljs-selector-tag">cmyk</span>(0,1,1,0));
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="color-management"></a><a href="#color-management" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Color Management</h2>
+<h3><a class="anchor" aria-hidden="true" id="introduction"></a><a href="#introduction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Introduction</h3>
+<p>The purpose of color management is to keep the appearance of colors consistent as they are converted between different devices and media. This is e.g. of advantage when preparing a PDF file on a computer screen before sending it to a printer - the desirable result will be to have a print that looks as close as possible to the display on the screen. Perfect equivalence is not possible, also not least because of the difference between a device with reflected light, such as paper, and one with direct light, such as a screen, but color management helps to achieve a close match in perception.</p>
+<p>The conversion of color is facilitated by profiling devices; the set of data that characterizes a device or color space, i.e. the color attributes of the device, is kept as an ICC color profile. Color profiles are often embedded in image files to denote the color space of the image. When the color space is not known, color values are essentially arbitrary numbers without a physical interpretation.</p>
+<p>The aim of Prince, within a color-managed workflow, is to preserve color information (namely, color profiles) from the input documents and images, through to the PDF output file.</p>
+<h3><a class="anchor" aria-hidden="true" id="color-management-and-pdf-profiles"></a><a href="#color-management-and-pdf-profiles" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Color Management and PDF Profiles</h3>
+<p>As described in the <a href="/doc/13/prince-output#pdf-versions-and-profiles">PDF Versions and Profiles</a> section, both PDF/A and PDF/X profiles impose restrictions on the features that may be used in a PDF file, including restrictions on color.</p>
+<p>PDF/A and PDF/X files have an output intent that defines the intended output color space of the PDF file. In Prince, the output intent color profile is selected using the <a href="/doc/13/command-line#cl-pdf-output-intent"><code>--pdf-output-intent</code></a> command-line option, or using the <a href="/doc/13/css-props#prop-prince-pdf-output-intent"><code>prince-pdf-output-intent</code></a> property inside a <a href="/doc/13/css-refs#at-prince-pdf"><code>@prince-pdf</code></a> at-rule. Both take a filename or URL to an ICC profile as its value.</p>
+<p>The URL specified with the <a href="/doc/13/command-line#cl-pdf-output-intent"><code>--pdf-output-intent</code></a> command-line option or the <a href="/doc/13/css-props#prop-prince-pdf-output-intent"><code>prince-pdf-output-intent</code></a> property will be resolved relative to the base URL of the style sheet or document in which the rule is, and needs to point to an existing color profile file.</p>
+<pre><code class="hljs">    <span class="hljs-keyword">@prince-pdf</span> {
+        <span class="hljs-selector-tag">prince-pdf-output-intent</span>: <span class="hljs-selector-tag">url</span>("<span class="hljs-selector-tag">ISOcoated_v2_eci</span><span class="hljs-selector-class">.icc</span>")
+    }
+</code></pre>
+<p>For PDF/X, the output intent must be given as it describes the intended printing process. For PDF/A, Prince assumes an sRGB ICC profile if an output intent is not given.</p>
+<p>Briefly, the restrictions on color imposed by PDF/X are:</p>
+<p>PDF/X-1</p>
+<ul>
+<li>All color data must be Grayscale, CMYK or named Spot Colors;</li>
+<li>Transparency is not allowed.</li>
+<li>All colors must be characterized by the output intent - Prince implicitly performs color conversions.</li>
+</ul>
+<p>PDF/X-3</p>
+<ul>
+<li>Allows other color spaces but colors must be device-independent, or else characterized by the output intent;</li>
+<li>Transparency is not allowed.</li>
+</ul>
+<p>PDF/X-4</p>
+<ul>
+<li>Allows other color spaces but colors must be device-independent, or else characterized by the output intent;</li>
+<li>PDF transparency is supported.</li>
+</ul>
+<p>PDF/A requires that all colors to be device-independent, or else characterized by the output intent (thus making them device-independent). Transparency is not allowed.</p>
+<h3><a class="anchor" aria-hidden="true" id="color-management-in-prince"></a><a href="#color-management-in-prince" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Color Management in Prince</h3>
+<p>Prince supports RGB, RGBA, HSL, HSLA, CMYK, and named spot colors. For Prince's color handling, please see the <a href="#color">Color</a> section.</p>
+<p>As CSS defines RGB colors in the sRGB color space, Prince tags those colors with an sRGB ICC profile in the PDF output. See also the section on <a href="#rich-black-and-true-black">Rich black and true black</a> below.</p>
+<p>CMYK colors specified using the <code>cmyk()</code> function syntax, or equivalent <code>device-cmyk()</code> syntax, represent device-dependent colors, so they will be left as such in the PDF when possible. Device-dependent color is not allowed in PDF/A or PDF/X, so those CMYK colors will be assumed to be either in the output intent color space (if it is CMYK), or else the color space of the fallback CMYK profile. See the command-line option <a href="/doc/13/command-line#cl-fallback-cmyk-profile"><code>--fallback-cmyk-profile</code></a> in the <a href="/doc/13/command-line#pdf-output-options">PDF Output Options</a> section, or the <a href="/doc/13/css-props#prop-prince-fallback-cmyk-profile"><code>prince-fallback-cmyk-profile</code></a> property.</p>
+<pre><code class="hljs css language-bash">    prince input.html
+           --pdf-profile=PDF/A-1b
+           --pdf-output-intent=sRGB.icc
+           --fallback-cmyk-profile=ISOcoated_v2_eci.icc
+</code></pre>
+<pre><code class="hljs css language-css">    <span class="hljs-keyword">@prince-pdf</span> {
+        <span class="hljs-selector-tag">prince-pdf-output-intent</span>: <span class="hljs-selector-tag">url</span>("<span class="hljs-selector-tag">sRGB</span><span class="hljs-selector-class">.icc</span>");
+        <span class="hljs-selector-tag">prince-fallback-cmyk-profile</span>: <span class="hljs-selector-tag">url</span>("<span class="hljs-selector-tag">ISOcoated_v2_eci</span><span class="hljs-selector-class">.icc</span>");
+    }
+</code></pre>
+<p>Prince preserves the ICC profiles embedded in bitmap images, unless directed not to (see the <code>ignore-icc-profile</code> value of the <a href="/doc/13/css-props#prop-prince-image-magic"><code>prince-image-magic</code></a> property). If an image does not have an embedded ICC profile, the behavior depends on the color model of the image. Untagged RGB images will be assumed to be in the sRGB color space. Untagged CMYK images will, when necessary, be assumed to be either in the output intent color space (if it is CMYK), or else the color space of the fallback CMYK profile. Untagged grayscale images will be left as DeviceGray in the PDF (in PDF/A and PDF/X, it means it is characterized by the output intent color space).</p>
+<h3><a class="anchor" aria-hidden="true" id="color-conversion"></a><a href="#color-conversion" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Color conversion</h3>
+<p>Prince will convert all the colors in a document to a single color space if the <a href="/doc/13/command-line#cl-convert-colors"><code>--convert-colors</code></a> command-line option or the <code>prince-pdf-color-conversion</code>](/doc/13/css-props#prop-prince-pdf-color-conversion-syntax2) descriptor in the <a href="/doc/13/css-refs#at-prince-pdf"><code>@prince-pdf</code></a> at-rule is used. The destination color space is specified with the <a href="/doc/13/command-line#cl-pdf-output-intent"><code>--pdf-output-intent</code></a> option (or the <a href="/doc/13/css-props#prop-prince-pdf-output-intent"><code>prince-pdf-output-intent</code></a> property), even when not producing PDF/A or PDF/X files.</p>
+<p>Prince automatically converts colors to the output intent color space only when producing PDF/X-1a files. Files in any of the other profiles need also the <a href="/doc/13/command-line#cl-convert-colors"><code>--convert-colors</code></a> command-line option or the <a href="/doc/13/css-props#prop-prince-pdf-color-conversion"><code>prince-pdf-color-conversion</code></a> property if colors are to be converted.</p>
+<p>Prince allows also to use <a href="/doc/13/css-props#prop-prince-pdf-color-conversion"><code>prince-pdf-color-conversion</code></a> as a property, applied to individual elements.  In this case, the value <code>auto</code> is the default and will enable color conversion for this element, if color conversion is enabled at the top level in the <a href="/doc/13/css-refs#at-prince-pdf"><code>@prince-pdf</code></a> at-rule or with the command-line argument.  The value <code>none</code> allows color conversion to be disabled for that element and its descendants.</p>
+<p>When used as a descriptor in a <a href="/doc/13/css-refs#at-prince-pdf"><code>@prince-pdf</code></a> at-rule, the <a href="/doc/13/css-props#prop-prince-pdf-color-conversion-syntax2"><code>prince-pdf-color-conversion</code></a> also takes an optional second argument to define the rendering intent.  For details, please see the entry for <a href="/doc/13/css-props#prop-prince-pdf-color-conversion-syntax2">the <code>prince-pdf-color-conversion</code> descriptor</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="rich-black-and-true-black"></a><a href="#rich-black-and-true-black" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Rich black and true black</h3>
+<p>In printing, &quot;rich black&quot; is a mixture of CMYK ink colors to produce a darker tone than using the black ink alone (&quot;true black&quot;).</p>
+<p>The property <a href="/doc/13/css-props#prop-prince-pdf-color-options"><code>prince-pdf-color-options</code></a> controls the encoding of CSS RGB values representing black and grays, i.e. RGB colors with equal values of red, green and blue.</p>
+<p>When the value <code>use-true-black</code> is used, such an RGB value will be encoded in the DeviceGray color space in the PDF. A CMYK printer should print the gray level using only the black ink. This is the default setting of Prince.</p>
+<p>On the other hand, the <code>use-rich-black</code> value instructs Prince to keep all RGB colors as RGB in the PDF. A CMYK printer should print RGB colors using a mixture of all four CMYK inks.</p>
+<pre><code class="hljs">    <span class="hljs-keyword">@prince-pdf</span> {
+        <span class="hljs-selector-tag">prince-pdf-color-options</span>: <span class="hljs-selector-tag">use-rich-black</span>;
+    }
+</code></pre>
+<p>Color conversion takes into account the <code>use-true-black</code> value when converting CSS RGB values to CMYK. True blacks and grays will be converted to CMYK with only non-zero values in the K channel. Note, however, that this does not affect bitmap images.</p>
+<h3><a class="anchor" aria-hidden="true" id="page-color-space"></a><a href="#page-color-space" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Page color space</h3>
+<p>The property <a href="/doc/13/css-props#prop-prince-pdf-page-colorspace"><code>prince-pdf-page-colorspace</code></a> controls the color space of pages in the PDF file. It affects the compositing of transparent content onto the page by selecting the color space in which compositing is performed. Prince currently defaults to the RGB color space. It may be useful to set this property to avoid converting the colors of transparent content before it is composited onto the page, possibly resulting in distorted colors.</p>
+<h2><a class="anchor" aria-hidden="true" id="filters"></a><a href="#filters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Filters</h2>
+<p>The <a href="/doc/13/css-props#prop-filter"><code>filter</code></a> property provides graphical effects like blurring, saturating or color shifting an element. Filters can be used alone, or combined in any way. However, the order in which filters are applied matters - applying <code>grayscale()</code> after any other filter will result in a gray result.</p>
+<p>In this section we shall examine the various possibilities offered by this property.</p>
+<p>The following filters can be used alone, or in any number and combination. Care is to be taken to the order the filters are being applied.</p>
+<p><code>filter: grayscale([ &lt;number&gt; | &lt;percent&gt; ])</code>  <br>
+This filter converts the input to grayscale. The amount value defines the proportion of the conversion.</p>
+<p><code>filter: sepia([ &lt;number&gt; | &lt;percent&gt; ])</code>  <br>
+This filter converts the input to sepia. The amount value defines the proportion of the conversion.</p>
+<p><code>filter: saturate([ &lt;number&gt; | &lt;percent&gt; ])</code>  <br>
+This filter saturates the input. The amount value defines the proportion of the conversion.</p>
+<p><code>filter: hue-rotate(&lt;angle&gt;)</code>  <br>
+This filter applies a hue rotation to the input. The angle value defines the number of degrees around the color circle that the rotation will be performed.</p>
+<p><code>filter: invert([ &lt;number&gt; | &lt;percent&gt; ])</code>  <br>
+This filter inverts the samples of the input. The amount value defines the proportion of the conversion.</p>
+<p><code>filter: opacity([ &lt;number&gt; | &lt;percent&gt; ])</code>  <br>
+This filter applies transparency to the input. The amount value defines the proportion of the conversion. This function is similar to the <a href="/doc/13/css-props#prop-opacity"><code>opacity</code></a> property.</p>
+<p><code>filter: brightness([ &lt;number&gt; | &lt;percent&gt; ])</code>  <br>
+This filter makes the input appear more or less bright. The amount value defines the proportion of the conversion. Values over 100% are allowed.</p>
+<p><code>filter: contrast([ &lt;number&gt; | &lt;percent&gt; ])</code>  <br>
+This filter controls the level of contrast. The amount value defines the proportion of the conversion.</p>
+<p><code>filter: blur(&lt;length&gt;)</code>  <br>
+This filter applies a gaussian blur to the input. The amount value defines the proportion of the conversion.</p>
+<p><code>filter: drop-shadow(&lt;length&gt;{2,3} &lt;color&gt;?)</code>  <br>
+This filter applies a drop shadow effect to the input. This is a blurred, offset version of the input, composited below the image.</p>
+<p>Alternatively, a filter can be written in SVG and can be referenced by a URL:</p>
+<p><code>filter: url(&lt;url&gt;)</code>  <br>
+This filter takes the URL of an SVG filter. An anchor can be used to reference a specific filter element.</p>
+<p>The resolution used when rasterizing to images for applying CSS and SVG filters is controlled through the <a href="/doc/13/css-props#prop-prince-filter-resolution">prince-filter-resolution</a> property. The default value is <code>96dpi</code> for compatibility with web browsers.</p>
+<h2><a class="anchor" aria-hidden="true" id="images"></a><a href="#images" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Images</h2>
+<p>Prince supports JPEG, PNG, TIFF and GIF images as well as <a href="#scalable-vector-graphics-svg">Scalable Vector Graphics (SVG)</a>.</p>
+<p>Images can be included in XHTML and DocBook documents using the appropriate image elements, which are pre-defined in the default style sheets.</p>
+<p>Images can also be included in arbitrary XML documents using the CSS <a href="/doc/13/css-props#prop-content"><code>content</code></a> property, which can be used to specify the image filename.</p>
+<p>Furthermore, images are widely used in style sheets for the background. CSS allows also for several mechanisms to manipulate images and background images.</p>
+<p>Please note that Prince tries to preserve the ICC color profile embedded in images - for details see the <a href="#color-management">Color Management</a> section.</p>
+<h3><a class="anchor" aria-hidden="true" id="images-in-xhtml"></a><a href="#images-in-xhtml" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Images in XHTML</h3>
+<p>The <code>img</code> element is used to include images in XHTML documents.</p>
+<p>XML</p>
+<pre><code class="hljs css language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"picture.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"A Nice Picture"</span>/&gt;</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="images-in-docbook"></a><a href="#images-in-docbook" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Images in DocBook</h3>
+<p>The <code>imagedata</code> element is used to include images in DocBook documents.</p>
+<p>XML</p>
+<pre><code class="hljs css language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">mediaobject</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">imageobject</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">imagedata</span> <span class="hljs-attr">fileref</span>=<span class="hljs-string">"picture.jpg"</span>/&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">imageobject</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">mediaobject</span>&gt;</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="images-in-arbitrary-xml"></a><a href="#images-in-arbitrary-xml" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Images in Arbitrary XML</h3>
+<p>Images can be included in arbitrary XML documents by using the CSS <a href="/doc/13/css-props#prop-content"><code>content</code></a> property to specify the image filename.</p>
+<p>The <a href="/doc/13/css-props#prop-content"><code>content</code></a> property can specify the image filename directly, or it can take the filename from an attribute of the element to which it has been applied.</p>
+<p>CSS</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">picture</span> { <span class="hljs-attribute">content</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">"picture.png"</span>) }
+</code></pre>
+<p>XML</p>
+<pre><code class="hljs css language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">para</span>&gt;</span> A nice <span class="hljs-tag">&lt;<span class="hljs-name">picture</span> /&gt;</span> here. <span class="hljs-tag">&lt;/<span class="hljs-name">para</span>&gt;</span>
+</code></pre>
+<p>The <a href="/doc/13/css-props#prop-content"><code>content</code></a> property directly specifies the filename of the image that will be used as the content of the <code>picture</code> element.</p>
+<p>CSS</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">picture</span> { <span class="hljs-attribute">content</span>: <span class="hljs-built_in">attr</span>(<span class="hljs-string">"src"</span>, url) }
+</code></pre>
+<p>XML</p>
+<pre><code class="hljs css language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">para</span>&gt;</span> A nice <span class="hljs-tag">&lt;<span class="hljs-name">picture</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"picture.tiff"</span> /&gt;</span> here. <span class="hljs-tag">&lt;/<span class="hljs-name">para</span>&gt;</span>
+</code></pre>
+<p>The <a href="/doc/13/css-props#prop-content"><code>content</code></a> property specifies that the content of the <code>picture</code> element will be an image loaded from the filename specified by the <code>src</code> attribute of the element.</p>
+<h3><a class="anchor" aria-hidden="true" id="css-and-images"></a><a href="#css-and-images" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CSS and Images</h3>
+<p>Images can be added to a document as content or decoration, and can be modified with the help of CSS properties.</p>
+<h4><a class="anchor" aria-hidden="true" id="background-images"></a><a href="#background-images" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Background Images</h4>
+<p>Several properties are available to add background images: <code>background-image</code> is used to add an image to a page, while <code>background-position</code>, <code>background-attachment</code> and <code>background-repeat</code> are used to position it precisely, also defining its appearance. See also <a href="/doc/13/styling#background">Background</a>.</p>
+<p>Images can also be added to style a list with the property <a href="/doc/13/css-props#prop-list-style-image"><code>list-style-image</code></a> (see also <a href="/doc/13/styling#list-marker-style">List marker style</a>).</p>
+<h4><a class="anchor" aria-hidden="true" id="image-orientation"></a><a href="#image-orientation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Image Orientation</h4>
+<p>Usually images have the correct orientation when included in a document. However, it can be important to honor the orientation field in the EXIF data of JPEG and TIFF images, which can be done with the <a href="/doc/13/css-props#prop-image-orientation"><code>image-orientation</code></a> property.</p>
+<p>The property applies only to content images (e.g. replaced elements and generated content), not decorative images (such as <a href="/doc/13/css-props#prop-background-image"><code>background-image</code></a>).</p>
+<h4><a class="anchor" aria-hidden="true" id="image-size"></a><a href="#image-size" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Image Size</h4>
+<p>CSS properties also control the size of images in print. Unless an explicit size for an image is specified by using the <code>width</code> and <code>height</code> properties, Prince will determine the intrinsic size from the image resolution (DPI), which can be overridden using the <a href="/doc/13/css-props#prop-prince-image-resolution"><code>prince-image-resolution</code></a> property:</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">prince-image-resolution</span>: 300<span class="hljs-selector-tag">dpi</span>;        <span class="hljs-comment">/* set an explicit DPI */</span>
+    <span class="hljs-selector-tag">prince-image-resolution</span>: <span class="hljs-selector-tag">normal</span>;        <span class="hljs-comment">/* 1 image pixel maps to 1px unit */</span>
+    <span class="hljs-selector-tag">prince-image-resolution</span>: <span class="hljs-selector-tag">auto</span>, <span class="hljs-selector-tag">normal</span>;  <span class="hljs-comment">/* auto-detect, fallback to normal */</span>
+    <span class="hljs-selector-tag">prince-image-resolution</span>: <span class="hljs-selector-tag">auto</span>, 96<span class="hljs-selector-tag">dpi</span>;   <span class="hljs-comment">/* auto-detect, fallback to 96dpi */</span>
+</code></pre>
+<p>Not all images have an internal resolution set, so sometimes it is necessary to specify an explicit resolution. Alternatively, specifying a resolution of <code>normal</code> means that an image that is 100 pixels wide, will be the same size on the page as a block that is 100px units wide.</p>
+<p>The property <a href="/doc/13/css-props#prop-prince-background-image-resolution"><code>prince-background-image-resolution</code></a> does the same for background images.</p>
+<p>The property <a href="/doc/13/css-props#prop-object-fit"><code>object-fit</code></a> offers another mechanism to determine how an image should be resized to fit its container. The position of the image in its container can be determined with the <a href="/doc/13/css-props#prop-object-position"><code>object-position</code></a> property.</p>
+<p>The <a href="/doc/13/css-props#prop-object-fit"><code>object-fit</code></a> and <a href="/doc/13/css-props#prop-object-position"><code>object-position</code></a> properties are not specific to images, but apply to all replaced content, including content inserted as <a href="/doc/13/gen-content">Generated Content</a> via the <a href="/doc/13/css-props#prop-content"><code>content</code></a> property.</p>
+<p>Please note that specifying <a href="/doc/13/css-props#prop-prince-image-resolution"><code>prince-image-resolution</code></a> and <a href="/doc/13/css-props#prop-prince-background-image-resolution"><code>prince-background-image-resolution</code></a>, or <a href="/doc/13/css-props#prop-object-fit"><code>object-fit</code></a>, only affects the default DPI of images, ie. it makes them physically bigger or smaller on the page, and - it does not affect the number of pixels in the image, and thus the PDF file size will be the same.</p>
+<p>To reduce the PDF file size, JPEG images can be recompressed at a lower quality level, or PNG images be converted to JPEG, with the <a href="/doc/13/css-props#prop-prince-image-magic"><code>prince-image-magic</code></a> property. See also <a href="cookbook#image-magic">Image Magic</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="scalable-vector-graphics-svg"></a><a href="#scalable-vector-graphics-svg" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Scalable Vector Graphics (SVG)</h2>
+<p>SVG can be included in any XML document simply by adding a <code>svg</code> element.</p>
+<p>The <code>display</code>, <code>float</code>, and <code>flow</code> properties and all <code>margin</code>, <code>padding</code>, <code>border</code>, and <code>background</code> properties can be applied to the top-level <code>svg</code> element but not to child elements within it.</p>
+<p>Prince supports SVG 1.1, with some exceptions - the following elements are currently <em>not</em> supported:</p>
+<ul>
+<li><code>scripting</code></li>
+<li><code>animation</code></li>
+<li>SVG fonts</li>
+<li><code>clip</code> (deprecated)</li>
+<li><code>color-interpolation</code></li>
+<li><code>color-profile</code> &amp; <code>icc-color</code></li>
+<li><code>color-rendering</code></li>
+<li><code>cursor</code></li>
+<li><code>enable-background</code> (<code>BackgroundImage</code>/<code>BackgroundAlpha</code>)</li>
+<li><code>font-size-adjust</code></li>
+<li><code>font-stretch</code></li>
+<li><code>glyph-orientation-horizontal</code></li>
+<li><code>glyph-orientation-vertical</code></li>
+<li><code>image-rendering</code></li>
+<li><code>kerning</code></li>
+<li><code>pointer-events</code></li>
+<li><code>shape-rendering</code></li>
+<li><code>textPath method=&quot;stretch&quot;</code></li>
+<li><code>text-rendering</code></li>
+<li><code>writing-mode</code></li>
+<li><code>tref</code> (removed)</li>
+<li><code>view</code></li>
+<li><code>externalResourcesRequired</code></li>
+<li><code>zoomAndPan</code></li>
+<li><code>filterRes</code></li>
+<li><code>textLength</code></li>
+<li><code>lengthAdjust</code></li>
+<li>vertical text</li>
+<li><code>foreignObject</code></li>
+<li><code>svgz</code></li>
+<li><code>visibility:collapse</code></li>
+<li><code>switch</code> (<code>requiredFeatures</code>, <code>requiredExtensions</code>, <code>systemLanguage</code>)</li>
+<li><code>alignment-baseline</code></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="style-properties"></a><a href="#style-properties" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Style Properties</h3>
+<p>The following style properties <em>are</em> supported on SVG elements:</p>
+<ul>
+<li><code>baseline-shift</code></li>
+<li><code>clip-path</code></li>
+<li><code>clip-rule</code></li>
+<li><code>dominant-baseline</code></li>
+<li><code>font-family</code></li>
+<li><code>font-size</code></li>
+<li><code>font-style</code></li>
+<li><code>font-weight</code></li>
+<li><code>fill</code></li>
+<li><code>fill-opacity</code></li>
+<li><code>fill-rule</code></li>
+<li><code>marker-start</code></li>
+<li><code>marker-mid</code></li>
+<li><code>marker-end</code></li>
+<li><code>stop-color</code></li>
+<li><code>stop-opacity</code></li>
+<li><code>stroke</code></li>
+<li><code>stroke-dasharray</code></li>
+<li><code>stroke-dashoffset</code></li>
+<li><code>stroke-linecap</code></li>
+<li><code>stroke-linejoin</code></li>
+<li><code>stroke-miterlimit</code></li>
+<li><code>stroke-opacity</code></li>
+<li><code>stroke-width</code></li>
+<li><code>text-anchor</code></li>
+</ul>
+<p>Style properties can be applied using SVG presentation attributes:</p>
+<pre><code class="hljs css language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">rect</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"yellow"</span> <span class="hljs-attr">stroke</span>=<span class="hljs-string">"blue"</span> <span class="hljs-attr">stroke-width</span>=<span class="hljs-string">"20"</span>
+            <span class="hljs-attr">width</span>=<span class="hljs-string">"200"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"100"</span>/&gt;</span>
+</code></pre>
+<p>Or by using CSS properties inside the <code>style</code> attribute or element:</p>
+<pre><code class="hljs css language-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">rect</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"fill:yellow; stroke:blue; stroke-width:20"</span>
+            <span class="hljs-attr">width</span>=<span class="hljs-string">"200"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"100"</span>/&gt;</span>
+</code></pre>
+<p>Alternatively, style properties can be applied by linking a stylesheet, or an XML stylesheet:</p>
+<p>SVG</p>
+<pre><code class="hljs css language-xml">    ...
+    <span class="hljs-meta">&lt;?xml-stylesheet type="text/css" href="style.css"?&gt;</span>
+    ...
+    <span class="hljs-tag">&lt;<span class="hljs-name">rect</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"200"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"100"</span>/&gt;</span>
+</code></pre>
+<p>CSS</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">svg</span> <span class="hljs-selector-tag">rect</span> {
+        <span class="hljs-attribute">fill</span>: yellow;
+        <span class="hljs-attribute">stroke</span>: blue;
+        <span class="hljs-attribute">stroke-width</span>: <span class="hljs-number">20</span>;
+    }
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="rasterization"></a><a href="#rasterization" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Rasterization</h2>
+<p>Prince allows for the output of a rasterized image rather than, or in addition to a PDF output. This produces a JPEG or PNG image of the content, which can be convenient when e.g. planning to use it as a quick preview or thumbnail of the PDF content to display on a website, as can e.g. be seen in the <a href="/samples/">Sample Documents</a> section on this website.</p>
+<p>Rasterization is enabled with the <a href="/doc/13/command-line#cl-raster-output"><code>--raster-output</code></a> command-line option, which also defines the template of the file naming. The output format can be chosen either based on the extension of the file name, or by explicitly indicating it.</p>
+<pre><code class="hljs css language-bash">      prince doc.html --raster-output=page_%02d.png
+</code></pre>
+<p>Furthermore the range of pages to rasterize and the resolution of the raster output can be tweaked in order to determine the number of pages in rasterized format, and the size of the images.</p>
+<pre><code class="hljs css language-bash">      prince doc.html --raster-output=title-thumbnail.jpg --raster-pages=first --raster-dpi=24
+</code></pre>
+<p>Please note that when creating a JPEG image output, the quality parameter given
+to libjpeg is <code>92</code>.  There is no option to control it at the moment.</p>
+<p>If you want to rasterize the HTML to an image format that supports transparency (PNG, not JPEG) and have a transparent background, in order to composite it with something else later, the command-line option <a href="/doc/13/command-line#cl-raster-background"><code>--raster-background</code></a> can be used with the value <code>transparent</code>.</p>
+<p>A full list of rasterization possibilities can be found in the <a href="/doc/13/command-line#raster-output-options">Raster Output Options</a> section.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/doc/13/javascript"><span class="arrow-prev">← </span><span>Scripting</span></a><a class="docs-next button" href="/doc/13/cookbook"><span>Prince Tips and Tricks</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#color">Color</a><ul class="toc-headings"><li><a href="#rgba">RGB(A)</a></li><li><a href="#cmyk">CMYK</a></li><li><a href="#hsla">HSL(A)</a></li><li><a href="#spot-colors">Spot colors</a></li></ul></li><li><a href="#color-management">Color Management</a><ul class="toc-headings"><li><a href="#introduction">Introduction</a></li><li><a href="#color-management-and-pdf-profiles">Color Management and PDF Profiles</a></li><li><a href="#color-management-in-prince">Color Management in Prince</a></li><li><a href="#color-conversion">Color conversion</a></li><li><a href="#rich-black-and-true-black">Rich black and true black</a></li><li><a href="#page-color-space">Page color space</a></li></ul></li><li><a href="#filters">Filters</a></li><li><a href="#images">Images</a><ul class="toc-headings"><li><a href="#images-in-xhtml">Images in XHTML</a></li><li><a href="#images-in-docbook">Images in DocBook</a></li><li><a href="#images-in-arbitrary-xml">Images in Arbitrary XML</a></li><li><a href="#css-and-images">CSS and Images</a></li></ul></li><li><a href="#scalable-vector-graphics-svg">Scalable Vector Graphics (SVG)</a><ul class="toc-headings"><li><a href="#style-properties">Style Properties</a></li></ul></li><li><a href="#rasterization">Rasterization</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="copyright"><div class="about-contact"><a href="/company/">About us</a> | <a href="/contact/">Contact</a></div><div class="copyright">Copyright © 2022 YesLogic Pty. Ltd.</div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '63dda203371e77ee63a05de413c3d741',
+                indexName: 'princexml',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["language:en"]}
+              });
+            </script></body></html>

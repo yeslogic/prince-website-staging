@@ -1,0 +1,568 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Server Integration · Prince Documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Prince can be used server-side to produce PDFs, invoked by a wrapper script. Some care needs to be used in the configuration to make it reliable and secure."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Server Integration · Prince Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://www.princexml.com/"/><meta property="og:description" content="Prince can be used server-side to produce PDFs, invoked by a wrapper script. Some care needs to be used in the configuration to make it reliable and secure."/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://www.princexml.com/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="/js/warning.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/Prince-logo.png" alt="Prince Documentation"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/doc/" target="_self">Documentation</a></li><li class=""><a href="/doc/help" target="_self">Help</a></li><li class=""><a href="/doc/releases" target="_self">Release Notes</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>User Guide</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Installation Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/installing">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/doc/13/first-doc">Your First Document</a></li><li class="navListItem"><a class="navItem" href="/doc/13/help-install">Help</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">User Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/intro-userguide">Convert HTML to PDF</a></li><li class="navListItem"><a class="navItem" href="/doc/13/styling">Styling</a></li><li class="navListItem"><a class="navItem" href="/doc/13/paged">Paged Media</a></li><li class="navListItem"><a class="navItem" href="/doc/13/gen-content">Generated Content</a></li><li class="navListItem"><a class="navItem" href="/doc/13/javascript">Scripting</a></li><li class="navListItem"><a class="navItem" href="/doc/13/graphics">Graphics</a></li><li class="navListItem"><a class="navItem" href="/doc/13/cookbook">Prince Tips and Tricks</a></li><li class="navListItem"><a class="navItem" href="/doc/13/help">Help</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-input">Prince Input</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-output">Prince Output</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-networking">Prince Networking</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/doc/13/server-integration">Server Integration</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-for-books">Prince for Books</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Reference Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/command-line">Command-line Reference</a></li><li class="navListItem"><a class="navItem" href="/doc/13/css-refs">CSS References</a></li><li class="navListItem"><a class="navItem" href="/doc/13/css-props">CSS Properties</a></li><li class="navListItem"><a class="navItem" href="/doc/13/js-support">JavaScript Support</a></li><li class="navListItem"><a class="navItem" href="/doc/13/page-size-keywords">Page Size Keywords</a></li><li class="navListItem"><a class="navItem" href="/doc/13/characters">Character Entities</a></li><li class="navListItem"><a class="navItem" href="/doc/13/acknowledgements">Acknowledgments</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Server Integration</h1></header><article><div><span><p>Prince can be used server-side to produce PDFs, invoked by a wrapper script. Some care needs to be used in the configuration to make it reliable and secure.</p>
+<h2><a class="anchor" aria-hidden="true" id="security-and-performance"></a><a href="#security-and-performance" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Security and performance</h2>
+<p>When you control the input, Prince produces the expected output. But when you have no control on the input, as happens when running Prince on a server, it might be important to harden the installation in order to reduce a possible surface of vulnerability. Prince offers some options to aid the configuration, while other possibilities depend on the environment configuration on the server.</p>
+<p>It might be a good precaution to run Prince with the command-line option <a href="/doc/13/command-line#cl-no-local-files"><code>--no-local-files</code></a> in order to exclude any unwanted access to the local file system. It is also a good idea <em>not</em> to enable <a href="/doc/13/command-line#cl-xxe"><code>--xml-external-entities</code></a> or <a href="/doc/13/command-line#cl-xinclude"><code>--xinclude</code></a> (they are not enabled by default).</p>
+<p>A more comprehensive hardening practice is to run Prince in a chroot/jail/vms/container. Prince needs access to several libraries it depends on, as well as fonts and SSL certificates. To check direct dependencies, run the following command:</p>
+<p><code>ldd /usr/lib/prince/bin/prince</code></p>
+<p>When running multiple instances of Prince, it might be advisable to disable parallel rasterization with the command-line option <a href="/doc/13/command-line#cl-raster-threads"><code>--raster-threads=1</code></a> to improve throughput. Setting <code>GC_MARKERS=1</code> in the environment will do the same for garbage collection threads.</p>
+<h2><a class="anchor" aria-hidden="true" id="prince-wrappers"></a><a href="#prince-wrappers" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prince Wrappers</h2>
+<p>Since different server configurations make use of different scripting languages, wrappers in those languages are necessary to invoke Prince. Wrappers for several of the most widely used scripting languages are available for download on the <a href="/download/wrappers/">Wrappers Download Page</a>.</p>
+<p>A useful tool for writing custom wrappers in other languages are the <a href="#advanced-command-line-options">Advanced Command-Line Options</a>.</p>
+<p>For details on the usage of each of the wrappers, please consult the following chapters.</p>
+<h3><a class="anchor" aria-hidden="true" id="the-java-wrapper"></a><a href="#the-java-wrapper" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The Java Wrapper</h3>
+<p>Prince can be called from within a Java class for servlets by using <a href="/download/wrappers/#wrapper-java">Java interface</a>.</p>
+<p>This package contains:</p>
+<ul>
+<li>A single JAR file (<code>prince.jar</code>),</li>
+<li>the <a href="/doc/13/assets/wrappers/java/doc/index.html">API documentation</a> and</li>
+<li>the Java source code for reference.</li>
+</ul>
+<p>The <code>Prince.jar</code> file contains the class file that provides the Java interface to Prince (<code>com.princexml.Prince</code>). The documentation lists the Java class methods and explains how to use them.</p>
+<h3><a class="anchor" aria-hidden="true" id="the-c--net-wrapper"></a><a href="#the-c--net-wrapper" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The C# / .Net Wrapper</h3>
+<p>Prince can be called from .NET languages using the <a href="/download/wrappers/#wrapper-csharp">Prince C# / .Net wrapper</a>.</p>
+<p>The wrapper package contains:</p>
+<ul>
+<li>the DLL file,</li>
+<li>the <a href="/doc/13/assets/wrappers/csharp/readme.html">API documentation</a> and</li>
+<li>the source code.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="using-prince-with-c"></a><a href="#using-prince-with-c" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using Prince with C#</h4>
+<p>To use the Prince .NET wrapper in C#, add a reference to the DLL to your Visual Studio project.</p>
+<p>To convert HTML or XML files into PDF, instantiate a Prince object with the full path to the Prince engine executable file. Once this is done, you can apply style sheets and scripts, or configure other properties by calling the appropriate subroutines. Finally, you can call one of the Convert functions to generate a PDF file.</p>
+<p>Please note that document scripts need to first be enabled with <code>prn.SetJavaScript(true)</code> - external scripts added with <code>AddScript</code> will always be run.</p>
+<p>The following code sample demonstrates how to convert a single HTML document into a PDF file:</p>
+<pre><code class="hljs css language-cs">    <span class="hljs-comment">// instantiate Prince by specifying the full path to the engine executable</span>
+    Prince prn = <span class="hljs-keyword">new</span> Prince(<span class="hljs-string">"C:\\Program Files\\Prince\\Engine\\bin\\prince.exe"</span>);
+
+    <span class="hljs-comment">// specify the log file for error and warning messages</span>
+    <span class="hljs-comment">// make sure that you have write permissions for this file</span>
+    prn.SetLog(<span class="hljs-string">"C:\\docs\\log.txt"</span>);
+
+    <span class="hljs-comment">// apply a CSS style sheet (optional)</span>
+    prn.AddStyleSheet(<span class="hljs-string">"C:\\docs\\css\\stylesheet-1.css"</span>);
+
+    <span class="hljs-comment">// apply an external JavaScript file (optional) and enable document JavaScript</span>
+    prn.AddScript(<span class="hljs-string">"C:\\docs\\js\\test.js"</span>);
+    prn.SetJavaScript(<span class="hljs-literal">true</span>);
+
+    <span class="hljs-comment">// convert a HTML document into a PDF file</span>
+    prn.Convert(<span class="hljs-string">"C:\\docs\\test1.html"</span>, <span class="hljs-string">"C:\\docs\\pdf\\test1.pdf"</span>);
+</code></pre>
+<p>To combine multiple HTML documents into a single PDF file, call <code>ConvertMultiple</code>:</p>
+<pre><code class="hljs css language-cs">    String[] doc_array = {<span class="hljs-string">"C:\\docs\\test1.html"</span>, <span class="hljs-string">"C:\\docs\\test2.html"</span>};
+
+    prn.ConvertMultiple(doc_array, <span class="hljs-string">"C:\\docs\\pdf\\merged.pdf"</span>);
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="using-prince-with-vbnet"></a><a href="#using-prince-with-vbnet" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using Prince with VB.NET</h4>
+<p>To use the Prince <a href="#the-c-net-wrapper-">The C# / .Net Wrapper</a> in VB.NET, add a reference to the DLL to your Visual Studio project. Alternatively, you can include the Prince.vb source file directly if you prefer.</p>
+<p>To convert HTML or XML files into PDF, instantiate a Prince object with the full path to the Prince engine executable file. Once this is done, you can apply style sheets and scripts, or configure other properties by calling the appropriate subroutines. Finally, you can call one of the Convert functions to generate a PDF file.</p>
+<p>Please note that document scripts need to first be enabled with <code>prn.SetJavaScript(true)</code> - external scripts added with <code>AddScript</code> will always be run.</p>
+<p>The following code sample demonstrates how to convert a single HTML document into a PDF file:</p>
+<pre><code class="hljs css language-vbnet">    ' instantiate Prince by specifying the full path to the engine executable
+    Dim prn As Prince
+
+    prn = New Prince("C:\Program Files\Prince\Engine\bin\prince.exe")
+
+    ' specify the log file for error and warning messages
+    ' make sure that you have write permissions for this file
+    prn.SetLog("C:\docs\log.txt")
+
+    ' apply a CSS style sheet (optional)
+    prn.AddStyleSheet("C:\docs\css\stylesheet-1.css")
+
+    // apply an external JavaScript file (optional) and enable document JavaScript
+    prn.AddScript("C:\\docs\\js\\test.js")
+    prn.SetJavaScript(true)
+
+    ' convert a HTML document into a PDF file
+    prn.Convert("C:\docs\test1.html", "C:\docs\pdf\test1.pdf")
+</code></pre>
+<p>To combine multiple HTML documents into a single PDF file, call <code>ConvertMultiple</code>:</p>
+<pre><code class="hljs css language-vbnet">    Dim doc_array() As String
+
+    doc_array = {"C:\docs\test1.html", "C:\docs\test2.html"}
+
+    prn.ConvertMultiple(doc_array, "C:\docs\pdf\merged.pdf")
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="the-php-wrapper"></a><a href="#the-php-wrapper" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The PHP Wrapper</h3>
+<p>Prince can be called from PHP using the <a href="/download/wrappers/#wrapper-php">PHP interface</a>.</p>
+<p>Note that the Prince class requires PHP 5.3.0 or later.</p>
+<p>The package contains two files:</p>
+<ul>
+<li>The <code>prince.php</code> script and</li>
+<li>the <a href="https://github.com/yeslogic/prince-php-wrapper">API documentation</a>.</li>
+</ul>
+<p>The PHP wrapper is also <a href="https://packagist.org/packages/yeslogic/prince-php-wrapper">hosted on Packagist</a>, so that it can be used from Composer.  It can now be installed with the command-line:</p>
+<pre><code class="hljs css language-bash">    $ composer require yeslogic/prince-php-wrapper
+</code></pre>
+<p>The <code>prince.php</code> file contains the PHP class that provides the interface to Prince. The <code>readme.html</code> file lists the PHP class methods and explains how to use them.</p>
+<p>When instantiating the <code>Prince</code> class, pass in the full path of the Prince executable to the constructor as a string argument.</p>
+<pre><code class="hljs css language-php">    <span class="hljs-keyword">use</span> <span class="hljs-title">Prince</span>\<span class="hljs-title">Prince</span>;
+
+    $prince = <span class="hljs-keyword">new</span> Prince(<span class="hljs-string">'/usr/bin/prince'</span>);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="the-activexcom-wrapper"></a><a href="#the-activexcom-wrapper" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The ActiveX/COM Wrapper</h3>
+<p>The <a href="/download/wrappers/#wrapper-activex">ActiveX/COM wrapper</a> allows Prince to be called from various languages: <a href="#using-prince-with-asp">ASP</a>, <a href="#using-prince-with-activex-com-visual-basic">ActiveX, COM, Visual Basic</a> and also <a href="#using-prince-with-coldfusion">Coldfusion</a>.</p>
+<p>This package contains two files:</p>
+<ul>
+<li>The <code>PRINCE.dll</code> file and</li>
+<li>the <a href="/doc/13/assets/wrappers/activex/readme.html">API documentation</a>.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="using-prince-with-asp"></a><a href="#using-prince-with-asp" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using Prince with ASP</h4>
+<p>Prince can be called from ASP pages using the <a href="#the-activex-com-wrapper">ActiveX/COM interface</a>.</p>
+<p>This interface is provided in the form of an ActiveX DLL file that needs to be registered in the Windows registry using REGSVR32.EXE:</p>
+<pre><code class="hljs css language-powershell">    regsvr32 C:\Prince\PRINCE.dll
+</code></pre>
+<p>In order to call Prince from an ASP page, we need to create a COM object using the CreateObject server method. Once the COM object is created, you can use the COM interface methods to perform the tasks.</p>
+<p>Please note that document scripts need to first be enabled with <code>prn.SetJavaScript(true)</code> - external scripts added with <code>AddScript</code> will always be run.</p>
+<p>The following is some sample code for illustration:</p>
+<pre><code class="hljs">    &lt;%
+    Dim pr
+    Dim res
+
+    Set pr = Server.CreateObject("PrinceCom.Prince")
+    pr.SetPrincePath "C:\Prince\engine\bin\prince.exe"
+    pr.AddStyleSheet "C:\Prince\css\test1.css"
+    pr.AddStyleSheet "C:\Prince\css\test2.css"
+    pr.SetJavaScript(True)
+    pr.SetEncryptInfo 128, "password1", "password2", true, true, true, true
+
+    If pr.Convert("C:\Prince\examples\magic.html", "C:\output.pdf") = 1 Then
+        res = "Successful"
+    Else
+        res = "Unsuccessful"
+    End If
+    %&gt;
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="using-prince-with-activex--com--visual-basic"></a><a href="#using-prince-with-activex--com--visual-basic" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using Prince with ActiveX / COM / Visual Basic</h4>
+<p>Prince can be called from Visual Basic and other languages on Windows using the <a href="#the-activex-com-wrapper">ActiveX/COM interface</a>.</p>
+<p>This interface is provided in the form of an ActiveX DLL file that needs to be registered in the Windows registry using REGSVR32.EXE:</p>
+<pre><code class="hljs">regsvr32 C:\Prince\PRINCE.dll
+</code></pre>
+<p>Please read the README.TXT file that comes with the ActiveX DLL file for more details of the COM interface methods.</p>
+<h3><a class="anchor" aria-hidden="true" id="using-prince-with-coldfusion"></a><a href="#using-prince-with-coldfusion" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using Prince with ColdFusion</h3>
+<p>Prince can be called from ColdFusion pages using the Java interface or the <a href="#the-activex-com-wrapper">ActiveX/COM interface</a>, if on Windows.</p>
+<h4><a class="anchor" aria-hidden="true" id="using-java"></a><a href="#using-java" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using Java</h4>
+<p>Start by downloading the <a href="#the-java-wrapper">Java interface</a> for Prince. This package contains:</p>
+<ul>
+<li>A single JAR file (<code>prince.jar</code>),</li>
+<li>the <a href="/doc/13/assets/wrappers/java/doc/index.html">API documentation</a> and</li>
+<li>the Java source code for reference.</li>
+</ul>
+<p>The <code>Prince.jar</code> file contains the class file that provides the Java interface to Prince (<code>com.princexml.Prince</code>). The documentation lists the Java class methods and explains how to use them.</p>
+<p>Place the <code>Prince.jar</code> file in a directory of your choice then start ColdFusion Administrator. Under 'Server Settings &gt; Java and JVM', you should find 'ColdFusion Class Path'. Here you can tell ColdFusion where to look for Java classes. Type in the full path of the <code>Prince.jar</code> file. It should be something like: <code>PATH\Prince.jar</code>, where <code>PATH</code> is the path of the directory that contains the <code>Prince.jar</code>.</p>
+<p>If this is done correctly, ColdFusion should know where to find the Prince Java interface class. The following is some sample CFML code showing how to use it:</p>
+<pre><code class="hljs">    &lt;cfscript&gt;
+       pr = CreateObject("java", "com.princexml.Prince");
+
+       pr.init("C:\Prince\engine\bin\prince.exe");
+       pr.addStyleSheet("C:\Prince\test\test1.css");
+       pr.addStyleSheet("C:\Prince\test\test2.css");
+       pr.setJavaScript(true);
+       pr.setEncryptInfo(128, "secretPassword1", "secretPassword2",
+          True, True, True, True);
+
+       if (pr.Convert("C:\Prince\examples\magic.html", "C:\output.pdf"))
+          WriteOutput("Successful");
+       else
+          WriteOutput("Unsuccessful");
+    &lt;/cfscript&gt;
+</code></pre>
+<p>If on Linux, substitute the paths with the appropriate UNIX style paths.</p>
+<h4><a class="anchor" aria-hidden="true" id="using-activexcom"></a><a href="#using-activexcom" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using ActiveX/COM</h4>
+<p>If you are running ColdFusion on Windows, you can also call Prince using the <a href="#the-activex-com-wrapper">ActiveX/COM interface</a>.</p>
+<p>This interface is provided in the form of an ActiveX DLL file that needs to be registered in the Windows registry using REGSVR32.EXE:</p>
+<pre><code class="hljs css language-powershell">    regsvr32 C:\Prince\PRINCE.dll
+</code></pre>
+<p>In order to call Prince from ColdFusion, we need to create a COM object using the CreateObject function that is available in CFML scripting (you can also use the <code>&lt;cfobject ...&gt;</code> tag if you prefer). Once the COM object is created, you can use the COM interface methods to perform the tasks.</p>
+<p>The following is some sample code for illustration:</p>
+<pre><code class="hljs">    &lt;cfscript&gt;
+       pr = CreateObject("Com", "PrinceCom.Prince", "local");
+
+       pr.SetPrincePath("C:\Prince\engine\bin\prince.exe");
+       pr.AddStyleSheet("C:\Prince\test\test1.css");
+       pr.AddStyleSheet("C:\Prince\test\test2.css");
+       pr.setJavaScript(true);
+       pr.SetEncryptInfo(128, "secretPassword1", "secretPassword2",
+          True, True, True, True);
+
+       if (pr.Convert("C:\Prince\examples\magic.html", "C:\output.pdf") eq 1)
+          WriteOutput("Successful");
+       else
+          WriteOutput("Unsuccessful");
+
+       ReleaseComObject(pr);
+    &lt;/cfscript&gt;
+</code></pre>
+<p>Please read the README.TXT file that comes with the ActiveX DLL file for more details of the COM interface methods.</p>
+<h3><a class="anchor" aria-hidden="true" id="using-prince-with-python"></a><a href="#using-prince-with-python" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using Prince with Python</h3>
+<p>Prince can be called from Python using the <a href="/doc/13/command-line">command-line interface</a>, like this:</p>
+<pre><code class="hljs css language-python">    <span class="hljs-keyword">import</span> subprocess
+
+    subprocess.call([<span class="hljs-string">"prince"</span>,<span class="hljs-string">"foo.xml"</span>,<span class="hljs-string">"bar.pdf"</span>]);
+</code></pre>
+<p>It is possible to write XML to Prince directly from the Python script rather than have Prince read it from an external file:</p>
+<pre><code class="hljs css language-python">    <span class="hljs-keyword">import</span> subprocess
+
+    p = Popen([<span class="hljs-string">"prince"</span>,<span class="hljs-string">"-"</span>,<span class="hljs-string">"out.pdf"</span>], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+
+    outs, errs = p.communicate(<span class="hljs-string">"&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello, world!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;"</span>.encode(<span class="hljs-string">"utf-8"</span>))
+
+    <span class="hljs-keyword">if</span> p.returncode :
+      <span class="hljs-comment"># Ugh.</span>
+    <span class="hljs-keyword">else</span> :
+      pdf = outs
+</code></pre>
+<p>The first filename argument of &quot;-&quot; instructs Prince to read the XML from its standard input stream rather than from a file.</p>
+<p>For Python CGI scripts, the PDF output can be written to the standard output stream so that it is returned to the browser:</p>
+<pre><code class="hljs css language-python">    <span class="hljs-keyword">import</span> subprocess
+
+    p = Popen([<span class="hljs-string">"prince"</span>,<span class="hljs-string">"-"</span>], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+
+    outs, errs = p.communicate(<span class="hljs-string">"&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello, world!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;"</span>.encode(<span class="hljs-string">"utf-8"</span>))
+
+    <span class="hljs-keyword">if</span> p.returncode :
+      <span class="hljs-comment"># Ugh.</span>
+    <span class="hljs-keyword">else</span> :
+      pdf = outs
+</code></pre>
+<p>Because the second filename argument has been omitted and the XML is being read from standard input, the PDF will be written to standard output. Be careful to redirect the output of this script if you try running it from the terminal.</p>
+<p>Alternatively, it is possible for the Python script to read the PDF output directly rather than have Prince save it to an external file:</p>
+<pre><code class="hljs css language-python">    <span class="hljs-keyword">import</span> subprocess
+
+    p = Popen([<span class="hljs-string">"prince"</span>,<span class="hljs-string">"-"</span>], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+
+    outs, errs = p.communicate(<span class="hljs-string">"&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello, world!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;"</span>.encode(<span class="hljs-string">"utf-8"</span>))
+
+    <span class="hljs-keyword">if</span> p.returncode :
+      <span class="hljs-comment"># Ugh.</span>
+    <span class="hljs-keyword">else</span> :
+      pdf = outs
+
+    print(<span class="hljs-string">"PDF is "</span>+str(len(pdf))+<span class="hljs-string">" bytes in size"</span>)
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="using-prince-with-perl"></a><a href="#using-prince-with-perl" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using Prince with Perl</h3>
+<p>Prince can be called from Perl using the <a href="/doc/13/command-line">command-line interface</a>, like this:</p>
+<pre><code class="hljs css language-perl">    <span class="hljs-keyword">system</span>(<span class="hljs-string">"prince foo.xml bar.pdf"</span>);
+</code></pre>
+<p>It is possible to write XML to Prince directly from the Perl script rather than have Prince read it from an external file:</p>
+<pre><code class="hljs css language-perl">    <span class="hljs-keyword">open</span>(PRINCE, <span class="hljs-string">"| prince - out.pdf"</span>);
+    <span class="hljs-keyword">print</span> PRINCE <span class="hljs-string">"&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello, world!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;"</span>;
+    <span class="hljs-keyword">close</span>(PRINCE);
+</code></pre>
+<p>The first filename argument of &quot;-&quot; instructs Prince to read the XML from its standard input stream rather than from a file.</p>
+<p>For Perl CGI scripts, the PDF output can be written to the standard output stream so that it is returned to the browser:</p>
+<pre><code class="hljs css language-perl">    <span class="hljs-keyword">print</span> <span class="hljs-string">"Content-Type: application/pdf\n\n"</span>;
+    <span class="hljs-keyword">open</span>(PRINCE, <span class="hljs-string">"| prince -"</span>);
+    <span class="hljs-keyword">print</span> PRINCE <span class="hljs-string">"&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello, world!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;"</span>;
+    <span class="hljs-keyword">close</span>(PRINCE);
+</code></pre>
+<p>Because the second filename argument has been omitted and the XML is being read from standard input, the PDF will be written to standard output. Be careful to redirect the output of this script if you try running it from the terminal.</p>
+<p>Alternatively, it is possible for the Perl script to read the PDF output directly rather than have Prince save it to an external file:</p>
+<pre><code class="hljs css language-perl">    <span class="hljs-keyword">open</span>(PRINCE, <span class="hljs-string">"prince foo.xml - |"</span>);
+    <span class="hljs-comment"># ... read PDF output from PRINCE file handle</span>
+    <span class="hljs-keyword">close</span>(PRINCE);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="third-party-wrappers"></a><a href="#third-party-wrappers" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Third-Party Wrappers</h3>
+<p>There are also third-party wrappers available for download on external sites. Please note that YesLogic does not take any responsibilities for third-party wrappers offered for download on these external locations.</p>
+<p>Ruby on Rails<br>
+<a href="https://github.com/mbleigh/princely/tree/master">A simple Rails wrapper for the PrinceXML PDF generation library</a></p>
+<p>Node.js<br>
+<a href="https://www.npmjs.com/package/prince">Node API for executing XML/HTML to PDF renderer PrinceXML via prince(1) CLI</a></p>
+<h2><a class="anchor" aria-hidden="true" id="prince-in-cloud-computing"></a><a href="#prince-in-cloud-computing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prince In Cloud Computing</h2>
+<p>Prince can easily be deployed on many different cloud computing platforms and solutions.  As example deployments,
+we detail here installation procedures for Prince on Docker, AWS Lambda and AWS EC2.</p>
+<h3><a class="anchor" aria-hidden="true" id="prince-docker-image"></a><a href="#prince-docker-image" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prince Docker Image</h3>
+<p>Prince can easily be deployed in Docker images.  On the Docker Hub you can find <a href="https://hub.docker.com/r/yeslogic/prince">the Prince Dockerfiles</a>.  To pull the images, run the Docker Pull Command</p>
+<pre><code class="hljs">docker pull yeslogic/prince
+</code></pre>
+<p>The Prince images can be run with the following command:</p>
+<pre><code class="hljs">docker run --rm -it yeslogic/prince
+</code></pre>
+<p>They can be run with a <code>license.dat</code> file in the following way:</p>
+<pre><code class="hljs">docker run --rm -it -v /path/on/host/licence.dat:/usr/lib/prince/licence/licence.dat yeslogic/prince
+</code></pre>
+<p>If, however, you want to run a specific Prince version, rather than the latest, you need to add the version tag to the docker commands:</p>
+<pre><code class="hljs">docker run --rm -it yeslogic/prince:13.1
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="prince-on-microsoft-azure"></a><a href="#prince-on-microsoft-azure" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prince on Microsoft Azure</h3>
+<p>Running Prince on Microsoft Azure is quite straightforward: we have a tutorial and a package for <a href="https://github.com/yeslogic/azure-prince-example/">deploying Prince on Azure</a>.  This is a Visual Studio 2019 project that demonstrates generating a PDF with Prince in C#/ASP.NET Core. It uses the <a href="#the-c--net-wrapper">Prince C#/.Net Wrapper</a> and has been confirmed to work when deployed as an App Service on Microsoft Azure.</p>
+<h3><a class="anchor" aria-hidden="true" id="prince-on-aws-lambda"></a><a href="#prince-on-aws-lambda" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prince on AWS Lambda</h3>
+<p>Setting up Prince on AWS Lambda is not much more difficult than setting it up for Docker or Azure.  Bruce Lawson has written a detailed article on how to <a href="https://medium.com/@bruce_39084/setting-up-prince-on-aws-lambda-and-api-gateway-4d524dcb035b">set up Prince on AWS Lambda</a> using Node.js, with all the required steps.</p>
+<h3><a class="anchor" aria-hidden="true" id="prince-on-ec2"></a><a href="#prince-on-ec2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prince on EC2</h3>
+<p>Prince can easily be installed also on Amazon's EC2 platform - Bruce Lawson provides an in-depth article on how to <a href="https://medium.com/@bruce_39084/setting-up-prince-on-ec2-with-php-f1604db5d754">set up Prince on EC2</a> with PHP.</p>
+<h2><a class="anchor" aria-hidden="true" id="advanced-command-line-options"></a><a href="#advanced-command-line-options" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Advanced Command-Line Options</h2>
+<p>Prince can also be called from the command-line with two special options, useful for understanding the calls Prince can be controlled with, and the output it produces, in order to write your own wrapper: the <a href="#prince-control-protocol">Prince Control Protocol</a> and the <a href="#structured-log">Structured Log</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="prince-control-protocol"></a><a href="#prince-control-protocol" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prince Control Protocol</h3>
+<p><code>prince --control</code>  <br>
+The Prince Control Protocol, accessible through the command-line option <code>--control</code>, is a synchronous bidirectional protocol that consists of a sequence of &quot;chunks&quot; sent via the standard input and output streams.</p>
+<p>Each chunk contains a sequence of bytes with a length and a three letter tag. Here is an example &quot;version&quot; chunk to demonstrate the syntax:</p>
+<pre><code class="hljs">ver 15
+Prince 20161219
+</code></pre>
+<p>This chunk has a tag <code>ver</code> (all tags are three ASCII characters) followed by a space, then the length of the data expressed as a decimal number, then a newline character, then the data itself (15 bytes), then another newline (not part of the data).</p>
+<p>This version chunk is emitted by Prince when the control protocol begins and can be used to check the Prince version and confirm that communication is functioning as expected. Prince will then wait for jobs to be submitted.</p>
+<p>If a chunk contains no data then the length is zero and the chunk ends with the newline immediately following the length. In fact the length itself may be omitted, making this a perfectly valid chunk:</p>
+<pre><code class="hljs">end
+</code></pre>
+<p>This <code>end</code> chunk consists of three letters and a newline character and can be used to terminate the Prince process when there are no further jobs to process.</p>
+<p>Currently the control protocol includes the following chunk types sent by Prince:</p>
+<ul>
+<li><code>ver</code>, sent at startup</li>
+<li><code>pdf</code>, a generated PDF file</li>
+<li><code>log</code>, the complete output log for the job including all errors and warnings</li>
+<li><code>err</code>, errors relating to the control protocol itself</li>
+</ul>
+<p>And these chunks sent by the caller:</p>
+<ul>
+<li><code>job</code>, the description of a requested conversion job, expressed in JSON</li>
+<li><code>dat</code>, a file resource needed by the job</li>
+<li><code>end</code>, to terminate the control connection</li>
+</ul>
+<p>A typical interaction looks like this:</p>
+<pre><code class="hljs">Prince: ver
+Caller: job
+Caller: dat
+Caller: dat
+Prince: pdf
+Prince: log
+Caller: end
+</code></pre>
+<p>Instead of sending the final <code>end</code> chunk the caller may choose to submit another <code>job</code> chunk and continue converting documents. The protocol is synchronous so replies simply match requests in order.</p>
+<p>The <code>job</code> chunk contains a description of the conversion job represented in JSON format, which can be followed by an optional sequence of <code>dat</code> chunks containing file data which is needed by the job, eg. HTML documents, style sheets, PDF attachments, or whatever.</p>
+<p>The number of <code>dat</code> chunks is specified by the <code>job-resource-count</code> field in the job description, and these files can be accessed via a special job-resource URL scheme, eg. <code>job-resource:0</code> will access the content of the first <code>dat</code> chunk, then <code>job-resource:1</code>, <code>job-resource:2</code>, etc. This allows any number of resources to be provided inline with the request and removes the need to create actual temporary files.</p>
+<p>The JSON job description has several nested objects with fields corresponding to Prince options:</p>
+<pre><code class="hljs css language-json">    {
+        "input": { &lt;input options&gt; },
+        "pdf": { &lt;pdf options&gt; },
+        "metadata": { &lt;metadata options&gt; },
+        "raster": { &lt;raster options&gt; },
+        "job-resource-count": &lt;int&gt;
+    }
+</code></pre>
+<p>The <code>input options</code> and <code>job-resource-count</code> are mandatory, the rest are optional and will default to the normal values.</p>
+<p>The <code>input options</code> object includes these fields:</p>
+<pre><code class="hljs css language-json">    {
+        <span class="hljs-attr">"src"</span>: &lt;single URL or list of URLs&gt;,
+        <span class="hljs-attr">"type"</span>: &lt;string&gt;,
+        <span class="hljs-attr">"base"</span>: &lt;string&gt;,
+        <span class="hljs-attr">"media"</span>: &lt;string&gt;,
+        <span class="hljs-attr">"styles"</span>: [ &lt;list of URLs&gt; ],
+        <span class="hljs-attr">"scripts"</span>: [ &lt;list of URLs&gt; ],
+        <span class="hljs-attr">"default-style"</span>: &lt;bool&gt;,
+        <span class="hljs-attr">"author-style"</span>: &lt;bool&gt;,
+        <span class="hljs-attr">"javascript"</span>: &lt;bool&gt;,
+        <span class="hljs-attr">"xinclude"</span>: &lt;bool&gt;,
+        <span class="hljs-attr">"xml-external-entities"</span>: &lt;bool&gt;
+    }
+</code></pre>
+<p>Only the <code>src</code> field is required, the rest can be left as defaults.</p>
+<p>Now we can make some simple job descriptions, eg. to convert a single HTML file:</p>
+<pre><code class="hljs css language-json">    {
+        <span class="hljs-attr">"input"</span>: {
+            <span class="hljs-attr">"src"</span>: <span class="hljs-string">"/path/to/input.html"</span>
+        },
+        <span class="hljs-attr">"job-resource-count"</span>: <span class="hljs-number">0</span>
+    }
+</code></pre>
+<p>This can be sent as a single <code>job</code> chunk and Prince will respond with a <code>pdf</code> chunk if the conversion succeeded and a <code>log</code> chunk.</p>
+<p>Or you can convert a HTML document without saving it to a temporary file:</p>
+<pre><code class="hljs css language-json">    {
+        <span class="hljs-attr">"input"</span>: {
+            <span class="hljs-attr">"src"</span>: <span class="hljs-string">"job-resource:0"</span>
+        },
+        <span class="hljs-attr">"job-resource-count"</span>: <span class="hljs-number">1</span>
+    }
+</code></pre>
+<p>This requires the <code>job</code> chunk to be followed by a <code>dat</code> chunk that contains the HTML and then Prince will respond as before.</p>
+<p>The <code>pdf options</code> object includes these fields:</p>
+<pre><code class="hljs css language-json">    {
+        <span class="hljs-attr">"color-options"</span>: <span class="hljs-string">"auto"</span> | <span class="hljs-string">"use-true-black"</span> | <span class="hljs-string">"use-rich-black"</span>,
+        <span class="hljs-attr">"embed-fonts"</span>: &lt;bool&gt;,
+        <span class="hljs-attr">"subset-fonts"</span>: &lt;bool&gt;,
+        <span class="hljs-attr">"artificial-fonts"</span>: &lt;bool&gt;,
+        <span class="hljs-attr">"force-identity-encoding"</span>: &lt;bool&gt;,
+        <span class="hljs-attr">"compress"</span>: &lt;bool&gt;,
+        <span class="hljs-attr">"encrypt"</span>: {
+            <span class="hljs-attr">"key-bits"</span>: <span class="hljs-number">40</span> | <span class="hljs-number">128</span>,
+            <span class="hljs-attr">"user-password"</span>: &lt;string&gt;,
+            <span class="hljs-attr">"owner-password"</span>: &lt;string&gt;,
+            <span class="hljs-attr">"disallow-print"</span>: &lt;bool&gt;,
+            <span class="hljs-attr">"disallow-modify"</span>: &lt;bool&gt;,
+            <span class="hljs-attr">"disallow-copy"</span>: &lt;bool&gt;,
+            <span class="hljs-attr">"disallow-annotate"</span>: &lt;bool&gt;
+        },
+        <span class="hljs-attr">"pdf-profile"</span>: &lt;string&gt;,
+        <span class="hljs-attr">"pdf-output-intent"</span>: &lt;URL&gt;,
+        <span class="hljs-attr">"fallback-cmyk-profile"</span>: &lt;URL&gt;,
+        <span class="hljs-attr">"color-conversion"</span>: <span class="hljs-string">"none"</span> | <span class="hljs-string">"full"</span>,
+        <span class="hljs-attr">"pdf-lang"</span>: &lt;string&gt;,
+        <span class="hljs-attr">"pdf-xmp"</span>: &lt;url&gt;,
+        <span class="hljs-attr">"tagged-pdf"</span>: <span class="hljs-string">"auto"</span> | &lt;bool&gt;,
+        <span class="hljs-attr">"attach"</span>: [ &lt;list of attachments&gt; ]
+    }
+</code></pre>
+<p>Each attachment is a &lt;url&gt; (string) or an object:</p>
+<pre><code class="hljs css language-json">    {
+        <span class="hljs-attr">"url"</span>: &lt;url&gt;,
+        <span class="hljs-attr">"filename"</span>: &lt;string&gt;,
+        <span class="hljs-attr">"description"</span>: &lt;string&gt;
+    }
+</code></pre>
+<p>The <code>metadata options</code> object includes these fields:</p>
+<pre><code class="hljs css language-json">    {
+        <span class="hljs-attr">"title"</span>: &lt;string&gt;,
+        <span class="hljs-attr">"subject"</span>: &lt;string&gt;,
+        <span class="hljs-attr">"author"</span>: &lt;string&gt;,
+        <span class="hljs-attr">"keywords"</span>: &lt;string&gt;,
+        <span class="hljs-attr">"creator"</span>: &lt;string&gt;,
+    }
+</code></pre>
+<p>The <code>raster options</code> object includes these fields:</p>
+<pre><code class="hljs css language-json">    {
+        <span class="hljs-attr">"dpi"</span>: &lt;integer&gt;,
+        <span class="hljs-attr">"background"</span>: <span class="hljs-string">"white"</span> | <span class="hljs-string">"transparent"</span>
+    }
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="structured-log"></a><a href="#structured-log" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Structured Log</h3>
+<p><code>--structured-log=LEVEL</code>  <br>
+This option is designed to make it easier to integrate other software with Prince. It takes these values:</p>
+<ul>
+<li><code>--no-structured-log</code></li>
+<li><code>--structured-log=normal</code></li>
+<li><code>--structured-log=quiet</code></li>
+<li><code>--structured-log=progress</code></li>
+<li><code>--structured-log=buffered</code></li>
+</ul>
+<p>The default is <code>--no-structured-log</code>, in which case error and warning messages will be written to the terminal (stderr stream) as they occur in a human readable format, eg.</p>
+<pre><code class="hljs">prince: foo.html: error: can't open input file: No such file or directory
+prince: foo.html: error: could not load input file
+prince: error: failed to load all input documents
+</code></pre>
+<p>Specifying <code>--structured-log=normal</code> writes the log messages in an alternate format with fields separated by <code>|</code> characters, in order to make it easier to parse by other software.</p>
+<p>The first field indicates the type of message, which can be:</p>
+<ul>
+<li><p><code>sta|</code> = status message;</p></li>
+<li><p><code>prg|</code> = progress percentage;</p></li>
+<li><p><code>fin|</code> = final outcome, which can be</p>
+<ul>
+<li><code>fin|success</code>, or</li>
+<li><code>fin|failure</code>;</li>
+</ul></li>
+<li><p><code>dat|name|value</code> = data messages produced by <a href="/doc/13/js-support#window.Log.data"><code>Log.data(&quot;name&quot;, &quot;value&quot;)</code></a>;</p></li>
+<li><p><code>msg|</code> = messages, which can be any of the following:</p>
+<ul>
+<li><code>msg|err</code> = error message;</li>
+<li><code>msg|wrn</code> = warning message;</li>
+<li><code>msg|inf</code> = information message;</li>
+<li><code>msg|dbg</code> = debug message;</li>
+<li><code>msg|out</code> = console output from <code>console.log()</code>;</li>
+</ul>
+<p>and always followed by source location and the message itself.</p></li>
+</ul>
+<pre><code class="hljs">msg|err|foo.html|can't open input file: No such file or directory
+msg|err|foo.html|could not load input file
+msg|err||failed to load all input documents
+fin|failure
+</code></pre>
+<p>The last <code>msg|err</code> message has an empty source location field.</p>
+<p>Specifying <code>--structured-log=quiet</code> suppresses <em>all</em> log messages, except for the final <code>fin</code> message, indicating success or failure:</p>
+<pre><code class="hljs">fin|failure
+</code></pre>
+<p>This allows other software to read the stdout stream from Prince containing the PDF file in its entirety, then read the final status from the stderr stream, without worrying about blocking due to deadlocks.</p>
+<p>Specifying <code>--structured-log=progress</code> prints percentage log messages for use in GUI applications:</p>
+<pre><code class="hljs">prg|94
+prg|96
+prg|99
+prg|100
+fin|success
+</code></pre>
+<p>Specifying <code>--structured-log=buffered</code> is the same as <code>normal</code>, but all log messages will be delayed until after the full PDF has been written to the stdout stream, again so that other software can read from stdout and then read the log from stderr without deadlocking.</p>
+<p>The deadlock problem happens when Prince writes log messages to stderr and blocks, waiting for the other software to read them, but the other software is blocked waiting for Prince to write the PDF to stdout, leading to a deadlock where both processes hang indefinitely.</p>
+<p>By omitting log messages, or by delaying them until after the PDF is written, this deadlock can be avoided. Another option is to use the <a href="#prince-control-protocol">Prince Control Protocol</a>, which also avoids this problem.</p>
+<h3><a class="anchor" aria-hidden="true" id="fail-safe-options"></a><a href="#fail-safe-options" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Fail-Safe Options</h3>
+<p>Prince offers three Fail-Safe Options:</p>
+<p><code>--fail-dropped-content</code>  <br>
+Fail if any content is dropped.</p>
+<p><code>--fail-missing-resources</code>  <br>
+Fail if any resources cannot be loaded.</p>
+<p><code>--fail-missing-glyphs</code>  <br>
+Fail if glyphs cannot be found for any characters.</p>
+<p>Usually Prince will try hard to solve any unexpected issues that arise, prioritizing the creation of a PDF - missing glyphs would be represented as a question mark (&quot;?&quot;) and resources not loaded would simply be dropped. The fail-safe options are there to prevent the creation of broken PDFs due to temporary network problems or unexpected font issues. If the condition specified with one of the command-line options is triggered, the conversion will return an explicit failure status, and no PDF is created. Appropriate action to identify and fix the problem can be taken before attempting a new conversion.</p>
+<p>The JavaScript property <a href="/doc/13/js-support#window.Prince.failStatus"><code>Prince.failStatus</code></a> can also be used to trigger an explicit failure status based on custom criteria. See also under <a href="/doc/13/javascript#js-prince-obj">The Prince Object</a>.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/doc/13/prince-networking"><span class="arrow-prev">← </span><span>Prince Networking</span></a><a class="docs-next button" href="/doc/13/prince-for-books"><span>Prince for Books</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#security-and-performance">Security and performance</a></li><li><a href="#prince-wrappers">Prince Wrappers</a><ul class="toc-headings"><li><a href="#the-java-wrapper">The Java Wrapper</a></li><li><a href="#the-c--net-wrapper">The C# / .Net Wrapper</a></li><li><a href="#the-php-wrapper">The PHP Wrapper</a></li><li><a href="#the-activexcom-wrapper">The ActiveX/COM Wrapper</a></li><li><a href="#using-prince-with-coldfusion">Using Prince with ColdFusion</a></li><li><a href="#using-prince-with-python">Using Prince with Python</a></li><li><a href="#using-prince-with-perl">Using Prince with Perl</a></li><li><a href="#third-party-wrappers">Third-Party Wrappers</a></li></ul></li><li><a href="#prince-in-cloud-computing">Prince In Cloud Computing</a><ul class="toc-headings"><li><a href="#prince-docker-image">Prince Docker Image</a></li><li><a href="#prince-on-microsoft-azure">Prince on Microsoft Azure</a></li><li><a href="#prince-on-aws-lambda">Prince on AWS Lambda</a></li><li><a href="#prince-on-ec2">Prince on EC2</a></li></ul></li><li><a href="#advanced-command-line-options">Advanced Command-Line Options</a><ul class="toc-headings"><li><a href="#prince-control-protocol">Prince Control Protocol</a></li><li><a href="#structured-log">Structured Log</a></li><li><a href="#fail-safe-options">Fail-Safe Options</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="copyright"><div class="about-contact"><a href="/company/">About us</a> | <a href="/contact/">Contact</a></div><div class="copyright">Copyright © 2022 YesLogic Pty. Ltd.</div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '63dda203371e77ee63a05de413c3d741',
+                indexName: 'princexml',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["language:en"]}
+              });
+            </script></body></html>

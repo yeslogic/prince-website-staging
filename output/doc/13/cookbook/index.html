@@ -1,0 +1,816 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Prince Tips and Tricks · Prince Documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="…aka the Prince Cookbook, collects recipes to achieve certain common or complex tasks useful when preparing a document for printing. Each recipe shows the required features in a &quot;You need&quot; ingredients list and provides a step-by-step explanation to guide you to the required goal."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Prince Tips and Tricks · Prince Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://www.princexml.com/"/><meta property="og:description" content="…aka the Prince Cookbook, collects recipes to achieve certain common or complex tasks useful when preparing a document for printing. Each recipe shows the required features in a &quot;You need&quot; ingredients list and provides a step-by-step explanation to guide you to the required goal."/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://www.princexml.com/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="/js/warning.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/Prince-logo.png" alt="Prince Documentation"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/doc/" target="_self">Documentation</a></li><li class=""><a href="/doc/help" target="_self">Help</a></li><li class=""><a href="/doc/releases" target="_self">Release Notes</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>User Guide</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Installation Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/installing">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/doc/13/first-doc">Your First Document</a></li><li class="navListItem"><a class="navItem" href="/doc/13/help-install">Help</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">User Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/intro-userguide">Convert HTML to PDF</a></li><li class="navListItem"><a class="navItem" href="/doc/13/styling">Styling</a></li><li class="navListItem"><a class="navItem" href="/doc/13/paged">Paged Media</a></li><li class="navListItem"><a class="navItem" href="/doc/13/gen-content">Generated Content</a></li><li class="navListItem"><a class="navItem" href="/doc/13/javascript">Scripting</a></li><li class="navListItem"><a class="navItem" href="/doc/13/graphics">Graphics</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/doc/13/cookbook">Prince Tips and Tricks</a></li><li class="navListItem"><a class="navItem" href="/doc/13/help">Help</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-input">Prince Input</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-output">Prince Output</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-networking">Prince Networking</a></li><li class="navListItem"><a class="navItem" href="/doc/13/server-integration">Server Integration</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-for-books">Prince for Books</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Reference Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/command-line">Command-line Reference</a></li><li class="navListItem"><a class="navItem" href="/doc/13/css-refs">CSS References</a></li><li class="navListItem"><a class="navItem" href="/doc/13/css-props">CSS Properties</a></li><li class="navListItem"><a class="navItem" href="/doc/13/js-support">JavaScript Support</a></li><li class="navListItem"><a class="navItem" href="/doc/13/page-size-keywords">Page Size Keywords</a></li><li class="navListItem"><a class="navItem" href="/doc/13/characters">Character Entities</a></li><li class="navListItem"><a class="navItem" href="/doc/13/acknowledgements">Acknowledgments</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Prince Tips and Tricks</h1></header><article><div><span><p>…aka the Prince Cookbook, collects recipes to achieve certain common or complex tasks useful when preparing a document for printing. Each recipe shows the required features in a &quot;You need&quot; ingredients list and provides a step-by-step explanation to guide you to the required goal.</p>
+<h2><a class="anchor" aria-hidden="true" id="table-of-contents"></a><a href="#table-of-contents" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Table of Contents</h2>
+<dl class="ingredients">
+  <dt>You need</dt>
+  <dd><a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a></dd>
+  <dd><a href="#the-two-pass-solution">The "Two-Pass" Solution</a></dd>
+  <dd><a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a>
+    <ul>
+      <li><code>content: target-counter()</code></li>
+      <li><code>content: leader()</code></li>
+    </ul>
+  </dd>
+</dl>
+<p>Prince offers several properties and functions to facilitate the creation of a Table of Contents.</p>
+<p>Typically, a table of contents is generated for a document by collecting the headings of each chapter, each one provided with an <code>id</code> attribute, into a list or, if necessary, also into nested lists, by means of JavaScript or in some other way, in order to generate a navigation menu for the document.</p>
+<p>Each list item contains a hyperlink to the heading's <code>id</code>. This list functions as a navigation menu when the document is viewed in a browser.</p>
+<p>The transformation into a proper table of contents happens with CSS when Prince generates the PDF - the resulting document will be paged, and possibly be intended for printing. It means that the hyperlinks need to be integrated with an indication of the correct page on which the target is located.</p>
+<p>This is achieved automatically with the <code>target-counter()</code> function in the <a href="/doc/13/css-props#prop-content"><code>content</code></a> property, using the <code>page</code> counter. The URL is being automatically fetched from the <code>href</code> attribute of the hyperlink element <code>&lt;a&gt;</code>.</p>
+<pre><code class="hljs">    <span class="hljs-selector-id">#toc</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:after</span> {
+      <span class="hljs-attribute">content</span>: <span class="hljs-built_in">target-counter</span>(attr(href), page);
+    }
+</code></pre>
+<p>The page numbers are best styled right-aligned, while the link texts are left-aligned. An easy way to achieve this is with the <code>leader()</code> function: it defines a literal string, which expands to fill the available space on the line like justified text, by repeating the string as many times as necessary. The complete CSS entry for a simple table of contents entry thus looks like this:</p>
+<pre><code class="hljs">    <span class="hljs-selector-id">#toc</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:after</span> {
+      <span class="hljs-attribute">content</span>: <span class="hljs-built_in">leader</span>(<span class="hljs-string">'.'</span>) <span class="hljs-built_in">target-counter</span>(attr(href), page);
+    }
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="simple-table-of-contents"></a><a href="#simple-table-of-contents" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Simple Table of Contents</h3>
+<p>Our <a href="http://css4.pub/2018/toc/index.html">example document</a> generates at Table of Contents (ToC) by way of JavaScript. You can easily test it by running Prince from the command line:</p>
+<pre><code class="hljs css language-bash">    $ prince --javascript http://css4.pub/2018/toc -o toc.pdf
+</code></pre>
+<p>A <a href="http://css4.pub/2017/musick/musick.html">second example document</a> generates at ToC by way of JavaScript and, even more impressively, the script also prints out an index which is added to the end of the document, to be used when running Prince a second time (see <a href="#the-two-pass-solution">The &quot;Two-Pass&quot; Solution</a>). Notice how subsequent page numbers in the index are folded into a range. To produce this document, try running these commands from a Linux command-line:</p>
+<pre><code class="hljs css language-bash">    $ wget http://css4.pub/2017/musick/musick.html -o foo.html;
+    $ prince --javascript foo.html &gt;&gt;foo.html;
+    $ prince --javascript foo.html -o musick.pdf;
+</code></pre>
+<p>You can view the resulting PDF <a href="http://css4.pub/2017/musick/musick.pdf">here</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="multifile-table-of-contents"></a><a href="#multifile-table-of-contents" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Multifile Table of Contents</h3>
+<p>For longer books, it makes sense to split chapters into separate files. Generating a Table of Contents across all files is tricky in JavaScript since scripts only see one file at a time. In Prince, you can work around this limitation with a two-pass solution (see <a href="#the-two-pass-solution">The &quot;Two-Pass&quot; Solution</a>) where the first pass collects items for the ToC, and the second pass generates the PDF with the ToC.</p>
+<p>To try this for yourself, first fetch these five sample files into your own file system, e.g. by running:</p>
+<pre><code class="hljs css language-bash">    $ wget http://css4.pub/2018/multifile-toc/toc.js;
+    $ wget http://css4.pub/2018/multifile-toc/toc.html;
+    $ wget http://css4.pub/2018/multifile-toc/ch1.html;
+    $ wget http://css4.pub/2018/multifile-toc/ch2.html;
+    $ wget http://css4.pub/2018/multifile-toc/style.css;
+</code></pre>
+<p>Then, run Prince twice:</p>
+<pre><code class="hljs css language-bash">    $ prince --javascript --script=toc.js ch1.html ch2.html -o book.pdf &gt;&gt; toc.html;
+    $ prince toc.html ch1.html ch2.html -o book.pdf;
+</code></pre>
+<p>You can view the resulting PDF <a href="http://css4.pub/2018/multifile-toc/book.pdf">here</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="thinking-in-spreads"></a><a href="#thinking-in-spreads" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Thinking in Spreads</h2>
+<dl class="ingredients">
+  <dt>You need</dt>
+  <dd><a href="/doc/paged">Paged Media</a>
+    <ul>
+      <li><a href="/doc/paged#selecting-pages">Selecting pages</a></li>
+      <li><a href="/doc/paged#controlling-pagination">Controlling pagination</a></li>
+    </ul>
+  </dd>
+  <dd><a href="/doc/styling#box-model">Box Model</a></dd>
+  <dd><a href="/doc/styling#prince-extensions-to-floats">Prince extensions to floats</a></dd>
+  <dd><a href="/doc/styling#paragraph-formatting">Paragraph formatting</a></dd>
+</dl>
+<p>Prince produces PDFs - which are a prominent example of paged media. The main difference with conventional CSS design for browsers is to always keep in mind that you are dealing with pagination, i.e. the content is placed on discrete pages.</p>
+<p>The basic unit for paged media in print is the page, organized in page spreads: the left page, called <em>verso</em> in a left-to-right script (see <a href="styling#writing-mode">Writing Mode</a>), and the right page, called <em>recto</em>, are of the same size and typically are symmetrical to each other and are centered on the gutter. <a href="/doc/13/paged#page-rules">Selected</a> and <a href="/doc/13/paged#named-pages">Named pages</a> can be placed <em>recto</em> or <em>verso</em>, and Prince expands several properties and the <a href="/doc/13/css-refs#at-page"><code>@page</code></a> at-rule pseudo-classes with the values <code>verso</code> and <code>recto</code>, or <code>inside</code> and <code>outside</code>, referring to the layout on each page of the spread to facilitate the work with page spreads.</p>
+<h3><a class="anchor" aria-hidden="true" id="pagination-on-a-page-spread"></a><a href="#pagination-on-a-page-spread" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pagination on a page spread</h3>
+<p>You have control on wether to place specific selected and named pages right or left, or <em>recto</em> or <em>verso</em> with the help of <code>break-before</code> and <code>break-after</code>, each of which takes the values <code>recto</code> and <code>verso</code> in addition to the traditional values.</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">h1</span> {
+        <span class="hljs-attribute">break-before</span>: recto;
+    }
+</code></pre>
+<p>This rule places an <code>h1</code> element always at the beginning of a <em>recto</em> page.</p>
+<p>Pages can also be specifically targeted and styled with the <a href="/doc/13/css-refs#at-page"><code>@page</code></a> at-rule pseudo-classes <code>:right</code> and <code>:left</code>, or <code>:recto</code> and <code>:verso</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="layout-on-a-page-spread"></a><a href="#layout-on-a-page-spread" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Layout on a page spread</h3>
+<p>Using the values <code>right</code> and <code>left</code> when placing elements on pages symmetrically arranged around the central gutter is possible, but rather cumbersome, since their placement depends on the placement of the page on a spread. Prince offers the extensions <code>inside</code> and <code>outside</code> to ease the task.</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">p</span> {
+        <span class="hljs-attribute">margin</span>: <span class="hljs-number">2em</span>;
+    }
+    <span class="hljs-keyword">@page</span><span class="hljs-selector-pseudo">:left</span> {
+        <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">3em</span>;
+    }
+    <span class="hljs-keyword">@page</span><span class="hljs-selector-pseudo">:right</span> {
+        <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">3em</span>;
+    }
+</code></pre>
+<p>This example creates a bigger margin around the central gutter.</p>
+<p>So, when you start thinking about the layout box model, Prince offers the properties <code>margin-inside</code> and <code>margin-outside</code> to help styling.</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">p</span> { 
+        <span class="hljs-attribute">margin</span>: <span class="hljs-number">2em</span>;
+        <span class="hljs-attribute">margin-inside</span>: <span class="hljs-number">3em</span>;
+    }
+</code></pre>
+<p>This example creates a bigger margin around the central gutter, like the previous one - albeit in a shorter way.</p>
+<p>Floats are particularly sensitive to the placement on the page with regards to whether it is a left-facing or right-facing page. Prince extends the <a href="/doc/13/css-props#prop-float"><code>float</code></a> property (and the property <a href="/doc/13/css-props#prop-clear"><code>clear</code></a>) with the values <code>inside</code> and <code>outside</code>. For details please see the chapter <a href="styling#floats">Floats</a>.</p>
+<p>On a paragraph level, the properties <a href="/doc/13/css-props#prop-text-align"><code>text-align</code></a> and <a href="/doc/13/css-props#prop-text-align-last"><code>text-align-last</code></a> similarly take the keywords <code>inside</code> and <code>outside</code> to help achieving a smooth layout.</p>
+<pre><code class="hljs">    @page:verso {
+        @top-left { content: counter(page) }
+        @top-right { content: string(book-title) }
+    }
+    @page:recto {
+        @top-left { content: string(chapter-title) }
+        @top-right { content: counter(page) }
+    }
+    h1 {
+        text-align: center;
+        string-set: book-title content();
+    }
+    h2 {
+        text-align: outside;
+        string-set: chapter-title content();
+    }
+    img {
+        float: inside;
+    }
+</code></pre>
+<p>This style snippet could be part of the stylesheet for a little booklet - it displays the page number in the upper outside corners, the book title in the upper inside of the left, or <em>verso</em> page, and the chapter title in the upper inside of the right, or <em>recto</em> page. Chapter headings are aligned to the outside of the page spreads, while any image in the book is floated close to the central gutter.</p>
+<h2><a class="anchor" aria-hidden="true" id="long-tables"></a><a href="#long-tables" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Long Tables</h2>
+<dl class="ingredients">
+  <dt>You need</dt>
+  <dd>
+<a href="/doc/styling#tables">Tables</a>
+    <ul>
+      <li><a href="/doc/styling#running-table-headers-and-footers">Running table headers and footers</a></li>
+      <li><a href="/doc/styling#table-captions">Table captions</a></li>
+    </ul>
+  </dd>
+</dl>
+<p>One of the main differences when designing for paged media is that you need to think about concrete pages, as opposed to a continuous flow of the page designed for the web and for web browsers. A problem may arise when elements such as tables are longer than the page they need to be displayed on.</p>
+<p>The table itself is naturally split over several pages - but if you want table headers and footers repeated on each page, you need to code them in the HTML of the document by using the elements <code>thead</code> and/or <code>tfoot</code>. The content of these elements will be carried on to all the subsequent pages on which the table appears.</p>
+<p>Tables can also be provided with a table caption by using the <code>caption</code> HTML element, or by styling an arbitrary element with <code>display: table-caption</code> to be made to behave like <code>caption</code> elements. The caption is positioned above the table by default, but it can be moved to the bottom with the <a href="/doc/13/css-props#prop-caption-side"><code>caption-side</code></a> property.</p>
+<p>When a table spans across more than one page, the <a href="/doc/13/css-props#prop-prince-caption-page"><code>prince-caption-page</code></a> property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. See also <a href="#fancy-table-captions">Fancy Table Captions</a>.</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">table</span> + <span class="hljs-selector-tag">p</span> {
+        <span class="hljs-attribute">display</span>: table-caption;
+        <span class="hljs-attribute">caption-side</span>: bottom;
+        <span class="hljs-attribute">prince-caption-page</span>: following;
+    }
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="fancy-table-captions"></a><a href="#fancy-table-captions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Fancy Table Captions</h2>
+<dl class="ingredients">
+  <dt>You need</dt>
+  <dd>
+<a href="/doc/styling#tables">Tables</a>
+    <ul>
+      <li><a href="/doc/styling#table-captions">Table captions</a></li>
+    </ul>
+  </dd>
+  <dd><a href="#long-tables">Long Tables</a></dd>
+</dl>
+<p>HTML tables only have one caption per table. However, in printed form a table might span several pages (see <a href="#long-tables">Long Tables</a>) and it might be desirable to have separate captions for the first and the following pages - you might want to add &quot;cont.&quot; to the caption of the first one, or otherwise differentiate them. Prince offers an extension mechanism to do so.</p>
+<p>As mentioned in <a href="#long-tables">Long Tables</a>, when a table spans across more than one page, the <a href="/doc/13/css-props#prop-prince-caption-page"><code>prince-caption-page</code></a> property determines whether table captions will be displayed on the first page of a table, or only on the following pages, or repeated on every page that a table appears on. This opens up the possibility to have a different caption on the first and on the following pages.</p>
+<p>You might define a caption in HTML for the main table caption - to be displayed on the first page. Additionally, you make another element into a table caption with the <a href="/doc/13/css-props#prop-display"><code>display</code></a> property - and display it only on the following pages!</p>
+<p>The paragraph functioning as a table caption can be hidden in browsers by using <a href="/doc/13/css-refs#media-queries">CSS Media Queries</a>.</p>
+<p>HTML</p>
+<pre><code class="hljs css language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">caption</span>&gt;</span>Demo table<span class="hljs-tag">&lt;/<span class="hljs-name">caption</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>B<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>C<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>D<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>E<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>F<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Demo table (cont.)<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+<p>CSS</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">caption</span> {
+        <span class="hljs-attribute">caption-side</span>: bottom;
+        <span class="hljs-attribute">prince-caption-page</span>: first;
+    }
+    <span class="hljs-selector-tag">table</span> + <span class="hljs-selector-tag">p</span> {
+        <span class="hljs-attribute">display</span>: table-caption;
+        <span class="hljs-attribute">caption-side</span>: bottom;
+        <span class="hljs-attribute">prince-caption-page</span>: following;
+    }
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="page-headers-and-footers"></a><a href="#page-headers-and-footers" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Page Headers and Footers</h2>
+<dl class="ingredients">
+  <dt>You need</dt>
+  <dd><a href="/doc/paged#page-regions">Page regions</a></dd>
+  <dd><a href="/doc/gen-content">Generated Content</a></dd>
+</dl>
+<p>When preparing a document for print, &quot;running&quot; headers and footers repeating on every page, such as page numbering and titles of the book and of the current chapter, are a common need.</p>
+<p>Prince uses CSS for these headers and footers and for styling them.</p>
+<p>Each page is structured in <a href="/doc/13/paged#page-regions">Page regions</a> - most page content is located inside the <em>page area</em>, including the <a href="/doc/13/styling#footnotes">Footnotes</a>, but the <em>page-margin boxes</em> contain most of the content repeating in slightly varied way across the whole book - the running headers and footers.</p>
+<p>A typical case is page numbering, which can easily be obtained with <a href="/doc/13/gen-content#gen-content">Generated Content</a>: the current page number can be printed in a page region with the <a href="/doc/13/css-props#prop-content"><code>content</code></a> property. (See also <a href="#page-numbering">Page Numbering</a>).</p>
+<pre><code class="hljs">    @page {
+        @bottom {
+            content: counter(page)
+        }
+    }
+</code></pre>
+<p>By using <a href="/doc/13/paged#named-pages">Named pages</a>, you can style the page numbering of the Preface with roman numbers and the main pages with arabic numbers - see the example <a href="/doc/13/paged#ex-restart-page-numbers">Restarting page numbering</a>.</p>
+<p>The title of the book, or the current chapter, can be copyied into the page regions by using the <a href="/doc/13/css-props#prop-string-set">string-set</a> property. For details, please see the <a href="/doc/13/paged#content-copying-text">Copying content from the document</a> chapter.</p>
+<p>CSS</p>
+<pre><code class="hljs">    @page {
+        @top { content: string(doctitle) }
+    }
+
+    h1 { string-set: doctitle content() }
+</code></pre>
+<p>The @page rule specifies that the top-center page region will contain the text content of the document title copied from the text content of the <code>h1</code> element in the document.</p>
+<p>If some special formatting of the text in the margin box is required, copying the text will not suffice - you need to remove an element from the natural page flow to place it in the margin box. See <a href="/doc/13/paged#content-taking-elements">Taking elements from the document</a> for details.</p>
+<h2><a class="anchor" aria-hidden="true" id="dictionary-page-headers"></a><a href="#dictionary-page-headers" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Dictionary Page Headers</h2>
+<dl class="ingredients">
+  <dt>You need</dt>
+  <dd><a href="/doc/paged#page-regions">Page regions</a></dd>
+  <dd><a href="/doc/gen-content">Generated Content</a></dd>
+  <dd>
+<a href="/doc/gen-content#the-optional-page-policy-value">The optional page-policy value</a>
+    <ul>
+      <li><code>content: string(term, <b>first</b>)</code></li>
+      <li><code>content: string(term, <b>last</b>)</code></li>
+    </ul>
+  </dd>
+</dl>
+<p>A peculiar and interesting use of page headers happens in dictionaries: typically, you might want to display page headers like &quot;a-af&quot;, where &quot;a&quot; is the first definition on the page and &quot;af&quot; is the last one. This can easily be obtained by adding <a href="/doc/13/gen-content#gen-content-functions-pagepolicy">The optional page-policy value</a> to the <code>string()</code> function.</p>
+<p>The <a href="/doc/13/css-props#prop-string-set"><code>string-set</code></a> property is applied to each definition in the dictionary (the <strong>b:first-child</strong> from the following example), and then the <code>first</code> and <code>last</code> page policy values are use to select the relevant definition to display in the page header.</p>
+<pre><code class="hljs">    @page {
+      @top-left { content: string(term, first);}
+      @top-right { content: string(term, last);}
+    }
+    .chapter p b:first-child { string-set: term content() }  /* pick up term to be used in running header */
+</code></pre>
+<p>This is the crucial set of rules for the <a href="/samples/#dictionary">Dictionary</a> sample.</p>
+<p>The dictionary sample is furthermore noticeable for its use of the optional page policy keyword <code>first-except</code>: the current letter of the alphabet is displayed on each page heading, <em>except</em> for the page on which the letter appears in the body of the page, starting the new section.</p>
+<pre><code class="hljs">    @page {
+      @top-center { content: string(letter, first-except);}
+    }
+    .chapter header { string-set: letter content() }
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="page-numbering"></a><a href="#page-numbering" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Page Numbering</h2>
+<dl class="ingredients">
+  <dt>You need</dt>
+  <dd>
+<a href="/doc/paged">Paged Media</a>
+    <ul>
+      <li><a href="/doc/paged#selecting-pages">Selecting pages</a></li>
+    </ul>
+  </dd>
+  <dd>
+<a href="/doc/gen-content">Generated Content</a>
+    <ul>
+      <li>
+<a href="/doc/gen-content#counters-and-numbering">Counters and Numbering</a>
+        <ul>
+          <li><code>content: counter(page)</code></li>
+        </ul>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<p>Paged media is organized in pages - and numbering the pages is a common task: generated content does this for you automatically. The easiest way of doing so is numbering them sequentially from the first to the last page.</p>
+<p>To use a counter, it usually first needs to be initialized with the <a href="/doc/13/css-props#prop-counter-reset"><code>counter-reset</code></a> property, which can be applied to any element and initializes one or more counters to the specified values, or to zero if no value is specified. Once initialized, the counter will be displayed with the <code>counter()</code> function in the <a href="/doc/13/css-props#prop-content"><code>content</code></a> property.</p>
+<p>Page counters work a bit more simple and usually don't need to be explicitly initialized or incremented.</p>
+<pre><code class="hljs">    @page {
+      @bottom {
+        content: counter(page);
+      }
+    }
+</code></pre>
+<p>However, if you want to restart the numbering after the Preface of your book, you need to name the pages (see <a href="/doc/13/paged#named-pages">Named pages</a>) and the counter needs to be re-initialized with the main content. See also the example <a href="/doc/13/paged#ex-restart-page-numbers">Restarting page numbering</a>.</p>
+<pre><code class="hljs css language-css">    .preface {
+      page: preface;
+      counter-reset: page 1;
+    }
+    @page preface {
+      @bottom {
+        content: counter(page, lower-roman);
+      }
+    }
+    .main {
+      page: main;
+      counter-reset: page 1;
+    }
+    @page main {
+      @bottom {
+        content: counter(page);
+      }
+    }
+</code></pre>
+<p>The page numbers can be referenced with the <code>target-counter()</code> function. This provides a convenient mechanism when you want to print out a page reference that on an interactive medium, such as can be seen in a web browser, might be expressed with a hyperlink.</p>
+<p>CSS</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[href]</span><span class="hljs-selector-pseudo">::after</span> {
+        <span class="hljs-attribute">content</span>: <span class="hljs-string">" [See page "</span> <span class="hljs-built_in">target-counter</span>(attr(href), page) <span class="hljs-string">"]"</span>;
+    }
+</code></pre>
+<p>This will add a cross-reference after every link with the correct page number determined automatically. For example: [See page 17].</p>
+<p>If you are referencing the pages in the Preface, marked with lower roman-style numbers, you need to re-specify the counter style for the target counter - the style is not automatically taken over.</p>
+<p>CSS</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[href|=<span class="hljs-string">"#preface"</span>]</span><span class="hljs-selector-pseudo">::after</span> {
+        <span class="hljs-attribute">content</span>: <span class="hljs-string">" [See page "</span> <span class="hljs-built_in">target-counter</span>(attr(href), page, lower-roman) <span class="hljs-string">"]"</span>;
+    }
+</code></pre>
+<p>In some documents, particularly those that are unbound such as office documents, it can be useful to show the total number of pages on each page. The total number of pages can be accessed by using the <code>pages</code> counter. This is a pre-defined counter that is fixed to the total number of pages in the document.</p>
+<pre><code class="hljs">    @page {
+      @bottom {
+        content: "Page " counter(page) " of " counter(pages);
+      }
+    }
+</code></pre>
+<p>This rule will generate page footers such as &quot;Page 1 of 89&quot;.</p>
+<h2><a class="anchor" aria-hidden="true" id="footnotes-per-column"></a><a href="#footnotes-per-column" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Footnotes per Column</h2>
+<dl class="ingredients">
+  <dt>You need</dt>
+  <dd><a href="/doc/styling#columns">Columns</a></dd>
+  <dd><a href="/doc/styling#page-and-column-floats">Page and column floats</a></dd>
+  <dd>
+<a href="/doc/styling#footnotes">Footnotes</a>
+    <ul>
+      <li><code>float: prince-column-footnote</code></li>
+    </ul>
+  </dd>
+</dl>
+<p>Prince has a simple way of creating footnotes: the <code>@footnote</code> page area, where footnotes can be floated to with the <a href="/doc/13/css-props#prop-float"><code>float</code></a> property. For details see <a href="/doc/13/styling#footnotes">Footnotes</a>.</p>
+<p>In a multi-column layout (see <a href="/doc/13/styling#columns">Columns</a>), footnotes can be placed at the bottom of the page, spanning all columns. But usually you want to position the footnote at the bottom of the column the footnote call appears in.</p>
+<p>To achieve this, the values <code>prince-column-footnote</code> or <code>prince-column-inline-footnote</code> of the <a href="/doc/13/css-props#prop-float"><code>float</code></a> property are used.</p>
+<p>The value <code>prince-column-footnote</code> transforms the element into a column footnote: it creates a footnote call in the place where it appears in its natural flow, and moves the element to the bottom of the column. The footnote marker is placed outside of the block of the footnote. With the value <code>prince-column-inline-footnote</code>, the footnote marker is placed inside of the block of the footnote.</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">float</span>: <span class="hljs-selector-tag">prince-column-footnote</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="multiple-footnotes"></a><a href="#multiple-footnotes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Multiple Footnotes</h2>
+<dl class="ingredients">
+  <dt>You need</dt>
+  <dd><a href="/doc/styling#prince-extensions-to-floats">Prince extensions to floats</a></dd>
+  <dd>
+<a href="/doc/styling#footnotes">Footnotes</a>
+    <ul>
+      <li><code>float: footnote</code></li>
+    </ul>
+  </dd>
+  <dd><a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a></dd>
+  <dd><a href="/doc/gen-content#using-target-counter">Using <code>target-counter()</code></a></dd>
+</dl>
+<p>In some cases it might happen that you want to point several footnote calls at the same footnote. Prince offers a convenient mechanism to achieve this by combining regular footnotes with the generated content function <code>target-counter()</code>.</p>
+<p>First we create our regular footnotes - the only extra step we need to do, is to provide each footnote with a unique ID.</p>
+<pre><code class="hljs css language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+    This paragraph has a footnote.<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"fn"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"fn1"</span>&gt;</span>First footnote.<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+<p>When another foonote call needs to be pointing at this, already existing footnote, we have to create it manually by adding a link to this footnote's ID.</p>
+<pre><code class="hljs css language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+    This paragraph refers to the first footnote.<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"rfn"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#fn1"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+<p>This footnote call will be created by using the generated content function <code>target-counter()</code> referencing the footnote counter.</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">content</span>: <span class="hljs-selector-tag">target-counter</span>(<span class="hljs-selector-tag">attr</span>(<span class="hljs-selector-tag">href</span>), <span class="hljs-selector-tag">footnote</span>);
+</code></pre>
+<p>When creating regular footnotes, Prince automatically takes care of the styling of the footnote calls, but the manually created ones need to be explicitly styled. The following are the default rules that style a footnote call - here shown with all the rules necessary for creating all the footnote calls:</p>
+<pre><code class="hljs">    <span class="hljs-selector-class">.fn</span> {
+        <span class="hljs-attribute">float</span>: footnote;
+    }
+
+    <span class="hljs-selector-class">.rfn</span> {
+        <span class="hljs-attribute">color</span>: inherit;
+        <span class="hljs-attribute">text-decoration</span>: none;
+        <span class="hljs-attribute">content</span>: <span class="hljs-built_in">target-counter</span>(attr(href), footnote);
+        <span class="hljs-attribute">vertical-align</span>: super;
+        <span class="hljs-attribute">line-height</span>: none;
+        <span class="hljs-attribute">font-size</span>: <span class="hljs-number">83%</span>;
+    }
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="sidenotes"></a><a href="#sidenotes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sidenotes</h2>
+<dl class="ingredients">
+  <dt>You need</dt>
+  <dd><a href="/doc/styling#prince-extensions-to-floats">Prince extensions to floats</a></dd>
+  <dd>
+<a href="/doc/styling#footnotes">Footnotes</a>
+    <ul>
+      <li><code>float: footnote</code></li>
+    </ul>
+  </dd>
+  <dd><a href="/doc/styling#styling-and-behavior-of-footnotes">Styling and behavior of footnotes</a></dd>
+</dl>
+<p>Prince has a simple way of creating footnotes: the <code>@footnote</code> page area, where footnotes can be floated to with the <a href="/doc/13/css-props#prop-float"><code>float</code></a> property. For details see <a href="/doc/13/styling#footnotes">Footnotes</a>.</p>
+<p>It gets slightly more complicated when you want to position the footnotes not under the text, in their default position, but at the side of the pages as sidenotes. Two approaches are possible, each with its advantages and drawbacks. Either</p>
+<ul>
+<li>the footnote area is positioned to the side of the page (see also <a href="/doc/13/styling#styling-and-behavior-of-footnotes">Styling and behavior of footnotes</a>), or</li>
+<li>the sidenotes are floated not to the footnote area, but simply to the left or right side of the page.</li>
+</ul>
+<p>We shall see each approach separately.</p>
+<h3><a class="anchor" aria-hidden="true" id="positioning-the-footnote-area"></a><a href="#positioning-the-footnote-area" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Positioning the footnote area</h3>
+<p>A straightforward approach for sidenotes is to position the footnote area to the desired place, instead of leaving it in its default position.</p>
+<pre><code class="hljs">    @page {
+        @footnote {
+            position: absolute;
+            left: -90px;
+            width: 60px;
+        }
+    }
+</code></pre>
+<p>This rule moves the footnotes area to the left side of a page.</p>
+<p>The advantage of this approach is that footnote calls and markers are created automatically (see <a href="/doc/13/styling#footnote-calls">Footnote calls</a> and <a href="/doc/13/styling#footnote-markers">Footnote markers</a>).</p>
+<p>The biggest disadvantage is that the footnotes are not placed to the side of the location of the footnote calls, but are inserted into the footnote page area filling the space from the top of the page. Should this be of importance, use the second approach instead.</p>
+<h3><a class="anchor" aria-hidden="true" id="floating-the-footnote-left-or-right"></a><a href="#floating-the-footnote-left-or-right" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Floating the footnote left or right</h3>
+<p>The footnote text is floated to the left (or right) and moved out of the way with negative margins.</p>
+<pre><code class="hljs">    <span class="hljs-selector-class">.footnote</span> {
+      <span class="hljs-attribute">float</span>: left;
+      <span class="hljs-attribute">max-width</span>: <span class="hljs-number">60px</span>;
+      <span class="hljs-attribute">margin-left</span>: -<span class="hljs-number">90px</span>;
+    }
+</code></pre>
+<p>This rule floats the footnotes to the left side of a page.</p>
+<p>The advantage is to position the footnotes vertically aligned with the footnote calls.</p>
+<p>The disadvantage is that footnote calls and markers are not created automatically, but need to be manually added as counters, and styled. Also, footnotes may overlap vertically if they are too close together.</p>
+<p>A variant of this approach, useful when creating floating sidenotes in a multicol layout, can make use of some scripting to determine, with the help of <a href="/doc/13/javascript#js-box">The Box Tracking API</a>, in which column the sidenote call, and thus the sidenote, is placed - making sure the sidenote is always in the correct position. You can see this in full action in the <a href="http://css4.pub/#sidenotes">Sidenotes</a> sample (<a href="http://css4.pub/2019/sidenotes/index.html">HTML</a> - <a href="http://css4.pub/2019/sidenotes/index.pdf">PDF</a>).</p>
+<h2><a class="anchor" aria-hidden="true" id="endnotes"></a><a href="#endnotes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Endnotes</h2>
+<dl class="ingredients">
+  <dt>You need</dt>
+  <dd><a href="/doc/javascript">Scripting</a></dd>
+</dl>
+<p>Endnotes are quite easy as their placement is not relative to the page. There are two ways of creating them.</p>
+<p>In their most simple form, an endnote is placed at the end of the document by the author, with a (hyperlinked) call in the text.</p>
+<p>However, it can be laborious to manually synchronize references in this manner. A more convenient alternative is to keep the notes inline and to move them to the end of the document at the time of formatting. This is a simple tree transformation which can be performed by a script. The following sample document features references which are kept inline and moved to the end by a script:</p>
+<ul>
+<li><a href="http://css4.pub/2015/usenix/example.html">HTML document</a></li>
+<li><a href="http://css4.pub/2015/usenix/example.pdf">PDF document</a></li>
+</ul>
+<p>No special CSS formatting is required to support endnotes.</p>
+<p>In a similar fashion table notes can be created. These are a variation of endnotes. However, instead of moving the notes to the end of the document, the notes are moved to the end of the table, or to the end of the table cell. Again, this is a simple tree transformation which doesn't require anything special from CSS.</p>
+<p>The table in the above document sample also has inline notes that are moved to the end of the table by a script.</p>
+<h2><a class="anchor" aria-hidden="true" id="hyperlinks-in-print"></a><a href="#hyperlinks-in-print" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Hyperlinks in Print</h2>
+<dl class="ingredients">
+  <dt>You need</dt>
+  <dd><a href="/doc/gen-content">Generated Content</a></dd>
+  <dd><a href="/doc/gen-content#generated-content-functions">Generated Content Functions</a></dd>
+  <dd>
+<a href="/doc/gen-content#cross-references">Cross-references</a>
+    <ul>
+      <li><a href="/doc/gen-content#using-target-counter">Using <code>target-counter()</code></a></li>
+      <li><a href="/doc/gen-content#using-target-content">Using <code>target-content()</code></a></li>
+    </ul>
+  </dd>
+</dl>
+<p>Hyperlinks are a direct reference to another location, easy to follow on the interactive web page, or a PDF loaded in a viewer, by clicking on it. On the printed page, this mechanism obviously does not work.</p>
+<p>Prince offers some CSS functions to help translating hyperlinks into print-friendly display, useful in different scenarios: <code>target-counter()</code>, <code>target-content()</code> and <code>attr()</code>, to be used with the <a href="/doc/13/css-props#prop-content"><code>content</code></a> property. (See also <a href="/doc/13/gen-content#gen-content-functions">Generated Content Functions</a>).</p>
+<p>The <code>target-counter()</code> function can be used to reference the value of a counter at a linked element, and it can specify any counter, allowing cross-references to refer to list items, chapters or sections as well as pages.</p>
+<p>Used with generated content after a hyperlink, it will add a cross-reference with the correct page number determined automatically.</p>
+<p>CSS</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[href]</span><span class="hljs-selector-pseudo">::after</span> {
+        <span class="hljs-attribute">content</span>: <span class="hljs-string">" [See page "</span> <span class="hljs-built_in">target-counter</span>(attr(href), page) <span class="hljs-string">"]"</span>
+    }
+</code></pre>
+<p>This adds something like &quot;[See page 17]&quot; after each link. Note the use of the function <code>attr()</code> inside the <code>target-counter()</code> function.</p>
+<p>It can also take an optional counter style, similar to the normal <code>counter()</code> function.</p>
+<p>CSS</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[href]</span><span class="hljs-selector-pseudo">::after</span> {
+        <span class="hljs-attribute">content</span>: <span class="hljs-string">" [See chapter "</span>
+                 <span class="hljs-built_in">target-counter</span>(attr(href), chapter, upper-roman)
+                 <span class="hljs-string">"]"</span>
+    }
+</code></pre>
+<p>This will add a cross-reference after every link with the correct chapter number determined automatically and displayed using roman numerals. For example: &quot;[See chapter IV]&quot;.</p>
+<p>The <code>target-content()</code> function can be used to reference the text content of the linked element.</p>
+<p>CSS</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[href]</span><span class="hljs-selector-pseudo">::after</span> {
+        <span class="hljs-attribute">content</span>: <span class="hljs-string">" [See '"</span> <span class="hljs-built_in">target-content</span>(attr(href)) <span class="hljs-string">"']"</span>
+    }
+</code></pre>
+<p>This will add a cross-reference after every link that includes the text of the element being linked to, such as a chapter title. For example: &quot;[See 'Introduction']&quot;.</p>
+<p>The <code>attr()</code> function, used in the previous examples inside the other functions, can also be used on its own to insert the URL of a remote resource.</p>
+<p>CSS</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">a</span><span class="hljs-selector-attr">[href]</span><span class="hljs-selector-pseudo">::after</span> {
+        <span class="hljs-attribute">content</span>: <span class="hljs-string">" [Located at '"</span> <span class="hljs-built_in">attr</span>(href) <span class="hljs-string">"']"</span>;
+    }
+</code></pre>
+<p>This will add the URL after every link. For example: &quot;[Located at '<a href="http://www.princexml.com/'">http://www.princexml.com/'</a>]&quot;.</p>
+<h2><a class="anchor" aria-hidden="true" id="image-magic"></a><a href="#image-magic" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Image Magic</h2>
+<dl class="ingredients">
+  <dt>You need</dt>
+  <dd><a href="/doc/graphics#images">Images</a></dd>
+  <dd>
+<a href="/doc/graphics#css-and-images">CSS and Images</a>
+    <ul>
+      <li><code>prince-image-magic</code></li>
+    </ul>
+  </dd>
+</dl>
+<p>The <a href="/doc/13/css-props#prop-prince-image-magic"><code>prince-image-magic</code></a> property performs various image-related, Prince-specific tasks that do not fit into other existing CSS properties. It applies magic to images!</p>
+<p>To reduce the PDF file size, JPEG images can be recompressed at a lower quality level by using the function <code>recompress-jpeg(quality%)</code> with the required quality percentage as argument.</p>
+<p>PNG images can be converted to JPEG images with the keyword <code>convert-to-jpeg</code> (using the default compression rate), or they can also be converted to JPEG with the required compression rate as argument with the function <code>convert-to-jpeg(quality%)</code>.</p>
+<p>Prince usually strips unnecessary metadata from JPEG images to help contain size. But it might happen that you need that extra data, possibly for further downstream processing. The keyword <code>jpeg-verbatim</code> inhibtis this stripping and includes the images without modification in the PDF file.</p>
+<p>Two more keywords perform more obscure tasks that might be required in very specific circumstances: the keyword <code>ignore-icc-profile</code> causes Prince to ignore any ICC color profile embedded in the image, useful e.g. in those cases when the embedded ICC profile is broken; and <code>snap-to-integer-coords</code> can be used to avoid blurring of images in some PDF viewers.</p>
+<p>Several of the values can be combined, to perform more than one magic on images - for details please check the grammar of the <a href="/doc/13/css-props#prop-prince-image-magic"><code>prince-image-magic</code></a> property.</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">img</span> {
+        <span class="hljs-attribute">prince-image-magic</span>: <span class="hljs-built_in">recompress-jpeg</span>(<span class="hljs-number">50%</span>) <span class="hljs-built_in">convert-to-jpeg</span>(<span class="hljs-number">50%</span>) snap-to-integer-coords;
+    }
+</code></pre>
+<p>This example recompresses all JPEG images to 50%, converts any non-JPEG images to JPEG with the same quality, and snaps them all to integer coordinates to avoid blurring in some PDF viewers.</p>
+<h2><a class="anchor" aria-hidden="true" id="hyphenation"></a><a href="#hyphenation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Hyphenation</h2>
+<dl class="ingredients">
+  <dt>You need</dt>
+    <dd>
+<code><a href="/doc/css-props#prop-hyphens">hyphens</a></code>
+      <ul>
+        <li><code><a href="/doc/css-props#prop-prince-hyphenate-character">prince-hyphenate-character</a></code></li>
+        <li><code><a href="/doc/css-props#prop-prince-hyphenate-before">prince-hyphenate-before</a></code></li>
+        <li><code><a href="/doc/css-props#prop-prince-hyphenate-after">prince-hyphenate-after</a></code></li>
+        <li><code><a href="/doc/css-props#prop-prince-hyphenate-limit-lines">prince-hyphenate-limit-lines</a></code></li>
+        <li><code><a href="/doc/css-props#prop-prince-hyphenate-patterns">prince-hyphenate-patterns</a></code></li>
+      </ul>
+    </dd>
+</dl>
+<p>The property <a href="/doc/13/css-props#prop-hyphens"><code>hyphens</code></a> controls whether hyphenation is allowed to create opportunities to wrap within a line of text.</p>
+<p>The default value of the <a href="/doc/13/css-props#prop-hyphens"><code>hyphens</code></a> property is <code>manual</code> - to enable automatic hyphenation in a body of text, the value <code>auto</code> has to be declared.</p>
+<p>The value <code>none</code> instructs never to hyphenate, while the default value <code>manual</code> tells Prince to only hyphenate when there are characters inside the word that explicitly suggest hyphenation opportunities, such as e.g. &quot;soft hyphens&quot; (represented either by the Unicode character <code>U+00AD</code> or the HTML entity <code>&amp;shy;</code>). With the value <code>auto</code>, words may be broken at appropriate hyphenation points as determined automatically by the language-appropriate hyphenation resources, or by hyphenation characters in a word.</p>
+<p>In order to make automatic hyphenation work as intended, it is important to communicate to Prince the natural language the text is in, so that the language-specific hyphenation rules can be applied - this is done by means to the <code>lang</code> or <code>xml:lang</code> attributes.</p>
+<p>The character shown at the end of a line when the word is hyphenated can be specified with the <a href="/doc/13/css-props#prop-prince-hyphenate-character"><code>prince-hyphenate-character</code></a> property.</p>
+<p>Fine-tuning of hyphenation can be done with the <code>prince-hyphenate-after</code> and <code>prince-hyphenate-before</code> properties to determine the minimum number of letters in a word that may be moved to the next line or that may be left at the end of a line when the word is hyphenated.</p>
+<p>The <a href="/doc/13/css-props#prop-prince-hyphenate-limit-lines"><code>prince-hyphenate-limit-lines</code></a> property is used to determine the maximum number of consecutive lines that may end with a hyphenated word.</p>
+<p>Prince uses the hyphenation patterns from the CTAN archive - the full archive is accessible <a href="http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/">here</a>. The default hyphenation patterns can be found in the installed <code>hyph.css</code> file, located in the default style sheets location (see <a href="/doc/13/installing#installation-layout">Installation Layout</a>).</p>
+<p>Hyphenation patterns for the following languages are provided:</p>
+<table class="grid">
+  <tr>
+    <td>da</td>
+    <td>Danish</td>
+  </tr>
+  <tr>
+    <td>de</td>
+    <td>German</td>
+  </tr>
+  <tr>
+    <td>en-US</td>
+    <td>English</td>
+  </tr>
+  <tr>
+    <td>es</td>
+    <td>Spanish</td>
+  </tr>
+  <tr>
+    <td>fi</td>
+    <td>Finnish</td>
+  </tr>
+  <tr>
+    <td>fr</td>
+    <td>French</td>
+  </tr>
+  <tr>
+    <td>is</td>
+    <td>Icelandic</td>
+  </tr>
+  <tr>
+    <td>it</td>
+    <td>Italian</td>
+  </tr>
+  <tr>
+    <td>lt</td>
+    <td>Lithuanian</td>
+  </tr>
+  <tr>
+    <td>pl</td>
+    <td>Polish</td>
+  </tr>
+  <tr>
+    <td>pt</td>
+    <td>Portuguese</td>
+  </tr>
+  <tr>
+    <td>ru</td>
+    <td>Russian</td>
+  </tr>
+  <tr>
+    <td>sl</td>
+    <td>Slovenian</td>
+  </tr>
+  <tr>
+    <td>sv</td>
+    <td>Swedish</td>
+  </tr>
+</table>
+<p>A special case is Thai hyphenation, supported thanks to the <a href="http://linux.thai.net/projects/libthai">LibThai</a> package.</p>
+<p>To add hyphenation patterns for other languages, download them from the <a href="http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/">CTAN archive</a>. Save the files for the chosen language without the <code>.txt</code> extension, and link to the pattern file (with the <code>.pat</code> extension) with the <a href="/doc/13/css-props#prop-prince-hyphenate-patterns"><code>prince-hyphenate-patterns</code></a> CSS property.</p>
+<p>The renaming of the file is not essential - the content, not the extension counts.</p>
+<p>Prince determines which language to use for hyphenation with the help of the <code>:lang()</code> CSS selector, which in turn checks the <code>lang</code> or <code>xml:lang</code> attributes of the document:</p>
+<pre><code class="hljs">    <span class="hljs-selector-pseudo">:lang(en-GB)</span> {
+        <span class="hljs-attribute">prince-hyphenate-patterns</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">"hyph-en-gb.pat"</span>);
+    }
+</code></pre>
+<pre><code class="hljs css language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en-GB"</span>&gt;</span>supercalifragilisticexpialidocious<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</code></pre>
+<p>Alternatively, link directly to the required remote hyphenation file:</p>
+<pre><code class="hljs">    <span class="hljs-selector-pseudo">:lang(en-GB)</span> {
+        <span class="hljs-attribute">prince-hyphenate-patterns</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">"http://tug.ctan.org/tex-archive/language/hyph-utf8/tex/generic/hyph-utf8/patterns/txt/hyph-en-gb.pat.txt"</span>);
+    }
+</code></pre>
+<pre><code class="hljs css language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en-GB"</span>&gt;</span>supercalifragilisticexpialidocious<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="typographic-ligatures"></a><a href="#typographic-ligatures" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Typographic Ligatures</h2>
+<dl class="ingredients">
+  <dt>You need</dt>
+    <dd><a href="/doc/styling#opentype-features-in-prince">OpenType Features in Prince</a></dd>
+    <dd><code><a href="/doc/css-props#prop-font-variant">font-variant</a>: prince-opentype()</code></dd>
+    <dd><code><a href="/doc/css-props#prop-prince-text-replace">prince-text-replace</a></code></dd>
+</dl>
+<p>Prince supports typographic ligatures found in OpenType fonts, i.e. Prince will replace certain characters that appear next to each other with other special glyphs that join those two characters together into one single glyph.</p>
+<p>A prominent example of a typographic ligature is <strong>ﬁ</strong>, which replaces the two characters <strong><span>f</span><span>i</span></strong> with a single glyph.</p>
+<p>Prince automatically enables ligatures declared by the OpenType fonts with the <code>liga</code> feature (see <a href="/doc/13/styling#opentype-features-in-prince">OpenType Features in Prince</a>). This feature covers the &quot;standard ligatures&quot; which the font manufacturer thinks should be used in normal conditions. Microsoft has a list of the OpenType feature names <a href="https://www.microsoft.com/typography/otspec/featurelist.htm">here</a>.</p>
+<p>Other special ligatures need to be explicitly enabled in Prince to take effect. This is achieved by using the <a href="/doc/13/css-props#prop-font-variant"><code>font-variant</code></a> CSS property with the <code>prince-opentype()</code> function (see <a href="/doc/13/css-refs#css-functional-expressions">CSS Functional Expressions</a>). Care must be taken in which order the features are enabled! And please note that enabling one feature will disable all the default features. To see which OpenType features are enabled by default, see the <a href="/doc/13/styling#opentype-features-in-prince">OpenType Features in Prince</a> section.</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">body</span> {
+        <span class="hljs-attribute">font-variant</span>: <span class="hljs-built_in">prince-opentype</span>(dlig, liga);
+    }
+</code></pre>
+<p>Unlike other ligature features, the <code>clig</code> feature specifies the context in which the ligature is recommended. &quot;Contextual ligatures&quot; are important in some script designs.</p>
+<p>The <code>dlig</code> feature covers the &quot;discretionary ligatures&quot; which may be used for special effects.</p>
+<p>Some ligatures were in common use in the past, such as ligatures with the so-called &quot;long s&quot; - but they appear anachronistic today. Some fonts include the historical forms as alternates, so the &quot;historical ligatures&quot;, covered by the <code>hlig</code> feature, can be used for a 'period' effect. This feature replaces the default (current) forms with the historical alternates.</p>
+<p>Some scripts, most notably Arabic and Syriac scripts, require certain ligatures to be used in normal conditions. These &quot;required ligatures&quot; are covered by the <code>rlig</code> feature. Prince enables this feature by default in Arabic script.</p>
+<p>Another mechanism for replacing characters is given with the <a href="/doc/13/css-props#prop-prince-text-replace"><code>prince-text-replace</code></a> property. For an example use, please see the section on <a href="/doc/13/characters#characters">Character Entities</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="watermarks"></a><a href="#watermarks" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Watermarks</h2>
+<dl class="ingredients">
+  <dt>You need</dt>
+    <dd>
+<a href="/doc/paged#page-regions">Page regions</a>
+      <ul>
+        <li><code>@prince-overlay</code></li>
+      </ul>
+    </dd>
+    <dd><a href="/doc/paged#generated-content-in-page-regions">Generated content in page regions</a></dd>
+    <dd><a href="/doc/paged#taking-elements-from-the-document">Taking elements from the document</a></dd>
+</dl>
+<p>When producing a PDF, it might be desirable to include a watermark, visible on all pages. In Prince it is easy to do so with CSS.</p>
+<p>In order to repeat it on all pages, the watermark needs to be placed in a <a href="/doc/13/css-refs#at-page"><code>@page</code></a> at-rule. We shall place it in the page region <code>@prince-overlay</code> (see <a href="/doc/13/paged#page-regions">Page regions</a>) and create the watermark with generated content (see <a href="/doc/13/paged#page-gen-content">Generated content in page regions</a>):</p>
+<pre><code class="hljs">    @page {
+       @prince-overlay {
+          color: rgba(0,0,0,0.8);
+          content: "Watermark";
+          font-size: 20pt;
+       }
+    }
+</code></pre>
+<p>The overlay can be styled in all possible ways and it can be aligned in other places than middle center:</p>
+<pre><code class="hljs">    @page {
+       @prince-overlay {
+          content: "Watermark";
+          vertical-align: top;
+       }
+    }
+</code></pre>
+<p>Currently it is only possible to have one overlay, but you could flow an entire element having multiple individually positioned contents (see <a href="/doc/13/paged#content-taking-elements">Taking elements from the document</a>).</p>
+<p>The styled watermark can be saved into a <code>watermark.css</code> file, which will be called when generating the document:</p>
+<pre><code class="hljs css language-bash">    prince --style=watermark.css myfile.md -o myfile_with_watermark.pdf
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="rotating-content"></a><a href="#rotating-content" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Rotating content</h2>
+<p>Sometimes it is necessary to rotate a block element so that it fits on the page. This is common with tables. Two approaches are possible: either the whole page is <a href="#printing-wide-content-sideways">printed sideways</a>, or only <a href="#rotating-content-in-table-cells">the content in a table cell is rotated</a>. We shall see each approach separately.</p>
+<h3><a class="anchor" aria-hidden="true" id="printing-wide-content-sideways"></a><a href="#printing-wide-content-sideways" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Printing wide content sideways</h3>
+<dl class="ingredients">
+  <dt>You need</dt>
+    <dd><code><a href="/doc/css-props#prop-prince-rotate-body">prince-rotate-body</a></code></dd>
+    <dd><code><a href="/doc/css-props#prop-prince-shrink-to-fit">prince-shrink-to-fit</a></code></dd>
+</dl>
+<p>Figure <a href="#printing-wide-content-sideways">Printing a big table sideways</a> shows a table, rotated so that its width fits within the page's length. This can be achieved with the following rules:</p>
+<p>Printing a big table sideways</p>
+<p><img src="/doc/13/assets/samples/rotate-body-2.bw.png" alt="Image of a large table printed sideways so that its width fits along the page's length.">
+This table is too wide to fit on the paper, so we use <code>prince-rotate-body</code> in a <em>named page</em> to print it sideways. Download the <a href="/doc/13/assets/samples/rotate-body.pdf">PDF</a> or the <a href="/doc/13/assets/samples/rotate-body.html">HTML</a>.</p>
+<pre><code class="hljs">    <span class="hljs-keyword">@page</span> <span class="hljs-selector-tag">big_table</span> {
+        <span class="hljs-attribute">prince-rotate-body</span>: landscape;
+        <span class="hljs-attribute">prince-shrink-to-fit</span>: auto;
+    }
+
+    <span class="hljs-selector-tag">table</span><span class="hljs-selector-class">.big</span> {
+        <span class="hljs-attribute">page</span>: big_table
+    }
+</code></pre>
+<p>The <a href="/doc/13/css-props#prop-prince-rotate-body"><code>prince-rotate-body</code></a> property works within <a href="/doc/13/css-refs#at-page"><code>@page</code></a> rules only, so this example uses a named page to place the table on a page of its own. Then the <a href="/doc/13/css-refs#at-page"><code>@page</code></a> rule for <code>big_table</code> pages uses the <a href="/doc/13/css-props#prop-prince-rotate-body"><code>prince-rotate-body</code></a> property to tell prince that the body of the page, but not the headers and footers, should be rotated. The table in this example is still too wide so we also use the <a href="/doc/13/css-props#prop-prince-shrink-to-fit"><code>prince-shrink-to-fit</code></a> property to make it a little smaller.</p>
+<p>If you download the full example (<a href="/doc/13/assets/samples/rotate-body.html">HTML</a> or <a href="/doc/13/assets/samples/rotate-body.pdf">PDF</a>) you will see that the paragraphs before and after the table are not placed on the same page. This is because they do not belong to the same named page (see <a href="/doc/13/paged#named-pages">Named pages</a>). However on page four there are two tables, both tables belong to the same named page and therefore Prince will try to place them together on the same page.</p>
+<p>Another way of rotating content is by changing the writing mode with the <a href="/doc/13/css-props#prop-writing-mode"><code>writing-mode</code></a> property, or by transforming an element with <code>transform: rotate()</code> - see <a href="#rotating-content-in-table-cells">Rotating content in table cells</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="rotating-content-in-table-cells"></a><a href="#rotating-content-in-table-cells" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Rotating content in table cells</h3>
+<dl class="ingredients">
+  <dt>You need</dt>
+    <dd><code><a href="/doc/css-props#prop-transform">transform</a>: rotate()</code></dd>
+    <dd><code><a href="/doc/css-props#prop-writing-mode">writing-mode</a></code></dd>
+</dl>
+<p>There are cases, when preparing a table with a large amount of content, that you would like to configure your layout to be most efficient - a useful trick is to rotate the content in some table cells, or in the table headers. Rotating by 90° might be a way to achieve this, but readability suffers. A reasonable compromise is to rotate 45° only - the space it needs is not more than with a 90° rotation, and your readers don't have to tilt their heads repeatedly. In the following example we shall rotate table headers by 45°.</p>
+<p>The rotation is achieved with <code>transform: rotate()</code>. It could be applied directly to the <code>th</code> element, but it is impossible to configure the width of the column as we wish it. We shall thus nest a <code>div</code> and a <code>span</code> element:</p>
+<pre><code class="hljs css language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"rotate"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>Column header 1<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+</code></pre>
+<p>The rotation will happen with the following CSS code:</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">th</span><span class="hljs-selector-class">.rotate</span> {
+      <span class="hljs-comment">/* Make sure the th is high enough, */</span>
+      <span class="hljs-attribute">height</span>: <span class="hljs-number">150px</span>;
+      <span class="hljs-comment">/* and make sure the words of the header are not split with a newline. */</span>
+      <span class="hljs-attribute">white-space</span>: nowrap;
+    }
+
+    <span class="hljs-selector-tag">th</span><span class="hljs-selector-class">.rotate</span> &gt; <span class="hljs-selector-tag">div</span> {
+      <span class="hljs-attribute">transform</span>:
+        <span class="hljs-comment">/* Magic Numbers to put it in place, */</span>
+        <span class="hljs-built_in">translate</span>(<span class="hljs-number">25px</span>, <span class="hljs-number">50px</span>)
+        <span class="hljs-comment">/* rotate it, */</span>
+        <span class="hljs-built_in">rotate</span>(-<span class="hljs-number">45deg</span>);
+      <span class="hljs-comment">/* and give the div the width you wish. */</span>
+      <span class="hljs-attribute">width</span>: <span class="hljs-number">30px</span>;
+    }
+    <span class="hljs-selector-tag">th</span><span class="hljs-selector-class">.rotate</span> &gt; <span class="hljs-selector-tag">div</span> &gt; <span class="hljs-selector-tag">span</span> {
+      <span class="hljs-comment">/* And finally, add some styling. */</span>
+      <span class="hljs-attribute">border-bottom</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#ccc</span>;
+      <span class="hljs-attribute">padding</span>: <span class="hljs-number">5px</span> <span class="hljs-number">10px</span>;
+    }
+</code></pre>
+<p>A more basic means for rotation, allowing for less fine-tuning, is the use of the <a href="/doc/13/css-props#prop-writing-mode"><code>writing-mode</code></a> CSS property. This option only allows rotation by 90°. It can be very handy when only some table cells with too much content are rotated, so as not to use too much horizontal space. You cannot rotate the table cell directly, so you have to nest one <code>span</code> element inside - and then you style it:</p>
+<pre><code class="hljs">    <span class="hljs-selector-tag">td</span><span class="hljs-selector-class">.rotate</span> &gt; <span class="hljs-selector-tag">span</span> {
+      <span class="hljs-comment">/* Rotate the content */</span>
+      <span class="hljs-attribute">writing-mode</span>: vertical-rl;
+      <span class="hljs-comment">/* Optionally, you can force the table cell's content not to wrap */</span>
+      <span class="hljs-attribute">white-space</span>: nowrap;
+    }
+</code></pre>
+<p>For a different approach to rotating content, see the section on <a href="#printing-wide-content-sideways">Printing wide content sideways</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="the-two-pass-solution"></a><a href="#the-two-pass-solution" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The &quot;Two-Pass&quot; Solution</h2>
+<dl class="ingredients">
+  <dt>You need</dt>
+    <dd><a href="/doc/javascript#javascript-in-printed-media">JavaScript in Printed Media</a></dd>
+    <dd><a href="/doc/javascript#event-handling">Event Handling</a></dd>
+    <dd>
+<a href="/doc/javascript#console-access">Console Access</a>
+      <ul>
+        <li><code>console.log()</code></li>
+      </ul>
+    </dd>
+</dl>
+<p>One limitation of producing a document intended for print is its non-interactive, static nature: a document cannot be modified after it is deemed to be ready for print. See <a href="/doc/13/javascript#js-print">JavaScript in Printed Media</a>.</p>
+<p>JavaScript can be run twice only: the first time it is run before layout, where it interacts with and modifies the layout (and the DOM structure). Once layout is finished, JavaScript can be run a second time from the <code>complete</code> event handler - see <a href="/doc/13/javascript#js-event">Event Handling</a>. However, this time it is only allowed to inspect the layout and cannot modify the DOM.</p>
+<p>A problematic situation arises when you want to modify your document after layout has finished - a typical scenario would be when you want an index to be created with correct page numbers. The content depends on the layout of the document itself.</p>
+<p>(Please note that this only affects the creation of an index - a simple table of contents or a reference to a place on another page can easily be achieved with <a href="/doc/13/gen-content#counter-target">target-counter links</a>.)</p>
+<p>Typically Prince is run a first time to prepare the layout of the document and run JavaScript after layout has finished, collecting the output of the script to append it to the document with the help of the <code>console.log()</code> - see <a href="/doc/13/javascript#js-console">Console Access</a>.</p>
+<p>Now the document would be ready for generating the PDF - Prince is run a second time, producing the desired document.</p>
+<p>Here is a minimalistic two-pass solution where the document is adorned with a ToC and index:</p>
+<pre><code class="hljs css language-bash">    wget http://www.princexml.com/howcome/2015/index/musick.html -O musick.html;
+      prince --javascript musick.html &gt;&gt;musick.html;
+      prince --javascript musick.html -o musick.pdf
+</code></pre>
+<p>Another use of the two-pass solution is to create changebars - see the description <a href="http://www.princexml.com/forum/topic/3516/changebars">here</a>.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/doc/13/graphics"><span class="arrow-prev">← </span><span>Graphics</span></a><a class="docs-next button" href="/doc/13/help"><span>Help</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#table-of-contents">Table of Contents</a><ul class="toc-headings"><li><a href="#simple-table-of-contents">Simple Table of Contents</a></li><li><a href="#multifile-table-of-contents">Multifile Table of Contents</a></li></ul></li><li><a href="#thinking-in-spreads">Thinking in Spreads</a><ul class="toc-headings"><li><a href="#pagination-on-a-page-spread">Pagination on a page spread</a></li><li><a href="#layout-on-a-page-spread">Layout on a page spread</a></li></ul></li><li><a href="#long-tables">Long Tables</a></li><li><a href="#fancy-table-captions">Fancy Table Captions</a></li><li><a href="#page-headers-and-footers">Page Headers and Footers</a></li><li><a href="#dictionary-page-headers">Dictionary Page Headers</a></li><li><a href="#page-numbering">Page Numbering</a></li><li><a href="#footnotes-per-column">Footnotes per Column</a></li><li><a href="#multiple-footnotes">Multiple Footnotes</a></li><li><a href="#sidenotes">Sidenotes</a><ul class="toc-headings"><li><a href="#positioning-the-footnote-area">Positioning the footnote area</a></li><li><a href="#floating-the-footnote-left-or-right">Floating the footnote left or right</a></li></ul></li><li><a href="#endnotes">Endnotes</a></li><li><a href="#hyperlinks-in-print">Hyperlinks in Print</a></li><li><a href="#image-magic">Image Magic</a></li><li><a href="#hyphenation">Hyphenation</a></li><li><a href="#typographic-ligatures">Typographic Ligatures</a></li><li><a href="#watermarks">Watermarks</a></li><li><a href="#rotating-content">Rotating content</a><ul class="toc-headings"><li><a href="#printing-wide-content-sideways">Printing wide content sideways</a></li><li><a href="#rotating-content-in-table-cells">Rotating content in table cells</a></li></ul></li><li><a href="#the-two-pass-solution">The &quot;Two-Pass&quot; Solution</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="copyright"><div class="about-contact"><a href="/company/">About us</a> | <a href="/contact/">Contact</a></div><div class="copyright">Copyright © 2022 YesLogic Pty. Ltd.</div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '63dda203371e77ee63a05de413c3d741',
+                indexName: 'princexml',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["language:en"]}
+              });
+            </script></body></html>

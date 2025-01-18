@@ -1,0 +1,109 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<meta name="robots" content="noindex">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<title>Prince - Generated Content</title>
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+<div id="header-inner">
+<div><a href="/"><img src="/images/logo2.png" alt="Prince"></a></div>
+<ul id="primary-nav">
+<li><a href="/download/">Download</a></li>
+<li><a href="/purchase/">Buy Prince</a></li>
+<li><a href="/samples/">Samples</a></li>
+<li><a href="/doc/" class="curr">Documentation</a></li>
+<li><a href="/forum/">Forum</a></li>
+</ul>
+</div>
+<div id="header-shadow"></div>
+</div>
+<div id="intro"><div id="intro-inner"><h1>Generated Content</h1></div></div>
+
+<div class="main">
+
+
+
+<div class="col1">
+
+<p>
+Generated content is content that is not in the original document,
+but is added to the output using the <i>content</i> property.
+</p>
+<p>
+The <i>content</i> property can be applied to elements,
+pseudo-elements and page margin boxes.
+</p>
+
+<h2>Page headers and footers</h2>
+<p>
+The <i>content</i> property can be applied to page margin boxes,
+such as @top and @bottom to create page headers and footers with
+generated content. See
+<a href="/doc/5.1/page-headers-footers/">Page Headers and Footers</a>
+for more information.
+</p>
+<div class="example">
+<p class="label">CSS</p>
+<pre class="css">
+@page {
+    @top { content: "Prince User Guide" }
+    @bottom { content: counter(page) }
+} 
+</pre>
+</div>
+
+<h2>List markers</h2>
+<p>
+The <i>content</i> property can be applied to the <i>::marker</i>
+pseudo-element to specify a customised list item marker.
+See <a href="/doc/5.1/lists/">Lists</a> for more information.
+</p>
+
+<div class="example">
+<p class="label">CSS</p>
+<pre class="css">
+li::marker { content: "No. " counter(list-item) } 
+</pre>
+</div>
+
+<h2>The <i>::before</i> and <i>::after</i> pseudo-elements</h2>
+<p>
+The <i>content</i> property can be applied to the
+<i>::before</i> and <i>::after</i> pseudo-elements to add generated 
+content in the output. For example, including auto-generated counters 
+in front of headings or including quotation marks around a block of text.
+</p>
+
+<div class="example">
+<p class="label">CSS</p>
+<pre class="css">
+h1::before, h1::after { content: "***" }
+</pre>
+<p class="comment">
+This will place three asterisks before and after <i>h1</i> elements.
+</p>
+
+</div> 
+
+</div>
+
+</div>
+</div>
+<script src="/js/warning.js"></script>
+<div id="footer"><div id="footer-inner">
+<p id="footer-copy">Copyright © 2002 – 2025 YesLogic Pty. Ltd.</p>
+<ul id="footer-nav">
+<li><a href="/">Home</a></li>
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+</div></div>
+</body>
+</html>

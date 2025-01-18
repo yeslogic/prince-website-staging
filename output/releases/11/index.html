@@ -1,0 +1,950 @@
+<!DOCTYPE html><html class="p10" id="releases">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/common10.css">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.min.css">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.theme.min.css">
+<title>Prince - Release Notes for Prince 11</title>
+</head>
+<body>
+<div class="header-container">
+<div class="mainheader-container"><div class="header">
+<div class="logo"><a href="/"><img src="/images/Prince-logo.png" alt="Prince"></a></div>
+<div class="menu"><ul>
+<li><a href="/purchase/">
+                      Buy Prince</a></li>
+<li><a href="/samples/">
+                      Samples</a></li>
+<li><a href="/doc/">
+                      Documentation</a></li>
+<li><a href="/forum/">
+                      Forum</a></li>
+<li><a href="/download/" class="current">
+                      Download</a></li>
+</ul></div>
+<div style="clear:both"></div>
+<a class="mobile-menu-trigger"><img src="/images/menu-icon2.png" alt=""></a>
+</div></div>
+<div class="subheader-container"><div class="subheader">
+<div class="submenu"><ul>
+<li><a href="/download/15/">
+                    Prince 15</a></li>
+<li><a href="/latest/">
+                    Latest builds</a></li>
+<li><a href="/books/">
+                    Prince for Books</a></li>
+<li><a href="/releases/15/">
+                    Release Notes</a></li>
+<li><a href="/download/wrappers/">
+                    Wrappers</a></li>
+</ul></div>
+<div style="clear:both"></div>
+</div></div>
+</div>
+
+<div class="body-container">
+<div class="content1150">
+<h1 class="subpages-heading2">Release Notes for Prince 11</h1>
+<div class="content750">
+
+<h2 id="p11.4">Prince 11.4</h2>
+<p class="date">June 2018</p>
+
+<p>
+Fixed "ref_already_used" internal error, related to images in SVG patterns.
+</p>
+
+<h2 id="p11.3.2">Prince 11.3.2</h2>
+<p class="date">May 2018</p>
+
+<p>
+Fixed a bug where Prince would crash on Windows 10 after applying Microsoft updates
+from April 2018.
+</p>
+
+<h2 id="p11.3.1">Prince 11.3.1</h2>
+<p class="date">October 2017</p>
+
+<p>
+Fixed a bug where Prince would not accept gzip transfer encoding when making HTTP
+requests on Windows.
+</p>
+
+<h2 id="p11.3">Prince 11.3</h2>
+<p class="date">August 2017</p>
+
+<p>
+Fixed issue that could cause deadlocks in some situations when running Prince
+under PHP 7.
+</p>
+
+<h2 id="p11.2">Prince 11.2</h2>
+<p class="date">July 2017</p>
+
+<h3>CSS Support</h3>
+
+<p>
+Fully support the opacity property in CSS.
+</p>
+
+<p>
+Added new @prince-overlay @page region that covers the entire page body area for watermarks and other overlays.
+</p>
+
+<h3>SVG Support</h3>
+
+<p>
+Support SVG masks.
+</p>
+
+<p>
+Support SVG clipPaths that contain multiple paths by using masks or by drawing and clipping shapes multiple times if masks are not available.
+</p>
+
+<p>
+Made SVG paint server references fall back in a standard way.
+</p>
+
+<h3>Javscript Support</h3>
+
+<p>
+Support the CSSStyleDeclaration methods setProperty, setPropertyValue, removeProperty.
+</p>
+
+<p>
+Added "pseudo" property to pseudo-element boxes in the box tracking API.
+</p>
+
+<p>
+Support numeric indexing for string objects in JavaScript (also enables the array methods to work on strings).
+</p>
+
+<p>
+Support JavaScript method Object.getOwnPropertyDescriptor.
+</p>
+
+<p>
+Support JavaScript method Function.prototype.bind.
+</p>
+
+<p>
+Allowed the JavaScript setTimeout() method to be called from within other timeouts, up to a notional 10 seconds delay.
+</p>
+
+<p>
+Added an optional third argument to PDF.attachFile to specify the filename that should be displayed for the attachment in the PDF.
+</p>
+
+<h3>PDF Support</h3>
+
+<p>
+Support new prince-pdf-duplex / PDF.duplex property to specify the PDF viewer preference.
+</p>
+
+<p>
+Added new --pdf-xmp option and prince-pdf-xmp CSS property for including XMP metadata in PDF files.
+</p>
+
+<h3>Miscellaneous</h3>
+
+<p>
+Support the OpenType "fina" feature for non-Arabic scripts (used by the Google Pacifico font).
+</p>
+
+<p>
+Added --raster-background option to specify whether pages should be rasterised against a white or transparent background.
+</p>
+
+<h3>Bug Fixes and Improvements</h3>
+
+<h4>CSS</h4>
+
+<p>
+Fixed bug where box-sizing is not taken into account when calculating the size of shrink-to-fit containers like inline-block and float boxes.
+</p>
+
+<p>
+Fixed drop-shadow() filter subsurface out-of-bounds exception.
+</p>
+
+<p>
+Speeded up CSS selector matching (eg. for Bootstrap).
+</p>
+
+<p>
+Made minor accuracy improvements to rasterisation and filtering.
+</p>
+
+<p>
+Fixed bug where justified text next to a float that fills an entire page can be rendered incorrectly.
+</p>
+
+<h4>SVG</h4>
+
+<p>
+Fixed bug where non-opaque strokes still knock out the fill on shapes that are filled and stroked.
+</p>
+
+<p>
+Fixed bug affecting gradients with opacity that are entirely clipped away.
+</p>
+
+<p>
+Fixed minor issues affecting SVG clip paths and transforms.
+</p>
+
+<p>
+Fixed bug affecting SVG circle arc direction and dashed strokes.
+</p>
+
+<p>
+Fixed issues affecting SVG gradients using object bounding box units.
+</p>
+
+<p>
+Fixed issues affecting SVG patterns using object bounding box units or patternTransform.
+</p>
+
+<p>
+Fixed bug with percentage lengths in SVG pattern content.
+</p>
+
+<p>
+Fixed a problem with clip paths around SVG markers.
+</p>
+
+<p>
+Fixed possibility of infinite regress with SVG markers.
+</p>
+
+<p>
+Used correct bounding box for an SVG clip path applied to a clipPath child element.
+</p>
+
+<p>
+Fixed SVG radialGradient with percentage length for radius.
+</p>
+
+<h4>Javascript</h4>
+
+<p>
+Fixed bug in JavaScript Array constructor where some numeric lengths are not processed correctly.
+</p>
+
+<h4>Miscellaneous</h4>
+
+<p>
+Fixed issue where some OpenType CFF fonts do not work correctly if they are CID-keyed fonts (often used for CJK scripts).
+</p>
+
+<p>
+Fixed support for zwnj characters in Bengali and other Indic scripts.
+</p>
+
+
+<h2 id="p11.1">Prince 11.1</h2>
+<p class="date">February 2017</p>
+
+<h3>CSS Support</h3>
+
+<p>
+Updated Media Queries support to comply with latest CSS specification.
+</p>
+
+<h3>SVG Support</h3>
+
+<p>
+Support the SVG stop-opacity property / opacity in gradients.
+</p>
+
+<p>
+Support opacity properly in SVG.
+</p>
+
+<p>
+Support stroke/fill properly for text-decoration in SVG.
+</p>
+
+<h3>Javscript Support</h3>
+
+<p>
+Support the "name" property on JavaScript function objects.
+</p>
+
+<p>
+Support the JavaScript Object.getOwnPropertyNames method.
+</p>
+
+<p>
+Support the JavaScript Array.includes method.
+</p>
+
+<p>
+Support JavaScript String.localeCompare method.
+</p>
+
+<p>
+Support JavaScript console.warn() and console.info() methods.
+</p>
+
+<p>
+Support JavaScript DOMImplementation.createDocument method.
+</p>
+
+<h3>Bug Fixes and Improvements</h3>
+
+<h4>CSS</h4>
+
+<p>
+Fixed bugs affecting absolute and relative positioning in right-to-left layouts.
+</p>
+
+<p>
+Improved vertical positioning of absolutely positioned boxes.
+</p>
+
+<p>
+Fixed bug affecting relative positioning with percentage offsets.
+</p>
+
+<p>
+Fixed table layout for percentage widths with horizontal margins.
+</p>
+
+<p>
+Improved line-breaking for paragraphs containing floats.
+</p>
+
+<h4>SVG</h4>
+
+<p>
+Changed default value of SVG stroke-miterlimit to 4 not 10, and clamped small
+values to at least 1.
+</p>
+
+<h4>Javascript</h4>
+
+<p>
+Fixed bug affecting JavaScript regexps with case-insensitive backreferences.
+</p>
+
+<p>
+Fixed bug affecting JavaScript functions with nested functions that shadow
+function arguments.
+</p>
+
+<p>
+Fixed bugs affecting JavaScript bitwise operators.
+</p>
+
+<p>
+Fixed issue where JavaScript arrays with holes shadow prototype
+properties.
+</p>
+
+<p>
+Fixed issue where JavaScript for-in loop can show deleted properties.
+</p>
+
+<p>
+Fixed bug affecting JavaScript regexps with undefined capture groups.
+</p>
+
+<p>
+Fixed issue where attr() functions are serialised incorrectly when element style
+attributes are accessed from JavaScript.
+</p>
+
+<p>
+Fixed bug where JavaScript typeof null should be "object".
+</p>
+
+<p>
+Fixed bug where JavaScript strings should convert to 0 if empty or containing
+only whitespace.
+</p>
+
+<p>
+Fixed bug affecting the JavaScript DOM splitText method.
+</p>
+
+<p>
+Fixed bug where CSS angle units are serialised incorrectly in JavaScript.
+</p>
+
+<h4>Miscellaneous</h4>
+
+<p>
+Updated CA root certificates.
+</p>
+
+<p>
+Updated character data tables to Unicode 9.
+</p>
+
+<p>
+Fixed issue where very long PDF bookmark captions can cause crashes on Windows.
+</p>
+
+<p>
+Fixed bugs affecting OpenType font shaping for complex fonts such as Amiri.
+</p>
+
+<p>
+Fixed handling of Windows UNC paths in URLs.
+</p>
+
+<p>
+Fixed bug affecting grayscale PNG images containing a (useless) cHRM chunk.
+</p>
+
+<p>
+Avoid hyphenating before -ng at the end of an English word.
+</p>
+
+
+<h2 id="p11.0">Prince 11</h2>
+<p class="date">November 2016</p>
+
+<h3>Rasterisation</h3>
+
+<p>
+Support for rasterising documents directly to a PNG or JPEG image.
+</p>
+
+<h3>Filters</h3>
+
+<p>
+Support for filters in SVG and CSS.
+</p>
+
+<h3>CSS Support</h3>
+
+<p>
+Support for CSS4 Selectors.
+</p>
+
+<p>
+Support for CSS4 Media Queries.
+</p>
+
+<p>
+Support for CSS rem units.
+</p>
+
+<p>
+Support for CSS @supports rule and @import conditions.
+</p>
+
+<p>
+New CSS parser with improved conformance and helpful error messages.
+</p>
+
+<p>
+Support for the new CSS attr() function syntax.
+</p>
+
+<p>
+Support for CSS @charset rule for Latin1 and Windows-1252 encodings.
+</p>
+
+<p>
+Support for CSS style sheets encoded in UTF-16.
+</p>
+
+<h3>SVG Support</h3>
+
+<p>
+Support for the SVG dominant-baseline property.
+</p>
+
+<p>
+Support for the SVG baseline-shift property.
+</p>
+
+<p>
+Support for preserveAspectRatio="defer" for nested SVG images.
+</p>
+
+<p>
+Support for global defs in SVG, eg. references to elements outside of the current
+SVG fragment, either in the same document or other documents.
+</p>
+
+<p>
+Support for internal links into and out of SVG content.
+</p>
+
+<p>
+Improved support for SVG clip paths.
+</p>
+
+<p>
+Fixed bug affecting viewports on nested SVG elements.
+</p>
+
+<h3>Images Support</h3>
+
+<p>
+Added new values to prince-image-magic property: jpeg-verbatim,
+convert-to-jpeg, and recompress-jpeg (replacing jpeg-quality).
+</p>
+
+<p>
+Support for detecting intrinsic JPEG image resolution specified in Exif metadata.
+</p>
+
+<p>
+ICC profiles and Exif metadata are stripped from embedded JPEG images.
+</p>
+
+<p>
+16-bit images are converted to 8-bit automatically when the specified PDF profile
+does not support them.
+</p>
+
+<p>
+PNG images are color corrected according to their gamma or chromacity chunks.
+</p>
+
+<p>
+Progressive/interlaced JPEGs are automatically re-encoded as they can fail to
+display correctly in Acrobat.
+</p>
+
+<h3>Color Support</h3>
+
+<p>
+Added new option --convert-colors to convert all the colors and images to the
+specified PDF output intent ICC profile.
+</p>
+
+<p>
+Added --fallback-cmyk-profile option.
+</p>
+
+<p>
+Added a new property prince-pdf-color-options to control the conversion between RGB
+and grayscale color spaces.
+</p>
+
+<p>
+Added a new property prince-pdf-page-colorspace for specifying the color space
+used to composite pages with transparency.
+</p>
+
+<p>
+Added new CSS properties prince-fallback-cmyk-profile and prince-filter-resolution
+for the @prince-pdf rule.
+</p>
+
+<p>
+Support for opacity with CMYK colors using optional alpha component for cmyk()
+color function.
+</p>
+
+<h3>Hyphenation &amp; Line Breaking</h3>
+
+<p>
+Support for Thai line-breaking.
+</p>
+
+<p>
+Support for hyphenation of words containing punctuation, like
+"quell'impossibilità" in Italian.
+</p>
+
+<p>
+Support for the hyphenate-character
+property. (Prefixed as prince-hyphenate-character for now).
+</p>
+
+<p>
+Support for hyphenating words within hyphenated phrases.
+</p>
+
+<p>
+Avoids line-breaks after hyphens at the beginning of words, eg. "-word".
+</p>
+
+<p>
+Updated hyphenation pattern dictionaries.
+</p>
+
+<h3>Integration</h3>
+
+<p>
+New --control interface to use a persistent Prince process for multiple
+consecutive document conversions to reduce latency and increase throughput.
+</p>
+
+<p>
+Support for creating PDF files larger than 4GB (for 64-bit Prince packages).
+</p>
+
+<p>
+Added new option to control SSL / TLS version for HTTPS connections.
+</p>
+
+<p>
+Disabled XInclude by default (it can be enabled with the --xinclude option).
+</p>
+
+<p>
+Disabled XML external entity loading (XXE) by default (it can be enabled with
+the --xml-external-entities or --xxe options).
+</p>
+
+<p>
+Removed support for "prince input.html output.pdf" usage without -o/--output
+option.
+</p>
+
+<h3>PDF Features</h3>
+
+<p>
+Support for tooltip popups in generated PDF files via a new prince-tooltip
+CSS property that can take text from the HTML title attribute.
+</p>
+
+<p>
+Support for new URL scheme for PDF actions, eg. pdf-action:GoBack.
+</p>
+
+<h3>PDF Profiles</h3>
+
+<p>
+Support for PDF/X-1a and PDF/X-3 profiles.
+</p>
+
+<p>
+Support for the PDF/A-3b profile.
+</p>
+
+<h3>JavaScript Support</h3>
+
+<p>
+Fixed issue where calling console.log() from JavaScript could cause deadlocks when
+Prince is being run from a wrapper library.
+</p>
+
+<p>
+Support for the JavaScript DOM onload/onerror events for script elements.
+</p>
+
+<p>
+Support for the JSON object in the JavaScript DOM, eg. stringify() and parse().
+</p>
+
+<p>
+Extended Prince JavaScript shell to provide API for document conversions.
+</p>
+
+<p>
+Support for next/previousElementSibling properties on JavaScript DOM nodes.
+</p>
+
+<p>
+Support for the DOM window.top, window.parent, and document.defaultView properties.
+</p>
+
+<p>
+Optimised getElementsByTagName and getElementsByClassName by caching live node
+lists.
+</p>
+
+<p>
+Changed JavaScript DOM method window.setTimeout so that the second argument is
+optional.
+</p>
+
+<p>
+Fixed bug affecting setting individual values for the CSS clip property in
+JavaScript.
+</p>
+
+<p>
+Fixed JavaScript DOM bug where innerHTML string included unnecessary end tags for empty
+elements like br and img.
+</p>
+
+<p>
+Support for the JavaScript Object.getPrototypeOf method.
+</p>
+
+<p>
+Fixed bug where XMLHttpRequest object wasn't an event target, causing spurious
+error messages.
+</p>
+
+<p>
+Support for JavaScript DOM properties for URLs on anchor elements (needed for
+AngularJS).
+</p>
+
+<p>
+Support for JavaScript accessor properties with getter/setter functions (needed
+for mark.js).
+</p>
+
+<p>
+Support for JavaScript Array.every and Array.some methods (needed for mark.js).
+</p>
+
+<p>
+Support for JavaScript DOM method Element.matches aka matchesSelector. (needed for mark.js).
+</p>
+
+<p>
+Changed DOMContentLoaded event to fire on the window object as well as the document.
+</p>
+
+<p>
+Support for JavaScript Array.reduce method (needed for Char.js).
+</p>
+
+<p>
+Support for JavaScript DOM TypedArray.subarray method needed for Japanese
+line-breaking script.
+</p>
+
+<p>
+Fixed bug where JavaScript expression "c = [c, c, c]" can be evaluated
+incorrectly as an array of arrays not array of undefined values.
+</p>
+
+<p>
+Support for the JavaScript method Number.toPrecision.
+</p>
+
+<p>
+Support for the JavaScript DOM signed integer typed array objects
+Int{8,16,32}Array.
+</p>
+
+<p>
+Support for indented JSON output (via third argument of JSON.stringify DOM
+method).
+</p>
+
+<p>
+Checks type attribute of script elements to ensure JSON is not executed.
+</p>
+
+<p>
+Fixed JavaScript bug where accessing undefined global variables would not throw
+a reference error.
+</p>
+
+<p>
+Support for the DOMImplementation.createHTMLDocument method.
+</p>
+
+<p>
+Support for the HTMLDocument interface.
+</p>
+
+<p>
+Support for the document.title property.
+</p>
+
+<p>
+Changed the JavaScript console.log method to insert spaces between its
+arguments.
+</p>
+
+<p>
+Support for the JavaScript DOM TypedArray.set method.
+</p>
+
+<p>
+Support for the Array.of and Array.from methods in JavaScript.
+</p>
+
+<p>
+Support for the Number.MIN_VALUE and MAX_VALUE constants in JavaScript.
+</p>
+
+<p>
+Support for the JavaScript "debugger" statement as a no-op.
+</p>
+
+<p>
+Fixed escaping of text returned from innerHTML DOM property for unescaped
+elements like script and style.
+</p>
+
+<h3>Bug Fixes &amp; Improvements</h3>
+
+<p>
+Support for relative base URLs in the HTML base element.
+</p>
+
+<p>
+Added Korean font names to default font style sheet.
+</p>
+
+<p>
+Use the PostScript name for TrueType fonts if it is present, and add an
+experimental --force-identity-encoding option.
+</p>
+
+<p>
+Changed handling of fonts with positive descent metrics to match the behaviour on
+Windows.
+</p>
+
+<p>
+Changed XML processing so that XHTML, SVG, and MathML elements must be in their
+respective namespaces in order to be recognised.
+</p>
+
+<p>
+Support for the zero-width non-joiner (zwnj) character, commonly used in Arabic
+text.
+</p>
+
+<p>
+Added new property prince-mark-width to control crop/cross mark thickness.
+</p>
+
+<p>
+Support for HTML input[type="number"] and date consistently with other form inputs.
+</p>
+
+<p>
+Changed "page-break-before: left | right" to control whether the first page of
+the document is treated as a left or right facing page.
+</p>
+
+<p>
+Optimised conversion of documents with many repeated style rules.
+</p>
+
+<p>
+Changed prince-text-replace to apply before prince-linebreak-magic.
+</p>
+
+<p>
+Added an auto value to the prince-pdf-page-layout property.
+</p>
+
+<p>
+Added new footnote-display property for a more convenient way of specifying
+whether footnotes should be block or inline.
+</p>
+
+<p>
+Support for new syntax for the border-radius shorthand property.
+</p>
+
+<p>
+Changed default value for widows/orphans property to 1 instead of 2.
+</p>
+
+<p>
+Fixed issues affecting multiple comma-separated values for the background properties.
+</p>
+
+<p>
+Fixed bug where backgrounds applied to table cells could repeat on the second page
+even if they are specified as no-repeat.
+</p>
+
+<p>
+Fixed issue where page sizes were rounded to the nearest point (1/72").
+</p>
+
+<p>
+Fixed issue with :blank pages and page-break-after property.
+</p>
+
+<p>
+Fixed various conformance issues affecting CSS stacking contexts for tables and
+transformed elements.
+</p>
+
+<p>
+Fixed border-radius so that it applies correctly to boxes split across pages.
+</p>
+
+<p>
+Fixed bug affecting @page:blank selector combined with page-break-before and
+multiple input documents.
+</p>
+
+<p>
+Fixed issue affecting relative positioning on table cells.
+</p>
+
+<p>
+Fixed bug where table cells with large specified height could lead to unnecessary
+page breaking.
+</p>
+
+<p>
+Fixed bug where box-sizing: padding-box was not correct.
+</p>
+
+<p>
+Fixed bug where long floating blocks could be "interleaved" across page breaks.
+</p>
+
+<p>
+Fixed bug affecting page breaking on content that spans multiple columns.
+</p>
+
+<p>
+Fixed absolute positioning for over-constrained situations in right-to-left
+contexts.
+</p>
+
+<p>
+Fixed float margin resolution in right-to-left contexts.
+</p>
+
+<p>
+Fixed bug affecting horizontal margins for spans and inline-block elements in
+right-to-left contexts.
+</p>
+
+<p>
+Fixed margin calculation so that fixed-width blocks end up right aligned in
+right-to-left contexts.
+</p>
+
+<p>
+Fixed bug where prince-shrink-to-fit could cause severe slowdown.
+</p>
+
+</div>
+
+<br>
+
+<p>
+See the <a href="/releases/">release history</a> for earlier versions of
+Prince.
+</p>
+
+</div>
+</div>
+
+<div class="content1150 footer-container"><div class="footer">
+<div class="footer-logo">
+<img src="/images/Prince-logo-footer.png" alt=""><br>
+                Copyright © 2002 – 2025 YesLogic Pty. Ltd.
+            </div>
+<ul class="footer-menu">
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+<div style="clear:both"></div>
+</div></div>
+<script src="/js/jquery-1.12.4.min.js"></script><script src="/js/jquery-ui-1.12.1.min.js"></script><script type="text/javascript" src="/js/skrollr-simplemodal-masonry.min.js"></script><script type="text/javascript" src="/js/common.js"></script>
+</body>
+</html>

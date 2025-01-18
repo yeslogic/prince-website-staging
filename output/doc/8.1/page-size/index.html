@@ -1,0 +1,409 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<meta name="robots" content="noindex">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<title>Prince - Page Size</title>
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<style type="text/css">
+.page-size table.grid td { text-align: center }
+</style>
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+<div id="header-inner">
+<div><a href="/"><img src="/images/logo2.png" alt="Prince"></a></div>
+<ul id="primary-nav">
+<li><a href="/download/">Download</a></li>
+<li><a href="/purchase/">Buy Prince</a></li>
+<li><a href="/samples/">Samples</a></li>
+<li><a href="/doc/" class="curr">Documentation</a></li>
+<li><a href="/forum/">Forum</a></li>
+</ul>
+</div>
+<div id="header-shadow"></div>
+</div>
+<div id="intro"><div id="intro-inner"><h1>Page Size</h1></div></div>
+
+<div class="main">
+
+
+
+<p>
+<a href="/doc/8.1/">User Guide</a> /
+<a href="/doc/8.1/#paged">Paged Media</a>
+</p>
+
+<div class="col1">
+
+<p>
+Page size can be specified in <i>length</i> units or by a
+page size keyword optionally combined with the <i>portrait</i> or
+<i>landscape</i> keyword.
+</p>
+<div class="example">
+<p class="label">CSS</p>
+<pre class="css">
+@page { size: A4 }
+</pre>
+<p class="comment">
+This sets the page size to A4 paper size.
+</p>
+</div>
+
+<div class="example">
+<p class="label">CSS</p>
+<pre class="css">
+@page { size: A4 landscape }
+</pre>
+<p class="comment">
+This sets the page size to landscape A4 paper size.
+</p>
+</div>
+
+<div class="example">
+<p class="label">CSS</p>
+<pre class="css">
+@page { size: 30cm 40cm }
+</pre>
+<p class="comment">
+This sets the page width to 30cm and the height to 40cm.
+</p>
+</div>
+
+<div class="example">
+<p class="label">CSS</p>
+<pre class="css">
+@page { size: 30cm }
+</pre>
+<p class="comment">
+This sets both the width and height of the page to 30cm.
+</p>
+</div>
+
+
+<h2>Page Size Keywords</h2>
+
+<p>
+Prince supports the following page size keywords.
+</p>
+<p>
+(Note: keywords are <em>not</em> case sensitive;
+eg. "A4" and "a4" are equivalent).
+</p>
+
+<div class="page-size">
+<table class="grid">
+<tr>
+<th>Keyword</th>
+<th>Page Size</th>
+</tr>
+<tr>
+<td>A0</td>
+<td>841mm × 1189mm</td>
+</tr>
+<tr>
+<td>A1</td>
+<td>594mm × 841mm</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>420mm × 594mm</td>
+</tr>
+<tr>
+<td>A3</td>
+<td>297mm × 420mm</td>
+</tr>
+<tr>
+<td>A4</td>
+<td>210mm × 297mm</td>
+</tr>
+<tr>
+<td>A5</td>
+<td>148mm × 210mm</td>
+</tr>
+<tr>
+<td>A6</td>
+<td>105mm × 148mm</td>
+</tr>
+<tr>
+<td>A7</td>
+<td>74mm × 105mm</td>
+</tr>
+<tr>
+<td>A8</td>
+<td>52mm × 74mm</td>
+</tr>
+<tr>
+<td>A9</td>
+<td>37mm × 52mm</td>
+</tr>
+<tr>
+<td>A10</td>
+<td>26mm × 37mm</td>
+</tr>
+
+<tr>
+<td>B0</td>
+<td>1000mm × 1414mm</td>
+</tr>
+<tr>
+<td>B1</td>
+<td>707mm × 1000mm</td>
+</tr>
+<tr>
+<td>B2</td>
+<td>500mm × 707mm</td>
+</tr>
+<tr>
+<td>B3</td>
+<td>353mm × 500mm</td>
+</tr>
+<tr>
+<td>B4</td>
+<td>250mm × 353mm</td>
+</tr>
+<tr>
+<td>B5</td>
+<td>176mm × 250mm</td>
+</tr>
+<tr>
+<td>B6</td>
+<td>125mm × 176mm</td>
+</tr>
+<tr>
+<td>B7</td>
+<td>88mm × 125mm</td>
+</tr>
+<tr>
+<td>B8</td>
+<td>62mm × 88mm</td>
+</tr>
+<tr>
+<td>B9</td>
+<td>44mm × 62mm</td>
+</tr>
+<tr>
+<td>B10</td>
+<td>31mm × 44mm</td>
+</tr>
+
+<tr>
+<td>C0</td>
+<td>917mm × 1297mm</td>
+</tr>
+<tr>
+<td>C1</td>
+<td>648mm × 917mm</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>458mm × 648mm</td>
+</tr>
+<tr>
+<td>C3</td>
+<td>324mm × 458mm</td>
+</tr>
+<tr>
+<td>C4</td>
+<td>229mm × 324mm</td>
+</tr>
+<tr>
+<td>C5</td>
+<td>162mm × 229mm</td>
+</tr>
+<tr>
+<td>C6</td>
+<td>114mm × 162mm</td>
+</tr>
+<tr>
+<td>C7</td>
+<td>81mm × 114mm</td>
+</tr>
+<tr>
+<td>C8</td>
+<td>57mm × 81mm</td>
+</tr>
+<tr>
+<td>C9</td>
+<td>40mm × 57mm</td>
+</tr>
+<tr>
+<td>C10</td>
+<td>28mm × 40mm</td>
+</tr>
+
+<tr>
+<td>id-1</td>
+<td>85.60mm × 53.98mm</td>
+</tr>
+<tr>
+<td>id-2</td>
+<td>105.0mm × 74.0mm</td>
+</tr>
+<tr>
+<td>id-3</td>
+<td>125.0mm × 88.0mm</td>
+</tr>
+
+<tr>
+<td>US-Letter</td>
+<td>8.5in × 11.0in</td>
+</tr>
+<tr>
+<td>US-Legal</td>
+<td>8.5in × 14.0in</td>
+</tr>
+<tr>
+<td>US-Executive</td>
+<td>7.25in × 10.5in</td>
+</tr>
+<tr>
+<td>US-Ledger</td>
+<td>17.0in × 11.0in</td>
+</tr>
+<tr>
+<td>US-Tabloid</td>
+<td>11.0in × 17.0in</td>
+</tr>
+<tr>
+<td>US-Government</td>
+<td>8.0in × 11.0in</td>
+</tr>
+<tr>
+<td>US-Statement</td>
+<td>5.5in × 8.5in</td>
+</tr>
+<tr>
+<td>US-Folio</td>
+<td>8.5in × 13.0in</td>
+</tr>
+
+<tr>
+<td>ansi-a</td>
+<td>8.5in × 11.0in</td>
+</tr>
+<tr>
+<td>ansi-b</td>
+<td>11.0in × 17.0in</td>
+</tr>
+<tr>
+<td>ansi-c</td>
+<td>17.0in × 22.0in</td>
+</tr>
+<tr>
+<td>ansi-d</td>
+<td>22.0in × 34.0in</td>
+</tr>
+<tr>
+<td>ansi-e</td>
+<td>34.0in × 44.0in</td>
+</tr>
+
+<tr>
+<td>arch-a</td>
+<td>9.0in × 12.0in</td>
+</tr>
+<tr>
+<td>arch-b</td>
+<td>12.0in × 18.0in</td>
+</tr>
+<tr>
+<td>arch-c</td>
+<td>18.0in × 24.0in</td>
+</tr>
+<tr>
+<td>arch-d</td>
+<td>24.0in × 36.0in</td>
+</tr>
+<tr>
+<td>arch-e1</td>
+<td>30.0in × 42.0in</td>
+</tr>
+<tr>
+<td>arch-e</td>
+<td>36.0in × 48.0in</td>
+</tr>
+
+<tr>
+<td>imperial-folio</td>
+<td>15.0in × 22.0in</td>
+</tr>
+<tr>
+<td>imperial-quarto</td>
+<td>11.0in × 15.0in</td>
+</tr>
+<tr>
+<td>imperial-octavo</td>
+<td>7.5in × 11.0in</td>
+</tr>
+<tr>
+<td>royal-folio</td>
+<td>12.5in × 20.0in</td>
+</tr>
+<tr>
+<td>royal-quarto</td>
+<td>10.0in × 12.5in</td>
+</tr>
+<tr>
+<td>royal-octavo</td>
+<td>6.25in × 10.0in</td>
+</tr>
+<tr>
+<td>crown-folio</td>
+<td>10.0in × 15.0in</td>
+</tr>
+<tr>
+<td>crown-quarto</td>
+<td>7.5in × 10.0in</td>
+</tr>
+<tr>
+<td>crown-octavo</td>
+<td>5.0in × 7.5in</td>
+</tr>
+<tr>
+<td>foolscap-folio</td>
+<td>8.5in × 13.5in</td>
+</tr>
+<tr>
+<td>foolscap-quarto</td>
+<td>6.75in × 8.5in</td>
+</tr>
+<tr>
+<td>foolscap-octavo</td>
+<td>4.25in × 6.75in</td>
+</tr>
+<tr>
+<td>medium-quarto</td>
+<td>9.0in × 11.5in</td>
+</tr>
+<tr>
+<td>demy-quarto</td>
+<td>8.75in × 11.25in</td>
+</tr>
+<tr>
+<td>demy-octavo</td>
+<td>5.625in × 8.75in</td>
+</tr>
+</table>
+</div>
+
+</div>
+
+</div>
+</div>
+<script src="/js/warning.js"></script>
+<div id="footer"><div id="footer-inner">
+<p id="footer-copy">Copyright © 2002 – 2025 YesLogic Pty. Ltd.</p>
+<ul id="footer-nav">
+<li><a href="/">Home</a></li>
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+</div></div>
+</body>
+</html>

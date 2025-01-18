@@ -1,0 +1,968 @@
+/*
+vim: et sw=4 ts=4
+*/
+
+//
+// The general style of a heading at the top of a page.
+//
+@mixin page-heading {
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+@mixin heading {
+    font-weight: normal;
+}
+
+//
+// User guide styles
+//
+.user-guide {
+    #scrollspy {
+        position: fixed;
+        top: 170px;
+        left: 20px;
+        width: 270px;
+    }
+    #scrollspy:before {
+        content: "Contents";
+        display: block;
+        padding-left: 10px;
+    }
+    #propnav {
+        position: fixed;
+        top: 120px;
+        left: 20px;
+        width: 270px;
+    }
+}
+
+// nav
+.nav {
+    padding-left: 0px !important;
+    list-style: none;
+    font-size: small;
+    // all anchors
+    > li > a {
+    padding: 3px;
+    color: #666;
+    }
+    // first level
+    li >  a {
+    padding-left: 10px;
+    border-bottom: thin dotted;
+    }
+    // second
+    .nav li >  a {
+    padding-left: 30px;
+    font-size:.9em;
+    }
+    // third
+    .nav .nav li >  a {
+    padding-left: 35px;
+    font-size:.8em;
+    }
+    // fourth
+    .nav .nav .nav li >  a {
+    padding-left: 40px;
+    }
+    // fifth
+    .nav .nav .nav .nav li >  a {
+    padding-left: 45px;
+    }
+    // active link
+    li.active > a {
+    font-weight: bold;
+    }
+    // unless active, do not show second level lists
+    .nav {
+    display: none;
+    }
+    // reveal second-level
+    > .active > .nav {
+    display: block;
+    }
+}
+#scrollspy {
+    counter-reset: li;
+}
+.hidden-print > li:before {
+    counter-increment: li;
+    width: 20px;
+    text-align: right;
+    display: inline-block;
+    content: counter(li) "." ;
+}
+
+.user-guide {
+    counter-reset: h1;
+    p {
+        margin: 1em 0;
+        hyphens: auto;
+        text-align: justify;
+    }
+    code {
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+    }
+
+    div.main-frame > section > h1 {
+        @include page-heading;
+    }
+
+    div.main-frame > section > h2 {
+        @include page-heading;
+    }
+
+    h2, h3, h4, h5, h6 {
+        @include heading;
+    }
+    h3, h4, h5, h6 {
+        font-weight: bold;
+    }
+
+    div.example, .ingredients {
+        // taken from .white-box from common10.scss
+        margin-bottom: 1em;
+        border-radius: 10px;
+        padding: 10px 30px;
+        background: white;
+    }
+    .ingredients {
+        padding: 20px 30px
+    }
+
+    div.programlisting, div.syntaxlisting, div.screen, div.syntax-block {
+        white-space: initial;
+        font-family: inherit;
+        padding-right: 0px;
+        margin-right: 2em;
+
+        /*
+         * This should be 80 columns but I don't know why these ems don't
+         * work like I expect.
+         */
+        max-width: 52em;
+
+        /*
+         * This hack causes the div to wait until after any floats that it
+         * needs to clear (because of its width) before starting.
+         */
+        margin-top: 0;
+        margin-bottom: 0;
+        display: block;
+
+        /*
+         * Put a line to the left of the code listing
+         */
+        margin-left: -1em;
+        padding-left: calc(1em - 1px);
+        // Color from $wb-heading-color in common10.scss
+        border-left: solid #e34f71 2px;
+
+        pre {
+            padding: 0px;
+            border-radius: 0px;
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+            overflow: auto;
+            width: 100%;
+            white-space: pre-wrap;
+            strong {
+                color: inherit;
+            }
+        }
+    }
+    div.syntax-block code {
+        padding: 0px;
+        border-radius: 0px;
+        margin-top: 0px;
+        overflow: auto;
+        strong {
+            color: inherit;
+        }
+    }
+    p.label {
+        font-weight: bold;
+        margin-bottom: 0.5em;
+    }
+    pre {
+        color: inherit;
+        background: inherit;
+    }
+    code.code {
+        white-space: nowrap;
+    }
+    .userinput {
+        font-weight: bold;
+    }
+    .replaceable {
+        font-style: italic;
+    }
+    var, code {
+        font-style: normal;
+        font-family: monospace;
+    }
+    p {
+        max-width: 50em;
+    }
+    p.note, p.tip, p.warning {
+        margin-left: 3.5em;
+        max-width: 43em;
+    }
+
+    ol, ul {
+        padding-left: 20px;
+        ol, ul {
+            padding-left: 20px;
+        }
+        li {
+            max-width: 50em;
+        }
+
+        //
+        // Demo rules for #lists
+        //
+        li.upper-alpha {
+            list-style-type: upper-alpha;
+        }
+        li.lower-roman {
+            list-style-type: lower-roman;
+        }
+    }
+
+    //
+    // Demo rules for #lists
+    //
+    ol.position {
+        padding-left: 1cm;
+        border: solid 2px darkgreen;
+        > li {
+            border: solid 1px black;
+        }
+        > li.inside {
+            list-style-position: inside;
+        }
+        > li.outside {
+            list-style-position: outside;
+        }
+    }
+
+    dl.variablelist {
+        dt span.term {
+            font-weight: bold;
+        }
+    }
+    dt {
+        margin-top: 1em;
+        margin-bottom: 0.7em;
+    }
+    dd {
+        margin-top: 0.7em;
+        margin-bottom: 1em;
+        margin-left: 2em;
+        text-align: justify;
+        > :first-child {
+            margin-top: 0;
+        }
+    }
+    .ingredients {
+        dt {
+            margin-top: 0em;
+        }
+        dd, ul {
+           margin: 0px;
+           margin-left: 2em;
+        }
+        ul {
+           list-style-type: none;
+        }
+    }
+
+    dl.faq {
+        dt p {
+            font-weight: bold;
+            .self-link {
+                opacity: 0.2;
+            }
+        }
+        dt p:target {
+            padding-top: 90px;
+            margin-top: -90px;
+        }
+        dd li {
+            list-style-position: inside;
+        }
+    }
+
+    .toggle {
+        text-align: right;
+        opacity: 0.5;
+    }
+    #ext-props {
+        background-color: white;
+        border-radius: 10px;
+        border: 1px solid lightgrey;
+        padding: 0.7em;
+    }
+    span.ext { background-color: #eee; }
+    #prop-list, #js-support-table {
+        summary {
+            font-weight: bold;
+            padding: 0.7em;
+            display: block;
+            .self-link {
+                opacity: 0.2;
+            }
+        }
+        summary:hover .self-link {
+            visibility: visible;
+        }
+        details {
+            border: 1px solid lightgrey;
+            border-radius: 10px;
+            background-color: #e5f6ee;
+            display: block;
+        }
+        summary:focus {
+            outline: none;
+        }
+        summary + div, summary + div + div {
+            margin-top: 0em;
+            margin-left: 0em;
+            padding: 0.7em 2em;
+        }
+        summary.ext, summary.ext + div, summary.ext + div + div {
+            background-color: #dcede6 !important;
+            border-color: #22b573;
+            border-radius: 10px;
+        }
+        details[open] {
+            summary.ext {
+                border-radius: 10px 10px 0px 0px;
+            }
+            summary.ext + div, summary.ext + div + div {
+                border-radius: 0px 0px 10px 10px;
+            }
+        }
+        details {
+            margin: 1em 0em;
+            details {
+                margin: 1em;
+            }
+        }
+        details:hover {
+            border-color: grey !important;
+        }
+    }
+    #js-support-table details.object {
+        background-color: #f2f2f2;
+    }
+
+    div.itemizedlist {
+        max-width: 50em;
+    }
+
+    div.figure, div.table, div.figure-float-right, div.figure-float-left,
+    div.table-float-right, div.table-float-left,
+    div.example {
+        div.title {
+            font-weight: bold;
+            margin: 0 0 0.75em 0;
+        }
+        img {
+            border: thin solid black;
+        }
+    }
+    div.figure-float-right,
+    div.figure-float-left,
+    div.table-float-right,
+    div.table-float-left {
+        clear: both;
+        margin: 20px;
+        padding: 10px;
+        background: #F2F2F2;
+    }
+    div.figure-float-right, div.table-float-right {
+        float: right;
+    }
+    div.figure-float-left, div.figure-float-left {
+        float: left;
+    }
+    div.table, div.table-float-right, div.table-float-left {
+        max-width: intrinsic;
+        max-width: -moz-fit-content;
+        max-width: -webkit-fit-content;
+    }
+    #fig-croparea, #fig-titlepage, #fig-textbook, #fig-bigtable,
+    #fig-slides, #fig-fancyheader, #fig-boxdecorationbreak {
+        max-width: 425px;
+        width: 33%;
+        img {
+            width: 100%;
+        }
+    }
+    #fig-marginboxes {
+        max-width: 425px;
+        width: 40%;
+        img {
+            width: 100%;
+        }
+    }
+
+    hr.footnote-hr {
+        margin: auto;
+    }
+
+    .footer-container {
+        clear: both;
+    }
+
+    pre.programlisting a:link {
+        color: #0071BC;
+        // #99C6E4 works for a dark background
+        text-decoration: underline;
+    }
+
+    table {
+        border-collapse: collapse;
+        margin-bottom: 1em;
+    }
+    table, th, td {
+        border: 1px solid black;
+        text-align: justify;
+    }
+    th, td {
+        padding: 0.2em;
+    }
+    th {
+        text-align: left;
+    }
+    thead {
+        text-align: center;
+        font-size: 110%;
+    }
+
+    table.separate {
+        border-collapse: separate;
+    }
+    table.collapse {
+        border-collapse: collapse;
+    }
+
+    table.property-table {
+        border: none;
+        th, td {
+            border: none;
+        }
+        th {
+            white-space: nowrap;
+        }
+        td {
+            padding-left: 2.5em;
+        }
+    }
+
+    .grid .ext td {
+        background-color: #dcede6;
+    }
+    // make sure examples on SVG page can "breathe"
+    .grid + .example {
+        margin-top: 1em;
+    }
+    // space characters
+    .grid td span {
+        border: solid #090 1px;
+        padding: 0 0.1em;
+    }
+    .fig-marginboxes-lightgrey {
+        background-color: #ccc;
+        padding: 0px 5px;
+    }
+    .fig-marginboxes-white {
+        background-color: #fff;
+        padding: 0px 5px;
+    }
+    .fig-marginboxes-yellow {
+        background-color: #ff8;
+        padding: 0px 5px;
+    }
+    .fig-marginboxes-red {
+        background-color: #f88;
+        padding: 0px 5px;
+    }
+    .fig-marginboxes-green {
+        background-color: #8f8;
+        padding: 0px 5px;
+    }
+    .fig-marginboxes-blue {
+        background-color: #88f;
+        padding: 0px 5px;
+    }
+
+    hr {
+        margin: auto;
+        max-width: auto;
+    }
+    sup {
+        line-height: 0;
+    }
+
+    #js-support-table {
+        //border: 1px solid lightgrey;
+        //border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 1em;
+        .type{
+            font-style: italic;
+            display: inline;
+        }
+        .type::after{
+            content: ' – ';
+        }
+        .returns{font-style: italic;}
+        .returns::before{content: 'Returns: '}
+        .desc{
+            display: inline;
+            min-width: 40%;
+        }
+        li.argument{display: block;}
+        ul, li{margin: 0; padding: 0}
+        .name{
+            font-weight: bold;
+            display: inline;
+        }
+        .name.level {
+            margin-right: .5em;
+        }
+        pre {
+            background-color: #fff;
+            // border-left: solid #e34f71 2px;
+        }
+        .example-return{
+            display: block;
+        }
+        .example-return::before {
+            content: ' // returns: ';
+        }
+        .argslist::before{content: '('; font-style: normal;}
+        .argslist::after{content: ')'; font-style: normal;}
+        div.ext .argslist::after{content: ')*'; font-style: normal;}
+        .argslist{font-style: italic;}
+        .ext {
+            // background color from .grid .ext
+            background-color: #dcede6 !important;
+            border-color: #22b573;
+            .level {
+                background-color: inherit;
+            }
+            .example {
+                background-color: #f2f2f2;
+            }
+            .ext {
+                padding-top: 0px;
+                padding-right: 0px;
+            }
+        }
+        .url-property::before {
+            content: 'See the property ';
+        }
+    }
+}
+
+#doc-install, #doc-prince, #doc-refs {
+    h1 {
+        counter-reset: h2;
+    }
+    h2 {
+        counter-reset: h3;
+    }
+    h3 {
+        counter-reset: h4;
+    }
+    h4 {
+        counter-reset: h5;
+    }
+    h5 {
+        counter-reset: h6;
+    }
+    h1:before {
+        counter-increment: h1;
+        content: counter(h1) ". ";
+    }
+    h2:before {
+        counter-increment: h2;
+        content: counter(h1) "." counter(h2) " ";
+    }
+    h3:before {
+        counter-increment: h3;
+        content: counter(h1) "." counter(h2) "." counter(h3) " " ;
+    }
+    h4:before {
+        counter-increment: h4;
+        content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) " ";
+    }
+    h5:before {
+        counter-increment: h5;
+        content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) " ";
+    }
+    h6:before {
+        counter-increment: h6;
+        content: counter(h1) "." counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) " ";
+    }
+}
+
+div.chapterheading {
+    display: block;
+    font-size: 3em;
+    line-height: 1em;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    text-align: center;
+    font-variant: small-caps;
+}
+
+section#toc-contents {
+    clear: both;
+    h2 {
+        // the margin collapses so use padding
+        margin-top: 0;
+        padding-top: 1.5em;
+    }
+    ul {
+        padding-left: 20px;
+        list-style-type: none;
+    }
+    li.curr::before {
+        content: "\25b8";
+        float: left;
+        margin-left: -15px;
+        width: 10px;
+        text-align: right;
+    }
+}
+
+body {
+    margin: 100px auto 0px auto;
+}
+
+.content1150 {
+    max-width: 1150px;
+    width: auto;
+}
+.main-frame {
+    max-width: 850px;
+    margin-bottom: 40px;
+}
+
+.toc-page-frame {
+    height: 100%;
+    overflow: auto;
+}
+
+.body-container {
+    margin: 150px auto auto auto;
+}
+
+@media all and (max-width: 1736px) {
+    .content1150 {
+        margin-left: 260px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .content1150, .header, .subheader {
+        width: auto;
+    }
+    div.example {
+        font-size: 1.32vw;
+    }
+}
+
+@media (max-width: 1000px) {
+    div.example {
+        font-size: 1.32vw;
+    }
+     img, table, table td {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 870px) {
+    div.example {
+        font-size: 1.2vw;
+    }
+}
+
+@media (max-width: 760px) {
+    .content1150, .header, .subheader {
+        margin-left: auto;
+    }
+    div.example {
+        font-size: 1.899vw;
+    }
+    #scrollspy, #scrollspy:before, #propnav {
+        position: static !important;
+    }
+    .nav {
+        .nav {
+            display: none !important;
+        }
+        > .active > .nav {
+            display: none !important;
+        }
+    }
+    img, table, table td {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 570px) {
+    div.example {
+        font-size: 1.69vw;
+    }
+    table {
+        font-size: 2.8vw;
+    }
+}
+
+@media (max-width: 500px) {
+    table {
+        font-size: 2vw;
+    }
+}
+
+@for $index from 1 through 6 {
+  h#{$index}:target {
+    padding-top: 90px;
+    // 1.5em (from headings) -1em ("collapse" due to 1em margin at the bottom of previous element) -90px added in the padding
+    margin-top: calc(0.5em - 90px);
+  }
+}
+
+
+@media print {
+    #scrollspy, #scrollspy:before, .header-container, .footer, .footer-menu, noscript {
+        display: none;
+    }
+    .content1150 {
+        margin-left: auto;
+    }
+    html, body {
+        background-color: white;
+    }
+    .figure {
+        page-break-inside: avoid;
+        img {
+            display: block;
+            max-width: 90%;
+            height: auto;
+        }
+    }
+    h1, h2 {
+        margin-top: 3em;
+        margin-bottom: 3em;
+    }
+    div.figure, div.example, .ingredients {
+        background-color: #f2f2f2;
+        padding: 2em;
+    }
+    .ingredients {
+        padding-bottom: 3em;
+    }
+    div.example, .ingredients {
+        border: lightgrey solid thin;
+        box-decoration-break: slice;
+    }
+    #js-support-table, #js-support-table .level {
+        box-decoration-break: slice;
+    }
+    h1 {
+        text-align: center;
+        font-weight: bold;
+        page-break-before: always;
+    }
+    h2 {
+        font-weight: bold;
+    }
+    tr:first-child, thead, tr:has(> th) {
+        page-break-after: avoid;
+    }
+    div.programlisting, div.syntaxlisting, div.screen, div.syntax-block {
+        border-left: none !important;
+    }
+    * {
+        orphans: 2;
+        widows: 2;
+    }
+    div.figure, div.figure-float-right, div.figure-float-left,
+    div.table-float-right, div.table-float-left {
+        page-break-inside: avoid;
+    }
+    h1 + h2 {
+        page-break-before: avoid;
+    }
+    h2 + table {
+        page-break-before: avoid;
+    }
+    div.example {
+        pre {
+            page-break-inside: auto !important;
+            white-space: pre-wrap;
+            overflow-wrap: break-word;
+            font-size: 75%;
+            }
+        p {
+            font-size: 75%;
+        }
+    }
+    h1.title {
+        font-size: 5.5em;
+    }
+    h1.title + p {
+        page-break-after: always;
+        text-align: center;
+    }
+    #ex-restart-page-numbers > div.title, .title, .label {
+        page-break-after: avoid !important;
+    }
+    #doc-refs .footer {
+        display: block !important;
+        page-break-before: avoid;
+        float: bottom;
+        text-align: center;
+    }
+    #doc {
+        page: title-page;
+    }
+    #toc-contents {
+        p:first-of-type {
+            content: "In this PDF you can find:";
+        }
+        ul li:first-child {
+            display: none;
+        }
+        ul + p {
+            display: none;
+        }
+        #section-nav {
+            display: none;
+        }
+    }
+    .procedure .figure img {
+        max-width: 45%;
+        max-height: 45%
+    }
+    div.figure-float-right, div.table-float-right, div.figure-float-left, div.figure-float-left {
+        float: none !important;
+    }
+    a:link {
+        color: inherit;
+        font-weight: bold;
+    }
+    a[href^='http']:not([href*='princexml.com'])::after {
+        content: " [" attr(href) "]";
+        word-break: break-word;
+        font-weight: normal;
+    }
+    a[href*='/doc']:not([href*='/samples']):not([href*='/doc-install'])::after {
+        content: " [page " target-counter(attr(href), page) "]";
+        font-weight: normal;
+    }
+    a[href*='/docs/Mozilla']::after {
+        content: " [" attr(href) "]" !important;
+    }
+
+    details {
+        box-decoration-break: slice;
+    }
+    summary {
+        page-break-after: avoid;
+    }
+    summary + div > div {
+        page-break-inside: avoid;
+    }
+    .nav, .nav .nav, .nav .nav .nav, .nav .nav .nav .nav, .nav .nav .nav .nav .nav {
+        display: inline !important;
+        li >  a {
+        font-size: 16px !important;
+        }
+    }
+    #scrollspy {
+        position: static !important;
+        display: block;
+        width: 500px !important;
+        page: toc;
+        a {
+            border: none !important;
+            color: black;
+            font-weight: normal;
+        }
+        a:after {
+            content: leader('.') target-counter(attr(href), page)
+        }
+    }
+    ul.nav, ul.nav li {
+        margin: 0px !important;
+        padding: 0px !important
+    }
+    ul.nav li li li {
+        margin-left: 20px !important;
+    }
+    ul.nav li li li li {
+        margin-left: 0px !important;
+    }
+
+    .hidden-print {
+        li ul {
+            counter-reset: li;
+        }
+        ul li:before {
+            counter-increment: li;
+            content: counters(li, ".") ;
+            width: 20px;
+            text-align: right;
+            display: inline-block;
+        }
+        ul li ul li:before {
+            content: none;
+        }
+    }
+
+    div.subheader-container > div > div.submenu > ul > li > a.sub-current {
+        string-set: heading content();
+        display: block !important;
+    }
+    h1 {
+        string-set: chapter content();
+    }
+
+    @page {
+        @top {
+            content: string(heading) " - " string(chapter);
+            display: block !important;
+            color: grey;
+            font-size: small;
+        }
+        @bottom {
+            content: counter(page);
+            color: grey;
+        }
+    }
+    @page title-page {
+        @bottom {
+            content: none;
+        }
+        @top {
+            content: none;
+        }
+    }
+    @page toc {
+        @top {
+            content: none;
+        }
+    }
+    @prince-pdf {
+        prince-pdf-page-layout: single-page;
+    }
+}

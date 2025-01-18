@@ -1,0 +1,163 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<meta name="robots" content="noindex">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<title>Prince - Applying Style Sheets</title>
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+<div id="header-inner">
+<div><a href="/"><img src="/images/logo2.png" alt="Prince"></a></div>
+<ul id="primary-nav">
+<li><a href="/download/">Download</a></li>
+<li><a href="/purchase/">Buy Prince</a></li>
+<li><a href="/samples/">Samples</a></li>
+<li><a href="/doc/" class="curr">Documentation</a></li>
+<li><a href="/forum/">Forum</a></li>
+</ul>
+</div>
+<div id="header-shadow"></div>
+</div>
+<div id="intro"><div id="intro-inner"><h1>Applying Style Sheets</h1></div></div>
+
+<div class="main">
+
+
+
+<p>
+<a href="/doc/8.1/">User Guide</a> /
+<a href="/doc/8.1/#cssref">CSS Reference</a>
+</p>
+
+<div class="col1">
+
+<p>
+Prince can apply style sheets from three different sources:</p>
+<ol>
+<li>
+<b>User style sheets</b><br>
+    - specified from the command line interface or the GUI
+</li>
+<li>
+<b>Author style sheets</b><br>
+    - referenced from XML documents using the <code>xml-stylesheet</code> processing instruction<br>
+    - referenced from XHTML using &lt;link rel="stylesheet" ... /&gt;<br>
+    - specified in XHTML using the &lt;style&gt; element
+</li>
+<li>
+<b>Default style sheets</b><br>
+    - applied automatically depending on the type of the document being formatted
+</li>
+</ol>
+
+<h2>Importing Style Sheets</h2>
+<p>
+Style sheets may import other style sheets using <code>@import</code> rules.
+These rules must occur before any other rules or declarations in the style
+sheet, and have the effect of importing all the rules and declarations from
+the specified style sheet.
+</p>
+<div class="example">
+<p class="label">CSS</p>
+<pre class="css">
+@import "base.css";
+@import "custom.css";
+
+<span class="comment">/* more declarations */</span>
+</pre>
+</div>
+<h2>Conflicting Declarations</h2>
+<p>
+Multiple style sheets can be applied and in some cases
+declarations from different style sheets may conflict. For example, one style
+sheet might specify that heading elements should use the Times New Roman font,
+while a different style sheet might specify that heading elements should use
+the Arial font:
+</p>
+<div class="example">
+<p class="label">First style sheet:</p>
+<pre class="css">
+h1 {
+    font-family: "Times New Roman";
+    font-size: 24pt;
+}
+</pre>
+</div>
+<div class="example">
+<p class="label">Second style sheet:</p>
+<pre class="css">
+h1 {
+    font-family: "Arial";
+    color: red
+}
+</pre>
+</div>
+<p>
+In the above example, the <code>font-family</code> declarations conflict,
+and only one can possibly be applied. However, the <code>font-size</code> and
+<code>color</code> declarations do not conflict, and thus both will be applied
+to the <code>h1</code> element.
+</p>
+<h2>Priority Determination</h2>
+<p>
+Style sheets are applied using a cascading process that calculates a priority
+for each declaration. Conflicting declarations are resolved by choosing the
+declaration with the highest priority and ignoring the remaining ones.
+</p>
+<p>
+Priority is determined by looking at the origin of the declaration and
+whether or not it is labelled with <code>!important</code>.
+</p>
+<ol>
+<li>Default style sheets (<b>lowest priority</b>)</li>
+<li>User style sheets</li>
+<li>Author style sheets</li>
+<li>Author style sheets, <code>!important</code> declarations</li>
+<li>User style sheets, <code>!important</code> declarations
+(<b>highest priority</b>)</li>
+</ol>
+<p>
+If the conflicting declarations have the same origin and importance, the
+priority is determined by comparing the specificity of the selectors used to
+apply them. (Combinations of selectors have even higher priority).
+</p>
+<ol>
+<li>Universal selector, eg. "*" (<b>lowest priority</b>)</li>
+<li>Type selector, eg. "<code>h1</code>"</li>
+<li>Attribute, Class and Pseudo-class selectors</li>
+<li>ID selectors, eg. "<code>#id</code>" (<b>highest priority</b>)</li>
+</ol>
+<p>
+If the conflicting declarations have the same specificity, the declaration
+that occurs <em>last</em> in the style sheet has the <em>highest</em> priority.
+</p>
+<p>
+If the declarations are from different style sheets, the declaration that
+occurs in the <em>last</em> style sheet to be specified has the
+<em>highest</em> priority.
+This is based on the order that style sheets are specified on the command line
+and also on the order that <code>xml-stylesheet</code> processing instructions
+occur in the document.
+</p>
+
+</div>
+
+</div>
+</div>
+<script src="/js/warning.js"></script>
+<div id="footer"><div id="footer-inner">
+<p id="footer-copy">Copyright © 2002 – 2025 YesLogic Pty. Ltd.</p>
+<ul id="footer-nav">
+<li><a href="/">Home</a></li>
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+</div></div>
+</body>
+</html>

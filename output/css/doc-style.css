@@ -1,0 +1,493 @@
+@charset "UTF-8";
+/*
+vim: et sw=4 ts=4
+*/
+.user-guide ul.toc {
+  list-style-type: none;
+  padding-left: 20px;
+}
+.user-guide ul.toc ul {
+  list-style-type: none;
+}
+.user-guide ul.toc .at-toggle {
+  height: 16px;
+  width: 16px;
+  float: left;
+  margin-left: -28px;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.user-guide ul.toc li[aria-expanded=true] {
+  /* list-style-type: disclosure-open; */
+}
+.user-guide ul.toc li[aria-expanded=true] > .at-toggle {
+  background-image: url(/images/icon_down.svg);
+}
+.user-guide ul.toc li[aria-expanded=false] {
+  /* list-style-type: disclosure-closed; */
+}
+.user-guide ul.toc li[aria-expanded=false] > .at-toggle {
+  background-image: url(/images/icon_right.svg);
+}
+.user-guide ul.toc li[aria-expanded=false] > ul {
+  display: none;
+}
+.user-guide ul.toc li.at-no-children {
+  list-style-type: disc;
+}
+.user-guide ul.toc *[aria-selected=true] {
+  /* colors from the grid */
+  background-color: #e5f6ee;
+  outline: #22b573 dashed thin;
+}
+
+.toc-page-frame ul.toc *[aria-selected=true] {
+  background-color: transparent;
+  outline: none;
+}
+
+section#toc-contents {
+  width: 50%;
+  float: left;
+}
+
+section#toc-appendices {
+  width: 50%;
+  float: right;
+}
+
+section#other-versions {
+  clear: both;
+}
+section#other-versions h2 {
+  /* the margin collapses so use padding */
+  margin-top: 0;
+  padding-top: 1.5em;
+}
+section#other-versions ul {
+  padding-left: 20px;
+  list-style-type: none;
+}
+section#other-versions li.curr::before {
+  content: "▸";
+  float: left;
+  margin-left: -15px;
+  width: 10px;
+  text-align: right;
+}
+
+.body-and-footer-container {
+  position: fixed;
+  height: calc(100% - 50px);
+  max-width: 1200px;
+  margin: 50px calc(50% - 600px) 0px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+.body-and-footer-container .toc-page-frame {
+  height: 100%;
+  flex: 1 1 auto;
+  box-sizing: border-box;
+  overflow: auto;
+}
+.body-and-footer-container .body-container {
+  height: calc(100% - 30px - 1ex);
+  margin-top: 0;
+  flex: 1 1 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.body-and-footer-container .body-container nav.toc-frame {
+  width: calc(300px - 1em);
+  flex: 0 1 auto;
+  padding-left: 0em;
+  padding-right: 1em;
+}
+.body-and-footer-container .body-container div.main-frame {
+  width: 50%;
+  flex: 1 2 auto;
+  padding-left: 2em;
+  padding-right: 0.5em;
+}
+.body-and-footer-container .body-container nav.toc-frame, .body-and-footer-container .body-container div.main-frame {
+  height: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+}
+.body-and-footer-container .footer {
+  padding: 0.5ex 0 0.5ex;
+  margin-top: 0;
+  flex: 0 0 auto;
+  clear: both;
+}
+
+@media all and (max-width: 1200px) {
+  .body-and-footer-container {
+    position: fixed;
+    height: calc(100% - 50px);
+    max-width: 1000px;
+    margin: 50px calc(50% - 500px) 0px;
+  }
+}
+@media all and (max-width: 1000px) {
+  .body-and-footer-container {
+    position: relative;
+    height: auto;
+    max-width: 725px;
+    /* 75px is weird, where is the extra 25px? */
+    margin: 75px auto 0px;
+  }
+  .body-and-footer-container, .body-container {
+    display: block !important;
+  }
+  nav.toc-frame {
+    float: right;
+    width: calc(250px - 1em) !important;
+    padding-left: 1em !important;
+    padding-right: 0em !important;
+    padding-top: 30px;
+  }
+  .main-frame {
+    width: auto !important;
+    max-width: 65% !important;
+    padding-left: 0.5em !important;
+    padding-right: 2em !important;
+  }
+  nav.toc-frame, .main-frame {
+    overflow: visible !important;
+  }
+  .user-guide div.main-frame *:target {
+    padding-top: 20px;
+  }
+}
+.user-guide {
+  /*
+      div.cmdsynopsis {
+          @extend pre;
+          p {
+              max-width: initial;
+              line-height: auto;
+              font-size: auto;
+              color: #FFF;
+              font-weight: auto;
+              margin: auto;
+          }
+      }
+      */
+}
+.user-guide p {
+  margin: 1em 0;
+}
+.user-guide div.main-frame > section > h1 {
+  font-weight: normal;
+  margin-bottom: 0;
+}
+.user-guide div.main-frame > section > h2 {
+  font-weight: normal;
+  margin-bottom: 0;
+}
+.user-guide section h2, .user-guide section h3, .user-guide section h4, .user-guide section h5, .user-guide section h6 {
+  font-weight: normal;
+}
+.user-guide section h3, .user-guide section h4, .user-guide section h5, .user-guide section h6 {
+  font-weight: bold;
+}
+.user-guide div.main-frame *:target > h1:first-child, .user-guide div.main-frame *:target > h2:first-child, .user-guide div.main-frame *:target > h3:first-child, .user-guide div.main-frame *:target > h4:first-child, .user-guide div.main-frame *:target > h5:first-child, .user-guide div.main-frame *:target > h6:first-child {
+  /* colors from the grid */
+  background-color: #e5f6ee;
+  outline: #22b573 dashed thin;
+}
+.user-guide div.main-frame .grid th:target {
+  outline: red dashed thin;
+}
+.user-guide div.example {
+  margin-bottom: 20px;
+  border-radius: 10px;
+  padding: 10px 30px;
+  background: white;
+}
+.user-guide div.programlisting, .user-guide div.syntaxlisting, .user-guide div.screen, .user-guide div.syntax-block {
+  white-space: initial;
+  font-family: inherit;
+  padding-right: 0px;
+  margin-right: 2em;
+  /*
+   * This should be 80 columns but I don't know why these ems don't
+   * work like I expect.
+   */
+  max-width: 52em;
+  /*
+   * This hack causes the div to wait until after any floats that it
+   * needs to clear (because of its width) before starting.
+   */
+  margin-top: 0;
+  margin-bottom: 0;
+  display: block;
+  /*
+   * Put a line to the left of the code listing
+   */
+  margin-left: -1em;
+  padding-left: calc(1em - 1px);
+  border-left: solid #e34f71 2px;
+}
+.user-guide div.programlisting pre, .user-guide div.syntaxlisting pre, .user-guide div.screen pre, .user-guide div.syntax-block pre {
+  padding: 0px;
+  border-radius: 0px;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  overflow: auto;
+  width: 100%;
+  white-space: pre-wrap;
+}
+.user-guide div.programlisting pre strong, .user-guide div.syntaxlisting pre strong, .user-guide div.screen pre strong, .user-guide div.syntax-block pre strong {
+  color: inherit;
+}
+.user-guide div.syntax-block code {
+  padding: 0px;
+  border-radius: 0px;
+  margin-top: 0px;
+  overflow: auto;
+}
+.user-guide div.syntax-block code strong {
+  color: inherit;
+}
+.user-guide p.label {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+.user-guide pre {
+  color: inherit;
+  background: inherit;
+}
+.user-guide code.code {
+  white-space: nowrap;
+}
+.user-guide .userinput {
+  font-weight: bold;
+}
+.user-guide .replaceable {
+  font-style: italic;
+}
+.user-guide var, .user-guide code {
+  font-style: normal;
+  font-family: monospace;
+}
+.user-guide p {
+  max-width: 50em;
+}
+.user-guide p.note:before, .user-guide p.tip:before {
+  font-weight: bold;
+  display: block;
+  float: left;
+  margin-left: -50px;
+}
+.user-guide p.note:before {
+  content: "Note:";
+}
+.user-guide p.tip:before {
+  content: "Tip:";
+}
+.user-guide p.note, .user-guide p.tip {
+  margin-left: 3.5em;
+  max-width: 43em;
+}
+.user-guide ol, .user-guide ul {
+  padding-left: 0;
+}
+.user-guide ol ol, .user-guide ol ul, .user-guide ul ol, .user-guide ul ul {
+  padding-left: 20px;
+}
+.user-guide ol li, .user-guide ul li {
+  max-width: 50em;
+}
+.user-guide ol li.inside, .user-guide ul li.inside {
+  list-style-position: inside;
+}
+.user-guide ol li.outside, .user-guide ul li.outside {
+  list-style-position: outside;
+}
+.user-guide ol li.upper-alpha, .user-guide ul li.upper-alpha {
+  list-style-type: upper-alpha;
+}
+.user-guide ol li.lower-roman, .user-guide ul li.lower-roman {
+  list-style-type: lower-roman;
+}
+.user-guide dl.variablelist dt span.term {
+  font-weight: bold;
+}
+.user-guide dt {
+  margin-top: 1em;
+  margin-bottom: 0.7em;
+}
+.user-guide dd {
+  margin-top: 0.7em;
+  margin-bottom: 1em;
+  margin-left: 2em;
+}
+.user-guide dd > :first-child {
+  margin-top: 0;
+}
+.user-guide dl.faq dt p {
+  font-weight: bold;
+}
+.user-guide dl.faq dd li {
+  list-style-position: inside;
+}
+.user-guide div.itemizedlist {
+  max-width: 50em;
+}
+.user-guide div.figure div.title, .user-guide div.figure-float-right div.title, .user-guide div.figure-float-left div.title,
+.user-guide div.table-float-right div.title, .user-guide div.table-float-left div.title,
+.user-guide div.example div.title {
+  font-weight: bold;
+  margin: 0 0 0.75em 0;
+}
+.user-guide div.figure img, .user-guide div.figure-float-right img, .user-guide div.figure-float-left img,
+.user-guide div.table-float-right img, .user-guide div.table-float-left img,
+.user-guide div.example img {
+  border: thin solid black;
+}
+.user-guide div.figure-float-right,
+.user-guide div.figure-float-left,
+.user-guide div.table-float-right,
+.user-guide div.table-float-left {
+  clear: both;
+  margin: 20px;
+  padding: 10px;
+  background: #F2F2F2;
+}
+.user-guide div.figure-float-right, .user-guide div.table-float-right {
+  float: right;
+}
+.user-guide div.figure-float-left, .user-guide div.figure-float-left {
+  float: left;
+}
+.user-guide div.table, .user-guide div.table-float-right, .user-guide div.table-float-left {
+  max-width: intrinsic;
+  max-width: -moz-fit-content;
+  max-width: -webkit-fit-content;
+}
+.user-guide #fig-croparea, .user-guide #fig-titlepage, .user-guide #fig-textbook, .user-guide #fig-bigtable,
+.user-guide #fig-slides, .user-guide #fig-fancyheader, .user-guide #fig-boxdecorationbreak {
+  max-width: 425px;
+  width: 33%;
+}
+.user-guide #fig-croparea img, .user-guide #fig-titlepage img, .user-guide #fig-textbook img, .user-guide #fig-bigtable img,
+.user-guide #fig-slides img, .user-guide #fig-fancyheader img, .user-guide #fig-boxdecorationbreak img {
+  width: 100%;
+}
+.user-guide #fig-marginboxes {
+  max-width: 425px;
+  width: 40%;
+}
+.user-guide #fig-marginboxes img {
+  width: 100%;
+}
+.user-guide hr.footnote-hr {
+  margin: auto;
+}
+.user-guide .footer-container {
+  clear: both;
+}
+.user-guide pre.programlisting a:link {
+  color: #0071BC;
+  /* #99C6E4 works for a dark background */
+  text-decoration: underline;
+}
+.user-guide table {
+  border-collapse: collapse;
+}
+.user-guide table, .user-guide th, .user-guide td {
+  border: 1px solid black;
+}
+.user-guide th, .user-guide td {
+  padding: 0.2em;
+}
+.user-guide th {
+  text-align: left;
+}
+.user-guide thead {
+  text-align: center;
+  font-size: 110%;
+}
+.user-guide table.separate {
+  border-collapse: separate;
+}
+.user-guide table.collapse {
+  border-collapse: collapse;
+}
+.user-guide table.property-table {
+  border: none;
+}
+.user-guide table.property-table th, .user-guide table.property-table td {
+  border: none;
+}
+.user-guide table.property-table th {
+  white-space: nowrap;
+}
+.user-guide table.property-table td {
+  padding-left: 2.5em;
+}
+.user-guide .grid .ext td {
+  background-color: #dcede6;
+}
+.user-guide .grid + .example {
+  margin-top: 20px;
+}
+.user-guide .fig-marginboxes-lightgrey {
+  background-color: #ccc;
+}
+.user-guide .fig-marginboxes-yellow {
+  background-color: #ff8;
+}
+.user-guide .fig-marginboxes-red {
+  background-color: #f88;
+}
+.user-guide .fig-marginboxes-green {
+  background-color: #8f8;
+}
+.user-guide .fig-marginboxes-blue {
+  background-color: #88f;
+}
+.user-guide hr {
+  margin: auto;
+  max-width: auto;
+}
+.user-guide .footnotes {
+  max-width: 50em;
+}
+.user-guide .footnotes .footnote {
+  margin: 1em 0;
+}
+.user-guide .footnotes .fn-number {
+  margin: 0;
+  width: 29px;
+  height: 30px;
+}
+.user-guide .footnotes .fn-text {
+  margin-left: 30px;
+  margin-top: -30px;
+}
+.user-guide sup {
+  line-height: 0;
+}
+.user-guide section {
+  padding-top: 1em;
+}
+.user-guide section *:last-child {
+  margin-bottom: 0;
+}
+
+@media all and (max-width: 1200px) {
+  #tab-marginboxes {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

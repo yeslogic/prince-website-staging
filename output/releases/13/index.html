@@ -1,0 +1,701 @@
+<!DOCTYPE html><html class="p10" id="releases">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/common10.css">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.min.css">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.theme.min.css">
+<title>Prince - Release Notes for Prince 13</title>
+<style>
+#line-height-change:target { border-radius: 10px; box-shadow: 0 0 3px pink; }
+</style>
+</head>
+<body>
+<div class="header-container">
+<div class="mainheader-container"><div class="header">
+<div class="logo"><a href="/"><img src="/images/Prince-logo.png" alt="Prince"></a></div>
+<div class="menu"><ul>
+<li><a href="/purchase/">
+                      Buy Prince</a></li>
+<li><a href="/samples/">
+                      Samples</a></li>
+<li><a href="/doc/">
+                      Documentation</a></li>
+<li><a href="/forum/">
+                      Forum</a></li>
+<li><a href="/download/" class="current">
+                      Download</a></li>
+</ul></div>
+<div style="clear:both"></div>
+<a class="mobile-menu-trigger"><img src="/images/menu-icon2.png" alt=""></a>
+</div></div>
+<div class="subheader-container"><div class="subheader">
+<div class="submenu"><ul>
+<li><a href="/download/15/">
+                    Prince 15</a></li>
+<li><a href="/latest/">
+                    Latest builds</a></li>
+<li><a href="/books/">
+                    Prince for Books</a></li>
+<li><a href="/releases/15/">
+                    Release Notes</a></li>
+<li><a href="/download/wrappers/">
+                    Wrappers</a></li>
+</ul></div>
+<div style="clear:both"></div>
+</div></div>
+</div>
+
+<div class="body-container">
+<div class="content1150">
+<h1 class="subpages-heading2">Release Notes for Prince 13</h1>
+<div class="content750">
+
+
+<p class="warning" id="line-height-guide">
+Please note that the behaviour of <code>line-height: normal</code>
+<a href="#line-height-change">has changed</a> from Prince 12.  In the past,
+<code>line-height: normal</code> was equivalent to <code>line-height: 1.2</code>,
+but now it will use the recommended value from the current font, which is
+typically a little smaller, thus changing the output.  Customers who
+preferred the old behaviour can get it back by specifying a <code>line-height</code>
+value of <code>1.2</code>.
+</p>
+
+
+<h2 id="p13.6">Prince 13.6</h2>
+<p class="date">December 2020</p>
+
+<h3>Platform Support</h3>
+
+<p>
+Signed and notarised Prince binaries to avoid warnings on MacOS Catalina.
+</p>
+
+<p>
+Support for SSL version TLSv1.3.
+</p>
+
+<h3>Tagged PDF</h3>
+
+<p>
+Fixed bug involving absolutely positioned blocks inside flexboxes in tagged PDF.
+</p>
+
+<p>
+Fixed bug involving absolutely positioned table cells in tagged PDF.
+</p>
+
+<p>
+Fixed issue where inline floats could break tagged PDF reading order.
+</p>
+
+<p>
+Fixed tagged PDF accessibility for the list-style-image property.
+</p>
+
+<p>
+Support for the prince-alt-text and prince-expansion-text properties on list item and footnote marker pseudo-elements.
+</p>
+
+<p>
+Non-breaking space characters no longer create span structure elements in tagged PDF.
+</p>
+
+<h3>Bug Fixes &amp; Improvements</h3>
+
+<p>
+Avoids hairline cracks where possible between box border segments.
+</p>
+
+<p>
+Fixed issue where spans containing blocks can lose styling when they are split.
+</p>
+
+<p>
+Improved quality of Gaussian blurs and filter accuracy in SVG and CSS filters.
+</p>
+
+<p>
+Improved bounding boxes for Bézier curves used in links and clipping paths in SVG.
+</p>
+
+<p>
+Fixed letter-spacing in SVG when used with the text-anchor property.
+</p>
+
+<p>
+Fixed issue where the JavaScript RegExp.prototype object was not a RegExp itself.
+</p>
+
+<p>
+Fixed bug in JavaScript RegExp syntax involving escaped character classes [\]].
+</p>
+
+<p>
+Reduced memory leaks in Prince --control mode.
+</p>
+
+
+<h2 id="p13.5">Prince 13.5</h2>
+<p class="date">March 2020</p>
+
+<p>
+Fixed font subsetting issue affecting some TrueType fonts.
+</p>
+
+<p>
+Improved performance for long documents using OpenType fonts.
+</p>
+
+<p>
+Updated curl version to fix an issue with AltNames on Windows 7.
+</p>
+
+
+<h2 id="p13.4">Prince 13.4</h2>
+<p class="date">March 2020</p>
+
+<p>
+Support auto, clip, and scroll values for the overflow property.
+</p>
+
+<p>
+Fixed issues affecting the sizing of inline blocks.
+</p>
+
+<p>
+Fixed an issue where floats could sometimes fail to fit in the available space.
+</p>
+
+<p>
+Fixed a performance regression affecting system fonts on Windows.
+</p>
+
+<p>
+Fixed an issue affecting some URLs with percent-encoded characters.
+</p>
+
+
+<h2 id="p13.3">Prince 13.3</h2>
+<p class="date">February 2020</p>
+
+<p>
+Support for OpenType reverse chaining contextual single substitutions,
+as used e.g. by the "Numderline" font.
+</p>
+
+<p>
+Fixed an issue where CMYK colors were unnecessarily assigned a default ICC profile
+instead of being left as device-dependent.
+</p>
+
+<p>
+Worked around an issue affecting buggy fonts, where the location table offsets
+point past the end of the glyph table.
+</p>
+
+
+<h2 id="p13.2">Prince 13.2</h2>
+<p class="date">February 2020</p>
+
+<p>
+Support rendering intents for color conversion.
+</p>
+
+<p>
+Support <code>column-span: none</code> by treating it as <code>column-span: 1</code>.
+</p>
+
+<p>
+Support custom list markers for PDF/UA.
+</p>
+
+<p>
+Created official Prince Docker images.
+</p>
+
+<p>
+Added the Segoe UI Symbol font as a fallback serif font on Windows.
+</p>
+
+<p>
+Fixed issue affecting the init feature in some fonts for Indic text following punctuation characters.
+</p>
+
+<p>
+Accept non-empty glyphs with zero contours, which are very rare but technically legal.
+</p>
+
+<p>
+Fixed bug affecting new versions of the Baekmuk Batang font.
+</p>
+
+<p>
+Fixed bug affecting the JavaScript Array slice method applied to arrays with undefined values.
+</p>
+
+<p>
+Fixed bugs affecting DOM attribute methods and namespaces, for example <code>setAttributeNS</code>.
+</p>
+
+<p>
+Fixed issue where PNG images could fail to load if they contain large non-essential chunks.
+</p>
+
+<p>
+Fixed bug affecting XInclude and external entities in XML documents loaded from standard input.
+</p>
+
+
+<h2 id="p13.1">Prince 13.1</h2>
+<p class="date">December 2019</p>
+
+<h3>CSS Support</h3>
+
+<p>
+Added support for CSS variables in <code>@page</code> rules and margin boxes.
+</p>
+
+<p>
+Changed the <code>@page</code> rules to inherit from the document root element.
+</p>
+
+<p>
+Extended the property <code>prince-pdf-tag-type</code> to support the
+<code>Artifact</code> and <code>Table</code> values.
+</p>
+
+<h3>Bug Fixes &amp; Improvements</h3>
+
+<p>
+Fixed an issue affecting Thai line-breaking support.
+</p>
+
+<p>
+Fixed an issue that could affect loading XML documents from Windows UNC paths.
+</p>
+
+
+<h2 id="p13">Prince 13</h2>
+<p class="date">November 2019</p>
+
+
+<h3>Fonts</h3>
+
+<p>
+Support for WOFF2 fonts.
+</p>
+
+<p>
+Support for subsetting for OpenType fonts with CFF outlines.
+</p>
+
+<p>
+Support for the Indic2 OpenType shaping model needed for recent fonts such as
+Noto Serif Devanagari and Nirmala.
+</p>
+
+
+<h3>CSS Support</h3>
+
+<p>
+Support for CSS variables (<abbr>aka</abbr> custom properties).
+</p>
+
+<p>
+Support for the CSS3 <code>box-shadow</code> property.
+</p>
+
+<p>
+Support for the CSS3 <code>text-shadow</code> property.
+</p>
+
+<p>
+Support for the <code>object-fit</code> and <code>object-position</code> properties.
+</p>
+
+<p>
+Support for fragmenting single-column/row flex containers across multiple
+pages.
+</p>
+
+<p>
+Accept <code>-prince-</code> as a vendor prefix for Prince-specific CSS
+properties and <code>@-prince</code> for at-rules like <code>@-prince-pdf</code>
+and <code>@-prince-color</code>.
+</p>
+
+<p>
+Added an optional <code>same-window</code> / <code>new-window</code> value to
+the <code>prince-pdf-link-type</code> property.
+</p>
+
+<p>
+Support <code>target-counter()</code> for the footnote counter to allow
+multiple references to the same footnote.
+</p>
+
+<p>
+Initial support for <code>min-content</code> and <code>max-content</code>
+values on the <code>width</code> and <code>height</code> properties (does not
+affect auto table layout yet).
+</p>
+
+<p>
+Support for 2-value syntax for <code>background-repeat</code>.
+</p>
+
+<p>
+Support for 3-value and 4-value syntax for <code>background-position</code>.
+</p>
+
+<p>
+Extended the <code>prince-pdf-script</code> property to take URL values for
+external script files.
+</p>
+
+<p>
+Support for a new <code>prince-pdf-event-scripts</code> property for adding
+Acrobat JavaScript events to PDF files (eg. on <code>will-save</code>,
+<code>will-close</code>, etc.)
+</p>
+
+<p>
+Support for equal gradient stops at offset 0.0 and 1.0.
+</p>
+
+<p>
+Support for new <code>background-attachment: fixed bleed</code> mechanism for
+extending the <code>@page</code> background into the bleed area.
+</p>
+
+<p>
+Expanded values for <code>prince-pdf-tag-type</code> and moved defaults to the
+HTML style sheet.
+</p>
+
+<p>
+Added CSS properties to specify alternate text and acronym expansion text for tagged PDF.
+</p>
+
+<p>
+Added the <code>@prince-pdf</code> property <code>prince-pdf-display-doc-title</code>,
+needed for PDF/UA-1.
+</p>
+
+<p>
+Support for the HTML <code>main</code> element by applying
+<code>display: block</code> to it in <code>html.css</code>.
+</p>
+
+<p>
+Support for an optional second argument to the <code>leader()</code>
+generated content to specify a minimum width.
+</p>
+
+<p>
+Support for CSS and TrueType <code>font-weight</code> values that aren't
+multiples of 100.
+</p>
+
+
+<h3>SVG Support</h3>
+
+<p>
+SVG images can be reused without increasing PDF file size.
+</p>
+
+<p>
+Improved support for SVG sizing, scaling, and aspect ratios to be more
+compliant with the specifications and interoperable with web browsers.
+</p>
+
+<p>
+Support for SVGs without intrinsic width/height or aspect ratio.
+</p>
+
+<p>
+Support for SVG filter inheritance using <code>xlink:href</code>.
+</p>
+
+<p>
+Support for nested baseline-shift in SVG.
+</p>
+
+<p>
+Support for SVG gradient <code>spreadMethod</code> <code>repeat</code> and
+<code>reflect</code> using PostScript function based shading.
+</p>
+
+<p>
+Support for spot colors in SVG and CSS gradients.
+</p>
+
+
+<h3>Javscript Support</h3>
+
+<p>
+Support for comment nodes in the JavaScript DOM.
+</p>
+
+<p>
+Support for the JavaScript Array <code>fill()</code> method.
+</p>
+
+<p>
+Support for the JavaScript Array <code>reduceRight()</code> method.
+</p>
+
+
+<h3>Miscellaneous</h3>
+
+<p>
+Support for loading hyphenation dictionaries from HTTP URLs.
+</p>
+
+<p>
+Support for a fail-safe mechanism by adding new command line options
+<code>--fail-dropped-content</code>, <code>--fail-missing-resources</code>, and
+<code>--fail-missing-glyphs</code> and a new <code>Prince.failStatus</code>
+JavaScript variable.
+</p>
+
+
+
+<h3>Bug Fixes &amp; Improvements</h3>
+
+<h4>CSS</h4>
+
+<p>
+Fixed some bugs with <code>background-repeat: round|space</code>.
+</p>
+
+<p>
+Fixed marker <code>auto</code> orientations in some edge cases.
+</p>
+
+<p>
+Fixed bug where page floats with <code>unless-fit</code> that occur at the
+end of a block may incorrectly overlap in-flow content.
+</p>
+
+<p>
+Fixed <code>make_flex_cross_items: none</code> internal error affecting flex
+box layout.
+</p>
+
+<p>
+Fixed bug affecting <code>list-style: none inside</code>.
+</p>
+
+<p>
+Fixed bug where the <code>word-break</code> property breaks Arabic text.
+</p>
+
+<p>
+Fixed issue where a font may not be found for italic Arabic.
+</p>
+
+<p>
+Fixed bug affecting fonts with no English font family name.
+</p>
+
+<p>
+Compute relative font-weight according to CSS2.
+</p>
+
+<p>
+Do not artificially embolden or slant fonts if they are referenced from
+<code>@font-face</code> rules that already claim they are bold or italic,
+even if the font data itself does not.
+</p>
+
+<p>
+Fixed bug where large floats that span multiple columns can trigger
+unpackable block errors.
+</p>
+
+<p>
+Fixed bug where column floats are not placed at the very bottom of the column
+area in the presence of spanning floats.
+</p>
+
+<p id="line-height-change">
+Changed the behaviour of <code>line-height: normal</code> to use font metrics
+in order to more closely match browsers.  Please <a href="#line-height-guide">see
+our migration guide</a> for details.
+</p>
+
+<p>
+Use case-insensitive attribute value tests to support HTML 4 in the default
+style sheets.
+</p>
+
+<p>
+Changed <code>prince-pdf-page-colorspace: auto</code> to use the output
+intent color space or the destination color space when color conversion is
+enabled.
+</p>
+
+<p>
+Fixed issue where fixed heights were not respected for elements with
+unbalanced multi-column layouts.
+</p>
+
+<p>
+Improved behaviour of prince-snap for column floats.
+</p>
+
+<p>
+Allowed the <code>convert-colors</code> option to be disabled for individual
+elements by means of the <code>prince-pdf-color-conversion</code> property.
+</p>
+
+<p>
+Changed <code>shrink-to-fit</code> on <code>@page</code> rules so that it
+resets after each forced page break, allowing it to apply to individual named
+pages.
+</p>
+
+<p>
+Don't treat blocks with a specified fixed height as
+<code>page-break-inside: avoid</code> by default.
+</p>
+
+<p>
+Changed leaders so that they expand to fill the available space when used in
+shrink to fit contexts like floats and inline blocks.
+</p>
+
+<p>
+Allowed the CSS <code>content</code> property to override MathML and SVG
+elements.
+</p>
+
+<p>
+Don't generate empty <code>Lbl</code> tags for lists with no marker content
+in tagged PDF.
+</p>
+
+<p>
+Draw text-underline below text instead of above and omit text-decoration from
+images and out of flow elements.
+</p>
+
+<p>
+Avoid inserting unnecessary blank pages after large fixed height blocks that
+overflow the previous page.
+</p>
+
+
+<h4>SVG</h4>
+
+<p>
+Fixed issues affecting filters applied to SVG root elements in inline and
+external images.
+</p>
+
+<p>
+Fixed <code>feTile</code> when filter sub-region has non-zero offset.
+</p>
+
+<p>
+Fixed some other SVG conformance issues raised by resvg test suite.
+</p>
+
+<p>
+Fixed issues affecting SVG dominant-baseline auto and use the correct font
+size for SVG baseline-shift super/sub.
+</p>
+
+<p>
+Fixed bug affecting SVG gradients with transparency inside a CSS transform.
+</p>
+
+<p>
+Improved placement and sizing of SVG images embedded via <code>img</code>,
+<code>object</code>, <code>background-image</code>, canvas <code>drawImage()</code>,
+<code>feImage</code>, etc.
+</p>
+
+<p>
+Draw text decoration due to ancestors of SVG text elements.
+</p>
+
+
+<h4>Fonts</h4>
+
+<p>
+Updated definition of default serif font-family for CJK languages.
+</p>
+
+<p>
+Added the Takao fonts used for Japanese on Ubuntu to the definitions in
+<code>fonts.css</code> for the default serif and sans-serif fonts.
+</p>
+
+<p>
+Avoid breaking around a non-breaking space character even next to CJK text.
+</p>
+
+<p>
+Workaround for an Acrobat issue where text in some fonts could include a
+trailing invalid glyph.
+</p>
+
+<p>
+Workaround for a bug in MacOS Preview affecting OpenType CFF fonts using more
+than 255 glyphs.
+</p>
+
+
+<h4>Miscellaneous</h4>
+
+<p>
+Allow specifying a PDF output intent without a PDF profile and in the absence
+of color conversion.
+</p>
+
+<p>
+Fixed issue where Prince demo stamp does not pass Adobe accessibility check.
+</p>
+
+</div>
+
+<br>
+
+<p>
+See the <a href="/releases/">release history</a> for earlier versions of
+Prince.
+</p>
+
+
+</div>
+</div>
+
+<script>
+function shiftWindow() { if (location.hash.indexOf('line-height-') == 1) { scrollBy(0, -100);
+}};
+window.addEventListener("load",  function() { shiftWindow(); });
+window.addEventListener("hashchange", function() { shiftWindow(); });
+</script>
+
+<div class="content1150 footer-container"><div class="footer">
+<div class="footer-logo">
+<img src="/images/Prince-logo-footer.png" alt=""><br>
+                Copyright © 2002 – 2025 YesLogic Pty. Ltd.
+            </div>
+<ul class="footer-menu">
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+<div style="clear:both"></div>
+</div></div>
+<script src="/js/jquery-1.12.4.min.js"></script><script src="/js/jquery-ui-1.12.1.min.js"></script><script type="text/javascript" src="/js/skrollr-simplemodal-masonry.min.js"></script><script type="text/javascript" src="/js/common.js"></script>
+</body>
+</html>

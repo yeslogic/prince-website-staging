@@ -1,0 +1,37 @@
+#----------------------------------------------------------------------------#
+#
+# You need
+#
+#	RewriteMap topic_mapping txt:/blah/topic_mapping.txt
+#	RewriteMap forum_mapping txt:/blah/forum_mapping.txt
+#
+# to define the mapping, where the file contains lines of the form:
+#
+#	OLD_ID	NEW_ID
+#
+# Hint: in /etc/httpd/httpd.conf you need
+#
+#	AllowOverride All
+#
+# for a .htaccess file to take effect.
+#
+#----------------------------------------------------------------------------#
+
+RewriteEngine On
+
+# Map topic ids.
+# The question mark at the end strips the original query parameters.
+# [R=301] = moved permanently
+# [L] = last
+RewriteCond %{QUERY_STRING}	\bt=([^&]+)
+RewriteRule "^viewtopic\.php$"	http://www.princexml.com/forum/topic/${topic_mapping:%1}?	[L,R=301]
+
+# Map forum ids.
+RewriteCond %{QUERY_STRING}	\bf=([^&]+)
+RewriteRule "^viewforum\.php$"	http://www.princexml.com/forum/${forum_mapping:%1}?	[L,R=301]
+
+# Forward everything else to front page.
+RewriteRule ^.*$	http://www.princexml.com/forum/?	[L,R=301]
+
+#----------------------------------------------------------------------------#
+# vim: ft=apache

@@ -1,0 +1,683 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<meta name="robots" content="noindex">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<title>Prince - Character Entities</title>
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<style type="text/css">
+td.char {
+    text-align: center;
+    font-size: 120%
+}
+</style>
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+<div id="header-inner">
+<div><a href="/"><img src="/images/logo2.png" alt="Prince"></a></div>
+<ul id="primary-nav">
+<li><a href="/download/">Download</a></li>
+<li><a href="/purchase/">Buy Prince</a></li>
+<li><a href="/samples/">Samples</a></li>
+<li><a href="/doc/" class="curr">Documentation</a></li>
+<li><a href="/forum/">Forum</a></li>
+</ul>
+</div>
+<div id="header-shadow"></div>
+</div>
+<div id="intro"><div id="intro-inner"><h1>Character Entities</h1></div></div>
+
+<div class="main">
+
+
+
+<p>
+<a href="/doc/8.1/">User Guide</a> /
+<a href="/doc/8.1/#xml">XML Input</a>
+</p>
+
+<div class="col1">
+
+<p>
+Character entities are a method of including arbitrary 
+characters in XML documents by referencing their UNICODE number
+rather than writing them directly.
+</p>
+<p>
+This can be convenient when you wish to include characters such as smart
+quotes, symbols or mathematical operators that do not exist in the
+character encoding that you are using for your XML documents
+(such as ASCII or ISO-8859-1 "Latin-1").
+</p>
+<p>
+Here is an example of including smart quotes in an XML document using
+character entities:
+</p>
+<div class="example">
+<p class="label">XML</p>
+<pre class="doc">
+&lt;p&gt;
+These are &amp;#x201C;smart quotes&amp;#x201D; to be precise.
+&lt;/p&gt;
+</pre>
+<p class="label">Output</p>
+<div>
+These are “smart quotes” to be precise.
+</div>
+</div>
+<p>
+The tables below are a quick reference for some commonly
+requested UNICODE characters; for everything else please consult the
+<a href="http://www.unicode.org/charts/">UNICODE code charts</a>.
+</p>
+
+<h3>Accented Letters</h3>
+<table class="grid">
+
+<tr>
+<td>&amp;#xC0;</td>
+<td class="char">À</td>
+<td>A grave</td>
+</tr>
+<tr>
+<td>&amp;#xC1;</td>
+<td class="char">Á</td>
+<td>A acute</td>
+</tr>
+<tr>
+<td>&amp;#xC2;</td>
+<td class="char">Â</td>
+<td>A circumflex</td>
+</tr>
+<tr>
+<td>&amp;#xC3;</td>
+<td class="char">Ã</td>
+<td>A tilde</td>
+</tr>
+<tr>
+<td>&amp;#xC4;</td>
+<td class="char">Ä</td>
+<td>A dieresis</td>
+</tr>
+<tr>
+<td>&amp;#xC5;</td>
+<td class="char">Å</td>
+<td>A ring</td>
+</tr>
+<tr>
+<td>&amp;#xC7;</td>
+<td class="char">Ç</td>
+<td>C cedilla</td>
+</tr>
+<tr>
+<td>&amp;#xC8;</td>
+<td class="char">È</td>
+<td>E grave</td>
+</tr>
+<tr>
+<td>&amp;#xC9;</td>
+<td class="char">É</td>
+<td>E acute</td>
+</tr>
+<tr>
+<td>&amp;#xCA;</td>
+<td class="char">Ê</td>
+<td>E circumflex</td>
+</tr>
+<tr>
+<td>&amp;#xCB;</td>
+<td class="char">Ë</td>
+<td>E dieresis</td>
+</tr>
+<tr>
+<td>&amp;#xCC;</td>
+<td class="char">Ì</td>
+<td>I grave</td>
+</tr>
+<tr>
+<td>&amp;#xCD;</td>
+<td class="char">Í</td>
+<td>I acute</td>
+</tr>
+<tr>
+<td>&amp;#xCE;</td>
+<td class="char">Î</td>
+<td>I circumflex</td>
+</tr>
+<tr>
+<td>&amp;#xCF;</td>
+<td class="char">Ï</td>
+<td>I dieresis</td>
+</tr>
+<tr>
+<td>&amp;#xD1;</td>
+<td class="char">Ñ</td>
+<td>N tilde</td>
+</tr>
+<tr>
+<td>&amp;#xD2;</td>
+<td class="char">Ò</td>
+<td>O grave</td>
+</tr>
+<tr>
+<td>&amp;#xD3;</td>
+<td class="char">Ó</td>
+<td>O acute</td>
+</tr>
+<tr>
+<td>&amp;#xD4;</td>
+<td class="char">Ô</td>
+<td>O circumflex</td>
+</tr>
+<tr>
+<td>&amp;#xD5;</td>
+<td class="char">Õ</td>
+<td>O tilde</td>
+</tr>
+<tr>
+<td>&amp;#xD6;</td>
+<td class="char">Ö</td>
+<td>O dieresis</td>
+</tr>
+<tr>
+<td>&amp;#xD8;</td>
+<td class="char">Ø</td>
+<td>O slash</td>
+</tr>
+<tr>
+<td>&amp;#xD9;</td>
+<td class="char">Ù</td>
+<td>U grave</td>
+</tr>
+<tr>
+<td>&amp;#xDA;</td>
+<td class="char">Ú</td>
+<td>U acute</td>
+</tr>
+<tr>
+<td>&amp;#xDB;</td>
+<td class="char">Û</td>
+<td>U circumflex</td>
+</tr>
+<tr>
+<td>&amp;#xDC;</td>
+<td class="char">Ü</td>
+<td>U dieresis</td>
+</tr>
+<tr>
+<td>&amp;#x0178;</td>
+<td class="char">Ÿ</td>
+<td>Y dieresis</td>
+</tr>
+<tr>
+<td>&amp;#xE0;</td>
+<td class="char">à</td>
+<td>a grave</td>
+</tr>
+<tr>
+<td>&amp;#xE1;</td>
+<td class="char">á</td>
+<td>a acute</td>
+</tr>
+<tr>
+<td>&amp;#xE2;</td>
+<td class="char">â</td>
+<td>a circumflex</td>
+</tr>
+<tr>
+<td>&amp;#xE3;</td>
+<td class="char">ã</td>
+<td>a tilde</td>
+</tr>
+<tr>
+<td>&amp;#xE4;</td>
+<td class="char">ä</td>
+<td>a dieresis</td>
+</tr>
+<tr>
+<td>&amp;#xE5;</td>
+<td class="char">å</td>
+<td>a ring</td>
+</tr>
+<tr>
+<td>&amp;#xE7;</td>
+<td class="char">ç</td>
+<td>c cedilla</td>
+</tr>
+<tr>
+<td>&amp;#xE8;</td>
+<td class="char">è</td>
+<td>e grave</td>
+</tr>
+<tr>
+<td>&amp;#xE9;</td>
+<td class="char">é</td>
+<td>e acute</td>
+</tr>
+<tr>
+<td>&amp;#xEA;</td>
+<td class="char">ê</td>
+<td>e circumflex</td>
+</tr>
+<tr>
+<td>&amp;#xEB;</td>
+<td class="char">ë</td>
+<td>e dieresis</td>
+</tr>
+<tr>
+<td>&amp;#xEC;</td>
+<td class="char">ì</td>
+<td>i grave</td>
+</tr>
+<tr>
+<td>&amp;#xED;</td>
+<td class="char">í</td>
+<td>i acute</td>
+</tr>
+<tr>
+<td>&amp;#xEE;</td>
+<td class="char">î</td>
+<td>i circumflex</td>
+</tr>
+<tr>
+<td>&amp;#xEF;</td>
+<td class="char">ï</td>
+<td>i dieresis</td>
+</tr>
+<tr>
+<td>&amp;#x0131;</td>
+<td class="char">ı</td>
+<td>dotless i</td>
+</tr>
+<tr>
+<td>&amp;#xF1;</td>
+<td class="char">ñ</td>
+<td>n tilde</td>
+</tr>
+<tr>
+<td>&amp;#xF2;</td>
+<td class="char">ò</td>
+<td>o grave</td>
+</tr>
+<tr>
+<td>&amp;#xF3;</td>
+<td class="char">ó</td>
+<td>o acute</td>
+</tr>
+<tr>
+<td>&amp;#xF4;</td>
+<td class="char">ô</td>
+<td>o circumflex</td>
+</tr>
+<tr>
+<td>&amp;#xF5;</td>
+<td class="char">õ</td>
+<td>o tilde</td>
+</tr>
+<tr>
+<td>&amp;#xF6;</td>
+<td class="char">ö</td>
+<td>o dieresis</td>
+</tr>
+<tr>
+<td>&amp;#xF8;</td>
+<td class="char">ø</td>
+<td>o slash</td>
+</tr>
+<tr>
+<td>&amp;#xF9;</td>
+<td class="char">ù</td>
+<td>u grave</td>
+</tr>
+<tr>
+<td>&amp;#xFA;</td>
+<td class="char">ú</td>
+<td>u acute</td>
+</tr>
+<tr>
+<td>&amp;#xFB;</td>
+<td class="char">û</td>
+<td>u circumflex</td>
+</tr>
+<tr>
+<td>&amp;#xFC;</td>
+<td class="char">ü</td>
+<td>u dieresis</td>
+</tr>
+<tr>
+<td>&amp;#xFF;</td>
+<td class="char">ÿ</td>
+<td>y dieresis</td>
+</tr>
+</table>
+
+<h3>Symbols</h3>
+<table class="grid">
+
+<tr>
+<td>&amp;#x2022;</td>
+<td class="char">•</td>
+<td>bullet</td>
+</tr>
+<tr>
+<td>&amp;#xA2;</td>
+<td class="char">¢</td>
+<td>cent</td>
+</tr>
+<tr>
+<td>&amp;#xA9;</td>
+<td class="char">©</td>
+<td>copyright</td>
+</tr>
+<tr>
+<td>&amp;#xA4;</td>
+<td class="char">¤</td>
+<td>currency</td>
+</tr>
+<tr>
+<td>&amp;#x2020;</td>
+<td class="char">†</td>
+<td>dagger</td>
+</tr>
+<tr>
+<td>&amp;#xB0;</td>
+<td class="char">°</td>
+<td>degree</td>
+</tr>
+<tr>
+<td>&amp;#xF7;</td>
+<td class="char">÷</td>
+<td>divide</td>
+</tr>
+<tr>
+<td>&amp;#x2021;</td>
+<td class="char">‡</td>
+<td>double dagger</td>
+</tr>
+<tr>
+<td>&amp;#x0192;</td>
+<td class="char">ƒ</td>
+<td>florin</td>
+</tr>
+<tr>
+<td>&amp;#x2044;</td>
+<td class="char">⁄</td>
+<td>fraction</td>
+</tr>
+<tr>
+<td>&amp;#xA1;</td>
+<td class="char">¡</td>
+<td>inverted exclamation</td>
+</tr>
+<tr>
+<td>&amp;#xBF;</td>
+<td class="char">¿</td>
+<td>inverted question</td>
+</tr>
+<tr>
+<td>&amp;#xB5;</td>
+<td class="char">µ</td>
+<td>micro</td>
+</tr>
+<tr>
+<td>&amp;#xB7;</td>
+<td class="char">·</td>
+<td>middle dot</td>
+</tr>
+<tr>
+<td>&amp;#xAC;</td>
+<td class="char">¬</td>
+<td>not</td>
+</tr>
+<tr>
+<td>&amp;#xAA;</td>
+<td class="char">ª</td>
+<td>ordfeminine</td>
+</tr>
+<tr>
+<td>&amp;#xBA;</td>
+<td class="char">º</td>
+<td>ordmasculine</td>
+</tr>
+<tr>
+<td>&amp;#xB6;</td>
+<td class="char">¶</td>
+<td>paragraph</td>
+</tr>
+<tr>
+<td>&amp;#x2030;</td>
+<td class="char">‰</td>
+<td>perthousand</td>
+</tr>
+<tr>
+<td>&amp;#xB1;</td>
+<td class="char">±</td>
+<td>plusminus</td>
+</tr>
+<tr>
+<td>&amp;#xAE;</td>
+<td class="char">®</td>
+<td>registered</td>
+</tr>
+<tr>
+<td>&amp;#xA7;</td>
+<td class="char">§</td>
+<td>section</td>
+</tr>
+<tr>
+<td>&amp;#xA3;</td>
+<td class="char">£</td>
+<td>sterling</td>
+</tr>
+<tr>
+<td>&amp;#x2122;</td>
+<td class="char">™</td>
+<td>trademark</td>
+</tr>
+<tr>
+<td>&amp;#xA5;</td>
+<td class="char">¥</td>
+<td>yen</td>
+</tr>
+</table>
+
+<h3>Quotes</h3>
+<table class="grid">
+
+<tr>
+<td>&amp;#x2018;</td>
+<td class="char">‘</td>
+<td>left single quote</td>
+</tr>
+<tr>
+<td>&amp;#x2019;</td>
+<td class="char">’</td>
+<td>right single quote</td>
+</tr>
+<tr>
+<td>&amp;#x201C;</td>
+<td class="char">“</td>
+<td>left double quote</td>
+</tr>
+<tr>
+<td>&amp;#x201D;</td>
+<td class="char">”</td>
+<td>right double quote</td>
+</tr>
+<tr>
+<td>&amp;#x2039;</td>
+<td class="char">‹</td>
+<td>left single guillemet</td>
+</tr>
+<tr>
+<td>&amp;#x203A;</td>
+<td class="char">›</td>
+<td>right single guillemet</td>
+</tr>
+<tr>
+<td>&amp;#xAB;</td>
+<td class="char">«</td>
+<td>left double guillemet</td>
+</tr>
+<tr>
+<td>&amp;#xBB;</td>
+<td class="char">»</td>
+<td>right double guillemet</td>
+</tr>
+<tr>
+<td>&amp;#x201A;</td>
+<td class="char">‚</td>
+<td>base single quote</td>
+</tr>
+<tr>
+<td>&amp;#x201E;</td>
+<td class="char">„</td>
+<td>base double quote</td>
+</tr>
+</table>
+
+<h3>Accents</h3>
+<table class="grid">
+
+<tr>
+<td>&amp;#xB4;</td>
+<td class="char">´</td>
+<td>acute</td>
+</tr>
+<tr>
+<td>&amp;#x02D8;</td>
+<td class="char">˘</td>
+<td>breve</td>
+</tr>
+<tr>
+<td>&amp;#x02C7;</td>
+<td class="char">ˇ</td>
+<td>caron</td>
+</tr>
+<tr>
+<td>&amp;#xB8;</td>
+<td class="char">¸</td>
+<td>cedilla</td>
+</tr>
+<tr>
+<td>&amp;#x5E;</td>
+<td class="char">^</td>
+<td>circumflex</td>
+</tr>
+<tr>
+<td>&amp;#xA8;</td>
+<td class="char">¨</td>
+<td>dieresis</td>
+</tr>
+<tr>
+<td>&amp;#x02D9;</td>
+<td class="char">˙</td>
+<td>dot accent</td>
+</tr>
+<tr>
+<td>&amp;#x02DD;</td>
+<td class="char">˝</td>
+<td>double acute</td>
+</tr>
+<tr>
+<td>&amp;#xAF;</td>
+<td class="char">¯</td>
+<td>macron</td>
+</tr>
+<tr>
+<td>&amp;#x02DB;</td>
+<td class="char">˛</td>
+<td>ogonek</td>
+</tr>
+<tr>
+<td>&amp;#x02DA;</td>
+<td class="char">˚</td>
+<td>ring</td>
+</tr>
+<tr>
+<td>&amp;#x02DC;</td>
+<td class="char">˜</td>
+<td>tilde</td>
+</tr>
+</table>
+
+<h3>Miscellaneous</h3>
+<table class="grid">
+
+<tr>
+<td>&amp;#x2026;</td>
+<td class="char">…</td>
+<td>ellipsis</td>
+</tr>
+<tr>
+<td>&amp;#x2014;</td>
+<td class="char">—</td>
+<td>em dash</td>
+</tr>
+<tr>
+<td>&amp;#x2013;</td>
+<td class="char">–</td>
+<td>en dash</td>
+</tr>
+<tr>
+<td>&amp;#xFB01;</td>
+<td class="char">ﬁ</td>
+<td>fi ligature</td>
+</tr>
+<tr>
+<td>&amp;#xFB02;</td>
+<td class="char">ﬂ</td>
+<td>fl ligature</td>
+</tr>
+<tr>
+<td>&amp;#xA0;</td>
+<td class="char"> </td>
+<td>non-breaking space</td>
+</tr>
+<tr>
+<td>&amp;#xC6;</td>
+<td class="char">Æ</td>
+<td>AE</td>
+</tr>
+<tr>
+<td>&amp;#xE6;</td>
+<td class="char">æ</td>
+<td>ae</td>
+</tr>
+<tr>
+<td>&amp;#x0152;</td>
+<td class="char">Œ</td>
+<td>OE</td>
+</tr>
+<tr>
+<td>&amp;#x0153;</td>
+<td class="char">œ</td>
+<td>oe</td>
+</tr>
+<tr>
+<td>&amp;#xDF;</td>
+<td class="char">ß</td>
+<td>sharp s</td>
+</tr>
+</table>
+
+</div>
+
+</div>
+</div>
+<script src="/js/warning.js"></script>
+<div id="footer"><div id="footer-inner">
+<p id="footer-copy">Copyright © 2002 – 2025 YesLogic Pty. Ltd.</p>
+<ul id="footer-nav">
+<li><a href="/">Home</a></li>
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+</div></div>
+</body>
+</html>

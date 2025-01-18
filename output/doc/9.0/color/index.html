@@ -1,0 +1,119 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<meta name="robots" content="noindex">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<title>Prince - Color</title>
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+<div id="header-inner">
+<div><a href="/"><img src="/images/logo2.png" alt="Prince"></a></div>
+<ul id="primary-nav">
+<li><a href="/download/">Download</a></li>
+<li><a href="/purchase/">Buy Prince</a></li>
+<li><a href="/samples/">Samples</a></li>
+<li><a href="/doc/" class="curr">Documentation</a></li>
+<li><a href="/forum/">Forum</a></li>
+</ul>
+</div>
+<div id="header-shadow"></div>
+</div>
+<div id="intro"><div id="intro-inner"><h1>Color</h1></div></div>
+
+<div class="main">
+
+
+
+<p>
+<a href="/doc/9.0/">User Guide</a> /
+<a href="/doc/9.0/#graphics">Graphics</a>
+</p>
+
+<div class="col1">
+
+<p>
+Prince supports RGB, RGBA, CMYK, and named spot colors.
+</p>
+
+<h2>RGB</h2>
+<p>
+RGB colors can be specified using the <code>rgb()</code> function syntax,
+shorthand hash notation, or with standard keywords. For example, red can be
+specified in three ways:
+</p>
+<pre>
+color: rgb(255, 0, 0)
+color: #ff0000
+color: red
+</pre>
+
+<h2>RGBA</h2>
+<p>
+RGBA colors are equivalent to RGB plus an opacity (or alpha) value between 0 and 1.
+When the opacity is 0 the color is transparent, and when the opacity is 1 the
+color is identical to the RGB color.
+</p>
+<pre>
+color: rgba(255, 0, 0, 1)    // red
+color: rgba(255, 0, 0, 0.5)  // translucent red
+color: rgba(255, 0, 0, 0)    // fully transparent
+</pre>
+
+<h2>CMYK</h2>
+<p>
+CMYK colors can be specified using the <code>cmyk()</code> function syntax:
+</p>
+<pre>
+color: cmyk(1, 0, 0, 0)  // cyan
+color: cmyk(0, 1, 1, 0)  // red
+color: cmyk(0, 0, 0, 1)  // black
+</pre>
+
+<h2>Spot colors</h2>
+<p>
+Named spot colors can be defined using the <code>@prince-color</code> rule.
+An alternate RGB or CMYK color must also be specified using the
+<code>alternate-color</code> property. This will be used in situations where
+the named color is not available, such as when viewing the generated PDF file
+on a display.
+</p>
+
+<pre>
+@prince-color MyColor {
+    alternate-color: rgb(255,0,0)
+}
+</pre>
+
+<p>
+Spot colors can be used with a specified tint value between 0 and 1, which
+defaults to 1. They can also enable overprint:
+</p>
+
+<pre>
+color: prince-color(MyColor)                  // tint 1.0
+color: prince-color(MyColor, 0.5)             // tint 0.5
+color: prince-color(MyColor, overprint)       // tint 1.0, overprint
+color: prince-color(MyColor, 0.5, overprint)  // tint 0.5, overprint
+</pre>
+
+</div>
+
+</div>
+</div>
+<script src="/js/warning.js"></script>
+<div id="footer"><div id="footer-inner">
+<p id="footer-copy">Copyright © 2002 – 2025 YesLogic Pty. Ltd.</p>
+<ul id="footer-nav">
+<li><a href="/">Home</a></li>
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+</div></div>
+</body>
+</html>

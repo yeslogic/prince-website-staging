@@ -1,0 +1,555 @@
+<!DOCTYPE html><html class="p10" id="releases">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/common10.css">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.min.css">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.theme.min.css">
+<title>Prince - Release Notes for Prince 10</title>
+</head>
+<body>
+<div class="header-container">
+<div class="mainheader-container"><div class="header">
+<div class="logo"><a href="/"><img src="/images/Prince-logo.png" alt="Prince"></a></div>
+<div class="menu"><ul>
+<li><a href="/purchase/">
+                      Buy Prince</a></li>
+<li><a href="/samples/">
+                      Samples</a></li>
+<li><a href="/doc/">
+                      Documentation</a></li>
+<li><a href="/forum/">
+                      Forum</a></li>
+<li><a href="/download/" class="current">
+                      Download</a></li>
+</ul></div>
+<div style="clear:both"></div>
+<a class="mobile-menu-trigger"><img src="/images/menu-icon2.png" alt=""></a>
+</div></div>
+<div class="subheader-container"><div class="subheader">
+<div class="submenu"><ul>
+<li><a href="/download/15/">
+                    Prince 15</a></li>
+<li><a href="/latest/">
+                    Latest builds</a></li>
+<li><a href="/books/">
+                    Prince for Books</a></li>
+<li><a href="/releases/15/">
+                    Release Notes</a></li>
+<li><a href="/download/wrappers/">
+                    Wrappers</a></li>
+</ul></div>
+<div style="clear:both"></div>
+</div></div>
+</div>
+
+<div class="body-container">
+<div class="content1150">
+<h1 class="subpages-heading2">Release Notes for Prince 10</h1>
+<div class="content750">
+
+<h2 id="p10r7">Prince 10 rev 7</h2>
+<p class="date">February 2016</p>
+
+<p>
+Fixed bug where CSS matrix() transforms were not correct.
+</p>
+
+<p>
+Fixed bug where the JavaScript String.trim() method could crash.
+</p>
+
+<h2 id="p10r6">Prince 10 rev 6</h2>
+<p class="date">December 2015</p>
+
+<p>
+Fixed bug where HTML documents containing carriage returns could lose characters.
+</p>
+
+<p>
+Fixed bug where tables with zero font-size could cause Prince to hang
+indefinitely.
+</p>
+
+<h2 id="p10r5p1">Prince 10 rev 5 patch 1</h2>
+<p class="date">October 2015</p>
+
+<p>
+Fixed possible crash caused by very large tables.
+</p>
+
+<p>
+Fixed parallel downloads on recent MacOS X versions, where curl uses
+SecureTransport instead of OpenSSL.
+</p>
+
+<h2 id="p10r5">Prince 10 rev 5</h2>
+<p class="date">October 2015</p>
+
+<p>
+Fixed bug where overprint could not be specified independently for fill and stroke
+colors.
+</p>
+
+<p>
+Fixed bug where SVG markers could be clipped incorrectly.
+</p>
+
+<p>
+Fixed bug affecting SSL downloads on some Linux platforms.
+</p>
+
+<p>
+Fixed bug that prevented Prince from running on some Windows platforms.
+</p>
+
+<p>
+Fixed bug where CSS borders ignored opacity from RGBA colors.
+</p>
+
+<p>
+Fixed bug affecting SVG paths. 
+</p>
+
+<h2 id="p10r4">Prince 10 rev 4</h2>
+<p class="date">August 2015</p>
+
+<p>
+Fixed issue where very large SVG documents could cause Prince to crash.
+</p>
+
+<p>
+Fixed bugs affecting SVG dx attribute in conjunction with bidirectional text
+and the text-anchor property.
+</p>
+
+<p>
+Fixed bug in SVG where path coordinates don't need to be separated by
+spaces if they begin with a decimal point.
+</p>
+
+<p>
+Added fallback rules for DejaVu LGC and Liberation fonts to default fonts.css
+file for compatibility with Red Hat and CentOS.
+</p>
+
+<p>
+Fixed issue caused by Japanese fonts on latest public beta of MacOS X.
+</p>
+
+<p>
+Removed unnecessary dependency on libgcrypt11 from Ubuntu DEB packages.
+</p>
+
+<p>
+Fixed bug affecting text using artificial italics surrounded by text that is not
+using artificial italics.
+</p>
+
+<h2 id="p10r3">Prince 10 rev 3</h2>
+<p class="date">July 2015</p>
+
+<p>
+Added new --remap option to map HTTP URLs to local file paths.
+</p>
+
+<p>
+Fixed broken --fileroot option.
+</p>
+
+<p>
+Added new two-page-left and two-page-right values for prince-pdf-page-layout property.
+</p>
+
+<p>
+Changed @page rules so that prince-rotate-body and shrink-to-fit do not apply
+to page backgrounds or borders.
+</p>
+
+<p>
+Changed transform-origin property to accept Z coordinate as long as it is zero.
+</p>
+
+<p>
+Support for grayscale TIFF images with alpha channels.
+</p>
+
+<p>
+Fixed bug affecting SVG shapes that are neither stroked nor filled.
+</p>
+
+<p>
+Fixed parser bug affecting CSS :nth-child() selector containing spaces.
+</p>
+
+<p>
+Fixed issue affecting Windows GUI where multiple files could be parsed as XML
+instead of HTML.
+</p>
+
+<h2 id="p10r2">Prince 10 rev 2</h2>
+<p class="date">June 2015</p>
+
+<p>
+Reduced memory usage for large documents with many style rules.
+</p>
+
+<p>
+Fixed bug where XInclude URLs could fail to work with absolute file paths on Windows.
+</p>
+
+<h2 id="p10">Prince 10</h2>
+<p class="date">April 2015</p>
+
+<h3>SVG Support</h3>
+
+<p>
+Support for the textPath element.
+</p>
+
+<p>
+The aspect ratio for SVG images with no width/height is
+determined from the viewBox.
+</p>
+
+<p>
+Image files with an unknown extension will be loaded as SVG.
+</p>
+
+<p>
+Removed unnecessary "max-width: 100%" from the default SVG style sheet.
+</p>
+
+<p>
+Fixed bug affecting the angle of markers on curved paths.
+</p>
+
+<p>
+Fixed bug where SVG text could have wrong stroke width.
+</p>
+
+<p>
+Fixed bug affecting dx/dy attributes on tspan elements containing
+right-to-left scripts (eg. Arabic).
+</p>
+
+<p>
+Fixed bug where artificially slanted text was invisible in SVG.
+</p>
+
+<p>
+Fixed bug where the text-anchor property was not respecting bidi direction.
+</p>
+
+<p>
+Fixed bug where clip paths could fail if clipPathUnits specified
+objectBoundingBox.
+</p>
+
+<p>
+Fixed bug where small scale matrices could cause rendering problems.
+</p>
+
+<p>
+Fixed bug where paths could be stroked even with stroke-width set to zero.
+</p>
+
+<p>
+Fixed bug where xml:space was ignored if applied directly to &lt;svg&gt;
+elements.
+</p>
+
+<h3>HTTP Support</h3>
+
+<p>
+Support for multiple concurrent HTTP requests to reduce latency.
+</p>
+
+<p>
+URL parsing complies with the new WHAT-WG URL specification.
+</p>
+
+<p>
+Added new options for HTTP authentication, including the ability to provide
+different authentication credentials to different servers.
+</p>
+
+<p>
+Support for NTLM and Kerberos authentication schemes on Windows.
+</p>
+
+<p>
+Added a --cookie command-line option for specifying cookies without needing to
+create a cookie jar file.
+</p>
+
+<p>
+Changed default value for --http-timeout option to 60 seconds.
+</p>
+
+<p>
+Added --user-agent option to override the user agent string.
+</p>
+
+<p>
+Fixed bug where XInclude elements did not respect the --baseurl option.
+</p>
+
+<p>
+Fixed bug where XInclude did not support HTTP resources parsed as text.
+</p>
+
+<h3>JavaScript Support</h3>
+
+<p>
+New box tracking API to inspect the formatted PDF.
+</p>
+
+<p>
+Support for querySelector and querySelectorAll methods.
+</p>
+
+<p>
+Support for the Element.getComputedStyle method.
+(Some limitations on width/height still apply).
+</p>
+
+<p>
+Support for the window.setTimeout and window.clearTimeout methods.
+</p>
+
+<p>
+Support for the String.trim method.
+</p>
+
+<p>
+Support for the Node.contains method.
+</p>
+
+<p>
+Support for the Node.compareDocumentPosition method.
+</p>
+
+<p>
+Support for the Object.keys method.
+</p>
+
+<p>
+Support for more HTML DOM element interfaces.
+</p>
+
+<p>
+Conformance and interoperability improvements for regular expressions.
+</p>
+
+<p>
+Added an option to disable JavaScript from the Prince Windows GUI.
+</p>
+
+<p>
+Fixed bug affecting the innerHTML property when parsing
+HTML fragments containing table elements.
+</p>
+
+<p>
+Changed JavaScript reserved keyword set to match web browsers.
+</p>
+
+<p>
+Fixed bug where JavaScript keywords were not accepted as identifiers in some
+situations that should be legal.
+</p>
+
+<h3>CSS Support</h3>
+
+<p>
+Added a new prince-rotate-body property for more control over landscape pages.
+</p>
+
+<p>
+Changed prince-shrink-to-fit so that it only affects page body content, not
+page headers and footers.
+</p>
+
+<p>
+Support for overflow-wrap / word-wrap: break-word.
+</p>
+
+<p>
+Support for the word-break property.
+</p>
+
+<p>
+Support for percentage values on border-radius properties, and correct
+clipping for images with rounded borders.
+</p>
+
+<p>
+Changed the border shorthand property so that it does not affect border radius.
+</p>
+
+<p>
+Fixed bug where large border-radius settings could cause overlapping curves.
+</p>
+
+<p>
+Support for the rebeccapurple color.
+</p>
+
+<p>
+Reduced the default page margin to 0.75in (54pt) and added --page-size and
+--page-margin command-line options.
+</p>
+
+<p>
+Support for translate3d() function in CSS transforms if Z coordinate is zero.
+</p>
+
+<p>
+Added new prince-lang property.
+</p>
+
+<p>
+Fixed bug where long column floats could cause Prince to hang.
+</p>
+
+<p>
+Fixed bug where CJK text could break inside white-space: pre and nowrap
+elements.
+</p>
+
+<p>
+Changed prince-overprint() color function to support CMYK and RGB colors.
+</p>
+
+<p>
+Added overprint mode argument to prince-overprint(), defaulting to overprint-mode-nonzero.
+</p>
+
+<p>
+Changed behaviour of height/min-height/max-height properties so that blocks are
+not pushed to the next page unnecessarily.
+</p>
+
+<p>
+Support for first-except page-policy value (eg. for string-set).
+</p>
+
+<p>
+Prevented hyphenation after a fixed hyphen, to reduce awkward word breaks.
+</p>
+
+<p>
+Fixed bug where ::first-line could fail to apply correctly to ::before and ::after
+pseudo-elements.
+</p>
+
+<p>
+Fixed bug where very large numbers could cause problems (eg. z-index: 999999999999).
+</p>
+
+<h3>Font Support</h3>
+
+<p>
+Support for font-variant in @font-face rules to handle separate small-caps fonts.
+</p>
+
+<p>
+Added prince-no-fallback font family to inhibit font fallback, triggering
+warnings if glyphs are not found.
+</p>
+
+<p>
+Changed the way local() works in @font-face src property so that it only refers
+to system fonts and not other @font-face rules. (Added new prince-lookup() value
+for old behaviour).
+</p>
+
+<p>
+Fixed bug affecting OpenType mark placement for Ezra SIL Hebrew font.
+</p>
+
+<p>
+Fixed bug affecting OpenType substitutions for below-base consonants in Indic
+scripts such as Bengali.
+</p>
+
+<p>
+Fixed bug affecting OpenType shaping of marks following ligatures in the
+Arabic Typesetting font.
+</p>
+
+<h3>HTML Support</h3>
+
+<p>
+Support for the HTML5 template element.
+</p>
+
+<p>
+Support for UTF-16 encoding for HTML documents.
+</p>
+
+<p>
+Added default vertical margin to HTML list elements, for consistency with
+browsers.
+</p>
+
+<p>
+Fixed bug where HTML documents containing large comments were slow to load.
+</p>
+
+<h3>Miscellaneous Improvements</h3>
+
+<p>
+Support for PDF metadata required by PDF/X-3:2003 and PDF/X-4.
+</p>
+
+<p>
+Support for embedding ICC color profiles found in JPEG, TIFF, and PNG images.
+</p>
+
+<p>
+Support for 1-bit black and white TIFF images.
+</p>
+
+<p>
+Updated Prince server wrappers to support error logging for streaming convert methods.
+</p>
+
+<p>
+Fixed bug causing file descriptor leak when loading many XML documents.
+</p>
+
+<p>
+Fixed bug affecting transparency groups on PDF pages that use opacity.
+</p>
+
+<br>
+
+<p>
+See the <a href="/releases/">release history</a> for earlier versions of
+Prince.
+</p>
+
+</div>
+</div>
+</div>
+
+<div class="content1150 footer-container"><div class="footer">
+<div class="footer-logo">
+<img src="/images/Prince-logo-footer.png" alt=""><br>
+                Copyright © 2002 – 2025 YesLogic Pty. Ltd.
+            </div>
+<ul class="footer-menu">
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+<div style="clear:both"></div>
+</div></div>
+<script src="/js/jquery-1.12.4.min.js"></script><script src="/js/jquery-ui-1.12.1.min.js"></script><script type="text/javascript" src="/js/skrollr-simplemodal-masonry.min.js"></script><script type="text/javascript" src="/js/common.js"></script>
+</body>
+</html>

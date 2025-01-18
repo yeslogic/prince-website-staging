@@ -1,0 +1,106 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<meta name="robots" content="noindex">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<title>Prince - Unsupported features in CSS 2.1</title>
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+<div id="header-inner">
+<div><a href="/"><img src="/images/logo2.png" alt="Prince"></a></div>
+<ul id="primary-nav">
+<li><a href="/download/">Download</a></li>
+<li><a href="/purchase/">Buy Prince</a></li>
+<li><a href="/samples/">Samples</a></li>
+<li><a href="/doc/" class="curr">Documentation</a></li>
+<li><a href="/forum/">Forum</a></li>
+</ul>
+</div>
+<div id="header-shadow"></div>
+</div>
+<div id="intro"><div id="intro-inner"><h1>Unsupported features in CSS 2.1</h1></div></div>
+
+<div class="main">
+
+
+
+<div class="col1">
+
+<p>
+Prince 5.1 supports nearly all of CSS 2.1. The remaining unsupported features
+are listed below.
+</p>
+
+<h2>Syntax</h2>
+<ul>
+<li>CSS style sheets must use ASCII with all non-ASCII characters escaped;
+UTF-8 and UTF-16 encodings are not supported by Prince.</li>
+</ul>
+
+<h2>Basic Data Types</h2>
+<ul>
+<li>Prince treats <code>1ex</code> equivalent to <code>0.5em</code>, which is incorrect for some fonts.</li>
+</ul>
+
+<h2>Selectors</h2>
+<ul>
+<li>Prince does not support the <code>::first-line</code> pseudo-element.</li>
+</ul>
+
+<h2>Fonts</h2>
+<ul>
+<li>Prince does not support the <code>font-variant</code>
+property for small-caps.</li>
+</ul>
+
+<h2>Lists</h2>
+<ul>
+<li>Prince does not support the following list style types:
+lower-greek, armenian, georgian.</li>
+<li>Prince does not support the <code>list-style-image</code> property.</li>
+<li>The list-item counter is not incremented automatically by
+<code>display: list-item</code>.</li>
+<li>List item markers are not aligned to the baseline of the list item
+content.</li>
+</ul>
+
+<h2>Generated Content</h2>
+<ul>
+<li>Prince does not support the <code>quotes</code> property or the
+<code>open-quote</code> and <code>close-quote</code> content values.</li>
+</ul>
+
+<h2>Text</h2>
+<ul>
+<li>Prince does not support <code>text-transform: capitalize</code>.</li>
+<li>Prince does not support the <code>direction</code> and
+<code>unicode-bidi</code> properties.</li>
+<li>Prince does not support right-to-left text or vertical text.</li>
+</ul>
+
+<h2>Visual Effects</h2>
+<ul>
+<li>Prince does not support <code>visibility: collapse</code>.</li>
+</ul>
+
+</div>
+
+</div>
+</div>
+<script src="/js/warning.js"></script>
+<div id="footer"><div id="footer-inner">
+<p id="footer-copy">Copyright © 2002 – 2025 YesLogic Pty. Ltd.</p>
+<ul id="footer-nav">
+<li><a href="/">Home</a></li>
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+</div></div>
+</body>
+</html>

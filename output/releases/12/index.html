@@ -1,0 +1,597 @@
+<!DOCTYPE html><html class="p10" id="releases">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/common10.css">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.min.css">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.theme.min.css">
+<title>Prince - Release Notes for Prince 12</title>
+</head>
+<body>
+<div class="header-container">
+<div class="mainheader-container"><div class="header">
+<div class="logo"><a href="/"><img src="/images/Prince-logo.png" alt="Prince"></a></div>
+<div class="menu"><ul>
+<li><a href="/purchase/">
+                      Buy Prince</a></li>
+<li><a href="/samples/">
+                      Samples</a></li>
+<li><a href="/doc/">
+                      Documentation</a></li>
+<li><a href="/forum/">
+                      Forum</a></li>
+<li><a href="/download/" class="current">
+                      Download</a></li>
+</ul></div>
+<div style="clear:both"></div>
+<a class="mobile-menu-trigger"><img src="/images/menu-icon2.png" alt=""></a>
+</div></div>
+<div class="subheader-container"><div class="subheader">
+<div class="submenu"><ul>
+<li><a href="/download/15/">
+                    Prince 15</a></li>
+<li><a href="/latest/">
+                    Latest builds</a></li>
+<li><a href="/books/">
+                    Prince for Books</a></li>
+<li><a href="/releases/15/">
+                    Release Notes</a></li>
+<li><a href="/download/wrappers/">
+                    Wrappers</a></li>
+</ul></div>
+<div style="clear:both"></div>
+</div></div>
+</div>
+
+<div class="body-container">
+<div class="content1150">
+<h1 class="subpages-heading2">Release Notes for Prince 12</h1>
+<div class="content750">
+
+<h2 id="p12.5">Prince 12.5</h2>
+<p class="date">April 2019</p>
+
+<p>
+Explicitly tag headers and footers as pagination artifacts for all tagged
+PDFs, not just those in the PDF/UA-1 profile.
+</p>
+
+<p>
+Fixed an issue where PDF/A validators might not have recognised
+<code>rdf:resource</code> attributes.
+</p>
+
+<p>
+Fixed issues relating to images of unusual size.
+</p>
+
+<p>
+Fixed a bug where the <code>--pdf-xmp</code> option did not work correctly
+when used through the control interface.
+</p>
+
+<p>
+Fixed an issue when Prince would claim <code>internal error: no area</code>.
+</p>
+
+<p>
+Throw exception for JavaScript with too much recursion.
+</p>
+
+<p>
+Fixed a bug where the JavaScript <code>hash</code> property of anchor
+elements is incorrectly percent-decoded and not prefixed with the
+<code>#</code> mark.
+</p>
+
+<p>
+Fixed a bug in which a forced page break in a very tall fixed height block could
+cause Prince to hang.
+</p>
+
+<p>
+Improved performance for very large CSS style sheets.
+</p>
+
+
+<h2 id="p12.4">Prince 12.4</h2>
+<p class="date">January 2019</p>
+
+<p>
+Restricted redirects to HTTP and HTTPS URLs.
+</p>
+
+<p>
+Added the new command-line option <code>--no-redirects</code> which disables
+redirects entirely.
+</p>
+
+
+<h2 id="p12.3">Prince 12.3</h2>
+<p class="date">November 2018</p>
+
+<p>
+Support <code>prince-pdf-page-layout: two-page</code> as an alias for
+<code>two-page-left</code>.
+</p>
+
+<p>
+Fixed an issue where the <code>overflow</code> property was incorrectly applied
+to table rows.
+</p>
+
+<p>
+Fixed a bug in which opacity set on an element could affect following filters.
+</p>
+
+<p>
+Improved performance of tagged PDF for large documents.
+</p>
+
+
+<h2 id="p12.2.1">Prince 12.2.1</h2>
+<p class="date">September 2018</p>
+
+<p>
+Fixed bug affecting fonts on MacOS 10.14 (Mojave).
+</p>
+
+
+<h2 id="p12.2">Prince 12.2</h2>
+<p class="date">September 2018</p>
+
+<p>
+Fixed abort caused by Noto Glagolitic font having null offsets in the GSUB header.
+</p>
+
+<p>
+Fixed bug affecting zero-sized soft mask images in SVG.
+</p>
+
+
+<h2 id="p12.1">Prince 12.1</h2>
+<p class="date">August 2018</p>
+
+<h3>CSS Support</h3>
+
+<p>
+Allowed the <code>prince-filter-resolution</code> property to apply to individual
+elements, not just the <code>@prince-pdf</code> rule.
+</p>
+
+<p>
+Applied hyphenation to text in <code>white-space: pre-line</code> and
+<code>pre-wrap</code> blocks.
+</p>
+
+<p>
+Gave transformed links and non-rectangular SVG links more accurate clickable
+areas (eg. for 45deg rotations).
+</p>
+
+<p>
+Added support for HSL colors with the <code>hsl()</code> and <code>hsla()</code>
+functions.
+</p>
+
+<p>
+Added support for the orientation field in JPEG and TIFF images with the new CSS
+property <code>image-orientation</code>.
+</p>
+
+<h3>PDF Support</h3>
+
+<p>
+Set the default language field in the PDF when the <code>lang</code> or
+<code>xml:lang</code> attributes are present even for non-tagged PDF files.
+</p>
+
+<p>
+Set the PDF direction based on the direction and writing-mode of the document
+root element to support right-to-left books.
+</p>
+
+<h3>JavScript Support</h3>
+
+<p>
+Added support for the JavaScript <code>Number.toExponential</code> method.
+</p>
+
+<h3>Bug Fixes &amp; Improvements</h3>
+
+<h4>CSS</h4>
+
+<p>
+Fixed bug where links were not affected by CSS transforms.
+</p>
+
+<h4>SVG</h4>
+
+<p>
+Fixed masking of SVG image referenced by SVG image element.
+</p>
+
+<p>
+Fixed bug affecting SVG <code>feGaussianBlur</code> and <code>feDropShadow</code>
+filters.
+</p>
+
+<h4>JavaScript</h4>
+
+<p>
+Fixed bug where the JavaScript String <code>trim</code> function did not trim
+non-breaking spaces or other Unicode space characters.
+</p>
+
+<p>
+Fixed bug where the JavaScript <code>Number.toFixed</code> function returned the
+wrong result.
+</p>
+
+<p>
+Fixed bug in the box tracking API where boxes in columns and flex containers
+could have the wrong parent.
+</p>
+
+<h4>Miscellaneous</h4>
+
+<p>
+Fixed bug with zero font size text.
+</p>
+
+<p>
+Fixed an issue introduced in Prince 12 where PNG, GIF, and TIFF files
+would load slower on MacOS.
+</p>
+
+<p>
+Avoided unnecessary rasterisation when applying drop shadow filters.
+</p>
+
+<p>
+Clarified warning message about "filter resolution reduced by factor" that applies
+to overlarge images.
+</p>
+
+<p>
+Fixed bug where HTML character entities are handled incorrectly if
+they are the very last thing in the file or in the innerHTML string.
+</p>
+
+<p>
+Fixed an issue affecting whitespace collapsing around newlines in Thai
+text.
+</p>
+
+<p>
+Fixed bug in which tables with <code>max-width</code> set can end up
+unnecessarily wide.
+</p>
+
+
+<h2 id="p12">Prince 12</h2>
+<p class="date">June 2018</p>
+
+<h3>CSS Support</h3>
+
+<p>
+Support for CSS flexbox layout.
+</p>
+
+<p>
+Support for the <code>:checked</code>, <code>:disabled</code>, <code>:enabled</code>,
+<code>:read-only</code>, and <code>:read-write</code> selectors.
+</p>
+
+<p>
+Support for the <code>break-before</code>, <code>break-after</code>, and
+<code>break-inside</code> properties as shorthands for the
+<code>page/column-break-before/after/inside</code> properties.
+</p>
+
+<p>
+Support for <code>column-gap: normal</code>.
+</p>
+
+<p>
+Support for the <code>tab-size</code> property, although without full tab alignment.
+</p>
+
+<p>
+Support for percentage values for the <code>word-spacing</code> property.
+</p>
+
+<p>
+Support for setting the default zoom level with the <code>prince-pdf-open-action</code>
+property (unfortunately only working in Acrobat).
+</p>
+
+<p>
+Support for multiple chained actions for the <code>prince-pdf-open-action</code> property.
+</p>
+
+
+<h3>PDF Profiles &amp; Features</h3>
+
+<p>
+Support for tagged PDF and the PDF/A-1a, PDF/A-3, and PDF/UA-1 profiles.
+</p>
+
+<p>
+Support for combined PDF/A-1a+PDF/UA-1 and PDF/A-3a+PDF/UA-1 files.
+</p>
+
+<p>
+Support for PDF object streams, to reduce the size of tagged PDFs and PDFs
+with lots of link annotations. (Can be
+disabled by the new command-line argument <code>--no-object-streams</code> or
+from JavaScript via the <code>PDF.objectStreams</code> boolean property).
+</p>
+
+<p>
+Support for a new <code>--pdf-lang</code> command-line option and the
+<code>PDF.lang</code> JavaScript property for specifying the document language.
+</p>
+
+<p>
+Raised default PDF version to 1.5.
+</p>
+
+
+<h3>Javscript Support</h3>
+
+<p>
+Efficient support for large sparse arrays in JavaScript.
+</p>
+
+<p>
+Support for the <code>DataView</code> interface to JavaScript DOM typed arrays.
+</p>
+
+<p>
+Support for octal integer literals in JavaScript.
+</p>
+
+<p>
+Support for vertical tab as whitespace character in JavaScript.
+</p>
+
+<p>
+Support for the DOM <code>Document.compatMode</code> property, needed by KaTeX.
+</p>
+
+<p>
+Execute capturing event handlers in the JavaScript DOM.
+</p>
+
+<p>
+Expose individual columns in the box tracking API.
+</p>
+
+<p>
+Expose footnotes and page floats area in the box tracking API.
+</p>
+
+<p>
+Expose image URLs in the box tracking API.
+</p>
+
+
+<h3>Miscellaneous</h3>
+
+<p>
+Support for the U+2060 word joiner character.
+</p>
+
+<p>
+Support for SSL client certificates with new command-line options.
+</p>
+
+
+<h3>Bug Fixes &amp; Improvements</h3>
+
+<h4>CSS</h4>
+
+<p>
+Fixed bug where percentage widths on table cells that span multiple columns
+could be resolved incorrectly.
+</p>
+
+<p>
+Fixed issue where the orphans property could cause footnotes to be
+unnecessarily moved to the next page.
+</p>
+
+<p>
+Fixed issue where nested inline footnotes did not work properly.
+</p>
+
+<p>
+Investigated issues where overflowing content interacts with page and column
+breaking.
+</p>
+
+<p>
+Fixed issues affecting CSS clearfix techniques that cross page breaks.
+</p>
+
+<p>
+Fixed some issues affecting CSS clearfix techniques that don't cross page breaks.
+</p>
+
+<p>
+Changed <code>column-count: 1</code> to behave differently from
+<code>column-count: auto</code>, for consistency with browsers.
+</p>
+
+<p>
+Fixed some bugs with table minmax width calculation.
+</p>
+
+<p>
+Fixed some bugs with resolution of percentage margins and paddings.
+</p>
+
+<p>
+Don't collapse margins across block formatting context boundaries.
+</p>
+
+<p>
+Fixed margin collapsing bugs involving percentage <code>height</code> and
+<code>min-height</code> values.
+</p>
+
+<p>
+Fixed margin collapsing bugs involving empty blocks that establish new
+block formatting contexts.
+</p>
+
+<p>
+Fixed bug where margins would be repeated even when <code>box-decoration-break</code>
+is set to <code>slice</code>.
+</p>
+
+<p>
+Made <code>prince-hyphenate-lines</code> stricter and started to accept
+<code>prince-hyphenate-limit-lines</code> as an alias to bring it closer to CSS4.
+</p>
+
+<p>
+Limited squeezing in justified text so that spans with <code>white-space: nowrap</code>
+do not get squashed into overlapping themselves.
+</p>
+
+<p>
+Correctly took block <code>height</code> and <code>min-height</code> into account
+for blocks that cross page breaks.
+</p>
+
+<h4>Javascript</h4>
+
+<p>
+Fixed JavaScript bug where whitespace would not be trimmed when convering
+strings to numbers.
+</p>
+
+<p>
+Sped up accesses to JavaScript objects that have many properties.
+</p>
+
+<p>
+Fixed JavaScript bug where carriage return was not treated as a line
+terminator and would not trigger automatic semicolon insertion.
+</p>
+
+<p>
+Fixed bug where the JavaScript <code>Function.bind</code> method would not
+support a null first argument.
+</p>
+
+<p>
+Fixed bug where the <code>getElementsByTagName</code> DOM method would not lowercase
+its argument.
+</p>
+
+<p>
+Fixed bug where the DOM <code>querySelector</code> methods should be case-insensitive
+in HTML documents.
+</p>
+
+<p>
+Fixed bug where the DOM attribute methods and others should be
+case-insensitive in HTML documents.
+</p>
+
+<p>
+Allowed the DOM <code>innerHTML</code> property to be set to strings containing NULL
+characters.
+</p>
+
+<h4>Miscellaneous</h4>
+
+<p>
+Worked around bug in MacOS X Preview affecting OpenType CFF fonts.
+</p>
+
+<p>
+Support non-Latin font family names properly.
+</p>
+
+<p>
+Fixed bug affecting mark positioning in Thai text.
+</p>
+
+<p>
+Fixed bug that could affect the positioning of nested marks in complex
+OpenType fonts.
+</p>
+
+<p>
+Disabled the OpenType <code>fina</code> feature by default for non-Arabic scripts.
+</p>
+
+<p>
+Fixed issue where Prince would attempt to load <code>img</code> elements with
+empty <code>src</code> attributes.
+</p>
+
+<p>
+Fixed conformance issues for PDF/A and log numbers that went out of range.
+</p>
+
+<p>
+Improved accuracy of text positioning due to PDF font units differing
+slightly from TrueType font units (1/1000 vs. 1/2048).
+</p>
+
+<p>
+Fixed bug where PDF encryption disallow properties were inverted when set
+via the control interface.
+</p>
+
+<p>
+Changed default PDF encryption key size from 40 bits to 128 bits.
+</p>
+
+<p>
+Fixed bug that could affect the rasterisation of patterns inside filters.
+</p>
+
+<p>
+Improved conformance for XMP metadata parsing.
+</p>
+
+<p>
+Fixed bug causing crash on Ubuntu 18.04 virtual machine.
+</p>
+
+</div>
+
+<br>
+
+<p>
+See the <a href="/releases/">release history</a> for earlier versions of
+Prince.
+</p>
+
+</div>
+</div>
+
+<div class="content1150 footer-container"><div class="footer">
+<div class="footer-logo">
+<img src="/images/Prince-logo-footer.png" alt=""><br>
+                Copyright © 2002 – 2025 YesLogic Pty. Ltd.
+            </div>
+<ul class="footer-menu">
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+<div style="clear:both"></div>
+</div></div>
+<script src="/js/jquery-1.12.4.min.js"></script><script src="/js/jquery-ui-1.12.1.min.js"></script><script type="text/javascript" src="/js/skrollr-simplemodal-masonry.min.js"></script><script type="text/javascript" src="/js/common.js"></script>
+</body>
+</html>

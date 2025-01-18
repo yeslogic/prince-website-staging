@@ -1,0 +1,114 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<meta name="robots" content="noindex">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<title>Prince - Cross-references</title>
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+<div id="header-inner">
+<div><a href="/"><img src="/images/logo2.png" alt="Prince"></a></div>
+<ul id="primary-nav">
+<li><a href="/download/">Download</a></li>
+<li><a href="/purchase/">Buy Prince</a></li>
+<li><a href="/samples/">Samples</a></li>
+<li><a href="/doc/" class="curr">Documentation</a></li>
+<li><a href="/forum/">Forum</a></li>
+</ul>
+</div>
+<div id="header-shadow"></div>
+</div>
+<div id="intro"><div id="intro-inner"><h1>Cross-references</h1></div></div>
+
+<div class="main">
+
+
+
+<div class="col1">
+
+<p>
+Prince supports cross-references using generated content and two special
+functions, <i>target-counter</i> and <i>target-content</i>.
+</p>
+
+<h2>Using target-counter</h2>
+<p>
+The <i>target-counter</i> function can be used with the <i>content</i>
+property to reference the value of a counter at a linked element.
+</p>
+<div class="example">
+<p class="label">CSS</p>
+<pre class="css">
+a[href]::after {
+    content: " [See page " target-counter(attr(href), page) "]"
+}
+</pre>
+<p class="comment">
+This will add a cross-reference after every link with the correct page number
+determined automatically. For example: [See page 17].
+</p>
+</div>
+<p>
+The target-counter function can specify any counter, allowing cross-references
+to refer to list items, chapters or sections as well as pages.
+</p>
+<p>
+The target-counter function can also take an optional counter style, similar
+to the normal counter function.
+</p>
+<div class="example">
+<p class="label">CSS</p>
+<pre class="css">
+a[href]::after {
+    content: " [See chapter "
+	     target-counter(attr(href), chapter, upper-roman) 
+	     "]"
+}
+</pre>
+<p class="comment">
+This will add a cross-reference after every link with the correct chapter
+number determined automatically and displayed using roman numerals.
+For example: [See chapter IV].
+</p>
+</div>
+
+<h2>Using target-content</h2>
+<p>
+The <i>target-content</i> function can be used with the <i>content</i>
+property to reference the text content of a linked element.
+</p>
+<div class="example">
+<p class="label">CSS</p>
+<pre class="css">
+a[href]::after {
+    content: " [See '" target-content(attr(href)) "']"
+}
+</pre>
+<p class="comment">
+This will add a cross-reference after every link that includes the text of the
+element being linked to, such as a chapter title. For example:
+[See 'Introduction'].
+</p>
+</div>
+
+</div>
+
+</div>
+</div>
+<script src="/js/warning.js"></script>
+<div id="footer"><div id="footer-inner">
+<p id="footer-copy">Copyright © 2002 – 2025 YesLogic Pty. Ltd.</p>
+<ul id="footer-nav">
+<li><a href="/">Home</a></li>
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+</div></div>
+</body>
+</html>

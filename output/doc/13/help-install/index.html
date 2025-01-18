@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Help · Prince Documentation</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="The Prince Installation Guide tries to be exhaustive in explaining how to install the application. However, there might always be something not answered in the documentation, or something not working as expected. There are a couple of ways to get help to solve the problems:"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Help · Prince Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://www.princexml.com/"/><meta property="og:description" content="The Prince Installation Guide tries to be exhaustive in explaining how to install the application. However, there might always be something not answered in the documentation, or something not working as expected. There are a couple of ways to get help to solve the problems:"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://www.princexml.com/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="/js/warning.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/Prince-logo.png" alt="Prince Documentation"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/doc/" target="_self">Documentation</a></li><li class=""><a href="/doc/help" target="_self">Help</a></li><li class=""><a href="/doc/releases" target="_self">Release Notes</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Installation Guide</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Installation Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/installing">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/doc/13/first-doc">Your First Document</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/doc/13/help-install">Help</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">User Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/intro-userguide">Convert HTML to PDF</a></li><li class="navListItem"><a class="navItem" href="/doc/13/styling">Styling</a></li><li class="navListItem"><a class="navItem" href="/doc/13/paged">Paged Media</a></li><li class="navListItem"><a class="navItem" href="/doc/13/gen-content">Generated Content</a></li><li class="navListItem"><a class="navItem" href="/doc/13/javascript">Scripting</a></li><li class="navListItem"><a class="navItem" href="/doc/13/graphics">Graphics</a></li><li class="navListItem"><a class="navItem" href="/doc/13/cookbook">Prince Tips and Tricks</a></li><li class="navListItem"><a class="navItem" href="/doc/13/help">Help</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-input">Prince Input</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-output">Prince Output</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-networking">Prince Networking</a></li><li class="navListItem"><a class="navItem" href="/doc/13/server-integration">Server Integration</a></li><li class="navListItem"><a class="navItem" href="/doc/13/prince-for-books">Prince for Books</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Reference Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/doc/13/command-line">Command-line Reference</a></li><li class="navListItem"><a class="navItem" href="/doc/13/css-refs">CSS References</a></li><li class="navListItem"><a class="navItem" href="/doc/13/css-props">CSS Properties</a></li><li class="navListItem"><a class="navItem" href="/doc/13/js-support">JavaScript Support</a></li><li class="navListItem"><a class="navItem" href="/doc/13/page-size-keywords">Page Size Keywords</a></li><li class="navListItem"><a class="navItem" href="/doc/13/characters">Character Entities</a></li><li class="navListItem"><a class="navItem" href="/doc/13/acknowledgements">Acknowledgments</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Help</h1></header><article><div><span><p>The Prince Installation Guide tries to be exhaustive in explaining how to install the application. However, there might always be something not answered in the documentation, or something not working as expected. There are a couple of ways to get help to solve the problems:</p>
+<ul>
+<li>The <a href="#troubleshooting">Troubleshooting</a> section addresses possible common issues after installing and starting to use Prince;</li>
+<li>The <a href="#frequently-asked-questions">Frequently Asked Questions</a> section provides answers to the most frequently asked questions about installation;</li>
+<li>The <a href="//www.princexml.com/forum/">forum</a> is an excellent place where to find an answer to an issue, or where to ask for help;</li>
+<li>You can <a href="//www.princexml.com/contact/">contact us</a> for support.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="troubleshooting"></a><a href="#troubleshooting" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Troubleshooting</h2>
+<p>We work hard to make Prince work on multiple platforms (Windows, Linux, etc) and with multiple configurations. However things don't always work correctly the first time. You're very welcome to <a href="contact.html">contact us</a> for support or visit our <a href="forum/forum.html">forum</a>. However if you are facing a common problem, you may be able to find an explanation and solution below.</p>
+<h3><a class="anchor" aria-hidden="true" id="missing-glyphs-or-fonts"></a><a href="#missing-glyphs-or-fonts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Missing glyphs or fonts</h3>
+<p>Symptom</p>
+<pre><code class="hljs">prince: page 1: warning: no font for
+      Aegean Numbers character U+10123,
+      fallback to '?'
+</code></pre>
+<p>Explanation<br>
+Prince tries to tell you which page the missing glyph appeared on, what type of character it was (eg. &quot;Latin&quot;, &quot;Greek&quot;, etc.) and what character it used as a fallback (usually '?').</p>
+<p>Symptom</p>
+<pre><code class="hljs">prince: internal error: no available fonts
+</code></pre>
+<p>Explanation<br>
+However, if there are no available fonts on the system at all then it won't even be able to find the question mark glyph, and you get an internal error message.</p>
+<p>Solution 1<br>
+Install the <a href="http://corefonts.sourceforge.net">msttcorefonts</a> package (see your operating system's documentation).</p>
+<p>Solution 2<br>
+Redefine the CSS generic font families to use different TrueType fonts by editing the <code>fonts.css</code> file in the Prince installation - see <a href="/doc/13/installing#installation-layout">Installation Layout</a>, <a href="/doc/13/styling#fonts">Fonts</a> and <a href="/doc/13/styling#redefining-the-generic-font-families">Redefining the generic font families</a>.</p>
+<p>Explanation<br>
+This problem may be a symptom of the <a href="#fontconfig">Fontconfig</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="fontconfig"></a><a href="#fontconfig" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Fontconfig</h3>
+<p>Symptom</p>
+<pre><code class="hljs">Fontconfig error: Cannot load default config file
+</code></pre>
+<p>Explanation<br>
+Prince uses the <a href="http://www.fontconfig.org">Fontconfig</a> library on Linux systems to search for fonts. Fontconfig is installed as a standard component on most desktop Linux distributions such as Ubuntu and recent versions of Red Hat Linux.</p>
+<p>Some older Linux distributions do not come with fontconfig and this may cause the above error. This error will usually be followed by errors relating to <a href="#missing-glyphs-or-fonts">Missing glyphs or fonts</a> that cannot be found due to the absence of Fontconfig.</p>
+<p>Solution 1<br>
+install Fontconfig (see your operating system's documentation).</p>
+<p>Solution 2<br>
+Redefine the CSS generic font families to use TrueType fonts that are specified directly by their filenames, avoiding the need to use Fontconfig at all. In extreme cases it might be advisable to disable system fonts completely with the <a href="/doc/13/command-line#cl-no-system-fonts"><code>--no-system-fonts</code></a> command-line option. See <a href="/doc/13/styling#fonts">Fonts</a> and <a href="/doc/13/styling#redefining-the-generic-font-families">Redefining the generic font families</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="shared-library-trouble"></a><a href="#shared-library-trouble" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Shared library trouble</h3>
+<p>Symptom (Linux)</p>
+<pre><code class="hljs">/usr/local/stow/prince-9/lib/prince/bin/prince: error while loading shared
+libraries: libtiff.so.4: cannot open shared object file: No such file or
+directory
+</code></pre>
+<p>Symptom (FreeBSD)</p>
+<pre><code class="hljs">Shared object &quot;libxml2.so.2&quot; not found, required by &quot;prince&quot;
+</code></pre>
+<p>Explanation<br>
+Prince uses some third-party shared libraries, these are used for things such as decoding TIFF, PNG or JPEG files and finding and loading fonts. If one or more of these shared libraries cannot be found on your system then Prince will not run. This can occur if Prince was installed from a tarball (see <a href="/doc/13/installing#install-generic">Tarballs - Alpine Linux, FreeBSD and Generic Linux</a>).</p>
+<p>Solution 1<br>
+Install the missing library software. <a href="/doc/13/acknowledgements#acknowledgments">Acknowledgments</a> provides a list of the libraries that Prince uses. It is recommended to install them through your operating system's package management tool, see your operating system's documentation for more information.</p>
+<p>Solution 2<br>
+Prince is just using the system shared object loader for most libraries, so the <code>LD_LIBRARY_PATH</code> environment variable might need to be edited, if you have installed these libraries in non-standard or different locations.</p>
+<h3><a class="anchor" aria-hidden="true" id="path-issues"></a><a href="#path-issues" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>PATH</code> issues</h3>
+<p>Symptom</p>
+<pre><code class="hljs">-bash: prince: command not found
+</code></pre>
+<p>Explanation<br>
+The command interpreter (<code>bash</code>) does not know how to find the <code>prince</code> executable. It was not found in any of the locations specified by the <code>PATH</code> environment variable.</p>
+<p>Solution<br>
+Add Prince's <code>bin/</code> subdirectory to your <code>PATH</code> and ensure that these changes are saved for future shell sessions. If Prince is installed in <code>/opt/prince10</code>, then add <code>/opt/prince10/bin</code> to <code>PATH</code>. There are many different types of command interpreters (also called shells) and we cannot possibly document all of them. The appropriate command for borne-style shells (the most common type) is usually:</p>
+<pre><code class="hljs">export PATH=/opt/prince10/bin:$PATH
+</code></pre>
+<p>This should be added to your command interpreter's configuration. For more information see your operating system's documentation.</p>
+<h3><a class="anchor" aria-hidden="true" id="prince-cannot-be-run-on-macos-catalina"></a><a href="#prince-cannot-be-run-on-macos-catalina" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prince cannot be run on MacOS Catalina.</h3>
+<p>Symptom</p>
+<pre><code class="hljs">&gt; # &quot;prince&quot; cannot be opened because the developer cannot be verified.
+&gt; macOS cannot verify that this app is free from malware.
+</code></pre>
+<p>Explanation<br>
+Gatekeeper triggers a system alert when trying to run the Prince executable.</p>
+<p>Solution<br>
+In order to run Prince in a version lower than 13.6, you need to open the Security and Privacy preference pane in System Preferences, select the General tab, and click &quot;Allow Anyway&quot;.</p>
+<p>Starting with Prince 13.6, the Prince binaries are signed and do not trigger warnings.</p>
+<p>Alternatively, you can run the following commands from Terminal to first remove any quarantine attribute applied by Safari when downloading <code>prince</code>, and then manually add a SecAssessment system policy label to the executable:</p>
+<pre><code class="hljs">$ xattr -d -r com.apple.quarantine /usr/local/bin/prince
+$ spctl --add --label "Approved" /usr/local/bin/prince
+</code></pre>
+<p>Doing this will change the system alert to a system prompt to confirm running the executable.  For more information and possible further workarounds see also <a href="https://www.princexml.com/forum/topic/4255/macos-catalina-prince-cannot-be-opened-because-the-developer">this forum thread</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="frequently-asked-questions"></a><a href="#frequently-asked-questions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Frequently Asked Questions</h2>
+<dl class="faq">
+  <dt id="faq-win64"><p>Why does Prince on 64-bit Windows install
+  into the 32-bit compatibility directory `%ProgramFiles(x86)%`?
+  <a href="#faq-win64" class="self-link"></a></p></dt>
+  <dd><p>The Prince GUI is still a 32-bit program, but the formatting engine
+  is 64-bit.</p></dd>
+  <dt id="faq-win-no-ui"><p>How can I run Prince on Windows without showing the UI?
+  <a href="#faq-win-no-ui" class="self-link"></a></p></dt>
+  <dd><p>On Linux, you typically run Prince with the following command:</p>
+  <pre><code class="hljs">    prince file.xml -o file.pdf</code></pre>
+  <p>On Windows, you replace the name of the executable with
+  <code>Prince\engine\bin\prince.exe</code> in the installation directory
+  (see <a href="installing#windows-installation-layout">Windows installation layout</a>,
+  which is the command-line program. See also <a href="command-line#command-line">Command-line Reference</a>.</p>
+  <pre><code class="hljs">    "C:\Program Files (x86)\Prince\engine\bin\prince.exe" file.xml -o file.pdf</code></pre></dd>
+  <dt id="faq-install-cloud"><p>Can I install Prince on cloud services or
+  containers (Azure, AWS, Docker)? <a href="#faq-install-cloud" class="self-link"></a></p></dt>
+  <dd><p>Prince can be installed on the <a href="installing#installing">supported operating systems</a> -
+  also when they are running in cloud or container services. On Linux, some
+  environments might not provide for all dependencies - you can address this
+  by either trying to install the Generic Linux Prince package (see
+  <a href="installing#install-generic">Tarballs - Alpine Linux, FreeBSD and Generic Linux</a>),
+  or by trying to install the missing dependencies.</p>
+  <p>Our chapter on <a href="server-integration#prince-in-cloud-computing">Prince In Cloud Computing</a>
+  details installation instructions for Prince on <a href="server-integration#prince-docker-image">Docker</a>,
+  <a href="server-integration#prince-on-microsoft-azure">Microsoft Azure</a>,
+  <a href="server-integration#prince-on-aws-lambda">AWS Lambda</a> and
+  <a href="server-integration#prince-on-ec2">AWS EC2</a>.</p>
+  <p>See also <a href="https://www.princexml.com/forum/topic/2094/silent-installation-on-windows#20332">this forum post</a>
+  for a description of an installation on Azure.</p></dd>
+  <dt id="faq-install-books"><p>How do I install Prince for Books?
+  <a href="#faq-install-books" class="self-link"></a></p></dt>
+  <dd><p><a href="prince-for-books#pfb">Prince for Books</a> is available
+  in package bundles only - to install it, the files need to be copied into
+  place (Windows), or an installation script needs to be run (on Linux and MacOS X).
+  It can be installed without problem alongside a normal Prince installation -
+  the executable to run is called <code>prince-books</code>.</p></dd>
+  <dt id="faq-install-wrappers"><p>How do I install the Prince wrappers?
+  <a href="#faq-install-wrappers" class="self-link"></a></p></dt>
+  <dd><p>The <a href="/doc/server-integration/#prince-wrappers">Prince Wrappers</a> come in
+  different languages, and each one has a different installation procedure.
+  Mostly they are explained in the documentation for each of the
+  <a href="/doc/server-integration/#prince-wrappers">Prince Wrappers</a>. The short principle
+  is that the wrapper files need to be placed in a location from which they can
+  run - this may slightly vary depending on the hosting Operating System.</p></dd>
+</dl>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/doc/13/first-doc"><span class="arrow-prev">← </span><span>Your First Document</span></a><a class="docs-next button" href="/doc/13/intro-userguide"><span>Convert HTML to PDF</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#troubleshooting">Troubleshooting</a><ul class="toc-headings"><li><a href="#missing-glyphs-or-fonts">Missing glyphs or fonts</a></li><li><a href="#fontconfig">Fontconfig</a></li><li><a href="#shared-library-trouble">Shared library trouble</a></li><li><a href="#path-issues"><code>PATH</code> issues</a></li><li><a href="#prince-cannot-be-run-on-macos-catalina">Prince cannot be run on MacOS Catalina.</a></li></ul></li><li><a href="#frequently-asked-questions">Frequently Asked Questions</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="copyright"><div class="about-contact"><a href="/company/">About us</a> | <a href="/contact/">Contact</a></div><div class="copyright">Copyright © 2022 YesLogic Pty. Ltd.</div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '63dda203371e77ee63a05de413c3d741',
+                indexName: 'princexml',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {"facetFilters":["language:en"]}
+              });
+            </script></body></html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html><html class="p10" id="releases">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/common10.css">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.min.css">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.theme.min.css">
+<title>Prince - Release Notes for Prince 9.0</title>
+</head>
+<body>
+<div class="header-container">
+<div class="mainheader-container"><div class="header">
+<div class="logo"><a href="/"><img src="/images/Prince-logo.png" alt="Prince"></a></div>
+<div class="menu"><ul>
+<li><a href="/purchase/">
+                      Buy Prince</a></li>
+<li><a href="/samples/">
+                      Samples</a></li>
+<li><a href="/doc/">
+                      Documentation</a></li>
+<li><a href="/forum/">
+                      Forum</a></li>
+<li><a href="/download/" class="current">
+                      Download</a></li>
+</ul></div>
+<div style="clear:both"></div>
+<a class="mobile-menu-trigger"><img src="/images/menu-icon2.png" alt=""></a>
+</div></div>
+<div class="subheader-container"><div class="subheader">
+<div class="submenu"><ul>
+<li><a href="/download/15/">
+                    Prince 15</a></li>
+<li><a href="/latest/">
+                    Latest builds</a></li>
+<li><a href="/books/">
+                    Prince for Books</a></li>
+<li><a href="/releases/15/">
+                    Release Notes</a></li>
+<li><a href="/download/wrappers/">
+                    Wrappers</a></li>
+</ul></div>
+<div style="clear:both"></div>
+</div></div>
+</div>
+
+<div class="body-container">
+<div class="content1150">
+<h1 class="subpages-heading2">Release Notes for Prince 9.0</h1>
+<div class="content750">
+
+<h2 id="p90">Prince 9.0</h2>
+<p class="date">June 2013</p>
+
+<h3>JavaScript Support</h3>
+
+<p>
+Support for the canvas element and JavaScript API.
+</p>
+
+<p>
+Faster JavaScript execution.
+</p>
+
+<p>
+Faster JavaScript DOM access,
+particularly for node lists returned by
+getElementsByTagName.
+</p>
+
+<p>
+Support for the Image constructor in the JavaScript DOM.
+</p>
+
+<p>
+Support for the DOMParser interface in the JavaScript DOM.
+</p>
+
+<p>
+Support for more JavaScript DOM properties:
+</p>
+
+<ul>
+<li>document.head</li>
+<li>script.type</li>
+<li>option.selected</li>
+<li>option.disabled</li>
+<li>input.type</li>
+<li>input.checked</li>
+<li>input.disabled</li>
+<li>window.location.host</li>
+<li>window.location.hostname</li>
+<li>window.location.port</li>
+<li>window.location.pathname</li>
+<li>link.title</li>
+<li>link.disabled</li>
+</ul>
+
+<p>
+Changed nodeName and tagName DOM properties to return
+uppercase HTML element names.
+</p>
+
+<p>
+Changed document.createElement DOM method to create elements in the HTML
+namespace.
+</p>
+
+<p>
+Support for accessing attributes by name from Element.attributes, needed to support jQuery 1.9+.
+</p>
+
+<p>
+Support for JavaScript Typed Array objects (unsigned ints only, for now).
+</p>
+
+<p>
+Support for the JavaScript Object methods create, defineProperty, and
+defineProperties.
+</p>
+
+<p>
+Prince script functions now require registration with Prince.addScriptFunc.
+</p>
+
+<p>
+Support for trailing commas in JavaScript object literals.
+</p>
+
+<p>
+Support for non-ASCII JavaScript identifiers.
+</p>
+
+<p>
+Fixed bug where JavaScript RegExp lastIndex property was not writable.
+</p>
+
+<p>
+Fixed bug where JavaScript parseFloat function would fail on non-digit characters.
+</p>
+
+<h3>HTML Support</h3>
+
+<p>
+Enabled new HTML5 parser by default.
+</p>
+
+<p>
+Documents with no filename are treated as HTML, not XML.
+</p>
+
+<p>
+HTML elements are placed in the HTML namespace.
+</p>
+
+<p>
+Support for SVG elements and attributes with mixed-case names inside HTML
+documents.
+</p>
+
+<p>
+Support for new HTML5 elements without warning messages.
+</p>
+
+<p>
+Support for new HTML5 meta charset syntax.
+</p>
+
+<p>
+Removed redundant warning when HTML elements have identical id and name
+attributes.
+</p>
+
+<p>
+Fixed issues involving special characters in script elements.
+</p>
+
+<p>
+Fixed bug where a null byte in HTML files terminates parsing.
+</p>
+
+<p>
+Fixed bug where text between table cells results in a new table column.
+</p>
+
+<h3>SVG Support</h3>
+
+<p>
+Support for the stroke-miterlimit property on SVG elements.
+</p>
+
+<p>
+Support for text-decoration properties on SVG text elements.
+</p>
+
+<p>
+Support for xml:space="preserve" and the CSS white-space property on SVG tspan elements.
+</p>
+
+<p>
+Support for SVG tref elements.
+</p>
+
+<p>
+Pixel units in SVG are now scaled consistently with unitless coordinates.
+</p>
+
+<p>
+SVG images without a viewBox attribute use the width and height
+attributes to determine the initial coordinate system.
+</p>
+
+<p>
+Fixed bug affecting nested SVG patterns/gradients and SVG images used as
+repeating backgrounds.
+</p>
+
+<p>
+Fixed bug affecting some numbers in scientific/exponential notation in SVG.
+</p>
+
+<h3>CSS Footnotes</h3>
+
+<p>
+Support for inline footnotes with "float: prince-inline-footnote | prince-column-inline-footnote".
+</p>
+
+<p>
+Support for absolutely positioning the @footnotes area.
+</p>
+
+<p>
+Support for the max-height property on the @footnotes area.
+</p>
+
+<p>
+Added "prince-footnote-policy: auto | keep-with-line | keep-with-block" to push footnote calls to the next
+page if there is not enough space to fit the footnote body on the same page.
+</p>
+
+<p>
+Added a warning when a footnote ends up on a different page from the
+footnote call.
+</p>
+
+<p>
+Footnotes and floats will now break across multiple pages unless overridden
+with page-break-inside.
+</p>
+
+<p>
+Fixed bug where footnotes in table headers and captions were repeated on
+subsequent pages.
+</p>
+
+<h3>CSS Backgrounds</h3>
+
+<p>
+Support for multiple backgrounds on a single element.
+</p>
+
+<p>
+Support for background gradients.
+</p>
+
+<p>
+Support for the background-size property.
+</p>
+
+<p>
+Support for the background-clip and background-origin properties.
+</p>
+
+<p>
+Support for padding-box as a value for the box-sizing property.
+</p>
+
+<h3>CSS Layout</h3>
+
+<p>
+Support for vertical text layout.
+</p>
+
+<p>
+Support for "text-overflow: clip | ellipsis".
+</p>
+
+<p>
+Support for the transform and transform-origin properties on page margin boxes.
+</p>
+
+<p>
+Renamed border-break property to box-decoration-break.
+</p>
+
+<p>
+Support for box-decoration-break property on table elements.
+</p>
+
+<p>
+Support for "position: running(ident)" and "content: element(ident)" syntax for flows
+defined in CSS GCPM module.
+</p>
+
+<p>
+Changed the prince-link property so that it no longer affects the :link
+selector.
+</p>
+
+<p>
+Changed crop marks so that they extend into the page bleed area.
+</p>
+
+<p>
+Improved height calculation for tables with specified height by taking
+specified row heights into account before dividing table height across rows.
+</p>
+
+<p>
+Added an experimental --css-dpi=DPI option to change the default DPI value used
+for pixel measurements.
+</p>
+
+<p>
+Fixed bug where negative margin-top could break the layout of following blocks in
+some circumstances.
+</p>
+
+<p>
+Fixed bug affecting the layout of page margin boxes.
+</p>
+
+<p>
+Fixed bug affecting transforms where matrix() translation offsets were
+incorrectly scaled and inverted.
+</p>
+
+<p>
+Fixed bug affecting tables with collapsed borders and cells that span rows
+across page breaks.
+</p>
+
+<p>
+Fixed bug where background and border properties did not apply to :blank pages.
+</p>
+
+<p>
+Fixed bug in which shrink to fit blocks such as floats and inline blocks
+could have an incorrect width when they contained tables with
+cells that have a specified width.
+</p>
+
+<p>
+Fixed bug where page floats could overlap with table footers.
+</p>
+
+<p>
+Fixed bug where prince-page-group could cause unwanted page breaks for elements
+that span multiple columns.
+</p>
+
+<p>
+Fixed bug affecting :nth-of-type(n+4) and related CSS3 Selectors.
+</p>
+
+<h3>Font Support</h3>
+
+<p>
+Enabled OpenType font features for rendering Syriac text.
+</p>
+
+<p>
+Added Japanese fonts to default serif and sans-serif font families.
+</p>
+
+<p>
+Accept local(FontName) without quotes in @font-face declaration src property.
+</p>
+
+<p>
+Added a warning for cyclic @font-face definitions.
+</p>
+
+<p>
+Fixed warning "get_gpos_adjust: pos_pair_unknown" triggered by complex OpenType
+fonts, eg. some Hebrew and Syriac fonts.
+</p>
+
+<h3>Miscellaneous Improvements</h3>
+
+<p>
+New Windows GUI.
+</p>
+
+<p>
+Support for PDF/A-1b.
+</p>
+
+<br>
+
+<p>
+See the <a href="/releases/">release history</a> for earlier versions of
+Prince.
+</p>
+
+</div>	
+</div>
+</div>
+
+<div class="content1150 footer-container"><div class="footer">
+<div class="footer-logo">
+<img src="/images/Prince-logo-footer.png" alt=""><br>
+                Copyright © 2002 – 2025 YesLogic Pty. Ltd.
+            </div>
+<ul class="footer-menu">
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+<div style="clear:both"></div>
+</div></div>
+<script src="/js/jquery-1.12.4.min.js"></script><script src="/js/jquery-ui-1.12.1.min.js"></script><script type="text/javascript" src="/js/skrollr-simplemodal-masonry.min.js"></script><script type="text/javascript" src="/js/common.js"></script>
+</body>
+</html>

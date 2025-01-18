@@ -1,0 +1,148 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<meta name="robots" content="noindex">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<title>Prince - Page Numbers</title>
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+<div id="header-inner">
+<div><a href="/"><img src="/images/logo2.png" alt="Prince"></a></div>
+<ul id="primary-nav">
+<li><a href="/download/">Download</a></li>
+<li><a href="/purchase/">Buy Prince</a></li>
+<li><a href="/samples/">Samples</a></li>
+<li><a href="/doc/" class="curr">Documentation</a></li>
+<li><a href="/forum/">Forum</a></li>
+</ul>
+</div>
+<div id="header-shadow"></div>
+</div>
+<div id="intro"><div id="intro-inner"><h1>Page Numbers</h1></div></div>
+
+<div class="main">
+
+
+
+<div class="col1">
+
+<p>
+Page numbering is achieved by using the <i>page</i> counter,
+a pre-defined counter that represents the current page number.
+</p>
+<p>
+The <i>page</i> counter starts at 1 and increments automatically
+at each new page. (Note that the page counter cannot be incremented
+manually using the <i>counter-increment</i> property).
+</p>
+<p>
+The <i>page</i> counter can be reset using the <i>counter-reset</i> property
+at any block-level element within a non-floating element in the normal flow.
+This is useful for restarting page numbering at a new section of the document.
+</p>
+
+<div class="example">
+<p class="label">XML</p>
+<pre class="doc">
+&lt;mybook&gt;
+    &lt;front&gt; cover page, etc, ... &lt;/front&gt;
+    &lt;contents&gt; 
+        table of contents, ... 
+    &lt;/contents&gt;
+    &lt;body&gt;
+        body of the book, ...
+    &lt;/body&gt;
+    &lt;appendix&gt; appendices, ... &lt;/appendix&gt;
+&lt;/mybook&gt;
+</pre>
+<p class="label">CSS</p>
+<pre class="css">
+contents {
+    display: block;
+    page: table-of-contents;
+    counter-reset: page 1
+}
+@page table-of-contents {
+    @top { content: "Table of Contents" }
+    @bottom {
+        content: counter(page, lower-alpha)
+    }
+}
+</pre>
+<p class="comment">
+The rule for the <i>contents</i> element names the pages that it appears on
+as "table-of-contents" and resets the page counter to 1 at the start of
+the element.
+</p>
+<p class="comment">
+The @page rule for the "table-of-contents" pages generates a page footer
+that contains the current page number in "lower-alpha" style.
+</p>
+
+<p class="label">CSS</p>
+<pre class="css">
+body {
+    display: block;
+    page: main;
+    counter-reset: page 1
+}
+@page main {
+    @top { content: string(chapter-title) }
+    @bottom {
+        content: counter(page)
+    }
+}
+
+chapter title { string-set: chapter-title content() }
+</pre>
+<p class="comment">
+The rule for the <i>body</i> element names the pages that it appears on as
+"main" and resets the page counter to 1 at the start of the element.
+</p>
+<p class="comment">
+The @page rule for the "main" pages generates a page footer
+that contains the current page number in the default decimal style.
+</p>
+
+<h2>Total number of pages</h2>
+<p>
+The total number of pages in the document can be accessed using the
+<i>pages</i> counter, a pre-defined counter that is automatically fixed
+to the number of pages in the document.
+</p>
+<div class="example">
+<p class="label">CSS</p>
+<pre>
+@page {
+    @bottom {
+	content: "Page " counter(page) " of " counter(pages)
+    }
+}
+</pre>
+<p class="comment">
+This rule will generate page footers such as "Page 1 of 89".
+</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+<script src="/js/warning.js"></script>
+<div id="footer"><div id="footer-inner">
+<p id="footer-copy">Copyright © 2002 – 2025 YesLogic Pty. Ltd.</p>
+<ul id="footer-nav">
+<li><a href="/">Home</a></li>
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+</div></div>
+</body>
+</html>

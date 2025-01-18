@@ -1,0 +1,545 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<meta name="robots" content="noindex">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<title>Prince - CSS Selectors</title>
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<style type="text/css">
+td.example {
+    padding-right: 3em;
+    vertical-align: top
+}
+
+code { white-space: pre }
+</style>
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+<div id="header-inner">
+<div><a href="/"><img src="/images/logo2.png" alt="Prince"></a></div>
+<ul id="primary-nav">
+<li><a href="/download/">Download</a></li>
+<li><a href="/purchase/">Buy Prince</a></li>
+<li><a href="/samples/">Samples</a></li>
+<li><a href="/doc/" class="curr">Documentation</a></li>
+<li><a href="/forum/">Forum</a></li>
+</ul>
+</div>
+<div id="header-shadow"></div>
+</div>
+<div id="intro"><div id="intro-inner"><h1>CSS Selectors</h1></div></div>
+
+<div class="main">
+
+
+
+<p>
+<a href="/doc/9.0/">User Guide</a> /
+<a href="/doc/9.0/#cssref">CSS Reference</a>
+</p>
+
+<div class="col1">
+
+<p>
+Below are examples of all of the CSS selectors supported by Prince 9.0.
+For their precise definition please refer to the CSS specifications.
+</p>
+<div class="selectors">
+<h3>Universal Selectors</h3>
+<table>
+<tr>
+<td class="example"><code>*</code></td>
+<td>elements in the default namespace</td>
+</tr>
+<tr>
+<td class="example"><code>|*</code></td>
+<td>elements in no namespace</td>
+</tr>
+<tr>
+<td class="example"><code>ns|*</code></td>
+<td>elements in the namespace with prefix <code>ns</code>
+</td>
+</tr>
+<tr>
+<td class="example"><code>*|*</code></td>
+<td>elements in any or no namespace</td>
+</tr>
+</table>
+
+<h3>Type Selectors</h3>
+<table>
+<tr>
+<td class="example"><code>div</code></td>
+<td>
+<code>div</code> elements in the default namespace</td>
+</tr>
+<tr>
+<td class="example"><code>|div</code></td>
+<td>
+<code>div</code> elements in no namespace</td>
+</tr>
+<tr>
+<td class="example"><code>ns|div</code></td>
+<td>
+<code>div</code> elements in the namespace with prefix <code>ns</code>
+</td>
+</tr>
+<tr>
+<td class="example"><code>*|div</code></td>
+<td>
+<code>div</code> elements in any namespace or in none</td>
+</tr>
+</table>
+
+<h3>Descendant Selectors</h3>
+<table>
+<tr>
+<td class="example"><code>div p</code></td>
+<td>
+<code>p</code> elements that are within a <code>div</code> element
+</td>
+</tr>
+<tr>
+<td class="example"><code>* p</code></td>
+<td>
+<code>p</code> elements that are within any element (ie. not the root element)
+</td>
+</tr>
+</table>
+
+<h3>Child Selectors</h3>
+<table>
+<tr>
+<td class="example"><code>div &gt; p</code></td>
+<td>
+<code>p</code> elements that are the direct children of <code>div</code>
+elements
+</td>
+</tr>
+<tr>
+<td class="example"><code>p &gt; *</code></td>
+<td>
+any elements that are the direct children of <code>p</code> elements
+</td>
+</tr>
+</table>
+
+<h3>Direct Sibling Selectors</h3>
+<table>
+<tr>
+<td class="example"><code>div + p</code></td>
+<td>
+<code>p</code> elements that directly follow <code>div</code> elements
+</td>
+</tr>
+<tr>
+<td class="example"><code>p + *</code></td>
+<td>
+any elements that directly follow <code>p</code> elements
+</td>
+</tr>
+</table>
+
+<h3>Indirect Sibling Selectors</h3>
+<table>
+<tr>
+<td class="example"><code>div ~ p</code></td>
+<td>
+<code>p</code> elements anywhere after <code>div</code> elements
+</td>
+</tr>
+<tr>
+<td class="example"><code>p ~ *</code></td>
+<td>
+any elements anywhere after <code>p</code> elements
+</td>
+</tr>
+</table>
+
+<h3>Attribute Selectors</h3>
+<table>
+<tr>
+<td class="example"><code>*[href]</code></td>
+<td>
+elements with an <code>href</code> attribute
+</td>
+</tr>
+<tr>
+<td class="example"><code>*[align="right"]</code></td>
+<td>
+elements with an <code>align</code> attribute of <code>right</code>
+</td>
+</tr>
+<tr>
+<td class="example"><code>*[href^="http:"]</code></td>
+<td>
+elements with an <code>href</code> attribute beginning with
+<code>http:</code>
+</td>
+</tr>
+<tr>
+<td class="example"><code>*[href$=foo]</code></td>
+<td>
+elements with an <code>href</code> attribute ending with
+<code>foo</code>
+</td>
+</tr>
+<tr>
+<td class="example"><code>*[href*=foo]</code></td>
+<td>
+elements with an <code>href</code> attribute containing <code>foo</code>
+</td>
+</tr>
+<tr>
+<td class="example"><code>*[words~=foo]</code></td>
+<td>
+elements with a <code>words</code> attribute containing the word
+<code>foo</code>
+</td>
+</tr>
+<tr>
+<td class="example"><code>*[lang|=en]</code></td>
+<td>
+elements with a <code>lang</code> attribute equal to or beginning with
+<code>en</code>
+</td>
+</tr>
+</table>
+
+<h3>Class Selectors</h3>
+<table>
+<tr>
+<td class="example"><code>p.intro</code></td>
+<td>
+<code>p</code> elements with a <code>class</code> attribute containing the
+word <code>intro</code>
+</td>
+</tr>
+</table>
+
+<h3>ID Selectors</h3>
+<table>
+<tr>
+<td class="example"><code>p#intro</code></td>
+<td>
+<code>p</code> elements with an <code>id</code> attribute of
+<code>intro</code>
+</td>
+</tr>
+</table>
+
+<h3>Link Selectors</h3>
+<table>
+<tr>
+<td class="example"><code>:link</code></td>
+<td>elements that represent links</td>
+</tr>
+<tr>
+<td class="example"><code>a[href^="mailto:"]:link</code></td>
+<td>elements that link to an email address</td>
+</tr>
+</table>
+
+<h3>Language Selectors</h3>
+<table>
+<tr>
+<td class="example"><code>:lang(en)</code></td>
+<td>elements whose specified language is English</td>
+</tr>
+<tr>
+<td class="example"><code>q:lang(fr-CA)</code></td>
+<td>quotes whose specified language is French (Canadian)</td>
+</tr>
+</table>
+
+<h3>Contains Selectors</h3>
+<table>
+<tr>
+<td class="example"><code>p:contains("synergy")</code></td>
+<td>paragraphs containing the text "synergy"</td>
+</tr>
+</table>
+
+<h3>Root Selectors</h3>
+<table>
+<tr>
+<td class="example"><code>:root</code></td>
+<td>the root element of the document</td>
+</tr>
+<tr>
+<td class="example"><code>html:root</code></td>
+<td>
+<code>html</code> root elements
+</td>
+</tr>
+<tr>
+<td class="example"><code>:root &gt; *</code></td>
+<td>
+children of the root element
+</td>
+</tr>
+</table>
+
+<h3>Empty Selectors</h3>
+<table>
+<tr>
+<td class="example"><code>div:empty</code></td>
+<td>
+every empty <code>div</code> element
+</td>
+</tr>
+</table>
+
+<h3>Negated Selectors</h3>
+<table>
+<tr>
+<td class="example"><code>*:not(p)</code></td>
+<td>
+every element except <code>p</code> elements
+</td>
+</tr>
+<tr>
+<td class="example"><code>div:not(:empty)</code></td>
+<td>
+every non-empty <code>div</code> element
+</td>
+</tr>
+<tr>
+<td class="example"><code>a:not([href])</code></td>
+<td>
+every <code>a</code> element without a <code>href</code> attribute
+</td>
+</tr>
+</table>
+
+<h3>Child Selectors</h3>
+<table>
+<tr>
+<td class="example"><code>div &gt; :first-child</code></td>
+<td>
+the first child of a <code>div</code> element
+</td>
+</tr>
+<tr>
+<td class="example"><code>div &gt; :last-child</code></td>
+<td>
+the last child of a <code>div</code> element
+</td>
+</tr>
+<tr>
+<td class="example"><code>div &gt; :only-child</code></td>
+<td>
+the only child of a <code>div</code> element
+</td>
+</tr>
+</table>
+
+<h3>Typed Child Selectors</h3>
+<table>
+<tr>
+<td class="example"><code>div &gt; p:first-of-type</code></td>
+<td>
+the first <code>p</code> element child of a <code>div</code> element
+</td>
+</tr>
+<tr>
+<td class="example"><code>div &gt; p:last-of-type</code></td>
+<td>
+the last <code>p</code> element child of a <code>div</code> element
+</td>
+</tr>
+<tr>
+<td class="example"><code>div &gt; p:only-of-type</code></td>
+<td>
+the only <code>p</code> element child of a <code>div</code> element
+</td>
+</tr>
+</table>
+
+<h3>Nth Child Selectors</h3>
+<table>
+<tr>
+<td class="example"><code>div &gt; :nth-child(3)</code></td>
+<td>
+the third child of a <code>div</code> element
+</td>
+</tr>
+<tr>
+<td class="example"><code>div &gt; :nth-child(even)</code></td>
+<td>
+every even child of a <code>div</code> element
+</td>
+</tr>
+<tr>
+<td class="example"><code>div &gt; :nth-child(odd)</code></td>
+<td>
+every odd child of a <code>div</code> element
+</td>
+</tr>
+<tr>
+<td class="example"><code>div &gt; :nth-child(3n)</code></td>
+<td>
+every third child of a <code>div</code> element
+</td>
+</tr>
+</table>
+
+<h3>Nth Last Child Selectors</h3>
+<table>
+<tr>
+<td class="example"><code>div &gt; :nth-last-child(3)</code></td>
+<td>
+the third last child of a <code>div</code> element
+</td>
+</tr>
+<tr>
+<td class="example"><code>div &gt; :nth-last-child(even)</code></td>
+<td>
+every even last child of a <code>div</code> element
+</td>
+</tr>
+<tr>
+<td class="example"><code>div &gt; :nth-last-child(odd)</code></td>
+<td>
+every odd last child of a <code>div</code> element
+</td>
+</tr>
+<tr>
+<td class="example"><code>div &gt; :nth-last-child(3n)</code></td>
+<td>
+every third last child of a <code>div</code> element
+</td>
+</tr>
+</table>
+
+<h3>Nth of Type Selectors</h3>
+<table>
+<tr>
+<td class="example"><code>div &gt; p:nth-of-type(3)</code></td>
+<td>
+the third <code>p</code> element child of a <code>div</code> element
+</td>
+</tr>
+<tr>
+<td class="example"><code>div &gt; p:nth-of-type(even)</code></td>
+<td>
+every even <code>p</code> element child of a <code>div</code> element
+</td>
+</tr>
+<tr>
+<td class="example"><code>div &gt; p:nth-of-type(odd)</code></td>
+<td>
+every odd <code>p</code> element child of a <code>div</code> element
+</td>
+</tr>
+<tr>
+<td class="example"><code>div &gt; p:nth-of-type(3n)</code></td>
+<td>
+every third <code>p</code> element child of a <code>div</code> element
+</td>
+</tr>
+</table>
+
+<h3>Nth Last of Type Selectors</h3>
+<table>
+<tr>
+<td class="example"><code>div &gt; p:nth-last-of-type(3)</code></td>
+<td>
+the third last <code>p</code> element child of a <code>div</code> element
+</td>
+</tr>
+<tr>
+<td class="example"><code>div &gt; p:nth-last-of-type(even)</code></td>
+<td>
+every even last <code>p</code> element child of a <code>div</code> element
+</td>
+</tr>
+<tr>
+<td class="example"><code>div &gt; p:nth-last-of-type(odd)</code></td>
+<td>
+every odd last <code>p</code> element child of a <code>div</code> element
+</td>
+</tr>
+<tr>
+<td class="example"><code>div &gt; p:nth-last-of-type(3n)</code></td>
+<td>
+every third last <code>p</code> element child of a <code>div</code> element
+</td>
+</tr>
+</table>
+
+<h3>Pseudo-element Selectors</h3>
+<table>
+<tr>
+<td class="example"><code>p::before</code></td>
+<td>
+the beginning of every <code>p</code> element
+
+</td>
+</tr>
+<tr>
+<td class="example"><code>p::after</code></td>
+<td>
+the end of every <code>p</code> element
+
+</td>
+</tr>
+<tr>
+<td class="example"><code>ol &gt; li::marker</code></td>
+<td>
+markers in ordered list items
+
+</td>
+</tr>
+<tr>
+<td class="example"><code>p::first-letter</code></td>
+<td>
+the first letter of <code>p</code> elements
+
+</td>
+</tr>
+<tr>
+<td class="example"><code>p::first-line</code></td>
+<td>
+the first line of <code>p</code> elements
+
+</td>
+</tr>
+<tr>
+<td class="example"><code>::footnote-call</code></td>
+<td>
+footnote calls, the anchors that refer to footnotes
+
+</td>
+</tr>
+<tr>
+<td class="example"><code>::footnote-marker</code></td>
+<td>
+footnote markers, placed in front of the actual footnote text
+
+</td>
+</tr>
+</table>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<script src="/js/warning.js"></script>
+<div id="footer"><div id="footer-inner">
+<p id="footer-copy">Copyright © 2002 – 2025 YesLogic Pty. Ltd.</p>
+<ul id="footer-nav">
+<li><a href="/">Home</a></li>
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+</div></div>
+</body>
+</html>

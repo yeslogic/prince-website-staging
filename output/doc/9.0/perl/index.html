@@ -1,0 +1,117 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<meta name="robots" content="noindex">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<title>Prince - Converting HTML to PDF from Perl</title>
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+<div id="header-inner">
+<div><a href="/"><img src="/images/logo2.png" alt="Prince"></a></div>
+<ul id="primary-nav">
+<li><a href="/download/">Download</a></li>
+<li><a href="/purchase/">Buy Prince</a></li>
+<li><a href="/samples/">Samples</a></li>
+<li><a href="/doc/" class="curr">Documentation</a></li>
+<li><a href="/forum/">Forum</a></li>
+</ul>
+</div>
+<div id="header-shadow"></div>
+</div>
+<div id="intro"><div id="intro-inner"><h1>Converting HTML to PDF from Perl</h1></div></div>
+
+<div class="main">
+
+
+
+<p>
+<a href="/doc/9.0/">User Guide</a> /
+<a href="/doc/9.0/#server">Server Integration</a>
+</p>
+
+<div class="col1">
+
+<p>
+Prince can be called from Perl using the
+<a href="/doc/9.0/command-line/">command-line interface</a>, like this:
+</p>
+
+<div class="example">
+<pre>
+system("prince foo.xml bar.pdf");
+</pre>
+</div>
+
+<p>
+It is possible to write XML to Prince directly from the Perl script
+rather than have Prince read it from an external file:
+</p>
+
+<div class="example">
+<pre>
+open(PRINCE, "| prince - out.pdf");
+print PRINCE "&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello, world!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;";
+close(PRINCE);
+</pre>
+</div>
+
+<p>
+(The first filename argument of "-" instructs Prince to read the XML from its
+standard input stream rather than from a file).
+</p>
+
+<p>
+For Perl CGI scripts, the PDF output can be written to the standard output
+stream so that it is returned to the browser:
+</p>
+
+<div class="example">
+<pre>
+print "Content-Type: application/pdf\n\n";
+open(PRINCE, "| prince -");
+print PRINCE "&lt;html&gt;&lt;body&gt;&lt;h1&gt;Hello, world!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;";
+close(PRINCE);
+</pre>
+</div>
+
+<p>
+(Because the second filename argument has been omitted and the XML is being
+read from standard input, the PDF will be written to standard output.
+Be careful to redirect the output of this script if you try running it from
+the terminal).
+</p>
+
+<p>
+Alternatively, it is possible for the Perl script to read the PDF output
+directly rather than have Prince save it to an external file:
+</p>
+
+<div class="example">
+<pre>
+open(PRINCE, "prince foo.xml - |");
+# ... read PDF output from PRINCE file handle
+close(PRINCE);
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+<script src="/js/warning.js"></script>
+<div id="footer"><div id="footer-inner">
+<p id="footer-copy">Copyright © 2002 – 2025 YesLogic Pty. Ltd.</p>
+<ul id="footer-nav">
+<li><a href="/">Home</a></li>
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+</div></div>
+</body>
+</html>

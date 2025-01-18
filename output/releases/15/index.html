@@ -1,0 +1,559 @@
+<!DOCTYPE html><html class="p10" id="releases">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/common10.css">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.min.css">
+<link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.theme.min.css">
+<title>Prince - Release Notes for Prince 15</title>
+</head>
+<body>
+<div class="header-container">
+<div class="mainheader-container"><div class="header">
+<div class="logo"><a href="/"><img src="/images/Prince-logo.png" alt="Prince"></a></div>
+<div class="menu"><ul>
+<li><a href="/purchase/">
+                      Buy Prince</a></li>
+<li><a href="/samples/">
+                      Samples</a></li>
+<li><a href="/doc/">
+                      Documentation</a></li>
+<li><a href="/forum/">
+                      Forum</a></li>
+<li><a href="/download/" class="current">
+                      Download</a></li>
+</ul></div>
+<div style="clear:both"></div>
+<a class="mobile-menu-trigger"><img src="/images/menu-icon2.png" alt=""></a>
+</div></div>
+<div class="subheader-container"><div class="subheader">
+<div class="submenu"><ul>
+<li><a href="/download/15/">
+                    Prince 15</a></li>
+<li><a href="/latest/">
+                    Latest builds</a></li>
+<li><a href="/books/">
+                    Prince for Books</a></li>
+<li><a href="/releases/15/" class="sub-current">
+                    Release Notes</a></li>
+<li><a href="/download/wrappers/">
+                    Wrappers</a></li>
+</ul></div>
+<div style="clear:both"></div>
+</div></div>
+</div>
+
+<div class="body-container">
+<div class="content1150">
+<h1 class="subpages-heading2">Release Notes for Prince 15</h1>
+<div class="content750">
+
+
+<h2 id="p15.4.1">Prince 15.4.1</h2>
+<p class="date">September 2024</p>
+
+<p>Fixed issue affecting some TIFF images on some platforms.</p>
+
+
+<h2 id="p15.4">Prince 15.4</h2>
+<p class="date">August 2024</p>
+
+<h3>Stability &amp; performance</h3>
+
+<p>Added support for loading very large XML documents, and added the new command-line option <code>--xml-parse-huge</code> to enable this on Linux systems with versions of libxml2 older than 2.11.0.</p>
+
+<p>Fixed an infinite loop that can be triggered by empty multi-column layouts.</p>
+
+<p>Fixed a potential crash at program exit if background threads make HTTPS requests using OpenSSL.</p>
+
+<p>Fixed a potential crash affecting <code>break-after: avoid</code> in multi-column layout.</p>
+
+<h3>Font Bug Fixes &amp; Improvements</h3>
+
+<p>Fixed an issue affecting OpenType mark-to-mark positioning for some Arabic fonts.</p>
+
+<p>Disabled ligatures when letter-spacing is non-zero.</p>
+
+<p>Fixed an issue with some Thai fonts that require the OpenType <code>liga</code> feature.</p>
+
+<p>Updated the default serif and sans-serif fonts and included the Noto font family for all scripts.</p>
+
+<h3>CSS</h3>
+
+<p>Restricted the painting of positioned table cell backgrounds in tables with collapsed borders, so that the background does not overlap with the borders, thus matching browser behaviour.</p>
+
+<p>Allowed the <code>prince-lang</code> CSS property to specify element language for tagged PDF.</p>
+
+<p>Fixed a bug with resolving cyclic margins and percentages.</p>
+
+<h3>SVG</h3>
+
+<p>Fixed precision issue affecting some SVG images.</p>
+
+<p>Fixed issue where percentages are resolved incorrectly in SVG x/y attributes.</p>
+
+<h3>Miscellaneous</h3>
+
+<p>Updated <code>prince --credits</code> to include more version information for the libraries that Prince uses.</p>
+
+
+
+<h2 id="p15.3">Prince 15.3</h2>
+<p class="date">February 2024</p>
+
+<h3>Bug Fixes &amp; Improvements</h3>
+
+<p>
+Prince now detects infinite loops when resolving cross-references.
+</p>
+
+<p>
+Fixed issue where form controls are treated as having the wrong min/max width.
+</p>
+
+<h3>Windows</h3>
+
+<p>
+Changed the default behaviour for certificate revocation checks to ignore failure due to missing or offline distribution points for the revocation check lists. This can be disabled with the new command-line option <code>--no-ssl-revoke-best-effort</code>. This option only has effect on Windows.
+</p>
+
+<p>
+Fixed issue affecting Prince on Windows if binary path contains non-ASCII characters.
+</p>
+
+
+
+<h2 id="p15.2">Prince 15.2</h2>
+<p class="date">October 2023</p>
+
+<h3>Font Bug Fixes &amp; Improvements</h3>
+
+<p>
+Improved subsetting of OTF fonts (OpenType with CFF outlines).
+</p>
+
+<h3>CSS</h3>
+
+<p>
+Fixed an issue where the background and styling on iframe <code>body</code> and <code>html</code> elements could be lost.
+</p>
+
+<p>
+Allowed <code>prince-pdf-tag-type: Formula | Figure</code> to apply to non-image elements.
+</p>
+
+<h3>Miscellaneous</h3>
+
+<p>
+Updated libwebp version to fix CVE-2023-4863.
+</p>
+
+<p>
+Updated libcurl version to fix CVE-2023-38545.
+</p>
+
+<p>
+Fixed an issue affecting the JavaScript <code>in</code> operator and symbol values.
+</p>
+
+<p>
+Added support for the HTML <code>wbr</code> element.
+</p>
+
+<p>
+Added a workaround for an issue where table borders could affect Acrobat Reader's "Export to Excel" feature.
+</p>
+
+
+<h2 id="p15.1">Prince 15.1</h2>
+<p class="date">February 2023</p>
+
+<h3>Font Bug Fixes &amp; Improvements</h3>
+
+<p>
+Revert to the 8-bit "standard encoding" approach used for text in Prince 14 as the CMap dictionary approach is unfortunately not supported for PDF editing in Acrobat.
+</p>
+
+<p>
+Fix issue where some fonts with symbol encoding cmaps could use the wrong glyphs when subset.
+</p>
+
+<h3>Miscellaneous</h3>
+
+<p>
+Adding <code>Note</code> and <code>Reference</code> PDF tags to the <code>prince-pdf-tag-type</code> CSS property.
+</p>
+
+
+<h2 id="p15">Prince 15</h2>
+<p class="date">November 2022</p>
+
+<h3>Highlights</h3>
+
+<ul>
+<li>Create PDF Forms</li>
+<li>Add PDF Comments/Annotations</li>
+<li>Javascript ES6 improvements</li>
+<li>WebP and AVIF image support</li>
+<li>Support for Khmer and Sinhala fonts</li>
+<li>Universal binary for MacOS on Apple Silicon</li>
+</ul>
+
+<h3>PDF Features</h3>
+
+<p>
+PDF forms can be created from HTML forms with the <code>--pdf-forms</code> option.
+</p>
+
+<p>
+PDF comments/annotations can be added using the
+<code>prince-pdf-annotation</code> CSS properties.
+</p>
+
+
+<h3>JavaScript Support</h3>
+
+<p>
+Support for ES6 lexical scopes with let/const declarations.
+</p>
+
+<p>
+Support for the ES6 Map and Set classes.
+</p>
+
+<p>
+Support for the ES6 Symbol class and values.
+</p>
+
+<p>
+Support for ES6 iterators.
+</p>
+
+<p>
+Support for ES6 for-of loops.
+</p>
+
+<p>
+Support for ES6 arrow functions.
+</p>
+
+<p>
+Support for the JavaScript String <code>fromCodePoint</code> method.
+</p>
+
+<p>
+Support for the JavaScript String <code>codePointAt</code> method.
+</p>
+
+<p>
+Support for the JavaScript <code>Object.getOwnPropertySymbols</code> method.
+</p>
+
+<p>
+Support for the JavaScript Element <code>classList</code> property and <code>DOMTokenList</code> interface.
+</p>
+
+<p>
+Changed behaviour of regexp literals to match recent JavaScript specs.
+</p>
+
+<p>
+Added stubs for the XMLHttpRequest <code>getResponseHeader</code> and <code>getAllResponseHeaders</code> methods.
+</p>
+
+
+<h3>Images</h3>
+
+<p>
+Support for the WebP image format.
+</p>
+
+<p>
+Support for the AVIF image format.
+</p>
+
+
+<h3>Fonts</h3>
+
+<p>
+Support for Unicode 15.
+</p>
+
+<p>
+Support for the Sinhala script.
+</p>
+
+<p>
+Support for the Khmer script.
+</p>
+
+<p>
+Applied Unicode mark reordering to more scripts, not just Arabic and Indic scripts.
+</p>
+
+<p>
+Applied correct mark decomposition and reordering for Lao script.
+</p>
+
+
+<h3>CSS Support</h3>
+
+<p>
+Support for fragmentation and correct sizing for multi-line flex row containers (flex-wrap).
+</p>
+
+<p>
+Support for <code>align-self: stretch</code> for flex items in a fragmented flex row container.
+</p>
+
+<p>
+Support for wavy and double <code>text-decoration</code> styles.
+</p>
+
+<p>
+Support for the CSS text-decoration-line/color/style properties.
+</p>
+
+<p>
+Support for the <code>text-underline-position</code> property.
+</p>
+
+<h3>Command-line</h3>
+
+<p>
+Added the options <code>--ssl-no-revoke</code> and <code>--ssl-revoke-best-effort</code> for Windows.
+</p>
+
+<p>
+Added the option <code>--fail-stripped-transparency</code> to fail when
+transparent images are used with a PDF profile that does not support
+transparency.
+</p>
+
+<p>
+Added the option <code>--fail-invalid-license</code>.
+</p>
+
+<p>
+Added the option <code>--pdf-xmp-metadata</code> to include the HTML metadata
+in an XMP packet even when not required by the PDF profile.
+(also available via the <code>PDF.xmpMetadata</code> property and and the
+<code>pdf-xmp-metadata</code> job field).
+</p>
+
+<p>
+Renamed the <code>--cookiejar</code> option to <code>--cookie-file</code>.
+</p>
+
+<h3>Miscellaneous</h3>
+
+<p>
+Provided a universal binary for MacOS that supports Apple Silicon and Intel
+architectures.
+</p>
+
+<p>
+Support for the HTML <code>noscript</code> element.
+</p>
+
+<p>
+Improved the appearance of HTML select elements.
+</p>
+
+<p>
+Improved the appearance of HTML radio buttons when PDF Forms are not enabled.
+</p>
+
+
+<h3>Bug Fixes &amp; Improvements</h3>
+
+<h4>Security</h4>
+
+<p>
+Disabled HTML iframes by default and added an <code>--iframes</code> option to enable them.
+</p>
+
+<p>
+Prevented <code>prince-pdf-script</code> and
+<code>prince-pdf-event-scripts</code> CSS properties from accessing files or
+URLs and added new command-line options for this purpose.
+</p>
+
+<h4>CSS</h4>
+
+<p>
+Improved performance of style sheets with many class selectors.
+</p>
+
+<p>
+Fixed bug in flex column layout that could lead to overlapping content.
+</p>
+
+<p>
+Improved treatment of <code>break-before: avoid</code> so that it can pull partial content from the previous block instead of pulling the entire block to the next page.
+</p>
+
+<p>
+Fixed bug affecting multi-column layouts with zero line-height.
+</p>
+
+<p>
+Fixed column width issue with auto table layout in shrink-to-fit contexts, like nested tables and floats.
+</p>
+
+<p>
+Fixed issue with <code>box-decoration-break: slice</code> and spanning cells in tables with collapsing borders.
+</p>
+
+<p>
+Better support for relatively positioned table cells.
+</p>
+
+<p>
+Preserved leading newlines for <code>white-space: pre</code>, <code>pre-wrap</code>, and <code>pre-line</code>.
+</p>
+
+<p>
+Improving handling of trailing spaces for <code>white-space: pre-wrap</code>.
+</p>
+
+<p>
+Fixed incorrect positioning of absolute positioned content within inline blocks.
+</p>
+
+<p>
+Fixed incorrect positioning of absolute positioned content within relatively positioned inline elements.
+</p>
+
+<p>
+Fixed incorrect paragraph breaks caused by absolutely positioned blocks inside inline content.
+</p>
+
+<h4>Images &amp; SVG</h4>
+
+<p>
+Improved color space handling of PNG images with sRGB/cHRM/gAMA chunks but not iCCP chunks.
+</p>
+
+<p>
+Paletted PNGs are now embedded as indexed color images instead of expanded.
+</p>
+
+<p>
+Avoided unnecessarily re-rasterising SVG masks where possible.
+</p>
+
+
+<h4>Fonts</h4>
+
+<p>
+Improved the performance of complex font shaping.
+</p>
+
+<p>
+Fixed issue where <code>font-variant: prince-opentype(...)</code> would disable Arabic and Indic shaping.
+</p>
+
+<p>
+Fixed performance issue affecting some CFF fonts such as Noto Sans SC.
+</p>
+
+<p>
+Fixed below-base mark reordering for Thai script.
+</p>
+
+<p>
+Fixed bug affecting rare combination of OpenType GPOS positioning features.
+</p>
+
+<p>
+Renamed embedded font subsets to avoid name clashes in documents that include
+multiple subsets of the same font.
+</p>
+
+<h4>JavaScript</h4>
+
+<p>
+Fixed bug where the JavaScript <code>Function.bind</code> method would not support constructor invocation or <code>arguments.callee</code> properly.
+</p>
+
+<p>
+Fixed JavaScript issue where changing the length of large sparse arrays could be very slow.
+</p>
+
+<p>
+Speed up JavaScript DOM live node lists returned by <code>getElementsByTagName</code> and <code>getElementsByClassName</code>.
+</p>
+
+<p>
+Fixed the enumeration order of JavaScript properties with integer keys.
+</p>
+
+<p>
+Fixed issue where automatic semicolon insertion could affect the use of JavaScript keywords like <code>return</code> as property names.
+</p>
+
+
+<h4>Tagged PDF</h4>
+
+<p>
+Fixed performance issue affecting tagged PDF.
+</p>
+
+<p>
+Avoided inserting extra P structure element in tagged PDF for paragraphs containing only figures and/or floats.
+</p>
+
+<p>
+Avoided generating some unnecessary Span elements in the tagged PDF structure tree.
+</p>
+
+<p>
+Fixed bug where run-in elements could break the tagged PDF structure tree.
+</p>
+
+<h4>Miscellaneous</h4>
+
+<p>
+Fixed crash affecting some very large documents.
+</p>
+
+<p>
+Workaround Acrobat issue triggered by certain uses of bfrange in PDF ToUnicode mappings.
+</p>
+
+<p>
+Fixed the XMP serialisation of the meta <code>keywords</code> value.
+</p>
+
+
+<br>
+
+<p>
+See the <a href="/releases/">release history</a> for earlier versions of
+Prince.
+</p>
+
+
+</div>
+</div>
+
+</div>
+<div class="content1150 footer-container"><div class="footer">
+<div class="footer-logo">
+<img src="/images/Prince-logo-footer.png" alt=""><br>
+                Copyright © 2002 – 2025 YesLogic Pty. Ltd.
+            </div>
+<ul class="footer-menu">
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+<div style="clear:both"></div>
+</div></div>
+<script src="/js/jquery-1.12.4.min.js"></script><script src="/js/jquery-ui-1.12.1.min.js"></script><script type="text/javascript" src="/js/skrollr-simplemodal-masonry.min.js"></script><script type="text/javascript" src="/js/common.js"></script>
+</body>
+</html>

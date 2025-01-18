@@ -1,0 +1,163 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
+<meta name="robots" content="noindex">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<title>Prince - Converting HTML to PDF from .NET</title>
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<style>
+.comment { color: brown }
+.string { color: green }
+</style>
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+<div id="header-inner">
+<div><a href="/"><img src="/images/logo2.png" alt="Prince"></a></div>
+<ul id="primary-nav">
+<li><a href="/download/">Download</a></li>
+<li><a href="/purchase/">Buy Prince</a></li>
+<li><a href="/samples/">Samples</a></li>
+<li><a href="/doc/" class="curr">Documentation</a></li>
+<li><a href="/forum/">Forum</a></li>
+</ul>
+</div>
+<div id="header-shadow"></div>
+</div>
+<div id="intro"><div id="intro-inner"><h1>Converting HTML to PDF from .NET</h1></div></div>
+
+<div class="main">
+
+
+
+<p>
+<a href="/doc/8.1/">User Guide</a> /
+<a href="/doc/8.1/#server">Server Integration</a>
+</p>
+
+<div class="col1">
+
+<p>
+Prince can be called from .NET languages using the
+<a href="/download/wrappers/">Prince .NET wrapper</a>.
+</p>
+<p>
+The wrapper package includes a DLL file and source code.
+</p>
+
+<h2>Using Prince from VB.NET</h2>
+<p>
+To use the Prince .NET wrapper in VB.NET, add a reference to the
+DLL to your Visual Studio project. Alternatively, you can include
+the Prince.vb source file directly if you prefer.
+</p>
+<p>
+To convert HTML or XML files into PDF, instantiate a Prince object with the
+full path to the Prince engine executable file.
+Once this is done, you can apply style sheets and scripts, or configure other
+properties by calling the appropriate subroutines.
+Finally, you can call one of the Convert functions to generate a PDF file.
+</p>
+<p>
+The following code sample demonstrates how to convert a single HTML document
+into a PDF file:
+</p>
+
+<pre>
+<span class="comment">' instantiate Prince by specifying the full path to the engine executable</span>
+Dim prn As Prince
+
+prn = New Prince(<span class="string">"C:\Program Files\Prince\Engine\bin\prince.exe"</span>)
+
+<span class="comment">' specify the log file for error and warning messages
+' make sure that you have write permissions for this file</span>
+prn.SetLog(<span class="string">"C:\docs\log.txt"</span>)
+
+<span class="comment">' apply a CSS style sheet (optional)</span>
+prn.AddStyleSheet(<span class="string">"C:\docs\css\stylesheet-1.css"</span>)
+
+<span class="comment">' apply an external JavaScript file (optional)</span>
+prn.AddScript(<span class="string">"C:\docs\js\test.js"</span>)
+
+<span class="comment">' convert a HTML document into a PDF file</span>
+prn.Convert(<span class="string">"C:\docs\test1.html"</span>, <span class="string">"C:\docs\pdf\test1.pdf"</span>)
+</pre>
+
+<p>
+To combine multiple HTML documents into a single PDF file, call
+ConvertMultiple:
+</p>
+
+<pre>
+<span class="comment">' convert multiple HTML documents to a single PDF output file</span>
+Dim doc_array() As String
+
+doc_array = {<span class="string">"C:\docs\test1.html"</span>, <span class="string">"C:\docs\test2.html"</span>}
+
+prn.ConvertMultiple(doc_array, <span class="string">"C:\docs\pdf\merged.pdf"</span>)
+</pre>
+
+<h2>Using Prince from C#</h2>
+<p>
+To use the Prince .NET wrapper in C#, add a reference to the DLL to your
+Visual Studio project.
+</p>
+<p>
+To convert HTML or XML files into PDF, instantiate a Prince object with the
+full path to the Prince engine executable file.
+Once this is done, you can apply style sheets and scripts, or configure other
+properties by calling the appropriate subroutines.
+Finally, you can call one of the Convert functions to generate a PDF file.
+</p>
+<p>
+The following code sample demonstrates how to convert a single HTML document
+into a PDF file:
+</p>
+<pre>
+<span class="comment">// instantiate Prince by specifying the full path to the engine executable</span>
+Prince prn = new Prince(<span class="string">"C:\\Program Files\\Prince\\Engine\\bin\\prince.exe"</span>);
+  
+<span class="comment">// specify the log file for error and warning messages
+// make sure that you have write permissions for this file</span>
+prn.SetLog(<span class="string">"C:\\docs\\log.txt"</span>);
+
+<span class="comment">// apply a CSS style sheet (optional)</span>
+prn.AddStyleSheet(<span class="string">"C:\\docs\\css\\stylesheet-1.css"</span>);
+
+<span class="comment">// apply an external JavaScript file (optional)</span>
+prn.AddScript(<span class="string">"C:\\docs\\js\\test.js"</span>);
+
+<span class="comment">// convert a HTML document into a PDF file</span>
+prn.Convert(<span class="string">"C:\\docs\\test1.html"</span>, <span class="string">"C:\\docs\\pdf\\test1.pdf"</span>);
+</pre>
+
+<p>
+To combine multiple HTML documents into a single PDF file, call
+ConvertMultiple:
+</p>
+<pre>
+<span class="comment">// convert multiple HTML documents to a single PDF output file</span>
+String[] doc_array = {<span class="string">"C:\\docs\\test1.html"</span>, <span class="string">"C:\\docs\\test2.html"</span>};
+
+prn.ConvertMultiple(doc_array, <span class="string">"C:\\docs\\pdf\\merged.pdf"</span>);
+</pre>
+
+</div>
+
+</div>
+</div>
+<script src="/js/warning.js"></script>
+<div id="footer"><div id="footer-inner">
+<p id="footer-copy">Copyright © 2002 – 2025 YesLogic Pty. Ltd.</p>
+<ul id="footer-nav">
+<li><a href="/">Home</a></li>
+<li><a href="/company/">About Us</a></li>
+<li><a href="/privacy/">Privacy Policy</a></li>
+<li><a href="/contact/">Contact Us</a></li>
+</ul>
+</div></div>
+</body>
+</html>
