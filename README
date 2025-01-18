@@ -6,6 +6,10 @@ style/
 output/
  - contains static site upload
 
+GOALS
+ - site must be readable on laptop and phone
+ - avoid JavaScript wherever possible
+
 TODO
  - images/Prince15-banner.png, change "15" to "16"
  - improve style of https://www.princexml.com/samples/
