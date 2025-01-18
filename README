@@ -5,3 +5,10 @@ style/
 
 output/
  - contains static site upload
+
+TODO
+ - images/Prince15-banner.png, change "15" to "16"
+ - improve style of https://www.princexml.com/samples/
+ - improve style of https://www.princexml.com/purchase/
+ - redesign website header
+ - menu/submenu structure is confusing
