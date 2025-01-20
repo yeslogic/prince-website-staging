@@ -2,6 +2,9 @@
 /*
 vim: et sw=4 ts=4
 */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 html, body {
   padding: 0;
   margin: 0;
@@ -203,15 +206,23 @@ html.p11 p + ul {
 }
 
 .header {
-  height: 50px;
+  height: 70px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.header .logo a {
+  display: flex;
+  align-items: center;
 }
 .header .logo img {
-  width: 65%;
-  margin-top: 11px;
+  width: 120px;
 }
 
 .banner .header {
   padding-top: 50px;
+  z-index: 100;
 }
 .banner .header .logo img {
   margin: 0;
@@ -221,14 +232,13 @@ html.p11 p + ul {
   padding-top: 30px;
 }
 
-html.p11 .header .logo img {
-  width: 65%;
-  margin-top: 11px;
-}
 
 #home .header-container.hidden {
-  margin-top: -55px;
+  margin-top: -70px;
   transition: margin-top ease-in-out 300ms;
+}
+#home .header-container.hidden .mainheader-container {
+  box-shadow: none;
 }
 
 .header-container {
@@ -238,12 +248,13 @@ html.p11 .header .logo img {
   width: 100%;
   z-index: 1000;
   transition: margin-top ease-in-out 300ms;
-  box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
 }
 
 .mainheader-container {
   background-image: linear-gradient(110deg, #640c5c, #141429 52.3411106%, #732269);
   background-color: #7d146c;
+  box-shadow: 0px 0px 10px rgb(0 0 0 / 50%);
 }
 
 .logo {
@@ -251,14 +262,19 @@ html.p11 .header .logo img {
 }
 
 .menu {
-  float: right;
+  margin-left: auto;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
 }
 .menu ul {
   margin: 0;
   padding: 0;
 }
 .menu ul li {
-  display: inline;
+  display: inline-block;
+  height: 100%;
 }
 .menu a {
   display: inline-block;
@@ -266,19 +282,24 @@ html.p11 .header .logo img {
   line-height: 50px;
   text-decoration: none;
   color: white;
+  transition: 0.4s;
 }
-.menu a.menu-cta {
+.header .menu .menu-cta {
   background-color: #ffa046;
-  border-radius: 3px;
-  font-size: 13px;
-  height: 26px;
+  border: 1px solid #ffa046;
+  border-radius: 5px;
+  font-size: 14px;
+  height: auto;
   line-height: 26px;
-  padding: 0px 15px;
+  padding: 8px 20px;
   margin-left: 10px;
 }
+.header .menu .menu-cta:hover {
+  background-color: transparent;
+  color: #fff;
+}
 .menu a.current {
-  background: white;
-  color: #333;
+  color: #ffa046;
 }
 .menu a.menu-cta.current {
   background: white;
@@ -287,17 +308,12 @@ html.p11 .header .logo img {
   border-radius: 0px;
 }
 .menu a:hover {
-  color: #22b573;
+  color: #ffa046;
 }
 .menu a:hover .menu-cta {
   background-color: #ffb464;
   color: white;
   font-size: 14px;
-}
-
-.banner .header .menu a {
-  font-size: 15px;
-  padding: 0px 25px;
 }
 .banner .header .menu a .menu-cta {
   font-size: 14px;
@@ -307,8 +323,12 @@ html.p11 .header .logo img {
 }
 
 .header .menu a {
-  font-size: 14px;
+  font-size: 16px;
   padding: 0px 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .subheader-container {
@@ -326,23 +346,24 @@ html.p11 .header .logo img {
   padding: 0px;
 }
 .submenu ul li {
-  display: inline;
+  display: inline-block;
 }
 .submenu ul li a {
   display: inline-block;
-  height: 40px;
-  padding: 0px 17px;
+  padding: 5px 17px;
   line-height: 40px;
   color: #333;
-  font-size: 14px;
+  font-size: 16px;
+  border-bottom: 3px solid transparent;
+  transition: 0.4s;
 }
 .submenu ul li a:hover {
-  background: #f2f2f2;
+  color: #ffa046;
   text-decoration: none;
 }
 .submenu ul li a.sub-current {
-  border-bottom: 3px solid #ffa046;
-  height: 37px;
+  color: #ffa046;
+  border-bottom-color: #ffa046;
 }
 
 html.p11 .submenu {
@@ -1097,24 +1118,42 @@ ul.footer-menu li a {
     margin-bottom: 20px;
   }
 }
-@media all and (max-width: 1000px) {
+@media all and (max-width: 1023px) {
   html.p11 .banner a.green-button:link {
     margin: 0px auto 20px;
   }
   .body-container {
     width: auto;
   }
+  .header .logo img {
+    width: 95px;
+  }
+  .mainheader-container {
+    position: relative;
+  }
+  .header {
+    position: static;
+    height: 56px;
+    width: 100%;
+  }
   .menu ul {
     position: absolute;
     background: white;
     left: 0px;
     z-index: -1;
-    padding-top: 50px;
-    width: 818px;
-    margin-left: -25px;
+    padding-top: 56px;  
+    width: 100%;
     box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
     margin-top: -440px;
     transition: margin-top ease-in-out 0.5s;
+  }
+  .header .menu .menu-cta {
+    background: transparent;
+    border-radius: 0;
+    border: 0;
+    font-size: 16px;
+    line-height: 50px;
+    margin: 0;
   }
   .banner .mobile-menu-trigger {
     position: absolute;
@@ -1123,7 +1162,7 @@ ul.footer-menu li a {
     display: block;
   }
   .content1150,
-  .header, .subheader {
+  .subheader {
     width: 675px;
   }
   html.p10 .banner-container {
@@ -1170,9 +1209,7 @@ ul.footer-menu li a {
   }
   .mobile-menu-trigger {
     display: block;
-    right: 25px;
-    position: absolute;
-    top: 8px;
+    height: 32px;
   }
   .menu ul.show-mobile-menu {
     margin-top: 0px;
@@ -1191,7 +1228,7 @@ ul.footer-menu li a {
     color: #333;
     width: auto;
     display: block;
-    padding: 0px 50px;
+    padding: 0px 25px;
   }
   .menu a.menu-cta {
     background: none;
@@ -1200,8 +1237,11 @@ ul.footer-menu li a {
     margin: 0px;
     padding: 0px 50px;
   }
+  .menu ul li {
+    display: block;
+  }
 }
-@media all and (max-width: 760px) {
+@media all and (max-width: 767px) {
   html.p11 .user-guides-code-box ul {
     padding-left: 15px;
   }
@@ -1209,7 +1249,7 @@ ul.footer-menu li a {
     width: auto;
   }
   .menu ul {
-    padding-top: 40px;
+    padding-top: 50px;
   }
   .content1150,
   .header,
@@ -1323,10 +1363,10 @@ ul.footer-menu li a {
     display: none;
   }
   .header .logo img {
-    width: 45%;
+    width: 90px;
   }
   .header {
-    height: 40px;
+    height: 50px;
   }
   .subheader {
     padding: 0px;
