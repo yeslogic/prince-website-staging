@@ -5,6 +5,7 @@ vim: et sw=4 ts=4
 *, *::before, *::after {
   box-sizing: border-box;
 }
+
 html, body {
   padding: 0;
   margin: 0;
@@ -212,16 +213,13 @@ html.p11 p + ul {
   align-items: center;
   justify-content: space-between;
 }
-.header .logo a {
-  display: flex;
-  align-items: center;
-}
 .header .logo img {
   width: 120px;
 }
 
 .banner .header {
   padding-top: 50px;
+  height: auto;
   z-index: 100;
 }
 .banner .header .logo img {
@@ -231,7 +229,6 @@ html.p11 p + ul {
 .banner #small .header {
   padding-top: 30px;
 }
-
 
 #home .header-container.hidden {
   margin-top: -70px;
@@ -254,29 +251,33 @@ html.p11 p + ul {
 .mainheader-container {
   background-image: linear-gradient(110deg, #640c5c, #141429 52.3411106%, #732269);
   background-color: #7d146c;
-  box-shadow: 0px 0px 10px rgb(0 0 0 / 50%);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 .logo {
   float: left;
 }
+.logo a {
+  display: flex;
+  align-items: center;
+}
 
-.menu {
+.header .menu {
   margin-left: auto;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
 }
-.menu ul {
+.header .menu ul {
   margin: 0;
   padding: 0;
 }
-.menu ul li {
+.header .menu ul li {
   display: inline-block;
   height: 100%;
 }
-.menu a {
+.header .menu a {
   display: inline-block;
   height: 50px;
   line-height: 50px;
@@ -298,28 +299,22 @@ html.p11 p + ul {
   background-color: transparent;
   color: #fff;
 }
-.menu a.current {
+.header .menu a.current {
   color: #ffa046;
 }
-.menu a.menu-cta.current {
+.header .menu a.menu-cta.current {
   background: white;
   height: 50px;
   line-height: 50px;
   border-radius: 0px;
 }
-.menu a:hover {
+.header .menu a:hover {
   color: #ffa046;
 }
-.menu a:hover .menu-cta {
+.header .menu a:hover .menu-cta {
   background-color: #ffb464;
   color: white;
   font-size: 14px;
-}
-.banner .header .menu a .menu-cta {
-  font-size: 14px;
-  height: 30px;
-  line-height: 30px;
-  margin-left: 15px;
 }
 
 .header .menu a {
@@ -346,24 +341,23 @@ html.p11 p + ul {
   padding: 0px;
 }
 .submenu ul li {
-  display: inline-block;
+  display: inline;
 }
 .submenu ul li a {
   display: inline-block;
-  padding: 5px 17px;
+  height: 40px;
+  padding: 0px 17px;
   line-height: 40px;
   color: #333;
-  font-size: 16px;
-  border-bottom: 3px solid transparent;
-  transition: 0.4s;
+  font-size: 14px;
 }
 .submenu ul li a:hover {
-  color: #ffa046;
+  background: #f2f2f2;
   text-decoration: none;
 }
 .submenu ul li a.sub-current {
-  color: #ffa046;
-  border-bottom-color: #ffa046;
+  border-bottom: 3px solid #ffa046;
+  height: 37px;
 }
 
 html.p11 .submenu {
@@ -1047,7 +1041,8 @@ ul.footer-menu li a {
   .content1150,
   .header,
   .subheader {
-    width: 950px;
+    width: 100%;
+    max-width: 950px;
   }
   #small .banner-content h2,
   .banner-content h2 {
@@ -1109,10 +1104,6 @@ ul.footer-menu li a {
   .content1174 {
     width: 974px;
   }
-  .banner .header .menu a:link,
-  .banner .header .menu a:visited {
-    padding: 0px 17px;
-  }
   html.p11 .banner a.green-button:link {
     display: block;
     margin-bottom: 20px;
@@ -1125,40 +1116,39 @@ ul.footer-menu li a {
   .body-container {
     width: auto;
   }
-  .header .logo img {
-    width: 95px;
+  .header .menu ul {
+    position: absolute;
+    background: white;
+    left: 0px;
+    right: 0;
+    z-index: -1;
+    padding-top: 56px;
+    width: 100%;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
+    margin-top: -440px;
+    transition: margin-top ease-in-out 0.5s;
   }
-  .mainheader-container {
-    position: relative;
+  .header .menu ul li {
+    display: block;
   }
   .header {
     position: static;
     height: 56px;
     width: 100%;
   }
-  .menu ul {
-    position: absolute;
-    background: white;
-    left: 0px;
-    z-index: -1;
-    padding-top: 56px;  
-    width: 100%;
-    box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.2);
-    margin-top: -440px;
-    transition: margin-top ease-in-out 0.5s;
+  .header .logo img {
+    width: 95px;
   }
   .header .menu .menu-cta {
     background: transparent;
-    border-radius: 0;
-    border: 0;
-    font-size: 16px;
     line-height: 50px;
+    border: none;
+    font-size: 16px;
     margin: 0;
+    border-radius: 0;
   }
   .banner .mobile-menu-trigger {
-    position: absolute;
-    right: 30px;
-    top: 55px;
+    position: static;
     display: block;
   }
   .content1150,
@@ -1207,9 +1197,12 @@ ul.footer-menu li a {
   .banner {
     background-attachment: initial;
   }
+  .banner .header {
+    padding-top: 30px;
+  }
   .mobile-menu-trigger {
-    display: block;
     height: 32px;
+    display: block;
   }
   .menu ul.show-mobile-menu {
     margin-top: 0px;
@@ -1228,7 +1221,12 @@ ul.footer-menu li a {
     color: #333;
     width: auto;
     display: block;
-    padding: 0px 25px;
+    padding: 0px 26px;
+  }
+  .header .menu a:link:hover, .header .menu a:link.current,
+  .header .menu a:visited:hover,
+  .header .menu a:visited.current {
+    color: #ffa046;
   }
   .menu a.menu-cta {
     background: none;
@@ -1236,9 +1234,6 @@ ul.footer-menu li a {
     height: 50px;
     margin: 0px;
     padding: 0px 50px;
-  }
-  .menu ul li {
-    display: block;
   }
 }
 @media all and (max-width: 767px) {
@@ -1249,7 +1244,7 @@ ul.footer-menu li a {
     width: auto;
   }
   .menu ul {
-    padding-top: 50px;
+    padding-top: 40px;
   }
   .content1150,
   .header,
@@ -1351,7 +1346,7 @@ ul.footer-menu li a {
     line-height: 36px;
   }
   #home .header-container.hidden {
-    margin-top: -42px;
+    margin-top: -50px;
   }
   .menu ul li {
     display: block;
@@ -1367,6 +1362,12 @@ ul.footer-menu li a {
   }
   .header {
     height: 50px;
+  }
+  .header .menu ul {
+    padding-top: 50px;
+  }
+  .header .menu a:link, .header .menu a:visited {
+    padding: 0px 26px;
   }
   .subheader {
     padding: 0px;
@@ -1427,3 +1428,5 @@ ul.footer-menu li a {
     border: none;
   }
 }
+
+/*# sourceMappingURL=common10.css.map */
