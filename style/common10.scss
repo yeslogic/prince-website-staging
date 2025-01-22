@@ -4,9 +4,6 @@ vim: et sw=4 ts=4
 
 $wb-heading-color: #e34f71;
 
-*, *::before, *::after {
-    box-sizing: border-box;
-}
 html, body{
     padding: 0;
     margin: 0;
@@ -180,6 +177,7 @@ html.p11 {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    box-sizing: border-box;
     .logo img {
         width: 120px;
     }

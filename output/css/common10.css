@@ -2,10 +2,6 @@
 /*
 vim: et sw=4 ts=4
 */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
 html, body {
   padding: 0;
   margin: 0;
@@ -212,6 +208,7 @@ html.p11 p + ul {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  box-sizing: border-box;
 }
 .header .logo img {
   width: 120px;
