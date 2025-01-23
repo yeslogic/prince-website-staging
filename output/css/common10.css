@@ -332,6 +332,7 @@ html.p11 p + ul {
 
 .submenu {
   float: right;
+  margin-right: 20px;
 }
 .submenu ul {
   margin: 0px;
