@@ -12,7 +12,7 @@ html, body {
   line-height: 1.5em;
   font-size: 17px;
   color: #333;
-  background: #f2f2f2;
+  background: white;
 }
 
 html.p11 {
@@ -804,9 +804,6 @@ img.prince-box {
   overflow: hidden;
   width: 1100px;
   margin: auto;
-  border-left: solid 1px #e2e2e2;
-  border-right: solid 1px #e2e2e2;
-  border-bottom: solid 1px #ccc;
   padding: 0 25px 50px;
 }
 
@@ -926,7 +923,7 @@ body#home .purple-container h2 {
 }
 
 .home-end-cta {
-  padding: 80px 0px 0px;
+  padding: 40px 0px 60px;
   text-align: center;
 }
 .home-end-cta .blue-button {
@@ -1001,7 +998,16 @@ table.grid th:last-child {
 }
 
 /*----- Footer -----*/
+.footer-container {
+  width: auto;
+  margin: 0;
+  background: #f2f2f2;
+  border-top: solid 1px #ccc;
+}
+
 .footer {
+  width: 1150px;
+  margin: auto;
   padding: 40px 0px 80px;
 }
 
@@ -1040,6 +1046,14 @@ ul.footer-menu li a {
   .header,
   .subheader {
     width: 100%;
+    max-width: 950px;
+  }
+  .footer-container {
+    width: auto;
+    max-width: none;
+  }
+  .footer {
+    width: auto;
     max-width: 950px;
   }
   #small .banner-content h2,
@@ -1148,10 +1162,6 @@ ul.footer-menu li a {
   .banner .mobile-menu-trigger {
     position: static;
     display: block;
-  }
-  .content1150,
-  .subheader {
-    width: 675px;
   }
   html.p10 .banner-container {
     height: 900px;
