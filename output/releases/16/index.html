@@ -5,7 +5,9 @@
 <meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" property="stylesheet" type="text/css" href="/css/common10.css">
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.min.css">
 <link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.theme.min.css">
 <title>Prince - Release Notes for Prince 16</title>
@@ -202,6 +204,7 @@ This build comes with three important breaking changes:
 <h4>JavaScript</h4>
 <p>Fixed issues with automatic semicolon insertion in JavaScript.</p>
 <p>Sped up the JavaScript DOM getComputedStyle() property when the document has not changed since the last call.</p>
+<p>Ensured that spaces between words in justified text are still exposed in the JavaScript box tracking API.</p>
 
 <h4>Stability</h4>
 <p>Fixed issue where long sidenotes can cause Prince to hang.</p>

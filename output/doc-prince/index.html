@@ -5,7 +5,9 @@
 <meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" property="stylesheet" type="text/css" href="/css/common10.css">
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.min.css">
 <link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.theme.min.css">
 <title>Prince - User Guide</title>
@@ -111,7 +113,7 @@ window.addEventListener("hashchange", function() { toggleDetails(); shiftWindow(
 <div class="main-frame">
 
 
-<h1 id="intro">Convert HTML to PDF  <a href="#intro" class="self-link"></a><a href="#intro" class="self-link"></a>
+<h1 id="intro">Convert HTML to PDF <a href="#intro" class="self-link"></a>
 </h1>
 
 <p>
@@ -136,7 +138,7 @@ Prince supports all the main Web Standards:
 
 <div class="chapterheading">Prince 13 User Guide</div>
 
-<h1 id="styling">Styling  <a href="#styling" class="self-link"></a><a href="#styling" class="self-link"></a>
+<h1 id="styling">Styling <a href="#styling" class="self-link"></a>
 </h1>
 
 <p>When preparing a document with HTML and CSS, you need to first create the content -
@@ -164,7 +166,7 @@ rules can be found in the <code>html.css</code> style sheet, located in the
 </p>
 
 
-  <h2 id="fonts">Fonts  <a href="#fonts" class="self-link"></a><a href="#fonts" class="self-link"></a>
+  <h2 id="fonts">Fonts <a href="#fonts" class="self-link"></a>
 </h2>
 
 <p>
@@ -172,7 +174,7 @@ Prince supports Web Open Font Format (WOFF/WOFF2), TrueType and OpenType (TTF an
 font formats.
 </p>
 
-  <h3 id="font-family">Defining a font family  <a href="#font-family" class="self-link"></a><a href="#font-family" class="self-link"></a>
+  <h3 id="font-family">Defining a font family <a href="#font-family" class="self-link"></a>
 </h3>
 <p>
 To define the font, or the fonts to be used in a document, the
@@ -241,7 +243,7 @@ command-line option.
 </p>
 
 
-<h3 id="opentype-features">OpenType Features in Prince  <a href="#opentype-features" class="self-link"></a><a href="#opentype-features" class="self-link"></a>
+<h3 id="opentype-features">OpenType Features in Prince <a href="#opentype-features" class="self-link"></a>
 </h3>
 
 <p>
@@ -304,7 +306,7 @@ that enabling one feature will disable all the default features.
 
 
 
-  <h3 id="font-families">Generic font families  <a href="#font-families" class="self-link"></a><a href="#font-families" class="self-link"></a>
+  <h3 id="font-families">Generic font families <a href="#font-families" class="self-link"></a>
 </h3>
 <p>
 Prince maps the CSS generic font families to the Microsoft Core Fonts.  The Microsoft
@@ -474,7 +476,7 @@ In order to redefine these defaults, see <a href="/doc-prince/#redefining-font-f
 
 
 
-  <h3 id="redefining-font-families">Redefining the generic font families  <a href="#redefining-font-families" class="self-link"></a><a href="#redefining-font-families" class="self-link"></a>
+  <h3 id="redefining-font-families">Redefining the generic font families <a href="#redefining-font-families" class="self-link"></a>
 </h3>
 
 <p>
@@ -552,7 +554,7 @@ rules in CSS will be available.
 
 
 
-<h2 id="layout">Layout  <a href="#layout" class="self-link"></a><a href="#layout" class="self-link"></a>
+<h2 id="layout">Layout <a href="#layout" class="self-link"></a>
 </h2>
 
 <p>
@@ -579,7 +581,7 @@ is placed on discrete pages.
 
 
 
-<h3 id="text-formatting">Text formatting  <a href="#text-formatting" class="self-link"></a><a href="#text-formatting" class="self-link"></a>
+<h3 id="text-formatting">Text formatting <a href="#text-formatting" class="self-link"></a>
 </h3>
 
 <p>Text can be styled with CSS by defining font styles or text layout styles.</p>
@@ -629,7 +631,7 @@ to determine the distance between words.</p>
 
 
 
-<h3 id="paragraph-formatting">Paragraph formatting  <a href="#paragraph-formatting" class="self-link"></a><a href="#paragraph-formatting" class="self-link"></a>
+<h3 id="paragraph-formatting">Paragraph formatting <a href="#paragraph-formatting" class="self-link"></a>
 </h3>
 
 <p>Now that you have decided on the basic properties of the text, you can turn your
@@ -737,7 +739,7 @@ the property <code><a href="/doc-refs/#prop-overflow-wrap">overflow-wrap</a></co
 
 
 
-<h3 id="writing-mode">Writing Mode  <a href="#writing-mode" class="self-link"></a><a href="#writing-mode" class="self-link"></a>
+<h3 id="writing-mode">Writing Mode <a href="#writing-mode" class="self-link"></a>
 </h3>
 
 <p>A writing mode describes the directionality of a script, i.e. it describes
@@ -782,7 +784,7 @@ columns horizontally, top-to-bottom.</p>
 
 
 
-  <h3 id="css-box">Box Model  <a href="#css-box" class="self-link"></a><a href="#css-box" class="self-link"></a>
+  <h3 id="css-box">Box Model <a href="#css-box" class="self-link"></a>
 </h3>
 
 <p>
@@ -793,7 +795,7 @@ cast a shadow with the property <code><a href="/doc-refs/#prop-box-shadow">box-s
 </p>
 
 
-<h4 id="margin">Margin  <a href="#margin" class="self-link"></a><a href="#margin" class="self-link"></a>
+<h4 id="margin">Margin <a href="#margin" class="self-link"></a>
 </h4>
 <p>
 At the very outside of the box are the margins.  Each margin's size can be set
@@ -840,7 +842,7 @@ the behavior of margins in <a href="/doc-prince/#flexbox">Flex Layout</a>.
 
 
 
-<h4 id="border">Border  <a href="#border" class="self-link"></a><a href="#border" class="self-link"></a>
+<h4 id="border">Border <a href="#border" class="self-link"></a>
 </h4>
 
 <p>
@@ -873,7 +875,7 @@ invisible, the third part is visible, etc.
 
 
 
-<h4 id="padding">Padding  <a href="#padding" class="self-link"></a><a href="#padding" class="self-link"></a>
+<h4 id="padding">Padding <a href="#padding" class="self-link"></a>
 </h4>
 
 <p>
@@ -906,7 +908,7 @@ and the bottom padding is set equal to the top padding;</li>
 
 
 
-<h4 id="background">Background  <a href="#background" class="self-link"></a><a href="#background" class="self-link"></a>
+<h4 id="background">Background <a href="#background" class="self-link"></a>
 </h4>
 
 <p>
@@ -934,7 +936,7 @@ allows a background image to cover the entire page bleed area (see
 
 
 
-  <h3 id="display">Display  <a href="#display" class="self-link"></a><a href="#display" class="self-link"></a>
+  <h3 id="display">Display <a href="#display" class="self-link"></a>
 </h3>
 
 <p>
@@ -1005,7 +1007,7 @@ is very useful when hiding certain elements in the printed layout.
 
 
 
-<h3 id="transformations">Transformations  <a href="#transformations" class="self-link"></a><a href="#transformations" class="self-link"></a>
+<h3 id="transformations">Transformations <a href="#transformations" class="self-link"></a>
 </h3>
 
 <p>
@@ -1072,7 +1074,7 @@ all valid and equivalent.</p>
 
 
 
-  <h3 id="lists">Lists  <a href="#lists" class="self-link"></a><a href="#lists" class="self-link"></a>
+  <h3 id="lists">Lists <a href="#lists" class="self-link"></a>
 </h3>
 
 <p>
@@ -1093,7 +1095,7 @@ pseudo-element.
 </p>
 
 
-<h4 id="content-list-markers">List markers  <a href="#content-list-markers" class="self-link"></a><a href="#content-list-markers" class="self-link"></a>
+<h4 id="content-list-markers">List markers <a href="#content-list-markers" class="self-link"></a>
 </h4>
 <p>
 The <code><a href="/doc-refs/#prop-content">content</a></code> property can be applied to the <code>::marker</code>
@@ -1108,7 +1110,7 @@ pseudo-element to specify a custom marker for list items.
 </div>
 
 
-  <h4 id="list-markers">List marker position  <a href="#list-markers" class="self-link"></a><a href="#list-markers" class="self-link"></a>
+  <h4 id="list-markers">List marker position <a href="#list-markers" class="self-link"></a>
 </h4>
 <p>
 List markers are rendered outside the list item in the left
@@ -1157,7 +1159,7 @@ or <code>li</code> enough left margin.
 
 
 
-<h4 id="list-marker-type">List marker type  <a href="#list-marker-type" class="self-link"></a><a href="#list-marker-type" class="self-link"></a>
+<h4 id="list-marker-type">List marker type <a href="#list-marker-type" class="self-link"></a>
 </h4>
 <p>
 Different list marker types can be chosen by setting the
@@ -1230,7 +1232,7 @@ li.lower-roman { list-style-type: lower-roman }</pre></code>
 
 
 
-<h4 id="list-marker-style">List marker style  <a href="#list-marker-style" class="self-link"></a><a href="#list-marker-style" class="self-link"></a>
+<h4 id="list-marker-style">List marker style <a href="#list-marker-style" class="self-link"></a>
 </h4>
 
 <p>
@@ -1271,11 +1273,11 @@ li.image_marker::marker {
 
 
 
-  <h3 id="tables">Tables  <a href="#tables" class="self-link"></a><a href="#tables" class="self-link"></a>
+  <h3 id="tables">Tables <a href="#tables" class="self-link"></a>
 </h3>
 
 
-  <h4 id="table-auto-layout">Automatic table layout  <a href="#table-auto-layout" class="self-link"></a><a href="#table-auto-layout" class="self-link"></a>
+  <h4 id="table-auto-layout">Automatic table layout <a href="#table-auto-layout" class="self-link"></a>
 </h4>
 
 <p>
@@ -1328,7 +1330,7 @@ so that the table can take up as much space as possible.
 
 
 
-  <h4 id="table-fixed-layout">Fixed table layout  <a href="#table-fixed-layout" class="self-link"></a><a href="#table-fixed-layout" class="self-link"></a>
+  <h4 id="table-fixed-layout">Fixed table layout <a href="#table-fixed-layout" class="self-link"></a>
 </h4>
 <p>
 When the <i>fixed table layout</i> algorithm is used,
@@ -1391,7 +1393,7 @@ space.
 
 
 
-  <h4 id="table-borders-seperate">Separated table borders  <a href="#table-borders-seperate" class="self-link"></a><a href="#table-borders-seperate" class="self-link"></a>
+  <h4 id="table-borders-seperate">Separated table borders <a href="#table-borders-seperate" class="self-link"></a>
 </h4>
 <p>
 When the <code><a href="/doc-refs/#prop-border-collapse">border-collapse</a></code> property is set to
@@ -1445,7 +1447,7 @@ the value of <code><a href="/doc-refs/#prop-border-collapse">border-collapse</a>
 
 
 
-  <h4 id="table-border-collapse">Collapsing table borders  <a href="#table-border-collapse" class="self-link"></a><a href="#table-border-collapse" class="self-link"></a>
+  <h4 id="table-border-collapse">Collapsing table borders <a href="#table-border-collapse" class="self-link"></a>
 </h4>
 <p>
 When the CSS property <code><a href="/doc-refs/#prop-border-collapse">border-collapse</a></code> is set to
@@ -1521,7 +1523,7 @@ The precedence order is: cell, row, row-group then table.
 
 
 
-  <h4 id="table-column-span">Cells that span columns  <a href="#table-column-span" class="self-link"></a><a href="#table-column-span" class="self-link"></a>
+  <h4 id="table-column-span">Cells that span columns <a href="#table-column-span" class="self-link"></a>
 </h4>
 <p>
 Prince table cells that span multiple columns using the
@@ -1554,7 +1556,7 @@ takes an integer value and is set to 1 by default.
 
 
 
-  <h4 id="table-row-span">Cells that span rows  <a href="#table-row-span" class="self-link"></a><a href="#table-row-span" class="self-link"></a>
+  <h4 id="table-row-span">Cells that span rows <a href="#table-row-span" class="self-link"></a>
 </h4>
 <p>
 Prince supports table cells that span multiple rows using the
@@ -1586,7 +1588,7 @@ an integer value and is set to 1 by default.
 
 
 
-  <h4 id="tables-numbering-rows">Numbering table rows  <a href="#tables-numbering-rows" class="self-link"></a><a href="#tables-numbering-rows" class="self-link"></a>
+  <h4 id="tables-numbering-rows">Numbering table rows <a href="#tables-numbering-rows" class="self-link"></a>
 </h4>
 
 <p>
@@ -1644,7 +1646,7 @@ display and border properties, need to be explicitly set in the pseudo-elements.
 
 
 
-  <h4 id="tables-running-headers-footers">Running table headers and footers  <a href="#tables-running-headers-footers" class="self-link"></a><a href="#tables-running-headers-footers" class="self-link"></a>
+  <h4 id="tables-running-headers-footers">Running table headers and footers <a href="#tables-running-headers-footers" class="self-link"></a>
 </h4>
 <p>
 When a table spans across more than one page, it might be desirable to
@@ -1678,7 +1680,7 @@ See also <a href="/doc-prince/#long-tables">Long Tables</a>.
 </p>
 
 
-   <h4 id="tables-caption">Table captions  <a href="#tables-caption" class="self-link"></a><a href="#tables-caption" class="self-link"></a>
+   <h4 id="tables-caption">Table captions <a href="#tables-caption" class="self-link"></a>
 </h4>
 
 <p>
@@ -1701,7 +1703,7 @@ appears on.  See also <a href="/doc-prince/#fancy-table-captions">Fancy Table Ca
 
 
 
-  <h3 id="columns">Columns  <a href="#columns" class="self-link"></a><a href="#columns" class="self-link"></a>
+  <h3 id="columns">Columns <a href="#columns" class="self-link"></a>
 </h3>
 
   <p>Reading long lines of text can be difficult - multiple columns have been used
@@ -1789,7 +1791,7 @@ h1 {
 
 
 
-  <h3 id="floats">Floats  <a href="#floats" class="self-link"></a><a href="#floats" class="self-link"></a>
+  <h3 id="floats">Floats <a href="#floats" class="self-link"></a>
 </h3>
 
   <p>When printed texts contain images, the text is usually laid out to wrap around those
@@ -1815,7 +1817,7 @@ h1 {
   have been ubiquitous in printing for a long time.</p>
 
 
-  <h4 id="float-extensions">Prince extensions to floats  <a href="#float-extensions" class="self-link"></a><a href="#float-extensions" class="self-link"></a>
+  <h4 id="float-extensions">Prince extensions to floats <a href="#float-extensions" class="self-link"></a>
 </h4>
 
   <p>Traditionally, floats move in the inline direction, left or right.  Prince extends
@@ -1828,7 +1830,7 @@ h1 {
   <p>This allows for more flexible layout options that meet the needs
   of formatting documents for print.</p>
 
-  <h5 id="float-extension-page-column">Page and column floats  <a href="#float-extension-page-column" class="self-link"></a><a href="#float-extension-page-column" class="self-link"></a>
+  <h5 id="float-extension-page-column">Page and column floats <a href="#float-extension-page-column" class="self-link"></a>
 </h5>
 
   <p>When giving the <code><a href="/doc-refs/#prop-float">float</a></code> property the value <code>top</code> or
@@ -1873,7 +1875,7 @@ h1 {
   </div>
   </div>
 
-  <h5 id="float-extension-spread">Spread floats  <a href="#float-extension-spread" class="self-link"></a><a href="#float-extension-spread" class="self-link"></a>
+  <h5 id="float-extension-spread">Spread floats <a href="#float-extension-spread" class="self-link"></a>
 </h5>
 
   <p>In print one typically has to deal with left facing and right facing pages, together
@@ -1885,7 +1887,7 @@ h1 {
   layout, the element is floated to the inside or outside of the column it appears
   in its natural flow.</p>
 
-  <h5 id="float-extension-footnotes">Page and column footnotes  <a href="#float-extension-footnotes" class="self-link"></a><a href="#float-extension-footnotes" class="self-link"></a>
+  <h5 id="float-extension-footnotes">Page and column footnotes <a href="#float-extension-footnotes" class="self-link"></a>
 </h5>
 
   <p>The value <code>footnote</code> transforms the element into a footnote: it creates
@@ -1897,7 +1899,7 @@ h1 {
   behave in an analogous way, but move the footnote not to the bottom of the page,
   but to the bottom of its column instead.  See also <a href="/doc-prince/#footnotes">Footnotes</a>.</p>
 
-  <h5 id="float-extension-conditionals">Conditional modifiers  <a href="#float-extension-conditionals" class="self-link"></a><a href="#float-extension-conditionals" class="self-link"></a>
+  <h5 id="float-extension-conditionals">Conditional modifiers <a href="#float-extension-conditionals" class="self-link"></a>
 </h5>
 
   <p>Prince also takes the additional modifier <code>next</code>.  In a multi-column
@@ -1933,7 +1935,7 @@ h1 {
 
 
 
-  <h3 id="footnotes">Footnotes  <a href="#footnotes" class="self-link"></a><a href="#footnotes" class="self-link"></a>
+  <h3 id="footnotes">Footnotes <a href="#footnotes" class="self-link"></a>
 </h3>
 
 <p>
@@ -1996,7 +1998,7 @@ This example resets the counter on each new page.
 </div>
 
 
-<h4 id="footnote-calls">Footnote calls  <a href="#footnote-calls" class="self-link"></a><a href="#footnote-calls" class="self-link"></a>
+<h4 id="footnote-calls">Footnote calls <a href="#footnote-calls" class="self-link"></a>
 </h4>
 
 <p>
@@ -2048,7 +2050,7 @@ brackets, like this: [1], [2], [3].
 
 
 
-<h4 id="footnote-markers">Footnote markers  <a href="#footnote-markers" class="self-link"></a><a href="#footnote-markers" class="self-link"></a>
+<h4 id="footnote-markers">Footnote markers <a href="#footnote-markers" class="self-link"></a>
 </h4>
 
 <p>
@@ -2084,7 +2086,7 @@ property that applies to list markers (see <a href="/doc-prince/#lists">Lists</a
 
 
 
-<h4 id="footnotes-styling">Styling and behavior of footnotes  <a href="#footnotes-styling" class="self-link"></a><a href="#footnotes-styling" class="self-link"></a>
+<h4 id="footnotes-styling">Styling and behavior of footnotes <a href="#footnotes-styling" class="self-link"></a>
 </h4>
 
 <p>
@@ -2197,7 +2199,7 @@ not to the footnote element itself.
 
 
 
-  <h3 id="flexbox">Flex Layout  <a href="#flexbox" class="self-link"></a><a href="#flexbox" class="self-link"></a>
+  <h3 id="flexbox">Flex Layout <a href="#flexbox" class="self-link"></a>
 </h3>
 
   <p>Flex layout is a layout model similar to the block layout.  It lacks
@@ -2217,7 +2219,7 @@ not to the footnote element itself.
   i.e. to the flex container, while others apply to the children, or
   flex items.</p>
 
-  <h4 id="flex-containers">Flex Containers  <a href="#flex-containers" class="self-link"></a><a href="#flex-containers" class="self-link"></a>
+  <h4 id="flex-containers">Flex Containers <a href="#flex-containers" class="self-link"></a>
 </h4>
 
   <p>To use the flex layout, flex needs to be enabled on the parent
@@ -2261,7 +2263,7 @@ not to the footnote element itself.
   the <code><a href="/doc-refs/#prop-align-content">align-content</a></code> property.  If
   there is only one line, the property has no effect.</p>
 
-  <h4 id="flex-items">Flex Items  <a href="#flex-items" class="self-link"></a><a href="#flex-items" class="self-link"></a>
+  <h4 id="flex-items">Flex Items <a href="#flex-items" class="self-link"></a>
 </h4>
 
   <p>By default, items are placed in the source order inside a flex
@@ -2317,7 +2319,7 @@ not to the footnote element itself.
   percentages all resolve against width.</p>
 
 
-  <h2 id="paged">Paged Media  <a href="#paged" class="self-link"></a><a href="#paged" class="self-link"></a>
+  <h2 id="paged">Paged Media <a href="#paged" class="self-link"></a>
 </h2>
 
 <p>
@@ -2392,7 +2394,7 @@ then we will show how pagination can be controlled and how page styles can
 be applied to selected pages.
 </p>
 
-<h3 id="page-size">Page size  <a href="#page-size" class="self-link"></a><a href="#page-size" class="self-link"></a>
+<h3 id="page-size">Page size <a href="#page-size" class="self-link"></a>
 </h3>
 
 <p>
@@ -2434,7 +2436,7 @@ for example when creating presentation slides (see <a href="/doc-prince/#present
 
 
 
-  <h3 id="page-style">Page style  <a href="#page-style" class="self-link"></a><a href="#page-style" class="self-link"></a>
+  <h3 id="page-style">Page style <a href="#page-style" class="self-link"></a>
 </h3>
 
 <p>
@@ -2486,7 +2488,7 @@ remaining margins are even.
 </p>
 
 
-  <h3 id="page-regions">Page regions  <a href="#page-regions" class="self-link"></a><a href="#page-regions" class="self-link"></a>
+  <h3 id="page-regions">Page regions <a href="#page-regions" class="self-link"></a>
 </h3>
 
 <div class="figure-float-right" id="fig-marginboxes">
@@ -2821,7 +2823,7 @@ page margins.
 </p>
 
 
-  <h4 id="page-gen-content">Generated content in page regions  <a href="#page-gen-content" class="self-link"></a><a href="#page-gen-content" class="self-link"></a>
+  <h4 id="page-gen-content">Generated content in page regions <a href="#page-gen-content" class="self-link"></a>
 </h4>
 
 <p>
@@ -3070,7 +3072,7 @@ div.body h2::before {
 
 
 
-  <h4 id="content-copying-text">Copying content from the document  <a href="#content-copying-text" class="self-link"></a><a href="#content-copying-text" class="self-link"></a>
+  <h4 id="content-copying-text">Copying content from the document <a href="#content-copying-text" class="self-link"></a>
 </h4>
 <p>
 Generated content in page regions may contain text content copied
@@ -3150,7 +3152,7 @@ You can see these examples in full action in the
 
 
 
-  <h4 id="content-taking-elements">Taking elements from the document  <a href="#content-taking-elements" class="self-link"></a><a href="#content-taking-elements" class="self-link"></a>
+  <h4 id="content-taking-elements">Taking elements from the document <a href="#content-taking-elements" class="self-link"></a>
 </h4>
 <p>
 Page region content may also be taken from the document itself.
@@ -3263,7 +3265,7 @@ capture some text from the document, use named strings instead (see
 
 
 
-  <h3 id="page-rules">Selecting pages  <a href="#page-rules" class="self-link"></a><a href="#page-rules" class="self-link"></a>
+  <h3 id="page-rules">Selecting pages <a href="#page-rules" class="self-link"></a>
 </h3>
 
 <p>
@@ -3441,7 +3443,7 @@ used to do this:
 </div>
 </div>
 
-  <h4 id="named-pages">Named pages  <a href="#named-pages" class="self-link"></a><a href="#named-pages" class="self-link"></a>
+  <h4 id="named-pages">Named pages <a href="#named-pages" class="self-link"></a>
 </h4>
 
 <p>
@@ -3559,7 +3561,7 @@ chapter.
 See <a href="/doc-prince/#page-groups">Page groups</a>.
 </p>
 
-  <h4 id="paged-blank">Blank pages  <a href="#paged-blank" class="self-link"></a><a href="#paged-blank" class="self-link"></a>
+  <h4 id="paged-blank">Blank pages <a href="#paged-blank" class="self-link"></a>
 </h4>
 
 <p>
@@ -3641,7 +3643,7 @@ from mistaking a dangerous printing error for an intentionally blank page.
 
 
 
-  <h4 id="page-groups">Page groups  <a href="#page-groups" class="self-link"></a><a href="#page-groups" class="self-link"></a>
+  <h4 id="page-groups">Page groups <a href="#page-groups" class="self-link"></a>
 </h4>
 <p>
   When consecutive elements belong to the same named page
@@ -3694,7 +3696,7 @@ precedence over <code>prince-page-group</code>.
 
 
 
-  <h3 id="controlling-pagination">Controlling pagination  <a href="#controlling-pagination" class="self-link"></a><a href="#controlling-pagination" class="self-link"></a>
+  <h3 id="controlling-pagination">Controlling pagination <a href="#controlling-pagination" class="self-link"></a>
 </h3>
 
 <p>
@@ -3711,7 +3713,7 @@ with the <a href="/doc-prince/#widows-and-orphans">Widows and orphans</a> proper
 </p>
 
 
-  <h4 id="page-breaks">Page breaks  <a href="#page-breaks" class="self-link"></a><a href="#page-breaks" class="self-link"></a>
+  <h4 id="page-breaks">Page breaks <a href="#page-breaks" class="self-link"></a>
 </h4>
 
 <p>
@@ -3951,7 +3953,7 @@ Level 3.
 Page breaks have similarities with column breaks, see <a href="/doc-prince/#columns">Columns</a>.
 </p>
 
-  <h5 id="page-breaks-decoration">Page breaks and decoration  <a href="#page-breaks-decoration" class="self-link"></a><a href="#page-breaks-decoration" class="self-link"></a>
+  <h5 id="page-breaks-decoration">Page breaks and decoration <a href="#page-breaks-decoration" class="self-link"></a>
 </h5>
 
 <p>
@@ -4005,7 +4007,7 @@ then you can set this property to <code>slice</code>.
 
 
 
-  <h4 id="widows-and-orphans">Widows and orphans  <a href="#widows-and-orphans" class="self-link"></a><a href="#widows-and-orphans" class="self-link"></a>
+  <h4 id="widows-and-orphans">Widows and orphans <a href="#widows-and-orphans" class="self-link"></a>
 </h4>
   <p>
     Just as breaking a page between a heading and the first paragraph below
@@ -4046,7 +4048,7 @@ then you can set this property to <code>slice</code>.
     and orphans — Wikipedia</a>).
   </p>
 
-  <h3 id="page-marks">Trimming marks  <a href="#page-marks" class="self-link"></a><a href="#page-marks" class="self-link"></a>
+  <h3 id="page-marks">Trimming marks <a href="#page-marks" class="self-link"></a>
 </h3>
 
 <p>
@@ -4116,7 +4118,7 @@ specified respectively with the
 
 
 
-  <h2 id="gen-content">Generated Content  <a href="#gen-content" class="self-link"></a><a href="#gen-content" class="self-link"></a>
+  <h2 id="gen-content">Generated Content <a href="#gen-content" class="self-link"></a>
 </h2>
 
 <p>
@@ -4128,7 +4130,7 @@ property include <a href="/doc-prince/#page-regions">Page regions</a>,
 </p>
 
 
-  <h3 id="gen-content-functions">Generated Content Functions  <a href="#gen-content-functions" class="self-link"></a><a href="#gen-content-functions" class="self-link"></a>
+  <h3 id="gen-content-functions">Generated Content Functions <a href="#gen-content-functions" class="self-link"></a>
 </h3>
 
 <p>
@@ -4231,7 +4233,7 @@ But it is a possible escape hatch for people who need a specific glyph and don't
 have any other way of accessing it (by Unicode character or OpenType substitution).
 </p>
 
-<h4 id="gen-content-functions-pagepolicy">The optional   <code>page-policy</code> value<a href="#gen-content-functions-pagepolicy" class="self-link"></a><a href="#gen-content-functions-pagepolicy" class="self-link"></a>
+<h4 id="gen-content-functions-pagepolicy">The optional  <code>page-policy</code> value<a href="#gen-content-functions-pagepolicy" class="self-link"></a>
 </h4>
 
 <p>
@@ -4265,7 +4267,7 @@ For a good example of its use, please see <a href="/doc-prince/#content-copying-
 </p>
 
 
-  <h3 id="content-before-after">Before and After pseudo-elements  <a href="#content-before-after" class="self-link"></a><a href="#content-before-after" class="self-link"></a>
+  <h3 id="content-before-after">Before and After pseudo-elements <a href="#content-before-after" class="self-link"></a>
 </h3>
 <p>
 The <code><a href="/doc-refs/#prop-content">content</a></code> property can be applied to the
@@ -4286,7 +4288,7 @@ This will place three asterisks before and after <code>h1</code> elements.
 
 
 
-  <h3 id="counters">Counters and Numbering  <a href="#counters" class="self-link"></a><a href="#counters" class="self-link"></a>
+  <h3 id="counters">Counters and Numbering <a href="#counters" class="self-link"></a>
 </h3>
 
 <p>
@@ -4295,7 +4297,7 @@ They can be used to number list items, pages, footnotes, sections and
 any other document content that needs to be numbered.
 </p>
 
-  <h4 id="counters-reset-increment">Initializing and incrementing counters  <a href="#counters-reset-increment" class="self-link"></a><a href="#counters-reset-increment" class="self-link"></a>
+  <h4 id="counters-reset-increment">Initializing and incrementing counters <a href="#counters-reset-increment" class="self-link"></a>
 </h4>
 
 <p>
@@ -4321,7 +4323,7 @@ elements whose <code><a href="/doc-refs/#prop-display">display</a></code> proper
 value <code>none</code>.
 </p>
 
-  <h4 id="counters-display">Displaying counters  <a href="#counters-display" class="self-link"></a><a href="#counters-display" class="self-link"></a>
+  <h4 id="counters-display">Displaying counters <a href="#counters-display" class="self-link"></a>
 </h4>
 
 <p>
@@ -4384,7 +4386,7 @@ at each new section.
 </div>
 
 
-  <h4 id="counters-nested">Nested counters  <a href="#counters-nested" class="self-link"></a><a href="#counters-nested" class="self-link"></a>
+  <h4 id="counters-nested">Nested counters <a href="#counters-nested" class="self-link"></a>
 </h4>
 
 <p>
@@ -4413,7 +4415,7 @@ li::marker {
 
 
 
-  <h4 id="counter-styles">Counter styles  <a href="#counter-styles" class="self-link"></a><a href="#counter-styles" class="self-link"></a>
+  <h4 id="counter-styles">Counter styles <a href="#counter-styles" class="self-link"></a>
 </h4>
 
 <p>
@@ -4593,7 +4595,7 @@ See also <a href="/doc-prince/#counter-user-styles">User-defined counter styles<
 
 
 
-  <h3 id="crossref">Cross-references  <a href="#crossref" class="self-link"></a><a href="#crossref" class="self-link"></a>
+  <h3 id="crossref">Cross-references <a href="#crossref" class="self-link"></a>
 </h3>
 
 <p>
@@ -4602,7 +4604,7 @@ functions: <code>target-counter()</code> and <code>target-content()</code>.
 </p>
 
 
-  <h4 id="counter-target">Using target-counter()  <a href="#counter-target" class="self-link"></a><a href="#counter-target" class="self-link"></a>
+  <h4 id="counter-target">Using target-counter() <a href="#counter-target" class="self-link"></a>
 </h4>
 
 <p>
@@ -4649,7 +4651,7 @@ For example: [See chapter IV].
 
 
 
-  <h4 id="target-content">Using target-content()  <a href="#target-content" class="self-link"></a><a href="#target-content" class="self-link"></a>
+  <h4 id="target-content">Using target-content() <a href="#target-content" class="self-link"></a>
 </h4>
 
 <p>
@@ -4675,7 +4677,7 @@ element being linked to, such as a chapter title. For example:
 
 
 
-  <h3 id="scriptfunc">Script Functions  <a href="#scriptfunc" class="self-link"></a><a href="#scriptfunc" class="self-link"></a>
+  <h3 id="scriptfunc">Script Functions <a href="#scriptfunc" class="self-link"></a>
 </h3>
 
 <p>
@@ -4709,7 +4711,7 @@ Prince.addScriptFunc("myfunc", myfunc);</pre></code>
 </div>
 
 
-  <h4 id="content-date-time">Accessing the current date and time  <a href="#content-date-time" class="self-link"></a><a href="#content-date-time" class="self-link"></a>
+  <h4 id="content-date-time">Accessing the current date and time <a href="#content-date-time" class="self-link"></a>
 </h4>
 
 <p>
@@ -4736,7 +4738,7 @@ added to the document using <code>prince-script()</code> in generated content.
 
 
 
-  <h4 id="counter-user-styles">User-defined counter styles  <a href="#counter-user-styles" class="self-link"></a><a href="#counter-user-styles" class="self-link"></a>
+  <h4 id="counter-user-styles">User-defined counter styles <a href="#counter-user-styles" class="self-link"></a>
 </h4>
 
 <p>
@@ -4773,7 +4775,7 @@ For another way of creating user-defined counter styles, see <a href="/doc-princ
 
 
 
-  <h2 id="css-vars">Custom properties (CSS variables)  <a href="#css-vars" class="self-link"></a><a href="#css-vars" class="self-link"></a>
+  <h2 id="css-vars">Custom properties (CSS variables) <a href="#css-vars" class="self-link"></a>
 </h2>
 
 <p>
@@ -4824,7 +4826,7 @@ When a fallback value needs to be provided, this can be indicated in the
 
 
 
-  <h1 id="javascript">Scripting  <a href="#javascript" class="self-link"></a><a href="#javascript" class="self-link"></a>
+  <h1 id="javascript">Scripting <a href="#javascript" class="self-link"></a>
 </h1>
 
 <p>
@@ -4843,7 +4845,7 @@ enabled.  See <a href="/doc-prince/#applying-javascript">Applying JavaScript in 
 </p>
 
 
-<h2 id="js-print">JavaScript in Printed Media  <a href="#js-print" class="self-link"></a><a href="#js-print" class="self-link"></a>
+<h2 id="js-print">JavaScript in Printed Media <a href="#js-print" class="self-link"></a>
 </h2>
 
 <p>Prince is a user agent producing primarily documents meant to be printed, and
@@ -4862,7 +4864,7 @@ inspect the layout and cannot modify the DOM.  See also <a href="/doc-prince/#tw
 events, such as e.g. <code>onClick</code>, do not make sense, and will never fire.</p>
 
 
-<h2 id="js-prince">JavaScript in Prince  <a href="#js-prince" class="self-link"></a><a href="#js-prince" class="self-link"></a>
+<h2 id="js-prince">JavaScript in Prince <a href="#js-prince" class="self-link"></a>
 </h2>
 
 <p>
@@ -4896,7 +4898,7 @@ found in the <a href="/doc-refs/">References</a> section in
 from Prince's JavaScript support.
 </p>
 
-<h3 id="js-logging">Logging  <a href="#js-logging" class="self-link"></a><a href="#js-logging" class="self-link"></a>
+<h3 id="js-logging">Logging <a href="#js-logging" class="self-link"></a>
 </h3>
 <p>
 The Prince log can be accessed from JavaScript via the
@@ -4915,7 +4917,7 @@ Log.data("name", "value")</pre></code>
 
 
 
-  <h3 id="js-console">Console Access  <a href="#js-console" class="self-link"></a><a href="#js-console" class="self-link"></a>
+  <h3 id="js-console">Console Access <a href="#js-console" class="self-link"></a>
 </h3>
 <p>
 When running Prince from the command-line, the  <code>console</code> object
@@ -4934,7 +4936,7 @@ wrapper or graphical user interface.
 
 
 
-  <h3 id="js-event">Event Handling  <a href="#js-event" class="self-link"></a><a href="#js-event" class="self-link"></a>
+  <h3 id="js-event">Event Handling <a href="#js-event" class="self-link"></a>
 </h3>
 <p>
 When the document has been fully parsed and is ready for processing, Prince
@@ -4964,7 +4966,7 @@ User interface events such as <code>onclick</code> are not supported by Prince.
 
 
 
-  <h3 id="js-document-stats">Document Statistics  <a href="#js-document-stats" class="self-link"></a><a href="#js-document-stats" class="self-link"></a>
+  <h3 id="js-document-stats">Document Statistics <a href="#js-document-stats" class="self-link"></a>
 </h3>
 <p>
 The <a href="/doc-refs/#window.Prince.pageCount"><code>Prince.pageCount</code></a>
@@ -4987,7 +4989,7 @@ after the document conversion has finished.
 </p>
 
 
-  <h3 id="js-prince-obj">The Prince Object  <a href="#js-prince-obj" class="self-link"></a><a href="#js-prince-obj" class="self-link"></a>
+  <h3 id="js-prince-obj">The Prince Object <a href="#js-prince-obj" class="self-link"></a>
 </h3>
 <p>
 The <a href="/doc-refs/#window.Prince"><code>Prince</code></a>
@@ -5065,7 +5067,7 @@ a warning and trigger the fail-safe to ensure that no PDF is generated.
 
 
 
-  <h3 id="js-pdf">The PDF Object  <a href="#js-pdf" class="self-link"></a><a href="#js-pdf" class="self-link"></a>
+  <h3 id="js-pdf">The PDF Object <a href="#js-pdf" class="self-link"></a>
 </h3>
 <p>
 The <a href="/doc-refs/#window.PDF"><code>PDF</code> object</a> can
@@ -5132,7 +5134,7 @@ list of <i>boxes</i> - see <a href="/doc-prince/#js-box">The Box Tracking API</a
 </p>
 
 
-  <h3 id="js-box">The Box Tracking API  <a href="#js-box" class="self-link"></a><a href="#js-box" class="self-link"></a>
+  <h3 id="js-box">The Box Tracking API <a href="#js-box" class="self-link"></a>
 </h3>
 
 <p>
@@ -5265,7 +5267,7 @@ Overflow</a>.
 </p>
 
 
-  <h3 id="js-unsupported">Unsupported DOM Properties  <a href="#js-unsupported" class="self-link"></a><a href="#js-unsupported" class="self-link"></a>
+  <h3 id="js-unsupported">Unsupported DOM Properties <a href="#js-unsupported" class="self-link"></a>
 </h3>
 
 <p>
@@ -5283,7 +5285,7 @@ window.setInterval</pre></code>
 
 
 
-  <h1 id="graphics">Graphics  <a href="#graphics" class="self-link"></a><a href="#graphics" class="self-link"></a>
+  <h1 id="graphics">Graphics <a href="#graphics" class="self-link"></a>
 </h1>
 
 <p>
@@ -5293,7 +5295,7 @@ supported, and so is color management.  Bitmap images and SVG are supported.
 </p>
 
 
-  <h2 id="color">Color  <a href="#color" class="self-link"></a><a href="#color" class="self-link"></a>
+  <h2 id="color">Color <a href="#color" class="self-link"></a>
 </h2>
 
 <p>
@@ -5309,7 +5311,7 @@ and <code>currentColor</code>.
 </p>
 
 
-  <h3 id="color-rgb">RGB(A)  <a href="#color-rgb" class="self-link"></a><a href="#color-rgb" class="self-link"></a>
+  <h3 id="color-rgb">RGB(A) <a href="#color-rgb" class="self-link"></a>
 </h3>
 
 <p>
@@ -5341,7 +5343,7 @@ color: rgba(255, 0, 0, 0)    // fully transparent</pre></code>
 
 
 
-  <h3 id="color-cmyk">CMYK  <a href="#color-cmyk" class="self-link"></a><a href="#color-cmyk" class="self-link"></a>
+  <h3 id="color-cmyk">CMYK <a href="#color-cmyk" class="self-link"></a>
 </h3>
 <p>
 CMYK colors can be specified using the <code>cmyk()</code> or, alternatively, the
@@ -5358,7 +5360,7 @@ color: cmyk(0, 1, 1, 0, 0.1)  // translucent red</pre></code>
 </div>
 
 
-  <h3 id="color-hsl">HSL(A)  <a href="#color-hsl" class="self-link"></a><a href="#color-hsl" class="self-link"></a>
+  <h3 id="color-hsl">HSL(A) <a href="#color-hsl" class="self-link"></a>
 </h3>
 
 <p>
@@ -5388,7 +5390,7 @@ to create sets of matching colors (by keeping the same hue and varying the
 lightness and saturation values).
 </p>
 
-  <h3 id="color-spot">Spot colors  <a href="#color-spot" class="self-link"></a><a href="#color-spot" class="self-link"></a>
+  <h3 id="color-spot">Spot colors <a href="#color-spot" class="self-link"></a>
 </h3>
 <p>
 Prince also supports named spot colors that can be defined with the
@@ -5439,10 +5441,10 @@ color: prince-overprint(cmyk(0,1,1,0));</pre></code>
 
 
 
-  <h2 id="color-management">Color Management  <a href="#color-management" class="self-link"></a><a href="#color-management" class="self-link"></a>
+  <h2 id="color-management">Color Management <a href="#color-management" class="self-link"></a>
 </h2>
 
-<h3 id="colman-intro">Introduction  <a href="#colman-intro" class="self-link"></a><a href="#colman-intro" class="self-link"></a>
+<h3 id="colman-intro">Introduction <a href="#colman-intro" class="self-link"></a>
 </h3>
 
 <p>
@@ -5472,7 +5474,7 @@ output file.
 
 
 
-<h3 id="pdf-colman">Color Management and PDF Profiles  <a href="#pdf-colman" class="self-link"></a><a href="#pdf-colman" class="self-link"></a>
+<h3 id="pdf-colman">Color Management and PDF Profiles <a href="#pdf-colman" class="self-link"></a>
 </h3>
 
 <p>
@@ -5551,7 +5553,7 @@ Transparency is not allowed.
 
 
 
-<h3 id="prince-colman">Color Management in Prince  <a href="#prince-colman" class="self-link"></a><a href="#prince-colman" class="self-link"></a>
+<h3 id="prince-colman">Color Management in Prince <a href="#prince-colman" class="self-link"></a>
 </h3>
 
 <p>
@@ -5606,7 +5608,7 @@ PDF/A and PDF/X, it means it is characterized by the output intent color space).
 </p>
 
 
-<h3 id="color-conversion">Color conversion  <a href="#color-conversion" class="self-link"></a><a href="#color-conversion" class="self-link"></a>
+<h3 id="color-conversion">Color conversion <a href="#color-conversion" class="self-link"></a>
 </h3>
 
 <p>
@@ -5639,7 +5641,7 @@ allows color conversion to be disabled for that element and its descendants.
 </p>
 
 
-<h3 id="rich-true-black">Rich black and true black  <a href="#rich-true-black" class="self-link"></a><a href="#rich-true-black" class="self-link"></a>
+<h3 id="rich-true-black">Rich black and true black <a href="#rich-true-black" class="self-link"></a>
 </h3>
 
 <p>
@@ -5682,7 +5684,7 @@ images.
 
 
 
-<h3 id="page-color-space">Page color space  <a href="#page-color-space" class="self-link"></a><a href="#page-color-space" class="self-link"></a>
+<h3 id="page-color-space">Page color space <a href="#page-color-space" class="self-link"></a>
 </h3>
 
 <p>
@@ -5699,7 +5701,7 @@ the page, possibly resulting in distorted colors.
 
 
 
-  <h2 id="filters">Filters  <a href="#filters" class="self-link"></a><a href="#filters" class="self-link"></a>
+  <h2 id="filters">Filters <a href="#filters" class="self-link"></a>
 </h2>
 
 <p>
@@ -5773,7 +5775,7 @@ browsers.
 
 
 
-  <h2 id="images">Images  <a href="#images" class="self-link"></a><a href="#images" class="self-link"></a>
+  <h2 id="images">Images <a href="#images" class="self-link"></a>
 </h2>
 
 <p>
@@ -5799,7 +5801,7 @@ images - for details see the <a href="/doc-prince/#color-management">Color Manag
 </p>
 
 
-  <h3 id="images-html">Images in XHTML  <a href="#images-html" class="self-link"></a><a href="#images-html" class="self-link"></a>
+  <h3 id="images-html">Images in XHTML <a href="#images-html" class="self-link"></a>
 </h3>
 <p>
 The <code>img</code> element is used to include images in XHTML documents.
@@ -5815,7 +5817,7 @@ The <code>img</code> element is used to include images in XHTML documents.
 
 
 
-  <h3 id="images-docbook">Images in DocBook  <a href="#images-docbook" class="self-link"></a><a href="#images-docbook" class="self-link"></a>
+  <h3 id="images-docbook">Images in DocBook <a href="#images-docbook" class="self-link"></a>
 </h3>
 <p>
 The <code>imagedata</code> element is used to include images in DocBook
@@ -5834,7 +5836,7 @@ documents.
 
 
 
-  <h3 id="images-xml">Images in Arbitrary XML  <a href="#images-xml" class="self-link"></a><a href="#images-xml" class="self-link"></a>
+  <h3 id="images-xml">Images in Arbitrary XML <a href="#images-xml" class="self-link"></a>
 </h3>
 <p>
 Images can be included in arbitrary XML documents by using the CSS
@@ -5878,7 +5880,7 @@ specified by the <code>src</code> attribute of the element.
 </p>
 </div>
 
-  <h3 id="images-css">CSS and Images  <a href="#images-css" class="self-link"></a><a href="#images-css" class="self-link"></a>
+  <h3 id="images-css">CSS and Images <a href="#images-css" class="self-link"></a>
 </h3>
 
 <p>
@@ -5886,7 +5888,7 @@ Images can be added to a document as content or decoration, and can be modified
 with the help of CSS properties.
 </p>
 
-  <h4 id="images-background">Background Images  <a href="#images-background" class="self-link"></a><a href="#images-background" class="self-link"></a>
+  <h4 id="images-background">Background Images <a href="#images-background" class="self-link"></a>
 </h4>
 
 <p>
@@ -5904,7 +5906,7 @@ list with the property <code><a href="/doc-refs/#prop-list-style-image">list-sty
 also <a href="/doc-prince/#list-marker-style">List marker style</a>).
 </p>
 
-  <h4 id="images-orientation">Image Orientation  <a href="#images-orientation" class="self-link"></a><a href="#images-orientation" class="self-link"></a>
+  <h4 id="images-orientation">Image Orientation <a href="#images-orientation" class="self-link"></a>
 </h4>
 
 <p>
@@ -5918,7 +5920,7 @@ The property applies only to content images (e.g. replaced elements and
 generated content), not decorative images (such as <code>background-image</code>).
 </p>
 
-  <h4 id="images-size">Image Size  <a href="#images-size" class="self-link"></a><a href="#images-size" class="self-link"></a>
+  <h4 id="images-size">Image Size <a href="#images-size" class="self-link"></a>
 </h4>
 
 <p>
@@ -5985,7 +5987,7 @@ quality level, or PNG images be converted to JPEG, with the
 
 
 
-  <h2 id="svg">Scalable Vector Graphics (SVG)  <a href="#svg" class="self-link"></a><a href="#svg" class="self-link"></a>
+  <h2 id="svg">Scalable Vector Graphics (SVG) <a href="#svg" class="self-link"></a>
 </h2>
 
 <p>
@@ -6048,7 +6050,7 @@ currently <em>not</em> supported:
   <li><code>alignment-baseline</code></li>
 </ul>
 
-  <h3 id="svg-style">Style Properties  <a href="#svg-style" class="self-link"></a><a href="#svg-style" class="self-link"></a>
+  <h3 id="svg-style">Style Properties <a href="#svg-style" class="self-link"></a>
 </h3>
 <p>
 The following style properties <em>are</em> supported on SVG elements:
@@ -6123,7 +6125,7 @@ XML stylesheet:
 
 
 
-<h2 id="rasterization">Rasterization  <a href="#rasterization" class="self-link"></a><a href="#rasterization" class="self-link"></a>
+<h2 id="rasterization">Rasterization <a href="#rasterization" class="self-link"></a>
 </h2>
 
 <p>Prince allows for the output of a rasterized image rather than, or in addition to
@@ -6165,7 +6167,7 @@ section.</p>
 
 
 
-  <h1 id="tips-and-tricks">Prince Tips and Tricks  <a href="#tips-and-tricks" class="self-link"></a><a href="#tips-and-tricks" class="self-link"></a>
+  <h1 id="tips-and-tricks">Prince Tips and Tricks <a href="#tips-and-tricks" class="self-link"></a>
 </h1>
 
 <p>
@@ -6179,7 +6181,7 @@ goal.
 
 
 
-  <h2 id="table-of-content">Table of Contents  <a href="#table-of-content" class="self-link"></a><a href="#table-of-content" class="self-link"></a>
+  <h2 id="table-of-content">Table of Contents <a href="#table-of-content" class="self-link"></a>
 </h2>
 
 <dl class="ingredients">
@@ -6251,7 +6253,7 @@ looks like this:
 </div>
 </div>
 
-  <h3 id="table-of-content-simple">Simple Table of Contents  <a href="#table-of-content-simple" class="self-link"></a><a href="#table-of-content-simple" class="self-link"></a>
+  <h3 id="table-of-content-simple">Simple Table of Contents <a href="#table-of-content-simple" class="self-link"></a>
 </h3>
 
 <p>
@@ -6288,7 +6290,7 @@ You can view the resulting PDF <a href="http://css4.pub/2017/musick/musick.pdf">
 </p>
 
 
-  <h3 id="table-of-content-multifile">Multifile Table of Contents  <a href="#table-of-content-multifile" class="self-link"></a><a href="#table-of-content-multifile" class="self-link"></a>
+  <h3 id="table-of-content-multifile">Multifile Table of Contents <a href="#table-of-content-multifile" class="self-link"></a>
 </h3>
 
 <p>
@@ -6332,7 +6334,7 @@ You can view the resulting PDF <a href="http://css4.pub/2018/multifile-toc/book.
 
 
 
-<h2 id="thinking-in-spreads">Thinking in Spreads  <a href="#thinking-in-spreads" class="self-link"></a><a href="#thinking-in-spreads" class="self-link"></a>
+<h2 id="thinking-in-spreads">Thinking in Spreads <a href="#thinking-in-spreads" class="self-link"></a>
 </h2>
 
 <dl class="ingredients">
@@ -6372,7 +6374,7 @@ referring to the layout on each page of the spread to facilitate the
 work with page spreads.
 </p>
 
-<h3 id="spread-pagination">Pagination on a page spread  <a href="#spread-pagination" class="self-link"></a><a href="#spread-pagination" class="self-link"></a>
+<h3 id="spread-pagination">Pagination on a page spread <a href="#spread-pagination" class="self-link"></a>
 </h3>
 
 <p>
@@ -6403,7 +6405,7 @@ at-rule pseudo-classes <code>:right</code> and <code>:left</code>, or
 <code>:recto</code> and <code>:verso</code>.
 </p>
 
-<h3 id="spread-layout">Layout on a page spread  <a href="#spread-layout" class="self-link"></a><a href="#spread-layout" class="self-link"></a>
+<h3 id="spread-layout">Layout on a page spread <a href="#spread-layout" class="self-link"></a>
 </h3>
 
 <p>
@@ -6505,7 +6507,7 @@ central gutter.
 
 
 
-<h2 id="long-tables">Long Tables  <a href="#long-tables" class="self-link"></a><a href="#long-tables" class="self-link"></a>
+<h2 id="long-tables">Long Tables <a href="#long-tables" class="self-link"></a>
 </h2>
 
 <dl class="ingredients">
@@ -6568,7 +6570,7 @@ that a table appears on.  See also <a href="/doc-prince/#fancy-table-captions">F
 
 
 
-<h2 id="fancy-table-captions">Fancy Table Captions  <a href="#fancy-table-captions" class="self-link"></a><a href="#fancy-table-captions" class="self-link"></a>
+<h2 id="fancy-table-captions">Fancy Table Captions <a href="#fancy-table-captions" class="self-link"></a>
 </h2>
 
 <dl class="ingredients">
@@ -6650,7 +6652,7 @@ table + p {
 
 
 
-<h2 id="page-headers-footers">Page Headers and Footers  <a href="#page-headers-footers" class="self-link"></a><a href="#page-headers-footers" class="self-link"></a>
+<h2 id="page-headers-footers">Page Headers and Footers <a href="#page-headers-footers" class="self-link"></a>
 </h2>
 
 <dl class="ingredients">
@@ -6732,7 +6734,7 @@ the natural page flow to place it in the margin box.  See
 
 
 
-<h2 id="dictionary-page-headers">Dictionary Page Headers  <a href="#dictionary-page-headers" class="self-link"></a><a href="#dictionary-page-headers" class="self-link"></a>
+<h2 id="dictionary-page-headers">Dictionary Page Headers <a href="#dictionary-page-headers" class="self-link"></a>
 </h2>
 
 <dl class="ingredients">
@@ -6801,7 +6803,7 @@ starting the new section.
 
 
 
-<h2 id="page-numbering">Page Numbering  <a href="#page-numbering" class="self-link"></a><a href="#page-numbering" class="self-link"></a>
+<h2 id="page-numbering">Page Numbering <a href="#page-numbering" class="self-link"></a>
 </h2>
 
 <dl class="ingredients">
@@ -6947,7 +6949,7 @@ This rule will generate page footers such as "Page 1 of 89".
 
 
 
-<h2 id="footnotes-per-column">Footnotes per Column  <a href="#footnotes-per-column" class="self-link"></a><a href="#footnotes-per-column" class="self-link"></a>
+<h2 id="footnotes-per-column">Footnotes per Column <a href="#footnotes-per-column" class="self-link"></a>
 </h2>
 
 <dl class="ingredients">
@@ -7001,7 +7003,7 @@ the footnote marker is placed inside of the block of the footnote.
 
 
 
-<h2 id="multiple-footnotes">Multiple Footnotes  <a href="#multiple-footnotes" class="self-link"></a><a href="#multiple-footnotes" class="self-link"></a>
+<h2 id="multiple-footnotes">Multiple Footnotes <a href="#multiple-footnotes" class="self-link"></a>
 </h2>
 
 <dl class="ingredients">
@@ -7090,7 +7092,7 @@ all the rules necessary for creating all the footnote calls:
 
 
 
-<h2 id="sidenotes">Sidenotes  <a href="#sidenotes" class="self-link"></a><a href="#sidenotes" class="self-link"></a>
+<h2 id="sidenotes">Sidenotes <a href="#sidenotes" class="self-link"></a>
 </h2>
 
 <dl class="ingredients">
@@ -7129,7 +7131,7 @@ Either
 We shall see each approach separately.
 </p>
 
-<h3 id="sidenote-footnote">Positioning the footnote area  <a href="#sidenote-footnote" class="self-link"></a><a href="#sidenote-footnote" class="self-link"></a>
+<h3 id="sidenote-footnote">Positioning the footnote area <a href="#sidenote-footnote" class="self-link"></a>
 </h3>
 
 <p>
@@ -7164,7 +7166,7 @@ filling the space from the top of the page.  Should this be of importance, use
 the second approach instead.
 </p>
 
-<h3 id="sidenote-floating">Floating the footnote left or right  <a href="#sidenote-floating" class="self-link"></a><a href="#sidenote-floating" class="self-link"></a>
+<h3 id="sidenote-floating">Floating the footnote left or right <a href="#sidenote-floating" class="self-link"></a>
 </h3>
 
 <p>
@@ -7210,7 +7212,7 @@ position.  You can see this in full action in the
 
 
 
-<h2 id="endnotes">Endnotes  <a href="#endnotes" class="self-link"></a><a href="#endnotes" class="self-link"></a>
+<h2 id="endnotes">Endnotes <a href="#endnotes" class="self-link"></a>
 </h2>
 
 <dl class="ingredients">
@@ -7263,7 +7265,7 @@ moved to the end of the table by a script.
 
 
 
-<h2 id="hyperlinks-in-print">Hyperlinks in Print  <a href="#hyperlinks-in-print" class="self-link"></a><a href="#hyperlinks-in-print" class="self-link"></a>
+<h2 id="hyperlinks-in-print">Hyperlinks in Print <a href="#hyperlinks-in-print" class="self-link"></a>
 </h2>
 
 <dl class="ingredients">
@@ -7384,7 +7386,7 @@ This will add the URL after every link. For example:
 
 
 
-<h2 id="image-magic">Image Magic  <a href="#image-magic" class="self-link"></a><a href="#image-magic" class="self-link"></a>
+<h2 id="image-magic">Image Magic <a href="#image-magic" class="self-link"></a>
 </h2>
 
 <dl class="ingredients">
@@ -7457,7 +7459,7 @@ integer coordinates to avoid blurring in some PDF viewers.
 
 
 
-<h2 id="hyphenation">Hyphenation  <a href="#hyphenation" class="self-link"></a><a href="#hyphenation" class="self-link"></a>
+<h2 id="hyphenation">Hyphenation <a href="#hyphenation" class="self-link"></a>
 </h2>
 
 <dl class="ingredients">
@@ -7640,7 +7642,7 @@ Alternatively, link directly to the required remote hyphenation file:
 
 
 
-  <h2 id="ligatures">Typographic Ligatures  <a href="#ligatures" class="self-link"></a><a href="#ligatures" class="self-link"></a>
+  <h2 id="ligatures">Typographic Ligatures <a href="#ligatures" class="self-link"></a>
 </h2>
 
 <dl class="ingredients">
@@ -7702,7 +7704,7 @@ Alternatively, link directly to the required remote hyphenation file:
 
 
 
-  <h2 id="watermarks">Watermarks  <a href="#watermarks" class="self-link"></a><a href="#watermarks" class="self-link"></a>
+  <h2 id="watermarks">Watermarks <a href="#watermarks" class="self-link"></a>
 </h2>
 
 <dl class="ingredients">
@@ -7777,7 +7779,7 @@ Alternatively, link directly to the required remote hyphenation file:
 
 
 
-<h2 id="rotating">Rotating content  <a href="#rotating" class="self-link"></a><a href="#rotating" class="self-link"></a>
+<h2 id="rotating">Rotating content <a href="#rotating" class="self-link"></a>
 </h2>
 
 <p>
@@ -7789,7 +7791,7 @@ content in a table cell is rotated</a>.  We shall see each approach
 separately.
 </p>
 
-<h3 id="wide-content-sideways">Printing wide content sideways  <a href="#wide-content-sideways" class="self-link"></a><a href="#wide-content-sideways" class="self-link"></a>
+<h3 id="wide-content-sideways">Printing wide content sideways <a href="#wide-content-sideways" class="self-link"></a>
 </h3>
 
 <dl class="ingredients">
@@ -7862,7 +7864,7 @@ element with <code><a href="/doc-refs/#prop-transform">transform</a>: rotate()</
 
 
 
-<h3 id="rotating-table-cells">Rotating content in table cells  <a href="#rotating-table-cells" class="self-link"></a><a href="#rotating-table-cells" class="self-link"></a>
+<h3 id="rotating-table-cells">Rotating content in table cells <a href="#rotating-table-cells" class="self-link"></a>
 </h3>
 
 <dl class="ingredients">
@@ -7955,7 +7957,7 @@ For a different approach to rotating content, see the section on
 
 
 
-<h2 id="two-pass">The "Two-Pass" Solution  <a href="#two-pass" class="self-link"></a><a href="#two-pass" class="self-link"></a>
+<h2 id="two-pass">The "Two-Pass" Solution <a href="#two-pass" class="self-link"></a>
 </h2>
 
 <dl class="ingredients">
@@ -8014,7 +8016,7 @@ ToC and index:</p>
 
 
 
-<h2 id="pdf-doc">Documentation in PDF Format  <a href="#pdf-doc" class="self-link"></a><a href="#pdf-doc" class="self-link"></a>
+<h2 id="pdf-doc">Documentation in PDF Format <a href="#pdf-doc" class="self-link"></a>
 </h2>
 
 <p>
@@ -8080,7 +8082,7 @@ that you have already installed it!
 </p>
 
 
-<h1 id="help">Help  <a href="#help" class="self-link"></a><a href="#help" class="self-link"></a>
+<h1 id="help">Help <a href="#help" class="self-link"></a>
 </h1>
 
 <p>The Prince User Guide tries to be exhaustive in explaining how to use the application
@@ -8100,7 +8102,7 @@ the problems:</p>
 
 
 
-<h2 id="troubleshooting">Troubleshooting  <a href="#troubleshooting" class="self-link"></a><a href="#troubleshooting" class="self-link"></a>
+<h2 id="troubleshooting">Troubleshooting <a href="#troubleshooting" class="self-link"></a>
 </h2>
 
 <p>
@@ -8112,7 +8114,7 @@ problem, you may be able to find an explanation and solution below.
 </p>
 
 
-  <h3 id="output-log">Output log  <a href="#output-log" class="self-link"></a><a href="#output-log" class="self-link"></a>
+  <h3 id="output-log">Output log <a href="#output-log" class="self-link"></a>
 </h3>
 
 <p>
@@ -8135,7 +8137,7 @@ bottom left of the main GUI window.
 </p>
 
 
-  <h3 id="image-formats">Image formats  <a href="#image-formats" class="self-link"></a><a href="#image-formats" class="self-link"></a>
+  <h3 id="image-formats">Image formats <a href="#image-formats" class="self-link"></a>
 </h3>
 
 <dl>
@@ -8170,7 +8172,7 @@ bottom left of the main GUI window.
 
 
 
-  <h3 id="capturereplay">The capture/replay system  <a href="#capturereplay" class="self-link"></a><a href="#capturereplay" class="self-link"></a>
+  <h3 id="capturereplay">The capture/replay system <a href="#capturereplay" class="self-link"></a>
 </h3>
 
 <p>
@@ -8188,7 +8190,7 @@ of posting them on the forum.
 </p>
 
 
-  <h3 id="princedebug">Running the debug script  <a href="#princedebug" class="self-link"></a><a href="#princedebug" class="self-link"></a>
+  <h3 id="princedebug">Running the debug script <a href="#princedebug" class="self-link"></a>
 </h3>
 
 <p>
@@ -8214,7 +8216,7 @@ The <code>princedebug</code> script is not available on Windows.
 
 
 
-<h2 id="faq">Frequently Asked Questions  <a href="#faq" class="self-link"></a><a href="#faq" class="self-link"></a>
+<h2 id="faq">Frequently Asked Questions <a href="#faq" class="self-link"></a>
 </h2>
 
 <dl class="faq">
@@ -8377,7 +8379,7 @@ The <code>princedebug</code> script is not available on Windows.
 
 
 
-  <h1 id="prince-input">Prince Input  <a href="#prince-input" class="self-link"></a><a href="#prince-input" class="self-link"></a>
+  <h1 id="prince-input">Prince Input <a href="#prince-input" class="self-link"></a>
 </h1>
 
   <p>
@@ -8411,7 +8413,7 @@ The <code>princedebug</code> script is not available on Windows.
 
 
 
-  <h2 id="apply-css">Applying Style Sheets in Prince  <a href="#apply-css" class="self-link"></a><a href="#apply-css" class="self-link"></a>
+  <h2 id="apply-css">Applying Style Sheets in Prince <a href="#apply-css" class="self-link"></a>
 </h2>
 
 <p>
@@ -8454,7 +8456,7 @@ Prince can apply style sheets from three different sources:
 </dl>
 
 
-  <h3 id="css-import">Importing Style Sheets  <a href="#css-import" class="self-link"></a><a href="#css-import" class="self-link"></a>
+  <h3 id="css-import">Importing Style Sheets <a href="#css-import" class="self-link"></a>
 </h3>
 
 <p>
@@ -8477,7 +8479,7 @@ the specified style sheet.  See <a href="/doc-refs/#css-atrules">CSS At-rules</a
 
 
 
-  <h3 id="css-conflicting-declarations">Conflicting Declarations  <a href="#css-conflicting-declarations" class="self-link"></a><a href="#css-conflicting-declarations" class="self-link"></a>
+  <h3 id="css-conflicting-declarations">Conflicting Declarations <a href="#css-conflicting-declarations" class="self-link"></a>
 </h3>
 <p>
 Multiple style sheets can be applied and in some cases
@@ -8514,7 +8516,7 @@ to the <code>h1</code> element.
 
 
 
-  <h3 id="css-priorities">Priority Determination  <a href="#css-priorities" class="self-link"></a><a href="#css-priorities" class="self-link"></a>
+  <h3 id="css-priorities">Priority Determination <a href="#css-priorities" class="self-link"></a>
 </h3>
 <p>
 Style sheets are applied using a cascading process that calculates a priority
@@ -8566,7 +8568,7 @@ occur in the document.
 
 
 
-  <h2 id="applying-javascript">Applying JavaScript in Prince  <a href="#applying-javascript" class="self-link"></a><a href="#applying-javascript" class="self-link"></a>
+  <h2 id="applying-javascript">Applying JavaScript in Prince <a href="#applying-javascript" class="self-link"></a>
 </h2>
 
 <p>
@@ -8596,11 +8598,11 @@ on the PDF viewer, and in many cases might only work in Adobe Acrobat products.
 
 
 
-  <h2 id="xml">XML Input  <a href="#xml" class="self-link"></a><a href="#xml" class="self-link"></a>
+  <h2 id="xml">XML Input <a href="#xml" class="self-link"></a>
 </h2>
 
 
-  <h3 id="xml-input">XML Input  <a href="#xml-input" class="self-link"></a><a href="#xml-input" class="self-link"></a>
+  <h3 id="xml-input">XML Input <a href="#xml-input" class="self-link"></a>
 </h3>
 
 <p>
@@ -8611,7 +8613,7 @@ affect the output.
 </p>
 
 
-  <h4 id="xml-validation">Validation  <a href="#xml-validation" class="self-link"></a><a href="#xml-validation" class="self-link"></a>
+  <h4 id="xml-validation">Validation <a href="#xml-validation" class="self-link"></a>
 </h4>
 <p>
 Prince loads DTD files in order to resolve entity definitions and
@@ -8623,7 +8625,7 @@ external validator is recommended.
 
 
   <h4 id="xml-lang">
-<code>xml:lang</code><a href="#xml-lang" class="self-link"></a><a href="#xml-lang" class="self-link"></a>
+<code>xml:lang</code><a href="#xml-lang" class="self-link"></a>
 </h4>
 <p>
 Prince supports the <code>xml:lang</code> attribute, which is used to
@@ -8634,7 +8636,7 @@ language using the CSS <code>:lang()</code> selector.
 
 
   <h4 id="xml-id">
-<code>xml:id</code><a href="#xml-id" class="self-link"></a><a href="#xml-id" class="self-link"></a>
+<code>xml:id</code><a href="#xml-id" class="self-link"></a>
 </h4>
 <p>
 Prince supports the <code>xml:id</code> attribute, which is used to give
@@ -8646,7 +8648,7 @@ using the CSS ID selector.
 
 
   <h4 id="xml-base">
-<code>xml:base</code><a href="#xml-base" class="self-link"></a><a href="#xml-base" class="self-link"></a>
+<code>xml:base</code><a href="#xml-base" class="self-link"></a>
 </h4>
 <p>
 Prince does not support the <code>xml:base</code> attribute, therefore
@@ -8657,7 +8659,7 @@ hyperlinks must be absolute URLs or relative to the document path.
 
 
 
-  <h3 id="xml-style">XML Styling  <a href="#xml-style" class="self-link"></a><a href="#xml-style" class="self-link"></a>
+  <h3 id="xml-style">XML Styling <a href="#xml-style" class="self-link"></a>
 </h3>
 
 <p>
@@ -8707,7 +8709,7 @@ resulting document can be passed to Prince.
 
 
 
-  <h3 id="xinclude">XML Inclusions (XInclude)  <a href="#xinclude" class="self-link"></a><a href="#xinclude" class="self-link"></a>
+  <h3 id="xinclude">XML Inclusions (XInclude) <a href="#xinclude" class="self-link"></a>
 </h3>
 
 <p>
@@ -8735,7 +8737,7 @@ command-line option.
 </p>
 
 
-  <h4 id="xml-include">Including XML files  <a href="#xml-include" class="self-link"></a><a href="#xml-include" class="self-link"></a>
+  <h4 id="xml-include">Including XML files <a href="#xml-include" class="self-link"></a>
 </h4>
 <p>
 Here is an example of a book written in XHTML in which each chapter has been
@@ -8766,7 +8768,7 @@ namespace on every inclusion).
 
 
 
-  <h4 id="xml-include-text">Including text files  <a href="#xml-include-text" class="self-link"></a><a href="#xml-include-text" class="self-link"></a>
+  <h4 id="xml-include-text">Including text files <a href="#xml-include-text" class="self-link"></a>
 </h4>
 <p>
 XInclude can also be used to include text files into XML documents:
@@ -8788,7 +8790,7 @@ in a CDATA section.
 
 
 
-  <h4 id="xml-fallback">Fallback  <a href="#xml-fallback" class="self-link"></a><a href="#xml-fallback" class="self-link"></a>
+  <h4 id="xml-fallback">Fallback <a href="#xml-fallback" class="self-link"></a>
 </h4>
 <p>
 It is possible to specify fallback content that should be used if an included
@@ -8817,7 +8819,7 @@ saying "No report is available" will be included in the document instead.
 
 
 
-  <h1 id="pdf-output">Prince Output  <a href="#pdf-output" class="self-link"></a><a href="#pdf-output" class="self-link"></a>
+  <h1 id="pdf-output">Prince Output <a href="#pdf-output" class="self-link"></a>
 </h1>
 
 <p>
@@ -8831,7 +8833,7 @@ For the error and warning output log, please see <a href="/doc-prince/#output-lo
 </p>
 
 
-  <h2 id="pdf-profiles">PDF Versions and Profiles  <a href="#pdf-profiles" class="self-link"></a><a href="#pdf-profiles" class="self-link"></a>
+  <h2 id="pdf-profiles">PDF Versions and Profiles <a href="#pdf-profiles" class="self-link"></a>
 </h2>
 
 <p>
@@ -8984,7 +8986,7 @@ The PDF/UA profile is a standard for producing accessible electronic documents
 
 
 
-<h3 id="pdfa">PDF/A  <a href="#pdfa" class="self-link"></a><a href="#pdfa" class="self-link"></a>
+<h3 id="pdfa">PDF/A <a href="#pdfa" class="self-link"></a>
 </h3>
 
 <ul>
@@ -9000,7 +9002,7 @@ The PDF/UA profile is a standard for producing accessible electronic documents
 
 
 
-<h3 id="pdfua">PDF/UA  <a href="#pdfua" class="self-link"></a><a href="#pdfua" class="self-link"></a>
+<h3 id="pdfua">PDF/UA <a href="#pdfua" class="self-link"></a>
 </h3>
 
 <ul>
@@ -9014,7 +9016,7 @@ The PDF/UA profile is a standard for producing accessible electronic documents
 </ul>
 
 
-<h3 id="pdfx">PDF/X  <a href="#pdfx" class="self-link"></a><a href="#pdfx" class="self-link"></a>
+<h3 id="pdfx">PDF/X <a href="#pdfx" class="self-link"></a>
 </h3>
 
 <ul>
@@ -9036,7 +9038,7 @@ The PDF/UA profile is a standard for producing accessible electronic documents
 
 
 
-  <h2 id="pdf-accessibility">PDF Accessibility  <a href="#pdf-accessibility" class="self-link"></a><a href="#pdf-accessibility" class="self-link"></a>
+  <h2 id="pdf-accessibility">PDF Accessibility <a href="#pdf-accessibility" class="self-link"></a>
 </h2>
 
 <p>
@@ -9094,14 +9096,14 @@ accessible PDFs.
 
 
 
-  <h2 id="pdf-features">PDF Features  <a href="#pdf-features" class="self-link"></a><a href="#pdf-features" class="self-link"></a>
+  <h2 id="pdf-features">PDF Features <a href="#pdf-features" class="self-link"></a>
 </h2>
 
 <p>
 Prince supports a wide range of PDF features, including the following:
 </p>
 
-  <h3 id="pdf-links">PDF Links  <a href="#pdf-links" class="self-link"></a><a href="#pdf-links" class="self-link"></a>
+  <h3 id="pdf-links">PDF Links <a href="#pdf-links" class="self-link"></a>
 </h3>
 <p>
 Prince supports PDF-internal and -external links.  HTML hyperlinks are
@@ -9183,7 +9185,7 @@ In order to link to this section, the following syntax is used:
 
 
 
-  <h3 id="pdf-actions">PDF Actions  <a href="#pdf-actions" class="self-link"></a><a href="#pdf-actions" class="self-link"></a>
+  <h3 id="pdf-actions">PDF Actions <a href="#pdf-actions" class="self-link"></a>
 </h3>
 <p>
 Prince supports the <code>pdf-action:</code> URL scheme for PDF actions.
@@ -9274,7 +9276,7 @@ inline, or be included from an external file.
 
 
 
-  <h3 id="pdf-pages">PDF Pages  <a href="#pdf-pages" class="self-link"></a><a href="#pdf-pages" class="self-link"></a>
+  <h3 id="pdf-pages">PDF Pages <a href="#pdf-pages" class="self-link"></a>
 </h3>
 <p>
 Prince allows for some degree of control on the pages and the page layout in a PDF
@@ -9375,7 +9377,7 @@ The values of this property are mapped to PDF page layout options:
 
 
 
-  <h3 id="pdf-printing">PDF Printing  <a href="#pdf-printing" class="self-link"></a><a href="#pdf-printing" class="self-link"></a>
+  <h3 id="pdf-printing">PDF Printing <a href="#pdf-printing" class="self-link"></a>
 </h3>
 <p>
 Prince also provides two properties to fine-tune the printing of the PDF.  The
@@ -9407,7 +9409,7 @@ suppresses duplex printing.
 
 
 
-  <h3 id="pdf-compression">PDF Compression  <a href="#pdf-compression" class="self-link"></a><a href="#pdf-compression" class="self-link"></a>
+  <h3 id="pdf-compression">PDF Compression <a href="#pdf-compression" class="self-link"></a>
 </h3>
 <p>
 Prince compresses its PDF output to reduce the size of the documents that it
@@ -9423,7 +9425,7 @@ Compression may be disabled with the command-line option
 
 
 
-  <h3 id="pdf-encryption">PDF Encryption and Document Security  <a href="#pdf-encryption" class="self-link"></a><a href="#pdf-encryption" class="self-link"></a>
+  <h3 id="pdf-encryption">PDF Encryption and Document Security <a href="#pdf-encryption" class="self-link"></a>
 </h3>
 <p>
 Prince can encrypt the produced PDF files with the
@@ -9453,7 +9455,7 @@ annotating and modifying the PDF output:
 
 
 
-  <h3 id="pdf-font-embedding">PDF Font Embedding and Subsetting  <a href="#pdf-font-embedding" class="self-link"></a><a href="#pdf-font-embedding" class="self-link"></a>
+  <h3 id="pdf-font-embedding">PDF Font Embedding and Subsetting <a href="#pdf-font-embedding" class="self-link"></a>
 </h3>
 <p>
 Prince embeds fonts in its PDF output to ensure accurate viewing and printing
@@ -9485,7 +9487,7 @@ is used for this purpose.
 
 
 
-  <h3 id="pdf-attachments">PDF Attachments  <a href="#pdf-attachments" class="self-link"></a><a href="#pdf-attachments" class="self-link"></a>
+  <h3 id="pdf-attachments">PDF Attachments <a href="#pdf-attachments" class="self-link"></a>
 </h3>
 <p>
 Prince supports adding files to PDF documents as attachments.  The main
@@ -9501,7 +9503,7 @@ See <a href="/doc-prince/#cmd-control">Prince Control Protocol</a> for details o
 
 
 
-  <h3 id="pdf-bookmarks">PDF Bookmarks  <a href="#pdf-bookmarks" class="self-link"></a><a href="#pdf-bookmarks" class="self-link"></a>
+  <h3 id="pdf-bookmarks">PDF Bookmarks <a href="#pdf-bookmarks" class="self-link"></a>
 </h3>
 
 <p>
@@ -9509,7 +9511,7 @@ Prince can create PDF bookmarks that link to document content.
 </p>
 
 
-  <h4 id="bookmark-levels">Bookmark levels  <a href="#bookmark-levels" class="self-link"></a><a href="#bookmark-levels" class="self-link"></a>
+  <h4 id="bookmark-levels">Bookmark levels <a href="#bookmark-levels" class="self-link"></a>
 </h4>
 <p>
 PDF bookmarks have numeric levels that place them in a bookmark hierarchy.
@@ -9545,7 +9547,7 @@ long, or you can choose to have a deep bookmark tree.
 
 
 
-  <h4 id="bookmark-labels">Bookmark labels  <a href="#bookmark-labels" class="self-link"></a><a href="#bookmark-labels" class="self-link"></a>
+  <h4 id="bookmark-labels">Bookmark labels <a href="#bookmark-labels" class="self-link"></a>
 </h4>
 <p>
 PDF bookmarks have textual labels that by default are copied from the text
@@ -9571,7 +9573,7 @@ counters.  See <a href="/doc-prince/#gen-content-functions">Generated Content Fu
 
 
 
-  <h4 id="bookmark-targets">Bookmark targets  <a href="#bookmark-targets" class="self-link"></a><a href="#bookmark-targets" class="self-link"></a>
+  <h4 id="bookmark-targets">Bookmark targets <a href="#bookmark-targets" class="self-link"></a>
 </h4>
 <p>
 PDF bookmarks are links that display a particular part of the document when
@@ -9596,7 +9598,7 @@ that generated the bookmark.
 
 
 
-  <h3 id="pdf-tags">PDF Tags  <a href="#pdf-tags" class="self-link"></a><a href="#pdf-tags" class="self-link"></a>
+  <h3 id="pdf-tags">PDF Tags <a href="#pdf-tags" class="self-link"></a>
 </h3>
 
 <p>
@@ -9684,7 +9686,7 @@ tagged PDFs with Prince</a> - all you need to know about PDF tags and Prince!
 
 
 
-  <h3 id="pdf-metadata">PDF Metadata  <a href="#pdf-metadata" class="self-link"></a><a href="#pdf-metadata" class="self-link"></a>
+  <h3 id="pdf-metadata">PDF Metadata <a href="#pdf-metadata" class="self-link"></a>
 </h3>
 
 <p>
@@ -9711,7 +9713,7 @@ application:
 </div>
 
 
-<h4 id="pdf-xmp-metadata">XMP Metadata  <a href="#pdf-xmp-metadata" class="self-link"></a><a href="#pdf-xmp-metadata" class="self-link"></a>
+<h4 id="pdf-xmp-metadata">XMP Metadata <a href="#pdf-xmp-metadata" class="self-link"></a>
 </h4>
 
 <p>
@@ -9742,7 +9744,7 @@ Prince generates those itself when it produces the PDF file.
 
 
 
-  <h1 id="prince-networking">Prince Networking  <a href="#prince-networking" class="self-link"></a><a href="#prince-networking" class="self-link"></a>
+  <h1 id="prince-networking">Prince Networking <a href="#prince-networking" class="self-link"></a>
 </h1>
 
 <p>
@@ -9757,7 +9759,7 @@ a full URL needs to be provided, including the protocol.
 </div>
 
 
-  <h2 id="prince-networking-auth">Authentication  <a href="#prince-networking-auth" class="self-link"></a><a href="#prince-networking-auth" class="self-link"></a>
+  <h2 id="prince-networking-auth">Authentication <a href="#prince-networking-auth" class="self-link"></a>
 </h2>
 
 <p>
@@ -9792,7 +9794,7 @@ request may be required to discover the methods supported by the remote site.
 </p>
 
 
-  <h2 id="prince-networking-cookies">Cookies  <a href="#prince-networking-cookies" class="self-link"></a><a href="#prince-networking-cookies" class="self-link"></a>
+  <h2 id="prince-networking-cookies">Cookies <a href="#prince-networking-cookies" class="self-link"></a>
 </h2>
 
 <p>
@@ -9804,7 +9806,7 @@ a file containing HTTP cookies.
 </p>
 
 
-  <h2 id="prince-networking-ssl">SSL  <a href="#prince-networking-ssl" class="self-link"></a><a href="#prince-networking-ssl" class="self-link"></a>
+  <h2 id="prince-networking-ssl">SSL <a href="#prince-networking-ssl" class="self-link"></a>
 </h2>
 
 <p>
@@ -9831,7 +9833,7 @@ to handle SSL - in those cases the SSL-related command-line options might behave
 in a slightly different way.  In case of doubt, please check your own curl documentation.
 </p>
 
-  <h3 id="prince-networking-client-certs">Client Certificates  <a href="#prince-networking-client-certs" class="self-link"></a><a href="#prince-networking-client-certs" class="self-link"></a>
+  <h3 id="prince-networking-client-certs">Client Certificates <a href="#prince-networking-client-certs" class="self-link"></a>
 </h3>
 
 <p>
@@ -9864,7 +9866,7 @@ Client certificates are not supported on Windows.
 
 
 
-  <h2 id="prince-networking-misc">Miscellaneous  <a href="#prince-networking-misc" class="self-link"></a><a href="#prince-networking-misc" class="self-link"></a>
+  <h2 id="prince-networking-misc">Miscellaneous <a href="#prince-networking-misc" class="self-link"></a>
 </h2>
 
 <p>
@@ -9886,14 +9888,14 @@ command-line option.
 
 
 
-  <h1 id="server-integration">Server Integration  <a href="#server-integration" class="self-link"></a><a href="#server-integration" class="self-link"></a>
+  <h1 id="server-integration">Server Integration <a href="#server-integration" class="self-link"></a>
 </h1>
 
   <p>Prince can be used server-side to produce PDFs, invoked by a wrapper script.  Some
   care needs to be used in the configuration to make it reliable and secure.</p>
 
 
-  <h2 id="security">Security and performance  <a href="#security" class="self-link"></a><a href="#security" class="self-link"></a>
+  <h2 id="security">Security and performance <a href="#security" class="self-link"></a>
 </h2>
 
   <p>When you control the input, Prince produces the expected output.  But when you
@@ -9928,7 +9930,7 @@ command-line option.
 
 
 
-  <h2 id="wrappers">Prince Wrappers  <a href="#wrappers" class="self-link"></a><a href="#wrappers" class="self-link"></a>
+  <h2 id="wrappers">Prince Wrappers <a href="#wrappers" class="self-link"></a>
 </h2>
 
   <p>Since different server configurations make use of different scripting languages,
@@ -9947,7 +9949,7 @@ command-line option.
 
 
 
-  <h3 id="java">The Java Wrapper  <a href="#java" class="self-link"></a><a href="#java" class="self-link"></a>
+  <h3 id="java">The Java Wrapper <a href="#java" class="self-link"></a>
 </h3>
 
 <p>
@@ -9976,7 +9978,7 @@ lists the Java class methods and explains how to use them.
 
 
 
-  <h3 id="csharp">The C# / .Net Wrapper  <a href="#csharp" class="self-link"></a><a href="#csharp" class="self-link"></a>
+  <h3 id="csharp">The C# / .Net Wrapper <a href="#csharp" class="self-link"></a>
 </h3>
 
 <p>
@@ -9994,7 +9996,7 @@ The wrapper package contains:
 </ul>
 
 
-  <h4 id="csharp-csharp">Using Prince with C#  <a href="#csharp-csharp" class="self-link"></a><a href="#csharp-csharp" class="self-link"></a>
+  <h4 id="csharp-csharp">Using Prince with C# <a href="#csharp-csharp" class="self-link"></a>
 </h4>
 <p>
 To use the Prince .NET wrapper in C#, add a reference to the DLL to your
@@ -10054,7 +10056,7 @@ prn.ConvertMultiple(doc_array, <span class="string">"C:\\docs\\pdf\\merged.pdf"<
 
 
 
-  <h4 id="vb-net">Using Prince with VB.NET  <a href="#vb-net" class="self-link"></a><a href="#vb-net" class="self-link"></a>
+  <h4 id="vb-net">Using Prince with VB.NET <a href="#vb-net" class="self-link"></a>
 </h4>
 
 <p>
@@ -10120,7 +10122,7 @@ prn.ConvertMultiple(doc_array, "C:\docs\pdf\merged.pdf")</pre></code>
 
 
 
-  <h3 id="php">The PHP5 Wrapper  <a href="#php" class="self-link"></a><a href="#php" class="self-link"></a>
+  <h3 id="php">The PHP5 Wrapper <a href="#php" class="self-link"></a>
 </h3>
 
 <p>
@@ -10143,7 +10145,7 @@ explains how to use them.
 
 
 
-  <h3 id="activex-com">The ActiveX/COM Wrapper  <a href="#activex-com" class="self-link"></a><a href="#activex-com" class="self-link"></a>
+  <h3 id="activex-com">The ActiveX/COM Wrapper <a href="#activex-com" class="self-link"></a>
 </h3>
 
 <p>
@@ -10160,7 +10162,7 @@ This package contains two files:
 <li>the <a href="/doc/activex/api/readme.html">API documentation</a>.</li>
 </ul>
 
-  <h4 id="asp">Using Prince with ASP  <a href="#asp" class="self-link"></a><a href="#asp" class="self-link"></a>
+  <h4 id="asp">Using Prince with ASP <a href="#asp" class="self-link"></a>
 </h4>
 
 <p>
@@ -10218,7 +10220,7 @@ End If
 
 
 
-  <h4 id="activex">Using Prince with ActiveX / COM / Visual Basic  <a href="#activex" class="self-link"></a><a href="#activex" class="self-link"></a>
+  <h4 id="activex">Using Prince with ActiveX / COM / Visual Basic <a href="#activex" class="self-link"></a>
 </h4>
 
 <p>
@@ -10242,7 +10244,7 @@ details of the COM interface methods.
 </p>
 
 
-  <h3 id="coldfusion">Using Prince with ColdFusion  <a href="#coldfusion" class="self-link"></a><a href="#coldfusion" class="self-link"></a>
+  <h3 id="coldfusion">Using Prince with ColdFusion <a href="#coldfusion" class="self-link"></a>
 </h3>
 
 <p>
@@ -10251,7 +10253,7 @@ Prince can be called from ColdFusion pages using the Java interface or the
 </p>
 
 
-  <h4 id="cf-java">Using Java  <a href="#cf-java" class="self-link"></a><a href="#cf-java" class="self-link"></a>
+  <h4 id="cf-java">Using Java <a href="#cf-java" class="self-link"></a>
 </h4>
 <p>
 Start by downloading the
@@ -10310,7 +10312,7 @@ If on Linux, substitute the paths with the appropriate UNIX style paths.
 
 
 
-  <h4 id="cf-activex">Using ActiveX/COM  <a href="#cf-activex" class="self-link"></a><a href="#cf-activex" class="self-link"></a>
+  <h4 id="cf-activex">Using ActiveX/COM <a href="#cf-activex" class="self-link"></a>
 </h4>
 <p>
 If you are running ColdFusion on Windows, you can also call Prince using the
@@ -10364,7 +10366,7 @@ details of the COM interface methods.
 
 
 
-  <h3 id="python">Using Prince with Python  <a href="#python" class="self-link"></a><a href="#python" class="self-link"></a>
+  <h3 id="python">Using Prince with Python <a href="#python" class="self-link"></a>
 </h3>
 
 <p>
@@ -10458,7 +10460,7 @@ print("PDF is "+str(len(pdf))+" bytes in size")</pre></code>
 
 
 
-  <h3 id="perl">Using Prince with Perl  <a href="#perl" class="self-link"></a><a href="#perl" class="self-link"></a>
+  <h3 id="perl">Using Prince with Perl <a href="#perl" class="self-link"></a>
 </h3>
 
 <p>
@@ -10526,7 +10528,7 @@ close(PRINCE);</pre></code>
 
 
 
-  <h3 id="third-party-wrappers">Third-Party Wrappers  <a href="#third-party-wrappers" class="self-link"></a><a href="#third-party-wrappers" class="self-link"></a>
+  <h3 id="third-party-wrappers">Third-Party Wrappers <a href="#third-party-wrappers" class="self-link"></a>
 </h3>
 
   <p>There are also third-party wrappers available for download on external sites.
@@ -10545,7 +10547,7 @@ close(PRINCE);</pre></code>
 
 
 
-<h2 id="advanced-cmd">Advanced Command-Line Options  <a href="#advanced-cmd" class="self-link"></a><a href="#advanced-cmd" class="self-link"></a>
+<h2 id="advanced-cmd">Advanced Command-Line Options <a href="#advanced-cmd" class="self-link"></a>
 </h2>
 
 <p>
@@ -10556,7 +10558,7 @@ the output it produces, in order to write your own wrapper: the
 </p>
 
 
-<h3 id="cmd-control">Prince Control Protocol  <a href="#cmd-control" class="self-link"></a><a href="#cmd-control" class="self-link"></a>
+<h3 id="cmd-control">Prince Control Protocol <a href="#cmd-control" class="self-link"></a>
 </h3>
 
 <dl>
@@ -10763,7 +10765,7 @@ Each attachment is a &lt;url&gt; (string) or an object:
 </dl>
 
 
-<h3 id="structured-log">Structured Log  <a href="#structured-log" class="self-link"></a><a href="#structured-log" class="self-link"></a>
+<h3 id="structured-log">Structured Log <a href="#structured-log" class="self-link"></a>
 </h3>
 
 <dl>
@@ -10873,7 +10875,7 @@ fin|success</pre></code>
 </dl>
 
 
-<h3 id="fail-safe-options">Fail-Safe Options  <a href="#fail-safe-options" class="self-link"></a><a href="#fail-safe-options" class="self-link"></a>
+<h3 id="fail-safe-options">Fail-Safe Options <a href="#fail-safe-options" class="self-link"></a>
 </h3>
 
 <p>
@@ -10908,7 +10910,7 @@ can also be used to trigger an explicit failure status based on custom criteria.
 See also under <a href="/doc-prince/#js-prince-obj">The Prince Object</a>.
 </p>
 
-  <h1 id="pfb">Prince for Books  <a href="#pfb" class="self-link"></a><a href="#pfb" class="self-link"></a>
+  <h1 id="pfb">Prince for Books <a href="#pfb" class="self-link"></a>
 </h1>
 
 <p>
@@ -10944,7 +10946,7 @@ alongside a normal Prince installation - the executable to run is called
 </p>
 
 
-<h2 id="pfb-linebreaking">Line breaking  <a href="#pfb-linebreaking" class="self-link"></a><a href="#pfb-linebreaking" class="self-link"></a>
+<h2 id="pfb-linebreaking">Line breaking <a href="#pfb-linebreaking" class="self-link"></a>
 </h2>
 
 <p>
@@ -10956,7 +10958,7 @@ avoid a short last line, especially if it is shorter than the value of
 <code><a href="/doc-refs/#prop-text-indent">text-indent</a></code>.
 </p>
 
-<h3 id="pfb-princewrapinside">The property   <code>prince-wrap-inside</code><a href="#pfb-princewrapinside" class="self-link"></a><a href="#pfb-princewrapinside" class="self-link"></a>
+<h3 id="pfb-princewrapinside">The property  <code>prince-wrap-inside</code><a href="#pfb-princewrapinside" class="self-link"></a>
 </h3>
 
 <p>
@@ -11015,7 +11017,7 @@ of the law and
 of the prophets</p>
 </div>
 
-<h3 id="pfb-princelinebreakchoices">The property   <code>prince-line-break-choices</code><a href="#pfb-princelinebreakchoices" class="self-link"></a><a href="#pfb-princelinebreakchoices" class="self-link"></a>
+<h3 id="pfb-princelinebreakchoices">The property  <code>prince-line-break-choices</code><a href="#pfb-princelinebreakchoices" class="self-link"></a>
 </h3>
 
 <p>
@@ -11132,7 +11134,7 @@ elements <code>h1</code> to <code>h6</code>.
 </p>
 </div>
 
-<h3 id="pfb-princeforcedbreaks">The property   <code>prince-forced-breaks</code><a href="#pfb-princeforcedbreaks" class="self-link"></a><a href="#pfb-princeforcedbreaks" class="self-link"></a>
+<h3 id="pfb-princeforcedbreaks">The property  <code>prince-forced-breaks</code><a href="#pfb-princeforcedbreaks" class="self-link"></a>
 </h3>
 
 <p>
@@ -11200,7 +11202,7 @@ other lines.
 </p>
 
 
-<h2 id="pfb-spreadbalancing">Spread Balancing  <a href="#pfb-spreadbalancing" class="self-link"></a><a href="#pfb-spreadbalancing" class="self-link"></a>
+<h2 id="pfb-spreadbalancing">Spread Balancing <a href="#pfb-spreadbalancing" class="self-link"></a>
 </h2>
 
 <p>
@@ -11216,7 +11218,7 @@ Prince for Books also tries to reduce the number of uneven spreads.
 </p>
 
 
-<h3 id="pfb-princepagefill">The property   <code>prince-page-fill</code><a href="#pfb-princepagefill" class="self-link"></a><a href="#pfb-princepagefill" class="self-link"></a>
+<h3 id="pfb-princepagefill">The property  <code>prince-page-fill</code><a href="#pfb-princepagefill" class="self-link"></a>
 </h3>
 
 <p>
@@ -11237,7 +11239,7 @@ considered to have the same length.
 </p>
 
 
-<h3 id="pfb-princenlines">The property   <code>prince-n-lines</code><a href="#pfb-princenlines" class="self-link"></a><a href="#pfb-princenlines" class="self-link"></a>
+<h3 id="pfb-princenlines">The property  <code>prince-n-lines</code><a href="#pfb-princenlines" class="self-link"></a>
 </h3>
 
 <p>
@@ -11299,7 +11301,7 @@ around a heading, an image or at the start of a chapter.
 </p>
 
 
-<h3 id="pfb-fractionalwidows">Fractional Widows  <a href="#pfb-fractionalwidows" class="self-link"></a><a href="#pfb-fractionalwidows" class="self-link"></a>
+<h3 id="pfb-fractionalwidows">Fractional Widows <a href="#pfb-fractionalwidows" class="self-link"></a>
 </h3>
 
 <p>

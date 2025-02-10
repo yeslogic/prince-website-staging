@@ -7,7 +7,7 @@ $wb-heading-color: #e34f71;
 html, body{
     padding: 0;
     margin: 0;
-    font-family: Lato, Verdana, sans-serif;
+    font-family: Public Sans, Arial, sans-serif;
     font-variant: prince-opentype(pnum, lnum);
     font-variant-numeric: proportional-nums lining-nums;
     font-weight: normal;
@@ -614,7 +614,7 @@ a.green-button:visited,
 }
 
 .volume-discount {
-    font-family: "Lato", Arial, sans-serif;
+    font-family: Public Sans, Arial, sans-serif;
     font-size: 16px;
     line-height: 28px;
     margin-bottom: 30px;
@@ -720,7 +720,7 @@ a.green-button:visited,
 html.p10 {
     .tablebox {
         background: #ddd;
-        font-family: "Lato", Arial, sans-serif;
+        font-family: Public Sans, Arial, sans-serif;
         font-size: 16px;
     }
 }
@@ -933,7 +933,7 @@ html.p10 {
     form#contact-us-form input[type="text"],
     form#contact-us-form textarea
     {
-        font-family: "Lato", Arial, sans-serif;
+        font-family: Public Sans, Arial, sans-serif;
         color: #666;
     }
 }
@@ -941,7 +941,7 @@ html.p11 {
     form#contact-us-form input[type="text"],
     form#contact-us-form textarea
     {
-        font-family: "Lato", "Gothic", Arial, Sans-Serif;
+        font-family: Public Sans, "Gothic", Arial, Sans-Serif;
         color: #333;
     }
 }

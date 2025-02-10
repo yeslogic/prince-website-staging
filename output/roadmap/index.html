@@ -5,7 +5,9 @@
 <meta name="description" content="Convert HTML documents to PDF. Beautiful printing with CSS. Support for JavaScript and SVG.">
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" property="stylesheet" type="text/css" href="/css/common10.css">
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.min.css">
 <link rel="stylesheet" property="stylesheet" type="text/css" href="/css/jquery-ui-1.12.1.theme.min.css">
 <title>Prince - Roadmap</title>
@@ -46,7 +48,7 @@ may change at any time.
 </p>
 
 <p>
-<i>Last updated 15 January 2025</i>
+<i>Last updated 9 February 2025</i>
 </p>
 
 <h2>TODO</h2>
@@ -622,6 +624,14 @@ Support the CSS "outline" properties.
 </p>
 
 <p>
+Handle floated table captions better in the tagged PDF structure tree.
+(<a href="//www.princexml.com/forum/topic/4857/">ref</a>)
+<br>
+<span class="status">Done</span>
+2024-09-18
+</p>
+
+<p>
 Use the attachment filename in the PDF name tree for compatibility with
 Factur-X and other PDF generators.
 (<a href="//www.princexml.com/forum/topic/5033/">ref</a>)
@@ -788,19 +798,41 @@ Fix issue affecting layout of tables with a specified height.
 2025-01-13
 </p>
 
+<p>
+Ensure that spaces between words in justified text are still exposed in the
+JavaScript box tracking API.
+(<a href="//www.princexml.com/forum/topic/5106/">ref</a>)
+<br>
+<span class="status">Done</span>
+2025-01-21
+</p>
 
+<p>
+Combine content items where possible in tagged PDF.
+<br>
+<span class="status">Done</span>
+2025-02-07
+</p>
+
+
+
+<p>
+Investigate problems with MacOS VoiceOver on tagged PDF tables.
+(<a href="//www.princexml.com/forum/topic/5111/">ref</a>)
+</p>
+
+<p>
+Create Docker images for running Prince on ARM.
+</p>
 
 <p>
 Cache local CSS files to avoid reloading them over network drives.
 </p>
 
 <p>
-Ensure that spaces between words in justified text are still exposed in the JavaScript box tracking API.
-(<a href="//www.princexml.com/forum/topic/5106/">ref</a>)
-</p>
-
-<p>
-Combine content items where possible in tagged PDF.
+Use the soft-hyphen character for hyphenated words for better search and
+copy/paste behaviour in PDF viewers.
+(<a href="//www.princexml.com/forum/topic/5100/">ref</a>)
 </p>
 
 <p>
@@ -809,9 +841,20 @@ Investigate issue where vw/vh units ignore page margins if they use CSS variable
 </p>
 
 <p>
+Support classes in JavaScript.
+(<a href="//www.princexml.com/forum/topic/3940/">ref</a>,
+<a href="//www.princexml.com/forum/topic/5112/">ref</a>)
+</p>
+
+<p>
 Fix issue where an element with "position: running()" can leave a blank page
 if it is followed by an element in a different named page group.
 (<a href="//www.princexml.com/forum/topic/4489/">ref</a>)
+</p>
+
+<p>
+Support "text-wrap: balance".
+(<a href="//www.princexml.com/forum/topic/4860/">ref</a>)
 </p>
 
 <p>
@@ -827,11 +870,6 @@ Support HEIC image files.
 <p>
 Support the CSS "box-decoration-break" property across line breaks.
 (<a href="//www.princexml.com/forum/topic/5058/">ref</a>)
-</p>
-
-<p>
-Handle floated table captions better in the tagged PDF structure tree.
-(<a href="//www.princexml.com/forum/topic/4857/">ref</a>)
 </p>
 
 <p>
@@ -918,11 +956,6 @@ Support nested CSS.
 <p>
 Support async functions in JavaScript.
 (<a href="//www.princexml.com/forum/topic/4932/">ref</a>)
-</p>
-
-<p>
-Support classes in JavaScript.
-(<a href="//www.princexml.com/forum/topic/3940/">ref</a>)
 </p>
 
 <p>
